@@ -127,9 +127,9 @@ void gam_animatePlayerSprite ( float delayInterval )
 	float			animspeed = 0.0f;
 
 	if (true == playerIsExploding)
-		animspeed = 20.0f;
+		animspeed = explodeFrameDelay;
 	else
-		animspeed = 10.0f; // TODO: work out health
+		animspeed = baseDroidAnimateValue * (playerCurrentHealth /  dataBaseEntry[playerDroidTypeDBIndex].maxHealth);
 
 	countDelay += animspeed * delayInterval;
 	if ( countDelay > 1.0f )
@@ -152,7 +152,7 @@ void gam_animatePlayerSprite ( float delayInterval )
 				}
 		}
 
-	playerFlashValue -= playerFlashAmount;
+	playerFlashValue -= playerFlashAmount * delayInterval;
 	if ( playerFlashValue < 0.0f )
 		playerFlashValue = 1.0f;
 }
@@ -187,6 +187,7 @@ void gam_setupPlayerValues ( int copyFrom )
 	if ( copyFrom != 0 )	// Done a transfer into droid
 		{
 			playerTransferTimeRemaining = playerTransferTimeSet;
+			// TODO: Add negative modifier for 999 droid
 		}
 }
 

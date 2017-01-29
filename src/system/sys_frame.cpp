@@ -329,7 +329,7 @@ void sys_updateFrame()
 						gam_updateScrollingVars ( false );
 						gam_doorCheckTriggerAreas();
 						gam_doorProcessActions();
-						drd_processDroidAI ( currentLevel );
+						drd_processDroidAI ( currentLevel, thinkInterval );
 						bul_processBullets();
 						gam_weaponRechargePlayer();
 						gam_checkTransferSound();

@@ -670,7 +670,7 @@ void drd_clearHadCollidedFlag ()
 //-----------------------------------------------------------------------------
 //
 // Process the AI for each enemy droid
-void drd_processDroidAI ( int whichLevel )
+void drd_processDroidAI ( int whichLevel, float delayInterval )
 //-----------------------------------------------------------------------------
 {
 	for ( int i = 0; i != shipLevel[whichLevel].numDroids; i++ )
@@ -694,6 +694,6 @@ void drd_processDroidAI ( int whichLevel )
 					drd_updateDroidPosition ( i );
 				}
 
-			gam_animateDroid ( whichLevel, i );
+			gam_animateDroid ( whichLevel, i, delayInterval );
 		}
 }

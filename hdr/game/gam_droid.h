@@ -132,7 +132,7 @@ bool gam_checkDroidToDroidCollision(int whichLevel, int whichDroid);
 void gam_handleDroidCollision(int whichLevel, int whichDroid);
 
 // Animate enemy droid
-void gam_animateDroid(int whichLevel, int whichDroid);
+void gam_animateDroid(int whichLevel, int whichDroid, float delayInterval);
 
 // Kill an enemy droid
 void gam_destroyDroid(int whichLevel, int whichDroid);

@@ -217,7 +217,7 @@ int ai_shootBullet ( int whichDroid );
 void ai_processCollisionCounter(int whichDroid);
 
 // Process the AI for each enemy droid
-void drd_processDroidAI(int whichLevel);
+void drd_processDroidAI(int whichLevel, float delayInterval);
 
 // Swap the direction of travel - get previous waypoint
 void gam_swapWaypointDirection(int whichLevel, int whichDroid1, int whichDroid2);

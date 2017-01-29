@@ -122,7 +122,7 @@ void sys_displayScreenMiddle()
 void sys_displayDebug()
 //-----------------------------------------------------------------------------
 {
-	sys_printStringExt(winWidth - 110, 75, "FPS : %i", fpsPrint);
+	sys_printStringExt(winWidth - 180, 75, "FPS : %i", fpsPrint);
 
 	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 50, ALLEGRO_ALIGN_LEFT, "AlertDistance [ %3.2f ] Index [ %i ] Transfer  [ %3.3f ]", alertLevelDistance, playerDroidTypeDBIndex, playerTransferTimeRemaining);
 	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 40, ALLEGRO_ALIGN_LEFT, "tilePosX [ %i ] tilePosY [ %i ] Pixel [ %3.3f %3.3f ]", tilePosX, tilePosY, pixelX, pixelY);

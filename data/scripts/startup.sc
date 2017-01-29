@@ -284,11 +284,11 @@ void as_initGameVars()
 	playerElastic = 	0.8f;
 	bulletMass = 		0.8f;
 
-	playerTransferTimeSet = 30.0f;
+	playerTransferTimeSet = 60.0f;
 	playerTransferTimeAmount = 1.0f;
 	playerHealthWarningFactor = 0.3f;
 	playerTransferWarning = playerTransferTimeSet * 0.3f;	// When to start flashing for timeout warning
-	playerFlashAmount = 0.075f;
+	playerFlashAmount = 5.0f;
 
 	levelBonus = 		500;
 	//

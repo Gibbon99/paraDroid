@@ -19,16 +19,16 @@ Copyright 2017 David Berry
 
 #include "../../hdr/sys_globals.h"
 
-cpVect screenPos;
-float explodeFrameDelay;
-float baseDroidAnimateValue;
-float maxDistanceFromPath;
-float moveBackToLineSegment;
-int collisionDamageInflicted;
-int collisionExplosionDamage;
+cpVect		screenPos;
+float		explodeFrameDelay;
+float		baseDroidAnimateValue;	// Set from script
+float		maxDistanceFromPath;
+float		moveBackToLineSegment;
+int			collisionDamageInflicted;
+int			collisionExplosionDamage;
 
-float wayPointDestinationSize;
-float healingTimer; // Used to time healing for droids
+float 		wayPointDestinationSize;
+float 		healingTimer; // Used to time healing for droids
 
 //---------------------------------------------------------------
 //
@@ -356,27 +356,20 @@ void gam_droidWeaponCharge ( int whichLevel, int whichDroid )
 //
 // Animate enemy droid
 
-void gam_animateDroid ( int whichLevel, int whichDroid )
+void gam_animateDroid ( int whichLevel, int whichDroid, float delayInterval )
 // ----------------------------------------------------------------------------
 {
-	float animSpeed;
+	float animSpeed = 0.0f;
 
 	if ( false == shipLevel[whichLevel].droid[whichDroid].isAlive )
 		return;
 
-	if ( false == shipLevel[whichLevel].droid[whichDroid].isExploding )
-		{
-			animSpeed = baseDroidAnimateValue * ( shipLevel[whichLevel].droid[whichDroid].currentHealth / dataBaseEntry[shipLevel[whichLevel].droid[whichDroid].droidType].maxHealth );
-			animSpeed += 10.0f;
-			if ( animSpeed > baseDroidAnimateValue )
-				animSpeed = baseDroidAnimateValue;
-		}
+	if ( true == shipLevel[whichLevel].droid[whichDroid].isExploding )
+		animSpeed = explodeFrameDelay;
 	else
-		{
-			animSpeed = explodeFrameDelay;
-		}
+		animSpeed = baseDroidAnimateValue * ( ( float ) shipLevel[whichLevel].droid[whichDroid].currentHealth / ( float ) dataBaseEntry[shipLevel[whichLevel].droid[whichDroid].droidType].maxHealth );
 
-	shipLevel[whichLevel].droid[whichDroid].currentFrameDelay += animSpeed * thinkInterval;
+	shipLevel[whichLevel].droid[whichDroid].currentFrameDelay += animSpeed * delayInterval;
 
 	if ( shipLevel[whichLevel].droid[whichDroid].currentFrameDelay > 1.0f )
 		{
@@ -422,17 +415,17 @@ void gam_stopDroidMovement ( int whichLevel, int whichDroid )
 void gam_destroyDroid ( int whichLevel, int whichDroid )
 //-----------------------------------------------------------------------------
 {
-	if (true == shipLevel[whichLevel].droid[whichDroid].isExploding)
+	if ( true == shipLevel[whichLevel].droid[whichDroid].isExploding )
 		return;
 
-	if (false == shipLevel[whichLevel].droid[whichDroid].isAlive)
+	if ( false == shipLevel[whichLevel].droid[whichDroid].isAlive )
 		return;
 
-	if (0 == shipLevel[whichLevel].numEnemiesAlive)
-	{
-		con_print(true, false, "No enemies left on level. [ %i ]", whichLevel);
-		return;
-	}
+	if ( 0 == shipLevel[whichLevel].numEnemiesAlive )
+		{
+			con_print ( true, false, "No enemies left on level. [ %i ]", whichLevel );
+			return;
+		}
 
 	if ( shipLevel[whichLevel].droid[whichDroid].droidType < 6 )
 		sys_playSound ( SND_EXPLODE_1, 0.0f, ALLEGRO_PLAYMODE_ONCE );

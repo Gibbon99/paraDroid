@@ -277,7 +277,6 @@ const char* io_getDBValueString ( const char* whichKey )
 //------------------------------------------------------------
 //
 // Get each field from the config file
-
 bool io_getDBDroidInfo ( int dbIndex, const char* fileName )
 //------------------------------------------------------------
 {
@@ -310,8 +309,6 @@ bool io_getDBDroidInfo ( int dbIndex, const char* fileName )
 			//
 			dataBaseEntry[dbIndex].maxSpeed = dataBaseEntry[0].maxSpeed + io_getDBValueFloat ( "max_speed" );
 			dataBaseEntry[dbIndex].accelerate = dataBaseEntry[0].accelerate + io_getDBValueFloat ( "accelerate" );
-
-			printf("max [ %3.2f ] accelerate [ %3.2f ]\n", dataBaseEntry[dbIndex].maxSpeed, dataBaseEntry[dbIndex].accelerate);
 		}
 
 	dataBaseEntry[dbIndex].score = io_getDBValueInt ( "score" );

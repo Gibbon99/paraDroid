@@ -180,8 +180,7 @@ int ai_moveDroidToWaypoint ( int whichDroid )
 	//
 	//
 	// How far between current and destination position
-
-
+	//
 	//
 	// If it's less then we have reached the waypoint destination
 	if ( wayPointDistance < wayPointDestinationSize )
