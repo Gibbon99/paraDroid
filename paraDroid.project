@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="paraDroid" Version="10.0.0">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <Reconciliation>
+    <Regexes/>
+    <Excludepaths/>
+    <Ignorefiles/>
+    <Extensions>
+      <![CDATA[cpp;c;h;hpp;xrc;wxcp;fbp]]>
+    </Extensions>
+    <Topleveldir>../Current</Topleveldir>
+  </Reconciliation>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="data">
+    <File Name="data/config.ini"/>
+    <File Name="data/todo.txt"/>
+    <VirtualDirectory Name="Scripts">
+      <File Name="data/scripts/conCommands.sc"/>
+      <File Name="data/scripts/shutdown.sc"/>
+      <File Name="data/scripts/startup.sc"/>
+      <File Name="data/scripts/transferDroidAI.sc"/>
+      <File Name="data/scripts/transferGame.sc"/>
+      <File Name="data/scripts/commonDefines.h"/>
+      <File Name="data/scripts/particles.sc"/>
+      <File Name="data/scripts/textEnglish.sc"/>
+      <File Name="data/scripts/gui_main.sc"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="headers">
+    <VirtualDirectory Name="script">
+      <File Name="hdr/script/angelscript.h"/>
+      <File Name="hdr/script/as_array.h"/>
+      <File Name="hdr/script/as_arrayobject.h"/>
+      <File Name="hdr/script/as_atomic.h"/>
+      <File Name="hdr/script/as_builder.h"/>
+      <File Name="hdr/script/as_bytecode.h"/>
+      <File Name="hdr/script/as_callfunc.h"/>
+      <File Name="hdr/script/as_compiler.h"/>
+      <File Name="hdr/script/as_config.h"/>
+      <File Name="hdr/script/as_configgroup.h"/>
+      <File Name="hdr/script/as_context.h"/>
+      <File Name="hdr/script/as_criticalsection.h"/>
+      <File Name="hdr/script/as_datatype.h"/>
+      <File Name="hdr/script/as_debug.h"/>
+      <File Name="hdr/script/as_gc.h"/>
+      <File Name="hdr/script/as_generic.h"/>
+      <File Name="hdr/script/as_map.h"/>
+      <File Name="hdr/script/as_memory.h"/>
+      <File Name="hdr/script/as_module.h"/>
+      <File Name="hdr/script/as_objecttype.h"/>
+      <File Name="hdr/script/as_outputbuffer.h"/>
+      <File Name="hdr/script/as_parser.h"/>
+      <File Name="hdr/script/as_property.h"/>
+      <File Name="hdr/script/as_restore.h"/>
+      <File Name="hdr/script/as_scriptcode.h"/>
+      <File Name="hdr/script/as_scriptengine.h"/>
+      <File Name="hdr/script/as_scriptfunction.h"/>
+      <File Name="hdr/script/as_scriptnode.h"/>
+      <File Name="hdr/script/as_scriptobject.h"/>
+      <File Name="hdr/script/as_string.h"/>
+      <File Name="hdr/script/as_string_util.h"/>
+      <File Name="hdr/script/as_texts.h"/>
+      <File Name="hdr/script/as_thread.h"/>
+      <File Name="hdr/script/as_tokendef.h"/>
+      <File Name="hdr/script/as_tokenizer.h"/>
+      <File Name="hdr/script/as_typeinfo.h"/>
+      <File Name="hdr/script/as_variablescope.h"/>
+      <File Name="hdr/script/scriptarray.h"/>
+      <File Name="hdr/script/scriptstdstring.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="game">
+      <File Name="hdr/game/gam_bullet.h"/>
+      <File Name="hdr/game/gam_database.h"/>
+      <File Name="hdr/game/gam_doors.h"/>
+      <File Name="hdr/game/gam_droid.h"/>
+      <File Name="hdr/game/gam_droidAI.h"/>
+      <File Name="hdr/game/gam_intro.h"/>
+      <File Name="hdr/game/gam_levels.h"/>
+      <File Name="hdr/game/gam_LOS.h"/>
+      <File Name="hdr/game/gam_player.h"/>
+      <File Name="hdr/game/gam_render.h"/>
+      <File Name="hdr/game/gam_sideView.h"/>
+      <File Name="hdr/game/gam_starfield.h"/>
+      <File Name="hdr/game/gam_terminal.h"/>
+      <File Name="hdr/game/gam_transfer.h"/>
+      <File Name="hdr/game/gam_spotLight.h"/>
+      <File Name="hdr/game/gam_particles.h"/>
+      <File Name="hdr/game/gam_droidAI_Resume.h"/>
+      <File Name="hdr/game/gam_pathFind.h"/>
+      <File Name="hdr/game/gam_endScreen.h"/>
+      <File Name="hdr/game/gam_scoreTable.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="io">
+      <File Name="hdr/io/io_configFile.h"/>
+      <File Name="hdr/io/io_images.h"/>
+      <File Name="hdr/io/io_keyBind.h"/>
+      <File Name="hdr/io/io_keyboard.h"/>
+      <File Name="hdr/io/io_logFile.h"/>
+      <File Name="hdr/io/io_packFile.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="system">
+      <File Name="hdr/system/sys_conCommands.h"/>
+      <File Name="hdr/system/sys_console.h"/>
+      <File Name="hdr/system/sys_debug.h"/>
+      <File Name="hdr/system/sys_defines.h"/>
+      <File Name="hdr/system/sys_font.h"/>
+      <File Name="hdr/system/sys_frame.h"/>
+      <File Name="hdr/sys_globals.h"/>
+      <File Name="hdr/system/sys_maths.h"/>
+      <File Name="hdr/system/sys_physics.h"/>
+      <File Name="hdr/system/sys_script.h"/>
+      <File Name="hdr/system/sys_shutdown.h"/>
+      <File Name="hdr/system/sys_sound.h"/>
+      <File Name="hdr/system/sys_startup.h"/>
+      <File Name="hdr/system/sys_timing.h"/>
+      <File Name="hdr/system/sys_utils.h"/>
+      <File Name="hdr/system/sys_physicsCollisions.h"/>
+      <File Name="hdr/system/sys_random.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="gui">
+      <File Name="hdr/gui/gui_main.h"/>
+      <File Name="hdr/gui/gui_scrollBox.h"/>
+      <File Name="hdr/gui/gui_text.h"/>
+      <File Name="hdr/gui/gui_render.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="chipmunk">
+      <File Name="hdr/chipmunk/chipmunk.h"/>
+      <File Name="hdr/chipmunk/chipmunk_ffi.h"/>
+      <File Name="hdr/chipmunk/chipmunk_private.h"/>
+      <File Name="hdr/chipmunk/chipmunk_structs.h"/>
+      <File Name="hdr/chipmunk/chipmunk_types.h"/>
+      <File Name="hdr/chipmunk/chipmunk_unsafe.h"/>
+      <File Name="hdr/chipmunk/cpArbiter.h"/>
+      <File Name="hdr/chipmunk/cpBB.h"/>
+      <File Name="hdr/chipmunk/cpBody.h"/>
+      <File Name="hdr/chipmunk/cpConstraint.h"/>
+      <File Name="hdr/chipmunk/cpDampedRotarySpring.h"/>
+      <File Name="hdr/chipmunk/cpDampedSpring.h"/>
+      <File Name="hdr/chipmunk/cpGearJoint.h"/>
+      <File Name="hdr/chipmunk/cpGrooveJoint.h"/>
+      <File Name="hdr/chipmunk/cpHastySpace.h"/>
+      <File Name="hdr/chipmunk/cpMarch.h"/>
+      <File Name="hdr/chipmunk/cpPinJoint.h"/>
+      <File Name="hdr/chipmunk/cpPivotJoint.h"/>
+      <File Name="hdr/chipmunk/cpPolyShape.h"/>
+      <File Name="hdr/chipmunk/cpPolyline.h"/>
+      <File Name="hdr/chipmunk/cpRatchetJoint.h"/>
+      <File Name="hdr/chipmunk/cpRobust.h"/>
+      <File Name="hdr/chipmunk/cpRotaryLimitJoint.h"/>
+      <File Name="hdr/chipmunk/cpShape.h"/>
+      <File Name="hdr/chipmunk/cpSimpleMotor.h"/>
+      <File Name="hdr/chipmunk/cpSlideJoint.h"/>
+      <File Name="hdr/chipmunk/cpSpace.h"/>
+      <File Name="hdr/chipmunk/cpSpatialIndex.h"/>
+      <File Name="hdr/chipmunk/cpTransform.h"/>
+      <File Name="hdr/chipmunk/cpVect.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="source">
+    <File Name="main.cpp"/>
+    <VirtualDirectory Name="script">
+      <File Name="src/script/as_arrayobject.cpp"/>
+      <File Name="src/script/as_atomic.cpp"/>
+      <File Name="src/script/as_builder.cpp"/>
+      <File Name="src/script/as_bytecode.cpp"/>
+      <File Name="src/script/as_callfunc.cpp"/>
+      <File Name="src/script/as_callfunc_arm.cpp"/>
+      <File Name="src/script/as_callfunc_mips.cpp"/>
+      <File Name="src/script/as_callfunc_ppc.cpp"/>
+      <File Name="src/script/as_callfunc_ppc_64.cpp"/>
+      <File Name="src/script/as_callfunc_sh4.cpp"/>
+      <File Name="src/script/as_callfunc_x64_gcc.cpp"/>
+      <File Name="src/script/as_callfunc_x64_mingw.cpp"/>
+      <File Name="src/script/as_callfunc_x64_msvc.cpp"/>
+      <File Name="src/script/as_callfunc_x86.cpp"/>
+      <File Name="src/script/as_callfunc_xenon.cpp"/>
+      <File Name="src/script/as_compiler.cpp"/>
+      <File Name="src/script/as_configgroup.cpp"/>
+      <File Name="src/script/as_context.cpp"/>
+      <File Name="src/script/as_datatype.cpp"/>
+      <File Name="src/script/as_gc.cpp"/>
+      <File Name="src/script/as_generic.cpp"/>
+      <File Name="src/script/as_globalproperty.cpp"/>
+      <File Name="src/script/as_memory.cpp"/>
+      <File Name="src/script/as_module.cpp"/>
+      <File Name="src/script/as_objecttype.cpp"/>
+      <File Name="src/script/as_outputbuffer.cpp"/>
+      <File Name="src/script/as_parser.cpp"/>
+      <File Name="src/script/as_restore.cpp"/>
+      <File Name="src/script/as_scriptcode.cpp"/>
+      <File Name="src/script/as_scriptengine.cpp"/>
+      <File Name="src/script/as_scriptfunction.cpp"/>
+      <File Name="src/script/as_scriptnode.cpp"/>
+      <File Name="src/script/as_scriptobject.cpp"/>
+      <File Name="src/script/as_string.cpp"/>
+      <File Name="src/script/as_string_util.cpp"/>
+      <File Name="src/script/as_thread.cpp"/>
+      <File Name="src/script/as_tokenizer.cpp"/>
+      <File Name="src/script/as_typeinfo.cpp"/>
+      <File Name="src/script/as_variablescope.cpp"/>
+      <File Name="src/script/scriptstdstring.cpp"/>
+      <File Name="src/script/scriptstdstring_utils.cpp"/>
+      <File Name="src/script/scriptbuilder.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="game">
+      <File Name="src/game/gam_bullet.cpp"/>
+      <File Name="src/game/gam_database.cpp"/>
+      <File Name="src/game/gam_doors.cpp"/>
+      <File Name="src/game/gam_droid.cpp"/>
+      <File Name="src/game/gam_droidAI.cpp"/>
+      <File Name="src/game/gam_intro.cpp"/>
+      <File Name="src/game/gam_levels.cpp"/>
+      <File Name="src/game/gam_LOS.cpp"/>
+      <File Name="src/game/gam_player.cpp"/>
+      <File Name="src/game/gam_render.cpp"/>
+      <File Name="src/game/gam_sideView.cpp"/>
+      <File Name="src/game/gam_terminal.cpp"/>
+      <File Name="src/game/gam_transfer.cpp"/>
+      <File Name="src/game/gam_transferDroidAI.cpp"/>
+      <File Name="src/game/gam_transferPlayerAI.cpp"/>
+      <File Name="src/game/gam_transferRender.cpp"/>
+      <File Name="src/game/gam_droidAI_Patrol.cpp"/>
+      <File Name="src/game/gam_droidAI_Health.cpp"/>
+      <File Name="src/game/gam_spotLight.cpp"/>
+      <File Name="src/game/gam_particles.cpp"/>
+      <File Name="src/game/gam_droidAI_Resume.cpp"/>
+      <File Name="src/game/gam_pathFind.cpp"/>
+      <File Name="src/game/gam_droidAI_Flee.cpp"/>
+      <File Name="src/game/gam_droidAI_Shoot.cpp"/>
+      <File Name="src/game/gam_endScreen.cpp"/>
+      <File Name="src/game/gam_scoreTable.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="io">
+      <File Name="src/io/io_configFile.cpp"/>
+      <File Name="src/io/io_images.cpp"/>
+      <File Name="src/io/io_keyBind.cpp"/>
+      <File Name="src/io/io_keyboard.cpp"/>
+      <File Name="src/io/io_logFile.cpp"/>
+      <File Name="src/io/io_packFile.cpp"/>
+      <File Name="src/io/io_sideView.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="system">
+      <File Name="src/system/sys_conCommands.cpp"/>
+      <File Name="src/system/sys_console.cpp"/>
+      <File Name="src/system/sys_debug.cpp"/>
+      <File Name="src/system/sys_font.cpp"/>
+      <File Name="src/system/sys_frame.cpp"/>
+      <File Name="src/system/sys_maths.cpp"/>
+      <File Name="src/system/sys_physics.cpp"/>
+      <File Name="src/system/sys_script.cpp"/>
+      <File Name="src/system/sys_shutdown.cpp"/>
+      <File Name="src/system/sys_sound.cpp"/>
+      <File Name="src/game/sys_starfield.cpp"/>
+      <File Name="src/system/sys_startup.cpp"/>
+      <File Name="src/system/sys_timing.cpp"/>
+      <File Name="src/system/sys_utils.cpp"/>
+      <File Name="src/system/sys_conVariables.cpp"/>
+      <File Name="src/system/sys_physicsCollisions.cpp"/>
+      <File Name="src/system/sys_random.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="gui">
+      <File Name="src/gui/gui_main.cpp"/>
+      <File Name="src/gui/gui_objects.cpp"/>
+      <File Name="src/gui/gui_render.cpp"/>
+      <File Name="src/gui/gui_scrollBox.cpp"/>
+      <File Name="src/gui/gui_text.cpp"/>
+      <File Name="src/gui/gui_slider.cpp"/>
+      <File Name="src/gui/gui_keyCode.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="chipmunk">
+      <File Name="src/chipmunk/chipmunk.c"/>
+      <File Name="src/chipmunk/cpArbiter.c"/>
+      <File Name="src/chipmunk/cpArray.c"/>
+      <File Name="src/chipmunk/cpBBTree.c"/>
+      <File Name="src/chipmunk/cpBody.c"/>
+      <File Name="src/chipmunk/cpCollision.c"/>
+      <File Name="src/chipmunk/cpConstraint.c"/>
+      <File Name="src/chipmunk/cpDampedRotarySpring.c"/>
+      <File Name="src/chipmunk/cpDampedSpring.c"/>
+      <File Name="src/chipmunk/cpGearJoint.c"/>
+      <File Name="src/chipmunk/cpGrooveJoint.c"/>
+      <File Name="src/chipmunk/cpHashSet.c"/>
+      <File Name="src/chipmunk/cpHastySpace.c"/>
+      <File Name="src/chipmunk/cpMarch.c"/>
+      <File Name="src/chipmunk/cpPinJoint.c"/>
+      <File Name="src/chipmunk/cpPivotJoint.c"/>
+      <File Name="src/chipmunk/cpPolyline.c"/>
+      <File Name="src/chipmunk/cpPolyShape.c"/>
+      <File Name="src/chipmunk/cpRatchetJoint.c"/>
+      <File Name="src/chipmunk/cpRobust.c"/>
+      <File Name="src/chipmunk/cpRotaryLimitJoint.c"/>
+      <File Name="src/chipmunk/cpShape.c"/>
+      <File Name="src/chipmunk/cpSimpleMotor.c"/>
+      <File Name="src/chipmunk/cpSlideJoint.c"/>
+      <File Name="src/chipmunk/cpSpace.c"/>
+      <File Name="src/chipmunk/cpSpaceComponent.c"/>
+      <File Name="src/chipmunk/cpSpaceDebug.c"/>
+      <File Name="src/chipmunk/cpSpaceHash.c"/>
+      <File Name="src/chipmunk/cpSpaceQuery.c"/>
+      <File Name="src/chipmunk/cpSpaceStep.c"/>
+      <File Name="src/chipmunk/cpSpatialIndex.c"/>
+      <File Name="src/chipmunk/cpSweep1D.c"/>
+      <File Name="src/chipmunk/prime.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="-pg;-std=c++11" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-pg -g -fpermissive -Wall -fexceptions" C_Options="-pg -g -fpermissive -Wall -fexceptions " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="hdr/"/>
+        <IncludePath Value="hdr/script"/>
+        <IncludePath Value="/usr/local/include"/>
+      </Compiler>
+      <Linker Options="-pg " Required="yes">
+        <LibraryPath Value="/usr/lib"/>
+        <LibraryPath Value="/usr/local/lib"/>
+        <Library Value="pthread"/>
+        <Library Value="allegro"/>
+        <Library Value="allegro_main"/>
+        <Library Value="allegro_font"/>
+        <Library Value="allegro_image"/>
+        <Library Value="allegro_primitives"/>
+        <Library Value="allegro_dialog"/>
+        <Library Value="allegro_physfs"/>
+        <Library Value="allegro_ttf"/>
+        <Library Value="allegro_audio"/>
+        <Library Value="allegro_acodec"/>
+        <Library Value="physfs"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="bin/Debug/paraDroid" IntermediateDirectory="./Debug" Command="bin/Debug/paraDroid" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="yes" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths>/usr/local/include/allegro5
+./src
+./hdr</SearchPaths>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-O2 -Wall -fexceptions " C_Options="-O2 -Wall -fexceptions " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="hdr/script"/>
+      </Compiler>
+      <Linker Options="-s " Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+        <Library Value="pthread"/>
+        <Library Value="allegro"/>
+        <Library Value="allegro_main"/>
+        <Library Value="allegro_font"/>
+        <Library Value="allegro_image"/>
+        <Library Value="allegro_primitives"/>
+        <Library Value="allegro_dialog"/>
+        <Library Value="allegro_physfs"/>
+        <Library Value="allegro_ttf"/>
+        <Library Value="allegro_audio"/>
+        <Library Value="allegro_acodec"/>
+        <Library Value="physfs"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="bin/Release/paraDroid" IntermediateDirectory="./Debug" Command="./paraDroid" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/Release" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

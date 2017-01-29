@@ -1,0 +1,625 @@
+#include "hdr/sys_globals.h"
+
+#define DEBUG_ASTAR 1
+
+/*
+AStar - done in a thread
+- Droid makes request to find a path
+- Gives current position, and destination position
+- Routine hands back 'ticket' - index into vector of waypoints (list)
+ 
+Droid asks if the path finding is complete - passes in ticket When Droid reaches the destination, tells the aStar to wipe the
+path and reuse ticket If Droid destroyed - tell aStar to
+ 
+wipe the path and reuse ticket */
+
+//
+// All coords stored in tile coords
+//
+// Translated into world coords only at the end when finding path
+
+vector<_nodeList> path;
+
+//-----------------------------------------------------------------------------
+//
+// Find the distance from one tile to the next - Manhatten distance
+
+int
+gam_AStarFindDistance (cpVect fromTile, cpVect toTile)
+//-----------------------------------------------------------------------------
+{
+  int costX, costY;
+
+  costX = (fromTile.x) - (toTile.x);
+  costY = (fromTile.y) - (toTile.y);
+
+  return abs (10 * (costX + costY));
+}
+
+//-----------------------------------------------------------------------------
+//
+// Add a tile to the openNode list
+
+int
+gam_AStarAddTileToOpenNode (int whichPath, cpVect whichTile, int moveCost, int parent)
+//-----------------------------------------------------------------------------
+{
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "Adding new tile to openNode list");
+#endif
+
+  _pathNode tempNode;
+
+  tempNode.parent = parent;
+  tempNode.tileLocation = whichTile;
+
+  if (-1 == parent) // Adding the first node – starting tile
+    tempNode.g_movementCost = 0;
+  else
+    tempNode.g_movementCost = moveCost + path[whichPath].closedNodes[path[whichPath].currentNodePtrClosedList].g_movementCost;
+
+  tempNode.h_estMoveCost = gam_AStarFindDistance (whichTile, path[whichPath].destTile);
+  tempNode.f_score = tempNode.g_movementCost + tempNode.h_estMoveCost;
+
+  path[whichPath].openNodes.push_back (tempNode);
+
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "Path [ %i ] Size [ %i ] parent [ %i ] moveCost [ %i ] distanceCost [ %i ]", whichPath, path[whichPath].openNodes.size (), parent, tempNode.g_movementCost, tempNode.h_estMoveCost);
+#endif
+}
+
+//-----------------------------------------------------------------------------
+//
+// Move a node from the openNode list to the closedNode list
+
+void
+gam_AStarMoveNodeToClosedList (int whichPath, int whichNodeIndex)
+//-----------------------------------------------------------------------------
+{
+  _pathNode tempNode;
+  vector<_pathNode>::iterator itr;
+  int indexCount = 0;
+
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "Move open node [ %i ] to closedNode list", whichNodeIndex);
+#endif
+
+  tempNode = path[whichPath].openNodes[whichNodeIndex];
+  path[whichPath].closedNodes.push_back (tempNode);
+  path[whichPath].currentNodePtrClosedList = path[whichPath].closedNodes.size () - 1;
+
+  indexCount = 0;
+  for (itr = path[whichPath].openNodes.begin (); itr != path[whichPath].openNodes.end (); itr++)
+    {
+      if (indexCount == whichNodeIndex)
+	{
+	  path[whichPath].openNodes.erase (itr);
+	  return;
+	}
+      indexCount++;
+    }
+}
+
+//-----------------------------------------------------------------------------
+//
+// Is a tile considered 'solid' or not
+
+bool
+gam_AStarIsTileSolid (int tileIndex)
+//-----------------------------------------------------------------------------
+{
+  int whichTile = shipLevel[currentLevel].tiles[tileIndex];
+
+  switch (whichTile)
+    {
+      case DOOR_ACROSS:
+      case DOOR_ACROSS_OPEN_1:
+      case DOOR_ACROSS_OPEN_2:
+      case DOOR_ACROSS_CLOSING_1:
+      case DOOR_ACROSS_CLOSING_2:
+
+      case DOOR_UP:
+      case DOOR_UP_OPEN_1:
+      case DOOR_UP_OPEN_2:
+      case DOOR_UP_CLOSING_1:
+      case DOOR_UP_CLOSING_2:
+
+	return false;
+    }
+
+  if (whichTile < NO_PASS_TILE)
+    return true;
+  else
+    return false;
+}
+
+//-----------------------------------------------------------------------------
+//
+// Check if node is in the CLOSED list
+
+bool
+gam_AStarIsNodeInClosedList (int whichPath, cpVect whichNode)
+//-----------------------------------------------------------------------------
+{
+  for (int i = 0; i != path[whichPath].closedNodes.size (); i++)
+    {
+      if ((whichNode.x == path[whichPath].closedNodes[i].tileLocation.x) &&
+	  (whichNode.y == path[whichPath].closedNodes[i].tileLocation.y))
+	return true;
+    }
+  return false;
+}
+
+//-----------------------------------------------------------------------------
+//
+// Check if node is in the OPEN list
+
+bool
+gam_AStarIsNodeInOpenList (int whichPath, cpVect whichNode)
+//-----------------------------------------------------------------------------
+{
+  for (int i = 0; i != path[whichPath].openNodes.size (); i++) // size + 1?
+    {
+      if ((whichNode.x == path[whichPath].openNodes[i].tileLocation.x) &&
+	  (whichNode.y == path[whichPath].openNodes[i].tileLocation.y))
+	return true;
+    }
+  return false;
+}
+
+//-----------------------------------------------------------------------------
+//
+// Generate a new node
+
+bool
+gam_AStarGenerateNewNode (int whichPath, int whichDirection)
+//-----------------------------------------------------------------------------
+{
+  char directionStr[12];
+  //      cpVect tempTileLocation;
+  _pathNode tempNode;
+  int moveTileCost;
+
+  if (true == path[whichPath].pathReady)
+    return true;
+
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "---");
+  con_print (true, false, "Generate a new node based on the node with the current lowest cost.");
+#endif
+
+  switch (whichDirection)
+    {
+      case NODE_LEFT:
+	tempNode.tileLocation.x = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.x -
+		1;
+	tempNode.tileLocation.y = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.y;
+	moveTileCost = 10;
+	strcpy (directionStr, "LEFT");
+	break;
+      case NODE_UP:
+	tempNode.tileLocation.x = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.x;
+	tempNode.tileLocation.y = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.y -
+		1;
+	moveTileCost = 10;
+	strcpy (directionStr, "UP");
+	break;
+      case NODE_RIGHT:
+	tempNode.tileLocation.x = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.x +
+		1;
+	tempNode.tileLocation.y = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.y;
+	moveTileCost = 10;
+	strcpy (directionStr, "RIGHT");
+	break;
+      case NODE_DOWN:
+	tempNode.tileLocation.x = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.x;
+	tempNode.tileLocation.y = path[whichPath].closedNodes[path
+		[whichPath].currentNodePtrClosedList]
+		.tileLocation.y +
+		1;
+	moveTileCost = 10;
+	strcpy (directionStr, "DOWN");
+	break;
+    }
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "Parent [ %i ] Direction [ %s ]", path[whichPath].currentNodePtrClosedList, directionStr);
+#endif
+
+  //
+  // Change to whole numbers for matching later on
+  //
+  tempNode.tileLocation.x = (int) tempNode.tileLocation.x;
+  tempNode.tileLocation.y = (int) tempNode.tileLocation.y;
+
+  if ((tempNode.tileLocation.x == path[whichPath].destTile.x) && (tempNode.tileLocation.y == path[whichPath].destTile.y))
+    {
+      gam_AStarAddTileToOpenNode (whichPath, tempNode.tileLocation, moveTileCost, path[whichPath].currentNodePtrClosedList);
+      gam_AStarMoveNodeToClosedList (whichPath, path[whichPath].openNodes.size ());
+      path[whichPath].pathReady = true;
+      return true;
+    }
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "See if the node is solid or not");
+#endif
+
+  if (true == gam_AStarIsTileSolid ((tempNode.tileLocation.y * (shipLevel[currentLevel].levelDimensions.x) +
+				     tempNode.tileLocation.x)))
+    {
+      return false; // Solid - don't use
+    }
+
+  //
+  // See if the node is on the closed list or not
+  if (true == gam_AStarIsNodeInClosedList (whichPath, tempNode.tileLocation))
+    {
+      return false; // Already in closed list - do not use
+    }
+
+  // If it isn't on the open list - add it
+  if (false == gam_AStarIsNodeInOpenList (whichPath, tempNode.tileLocation))
+    {
+      gam_AStarAddTileToOpenNode (whichPath, tempNode.tileLocation, moveTileCost, path[whichPath].currentNodePtrClosedList);
+      return false;
+    }
+  //
+  // The node is already on the open list - see if the runningCost to this node is better
+
+  if (path[whichPath].openNodes[path[whichPath].openNodes.size ()].g_movementCost < path[whichPath].closedNodes[path[whichPath].currentNodePtrClosedList].g_movementCost)
+    {
+#ifdef DEBUG_ASTAR
+      con_print (true, false, "New node is better than the old one");
+#endif
+      gam_AStarAddTileToOpenNode (whichPath, path[whichPath].openNodes[path[whichPath].openNodes.size ()].tileLocation, moveTileCost, path[whichPath].currentNodePtrClosedList);
+    }
+  return true;
+}
+
+//------------------------------------------------------------
+//
+// show waypoint lines
+
+void
+gam_debugWayPoints (int whichPath)
+//------------------------------------------------------------
+{
+  //      if (path.size() == 0)
+  //              return;
+
+  if (false == path[whichPath].wayPointsReady)
+    return;
+
+  ALLEGRO_COLOR lineColor;
+  int lineThickness;
+  cpVect lineStart;
+  cpVect lineFinish;
+
+  lineColor = al_map_rgb (255, 0, 0);
+  lineThickness = 2;
+
+  for (int i = 0; i != path[whichPath].wayPoints.size () - 1; i++)
+    {
+      lineStart = path[whichPath].wayPoints[i];
+      lineFinish = path[whichPath].wayPoints[i + 1];
+
+      lineStart = sys_worldToScreen (lineStart, 2);
+      lineFinish = sys_worldToScreen (lineFinish, 2);
+
+      al_draw_line (lineStart.x, lineStart.y, lineFinish.x, lineFinish.y, lineColor, lineThickness);
+    }
+}
+
+//------------------------------------------------------------
+//
+// Show path structure information
+
+void
+gam_debugPaths ()
+//------------------------------------------------------------
+{
+  con_print (true, true, "Number of paths [ %i ]", path.size ());
+
+  for (int i = 0; i != path.size (); i++)
+    {
+      con_print (true, true, "Path [ %i ] - Ready [ %s ] - Num foundNodes [ %i ] Thread [ %i ]", i, path[i].pathReady ? "true" : "false", path[i].foundPath.size (), path[i].thread);
+    }
+}
+
+//------------------------------------------------------------
+//
+// Clear coord memory and flag ready for reuse
+
+void
+gam_removePath (int whichPath)
+//------------------------------------------------------------
+{
+  path[whichPath].pathReady = false;
+  path[whichPath].wayPointsReady = false;
+  path[whichPath].currentNodePtrClosedList = 0;
+  path[whichPath].whichDroid = -1;
+  path[whichPath].openNodes.clear ();
+  path[whichPath].closedNodes.clear ();
+  path[whichPath].wayPoints.clear ();
+  path[whichPath].foundPath.clear ();
+  path[whichPath].thread = NULL;
+}
+
+//------------------------------------------------------------
+//
+// Return how many waypoints there are
+// Return -1 if thread is still running
+
+int
+gam_AStarGetNumWaypoints (int whichPath)
+//------------------------------------------------------------
+{
+  if (whichPath > path.size ())
+    return -1;
+
+  if (whichPath < 0)
+    return -1;
+
+  if (false == path[whichPath].wayPointsReady)
+    return -1;
+
+  return path[whichPath].wayPoints.size () - 1;
+}
+
+//------------------------------------------------------------
+//
+// Check if the current thread pathfinding is finished
+
+bool
+gam_isPathReady (int whichPath)
+//------------------------------------------------------------
+{
+  if (whichPath > path.size ())
+    return false;
+
+  if (whichPath < 0)
+    return false;
+
+  return path[whichPath].wayPointsReady;
+}
+
+//-------------------------------------------------------------------
+//
+// Extract the path from the list of closed nodes
+
+void
+gam_AStarExtractPath (int whichPath)
+//-------------------------------------------------------------------
+{
+  int nodeParent = -1;
+  _pathNode tempNode;
+
+  tempNode.tileLocation = path[whichPath].destTile;
+  path[whichPath].foundPath.push_back (tempNode);
+
+  tempNode.tileLocation = path[whichPath].closedNodes[path[whichPath].currentNodePtrClosedList - 1].tileLocation;
+  nodeParent = path[whichPath].closedNodes[path[whichPath].currentNodePtrClosedList - 1].parent;
+
+  while (-1 != nodeParent)
+    {
+      path[whichPath].foundPath.push_back (tempNode);
+
+      tempNode = path[whichPath].closedNodes[nodeParent];
+      nodeParent = path[whichPath].closedNodes[nodeParent].parent;
+
+      if ((tempNode.tileLocation.x == path[whichPath].startTile.x) && (tempNode.tileLocation.y == path[whichPath].startTile.y))
+	{
+	  path[whichPath].foundPath.push_back (tempNode);
+	  return;
+	}
+    }
+}
+
+//-----------------------------------------------------------------------------
+//
+// Turn the AStar nodes into world position coords
+
+void
+gam_AStarConvertToCoords (int whichPath)
+//-----------------------------------------------------------------------------
+{
+  cpVect tempWaypoint;
+
+  for (int i = 0; i != path[whichPath].foundPath.size (); i++)
+    {
+      tempWaypoint.x = path[whichPath].foundPath[i].tileLocation.x * TILE_SIZE;
+      tempWaypoint.y = path[whichPath].foundPath[i].tileLocation.y * TILE_SIZE;
+
+      tempWaypoint.x += TILE_SIZE / 2;
+
+      path[whichPath].wayPoints.push_back (tempWaypoint);
+    }
+}
+
+//-----------------------------------------------------------------------------
+//
+// Find the node with the lowest totalCost
+
+int
+gam_AStarFindLowestCostNode (int whichPath)
+//-----------------------------------------------------------------------------
+{
+  int lowestCost;
+  int lowestNodeIndexArray;
+
+  lowestCost = 50000;
+  lowestNodeIndexArray = 0;
+
+  if (true == path[whichPath].openNodes.empty ())
+    {
+      con_print (true, true, "ERROR: No open nodes to search in gam_AStarFindLowestCostNode - path [ %i ]", whichPath);
+      sys_errorFatal ("gam_AStarFindLowestCostNode", __LINE__, "No open nodes");
+    }
+
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "Search the open nodes and find the one with the lowest total cost");
+#endif
+
+  for (int i = 0; i != path[whichPath].openNodes.size (); i++)
+    {
+      if (path[whichPath].openNodes[i].f_score < lowestCost)
+	{
+	  lowestCost = path[whichPath].openNodes[i].f_score;
+	  lowestNodeIndexArray = i;
+	}
+    }
+  return lowestNodeIndexArray;
+}
+
+//-------------------------------------------------------------------
+//
+// A thread to run the aStar searching function
+
+void *
+gam_AStarSearchThread (ALLEGRO_THREAD *thread, void *arg)
+//-------------------------------------------------------------------
+{
+  int currentNodeIndex = 0;
+  int whichPathArg;
+  int *tempArg;
+
+  tempArg = (int *) arg;
+  whichPathArg = *tempArg;
+
+  //if (whichPathArg > 1)
+  //      whichPathArg = 0;
+
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "searchThread - whichPath [ %i ]", whichPathArg);
+#endif
+
+  while (false == path[whichPathArg].pathReady)
+    {
+      // Look for the lowest F cost node on the open list - this becomes the current node
+      currentNodeIndex = gam_AStarFindLowestCostNode (whichPathArg);
+      // Move it to the closed node list
+      gam_AStarMoveNodeToClosedList (whichPathArg, currentNodeIndex);
+
+      // For each of the surrounding nodes
+      gam_AStarGenerateNewNode (whichPathArg, NODE_RIGHT);
+      gam_AStarGenerateNewNode (whichPathArg, NODE_LEFT);
+      gam_AStarGenerateNewNode (whichPathArg, NODE_UP);
+      gam_AStarGenerateNewNode (whichPathArg, NODE_DOWN);
+    }
+
+  gam_AStarExtractPath (whichPathArg);
+  gam_AStarConvertToCoords (whichPathArg);
+  path[whichPathArg].wayPointsReady = true;
+  al_destroy_thread (path[whichPathArg].thread);
+}
+
+//-------------------------------------------------------------------
+//
+// Start a thread to process the path
+
+void
+gam_startPathThread (int whichPath)
+//-------------------------------------------------------------------
+{
+  int pathOwner;
+
+#ifdef DEBUG_ASTAR
+  con_print (true, false, "Path ID [ %i ] Droid [ %i ]", whichPath, path[whichPath].whichDroid);
+#endif
+
+  pathOwner = path[whichPath].whichDroid;
+  shipLevel[currentLevel].droid[pathOwner].aStarPathIndex = whichPath;
+
+  gam_AStarAddTileToOpenNode (whichPath, path[whichPath].startTile, 0, -1);
+
+  path[whichPath].thread = al_create_thread (gam_AStarSearchThread, &shipLevel[currentLevel].droid[pathOwner].aStarPathIndex);
+}
+
+//------------------------------------------------------------
+//
+// Allocate new structure if required or reuse existing one
+// Start thread process
+
+int
+gam_requestNewPath (cpVect start, cpVect destination, int whichDroid)
+//------------------------------------------------------------
+{
+  _nodeList tempPath;
+  int whichPathIndex;
+  static bool initDone = false;
+
+  if (false == initDone)
+    {
+      path.reserve (5);
+      initDone = true;
+      for (int i = 0; i != 5; i++)
+	{
+	  path[i].wayPointsReady = false;
+	  path.push_back (tempPath);
+	}
+      initDone = true;
+    }
+
+  tempPath.pathReady = false;
+  tempPath.wayPointsReady = false;
+  tempPath.startTile.x = (int) start.x;
+  tempPath.startTile.y = (int) start.y;
+  tempPath.destTile.x = (int) destination.x;
+  tempPath.destTile.y = (int) destination.y;
+  tempPath.currentNodePtrClosedList = -1;
+  tempPath.whichDroid = whichDroid;
+  tempPath.openNodes.reserve (10);
+  tempPath.closedNodes.reserve (10);
+
+#ifdef DEBUG_ASTAR
+  con_print (true, true, "Requesting new path start [ %3.2f %3.2f ] Dest [ %3.2f %3.2f ]", start.x, start.y, destination.x, destination.y);
+#endif
+
+  for (int i = 0; i != 5; i++)
+    {
+      if (false == path[i].wayPointsReady)
+	{
+	  path[i] = tempPath;
+	  gam_startPathThread (i);
+	  return i;
+	}
+    }
+  return -1;
+
+  if (true == path.empty ())
+    {
+      path.push_back (tempPath);
+      whichPathIndex = path.size () - 1;
+      gam_startPathThread (whichPathIndex);
+      return whichPathIndex; // Return ticket
+    }
+
+  for (int i = 0; i != path.size (); i++)
+    {
+      if (true == path[i].openNodes.empty ()) // not in use
+	{
+	  gam_startPathThread (i);
+	  return i;
+	}
+    }
+
+  //
+  // All current entries are in use - create a new one
+  //
+  path.push_back (tempPath);
+  gam_startPathThread (path.size () - 1);
+  whichPathIndex = path.size () - 1;
+  return whichPathIndex;
+}

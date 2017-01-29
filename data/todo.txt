@@ -1,0 +1,289 @@
+
+Collision
+- Nothing - pass through - no good for realism
+
+- One stops, the other keeps going
+
+- Both stop and pause
+
+- Look ahead and see if there will be a collision - if so, lower level droid changes direction?
+- Higher level droid, moving faster will catch up
+
+- Moving in same direction, faster droid matches speed for a certain time before reversing direction.
+
+- Pass messages between droids:
+	- let me pass - droids go into pause mode and no collision
+	- go to a certain location
+
+- On collision, either pause, or swap direction
+
+--------------
+
+Graphics
+- leave scorch mark after explosion?
+- Transfer - make connection effect more noticiable for yellow
+
+Sound
+- Play bleep sound when droid collide - pass messages?
+
+GUI
+- Highscore screen - initials
+
+Physics
+- Set Global properties from script
+
+AI
+-
+
+TODO
+-----
+DONE - Door opening / closing sound - pan left/right dependant on position relative to player
+DONE - Fix up droid moving to healing waypoint slowing each tile (each waypoint)
+DONE - For each solid tile – do a bounding box
+DONE - For each terminal, do a half box
+DONE - Circle shape for each droid on level
+DONE - Shape for bullets – collide with both player and enemy
+DONE - Patrol - follow waypoints
+DONE - Load sound files
+DONE - Control sound files
+DONE - GUI Scrollbox
+DONE - GUI Button
+DONE - GUI Image
+DONE - GUI Wrapping text box
+DONE - GUI Checkbox toggle and save variables
+DONE - Set volume level
+DONE - Draw sprite – using current frame
+DONE - Animate sprite – rotate frame
+DONE - Color player sprite white
+DONE - Follow waypoints
+DONE - A* to location
+DONE - Make scoreStartX configurarable from script
+DONE - Put in score process routine so higher score counts down
+DONE - Make scripts hot reloadable
+DONE - Make circuit transfer effect - sparkle
+DONE - Player controls transfer tokens and select circuits to power
+DONE - Sound manager
+DONE - Make score thresholds scriptable
+DONE - Add transfer, destroying droid score to currentscore
+DONE - Fix when player fires - current direction, not current vector
+DONE - Do healing when player over healing tile
+DONE - Update alert tiles when alert level changes
+DONE - Enemy pathfind to a healing tile
+DONE - Changed transfer effect to PRIM_POINT - not put_pixel - can't see yellow effect
+DONE - Changed console to use string class instead of char *
+DONE - Changed Terminal to use GUI scripting system
+DONE - Get droid to A-Star to healing tile when health below certain level
+DONE - Add event handling for window actions, move, close etc - Pause on lose focus
+DONE - Put in alert level management and draw current alert tiles
+DONE - Add bonus score when alertlevel is not green
+DONE - Count number of droids on level and when zero make black - DARK tiles exist and loaded
+DONE - Use sound to skip through intro screens for transfer and
+DONE - Stop playing background sound when transfer starts
+DONE - Script and main program can now share a commonDefines files
+DONE - Rotating spot lights from alert tiles
+DONE - Display deck name in deck view in terminal
+DONE - New graphics for terminal view of ship level
+DONE - Shutdown script not being called
+DONE - Put doors and detection areas into physics routines so bullets get stopped - chipmunk sensors??
+DONE - Particle system for bullet trails, explosions and bullets hitting walls
+DONE - Bonus points for clearing level
+DONE - Tune weapon recharge time - needs to be longer
+DONE - Get location where bullet hit wall and draw sparks - have location calc done
+DONE - Spark from bullet hitting a wall
+DONE - AStar now runs in it's own thread - Droids use path found from this array
+DONE - Damaged droid locates and navigates to healing tile, then locate and navigate to nearest waypoint
+DONE - Remove bitmap assets used in old terminal mode
+DONE - Change type of font size in HUD
+DONE - Verify backup bitmapFBO is actually doing something
+DONE - Particles - change drawing primitives for bitmap and go hold_bitmap for drawing
+DONE - Put in tutorial type screens when starting - and for transfer game
+DONE - Check which level files are being used and remove old ones from data file
+DONE - Save values set in GUI into config file on exit
+DONE - Put strings into external file or script for translation / editing
+DONE - GUI slider for volume
+DONE - GUI multi pick box for vsync options, tile colors, tile type, language
+DONE - GUI for keybindings
+DONE - Intro scroll text moved into strings script
+DONE - Move database for droids into script so strings can be changed - language
+DONE - Put healing into tutorial screens
+DONE - Put in droid rankings into tutorial screens
+DONE - Work out distance to nearest alert and fade background sound according to distance
+DONE - Have base speed setting in script - everything else, players bullets etc on top of that
+DONE - Check shape for long bullets - needs a rectangle not a sprite sized square
+DONE - Add version string internally and display on screen
+DONE - Transfer game - make enemy droids smarter - using already powered circuits
+DONE - Set mass for different types to affect physics calcs
+DONE - Check values are transferring across after transfer to another droid
+DONE - Need to recreate player physics mass setting after transfer
+DONE - Transfer AI - Enemy droid needs to use all tokens - timing required - speed up thinking
+DONE - Remove redundant waypoints from found path - just need the corners
+DONE - Droid flees when no healing available and health is low
+DONE - Flash when player health is low, on transfer mode and transfer time running out
+DONE - Do timeout when in a transferred droid
+DONE - Droids fire back - AI function
+DONE - Have droid shot by another droid set it as the target
+DONE - Add 'previous' static string to logfile routine and don't print it if it's the same as last error
+DONE - Add static death / finish screen
+DONE - High score table and enter name screen
+DONE - Put in MODE_FINISH mode to handle score, exit screen etc
+DONE - Save high score to file
+
+Particles - do Smoke for damaged droids
+Speed affected by alert level ? - Green, all move slowly
+Add in "Do you want to quit" popup - GUI setup already in script - Confirm back to menu
+Use sound to skip through start beam onto ship
+Batch convert sounds to all the same level
+Transfer AI - Needs reworking - not choosing two into one because single legs are wrong color
+Transfer - handle tie case
+Transfer - handle win and lost case
+
+BUGS
+------
+FIXED - HUD not being shown in database
+FIXED - Database image not being shown
+FIXED - Splash screen not full screen.  Draw_Image now takes fullScreen flag and will scale bitmap to screen size
+FIXED - Keypresses being repeated in console
+FIXED - Get rid of ' when starting console
+FIXED - Clear text array after running a console command
+FIXED - Moving to another database screen flashed console screen
+FIXED - Fix up printing of score
+FIXED - Display if in Paused state or not - Pause toggle is not working properly
+FIXED - Background rectangle in transfer information screen not being displayed properly
+FIXED - useSoundToggle is not working from config file
+FIXED - Number of tokens not reflected from transfer to droid
+FIXED - Loading tiles in startup from script not working - check log file - running scriptReload and the blue ones appear
+FIXED - Transfer screens skip when sound is not being used
+FIXED - Using pre-calculated tile coords makes them upside down
+FIXED - Score needs to move across to the left more
+FIXED - No player droid drawn in transfer when not a 001
+FIXED - Change text in show level to be Show Deck - same as bottom text and menu
+FIXED - Seg Fault when firing bullet when not pressing direction key
+FIXED - Animate droid sprites
+FIXED - Disrupter droids are firing other droid sprites
+FIXED - Why is the sprite movement so fast after pause in debug, but animation is ok?
+FIXED - Pressing fire after transferring into 247. Caused by invalid bullet type index passed to bitmap routines
+FIXED - Text in HUD now displayed based on percentage of HUD width
+FIXED - Big purple rectangle in transfer game - seems to be from closest purple repeater?
+FIXED - Transfer - reverse tokens are affecting the color without being activated
+FIXED - Fix up text alignment on scrolling intro - too short ( check width setting in config file )
+FIXED - Player to Droid collision is out - offset by a tile?
+FIXED - Raise volume of background loop and remove click noise
+FIXED - With sound on - transfer hangs at stage 2 - showing destination droid. Was calling fade routine each time, resetting the fade counter
+FIXED - Player bullets going over the HUD when no tile wall to hit
+FIXED - Player bullets colliding when too close a wall - check dectection size or location
+FIXED - When calculating healing path, droids physics is out of sync with on screen position
+FIXED - Status text not showing when in transfer mode
+FIXED - Stop sound when in Pause mode
+FIXED - Physics keep moving when in pause mode
+FIXED - Stop background sound when in lift mode and terminal mode
+FIXED - Status text flipping between healing and move when player on healing tile
+FIXED - Player shooting sound, only one sound at a time - need multiple
+FIXED - Droid transfer token move and place aren't making sounds
+FIXED - Extra transfer token is used when player should have run out
+FIXED - Check io_readConfig - set bullet type to -1 for non armed droids
+FIXED - Transfer screen - this is the droid you control always shows 001 - not current droid
+FIXED - Disrupter weapon kills all droids on level, visible or not
+FIXED - Database terminal description text wrong - off by 2
+FIXED - Terminal Database - Droid animation doesn't change after using keys to move up/down
+FIXED - Terminal database - shows sprite_001 when first showing droid
+FIXED - Droids occasionally don't die when shot - after being healed?? - Healing continues once they are off the healing tile
+FIXED - Stop velocity as soon as transfer collision is done
+FIXED - After transfer - only shot once, then no more - stays in charging mode
+FIXED - Disrupter weapon making level go dark with droids still left alive
+FIXED - Disrupter damage is too high
+FIXED - Put set_gain on samples for multi use as well
+FIXED - Possible bug - check that healing tile calcuation is done when first starting on first level
+FIXED - Stop sound when entering console mode
+FIXED - Debug isn't reflecting the proper number of tiles
+FIXED - First tile is missing on level render; Door trigger overwriting first location
+FIXED - Level not going dark after destroying all droids
+FIXED - Bug in particles - sometimes leaves a bullet trail by itself
+FIXED - Droid pathfinding broken after it heals
+FIXED - Commands with params not running from console - context failed
+FIXED - Transfer screens not really random - better random generation
+FIXED - Use Menu Action key for menus - not game action keys
+FIXED - What is the fire key - scrolling text start "Press 'space' to start or wait for further instructions"
+FIXED - What keys to use - Put into intro text
+FIXED - "length error" on controls GUI screen label
+FIXED - Screenshot not working
+FIXED - Player shooting only once - check init value for var
+FIXED - Transfer screen - no info for droids
+FIXED - terminal keys - make menu / action key consistent
+FIXED - Terminal - not loading correct droid image on second access - start with 001 - load previous image model
+FIXED - Fixup player location in terminal level view - gam_render
+FIXED - Check fire conditions - can fire when no direction keys down but still drifting
+FIXED - Bullet for 476 and 821 collision detection is too big - hitting walls and offcenter from droid
+FIXED - Volume resetting to 1 on save / exit
+FIXED - Keybindings names set to nothing on exit from title screen
+FIXED - Random starting level not working - always the same
+FIXED - Transfer screen - Purple side - Yellow reverse - effect goes off to right
+FIXED - Need time period after transfer where player isn't hurt by explosion
+FIXED - Explosion collision not being detected - sprite removed too early
+FIXED - Fire bullet in 302 - seg fault
+FIXED - Bullet for 821 has wrong offset - needs to be centered from firing droid
+FIXED - Bullets hitting explosions - Each explosion shot decrements number of droids on level - goes dark with droids still alive
+FIXED - Transfer game - enemy seems to use tokens too fast - Enemy uses 2 tokens each go
+FIXED - Transfer time is too slow
+FIXED - Change level - droids position is too Y low - stuck in walls
+FIXED - Crashing in physics simulation - mark for removal and then do each outside step
+FIXED - Transfer game - select side - enemy token on top of screen
+FIXED - After droid heals, stops moving. Caused by slowdown near destination
+FIXED - Moving in menus in terminal - no key sounds
+FIXED - Check score going up while in green alert
+FIXED - Transferring into a droid that has a weapon - shoot recharge is not being counted
+FIXED - Check speed is copied after transfer
+FIXED - GUI - setting backing bitmap to on while off cause segfault - FBO is not set, crashes Allegro
+FIXED - Droid stop moving after healing sometimes - aStar was putting start in solid tile
+FIXED - When droid has low health, and no healing tile - stops moving
+FIXED - Seg fault when droid following AStar path and change to new level and then back
+FIXED - Check when droid is destroyed from transfer running out and on a new level - indexes wrong droid
+FIXED - when is healing finished - "no damage" displayed in HUD
+FIXED - Static sound not stopping on end screen
+FIXED - Remove all physics shapes when game finished
+FIXED - Reset player to full health on restart
+FIXED - When player explodes kill all the path finding threads
+FIXED - Reset droids to alive on all levels and positions on restart
+FIXED - Reset alert levels and score on restart
+FIXED - Stop all sounds before static screen
+FIXED - Do player exploding animation - no input
+FIXED - Reset particles on restart - locations from last game are used
+FIXED - After transferring into a droid - bullet causes crash - physics object already released - check how transfer shape is destroyed
+FIXED - Remove threads until pathfinding is fully working
+
+Too many collision noises at once - Damage sound
+Two droids exploding at the same time - level goes dead ( keeps counting deaths ?)
+Animate droid according to health level
+Enemy bullets are floating in random spot when they shoot as a result of player firing, and not on screen
+Make sure droid has clear path to target before shooting
+Transfer game - work out winner - tie outcome
+Debug particles emitters
+Level has wall collision lines missing
+Fix up distance from alerts for sound
+
+FEEDBACK
+---------
+
+
+GAMEPLAY
+------------
+Tweak firing rate of higher level droids
+
+
+auto it=somevector.begin();
+
+while ( it!=somevector.end())
+
+{
+
+ if ( conditions is met )
+
+{
+
+ it=somevector.erase(it);
+
+}
+
+else ++it;
+
+};
+

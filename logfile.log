@@ -1,0 +1,1291 @@
+-----------------------------------------------------------------------------
+Logfile: Log file opened:
+29-01-2017	14:54:31
+Logfile: Logfile started...
+Node [ AI_SHOOT ] added. Num Children for [ ROOT_NODE ] now [ 1 ]
+Child index set to [ 1 ]
+Node [ NOT_SHOOT ] added. Num Children for [ AI_SHOOT ] now [ 1 ]
+Child index set to [ 2 ]
+Node [ BULLET_DEST ] added. Num Children for [ AI_SHOOT ] now [ 2 ]
+Child index set to [ 3 ]
+Node [ FIRE_BULLET ] added. Num Children for [ AI_SHOOT ] now [ 3 ]
+Child index set to [ 4 ]
+Node [ AI_HEALTHY ] added. Num Children for [ ROOT_NODE ] now [ 2 ]
+Child index set to [ 5 ]
+Node [ CHECK_HEALTH ] added. Num Children for [ AI_HEALTHY ] now [ 1 ]
+Child index set to [ 6 ]
+Node [ ON_HEALING ] added. Num Children for [ AI_HEALTHY ] now [ 2 ]
+Child index set to [ 7 ]
+Node [ REACHED_HEALTH ] added. Num Children for [ AI_HEALTHY ] now [ 3 ]
+Child index set to [ 8 ]
+Node [ AI_FLEE ] added. Num Children for [ ROOT_NODE ] now [ 3 ]
+Child index set to [ 9 ]
+Node [ CHECK_FLEE ] added. Num Children for [ AI_FLEE ] now [ 1 ]
+Child index set to [ 10 ]
+Node [ ON_FLEE ] added. Num Children for [ AI_FLEE ] now [ 2 ]
+Child index set to [ 11 ]
+Node [ REACHED_FLEE ] added. Num Children for [ AI_FLEE ] now [ 3 ]
+Child index set to [ 12 ]
+Node [ AI_RESUME ] added. Num Children for [ ROOT_NODE ] now [ 4 ]
+Child index set to [ 13 ]
+Node [ IS_NOT_PATROLLING ] added. Num Children for [ AI_RESUME ] now [ 1 ]
+Child index set to [ 14 ]
+Node [ SET_DEST ] added. Num Children for [ AI_RESUME ] now [ 2 ]
+Child index set to [ 15 ]
+Node [ FIND_DEST_PATH ] added. Num Children for [ AI_RESUME ] now [ 3 ]
+Child index set to [ 16 ]
+Node [ AI_PATROL ] added. Num Children for [ ROOT_NODE ] now [ 5 ]
+Child index set to [ 17 ]
+Node [ AI_MOVE ] added. Num Children for [ AI_PATROL ] now [ 1 ]
+Child index set to [ 18 ]
+Node [ CAN_MOVE ] added. Num Children for [ AI_MOVE ] now [ 1 ]
+Child index set to [ 19 ]
+Node [ AI_REVERSE ] added. Num Children for [ AI_MOVE ] now [ 2 ]
+Child index set to [ 20 ]
+Node [ MOVE_TO ] added. Num Children for [ AI_PATROL ] now [ 2 ]
+Child index set to [ 21 ]
+Node [ FIND_WP ] added. Num Children for [ AI_PATROL ] now [ 3 ]
+Child index set to [ 22 ]
+Compiled against PhysFS version 2.0.3.
+Linked against PhysFS version 2.0.3.
+Packfile: Supported archive types.
+Packfile: [ ZIP ] : [ PkZip/WinZip/Info-Zip compatible ]
+Packfile: [ 7Z ] : [ LZMA (7zip) format ]
+Packfile: [ GRP ] : [ Build engine Groupfile format ]
+Packfile: [ PAK ] : [ Quake I/II format ]
+Packfile: [ HOG ] : [ Descent I/II HOG file format ]
+Packfile: [ MVL ] : [ Descent II Movielib format ]
+Packfile: [ WAD ] : [ DOOM engine format ]
+Script: Scriptengine started.
+Script: ScriptEngine version - [ 2.24.1 ]
+Script: Options - [  AS_64BIT_PTR AS_LINUX AS_X64_GCC  ]
+Script: Registered variable - [ int winWidth ]
+Script: Registered variable - [ int winHeight ]
+Script: Registered variable - [ int currentMode ]
+Script: Registered variable - [ bool gameIsRunning ]
+Script: Registered variable - [ int TICKS_PER_SECOND ]
+Script: Registered variable - [ int MAX_FRAMESKIP ]
+Script: Registered variable - [ float SKIP_TICKS ]
+Script: Registered variable - [ float baseGameSpeed ]
+Script: Registered variable - [ bool useHoldBitmap ]
+Script: Registered variable - [ bool useBackingBitmap ]
+Script: Registered variable - [ bool useCollisionDetection ]
+Script: Registered variable - [ int fullScreenValue ]
+Script: Registered variable - [ float gravity ]
+Script: Registered variable - [ float doorFrameDelay ]
+Script: Registered variable - [ float playerMaxVelocity ]
+Script: Registered variable - [ float playerMaxSpeed ]
+Script: Registered variable - [ float playerAcceleration ]
+Script: Registered variable - [ float playerTransferTimeSet ]
+Script: Registered variable - [ float playerTransferTimeAmount ]
+Script: Registered variable - [ float playerHealthWarningFactor ]
+Script: Registered variable - [ float playerTransferWarning ]
+Script: Registered variable - [ float playerFlashAmount ]
+Script: Registered variable - [ bool doClampPlayerVelocity ]
+Script: Registered variable - [ int currentLevel ]
+Script: Registered variable - [ float g_LineOfSightStep ]
+Script: Registered variable - [ bool allDroidsVisible ]
+Script: Registered variable - [ float progressBarLoadTimes ]
+Script: Registered variable - [ float wayPointDestinationSize ]
+Script: Registered variable - [ float bulletTravelSpeed ]
+Script: Registered variable - [ float explodeFrameDelay ]
+Script: Registered variable - [ float baseDroidAnimateValue ]
+Script: Registered variable - [ float maxDistanceFromPath ]
+Script: Registered variable - [ float moveBackToLineSegment ]
+Script: Registered variable - [ int currentTermMenu ]
+Script: Registered variable - [ int numStars ]
+Script: Registered variable - [ int currentGUIScreen ]
+Script: Registered variable - [ int currentObjectSelected ]
+Script: Registered variable - [ int checkBoxTickSize ]
+Script: Registered variable - [ int numSoundDevices ]
+Script: Registered variable - [ bool playSounds ]
+Script: Registered variable - [ float buttonCurveX ]
+Script: Registered variable - [ float buttonCurveY ]
+Script: Registered variable - [ float keyCodeGap ]
+Script: Registered variable - [ float sliderSelectorRadius ]
+Script: Registered variable - [ float sliderCurveX ]
+Script: Registered variable - [ float sliderCurveY ]
+Script: Registered variable - [ float introStartX ]
+Script: Registered variable - [ float introStartY ]
+Script: Registered variable - [ float introWidth ]
+Script: Registered variable - [ float introHeight ]
+Script: Registered variable - [ float introScrollspeed ]
+Script: Registered variable - [ float introBackRed ]
+Script: Registered variable - [ float introBackGreen ]
+Script: Registered variable - [ float introBackBlue ]
+Script: Registered variable - [ float introBackAlpha ]
+Script: Registered variable - [ float introFontRed ]
+Script: Registered variable - [ float introFontGreen ]
+Script: Registered variable - [ float introFontBlue ]
+Script: Registered variable - [ float introFontAlpha ]
+Script: Registered variable - [ float introScrollDelay ]
+Script: Registered variable - [ float dbStartX ]
+Script: Registered variable - [ float dbStartY ]
+Script: Registered variable - [ float dbWidth ]
+Script: Registered variable - [ float dbHeight ]
+Script: Registered variable - [ float dbScrollspeed ]
+Script: Registered variable - [ float dbBackRed ]
+Script: Registered variable - [ float dbBackGreen ]
+Script: Registered variable - [ float dbBackBlue ]
+Script: Registered variable - [ float dbBackAlpha ]
+Script: Registered variable - [ float dbFontRed ]
+Script: Registered variable - [ float dbFontGreen ]
+Script: Registered variable - [ float dbFontBlue ]
+Script: Registered variable - [ float dbFontAlpha ]
+Script: Registered variable - [ float dbScrollDelay ]
+Script: Registered variable - [ float scrollPauseDelayValue ]
+Script: Registered variable - [ int currentTileType ]
+Script: Registered variable - [ int currentTileColor ]
+Script: Registered variable - [ string currentTileTypeStr ]
+Script: Registered variable - [ string currentTileColorStr ]
+Script: Registered variable - [ string newInitials ]
+Script: Registered variable - [ float dbImagePositionX ]
+Script: Registered variable - [ float dbImagePositionY ]
+Script: Registered variable - [ float statusTextX ]
+Script: Registered variable - [ float statusTextY ]
+Script: Registered variable - [ float scoreTextX ]
+Script: Registered variable - [ int squareWidth ]
+Script: Registered variable - [ int squareHeight ]
+Script: Registered variable - [ float indicatorAnimSpeed ]
+Script: Registered variable - [ float scoreDelay ]
+Script: Registered variable - [ float scoreDelayValue ]
+Script: Registered variable - [ int numConsoleCommands ]
+Script: Registered variable - [ int as_numSamples ]
+Script: Registered variable - [ int as_numMultiSamples ]
+Script: Registered variable - [ bool as_useSound ]
+Script: Registered variable - [ string volumeLevelStr ]
+Script: Registered variable - [ int transferDroidPosX ]
+Script: Registered variable - [ int transferDroidPosY ]
+Script: Registered variable - [ int transferTextPosX ]
+Script: Registered variable - [ int transferTextPosY ]
+Script: Registered variable - [ int transferTextHeight ]
+Script: Registered variable - [ int transferTitlePosX ]
+Script: Registered variable - [ int transferTitlePosY ]
+Script: Registered variable - [ float	transferPlayCountDown ]
+Script: Registered variable - [ int transferPlayCountLeftDefault ]
+Script: Registered variable - [ int droidOnSide ]
+Script: Registered variable - [ int droidBlockPos ]
+Script: Registered variable - [ int numDroidTokens ]
+Script: Registered variable - [ int droidToTransferInto ]
+Script: Registered variable - [ float circuitTimeAlive ]
+Script: Registered variable - [ int droidTypeDBIndex ]
+Script: Registered variable - [ int playerDroidTypeDBIndex ]
+Script: Registered variable - [ int yellowAlertLevel ]
+Script: Registered variable - [ int redAlertLevel ]
+Script: Registered variable - [ float bulletDisruptSpeed ]
+Script: Registered variable - [ float healingRate ]
+Script: Registered variable - [ float healingTimer ]
+Script: Registered variable - [ int collisionDamageInflicted ]
+Script: Registered variable - [ int collisionExplosionDamage ]
+Script: Registered variable - [ float shipDamping ]
+Script: Registered variable - [ float collisionSlop ]
+Script: Registered variable - [ float wallFriction ]
+Script: Registered variable - [ float wallRadius ]
+Script: Registered variable - [ float playerMass ]
+Script: Registered variable - [ float playerRadius ]
+Script: Registered variable - [ float playerFriction ]
+Script: Registered variable - [ float playerElastic ]
+Script: Registered variable - [ float bulletMass ]
+Script: Registered variable - [ int levelBonus ]
+Script: Registered variable - [ int numAStarPaths ]
+Script: Registered variable - [ bool profileParticles ]
+Script: Registered variable - [ int particleRenderType ]
+Script: Registered variable - [ int particleVelocityExplosion ]
+Script: Registered variable - [ int particleVelocityExplosionAdd ]
+Script: Registered variable - [ int particleVelocitySpark ]
+Script: Registered variable - [ int particleVelocitySparkAdd ]
+Script: Registered variable - [ int particleNumberExplosion ]
+Script: Registered variable - [ int particleNumberExplosionAdd ]
+Script: Registered variable - [ int particleNumberTrail ]
+Script: Registered variable - [ int particleNumberTrailAdd ]
+Script: Registered variable - [ int particleTrailAlphaReset ]
+Script: Registered variable - [ int particleTrailAlphaResetAdd ]
+Script: Registered variable - [ int particleNumberSpark ]
+Script: Registered variable - [ int particleNumberSparkAdd ]
+Script: Registered variable - [ float particleExplosionReduce ]
+Script: Registered variable - [ float particleSparkReduce ]
+Script: Registered variable - [ float particleTrailReduce ]
+Script: Registered variable - [ int particleTrailLimit ]
+Script: Registered variable - [ float particleMass ]
+Script: Registered variable - [ float particleFriction ]
+Script: Registered variable - [ float particleElastic ]
+Script: Registered variable - [ float particleSize ]
+Script: Registered variable - [ int particleBlendSrc ]
+Script: Registered variable - [ int particleBlendDst ]
+Script: Registered variable - [ int currentLanguage ]
+Script: Registered variable - [ float droidBeenShotValue ]
+Script: Registered variable - [ float witnessShootValue ]
+Script: Registered variable - [ float ai_beenShot ]
+Script: Registered variable - [ float ai_healthAmount ]
+Script: Registered variable - [ float ai_playerVisible ]
+Script: Registered variable - [ float ai_witnessShoot ]
+Script: Registered variable - [ float ai_greenFactor ]
+Script: Registered variable - [ float ai_yellowFactor ]
+Script: Registered variable - [ float ai_redFactor ]
+Script: Registered variable - [ float staticScreenShowTime ]
+Script: Registered variable - [ float staticImageCounterTime ]
+Script: Registered variable - [ float endScreenCounterTime ]
+Script: Registered function - [ void sys_printConInt(string &in, uint param) ]
+Script: Registered function - [ void sys_printConStr(string &in, string &in) ]
+Script: Registered function - [ void sys_printString(float posX, float posY, string &in) ]
+Script: Registered function - [ void sys_addScriptCommand(string &in, string &in, string &in, bool setParam) ]
+Script: Registered function - [ void al_set_new_display_option(int option, int value, int importance) ]
+Script: Registered function - [ void al_set_new_display_flags(int option) ]
+Script: Registered function - [ void al_set_new_display_refresh_rate(int refresh_rate) ]
+Script: Registered function - [ void io_loadConfigFile(string &in) ]
+Script: Registered function - [ void io_closeConfigFile() ]
+Script: Registered function - [ void io_saveConfigFile(string &in) ]
+Script: Registered function - [ int io_readConfigValuesInt (string &in) ]
+Script: Registered function - [ string io_readConfigValuesString(string &in) ]
+Script: Registered function - [ float io_readConfigValuesFloat (string &in) ]
+Script: Registered function - [ void io_saveConfigValueString(string &in, string &in) ]
+Script: Registered function - [ void io_saveConfigValueFloat(string &in, float keyValue) ]
+Script: Registered function - [ void io_saveConfigValueInt(string &in, int keyValue) ]
+Script: Registered function - [ bool io_doKeyBindings(string &in) ]
+Script: Registered function - [ void gam_drawBitmapFromScript(int index, float posX, float posY, float red, float green, float 
+Script: Registered function - [ void gam_drawSpriteFromScript(int index, float posX, float posY, float red, float green, float 
+Script: Registered function - [ void sys_setFont(int newFont) ]
+Script: Registered function - [ bool io_loadttfFont(int fontIndex, int fontSize, string &in) ]
+Script: Registered function - [ void sys_setFontColor(float r, float g, float b, float a) ]
+Script: Registered function - [ void sys_playSoundFromScript(int whichSound, float pan, bool loopIt) ]
+Script: Registered function - [ void io_setTileSetColor(string &in) ]
+Script: Registered function - [ void io_setTileSetType(string &in) ]
+Script: Registered function - [ void as_guiCreateNewScreen		(string &in) ]
+Script: Registered function - [ void as_guiCreateObject			(int guiObjectType, string &in) ]
+Script: Registered function - [ int as_guiFindIndex				(int guiObjectType, string &in) ]
+Script: Registered function - [ void as_gui_changeToGUIScreen		(int newScreen) ]
+Script: Registered function - [ void as_guiSetObjectPosition (int guiObjectType, string &in, int coordType, float startX, float
+Script: Registered function - [ void as_guiSetObjectLabel    (int guiObjectType, string &in, int labelPos, string &in) ]
+Script: Registered function - [ void as_guiSetObjectFunctions(int guiObjectType, string &in, string &in, string &in) ]
+Script: Registered function - [ void as_guiAddObjectToScreen (int guiObjectType, string &in, string &in) ]
+Script: Registered function - [ void as_guiSetObjectColor    (int guiObjectType, string &in, int whichColor, float red, float g
+Script: Registered function - [ void as_guiSetCheckboxGroup  (string &in, int whichGroup) ]
+Script: Registered function - [ void as_guiSetCheckboxTick   (string &in, int whichGroup, bool ticked) ]
+Script: Registered function - [ void as_guiSetupDBText()						    ]
+Script: Registered function - [ void as_guiSetImageFilename(string &in, string &in) ]
+Script: Registered function - [ string gui_getString(string &in) ]
+Script: Registered function - [ void gui_addKeyAndText(string &in, string &in) ]
+Script: Registered function - [ void as_guiSetObjectFocus(string &in) ]
+Script: Registered function - [ void as_guiAddSliderElement(string &in, int elementType, string &in, string &in) ]
+Script: Registered function - [ string gui_IntToString(int intValue) ]
+Script: Registered function - [ int gui_StringToInt(string &in) ]
+Script: Registered function - [ string gui_IntToChar(int intValue) ]
+Script: Registered function - [ string as_guiGetSliderValue(string &in) ]
+Script: Registered function - [ void as_guiSetSliderValue(string &in, string &in) ]
+Script: Registered function - [ void io_loadNewTileSet() ]
+Script: Registered function - [ void as_guiAddKeyCodeElement(string &in, string &in, int elementKeyCode) ]
+Script: Registered function - [ void as_guiCopyKeysInto(string &in) ]
+Script: Registered function - [ void as_guiCopyGUIIntoKeys(string &in) ]
+Script: Registered function - [ bool io_saveKeyBindings (string &in) ]
+Script: Registered function - [ bool gam_loadDroidModel (int whichDroid) ]
+Script: Registered function - [ void as_transSetDefaultValues(int cellIndex) ]
+Script: Registered function - [ void as_transSetCellPos(int cellIndex, int posX, int posY) ]
+Script: Registered function - [ void as_transSetCellColor(int whichCell, int colType, float red, float green, float blue, float
+Script: Registered function - [ void as_tranSetCircuitType(int whichCell, int whichSide, int typeSet) ]
+Script: Registered function - [ void as_tranSetEffectType(int whichCell, int whichSide, int effect) ]
+Script: Registered function - [ int as_getCappedRandomNum(int cap) ]
+Script: Registered function - [ bool as_circuitNotPowered(int whichCell, int whichSide) ]
+Script: Registered function - [ int as_getCellColor(int whichCell, int whichSide) ]
+Script: Registered function - [ void trn_activateCircuit(int whichCell, int whichSide) ]
+Script: Registered function - [ void trn_placeToken(int whichCell, int whichSide, int playerOrDroid) ]
+Script: Registered function - [ void as_printVariables() ]
+Script: Registered function - [ void as_changeGameMode(int newMode, bool useFade) ]
+Script: Registered function - [ void gam_changeToLevel(int newLevel) ]
+Script: Registered function - [ void as_setParticleColor(int whichParticle, int red, int green, int blue, int alpha) ]
+Script: Registered function - [ void gam_addNewInitials() ]
+Script: Registered function - [ void gam_resetScore() ]
+Script: Registered function - [ void gui_populateScoreTableGUI() ]
+Error RegisterObjectType [ asALREADY_REGISTERED ]
+Size of script [ 3750 ]
+Size of script [ 1254 ]
+Size of script [ 76116 ]
+Size of script [ 6340 ]
+Size of script [ 5038 ]
+Size of script [ 9239 ]
+Size of script [ 1579 ]
+Size of script [ 24136 ]
+Size of script [ 492 ]
+Number of functions in script [ 13 ]
+FuncID for script function [ bool as_conCommandQuit() ] is [ 42944912 ]
+FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 42944144 ]
+Message repeats
+FuncID for script function [ void as_changeToLevel(int &in) ] is [ 42943248 ]
+FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 42942416 ]
+FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 42941632 ]
+INFO: Object [ 50.00 60.00 ]
+Allegro Version
+---------------
+5.2.2 Release 0
+INFO: Keyboard installed.
+INFO: Font addon installed
+INFO: Image addon installed.
+INFO: Primitives addon installed.
+Allegro TTF Version
+---------------
+5.2.2 Release 0
+Sound started
+5.2.2 Release: 0
+--------------
+INFO: Got hardware accelerated backing bitmap
+Keybind: Info: Key states read from file.
+Called from io_printKeyBind - [ 0 ]
+------------------------------------
+[ Game Left : [ Left] ]
+[ Game Right : [ Right] ]
+[ Game Up : [ Up] ]
+[ Game Down : [ Down] ]
+[ Show console : [ grave] ]
+[ Game action : [ Control_L] ]
+[ Exit the game : [ Escape] ]
+[ Save Screenshot : [ F12] ]
+[ Menu Up : [ Up] ]
+[ Menu Down : [ Down] ]
+[ Menu action : [ Control_L] ]
+[ Menu Left : [ Left] ]
+[ Menu Right : [ Right] ]
+[ Pause Game : [ p] ]
+Screen [ scrMainMenu ] created.
+Added new object - [ buttonStartGame ]
+Setting position for - [ buttonStartGame ]
+Setting label for - [ buttonStartGame ]
+Setting the function call for [ buttonStartGame ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonStartGame ] to screen [ scrMainMenu ]
+Screen [ scrMainMenu ] objectID [ 0 ] - Added
+-------------
+Added new object - [ buttonStartTutorial ]
+Setting position for - [ buttonStartTutorial ]
+Setting label for - [ buttonStartTutorial ]
+Setting the function call for [ buttonStartTutorial ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonStartTutorial ] to screen [ scrMainMenu ]
+Screen [ scrMainMenu ] objectID [ 1 ] - Added
+-------------
+Added new object - [ buttonOptions ]
+Setting position for - [ buttonOptions ]
+Setting label for - [ buttonOptions ]
+Setting the function call for [ buttonOptions ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptions ] to screen [ scrMainMenu ]
+Screen [ scrMainMenu ] objectID [ 2 ] - Added
+-------------
+Added new object - [ buttonHelp ]
+Setting position for - [ buttonHelp ]
+Setting label for - [ buttonHelp ]
+Setting the function call for [ buttonHelp ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonHelp ] to screen [ scrMainMenu ]
+Screen [ scrMainMenu ] objectID [ 3 ] - Added
+-------------
+Added new object - [ buttonQuit ]
+Setting position for - [ buttonQuit ]
+Setting label for - [ buttonQuit ]
+Setting the function call for [ buttonQuit ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonQuit ] to screen [ scrMainMenu ]
+Screen [ scrMainMenu ] objectID [ 4 ] - Added
+-------------
+Screen [ scrOptions ] created.
+Added new object - [ buttonOptionVideo ]
+Setting position for - [ buttonOptionVideo ]
+Setting label for - [ buttonOptionVideo ]
+Setting the function call for [ buttonOptionVideo ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptionVideo ] to screen [ scrOptions ]
+Screen [ scrOptions ] objectID [ 5 ] - Added
+-------------
+Added new object - [ buttonOptionAudio ]
+Setting position for - [ buttonOptionAudio ]
+Setting label for - [ buttonOptionAudio ]
+Setting the function call for [ buttonOptionAudio ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptionAudio ] to screen [ scrOptions ]
+Screen [ scrOptions ] objectID [ 6 ] - Added
+-------------
+Added new object - [ buttonOptionGraphics ]
+Setting position for - [ buttonOptionGraphics ]
+Setting label for - [ buttonOptionGraphics ]
+Setting the function call for [ buttonOptionGraphics ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptionGraphics ] to screen [ scrOptions ]
+Screen [ scrOptions ] objectID [ 7 ] - Added
+-------------
+Added new object - [ buttonOptionGame ]
+Setting position for - [ buttonOptionGame ]
+Setting label for - [ buttonOptionGame ]
+Setting the function call for [ buttonOptionGame ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptionGame ] to screen [ scrOptions ]
+Screen [ scrOptions ] objectID [ 8 ] - Added
+-------------
+Added new object - [ buttonOptionControls ]
+Setting position for - [ buttonOptionControls ]
+Setting label for - [ buttonOptionControls ]
+Setting the function call for [ buttonOptionControls ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptionControls ] to screen [ scrOptions ]
+Screen [ scrOptions ] objectID [ 9 ] - Added
+-------------
+Added new object - [ buttonOptionReturn ]
+Setting position for - [ buttonOptionReturn ]
+Setting label for - [ buttonOptionReturn ]
+Setting the function call for [ buttonOptionReturn ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonOptionReturn ] to screen [ scrOptions ]
+Screen [ scrOptions ] objectID [ 10 ] - Added
+-------------
+Screen [ scrVideoOptions ] created.
+Added new object - [ textLabelResolution ]
+Setting position for - [ textLabelResolution ]
+Setting label for - [ textLabelResolution ]
+Adding [ textLabelResolution ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 0 ] - Added
+-------------
+Added new object - [ videoUseBackingBMP ]
+GUI_OBJECT_CHECKBOX size is now - [ 1 ]
+Setting the function call for [ videoUseBackingBMP ] - [ scr_guiHandleButtonPress ]
+Setting position for - [ videoUseBackingBMP ]
+Setting label for - [ videoUseBackingBMP ]
+Setting checkBox group for - [ videoUseBackingBMP ]
+Setting checkBox tick for - [ videoUseBackingBMP ]
+Adding [ videoUseBackingBMP ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 0 ] - Added
+-------------
+Added new object - [ videoUseHoldingBMP ]
+GUI_OBJECT_CHECKBOX size is now - [ 2 ]
+Setting the function call for [ videoUseHoldingBMP ] - [ scr_guiHandleButtonPress ]
+Setting position for - [ videoUseHoldingBMP ]
+Setting label for - [ videoUseHoldingBMP ]
+Setting checkBox group for - [ videoUseHoldingBMP ]
+Setting checkBox tick for - [ videoUseHoldingBMP ]
+Adding [ videoUseHoldingBMP ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 1 ] - Added
+-------------
+Added new object - [ checkBoxFullScreen ]
+GUI_OBJECT_CHECKBOX size is now - [ 3 ]
+Setting the function call for [ checkBoxFullScreen ] - [ scr_guiHandleButtonPress ]
+Setting position for - [ checkBoxFullScreen ]
+Setting label for - [ checkBoxFullScreen ]
+Setting checkBox group for - [ checkBoxFullScreen ]
+Setting checkBox tick for - [ checkBoxFullScreen ]
+Adding [ checkBoxFullScreen ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 2 ] - Added
+-------------
+Added new object - [ sliderSwapType ]
+Setting position for - [ sliderSwapType ]
+Setting label for - [ sliderSwapType ]
+Adding [ sliderSwapType ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 0 ] - Added
+-------------
+Added new object - [ sliderVSyncType ]
+Setting position for - [ sliderVSyncType ]
+Setting label for - [ sliderVSyncType ]
+Adding [ sliderVSyncType ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 1 ] - Added
+-------------
+Added new object - [ buttonVideoOptionsApply ]
+Setting position for - [ buttonVideoOptionsApply ]
+Setting label for - [ buttonVideoOptionsApply ]
+Started setLabel [ buttonVideoOptionsApply ]
+Setting the function call for [ buttonVideoOptionsApply ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonVideoOptionsApply ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 11 ] - Added
+-------------
+Added new object - [ buttonVideoOptionsCancel ]
+Setting position for - [ buttonVideoOptionsCancel ]
+Setting label for - [ buttonVideoOptionsCancel ]
+Setting the function call for [ buttonVideoOptionsCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonVideoOptionsCancel ] to screen [ scrVideoOptions ]
+Screen [ scrVideoOptions ] objectID [ 12 ] - Added
+-------------
+Screen [ scrAudioOptions ] created.
+Added new object - [ textLabelSoundOptions ]
+Setting position for - [ textLabelSoundOptions ]
+Setting label for - [ textLabelSoundOptions ]
+Adding [ textLabelSoundOptions ] to screen [ scrAudioOptions ]
+Screen [ scrAudioOptions ] objectID [ 1 ] - Added
+-------------
+Added new object - [ audioCheckBox ]
+GUI_OBJECT_CHECKBOX size is now - [ 4 ]
+Setting the function call for [ audioCheckBox ] - [ scr_guiHandleButtonPress ]
+Setting position for - [ audioCheckBox ]
+Setting label for - [ audioCheckBox ]
+Setting checkBox group for - [ audioCheckBox ]
+Setting checkBox tick for - [ audioCheckBox ]
+Adding [ audioCheckBox ] to screen [ scrAudioOptions ]
+Screen [ scrAudioOptions ] objectID [ 3 ] - Added
+-------------
+Added new object - [ sliderAudioVol ]
+Setting position for - [ sliderAudioVol ]
+Setting label for - [ sliderAudioVol ]
+Adding [ sliderAudioVol ] to screen [ scrAudioOptions ]
+Screen [ scrAudioOptions ] objectID [ 2 ] - Added
+-------------
+Added new object - [ buttonAudioOptionsApply ]
+Setting position for - [ buttonAudioOptionsApply ]
+Setting label for - [ buttonAudioOptionsApply ]
+Setting the function call for [ buttonAudioOptionsApply ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonAudioOptionsApply ] to screen [ scrAudioOptions ]
+Screen [ scrAudioOptions ] objectID [ 13 ] - Added
+-------------
+Added new object - [ buttonAudioOptionsCancel ]
+Setting position for - [ buttonAudioOptionsCancel ]
+Setting label for - [ buttonAudioOptionsCancel ]
+Setting the function call for [ buttonAudioOptionsCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonAudioOptionsCancel ] to screen [ scrAudioOptions ]
+Screen [ scrAudioOptions ] objectID [ 14 ] - Added
+-------------
+Screen [ scrGraphics ] created.
+Added new object - [ textLabelGraphics ]
+Setting position for - [ textLabelGraphics ]
+Setting label for - [ textLabelGraphics ]
+Adding [ textLabelGraphics ] to screen [ scrGraphics ]
+Screen [ scrGraphics ] objectID [ 2 ] - Added
+-------------
+Added new object - [ sliderTileColor ]
+Setting position for - [ sliderTileColor ]
+Setting label for - [ sliderTileColor ]
+Adding [ sliderTileColor ] to screen [ scrGraphics ]
+Screen [ scrGraphics ] objectID [ 3 ] - Added
+-------------
+Added new object - [ sliderTileType ]
+Setting position for - [ sliderTileType ]
+Setting label for - [ sliderTileType ]
+Adding [ sliderTileType ] to screen [ scrGraphics ]
+Screen [ scrGraphics ] objectID [ 4 ] - Added
+-------------
+Added new object - [ sliderParticleType ]
+Setting position for - [ sliderParticleType ]
+Setting label for - [ sliderParticleType ]
+Adding [ sliderParticleType ] to screen [ scrGraphics ]
+Screen [ scrGraphics ] objectID [ 5 ] - Added
+-------------
+Added new object - [ buttonGraphicsApply ]
+Setting position for - [ buttonGraphicsApply ]
+Setting label for - [ buttonGraphicsApply ]
+Setting the function call for [ buttonGraphicsApply ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonGraphicsApply ] to screen [ scrGraphics ]
+Screen [ scrGraphics ] objectID [ 15 ] - Added
+-------------
+Added new object - [ buttonGraphicsCancel ]
+Setting position for - [ buttonGraphicsCancel ]
+Setting label for - [ buttonGraphicsCancel ]
+Setting the function call for [ buttonGraphicsCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonGraphicsCancel ] to screen [ scrGraphics ]
+Screen [ scrGraphics ] objectID [ 16 ] - Added
+-------------
+Screen [ scrGameOptions ] created.
+Added new object - [ sliderLanguage ]
+Setting position for - [ sliderLanguage ]
+Setting label for - [ sliderLanguage ]
+Adding [ sliderLanguage ] to screen [ scrGameOptions ]
+Screen [ scrGameOptions ] objectID [ 6 ] - Added
+-------------
+Added new object - [ buttonGameOptionsApply ]
+Setting position for - [ buttonGameOptionsApply ]
+Setting label for - [ buttonGameOptionsApply ]
+Setting the function call for [ buttonGameOptionsApply ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonGameOptionsApply ] to screen [ scrGameOptions ]
+Screen [ scrGameOptions ] objectID [ 17 ] - Added
+-------------
+Added new object - [ buttonGameOptionsCancel ]
+Setting position for - [ buttonGameOptionsCancel ]
+Setting label for - [ buttonGameOptionsCancel ]
+Setting the function call for [ buttonGameOptionsCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonGameOptionsCancel ] to screen [ scrGameOptions ]
+Screen [ scrGameOptions ] objectID [ 18 ] - Added
+-------------
+Screen [ scrExitQuestion ] created.
+Added new object - [ exitTextBox ]
+Setting position for - [ exitTextBox ]
+Setting colors for - [ exitTextBox ]
+Setting label for - [ exitTextBox ]
+Adding [ exitTextBox ] to screen [ scrExitQuestion ]
+Screen [ scrExitQuestion ] objectID [ 0 ] - Added
+-------------
+Added new object - [ buttonExitYes ]
+Setting position for - [ buttonExitYes ]
+Setting label for - [ buttonExitYes ]
+Setting the function call for [ buttonExitYes ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonExitYes ] to screen [ scrExitQuestion ]
+Screen [ scrExitQuestion ] objectID [ 19 ] - Added
+-------------
+Added new object - [ buttonExitCancel ]
+Setting position for - [ buttonExitCancel ]
+Setting label for - [ buttonExitCancel ]
+Setting the function call for [ buttonExitCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonExitCancel ] to screen [ scrExitQuestion ]
+Screen [ scrExitQuestion ] objectID [ 20 ] - Added
+-------------
+Screen [ scrTerminal ] created.
+Added new object - [ buttonTermLogOff ]
+Setting position for - [ buttonTermLogOff ]
+Setting label for - [ buttonTermLogOff ]
+Setting the function call for [ buttonTermLogOff ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTermLogOff ] to screen [ scrTerminal ]
+Screen [ scrTerminal ] objectID [ 21 ] - Added
+-------------
+Added new object - [ buttonTermInfo ]
+Setting position for - [ buttonTermInfo ]
+Setting label for - [ buttonTermInfo ]
+Setting the function call for [ buttonTermInfo ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTermInfo ] to screen [ scrTerminal ]
+Screen [ scrTerminal ] objectID [ 22 ] - Added
+-------------
+Added new object - [ buttonTermDeck ]
+Setting position for - [ buttonTermDeck ]
+Setting label for - [ buttonTermDeck ]
+Setting the function call for [ buttonTermDeck ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTermDeck ] to screen [ scrTerminal ]
+Screen [ scrTerminal ] objectID [ 23 ] - Added
+-------------
+Added new object - [ buttonTermShip ]
+Setting position for - [ buttonTermShip ]
+Setting label for - [ buttonTermShip ]
+Setting the function call for [ buttonTermShip ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTermShip ] to screen [ scrTerminal ]
+Screen [ scrTerminal ] objectID [ 24 ] - Added
+-------------
+Screen [ scrTutorial ] created.
+Added new object - [ textLabelTutMove ]
+Setting position for - [ textLabelTutMove ]
+Setting label for - [ textLabelTutMove ]
+Adding [ textLabelTutMove ] to screen [ scrTutorial ]
+Screen [ scrTutorial ] objectID [ 3 ] - Added
+-------------
+Added new object - [ tutTextBox ]
+Setting position for - [ tutTextBox ]
+Setting colors for - [ tutTextBox ]
+Setting label for - [ tutTextBox ]
+Adding [ tutTextBox ] to screen [ scrTutorial ]
+Screen [ scrTutorial ] objectID [ 1 ] - Added
+-------------
+Added new object - [ buttonTutMoveNext ]
+Setting position for - [ buttonTutMoveNext ]
+Setting label for - [ buttonTutMoveNext ]
+Setting the function call for [ buttonTutMoveNext ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutMoveNext ] to screen [ scrTutorial ]
+Screen [ scrTutorial ] objectID [ 25 ] - Added
+-------------
+Added new object - [ buttonTutorialCancel ]
+Setting position for - [ buttonTutorialCancel ]
+Setting label for - [ buttonTutorialCancel ]
+Setting the function call for [ buttonTutorialCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutorialCancel ] to screen [ scrTutorial ]
+Screen [ scrTutorial ] objectID [ 26 ] - Added
+-------------
+Screen [ scrTutTransfer ] created.
+Added new object - [ textLabelTutTransMove ]
+Setting position for - [ textLabelTutTransMove ]
+Setting label for - [ textLabelTutTransMove ]
+Adding [ textLabelTutTransMove ] to screen [ scrTutTransfer ]
+Screen [ scrTutTransfer ] objectID [ 4 ] - Added
+-------------
+Added new object - [ tutTransTextBox ]
+Setting position for - [ tutTransTextBox ]
+Setting colors for - [ tutTransTextBox ]
+Setting label for - [ tutTransTextBox ]
+Adding [ tutTransTextBox ] to screen [ scrTutTransfer ]
+Screen [ scrTutTransfer ] objectID [ 2 ] - Added
+-------------
+Added new object - [ buttonTutTransNext ]
+Setting position for - [ buttonTutTransNext ]
+Setting label for - [ buttonTutTransNext ]
+Setting the function call for [ buttonTutTransNext ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTransNext ] to screen [ scrTutTransfer ]
+Screen [ scrTutTransfer ] objectID [ 27 ] - Added
+-------------
+Added new object - [ buttonTutTransCancel ]
+Setting position for - [ buttonTutTransCancel ]
+Setting label for - [ buttonTutTransCancel ]
+Setting the function call for [ buttonTutTransCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTransCancel ] to screen [ scrTutTransfer ]
+Screen [ scrTutTransfer ] objectID [ 28 ] - Added
+-------------
+Screen [ scrTutTransGame ] created.
+Added new object - [ textLabelTutTransGame ]
+Setting position for - [ textLabelTutTransGame ]
+Setting label for - [ textLabelTutTransGame ]
+Adding [ textLabelTutTransGame ] to screen [ scrTutTransGame ]
+Screen [ scrTutTransGame ] objectID [ 5 ] - Added
+-------------
+Added new object - [ tutTransGameTextBox ]
+Setting position for - [ tutTransGameTextBox ]
+Setting colors for - [ tutTransGameTextBox ]
+Setting label for - [ tutTransGameTextBox ]
+Adding [ tutTransGameTextBox ] to screen [ scrTutTransGame ]
+Screen [ scrTutTransGame ] objectID [ 3 ] - Added
+-------------
+Added new object - [ buttonTutTransGameNext ]
+Setting position for - [ buttonTutTransGameNext ]
+Setting label for - [ buttonTutTransGameNext ]
+Setting the function call for [ buttonTutTransGameNext ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTransGameNext ] to screen [ scrTutTransGame ]
+Screen [ scrTutTransGame ] objectID [ 29 ] - Added
+-------------
+Added new object - [ buttonTutTransGameCancel ]
+Setting position for - [ buttonTutTransGameCancel ]
+Setting label for - [ buttonTutTransGameCancel ]
+Setting the function call for [ buttonTutTransGameCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTransGameCancel ] to screen [ scrTutTransGame ]
+Screen [ scrTutTransGame ] objectID [ 30 ] - Added
+-------------
+Screen [ scrTutLifts ] created.
+Added new object - [ textLabelTutLifts ]
+Setting position for - [ textLabelTutLifts ]
+Setting label for - [ textLabelTutLifts ]
+Adding [ textLabelTutLifts ] to screen [ scrTutLifts ]
+Screen [ scrTutLifts ] objectID [ 6 ] - Added
+-------------
+Added new object - [ tutLiftTextBox ]
+Setting position for - [ tutLiftTextBox ]
+Setting colors for - [ tutLiftTextBox ]
+Setting label for - [ tutLiftTextBox ]
+Adding [ tutLiftTextBox ] to screen [ scrTutLifts ]
+Screen [ scrTutLifts ] objectID [ 4 ] - Added
+-------------
+Added new object - [ tutImageLift ]
+Setting position for - [ tutImageLift ]
+Setting colors for - [ tutImageLift ]
+Adding [ tutImageLift ] to screen [ scrTutLifts ]
+Screen [ scrTutLifts ] objectID [ 0 ] - Added
+-------------
+Added new object - [ buttonTutLiftNext ]
+Setting position for - [ buttonTutLiftNext ]
+Setting label for - [ buttonTutLiftNext ]
+Setting the function call for [ buttonTutLiftNext ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutLiftNext ] to screen [ scrTutLifts ]
+Screen [ scrTutLifts ] objectID [ 31 ] - Added
+-------------
+Added new object - [ buttonTutLiftCancel ]
+Setting position for - [ buttonTutLiftCancel ]
+Setting label for - [ buttonTutLiftCancel ]
+Setting the function call for [ buttonTutLiftCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutLiftCancel ] to screen [ scrTutLifts ]
+Screen [ scrTutLifts ] objectID [ 32 ] - Added
+-------------
+Screen [ scrTutTerminals ] created.
+Added new object - [ textLabelTutTerminals ]
+Setting position for - [ textLabelTutTerminals ]
+Setting label for - [ textLabelTutTerminals ]
+Adding [ textLabelTutTerminals ] to screen [ scrTutTerminals ]
+Screen [ scrTutTerminals ] objectID [ 7 ] - Added
+-------------
+Added new object - [ tutTerminalTextBox ]
+Setting position for - [ tutTerminalTextBox ]
+Setting colors for - [ tutTerminalTextBox ]
+Setting label for - [ tutTerminalTextBox ]
+Adding [ tutTerminalTextBox ] to screen [ scrTutTerminals ]
+Screen [ scrTutTerminals ] objectID [ 5 ] - Added
+-------------
+Added new object - [ tutImageTerminal ]
+Setting position for - [ tutImageTerminal ]
+Setting colors for - [ tutImageTerminal ]
+Adding [ tutImageTerminal ] to screen [ scrTutTerminals ]
+Screen [ scrTutTerminals ] objectID [ 1 ] - Added
+-------------
+Added new object - [ buttonTutTerminalNext ]
+Setting position for - [ buttonTutTerminalNext ]
+Setting label for - [ buttonTutTerminalNext ]
+Setting the function call for [ buttonTutTerminalNext ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTerminalNext ] to screen [ scrTutTerminals ]
+Screen [ scrTutTerminals ] objectID [ 33 ] - Added
+-------------
+Added new object - [ buttonTutTerminalCancel ]
+Setting position for - [ buttonTutTerminalCancel ]
+Setting label for - [ buttonTutTerminalCancel ]
+Setting the function call for [ buttonTutTerminalCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTerminalCancel ] to screen [ scrTutTerminals ]
+Screen [ scrTutTerminals ] objectID [ 34 ] - Added
+-------------
+Screen [ scrTutHealing ] created.
+Added new object - [ textLabelTutHealing ]
+Setting position for - [ textLabelTutHealing ]
+Setting label for - [ textLabelTutHealing ]
+Adding [ textLabelTutHealing ] to screen [ scrTutHealing ]
+Screen [ scrTutHealing ] objectID [ 8 ] - Added
+-------------
+Added new object - [ tutHealingTextBox ]
+Setting position for - [ tutHealingTextBox ]
+Setting colors for - [ tutHealingTextBox ]
+Setting label for - [ tutHealingTextBox ]
+Adding [ tutHealingTextBox ] to screen [ scrTutHealing ]
+Screen [ scrTutHealing ] objectID [ 6 ] - Added
+-------------
+Added new object - [ tutImageHealing ]
+Setting position for - [ tutImageHealing ]
+Setting colors for - [ tutImageHealing ]
+Adding [ tutImageHealing ] to screen [ scrTutHealing ]
+Screen [ scrTutHealing ] objectID [ 2 ] - Added
+-------------
+Added new object - [ buttonTutHealinglNext ]
+Setting position for - [ buttonTutHealinglNext ]
+Setting label for - [ buttonTutHealinglNext ]
+Setting the function call for [ buttonTutHealinglNext ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutHealinglNext ] to screen [ scrTutHealing ]
+Screen [ scrTutHealing ] objectID [ 35 ] - Added
+-------------
+Added new object - [ buttonTutHealingCancel ]
+Setting position for - [ buttonTutHealingCancel ]
+Setting label for - [ buttonTutHealingCancel ]
+Setting the function call for [ buttonTutHealingCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutHealingCancel ] to screen [ scrTutHealing ]
+Screen [ scrTutHealing ] objectID [ 36 ] - Added
+-------------
+Screen [ scrTutTips ] created.
+Added new object - [ textLabelTutTips ]
+Setting position for - [ textLabelTutTips ]
+Setting label for - [ textLabelTutTips ]
+Adding [ textLabelTutTips ] to screen [ scrTutTips ]
+Screen [ scrTutTips ] objectID [ 9 ] - Added
+-------------
+Added new object - [ tutTipsTextBox ]
+Setting position for - [ tutTipsTextBox ]
+Setting colors for - [ tutTipsTextBox ]
+Setting label for - [ tutTipsTextBox ]
+Adding [ tutTipsTextBox ] to screen [ scrTutTips ]
+Screen [ scrTutTips ] objectID [ 7 ] - Added
+-------------
+Added new object - [ buttonTutTipsCancel ]
+Setting position for - [ buttonTutTipsCancel ]
+Setting label for - [ buttonTutTipsCancel ]
+Setting the function call for [ buttonTutTipsCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonTutTipsCancel ] to screen [ scrTutTips ]
+Screen [ scrTutTips ] objectID [ 37 ] - Added
+-------------
+Screen [ scrGameControls ] created.
+Added new object - [ controlsHelp ]
+Setting position for - [ controlsHelp ]
+Setting label for - [ controlsHelp ]
+Adding [ controlsHelp ] to screen [ scrGameControls ]
+Screen [ scrGameControls ] objectID [ 10 ] - Added
+-------------
+Added new object - [ keyCodeControl ]
+Setting position for - [ keyCodeControl ]
+Setting the function call for [ keyCodeControl ] - [ scr_guiHandleButtonPress ]
+Adding [ keyCodeControl ] to screen [ scrGameControls ]
+Screen [ scrGameControls ] objectID [ 0 ] - Added
+-------------
+Added new object - [ buttonControlApply ]
+Setting position for - [ buttonControlApply ]
+Setting label for - [ buttonControlApply ]
+Setting the function call for [ buttonControlApply ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonControlApply ] to screen [ scrGameControls ]
+Screen [ scrGameControls ] objectID [ 38 ] - Added
+-------------
+Added new object - [ buttonControlCancel ]
+Setting position for - [ buttonControlCancel ]
+Setting label for - [ buttonControlCancel ]
+Setting the function call for [ buttonControlCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonControlCancel ] to screen [ scrGameControls ]
+Screen [ scrGameControls ] objectID [ 39 ] - Added
+-------------
+Screen [ scrKeyCodeCapture ] created.
+Added new object - [ captureHelp ]
+Setting position for - [ captureHelp ]
+Setting label for - [ captureHelp ]
+Adding [ captureHelp ] to screen [ scrKeyCodeCapture ]
+Screen [ scrKeyCodeCapture ] objectID [ 11 ] - Added
+-------------
+Added new object - [ captureHelpCancel ]
+Setting position for - [ captureHelpCancel ]
+Setting label for - [ captureHelpCancel ]
+Adding [ captureHelpCancel ] to screen [ scrKeyCodeCapture ]
+Screen [ scrKeyCodeCapture ] objectID [ 12 ] - Added
+-------------
+Screen [ scrRestartQuestion ] created.
+Added new object - [ restartTextBox ]
+Setting position for - [ restartTextBox ]
+Setting colors for - [ restartTextBox ]
+Setting label for - [ restartTextBox ]
+Adding [ restartTextBox ] to screen [ scrRestartQuestion ]
+Screen [ scrRestartQuestion ] objectID [ 8 ] - Added
+-------------
+Added new object - [ buttonRestartYes ]
+Setting position for - [ buttonRestartYes ]
+Setting label for - [ buttonRestartYes ]
+Setting the function call for [ buttonRestartYes ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonRestartYes ] to screen [ scrRestartQuestion ]
+Screen [ scrRestartQuestion ] objectID [ 40 ] - Added
+-------------
+Added new object - [ buttonRestartCancel ]
+Setting position for - [ buttonRestartCancel ]
+Setting label for - [ buttonRestartCancel ]
+Setting the function call for [ buttonRestartCancel ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonRestartCancel ] to screen [ scrRestartQuestion ]
+Screen [ scrRestartQuestion ] objectID [ 41 ] - Added
+-------------
+Screen [ scrDisplayScoreTable ] created.
+Added new object - [ displayScoreTextBox ]
+Setting position for - [ displayScoreTextBox ]
+Setting colors for - [ displayScoreTextBox ]
+Setting label for - [ displayScoreTextBox ]
+Adding [ displayScoreTextBox ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 9 ] - Added
+-------------
+Added new object - [ displayScoreOne ]
+Setting position for - [ displayScoreOne ]
+Setting colors for - [ displayScoreOne ]
+Setting label for - [ displayScoreOne ]
+Adding [ displayScoreOne ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 10 ] - Added
+-------------
+Added new object - [ displayScoreTwo ]
+Setting position for - [ displayScoreTwo ]
+Setting colors for - [ displayScoreTwo ]
+Setting label for - [ displayScoreTwo ]
+Adding [ displayScoreTwo ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 11 ] - Added
+-------------
+Added new object - [ displayScoreThree ]
+Setting position for - [ displayScoreThree ]
+Setting colors for - [ displayScoreThree ]
+Setting label for - [ displayScoreThree ]
+Adding [ displayScoreThree ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 12 ] - Added
+-------------
+Added new object - [ displayScoreFour ]
+Setting position for - [ displayScoreFour ]
+Setting colors for - [ displayScoreFour ]
+Setting label for - [ displayScoreFour ]
+Adding [ displayScoreFour ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 13 ] - Added
+-------------
+Added new object - [ displayScoreFive ]
+Setting position for - [ displayScoreFive ]
+Setting colors for - [ displayScoreFive ]
+Setting label for - [ displayScoreFive ]
+Adding [ displayScoreFive ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 14 ] - Added
+-------------
+Added new object - [ scoreInitialsOne ]
+Setting position for - [ scoreInitialsOne ]
+Setting colors for - [ scoreInitialsOne ]
+Setting label for - [ scoreInitialsOne ]
+Adding [ scoreInitialsOne ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 15 ] - Added
+-------------
+Added new object - [ scoreInitialsTwo ]
+Setting position for - [ scoreInitialsTwo ]
+Setting colors for - [ scoreInitialsTwo ]
+Setting label for - [ scoreInitialsTwo ]
+Adding [ scoreInitialsTwo ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 16 ] - Added
+-------------
+Added new object - [ scoreInitialsThree ]
+Setting position for - [ scoreInitialsThree ]
+Setting colors for - [ scoreInitialsThree ]
+Setting label for - [ scoreInitialsThree ]
+Adding [ scoreInitialsThree ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 17 ] - Added
+-------------
+Added new object - [ scoreInitialsFour ]
+Setting position for - [ scoreInitialsFour ]
+Setting colors for - [ scoreInitialsFour ]
+Setting label for - [ scoreInitialsFour ]
+Adding [ scoreInitialsFour ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 18 ] - Added
+-------------
+Added new object - [ scoreInitialsFive ]
+Setting position for - [ scoreInitialsFive ]
+Setting colors for - [ scoreInitialsFive ]
+Setting label for - [ scoreInitialsFive ]
+Adding [ scoreInitialsFive ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 19 ] - Added
+-------------
+Added new object - [ scoreScoreOne ]
+Setting position for - [ scoreScoreOne ]
+Setting colors for - [ scoreScoreOne ]
+Setting label for - [ scoreScoreOne ]
+Adding [ scoreScoreOne ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 20 ] - Added
+-------------
+Added new object - [ scoreScoreTwo ]
+Setting position for - [ scoreScoreTwo ]
+Setting colors for - [ scoreScoreTwo ]
+Setting label for - [ scoreScoreTwo ]
+Adding [ scoreScoreTwo ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 21 ] - Added
+-------------
+Added new object - [ scoreScoreThree ]
+Setting position for - [ scoreScoreThree ]
+Setting colors for - [ scoreScoreThree ]
+Setting label for - [ scoreScoreThree ]
+Adding [ scoreScoreThree ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 22 ] - Added
+-------------
+Added new object - [ scoreScoreFour ]
+Setting position for - [ scoreScoreFour ]
+Setting colors for - [ scoreScoreFour ]
+Setting label for - [ scoreScoreFour ]
+Adding [ scoreScoreFour ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 23 ] - Added
+-------------
+Added new object - [ scoreScoreFive ]
+Setting position for - [ scoreScoreFive ]
+Setting colors for - [ scoreScoreFive ]
+Setting label for - [ scoreScoreFive ]
+Adding [ scoreScoreFive ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 24 ] - Added
+-------------
+Added new object - [ buttonDisplayYes ]
+Setting position for - [ buttonDisplayYes ]
+Setting label for - [ buttonDisplayYes ]
+Setting the function call for [ buttonDisplayYes ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonDisplayYes ] to screen [ scrDisplayScoreTable ]
+Screen [ scrDisplayScoreTable ] objectID [ 42 ] - Added
+-------------
+Screen [ scrEditScoreTable ] created.
+Added new object - [ editTextBox ]
+Setting position for - [ editTextBox ]
+Setting colors for - [ editTextBox ]
+Setting label for - [ editTextBox ]
+Adding [ editTextBox ] to screen [ scrEditScoreTable ]
+Screen [ scrEditScoreTable ] objectID [ 25 ] - Added
+-------------
+Added new object - [ scoreSliderOne ]
+Setting position for - [ scoreSliderOne ]
+Setting label for - [ scoreSliderOne ]
+Adding [ scoreSliderOne ] to screen [ scrEditScoreTable ]
+Screen [ scrEditScoreTable ] objectID [ 7 ] - Added
+-------------
+Added new object - [ scoreSliderTwo ]
+Setting position for - [ scoreSliderTwo ]
+Setting label for - [ scoreSliderTwo ]
+Adding [ scoreSliderTwo ] to screen [ scrEditScoreTable ]
+Screen [ scrEditScoreTable ] objectID [ 8 ] - Added
+-------------
+Added new object - [ scoreSliderThree ]
+Setting position for - [ scoreSliderThree ]
+Setting label for - [ scoreSliderThree ]
+Adding [ scoreSliderThree ] to screen [ scrEditScoreTable ]
+Screen [ scrEditScoreTable ] objectID [ 9 ] - Added
+-------------
+Added new object - [ buttonEditYes ]
+Setting position for - [ buttonEditYes ]
+Setting label for - [ buttonEditYes ]
+Setting the function call for [ buttonEditYes ] - [ scr_guiHandleButtonPress ]
+Adding [ buttonEditYes ] to screen [ scrEditScoreTable ]
+Screen [ scrEditScoreTable ] objectID [ 43 ] - Added
+-------------
+Setting colors for - [ ALL ]
+Change to mode [ 3 ]
+Message repeats
+Loaded image [ alltiles.bmp ]
+Loaded image [ hud.tga ]
+Loaded image [ 001.bmp ]
+Loaded image [ 123.bmp ]
+Loaded image [ 139.bmp ]
+Loaded image [ 247.bmp ]
+Loaded image [ 249.bmp ]
+Loaded image [ 296.bmp ]
+Loaded image [ 302.bmp ]
+Loaded image [ 329.bmp ]
+Loaded image [ 420.bmp ]
+Loaded image [ 476.bmp ]
+Loaded image [ 493.bmp ]
+Loaded image [ 516.bmp ]
+Loaded image [ 571.bmp ]
+Loaded image [ 598.bmp ]
+Loaded image [ 614.bmp ]
+Loaded image [ 615.bmp ]
+Loaded image [ 629.bmp ]
+Loaded image [ 711.bmp ]
+Loaded image [ 742.bmp ]
+Loaded image [ 751.bmp ]
+Loaded image [ 821.bmp ]
+Loaded image [ 834.bmp ]
+Loaded image [ 883.bmp ]
+Loaded image [ 999.bmp ]
+Loaded image [ splash.png ]
+Loaded image [ bullet_001.bmp ]
+Loaded image [ bullet_476.bmp ]
+Loaded image [ bullet_821.bmp ]
+Loaded image [ explosion.bmp ]
+Loaded image [ db_001.jpg ]
+Loaded image [ spotlight.png ]
+Loaded image [ alltiles_128.bmp ]
+Loaded image [ particleSmoke.png ]
+Loaded image [ particleSpark.png ]
+Loaded image [ static_1.png ]
+Loaded image [ static_2.png ]
+Loaded image [ static_3.png ]
+Loaded image [ static_4.png ]
+Loaded image [ static_5.png ]
+Loaded image [ static_6.png ]
+Loaded image [ static_7.png ]
+Loaded image [ static_8.png ]
+Loaded image [ static_9.png ]
+Get droid database information.
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Loaded ship level [ Vehicle Hold ]
+Loaded ship level [ Shuttle bay ]
+Loaded ship level [ Turrent 2 ]
+Loaded ship level [ Maintenance ]
+Loaded ship level [ Engineering ]
+Loaded ship level [ Mid cargo ]
+Loaded ship level [ Upper cargo ]
+Loaded ship level [ Kitchen ]
+Loaded ship level [ Robo stores ]
+Loaded ship level [ Quarters ]
+Loaded ship level [ Repairs ]
+Loaded ship level [ Staterooms ]
+Loaded ship level [ Stores ]
+Loaded ship level [ Research ]
+Loaded ship level [ Reactor ]
+Loaded ship level [ Airlock ]
+Loaded ship level [ Bridge ]
+Loaded ship level [ Turrent 1 ]
+Loaded ship level [ Turrent 2 ]
+Loaded ship level [ Observation ]
+Loaded sample [ collosion1.wav ]
+Loaded sample [ endTransmission1.wav ]
+Loaded sample [ greenAlert.wav ]
+Loaded sample [ lift1.wav ]
+Loaded sample [ scrollBeeps.wav ]
+Loaded sample [ transferdeadlock.wav ]
+Loaded sample [ yellowAlert.wav ]
+Loaded sample [ console1.wav ]
+Loaded sample [ endTransmission2.wav ]
+Loaded sample [ keypressBad.wav ]
+Loaded sample [ lift2.wav ]
+Loaded sample [ start1.wav ]
+Loaded sample [ transferMove.wav ]
+Loaded sample [ console2.wav ]
+Loaded sample [ energyHeal.wav ]
+Loaded sample [ keyPressGood.wav ]
+Loaded sample [ lift3.wav ]
+Loaded sample [ start2.wav ]
+Loaded sample [ transferStage1.wav ]
+Loaded sample [ damage.wav ]
+Loaded sample [ explode1.wav ]
+Loaded sample [ laser.wav ]
+Loaded sample [ lowEnergy.wav ]
+Loaded sample [ startAll.wav ]
+Loaded sample [ transferStage2.wav ]
+Loaded sample [ disruptor.wav ]
+Loaded sample [ explode2.wav ]
+Loaded sample [ levelShutdown.wav ]
+Loaded sample [ redAlert.wav ]
+Loaded sample [ transfer1.wav ]
+Loaded sample [ transferStart.wav ]
+Loaded sample [ door.wav ]
+Change to mode [ 5 ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Change to mode [ 11 ]
+Change to mode [ 10 ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Remove physics objects for droid [ 8 ]
+WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
+Change to mode [ 29 ]
+Message repeats
+Change to mode [ 25 ]
+Load droid model - image name : db_999.jpg
+Loaded image [ db_999.jpg ]
+Change to mode [ 27 ]
+Change to mode [ 28 ]
+Checking score [ 50 ]
+[ 0 ] is [ 50 ] higher than [ 18 ]
+Remove physics objects for droid [ 0 ]
+Remove physics objects for droid [ 1 ]
+Remove physics objects for droid [ 2 ]
+Remove physics objects for droid [ 3 ]
+Remove physics objects for droid [ 4 ]
+Remove physics objects for droid [ 5 ]
+Remove physics objects for droid [ 6 ]
+Remove physics objects for droid [ 7 ]
+Removing player physics shape and body.
+Change to mode [ 10 ]
+Checking score [ 50 ]
+[ 0 ] is [ 50 ] higher than [ 18 ]
+Setting label for - [ scoreInitialsOne ]
+Setting label for - [ scoreInitialsTwo ]
+Setting label for - [ scoreInitialsThree ]
+Setting label for - [ scoreInitialsFour ]
+Setting label for - [ scoreInitialsFive ]
+Setting label for - [ scoreScoreOne ]
+Setting label for - [ scoreScoreTwo ]
+Setting label for - [ scoreScoreThree ]
+Setting label for - [ scoreScoreFour ]
+Setting label for - [ scoreScoreFive ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Lift [ 0 ] PosX [ 352 ] PosY [ 352 ]
+Lift [ 1 ] PosX [ 1344 ] PosY [ 672 ]
+STOP: Couldn't find lift [ 639 ] on level [ 6 ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
+Remove physics objects for droid [ 5 ]
+Message repeats
+Remove physics objects for droid [ 8 ]
+Change to mode [ 29 ]
+Change to mode [ 25 ]
+Load droid model - image name : db_999.jpg
+Loaded image [ db_999.jpg ]
+Change to mode [ 27 ]
+Change to mode [ 28 ]
+Checking score [ 100 ]
+[ 0 ] is [ 100 ] higher than [ 50 ]
+Remove physics objects for droid [ 0 ]
+Remove physics objects for droid [ 1 ]
+Remove physics objects for droid [ 2 ]
+Remove physics objects for droid [ 3 ]
+Remove physics objects for droid [ 4 ]
+Remove physics objects for droid [ 6 ]
+Remove physics objects for droid [ 7 ]
+Removing player physics shape and body.
+Change to mode [ 10 ]
+Checking score [ 100 ]
+[ 0 ] is [ 100 ] higher than [ 50 ]
+Setting label for - [ scoreInitialsOne ]
+Setting label for - [ scoreInitialsTwo ]
+Setting label for - [ scoreInitialsThree ]
+Setting label for - [ scoreInitialsFour ]
+Setting label for - [ scoreInitialsFive ]
+Setting label for - [ scoreScoreOne ]
+Setting label for - [ scoreScoreTwo ]
+Setting label for - [ scoreScoreThree ]
+Setting label for - [ scoreScoreFour ]
+Setting label for - [ scoreScoreFive ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Lift [ 0 ] PosX [ 352 ] PosY [ 352 ]
+Lift [ 1 ] PosX [ 1344 ] PosY [ 672 ]
+STOP: Couldn't find lift [ 639 ] on level [ 6 ]
+Loaded image [ retro_blue.bmp ]
+Loaded image [ retro_blue_128.bmp ]
+Loaded tile set [ retro_blue.bmp ]
+Loaded tile set [ retro_blue_128.bmp ]
+Remove physics objects for droid [ 0 ]
+Remove physics objects for droid [ 1 ]
+Remove physics objects for droid [ 2 ]
+Remove physics objects for droid [ 3 ]
+Remove physics objects for droid [ 4 ]
+Remove physics objects for droid [ 5 ]
+Remove physics objects for droid [ 6 ]
+Remove physics objects for droid [ 7 ]
+Remove physics objects for droid [ 8 ]
+Tunnel in use [ 1 ]
+Change to mode [ 4 ]

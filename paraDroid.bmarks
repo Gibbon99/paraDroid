@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src/io/io_images.cpp" open="0" top="0" tabpos="13">
+		<Cursor position="223" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_conCommands.h" open="0" top="0" tabpos="20">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/io/io_keyboard.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="687" topLine="16" />
+	</File>
+	<File name="hdr/sys_globals.h" open="0" top="0" tabpos="11">
+		<Cursor position="897" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_shutdown.h" open="0" top="0" tabpos="7">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/system/sys_conCommands.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="hdr/io/io_keyboard.h" open="0" top="0" tabpos="2">
+		<Cursor position="159" topLine="0" />
+	</File>
+	<File name="hdr/game/gam_render.h" open="0" top="0" tabpos="6">
+		<Cursor position="158" topLine="0" />
+	</File>
+	<File name="src/game/gam_player.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="2171" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="hdr/game/gam_levels.h" open="1" top="0" tabpos="6">
+		<Cursor position="339" topLine="0" />
+	</File>
+	<File name="src/system/sys_startup.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="3357" topLine="66" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/system/sys_script.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="2932" topLine="45" />
+	</File>
+	<File name="data/scripts/conCommands.sc" open="0" top="0" tabpos="18">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="hdr/io/io_configFile.h" open="0" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="data/scripts/startup.sc" open="0" top="0" tabpos="11">
+		<Cursor position="1881" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_console.h" open="0" top="0" tabpos="9">
+		<Cursor position="1704" topLine="41" />
+	</File>
+	<File name="src/system/sys_utils.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="680" topLine="0" />
+	</File>
+	<File name="hdr/io/io_images.h" open="0" top="0" tabpos="7">
+		<Cursor position="142" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_script.h" open="0" top="0" tabpos="9">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/game/gam_levels.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="3667" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/system/sys_timing.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="122" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_timing.h" open="0" top="0" tabpos="6">
+		<Cursor position="372" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_utils.h" open="1" top="0" tabpos="8">
+		<Cursor position="165" topLine="0" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="353" topLine="0" />
+	</File>
+	<File name="src/game/gam_render.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1871" topLine="33" />
+	</File>
+	<File name="hdr/game/gam_player.h" open="0" top="0" tabpos="9">
+		<Cursor position="73" topLine="0" />
+	</File>
+	<File name="src/system/sys_shutdown.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/system/sys_physics.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="925" topLine="12" />
+		<BrowseMarks positions="247,3228" />
+		<Book_Marks positions="0" />
+	</File>
+	<File name="hdr/system/sys_defines.h" open="0" top="0" tabpos="7">
+		<Cursor position="210" topLine="0" />
+	</File>
+	<File name="src/system/sys_console.cpp" open="0" top="0" tabpos="12">
+		<Cursor position="10612" topLine="343" />
+	</File>
+	<File name="src/system/sys_frame.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="937" topLine="7" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/io/io_configFile.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="hdr/system/sys_physics.h" open="1" top="0" tabpos="9">
+		<Cursor position="969" topLine="0" />
+	</File>
+	<File name="src/io/io_logFile.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="137" topLine="0" />
+	</File>
+</BrowseTracker_layout_file>
