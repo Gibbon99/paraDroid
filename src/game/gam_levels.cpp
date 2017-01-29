@@ -108,25 +108,19 @@ void gam_powerDownLevel ( int whichLevel, bool playSound )
 void gam_checkAlertLevel()
 //---------------------------------------------------------
 {
-	float alertVolLevel;
-
-//	if (alertLevelDistance < 0.0)
-//		alertLevelDistance = 0.1;
-
-	alertVolLevel = 1.0f - (alertLevelDistance / (winHeight / 2));
-	if (alertVolLevel < 0.0)
-		alertVolLevel = 0.0f;
-
-	if (alertVolLevel > volumeLevel)
-		alertVolLevel = volumeLevel; 	// Cap to user set level
+	if (alertLevelDistance > volumeLevel)
+		alertLevelDistance = volumeLevel; 	// Cap to user set level
 
 	switch ( currentAlertLevel )
 		{
 			case ALERT_GREEN_TILE:
 				if ( false == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
+				{
+					sys_setVolume ( SND_GREEN_ALERT, alertLevelDistance );
 					sys_playSound ( SND_GREEN_ALERT, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
+				}
 				else
-					sys_setVolume ( SND_GREEN_ALERT, alertVolLevel );
+					sys_setVolume ( SND_GREEN_ALERT, alertLevelDistance );
 
 				if ( true == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
 					sys_stopSound ( SND_YELLOW_ALERT );
@@ -141,9 +135,12 @@ void gam_checkAlertLevel()
 					sys_stopSound ( SND_GREEN_ALERT );
 
 				if ( false == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
+				{
 					sys_playSound ( SND_YELLOW_ALERT, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
+					sys_setVolume(SND_YELLOW_ALERT, alertLevelDistance);
+				}
 				else
-					sys_setVolume(SND_YELLOW_ALERT, alertVolLevel);
+					sys_setVolume(SND_YELLOW_ALERT, alertLevelDistance);
 
 				if ( true == sys_isSoundPlaying ( SND_RED_ALERT ) )
 					sys_stopSound ( SND_RED_ALERT );
@@ -158,9 +155,12 @@ void gam_checkAlertLevel()
 					sys_stopSound ( SND_YELLOW_ALERT );
 
 				if ( false == sys_isSoundPlaying ( SND_RED_ALERT ) )
+				{
 					sys_playSound ( SND_RED_ALERT, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
+					sys_setVolume(SND_RED_ALERT, alertLevelDistance);
+				}
 				else
-					sys_setVolume(SND_RED_ALERT, alertVolLevel);
+					sys_setVolume(SND_RED_ALERT, alertLevelDistance);
 
 				break;
 		}

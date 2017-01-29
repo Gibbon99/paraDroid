@@ -72,9 +72,19 @@ void gam_drawSpotLights()
 	}
 	//
 	// See if there is an alert tile affecting the volume
-	alertLevelDistance = 0.1;
+	alertLevelDistance = 0.01;
 	if (distanceToPlayer < DISTANCE_DEFAULT)
-		alertLevelDistance = distanceToPlayer;
+	{
+		alertLevelDistance = distanceToPlayer - 35.0f;
+		alertLevelDistance * 0.5f;
+		alertLevelDistance = alertLevelDistance / 100.0f;
+		alertLevelDistance = 1.0f - alertLevelDistance;
+
+		if (alertLevelDistance < 0.0f)
+			alertLevelDistance = 0.01f;
+		if (alertLevelDistance > 1.0f)
+			alertLevelDistance = 1.0f;
+	}
 
 	al_set_blender(op, src, dst);
 }

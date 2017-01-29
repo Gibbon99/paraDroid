@@ -83,7 +83,6 @@ void sys_displayLoadingScreen()
 // Routine to display stuff onto the screen
 //
 // Pass in interpolation to draw screen
-
 void sys_displayFrame ( float interpolation )
 //-----------------------------------------------------------------------------
 {
@@ -161,16 +160,16 @@ void sys_displayFrame ( float interpolation )
 				gam_drawSpotLights();
 				gam_drawHud();
 
-/*
-				// Return how many waypoints there are
-				if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
-					{
-						if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
-							{
-								gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
-							}
-					}
-*/
+				/*
+								// Return how many waypoints there are
+								if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
+									{
+										if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
+											{
+												gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
+											}
+									}
+				*/
 //				gam_debugShowWaypoints();
 				break;
 
@@ -185,7 +184,7 @@ void sys_displayFrame ( float interpolation )
 
 //				sys_debugShowTileGrid();
 
-
+/*
 				// Return how many waypoints there are
 				if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
 					{
@@ -194,10 +193,10 @@ void sys_displayFrame ( float interpolation )
 								gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
 							}
 					}
-
+*/
 				// Draw Paused window
 
-				//sys_displayDebug();
+				sys_displayDebug();
 				//sys_displayScreenMiddle();
 
 				//gam_debugShowDestination();
@@ -227,7 +226,7 @@ void sys_displayFrame ( float interpolation )
 
 			case MODE_TERMINAL_DB:
 				gam_setHUDState ( HUD_STATE_DATABASE );
-				gam_drawDB_Droid(-1, -1);
+				gam_drawDB_Droid ( -1, -1 );
 				gui_drawScrollBox ( &databaseScrollBox );
 				gui_drawRasterLines();
 				gam_drawHud();
