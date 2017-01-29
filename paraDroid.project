@@ -42,6 +42,7 @@
       <File Name="data/scripts/textEnglish.sc"/>
       <File Name="data/scripts/gui_main.sc"/>
     </VirtualDirectory>
+    <File Name="README.md"/>
   </VirtualDirectory>
   <VirtualDirectory Name="headers">
     <VirtualDirectory Name="script">
