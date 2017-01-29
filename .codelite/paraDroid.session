@@ -5,8 +5,8 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/data/todo.txt" Name="FileName"/>
-      <int Value="220" Name="FirstVisibleLine"/>
-      <int Value="226" Name="CurrentLine"/>
+      <int Value="142" Name="FirstVisibleLine"/>
+      <int Value="158" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

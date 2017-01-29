@@ -1,3 +1,22 @@
+/*
+This file is part of paraDroid.
+
+    paraDroid is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    paraDroid is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with paraDroid.  If not, see <http://www.gnu.org/licenses/>.
+
+Copyright 2017 David Berry
+*/
+
 #include "../../hdr/sys_globals.h"
 
 float rasterPosY;
@@ -13,7 +32,7 @@ void gui_drawslider(int whichObject, bool hasFocus)
 	string 		printValue;
 	cpVect		printLabelPos;
 	cpVect		printValuePos;
-	
+
 	if (guiSliders[whichObject].currentStep == 0)
 		selectorX = guiSliders[whichObject].attributes.boundingBox.x;
 	else if (guiSliders[whichObject].currentStep == guiSliders[whichObject].element.size())
@@ -23,12 +42,12 @@ void gui_drawslider(int whichObject, bool hasFocus)
 		selectorX = ((guiSliders[whichObject].attributes.boundingBox.w / (guiSliders[whichObject].element.size() - 1)) * guiSliders[whichObject].currentStep) + guiSliders[whichObject].attributes.boundingBox.x;
 	}
 
-	printLabel = guiSliders[whichObject].attributes.label ; 
+	printLabel = guiSliders[whichObject].attributes.label ;
 	printValue = guiSliders[whichObject].element[guiSliders[whichObject].currentStep].label;
-	
+
 	printValuePos.x = guiSliders[whichObject].attributes.boundingBox.x + ((guiSliders[whichObject].attributes.boundingBox.w - al_get_text_width(font[currentFont].ttfFont, printValue.c_str())) / 2);
 	printLabelPos.x = guiSliders[whichObject].attributes.boundingBox.x + ((guiSliders[whichObject].attributes.boundingBox.w - al_get_text_width(font[currentFont].ttfFont, printLabel.c_str())) / 2);
-	
+
 	printValuePos.y = guiSliders[whichObject].attributes.boundingBox.y + guiSliders[whichObject].attributes.boundingBox.h + 2;
 	printLabelPos.y = guiSliders[whichObject].attributes.boundingBox.y - (al_get_font_line_height(font[currentFont].ttfFont) + 2);
 	//
@@ -36,21 +55,21 @@ void gui_drawslider(int whichObject, bool hasFocus)
 	//
 	if (true == hasFocus)
 	{
-	al_draw_filled_rounded_rectangle(guiSliders[whichObject].attributes.boundingBox.x, guiSliders[whichObject].attributes.boundingBox.y, 
+	al_draw_filled_rounded_rectangle(guiSliders[whichObject].attributes.boundingBox.x, guiSliders[whichObject].attributes.boundingBox.y,
 									guiSliders[whichObject].attributes.boundingBox.x + guiSliders[whichObject].attributes.boundingBox.w,
 									guiSliders[whichObject].attributes.boundingBox.y + guiSliders[whichObject].attributes.boundingBox.h,
 									sliderCurveX, sliderCurveY, guiSliders[whichObject].attributes.activeCol);
-									
+
 	al_draw_filled_circle(selectorX, guiSliders[whichObject].attributes.boundingBox.y + (guiSliders[whichObject].attributes.boundingBox.h / 2), sliderSelectorRadius, guiSliders[whichObject].attributes.activeCol);
 	sys_setFontColor (guiSliders[whichObject].attributes.activeCol.r, guiSliders[whichObject].attributes.activeCol.g, guiSliders[whichObject].attributes.activeCol.b, guiSliders[whichObject].attributes.activeCol.a);
 	}
 	else
 	{
-	al_draw_filled_rounded_rectangle(guiSliders[whichObject].attributes.boundingBox.x, guiSliders[whichObject].attributes.boundingBox.y, 
+	al_draw_filled_rounded_rectangle(guiSliders[whichObject].attributes.boundingBox.x, guiSliders[whichObject].attributes.boundingBox.y,
 									guiSliders[whichObject].attributes.boundingBox.x + guiSliders[whichObject].attributes.boundingBox.w,
 									guiSliders[whichObject].attributes.boundingBox.y + guiSliders[whichObject].attributes.boundingBox.h,
 									sliderCurveX, sliderCurveY, guiSliders[whichObject].attributes.inActiveCol);
-									
+
 	al_draw_filled_circle(selectorX, guiSliders[whichObject].attributes.boundingBox.y + (guiSliders[whichObject].attributes.boundingBox.h / 2), sliderSelectorRadius, guiSliders[whichObject].attributes.inActiveCol);
 	sys_setFontColor (guiSliders[whichObject].attributes.inActiveCol.r, guiSliders[whichObject].attributes.inActiveCol.g, guiSliders[whichObject].attributes.inActiveCol.b, guiSliders[whichObject].attributes.inActiveCol.a);
 	}
@@ -189,7 +208,7 @@ void gui_drawObject (int objectType, int whichObject, bool hasFocus)
 			case GUI_OBJECT_SLIDER:
 				gui_drawslider(whichObject, hasFocus);
 				break;
-				
+
 			case GUI_OBJECT_KEYCODE:
 				gui_drawKeycode(whichObject, hasFocus);
 				break;
