@@ -21,53 +21,53 @@ Copyright 2017 David Berry
 #include "../../hdr/game/gam_transfer.h"
 #include "../../hdr/game/gam_transferRender.h"
 
-int droidTypeToTransferInto;
+int 			droidTypeToTransferInto;
 //int             droidTransfer;
 
-int squareWidth;
-int squareHeight;
-_transferCells transferCells[NUMBER_CELLS];
+int 			squareWidth;
+int 			squareHeight;
+_transferCells 	transferCells[NUMBER_CELLS];
 
 //int      transferWithSprite;	// which sprite are we transferring to
 
-int playerOnSide = LEFT_SIDE; // Setup default side
-int droidOnSide = RIGHT_SIDE;
+int 			playerOnSide = LEFT_SIDE; // Setup default side
+int 			droidOnSide = RIGHT_SIDE;
 
-int numPlayerTokens;
-int numDroidTokens;
+int 			numPlayerTokens;
+int 			numDroidTokens;
 
-float	transferPlayCountDown;
-float	transferPlayCount = 0.0f;
-int		transferPlayCountLeft = 0;
-int		transferPlayCountLeftDefault;
+float			transferPlayCountDown;
+float			transferPlayCount = 0.0f;
+int				transferPlayCountLeft = 0;
+int				transferPlayCountLeftDefault;
 
-float enemyTransferThinkCount = 0.0f;
-float enemyTransferThinkDelay = 0.0f;
-bool foundACircuit = false;
-int nextCircuitToUse;
+float 			enemyTransferThinkCount = 0.0f;
+float 			enemyTransferThinkDelay = 0.0f;
+bool 			foundACircuit = false;
+int 			nextCircuitToUse;
 
-int selectSideCounter = TRANSFER_COUNTER;
-float delayTransferIntro = TRANSFER_DELAY;
+int 			selectSideCounter = TRANSFER_COUNTER;
+float 			delayTransferIntro = TRANSFER_DELAY;
 
-int playerBlockPos;
-int droidBlockPos;
+int 			playerBlockPos;
+int 			droidBlockPos;
 
-int transferDroidPosX;
-int transferDroidPosY;
-int transferTextPosX;
-int transferTextHeight;
-int transferTextPosY;
-int transferTitlePosX;
-int transferTitlePosY;
+int 			transferDroidPosX;
+int 			transferDroidPosY;
+int 			transferTextPosX;
+int 			transferTextHeight;
+int 			transferTextPosY;
+int 			transferTitlePosX;
+int 			transferTitlePosY;
 
-bool circuitFound = false;
-float circuitTimeAlive;
+bool 			circuitFound = false;
+float 			circuitTimeAlive;
 
-int droidTransferedIntoIndex = -1;	// also used to bypass explosion detection after transfer
+int 			droidTransferedIntoIndex = -1;	// also used to bypass explosion detection after transfer
 
-int numActiveLeft = 0;
-int numActiveRight = 0;
-int numActiveDispute = 0;
+int 			numActiveLeft = 0;
+int 			numActiveRight = 0;
+int 			numActiveDispute = 0;
 
 //------------------------------------------------------------
 //
@@ -364,7 +364,6 @@ void trn_startTransferMode ( int transferToDroid )
 // ----------------------------------------------------------------------------
 //
 //Process timings for transfer screen
-
 void trn_processTransferScreen ( float interpolate )
 // ----------------------------------------------------------------------------
 {
@@ -464,16 +463,70 @@ void trn_processTransferScreen ( float interpolate )
 						transferPlayCount = transferPlayCountDown;
 						if ( transferPlayCountLeft < 0 )
 							{
-								currentMode = MODE_TRANSFER_COPY; // Transfer game finished
 								//
-								// If player has won - go to MODE_TRANSFER_COPY
+								// Got a deadlock - start again
 								//
-								// If deadlock go to MODE_DEADLOCK
-								//
-								// If enemy won - check player current droid - if its 001 - end game
-								//
-								// else go to MODE_TRANSFER_LOST
-								//
+								if ( numActiveLeft == numActiveRight )
+									{
+										currentMode = MODE_TRANSFER_DEADLOCK;
+										sys_playSound ( SND_TRANSFER_DEADLOCK, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+										delayTransferIntro = TRANSFER_DELAY * 3;
+										return;
+									}
+
+								if ( playerOnSide == LEFT_SIDE )
+									{
+										if ( numActiveLeft > numActiveRight )
+											{
+												// Player has more active lines
+												currentMode = MODE_TRANSFER_COPY;
+												return;
+											}
+										else
+											{
+												// enemy droid has won
+												if ( playerDroidTypeDBIndex == 0 )	// Currently a 001
+													{
+														playerCurrentHealth = -1;	// Kill player
+														gam_doDamageToPlayer ( DAMAGE_EXPLOSION, -1 );
+														currentMode = MODE_SHOWLEVEL;
+														return;
+													}
+												else
+													{
+														// Lost - drop to 001
+														gam_dropPlayerTo001();
+														currentMode = MODE_SHOWLEVEL;
+														return;
+													}
+											}
+									}
+								else	// Player is on right hand side
+									{
+										if ( numActiveRight > numActiveLeft )
+											{
+												currentMode = MODE_TRANSFER_COPY;
+												return;
+											}
+										else
+											{
+												// enemy droid has won
+												if ( playerDroidTypeDBIndex == 0 )	// Currently a 001
+													{
+														playerCurrentHealth = -1;	// Kill player
+														gam_doDamageToPlayer ( DAMAGE_EXPLOSION, -1 );
+														currentMode = MODE_SHOWLEVEL;
+														return;
+													}
+												else
+													{
+														// Lost - drop to 001
+														gam_dropPlayerTo001();
+														currentMode = MODE_SHOWLEVEL;
+														return;
+													}
+											}
+									}
 							}
 					}
 				break;
@@ -486,6 +539,24 @@ void trn_processTransferScreen ( float interpolate )
 						delayTransferIntro = TRANSFER_DELAY;
 						trn_copyDroidAttributes();
 						currentMode = MODE_TRANSFER_FINISH;
+					}
+				break;
+
+			case MODE_TRANSFER_DEADLOCK:
+				gam_setHUDState(HUD_STATE_DEADLOCK);
+
+				delayTransferIntro -= TRANSFER_SPEED * interpolate;
+				//
+				// Play sound, move to next stage when finished
+				if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_DEADLOCK ) ) && ( true == playSounds ) )
+					delayTransferIntro = -1;
+
+				if ( delayTransferIntro < 0.0 )
+					{
+						delayTransferIntro = TRANSFER_DELAY;
+						sys_changeMode ( MODE_TRANSFER_START, false );
+						trn_setupSquares();
+						trn_setupTokens();
 					}
 				break;
 
@@ -535,7 +606,6 @@ void trn_drawTransferScreen()
 	switch ( currentMode )
 		{
 			case MODE_TRANSFER_INTRO:
-
 				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferOne" ) );
 				break;
 
@@ -571,6 +641,10 @@ void trn_drawTransferScreen()
 
 			case MODE_TRANSFER_COPY:
 				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferFour" ) );
+				break;
+
+			case MODE_TRANSFER_DEADLOCK:
+				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferFive" ) );
 				break;
 
 			case MODE_TRANSFER_FINISH:

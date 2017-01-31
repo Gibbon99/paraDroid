@@ -36,6 +36,7 @@ void as_setEnglishText()
 	gui_addKeyAndText("deckView",			"Deck View");
 	gui_addKeyAndText("captured",			"Captured");
 	gui_addKeyAndText("healed",				"No damage");
+	gui_addKeyAndText("deadlock",			"Deadlock");
 
 	gui_addKeyAndText("startGame", 			"Start Game");
 	gui_addKeyAndText("tutorial", 			"Tutorial");
@@ -62,6 +63,7 @@ void as_setEnglishText()
 	gui_addKeyAndText("transferTwo",		"This is the droid you currently control");
 	gui_addKeyAndText("transferThree",		"This is the droid you want to control");
 	gui_addKeyAndText("transferFour",		"Taking control of new droid...");
+	gui_addKeyAndText("transferFive",		"Transfer Deadlock. Try again.");
 
 	gui_addKeyAndText("tutTransText",		" To take over another droid you enter into Transfer mode. ! ! Press and hold the Action key with no other keys down to enter this mode. Colliding with another droid will initiate transfer mode.");
 	gui_addKeyAndText("tutTransGameText",	"To gain control of another droid, you must win the circuit transfer game. Select the side you will use. Press the UP / DOWN keys to move your token to a suitable circuit. Press the Action key to select that circuit. You must have more of your color before the time runs out in order to win.");

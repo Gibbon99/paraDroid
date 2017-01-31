@@ -181,6 +181,10 @@ void gam_drawHud()
 //				strcpy(statusText, "Captured");
 				break;
 
+			case HUD_STATE_DEADLOCK:
+				statusText = gui_getString("deadlock");
+				break;
+
 			case HUD_STATE_SELECT_TIME:
 				sprintf(statusText.c_str(), "Select - %i", selectSideCounter);
 				break;
