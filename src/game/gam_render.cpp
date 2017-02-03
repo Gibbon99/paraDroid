@@ -186,11 +186,11 @@ void gam_drawHud()
 				break;
 
 			case HUD_STATE_SELECT_TIME:
-				sprintf(statusText.c_str(), "Select - %i", selectSideCounter);
+				sprintf((char *)statusText.c_str(), "Select - %i", selectSideCounter);
 				break;
 
 			case HUD_STATE_TIME_LEFT:
-				sprintf(statusText.c_str(), "Time left - %i", transferPlayCountLeft);
+				sprintf((char *)statusText.c_str(), "Time left - %i", transferPlayCountLeft);
 				break;
 		}
 

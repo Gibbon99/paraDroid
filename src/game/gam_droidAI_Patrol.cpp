@@ -174,7 +174,13 @@ int ai_moveDroidToWaypoint ( int whichDroid )
 	//
 	// Move the droid
 	//
-	cpBodySetForce ( shipLevel[currentLevel].droid[whichDroid].body, shipLevel[currentLevel].droid[whichDroid].velocity );
+	if (false == cpBodyIsSleeping(shipLevel[currentLevel].droid[whichDroid].body))
+	{
+		if (true == cpSpaceContainsBody(space, shipLevel[currentLevel].droid[whichDroid].body))
+		{
+			cpBodySetForce ( shipLevel[currentLevel].droid[whichDroid].body, shipLevel[currentLevel].droid[whichDroid].velocity );
+		}
+	}
 	//
 	// See if the droid has reached it's destination
 	//

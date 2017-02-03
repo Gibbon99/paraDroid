@@ -28,7 +28,8 @@ extern bool		pauseSound;
 extern float	volumeLevel;
 extern float	alertLevelDistance;
 extern string	volumeLevelStr;
-
+extern float 	as_soundPlayDelay;
+extern float 	soundPlayDelay;
 
 struct _sounds
 	{

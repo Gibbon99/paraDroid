@@ -19,53 +19,52 @@ Copyright 2017 David Berry
 
 #include "../../hdr/sys_globals.h"
 
-_sounds		sound[] =
-{
-	{NULL, "collosion1.wav", 		false},
-	{NULL, "endTransmission1.wav", 	false},
-	{NULL, "greenAlert.wav", 		false},
-	{NULL, "lift1.wav", 			false},
-	{NULL, "scrollBeeps.wav", 		false},
-	{NULL, "transferdeadlock.wav", 	false},
-	{NULL, "yellowAlert.wav", 		false},
-	{NULL, "console1.wav", 			false},
-	{NULL, "endTransmission2.wav", 	false},
-	{NULL, "keypressBad.wav", 		false},
-	{NULL, "lift2.wav", 			false},
-	{NULL, "start1.wav", 			false},
-	{NULL, "transferMove.wav", 		false},
-	{NULL, "console2.wav", 			false},
-	{NULL, "energyHeal.wav", 		false},
-	{NULL, "keyPressGood.wav", 		false},
-	{NULL, "lift3.wav", 			false},
-	{NULL, "start2.wav", 			false},
-	{NULL, "transferStage1.wav", 	false},
-	{NULL, "damage.wav", 			false},
-	{NULL, "explode1.wav", 			false},
-	{NULL, "laser.wav", 			false},
-	{NULL, "lowEnergy.wav", 		false},
-	{NULL, "startAll.wav", 			false},
-	{NULL, "transferStage2.wav", 	false},
-	{NULL, "disruptor.wav", 		false},
-	{NULL, "explode2.wav", 			false},
-	{NULL, "levelShutdown.wav", 	false},
-	{NULL, "redAlert.wav", 			false},
-	{NULL, "transfer1.wav", 		false},
-	{NULL, "transferStart.wav", 	false},
-	{NULL, "door.wav",				false}
+_sounds sound[] = { { NULL, "collosion1.wav", false },
+	{ NULL, "endTransmission1.wav", false },
+	{ NULL, "greenAlert.wav", false },
+	{ NULL, "lift1.wav", false },
+	{ NULL, "scrollBeeps.wav", false },
+	{ NULL, "transferdeadlock.wav", false },
+	{ NULL, "yellowAlert.wav", false },
+	{ NULL, "console1.wav", false },
+	{ NULL, "endTransmission2.wav", false },
+	{ NULL, "keypressBad.wav", false },
+	{ NULL, "lift2.wav", false },
+	{ NULL, "start1.wav", false },
+	{ NULL, "transferMove.wav", false },
+	{ NULL, "console2.wav", false },
+	{ NULL, "energyHeal.wav", false },
+	{ NULL, "keyPressGood.wav", false },
+	{ NULL, "lift3.wav", false },
+	{ NULL, "start2.wav", false },
+	{ NULL, "transferStage1.wav", false },
+	{ NULL, "damage.wav", false },
+	{ NULL, "explode1.wav", false },
+	{ NULL, "laser.wav", false },
+	{ NULL, "lowEnergy.wav", false },
+	{ NULL, "startAll.wav", false },
+	{ NULL, "transferStage2.wav", false },
+	{ NULL, "disruptor.wav", false },
+	{ NULL, "explode2.wav", false },
+	{ NULL, "levelShutdown.wav", false },
+	{ NULL, "redAlert.wav", false },
+	{ NULL, "transfer1.wav", false },
+	{ NULL, "transferStart.wav", false },
+	{ NULL, "door.wav", false }
 };
 
-
-int 					numSoundDevices = 1;
-bool 					playSounds;
-int						as_numSamples;
-int						as_numMultiSamples;
-bool					as_useSound;
-bool					pauseSound = false;
-float					volumeLevel;
-string					volumeLevelStr;
-_multiSounds			*multiSounds;
-float					alertLevelDistance;
+int numSoundDevices = 1;
+bool playSounds;
+int as_numSamples;
+int as_numMultiSamples;
+bool as_useSound;
+bool pauseSound = false;
+float volumeLevel;
+string volumeLevelStr;
+_multiSounds* multiSounds;
+float alertLevelDistance;
+float as_soundPlayDelay;
+float soundPlayDelay = as_soundPlayDelay;
 
 //-------------------------------------------------------------
 //
@@ -223,7 +222,10 @@ void sys_playMultiSample ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 					return;
 				}
 		}
-	con_print ( true, false, "WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ %i ]", as_numMultiSamples );
+	con_print ( true,
+	            false,
+	            "WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ %i ]",
+	            as_numMultiSamples );
 }
 
 //-------------------------------------------------------------------------
@@ -247,10 +249,27 @@ bool sys_isSoundPlaying ( int whichSound )
 bool sys_playSound ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 //-------------------------------------------------------------------------
 {
+	if ( whichSound == SND_COLLIDE_1 )
+		{
+			soundPlayDelay -= 1.0f * thinkInterval;
+			if ( soundPlayDelay < 0.0f )
+				{
+					soundPlayDelay = as_soundPlayDelay;
+					al_set_sample_instance_pan ( sound[whichSound].instance, pan );
+					al_set_sample_instance_playmode ( sound[whichSound].instance, loop );
+					//
+					// ALLEGRO_SAMPLE_ID in place of null for sample ID
+					al_play_sample_instance ( sound[whichSound].instance );
+
+					return true;
+				}
+			return true;
+		}
+
 	if ( ( false == playSounds ) || ( true == pauseSound ) )
 		return false;
 
-	if ( true == sys_isSoundPlaying ( SND_DAMAGE ) )
+	if ( true == sys_isSoundPlaying ( SND_COLLIDE_1 ) )
 		return true;
 
 	if ( true == sys_isSoundPlaying ( whichSound ) )
@@ -270,7 +289,7 @@ bool sys_playSound ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 
 //-------------------------------------------------------------------------
 //
-//Stop playing a sound - pass in sound index to get SAMPLE_ID
+// Stop playing a sound - pass in sound index to get SAMPLE_ID
 void sys_stopSound ( int whichSound )
 //-------------------------------------------------------------------------
 {
@@ -293,10 +312,9 @@ void sys_stopAllSounds()
 		al_stop_sample_instance ( sound[i].instance );
 
 	for ( int indexCount = 0; indexCount != as_numMultiSamples; indexCount++ )
-	{
-		al_stop_sample_instance( multiSounds[indexCount].instance );
-	}
-
+		{
+			al_stop_sample_instance ( multiSounds[indexCount].instance );
+		}
 }
 
 //-------------------------------------------------------------------------
@@ -305,7 +323,7 @@ void sys_stopAllSounds()
 void sys_playSoundFromScript ( int whichSound, float pan, bool loopIt )
 //-------------------------------------------------------------------------
 {
-	ALLEGRO_PLAYMODE	loopValue;
+	ALLEGRO_PLAYMODE loopValue;
 
 	if ( ( whichSound < 0 ) || ( whichSound > NUM_SOUNDS ) )
 		{

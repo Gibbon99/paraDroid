@@ -88,6 +88,9 @@ bool sys_visibleOnScreen(cpVect worldCoord, int shapeSize)
 {
 	_myBoundingBox	screenArea;
 
+	if ((worldCoord.x < 0) || (worldCoord.y < 0))
+		return false;
+		
 	screenArea.x = viewableScreenCoord.x - (shapeSize * 2);
 	screenArea.y = viewableScreenCoord.y - (shapeSize * 2);
 	screenArea.width = winWidth;

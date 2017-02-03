@@ -244,6 +244,9 @@ void as_initGameVars()
 	// How many already playing samples can play at the same time
 	as_numMultiSamples = 8;
 	//
+	// Attempt to stop collide sample repeatly playing
+	as_soundPlayDelay = 2.0f;
+	//
 	// Position of the droid sprite in transfer screen
 	transferDroidPosX = 5;
 	transferDroidPosY = 165;

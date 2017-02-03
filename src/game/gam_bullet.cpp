@@ -102,7 +102,6 @@ cpVect bul_getStartingPosition(cpVect currentPos, int whichBullet, int bulletTyp
 //-----------------------------------------------------------------------------
 {
 	cpVect	bulletStart = {0.0f, 0.0f};
-	int		bulletWidth, bulletHeight, widthDiff, heightDiff;
 
 	bulletStart = currentPos;
 

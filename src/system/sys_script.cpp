@@ -394,6 +394,8 @@ _hostScriptFunctions hostVariables[] =
 	{"float staticImageCounterTime", &staticImageCounterTime},
 	{"float endScreenCounterTime", &endScreenCounterTime},
 
+	{"float as_soundPlayDelay", &as_soundPlayDelay},
+	
 	{"", NULL},
 };
 
