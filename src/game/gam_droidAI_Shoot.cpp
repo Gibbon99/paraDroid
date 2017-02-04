@@ -156,7 +156,10 @@ void gam_findChanceToShoot ( int whichDroid )
 		}
 
 	if ( true == shipLevel[currentLevel].droid[whichDroid].witnessShooting )
+	{
 		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_witnessShoot;
+		shipLevel[currentLevel].droid[whichDroid].targetIndex = -1;
+	}
 	else
 		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_witnessShoot;
 
@@ -217,6 +220,7 @@ void gam_processWitnessShooting()
 						{
 							shipLevel[currentLevel].droid[i].witnessShooting = true;
 							shipLevel[currentLevel].droid[i].witnessShootingCountDown = witnessShootValue;
+							shipLevel[currentLevel].droid[i].targetIndex = -1;
 						}
 				}
 		}

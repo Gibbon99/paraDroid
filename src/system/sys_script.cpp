@@ -219,6 +219,7 @@ _hostScriptFunctions hostVariables[] =
 	{"bool useBackingBitmap", &useBackingBitmap},
 	{"bool useCollisionDetection", &useCollisionDetection},
 	{"int fullScreenValue", &fullScreenValue},
+	{"float fadeSpeed", &fadeSpeed},
 	{"float gravity", &gravity},
 	{"float doorFrameDelay", &doorFrameDelay},
 	{"float playerMaxVelocity", &playerMaxVelocity},
@@ -395,7 +396,7 @@ _hostScriptFunctions hostVariables[] =
 	{"float endScreenCounterTime", &endScreenCounterTime},
 
 	{"float as_soundPlayDelay", &as_soundPlayDelay},
-	
+
 	{"", NULL},
 };
 

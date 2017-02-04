@@ -78,6 +78,7 @@ void gam_restart()
 	// Reset Alert level
 	//
 	currentAlertLevel = ALERT_GREEN_TILE;
+	processedPhysics = false;
 }
 
 //---------------------------------------------------------
@@ -239,6 +240,8 @@ void gam_changeToLevel ( int newLevel, int whichLift )
 	gam_powerDownLevel ( currentLevel, false );
 
 	gam_updateScrollingVars ( false );
+
+	processedPhysics = false;
 }
 
 //---------------------------------------------------------

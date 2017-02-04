@@ -27,7 +27,7 @@ bool		allDroidsVisible;
 // See if point passed by X and Y is a solid tile
 //
 // Returns 1 if solid, 0 if passable
-bool gam_LOSCalled(int pass_x, int pass_y)
+bool gam_LOSCalled ( int pass_x, int pass_y )
 //-----------------------------------------------------
 {
 	int tile;
@@ -35,9 +35,9 @@ bool gam_LOSCalled(int pass_x, int pass_y)
 	pass_x = pass_x / TILE_SIZE;
 	pass_y = pass_y / TILE_SIZE;
 
-	tile = shipLevel[currentLevel].tiles[(pass_y * (shipLevel[currentLevel].levelDimensions.x) + pass_x)];
+	tile = shipLevel[currentLevel].tiles[ ( pass_y * ( shipLevel[currentLevel].levelDimensions.x ) + pass_x )];
 
-	if (tile > NO_PASS_TILE)
+	if ( tile > NO_PASS_TILE )
 		return false;		// not on a solid tile - can see through
 	else
 		return true;		// tile is solid - set flag to true
@@ -48,7 +48,7 @@ bool gam_LOSCalled(int pass_x, int pass_y)
 // draw a line until hit a solid tile or reach enemy.
 //
 // If solid is hit, set visible to 0 and exit rightaway
-void lvl_doLineSight(cpVect startPos, cpVect destPos, int whichDroid)
+void lvl_doLineSight ( cpVect startPos, cpVect destPos, int whichDroid )
 //-----------------------------------------------------
 {
 	float		distance;
@@ -58,22 +58,22 @@ void lvl_doLineSight(cpVect startPos, cpVect destPos, int whichDroid)
 //	cpVect		currentDirection;
 	cpVect		currentPosition;
 
-	vectDirection = sys_getVectorDirection(startPos, destPos);
+	vectDirection = sys_getVectorDirection ( startPos, destPos );
 
-	vectVector = cpvnormalize(vectDirection);
+	vectVector = cpvnormalize ( vectDirection );
 
-	distance = sys_getDistance(startPos, destPos);
+	distance = sys_getDistance ( startPos, destPos );
 	distance /= g_LineOfSightStep;
 
 	currentPosition.x = startPos.x;
 	currentPosition.y = startPos.y;
 
-	for (int i = 0; i != distance; i++)
+	for ( int i = 0; i != distance; i++ )
 		{
 			currentPosition.x += vectVector.x * g_LineOfSightStep;
 			currentPosition.y += vectVector.y * g_LineOfSightStep;
 
-			if (true == gam_LOSCalled(currentPosition.x, currentPosition.y))
+			if ( true == gam_LOSCalled ( currentPosition.x, currentPosition.y ) )
 				{
 					shipLevel[currentLevel].droid[whichDroid].visibleToPlayer = false;
 					return; // Early out - hit a tile before reaching the droid - can't be seen
@@ -93,23 +93,36 @@ void lvl_LOS()
 
 	LOSTimeStart = al_get_time();
 
-	for (tempCount = 0; tempCount != shipLevel[currentLevel].numDroids; tempCount++)
+	for ( tempCount = 0; tempCount != shipLevel[currentLevel].numDroids; tempCount++ )
 		{
-			if (true == shipLevel[currentLevel].droid[tempCount].isAlive)
+			if ( true == shipLevel[currentLevel].droid[tempCount].isAlive )
 				{
 					shipLevel[currentLevel].droid[tempCount].visibleToPlayer = true;
 					//
-					// check if it is even visible on the screen
-					if (true == sys_visibleOnScreen(shipLevel[currentLevel].droid[tempCount].worldPos, SPRITE_SIZE))
+					// TODO: Check - how is this being set
+					//
+					if ( ( true == isnan ( shipLevel[currentLevel].droid[tempCount].worldPos.x ) ) || ( true == isnan ( shipLevel[currentLevel].droid[tempCount].worldPos.y ) ) )
 						{
+							con_print ( true, false, "Droid [ %i ] worldPos is NAN - frame [ %l ]", tempCount, frameCount );
+
+							shipLevel[currentLevel].droid[tempCount].worldPos.x = shipLevel[currentLevel].wayPoints[shipLevel[currentLevel].droid[tempCount].wayPointIndex].x;
+							shipLevel[currentLevel].droid[tempCount].worldPos.y = shipLevel[currentLevel].wayPoints[shipLevel[currentLevel].droid[tempCount].wayPointIndex].y;
+
+							break;
+						}
+					//
+					// Check if it is even visible on the screen
+					if ( true == sys_visibleOnScreen ( shipLevel[currentLevel].droid[tempCount].worldPos, SPRITE_SIZE ) )
+						{
+
+
 							tempVect = shipLevel[currentLevel].droid[tempCount].worldPos;
 
-							tempVect.x += TILE_SIZE;
-							tempVect.y += TILE_SIZE;
+							tempVect.y += ( TILE_SIZE / 2 );
 
-							lvl_doLineSight(playerWorldMiddlePos, tempVect, tempCount);
+							lvl_doLineSight ( playerWorldMiddlePos, tempVect, tempCount );
 
-							if (true == allDroidsVisible)
+							if ( true == allDroidsVisible )
 								shipLevel[currentLevel].droid[tempCount].visibleToPlayer = true;
 						}
 				}
@@ -127,11 +140,11 @@ void lvl_debugLOS()
 	cpVect screenPos;
 	cpVect screenPlayerWorldPos;
 
-	for (int i = 0; i != shipLevel[currentLevel].numDroids; i++)
+	for ( int i = 0; i != shipLevel[currentLevel].numDroids; i++ )
 		{
-			screenPos = sys_worldToScreen(shipLevel[currentLevel].droid[i].worldPos, DROID_BODY_SIZE);
-			screenPlayerWorldPos = sys_worldToScreen(playerWorldMiddlePos, DROID_BODY_SIZE);
+			screenPos = sys_worldToScreen ( shipLevel[currentLevel].droid[i].worldPos, DROID_BODY_SIZE );
+			screenPlayerWorldPos = sys_worldToScreen ( playerWorldMiddlePos, DROID_BODY_SIZE );
 
-			al_draw_line(screenPlayerWorldPos.x, screenPlayerWorldPos.y, screenPos.x + TILE_SIZE, screenPos.y + TILE_SIZE, al_map_rgb_f(1.0f, 1.0f, 1.0f), 2);
+			al_draw_line ( screenPlayerWorldPos.x, screenPlayerWorldPos.y, screenPos.x + TILE_SIZE, screenPos.y + TILE_SIZE, al_map_rgb_f ( 1.0f, 1.0f, 1.0f ), 2 );
 		}
 }

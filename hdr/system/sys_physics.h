@@ -37,6 +37,7 @@ extern float			playerElastic;
 extern float			bulletMass;
 
 extern bool				debugDrawPhysics;
+extern bool				processedPhysics;
 
 //-------------------------------------------------------
 //

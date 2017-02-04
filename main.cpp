@@ -40,6 +40,7 @@ bool				useCollisionDetection = false;
 double				next_game_tick;
 int					loops;
 float				interpolation;
+long				frameCount;
 
 int					winWidth;
 int					winHeight;
@@ -64,6 +65,7 @@ int main (int argc, char **argv)
 
 	renderTick1 = 0.0f;
 	thinkTick1 = 0.0f;
+	frameCount = 0;
 
 	next_game_tick = al_get_time();
 
@@ -80,7 +82,8 @@ int main (int argc, char **argv)
 					sys_CalculateThinkFrameRate (singleTimeValue);
 					}
 
-			io_readKeyboard();	// Best in 30fps loop - or as fast as possible??
+			if (false == processFadeValue)
+				io_readKeyboard();	// Best in 30fps loop - or as fast as possible??
 
 			interpolation = float (singleTimeValue + SKIP_TICKS - next_game_tick) / float (SKIP_TICKS);
 

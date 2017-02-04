@@ -124,6 +124,7 @@ extern int					fpsPrint;
 extern int					thinkFpsPrint;
 extern double				renderTick1;
 extern double				thinkTick1;
+extern long					frameCount;
 
 extern float				baseGameSpeed;
 

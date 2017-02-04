@@ -22,6 +22,7 @@ Copyright 2017 David Berry
 extern bool		    processFadeValue;
 extern int			currentFadeAction;
 extern float		fadeValue;
+extern float		fadeSpeed;			// Setup from script
 extern int			modeAfterFadeOff;
 extern float		indicatorAnimSpeed;
 extern float		staticScreenShowTime;

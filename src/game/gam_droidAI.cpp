@@ -673,6 +673,9 @@ void drd_clearHadCollidedFlag ()
 void drd_processDroidAI ( int whichLevel, float delayInterval )
 //-----------------------------------------------------------------------------
 {
+	if (false == processedPhysics)
+		return;
+
 	for ( int i = 0; i != shipLevel[whichLevel].numDroids; i++ )
 		{
 			if ( ( true == shipLevel[whichLevel].droid[i].isAlive ) &&

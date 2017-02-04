@@ -33,11 +33,15 @@ float 		healingTimer; // Used to time healing for droids
 //---------------------------------------------------------------
 //
 // Update the droids information from physics properties
-
 void drd_updateDroidPosition ( int whichDroid )
 //---------------------------------------------------------------
 {
 	shipLevel[currentLevel].droid[whichDroid].worldPos = cpBodyGetPosition ( shipLevel[currentLevel].droid[whichDroid].body );
+
+	if ( (shipLevel[currentLevel].droid[whichDroid].worldPos.x < 0) || (shipLevel[currentLevel].droid[whichDroid].worldPos.y < 0))
+	{
+		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %l ]\n", whichDroid, currentLevel, frameCount);
+	}
 }
 
 //---------------------------------------------------------------
@@ -45,7 +49,6 @@ void drd_updateDroidPosition ( int whichDroid )
 // Do damage to a droid
 //
 // damageSource can be either a bullet, explosion or collision
-
 void drd_damageToDroid ( int whichLevel, int whichDroid, int damageSource, int sourceDroid )
 //---------------------------------------------------------------
 {
@@ -76,8 +79,6 @@ void drd_damageToDroid ( int whichLevel, int whichDroid, int damageSource, int s
 						else
 							{
 								sys_playSound ( SND_DAMAGE, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-								// TODO (dberry#1#): Modify Droid AI
-
 							}
 					}
 				else // hit by another droid bullet
@@ -164,6 +165,9 @@ void gam_initDroidValues ( int whichLevel )
 			tempDroid.wayPointIndex = sys_genRand_int32() % ( shipLevel[whichLevel].numWaypoints - 1 );
 			tempDroid.worldPos.x = shipLevel[whichLevel].wayPoints[tempDroid.wayPointIndex].x;
 			tempDroid.worldPos.y = shipLevel[whichLevel].wayPoints[tempDroid.wayPointIndex].y;
+
+			if (tempDroid.worldPos.x < 0)
+				printf("ERROR: worlPos set to less than 0 - Level [ %i ] Droid [ %i ]\n", whichLevel, i);
 
 			tempDroid.screenPos = sys_worldToScreen ( tempDroid.worldPos, DROID_BODY_SIZE );
 			tempDroid.wayPointDirection = WAYPOINT_UP;

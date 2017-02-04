@@ -24,32 +24,33 @@ Copyright 2017 David Berry
 int		hudStatusState;
 bool	indicatorStateOn = true;
 float	indicatorAnimSpeed;
+float	fadeSpeed;			// Setup from script
 
 bool	processFadeValue = true;
 int		currentFadeAction;
 float	fadeValue = 1.0f;
 int		modeAfterFadeOff;
 
-int tilePosX = 0;
-int tilePosY = 0;
-float pixelX = 0.0f;
-float pixelY = 0.0f;
+int		tilePosX = 0;
+int 	tilePosY = 0;
+float 	pixelX = 0.0f;
+float 	pixelY = 0.0f;
 
-int numTileAcrossInTexture, numTilesDownInTexture;
+int 	numTileAcrossInTexture, numTilesDownInTexture;
 
-int profileTileCalcSkipped;
-int profileTotalTileDrawn;
+int 	profileTileCalcSkipped;
+int 	profileTotalTileDrawn;
 
-double profileTimeStart;
-double profileTimeEnd;
-float profileTimeAverage = 0.0f;
-float profileTimeCount = 0.0f;
-float profileTimeTotal = 0.0f;
+double 	profileTimeStart;
+double 	profileTimeEnd;
+float 	profileTimeAverage = 0.0f;
+float 	profileTimeCount = 0.0f;
+float 	profileTimeTotal = 0.0f;
 
-float statusTextX, statusTextY, scoreTextX;
-int currentTunnel;
+float 	statusTextX, statusTextY, scoreTextX;
+int 	currentTunnel;
 
-string statusText;
+string 	statusText;
 
 struct _tileTexCoords
 {
@@ -488,7 +489,7 @@ void gam_processFadeValue()
 	switch (currentFadeAction)
 		{
 			case FADE_ON:
-				countDelay += TICKS_PER_SECOND;
+				countDelay += fadeSpeed * thinkInterval;
 				if (countDelay > 1.0f)
 					{
 						countDelay = 0.0f;
@@ -502,7 +503,7 @@ void gam_processFadeValue()
 				break;
 
 			case FADE_OFF:
-				countDelay += TICKS_PER_SECOND;
+				countDelay += fadeSpeed * thinkInterval;
 				if (countDelay > 1.0f)
 					{
 						countDelay = 0.0f;

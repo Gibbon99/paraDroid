@@ -22,13 +22,13 @@ Copyright 2017 David Berry
 #include "../../hdr/system/sys_sound.h"
 #include "../../hdr/game/gam_terminal.h"
 
-int currentMode;
-double profileRenderFrameStart, profileRenderFrameEnd;
+int 		currentMode;
+double 		profileRenderFrameStart, profileRenderFrameEnd;
 
-float loadingBarPercent;
-char loadingStatus[MAX_STRING_SIZE];
+float 		loadingBarPercent;
+char 		loadingStatus[MAX_STRING_SIZE];
 
-bool gamePaused = false;
+bool 		gamePaused = false;
 
 static float splashCounter = 5.0f;
 
@@ -87,6 +87,8 @@ void sys_displayFrame ( float interpolation )
 //-----------------------------------------------------------------------------
 {
 	float introBlockOut = 60.0f;
+
+	frameCount++;
 
 	profileRenderFrameStart = al_get_time();
 
@@ -184,23 +186,23 @@ void sys_displayFrame ( float interpolation )
 
 //				sys_debugShowTileGrid();
 
-/*
-				// Return how many waypoints there are
-				if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
-					{
-						if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
-							{
-								gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
-							}
-					}
-*/
+				/*
+								// Return how many waypoints there are
+								if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
+									{
+										if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
+											{
+												gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
+											}
+									}
+				*/
 				// Draw Paused window
 
-				sys_displayDebug();
+				//sys_displayDebug();
 				//sys_displayScreenMiddle();
 
 				//gam_debugShowDestination();
-				gam_debugShowWaypoints();
+				//gam_debugShowWaypoints();
 
 				//sys_debugLineSegments();
 				//sysDoorDebugTrigger();
@@ -326,10 +328,19 @@ void sys_updateFrame()
 				if ( false == gamePaused )
 					{
 						gam_processPlayerMovement ( thinkInterval );
+						//
+						// Work around phyics and worldPos timings
+						// Results in droid with invalid worldPos values
+						//
+						if (true == processedPhysics)
+						{
+							if (false == processFadeValue)
+								drd_processDroidAI ( currentLevel, thinkInterval );
+						}
+
 						gam_updateScrollingVars ( false );
 						gam_doorCheckTriggerAreas();
 						gam_doorProcessActions();
-						drd_processDroidAI ( currentLevel, thinkInterval );
 						bul_processBullets();
 						gam_weaponRechargePlayer();
 						gam_checkTransferSound();
@@ -346,8 +357,9 @@ void sys_updateFrame()
 				gam_animatePlayerSprite ( thinkInterval );
 				gam_processScore ( thinkInterval );
 				drd_clearHadCollidedFlag();
-				cpSpaceStep ( space, SKIP_TICKS );
 				gam_AStarProcessPaths();
+				cpSpaceStep ( space, SKIP_TICKS );
+				processedPhysics = true;
 				break;
 
 			case MODE_LIFT_VIEW:

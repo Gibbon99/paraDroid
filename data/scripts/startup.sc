@@ -135,6 +135,9 @@ void as_initGameVars()
 	SKIP_TICKS = (1000.0f / TICKS_PER_SECOND) * 0.001f;
 
 	fullScreenValue = io_readConfigValuesInt("fullScreen");
+	//
+	// Move between screens
+	fadeSpeed = 30.0f;
 
 	if(1 == fullScreenValue)
 		displayFlags = ALLEGRO_FULLSCREEN_WINDOW;

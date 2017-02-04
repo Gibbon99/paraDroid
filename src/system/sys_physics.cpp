@@ -39,6 +39,7 @@ float			playerElastic;		// Set from startup script
 float			bulletMass;			// Set from startup script
 
 bool			debugDrawPhysics = false;
+bool			processedPhysics = false;
 
 //-------------------------------------------------------------------
 //
