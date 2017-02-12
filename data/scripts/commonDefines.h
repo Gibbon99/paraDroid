@@ -98,11 +98,6 @@ enum actionNames
     gameFire,
     gameEscape,
     actionScreenShot,
-    menuUp,
-    menuDown,
-    menuAction,
-    menuLeft,
-    menuRight,
     gamePause,
     NUMBER_ACTIONS
 };

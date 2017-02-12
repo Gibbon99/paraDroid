@@ -31,6 +31,8 @@ struct _inputAction
 {
 	int             keyValue;
 	bool            currentlyDown;
+	bool			beenUp;
+	float			repeatDelayCount;
 	string          stringValue;
 };
 

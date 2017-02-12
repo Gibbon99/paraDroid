@@ -329,6 +329,11 @@ void gam_checkPlayerHealingTile ( float thinkTime )
 void gam_doDamageToPlayer ( int damageSource, int sourceDroid )
 //-----------------------------------------------------------------------------
 {
+	return;
+
+
+
+
 	switch ( damageSource )
 		{
 			case DAMAGE_BULLET:

@@ -21,9 +21,20 @@ Copyright 2017 David Berry
 
 extern float		useKeysDelay;	// From scripts
 extern float		consoleKeysDelay;
+extern bool			repeatKeys;
+extern float		repeatKeysDelay;	// Set from script
 
-// Read the keyboard
+// Process keyboard events based on current mode
 void io_readKeyboard();
 
 // Read a key for keycode capture
 void io_readKeyCodeInput(ALLEGRO_EVENT event);
+
+// Get the state of the Down key press dependant on repeatKeys setting
+inline bool io_getKeyStateDown ( int keyName );
+
+// Set the repeat state for the keyboard
+void io_setRepeatKeysState(bool newState);
+
+// Process the keys already set from the event based system
+void io_processKeyboard(double frameTime);

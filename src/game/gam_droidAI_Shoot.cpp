@@ -19,7 +19,7 @@ Copyright 2017 David Berry
 
 #include "../../hdr/sys_globals.h"
 
-#define DEBUG_SHOOT 1
+//#define DEBUG_SHOOT 1
 
 // ----------- Values set from script ------------
 float		droidBeenShotValue;
@@ -96,7 +96,13 @@ int ai_shootBullet ( int whichDroid )
 
 	if (shipLevel[currentLevel].droid[whichDroid].targetIndex == -1)	// Player is the target
 	{
-		bulletDestPos = playerWorldPos;
+		if (false == gam_calculateInterceptShotPosition(shipLevel[currentLevel].droid[whichDroid].worldPos,
+											playerWorldPos, playerVelocity, 10.0f + baseGameSpeed, bulletStartPos));
+											{
+												// Default to player position
+											bulletDestPos = playerWorldPos;
+											printf ("DID NOT find solution to lead shot\n");
+											}
 	}
 	else
 	{

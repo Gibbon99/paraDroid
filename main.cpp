@@ -51,17 +51,17 @@ int 				tileCollision = false;
 //-----------------------------------------------------------------------------
 //
 // Start
-int main (int argc, char **argv)
+int main ( int argc, char **argv )
 //-----------------------------------------------------------------------------
-	{
+{
 	double singleTimeValue;
 
 	gameVersion = "v0.8";
 
-	if (false == sys_startOnce() )
-			{
-			exit (-1);
-			}
+	if ( false == sys_startOnce() )
+		{
+			exit ( -1 );
+		}
 
 	renderTick1 = 0.0f;
 	thinkTick1 = 0.0f;
@@ -70,29 +70,32 @@ int main (int argc, char **argv)
 	next_game_tick = al_get_time();
 
 	while ( true == gameIsRunning )
-			{
+		{
 			loops = 0;
 			singleTimeValue = al_get_time();
 
-			while (singleTimeValue > next_game_tick && loops < MAX_FRAMESKIP)
-					{
+			while ( singleTimeValue > next_game_tick && loops < MAX_FRAMESKIP )
+				{
 					sys_updateFrame();
 					next_game_tick += SKIP_TICKS;
 					loops++;
-					sys_CalculateThinkFrameRate (singleTimeValue);
-					}
+					sys_CalculateThinkFrameRate ( singleTimeValue );
+				}
 
-			if (false == processFadeValue)
-				io_readKeyboard();	// Best in 30fps loop - or as fast as possible??
+			if ( false == processFadeValue )
+				{
+					io_readKeyboard();	// Best in 30fps loop - or as fast as possible??
+					io_readJoystick();
+				}
 
-			interpolation = float (singleTimeValue + SKIP_TICKS - next_game_tick) / float (SKIP_TICKS);
+			interpolation = float ( singleTimeValue + SKIP_TICKS - next_game_tick ) / float ( SKIP_TICKS );
 
 			sys_displayFrame ( interpolation );
 
-			sys_CalculateFrameRate (singleTimeValue);
-			}
+			sys_CalculateFrameRate ( singleTimeValue );
+		}
 
 	sys_shutDown();
 
 	return 0;
-	}
+}

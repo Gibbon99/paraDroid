@@ -58,7 +58,11 @@ void io_resetKeyboardStates()
 //-----------------------------------------------------------------------------
 {
 	for (int i = 0; i != NUMBER_ACTIONS; i++)
+	{
 		inputAction[i].currentlyDown = false;
+		inputAction[i].beenUp = true;
+		inputAction[i].repeatDelayCount = repeatKeysDelay;
+	}
 }
 
 // ---------------------------------------------------------------------------
@@ -90,21 +94,6 @@ void io_mapActionKeys()
 
 	inputAction[consoleAction].keyValue             = ALLEGRO_KEY_TILDE;
 	inputAction[consoleAction].stringValue = "Show console";
-
-	inputAction[menuUp].keyValue                    = ALLEGRO_KEY_UP;
-	inputAction[menuUp].stringValue = "Menu Up";
-
-	inputAction[menuDown].keyValue                  = ALLEGRO_KEY_DOWN;
-	inputAction[menuDown].stringValue = "Menu Down";
-
-	inputAction[menuLeft].keyValue					= ALLEGRO_KEY_LEFT;
-	inputAction[menuLeft].stringValue = "Menu Left";
-
-	inputAction[menuRight].keyValue					= ALLEGRO_KEY_RIGHT;
-	inputAction[menuRight].stringValue = "Menu Right";
-
-	inputAction[menuAction].keyValue                = ALLEGRO_KEY_ENTER;
-	inputAction[menuAction].stringValue = "Menu action";
 
 	inputAction[gamePause].keyValue                 = ALLEGRO_KEY_P;
 	inputAction[gamePause].stringValue = "Pause Game";

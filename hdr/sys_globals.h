@@ -74,6 +74,7 @@ typedef int	(*ExternFunc)(...);
 #include "io/io_images.h"
 #include "io/io_keyBind.h"
 #include "io/io_packFile.h"
+#include "io/io_joystick.h"
 
 #include "system/sys_random.h"
 #include "system/sys_script.h"

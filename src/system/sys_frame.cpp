@@ -292,6 +292,12 @@ void sys_displayFrame ( float interpolation )
 void sys_updateFrame()
 //-----------------------------------------------------------------------------
 {
+	if ( false == processFadeValue )	// No keyboard while fade is happening
+	{
+		io_processKeyboard(thinkInterval);
+		io_processJoystick();
+	}
+
 	switch ( currentMode )
 		{
 			case MODE_LOADING:

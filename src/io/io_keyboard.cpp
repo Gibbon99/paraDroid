@@ -20,7 +20,8 @@ Copyright 2017 David Berry
 #include "../../hdr/sys_globals.h"
 #include "../../hdr/game/gam_transfer.h"
 
-ALLEGRO_KEYBOARD_STATE	keyboard;
+bool					repeatKeys;
+float					repeatKeysDelay;	// Set from script
 
 //-----------------------------------------------------------------------------
 //
@@ -56,7 +57,7 @@ void io_processActionKey()
 			// Use a lift
 			if ( ( playerOverTile == LIFT_TILE ) && ( playerVelocity.x == 0.0f ) && ( playerVelocity.y == 0.0f ) )
 				{
-					sys_destroyPhysicObjects(currentLevel);
+					sys_destroyPhysicObjects ( currentLevel );
 					gam_getTunnelToUse();
 					sys_changeMode ( MODE_LIFT_VIEW, true );
 					inputAction[gameFire].currentlyDown = false;
@@ -114,43 +115,29 @@ void io_processActionKey()
 //-----------------------------------------------------------------------------
 //
 // Keyboard while showing intro mode
-void io_readIntroInput ( ALLEGRO_EVENT event )
+void io_readIntroInput ( )
 //-----------------------------------------------------------------------------
 {
-	switch ( event.type )
+	if ( true == io_getKeyStateDown ( gameFire ) )
 		{
-			case ALLEGRO_EVENT_KEY_DOWN:
-				if ( ( event.keyboard.keycode == ALLEGRO_KEY_SPACE ) ||
-				        ( event.keyboard.keycode == inputAction[gameFire].keyValue ) ||
-				        ( event.keyboard.keycode == inputAction[menuAction].keyValue ) )
-					{
-						sys_changeMode ( MODE_GUI, true );
-						if ( sys_isSoundPlaying ( SND_SCROLLBEEPS ) )
-							sys_stopSound ( SND_SCROLLBEEPS );
-					}
-				break;
+			sys_changeMode ( MODE_GUI, true );
+			if ( sys_isSoundPlaying ( SND_SCROLLBEEPS ) )
+				sys_stopSound ( SND_SCROLLBEEPS );
+
+			io_setRepeatKeysState ( true );
 		}
 }
 
 //-----------------------------------------------------------------------------
 //
 // Keyboard while showing transfer mode
-void io_readTransferKeyboard ( ALLEGRO_EVENT event )
+void io_readTransferKeyboard ( )
 //-----------------------------------------------------------------------------
 {
-	//
-	// TODO: Remove for Prod
-	//
-	if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameEscape].keyValue ) )
-		{
-			sys_changeMode ( MODE_SHOWLEVEL, true );
-			return;
-		}
-
 	switch ( currentMode )
 		{
 			case MODE_TRANSFER_INTRO:
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameFire].keyValue ) )
+				if ( true == io_getKeyStateDown(gameFire) )
 					{
 						sys_changeMode ( MODE_TRANSFER_INTRO_1, true );
 						inputAction[gameFire].currentlyDown = false;
@@ -160,7 +147,7 @@ void io_readTransferKeyboard ( ALLEGRO_EVENT event )
 				break;
 
 			case MODE_TRANSFER_INTRO_1:
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameFire].keyValue ) )
+				if ( true == io_getKeyStateDown(gameFire) )
 					{
 						sys_changeMode ( MODE_TRANSFER_INTRO_2, true );
 						inputAction[gameFire].currentlyDown = false;
@@ -170,7 +157,7 @@ void io_readTransferKeyboard ( ALLEGRO_EVENT event )
 				break;
 
 			case MODE_TRANSFER_INTRO_2:
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameFire].keyValue ) )
+				if ( true == io_getKeyStateDown(gameFire) )
 					{
 						sys_changeMode ( MODE_TRANSFER_SELECT_SIDE, true );
 						inputAction[gameFire].currentlyDown = false;
@@ -181,7 +168,7 @@ void io_readTransferKeyboard ( ALLEGRO_EVENT event )
 
 
 			case MODE_TRANSFER_SELECT_SIDE:
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameFire].keyValue ) )
+				if ( true == io_getKeyStateDown(gameFire) )
 					{
 						sys_changeMode ( MODE_TRANSFER_SELECT, false );
 						inputAction[gameFire].currentlyDown = false;
@@ -192,14 +179,14 @@ void io_readTransferKeyboard ( ALLEGRO_EVENT event )
 						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
 					}
 
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameRight].keyValue ) )
+				if ( true == io_getKeyStateDown(gameRight) )
 					{
 						playerOnSide = RIGHT_SIDE;
 						droidOnSide = LEFT_SIDE;
 						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
 					}
 
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameLeft].keyValue ) )
+				if ( true == io_getKeyStateDown(gameLeft) )
 					{
 						playerOnSide = LEFT_SIDE;
 						droidOnSide = RIGHT_SIDE;
@@ -212,20 +199,19 @@ void io_readTransferKeyboard ( ALLEGRO_EVENT event )
 				if ( numPlayerTokens < 0 )
 					return;
 
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameFire].keyValue ) )
+				if ( true == io_getKeyStateDown(gameFire) )
 					{
 						trn_placeToken ( playerBlockPos, playerOnSide, PLAYER_TRANSFER );
 					}
 
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameDown].keyValue ) )
-// TODO (roam#1#): Make this move when the key is down, not on every press
+				if ( true == io_getKeyStateDown(gameDown) )
 					{
 						inputAction[gameDown].currentlyDown = true;
 						trn_moveToken ( MOVE_DOWN );
 						return;
 					}
 
-				if ( ( event.type == ALLEGRO_EVENT_KEY_DOWN ) && ( event.keyboard.keycode == inputAction[gameUp].keyValue ) )
+				if ( true == io_getKeyStateDown(gameUp) )
 					{
 						inputAction[gameUp].currentlyDown = true;
 						trn_moveToken ( MOVE_UP );
@@ -238,81 +224,73 @@ void io_readTransferKeyboard ( ALLEGRO_EVENT event )
 //-----------------------------------------------------------------------------
 //
 // Main routine to read input for GUI
-void io_readGUIInput ( ALLEGRO_EVENT event )
+void io_readGUIInput ( )
 //-----------------------------------------------------------------------------
 {
-	switch ( event.type )
+	if ( true == io_getKeyStateDown ( gameFire ) )
 		{
-			case ALLEGRO_EVENT_KEY_DOWN:
-				if ( event.keyboard.keycode == inputAction[menuAction].keyValue )
-					{
-						gui_handleFocusMove ( -1, true );
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
+			gui_handleFocusMove ( -1, true );
+			sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+		}
 
-				if ( event.keyboard.keycode == inputAction[menuUp].keyValue )
-					{
-						gui_handleFocusMove ( FOCUS_PREVIOUS, false );
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
+	if ( true == io_getKeyStateDown ( gameUp ) )
+		{
+			gui_handleFocusMove ( FOCUS_PREVIOUS, false );
+			sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+		}
 
-				if ( event.keyboard.keycode == inputAction[menuDown].keyValue )
-					{
-						gui_handleFocusMove ( FOCUS_NEXT, false );
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
+	if ( true == io_getKeyStateDown ( gameDown ) )
+		{
+			gui_handleFocusMove ( FOCUS_NEXT, false );
+			sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+		}
 
-				if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-					{
-						gui_handleFocusMove ( FOCUS_LEFT, false );
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
+	if ( true == io_getKeyStateDown ( gameLeft ) )
+		{
+			gui_handleFocusMove ( FOCUS_LEFT, false );
+			sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+		}
 
-				if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-					{
-						gui_handleFocusMove ( FOCUS_RIGHT, false );
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
-
+	if ( true == io_getKeyStateDown ( gameRight ) )
+		{
+			gui_handleFocusMove ( FOCUS_RIGHT, false );
+			sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
 		}
 }
 
 //-----------------------------------------------------------------------------
 //
 // Handle keys for moving around terminal menus
-void io_readTerminalKeyboard ( ALLEGRO_EVENT event )
+void io_readTerminalKeyboard ( )
 //-----------------------------------------------------------------------------
 {
 	switch ( currentMode )
 		{
 			case MODE_TERMINAL_DB:
-				switch ( event.type )
-					{
-						case ALLEGRO_EVENT_KEY_DOWN:
-							if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-								{
-									sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-									currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
-									sys_changeMode ( MODE_GUI, true );
-									sys_pauseSoundSystem ( false );
-								}
+				{
+					if ( true == io_getKeyStateDown ( gameFire ) )
+						{
+							sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+							currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
+							sys_changeMode ( MODE_GUI, true );
+							sys_pauseSoundSystem ( false );
+						}
 
-							if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-								{
-									gam_getNextDroid();
-								}
+					if ( true == io_getKeyStateDown ( gameRight ) )
+						{
+							gam_getNextDroid();
+						}
 
-							if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-								{
-									gam_getPreviousDroid();
-								}
-							break;
-					}
+					if ( true == io_getKeyStateDown ( gameLeft ) )
+						{
+							gam_getPreviousDroid();
+						}
+				}
 				break;
 
 
 			case MODE_TERMINAL_LEVEL:
-				if ( ( event.keyboard.keycode == inputAction[gameFire].keyValue ) && ( event.type == ALLEGRO_EVENT_KEY_DOWN ) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
 						currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
@@ -322,7 +300,7 @@ void io_readTerminalKeyboard ( ALLEGRO_EVENT event )
 				break;
 
 			case MODE_TERMINAL_SIDEVIEW:
-				if ( ( event.keyboard.keycode == inputAction[gameFire].keyValue ) && ( event.type == ALLEGRO_EVENT_KEY_DOWN ) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
 						sys_changeMode ( MODE_GUI, true );
@@ -335,59 +313,113 @@ void io_readTerminalKeyboard ( ALLEGRO_EVENT event )
 //-----------------------------------------------------------------------------
 //
 // Handle keys for moving around lifts
-void io_readLiftKeyboard ( ALLEGRO_EVENT event )
+void io_readLiftKeyboard ( )
 //-----------------------------------------------------------------------------
 {
-	switch ( event.type )
+	if ( true == io_getKeyStateDown ( gameFire ) )
 		{
-			case ALLEGRO_EVENT_KEY_DOWN:
-				if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-					{
-						//
-						// Choose tunnel to use
-						gam_changeToLevel ( currentLevel, 0 );
-						gam_putPlayerOnLiftFromTunnel();
-						inputAction[gameFire].currentlyDown = false;
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-						// Change back to normal view
-						sys_changeMode ( MODE_SHOWLEVEL, true );
-					}
-
-				if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
-					{
-						if ( currentLevel != tunnel[currentTunnel].top )
-							{
-								tunnel[currentTunnel].current_deck++;
-								tunnel[currentTunnel].current = tunnel[currentTunnel].decks[tunnel[currentTunnel].current_deck];
-								currentLevel = tunnel[currentTunnel].current;
-								sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-							}
-						else
-							{
-								sys_playSound ( SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-							}
-
-						con_print ( true, false, "UP: CurrentLevel [ %i ] tunnel.current [ %i ]", currentLevel, tunnel[currentTunnel].current );
-					}
-
-				if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
-					{
-						if ( currentLevel != tunnel[currentTunnel].bottom )
-							{
-								tunnel[currentTunnel].current_deck--;
-								tunnel[currentTunnel].current = tunnel[currentTunnel].decks[tunnel[currentTunnel].current_deck];
-								currentLevel = tunnel[currentTunnel].current;
-								sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-							}
-						else
-							{
-								sys_playSound ( SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-							}
-
-						con_print ( true, false, "DOWN: CurrentLevel [ %i ] currentTunnel [ %i ] currentDesk [ %i ]",
-						            currentLevel, currentTunnel, tunnel[currentTunnel].current_deck );
-					}
+			//
+			// Choose tunnel to use
+			gam_changeToLevel ( currentLevel, 0 );
+			gam_putPlayerOnLiftFromTunnel();
+			inputAction[gameFire].currentlyDown = false;
+			sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+			// Change back to normal view
+			sys_changeMode ( MODE_SHOWLEVEL, true );
 		}
+
+	if ( true == io_getKeyStateDown ( gameUp ) )
+		{
+			if ( currentLevel != tunnel[currentTunnel].top )
+				{
+					tunnel[currentTunnel].current_deck++;
+					tunnel[currentTunnel].current = tunnel[currentTunnel].decks[tunnel[currentTunnel].current_deck];
+					currentLevel = tunnel[currentTunnel].current;
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+			else
+				{
+					sys_playSound ( SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+		}
+
+	if ( true == io_getKeyStateDown ( gameDown ) )
+		{
+			if ( currentLevel != tunnel[currentTunnel].bottom )
+				{
+					tunnel[currentTunnel].current_deck--;
+					tunnel[currentTunnel].current = tunnel[currentTunnel].decks[tunnel[currentTunnel].current_deck];
+					currentLevel = tunnel[currentTunnel].current;
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+			else
+				{
+					sys_playSound ( SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+		}
+}
+
+//-----------------------------------------------------------------------------
+//
+// Set the repeat state for the keyboard
+void io_setRepeatKeysState ( bool newState )
+//-----------------------------------------------------------------------------
+{
+	repeatKeys = newState;
+}
+
+//-----------------------------------------------------------------------------
+//
+// Get the state of the Down key press dependant on repeatKeys setting
+inline bool io_getKeyStateDown ( int keyName )
+//-----------------------------------------------------------------------------
+{
+	if ( false == repeatKeys )
+		{
+			if ( true == inputAction[keyName].beenUp )
+				{
+					if ( true == inputAction[keyName].currentlyDown )
+						{
+							inputAction[keyName].beenUp = false;
+							return true;
+						}
+					else
+						{
+							return false;
+						}
+				}
+			else
+				{
+					return false;
+				}
+		}
+	else	// repeatKeys is on
+		{
+			if ( true == inputAction[keyName].currentlyDown )
+				{
+					if ( inputAction[keyName].repeatDelayCount < 0.0f )
+						{
+							printf ( "Key [ %s ] is currently down - Repeat is on\n", inputAction[keyName].stringValue.c_str() );
+							inputAction[keyName].repeatDelayCount = repeatKeysDelay;
+							return true;
+						}
+					else
+						return false;
+				}
+			else
+				return false;
+		}
+}
+
+//-----------------------------------------------------------------------------
+//
+// Set beenUp back to true and return false to set currentlyDown state
+inline bool io_getKeyStateUp ( int keyName )
+//-----------------------------------------------------------------------------
+{
+	inputAction[keyName].beenUp = true;
+	inputAction[keyName].repeatDelayCount = -1.0f;
+	return false;
 }
 
 //-----------------------------------------------------------------------------
@@ -430,31 +462,31 @@ void io_getKeyboardState ( ALLEGRO_EVENT event )
 
 			case ALLEGRO_EVENT_KEY_UP:
 				if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-					inputAction[gameLeft].currentlyDown = false;
+					inputAction[gameLeft].currentlyDown = io_getKeyStateUp ( gameLeft );
 
 				if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-					inputAction[gameRight].currentlyDown = false;
+					inputAction[gameRight].currentlyDown = io_getKeyStateUp ( gameRight );
 
 				if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
-					inputAction[gameUp].currentlyDown = false;
+					inputAction[gameUp].currentlyDown = io_getKeyStateUp ( gameUp );
 
 				if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
-					inputAction[gameDown].currentlyDown = false;
+					inputAction[gameDown].currentlyDown = io_getKeyStateUp ( gameDown );
 
 				if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-					inputAction[gameFire].currentlyDown = false;
+					inputAction[gameFire].currentlyDown = io_getKeyStateUp ( gameFire );
 
 				if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
-					inputAction[consoleAction].currentlyDown = false;
+					inputAction[consoleAction].currentlyDown = io_getKeyStateUp ( consoleAction );
 
 				if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
-					inputAction[actionScreenShot].currentlyDown = false;
+					inputAction[actionScreenShot].currentlyDown = io_getKeyStateUp ( actionScreenShot );
 
 				if ( event.keyboard.keycode == inputAction[gameEscape].keyValue )
-					inputAction[gameEscape].currentlyDown = false;
+					inputAction[gameEscape].currentlyDown = io_getKeyStateUp ( gameEscape );
 
 				if ( event.keyboard.keycode == inputAction[gamePause].keyValue )
-					inputAction[gamePause].currentlyDown = false;
+					inputAction[gamePause].currentlyDown = io_getKeyStateUp ( gamePause );
 
 				break;
 		}
@@ -551,17 +583,74 @@ void io_readConsoleKeyboard ( ALLEGRO_EVENT event )
 						break;
 				}
 		}
+}
+
+//-----------------------------------------------------------------------------
+//
+// Process the keys already set from the event based system
+// Also decrement the counter for delay between key actions being processed
+// All these functions do not use the event based system
+void io_processKeyboard ( double frameTime )
+//-----------------------------------------------------------------------------
+{
 	//
-	// Can't be delayed by running inside the delay loop
-	if ( false == al_key_down ( &keyboard, ALLEGRO_KEY_BACKSPACE ) )
+	// Decrement counter for repeat delay
+	//
+	for ( int i = 0; i != NUMBER_ACTIONS; i++ )
 		{
-			conBackSpaceDown = 0;
+			inputAction[i].repeatDelayCount -= 1.0f * frameTime;
+		}
+
+	switch ( currentMode )
+		{
+			case MODE_INTRO:
+				io_readIntroInput ( );
+				break;
+
+			case MODE_GUI:
+				io_readGUIInput ( );
+				break;
+
+			case MODE_TERMINAL_MENU:
+			case MODE_TERMINAL_SIDEVIEW:
+			case MODE_TERMINAL_DB:
+			case MODE_TERMINAL_LEVEL:
+				io_readTerminalKeyboard ( );
+				break;
+
+			case MODE_LIFT_VIEW:
+				io_readLiftKeyboard ( );
+				break;
+
+			case MODE_TRANSFER_INTRO:
+			case MODE_TRANSFER_INTRO_1:
+			case MODE_TRANSFER_INTRO_2:
+			case MODE_TRANSFER_FINISH:
+			case MODE_TRANSFER_START:
+			case MODE_TRANSFER_COPY:
+//			case MODE_TRANSFER_DRAW:
+			case MODE_TRANSFER_SELECT:
+			case MODE_TRANSFER_SELECT_SIDE:
+				io_readTransferKeyboard ( );
+				break;
+
+			case MODE_PAUSED:
+				if ( true == io_getKeyStateDown(gamePause))
+					{
+						sys_changeMode ( MODE_SHOWLEVEL, false );
+						gamePaused = false;
+					}
+				break;
+
 		}
 }
 
 //-----------------------------------------------------------------------------
 //
 // Read the keyboard
+//
+// This reads keyboard events and sets the key state in our own array
+// It also runs functions that need the 'event' system
 void io_readKeyboard()
 //-----------------------------------------------------------------------------
 {
@@ -591,22 +680,11 @@ void io_readKeyboard()
 				break;
 		}
 	//
-	// Read the state of the keyboard
-	al_get_keyboard_state ( &keyboard );
-	//
-	//  and assign true/false to state of our keys
+	//  Assign true/false to currentlyDown for our keys
 	io_getKeyboardState ( event );
 
 	switch ( currentMode )
 		{
-			case MODE_PAUSED:
-				if ( true == inputAction[gamePause].currentlyDown )
-					{
-						inputAction[gamePause].currentlyDown = false;
-						sys_changeMode ( MODE_SHOWLEVEL, false );
-						gamePaused = false;
-					}
-				break;
 
 			case MODE_CONSOLE:
 				io_readConsoleKeyboard ( event );
@@ -636,39 +714,8 @@ void io_readKeyboard()
 					}
 				break;
 
-			case MODE_LIFT_VIEW:
-				io_readLiftKeyboard ( event );
-				break;
-
-			case MODE_TERMINAL_MENU:
-			case MODE_TERMINAL_SIDEVIEW:
-			case MODE_TERMINAL_DB:
-			case MODE_TERMINAL_LEVEL:
-				io_readTerminalKeyboard ( event );
-				break;
-
-			case MODE_GUI:
-				io_readGUIInput ( event );
-				break;
-
 			case MODE_KEYCODE:
 				io_readKeyCodeInput ( event );
-				break;
-
-			case MODE_INTRO:
-				io_readIntroInput ( event );
-				break;
-
-			case MODE_TRANSFER_INTRO:
-			case MODE_TRANSFER_INTRO_1:
-			case MODE_TRANSFER_INTRO_2:
-			case MODE_TRANSFER_FINISH:
-			case MODE_TRANSFER_START:
-			case MODE_TRANSFER_COPY:
-			case MODE_TRANSFER_DEADLOCK:
-			case MODE_TRANSFER_SELECT:
-			case MODE_TRANSFER_SELECT_SIDE:
-				io_readTransferKeyboard ( event );
 				break;
 		}
 	//

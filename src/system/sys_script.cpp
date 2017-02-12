@@ -397,6 +397,7 @@ _hostScriptFunctions hostVariables[] =
 
 	{"float as_soundPlayDelay", &as_soundPlayDelay},
 
+	{"float repeatKeysDelay", &repeatKeysDelay},
 	{"", NULL},
 };
 

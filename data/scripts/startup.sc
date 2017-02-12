@@ -134,6 +134,8 @@ void as_initGameVars()
 	MAX_FRAMESKIP = io_readConfigValuesInt("maxFrameSkip");			// Minimum FPS to run at
 	SKIP_TICKS = (1000.0f / TICKS_PER_SECOND) * 0.001f;
 
+	repeatKeysDelay = 0.5f;	// Delay between repeating held down keys
+
 	fullScreenValue = io_readConfigValuesInt("fullScreen");
 	//
 	// Move between screens

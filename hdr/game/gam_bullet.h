@@ -58,3 +58,10 @@ void bul_processDisrupter(int whichLevel, int whichBullet);
 
 // Pass in bullet type and get index into image array
 int bul_getBulletImageByType(int whichType);
+// Calculate a position to shoot a bullet at based on player movements
+bool gam_calculateInterceptShotPosition ( const cpVect& pShooter,
+                                      const cpVect& pTarget0,
+                                      const cpVect& vTarget,
+                                      float sProjectile,
+                                      cpVect& solution
+                                    );
