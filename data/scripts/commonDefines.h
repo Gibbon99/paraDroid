@@ -88,6 +88,8 @@ const int MODE_END_TEXT = 27;
 const int MODE_END_TEXT_FINISH = 28;
 const int MODE_PLAYER_EXPLODE = 29;
 
+const int NUM_OF_LEVELS = 21;
+
 enum actionNames
 {
     gameLeft = 0,
@@ -158,6 +160,12 @@ const int LANG_ENGLISH = 0;
 const int LANG_ITALIAN = 1;
 
 //
+// Defines for input types
+//
+const int INPUT_KEYBOARD = 0;
+const int INPUT_JOYSTICK = 1;
+
+//
 // Used in transfer AI SCRIPT
 //
 const int POWER_YELLOW =		1;
@@ -165,33 +173,33 @@ const int POWER_PURPLE =		2;
 const int POWER_DISPUTE = 		3;
 
 
-const int CELL_HEIGHT         = 32;
-const int NUM_CELLS           = 16;
+const int CELL_HEIGHT	= 32;
+const int NUM_CELLS	= 16;
 
 const int LEFT_SIDE = 1;
 const int RIGHT_SIDE = 2;
 
-const int TRUE                = 1;
-const int FALSE               = 0;
+const int TRUE	= 1;
+const int FALSE	= 0;
 
-const int CIRCUIT_REVERSED                  = 1;
-const int CIRCUIT_REPEATER                  = 2;
+const int CIRCUIT_REVERSED	= 1;
+const int CIRCUIT_REPEATER	= 2;
 
-const int CIRCUIT_NORMAL                    = 1;
-const int CIRCUIT_THREEQUARTERS             = 2;
-const int CIRCUIT_HALF                      = 3;
-const int CIRCUIT_QUARTER                   = 4;
+const int CIRCUIT_NORMAL	= 1;
+const int CIRCUIT_THREEQUARTERS	= 2;
+const int CIRCUIT_HALF	= 3;
+const int CIRCUIT_QUARTER	= 4;
 
-const int CIRCUIT_TWO_INTO_ONE              = 5;
+const int CIRCUIT_TWO_INTO_ONE	= 5;
 
-const int CIRCUIT_ONE_INTO_TWO              = 6;
-const int CIRCUIT_NORMAL_1    				= 7;
-const int CIRCUIT_NORMAL_2              	= 8;
+const int CIRCUIT_ONE_INTO_TWO	= 6;
+const int CIRCUIT_NORMAL_1	= 7;
+const int CIRCUIT_NORMAL_2	= 8;
 
-const int CIRCUIT_SPLIT_HALF		        = 16;
-const int CIRCUIT_ONE_INTO_TWO_SHORT        = 17;
-const int CIRCUIT_SPLIT_TWO_INTO_ONE        = 18;
+const int CIRCUIT_SPLIT_HALF	= 16;
+const int CIRCUIT_ONE_INTO_TWO_SHORT	= 17;
+const int CIRCUIT_SPLIT_TWO_INTO_ONE	= 18;
 
 const int NUM_CIRCUITS	= 8;
 
-const int MAX_EFFECT    = 6;
+const int MAX_EFFECT	= 6;

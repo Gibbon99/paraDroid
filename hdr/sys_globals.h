@@ -143,6 +143,8 @@ extern int					fullScreenValue;
 
 extern int                 	currentMode;
 
+extern int					inputMethod;
+
 extern bool					useCollisionDetection;
 
 extern int					maxNumSpritesForPhysics;

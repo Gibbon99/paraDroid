@@ -38,3 +38,6 @@ void io_setRepeatKeysState(bool newState);
 
 // Process the keys already set from the event based system
 void io_processKeyboard(double frameTime);
+
+// Set beenUp back to true and return false to set currentlyDown state
+inline bool io_getKeyStateUp ( int keyName );

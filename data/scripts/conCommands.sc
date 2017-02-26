@@ -6,8 +6,6 @@ const int	CON_USAGE	= 2;
 const int	CON_FUNC	= 3;
 const int	CON_PARAM   = 4;
 
-const int	NUM_OF_LEVELS = 21;
-
 //-----------------------------------------------------------------------------
 //
 // Toggle if LOS is always true or not
@@ -15,11 +13,11 @@ void as_setDroidVisibility(int &in param1)
 //-----------------------------------------------------------------------------
 {
 	string testParam;
-	
+
 	testParam = param1;
-	
+
 	sys_printConStr("Passed in ", testParam);
-	
+
 	if (0 == param1)
 	{
 		allDroidsVisible = false;
@@ -55,11 +53,11 @@ void as_changeToLevel(int &in param1)
 //-----------------------------------------------------------------------------
 {
 	string tempParam;
-	
+
 	tempParam = param1;
-	
+
 	sys_printConStr("Passed in ", tempParam);
-	
+
 	if ((param1 < 0) || (param1 > NUM_OF_LEVELS) || (param1 == 7))
 	{
 		sys_printConStr("Error: ", "Parameter is invalid");
@@ -75,11 +73,11 @@ bool as_toggleTileCollision(int &in param1)
 //-----------------------------------------------------------------------------
 {
 	string tempParam;
-	
+
 	tempParam = param1;
-	
+
 	sys_printConStr("Passed in ", tempParam);
-	
+
 	if (0 == param1)
 	{
 		useCollisionDetection = false;

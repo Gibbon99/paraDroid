@@ -70,15 +70,15 @@ typedef struct
 
 _scriptInfo scriptInfo[] =
 {
-	{"conCommands.sc", "[ Console commands ]"},
-	{"shutdown.sc", "[ Shutdown ]"},
-	{"gui_main.sc", "[ GUI Main ]"},
-	{"transferGame.sc", "[ Transfer setup ]"},
-	{"transferDroidAI.sc", "[ Transfer Droid AI ]"},
-	{"startup.sc", "[ Startup ]"},
-	{"particles.sc", "[ Particle Values ]"},
-	{"textEnglish.sc", "[ English strings ]"},
-	{"textItalian.sc", "[Italian strings ]"},
+	{"shutdown.sc", 		"[ Shutdown ]"},
+	{"particles.sc", 		"[ Particle Values ]"},
+	{"conCommands.sc", 		"[ Console commands ]"},
+	{"gui_main.sc", 		"[ GUI Main ]"},
+	{"transferGame.sc", 	"[ Transfer setup ]"},
+	{"transferDroidAI.sc", 	"[ Transfer Droid AI ]"},
+	{"startup.sc", 			"[ Startup ]"},
+	{"textEnglish.sc", 		"[ English strings ]"},
+	{"textItalian.sc", 		"[ Italian strings ]"},
 	{"", ""},
 };
 
@@ -219,6 +219,8 @@ _hostScriptFunctions hostVariables[] =
 	{"bool useBackingBitmap", &useBackingBitmap},
 	{"bool useCollisionDetection", &useCollisionDetection},
 	{"int fullScreenValue", &fullScreenValue},
+	{"int inputMethod", &inputMethod},
+	{"int numJoysticks", &numJoysticks},
 	{"float fadeSpeed", &fadeSpeed},
 	{"float gravity", &gravity},
 	{"float doorFrameDelay", &doorFrameDelay},
@@ -421,19 +423,21 @@ typedef struct
 _scriptFunctionName scriptFunctionName[] =
 {
 	// 				Name of function in script						Name we call from host
-	{0, false, "void as_initGameVars()", "as_initGameVars", false},
-	{0, false, "void as_addAllScriptCommands()", "as_addAllScriptCommands", false},
-	{0, false, "void as_shutdown()", "as_shutdown", false},
-	{0, false, "void as_loadFonts()", "as_loadFonts", false},
-	{0, false, "void as_guiSetupGUI()", "scr_guiSetupGUI", false},
+	{0, false, "void as_initGameVars()", 			"as_initGameVars", 				false},
+	{0, false, "void as_addAllScriptCommands()", 	"as_addAllScriptCommands", 		false},
+	{0, false, "void as_shutdown()", 				"as_shutdown", 					false},
+	{0, false, "void as_loadFonts()", 				"as_loadFonts", 				false},
+	{0, false, "void as_guiSetupGUI()", 			"scr_guiSetupGUI", 				false},
+	{0, false, "void as_setIntroValues()", 			"as_setIntroValues", 			false},
+	{0, false, "void as_setdbValues()", 			"as_setdbValues", 				false},
+	{0, false, "void setupDefaultCellValues()", 	"as_setupTransferCellValues", 	false},
+	{0, false, "void as_processTransferAI()", 		"as_processTransferAI", 		false},
+	{0, false, "void as_initParticleValues()", 		"as_initParticleValues", 		false},
+	{0, false, "void as_setLanguageStrings()", 		"as_setLanguageStrings", 		false},
+
 	{0, false, "void as_guiHandleButtonPress(string &in)", "scr_guiHandleButtonPress", true},
-	{0, false, "void as_guiHandleMouseOver(string &in)", "scr_guiHandleMouseOver", false},
-	{0, false, "void as_setIntroValues()", "as_setIntroValues", false},
-	{0, false, "void as_setdbValues()", "as_setdbValues", false},
-	{0, false, "void setupDefaultCellValues()", "as_setupTransferCellValues", false},
-	{0, false, "void as_processTransferAI()", "as_processTransferAI", false},
-	{0, false, "void as_initParticleValues()", "as_initParticleValues", false},
-	{0, false, "void as_setLanguageStrings()", "as_setLanguageStrings", false},
+	{0, false, "void as_guiHandleMouseOver(string &in)", "scr_guiHandleMouseOver", 	false},
+
 	{0, true, "", "", false},
 };
 
@@ -722,7 +726,7 @@ bool sys_fileIntoMemory(char *whichFile)
 		}
 
 	fileSize = al_fsize(fileHandle);
-	con_print(true, true, "Size of script [ %i ]", fileSize);
+	con_print(true, true, "Size of script [ %i ] - [ %s ]", fileSize, fileName);
 
 	//
 	// if memory already allocated - free and remalloc it
@@ -918,6 +922,10 @@ bool sys_initScriptEngine()
 					con_print(true, true, "Failed to get function ID for [ %s ] Error [ %s ]", scriptFunctionName[i].functionName.c_str(), sys_getScriptError(tempFunctionName.funcID));
 					return false;
 				}
+			else
+			{
+				con_print(true, false, "Func ID for [ %s ] - [ %i ]", scriptFunctionName[i].functionName.c_str(), tempFunctionName.funcID);
+			}
 
 			//
 			// Setup malloc'd memory with the funcID and name to execute
@@ -961,13 +969,13 @@ bool sys_executeScriptFunction(string functionName, string funcParam)
 	// Safety check first
 	if (NULL == scriptEngine)
 		{
-			con_printUpdate(true, "Couldn't execute [ %s ]. Engine not ready.", functionName);
+			con_printUpdate(true, "Couldn't execute [ %s ]. Engine not ready.", functionName.c_str());
 			return false;
 		}
 
 	if (NULL == context)
 		{
-			con_printUpdate(true, "Couldn't execute [ %s ]. Script context not ready", functionName);
+			con_printUpdate(true, "Couldn't execute [ %s ]. Script context not ready", functionName.c_str());
 			return false;
 		}
 

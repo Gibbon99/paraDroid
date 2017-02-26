@@ -87,7 +87,7 @@ int io_readConfigValuesInt ( string varName )
 	if ( NULL == returnValue )
 		{
 			printf ( "Error: Could not get value from config file [ %s ]. Exiting\n", varName.c_str() );
-			sys_errorFatal ( __FILE__, __LINE__, "Error: Could not get value from config file. Exiting\n" );
+			sys_errorFatal ( "io_configFile.cpp", __LINE__, "Error: Could not get value [ %s ] from config file. Exiting\n", varName.c_str() );
 		}
 
 	//	io_saveConfigValueInt(varName, returnValue);

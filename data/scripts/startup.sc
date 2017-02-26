@@ -134,6 +134,17 @@ void as_initGameVars()
 	MAX_FRAMESKIP = io_readConfigValuesInt("maxFrameSkip");			// Minimum FPS to run at
 	SKIP_TICKS = (1000.0f / TICKS_PER_SECOND) * 0.001f;
 
+	if (0 == numJoysticks)
+	{
+		sys_printConStr("No joysticks found.", "Use Keyboard.");
+		inputMethod = INPUT_KEYBOARD;
+	}
+	else
+	{
+		inputMethod = io_readConfigValuesInt("inputMethod");
+		sys_printConStr("Using config value.", "For inputMethod");
+	}
+
 	repeatKeysDelay = 0.5f;	// Delay between repeating held down keys
 
 	fullScreenValue = io_readConfigValuesInt("fullScreen");

@@ -217,7 +217,7 @@ bool sys_startOnce()
 	con_print ( true, false, "%i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
 	sys_setFontColor ( 1.0f, 1.0f, 1.0f, 1.0f );
 
-	sys_startSound();
+	soundSystemStarted = sys_startSound();
 
 	//
 	// Setup backing bitmap

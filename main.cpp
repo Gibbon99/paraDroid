@@ -48,6 +48,8 @@ int					fullScreenValue;
 
 int 				tileCollision = false;
 
+int					inputMethod;	// Set from GUI value
+
 //-----------------------------------------------------------------------------
 //
 // Start
@@ -85,7 +87,11 @@ int main ( int argc, char **argv )
 			if ( false == processFadeValue )
 				{
 					io_readKeyboard();	// Best in 30fps loop - or as fast as possible??
-					io_readJoystick();
+					//
+					// Are we using a joystick for input
+					//
+					if (inputMethod == INPUT_JOYSTICK)
+						io_readJoystick();
 				}
 
 			interpolation = float ( singleTimeValue + SKIP_TICKS - next_game_tick ) / float ( SKIP_TICKS );

@@ -17,7 +17,8 @@ void as_shutdown()
 	io_saveConfigValueString("volumeLevel", volumeLevelStr);
 	io_saveConfigValueInt("particleType", particleRenderType);
 	io_saveConfigValueInt("language", currentLanguage);
-	
+	io_saveConfigValueInt("inputMethod", inputMethod);
+
 //	io_saveConfigValueFloat("progressBarLoadTimes", progressBarLoadTimes);
 //	io_saveConfigValueString("allDroidsVisible", allDroidsVisible == true ? "1" : "0");
 

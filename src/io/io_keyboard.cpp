@@ -137,7 +137,7 @@ void io_readTransferKeyboard ( )
 	switch ( currentMode )
 		{
 			case MODE_TRANSFER_INTRO:
-				if ( true == io_getKeyStateDown(gameFire) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						sys_changeMode ( MODE_TRANSFER_INTRO_1, true );
 						inputAction[gameFire].currentlyDown = false;
@@ -147,7 +147,7 @@ void io_readTransferKeyboard ( )
 				break;
 
 			case MODE_TRANSFER_INTRO_1:
-				if ( true == io_getKeyStateDown(gameFire) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						sys_changeMode ( MODE_TRANSFER_INTRO_2, true );
 						inputAction[gameFire].currentlyDown = false;
@@ -157,7 +157,7 @@ void io_readTransferKeyboard ( )
 				break;
 
 			case MODE_TRANSFER_INTRO_2:
-				if ( true == io_getKeyStateDown(gameFire) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						sys_changeMode ( MODE_TRANSFER_SELECT_SIDE, true );
 						inputAction[gameFire].currentlyDown = false;
@@ -168,7 +168,7 @@ void io_readTransferKeyboard ( )
 
 
 			case MODE_TRANSFER_SELECT_SIDE:
-				if ( true == io_getKeyStateDown(gameFire) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						sys_changeMode ( MODE_TRANSFER_SELECT, false );
 						inputAction[gameFire].currentlyDown = false;
@@ -179,14 +179,14 @@ void io_readTransferKeyboard ( )
 						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
 					}
 
-				if ( true == io_getKeyStateDown(gameRight) )
+				if ( true == io_getKeyStateDown ( gameRight ) )
 					{
 						playerOnSide = RIGHT_SIDE;
 						droidOnSide = LEFT_SIDE;
 						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
 					}
 
-				if ( true == io_getKeyStateDown(gameLeft) )
+				if ( true == io_getKeyStateDown ( gameLeft ) )
 					{
 						playerOnSide = LEFT_SIDE;
 						droidOnSide = RIGHT_SIDE;
@@ -199,19 +199,19 @@ void io_readTransferKeyboard ( )
 				if ( numPlayerTokens < 0 )
 					return;
 
-				if ( true == io_getKeyStateDown(gameFire) )
+				if ( true == io_getKeyStateDown ( gameFire ) )
 					{
 						trn_placeToken ( playerBlockPos, playerOnSide, PLAYER_TRANSFER );
 					}
 
-				if ( true == io_getKeyStateDown(gameDown) )
+				if ( true == io_getKeyStateDown ( gameDown ) )
 					{
 						inputAction[gameDown].currentlyDown = true;
 						trn_moveToken ( MOVE_DOWN );
 						return;
 					}
 
-				if ( true == io_getKeyStateDown(gameUp) )
+				if ( true == io_getKeyStateDown ( gameUp ) )
 					{
 						inputAction[gameUp].currentlyDown = true;
 						trn_moveToken ( MOVE_UP );
@@ -431,23 +431,26 @@ void io_getKeyboardState ( ALLEGRO_EVENT event )
 	switch ( event.type )
 		{
 			case ALLEGRO_EVENT_KEY_DOWN:
-				if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-					inputAction[gameLeft].currentlyDown = true;
+				if ( inputMethod == INPUT_KEYBOARD )
+					{
+						if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
+							inputAction[gameLeft].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-					inputAction[gameRight].currentlyDown = true;
+						if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
+							inputAction[gameRight].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
-					inputAction[gameUp].currentlyDown = true;
+						if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
+							inputAction[gameUp].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
-					inputAction[gameDown].currentlyDown = true;
+						if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
+							inputAction[gameDown].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-					inputAction[gameFire].currentlyDown = true;
+						if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
+							inputAction[gameFire].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
-					inputAction[consoleAction].currentlyDown = true;
+						if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
+							inputAction[consoleAction].currentlyDown = true;
+					}
 
 				if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
 					inputAction[actionScreenShot].currentlyDown = true;
@@ -461,23 +464,26 @@ void io_getKeyboardState ( ALLEGRO_EVENT event )
 				break;
 
 			case ALLEGRO_EVENT_KEY_UP:
-				if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-					inputAction[gameLeft].currentlyDown = io_getKeyStateUp ( gameLeft );
+				if ( inputMethod == INPUT_KEYBOARD )
+					{
+						if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
+							inputAction[gameLeft].currentlyDown = io_getKeyStateUp ( gameLeft );
 
-				if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-					inputAction[gameRight].currentlyDown = io_getKeyStateUp ( gameRight );
+						if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
+							inputAction[gameRight].currentlyDown = io_getKeyStateUp ( gameRight );
 
-				if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
-					inputAction[gameUp].currentlyDown = io_getKeyStateUp ( gameUp );
+						if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
+							inputAction[gameUp].currentlyDown = io_getKeyStateUp ( gameUp );
 
-				if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
-					inputAction[gameDown].currentlyDown = io_getKeyStateUp ( gameDown );
+						if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
+							inputAction[gameDown].currentlyDown = io_getKeyStateUp ( gameDown );
 
-				if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-					inputAction[gameFire].currentlyDown = io_getKeyStateUp ( gameFire );
+						if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
+							inputAction[gameFire].currentlyDown = io_getKeyStateUp ( gameFire );
 
-				if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
-					inputAction[consoleAction].currentlyDown = io_getKeyStateUp ( consoleAction );
+						if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
+							inputAction[consoleAction].currentlyDown = io_getKeyStateUp ( consoleAction );
+					}
 
 				if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
 					inputAction[actionScreenShot].currentlyDown = io_getKeyStateUp ( actionScreenShot );
@@ -635,7 +641,7 @@ void io_processKeyboard ( double frameTime )
 				break;
 
 			case MODE_PAUSED:
-				if ( true == io_getKeyStateDown(gamePause))
+				if ( true == io_getKeyStateDown ( gamePause ) )
 					{
 						sys_changeMode ( MODE_SHOWLEVEL, false );
 						gamePaused = false;
@@ -677,6 +683,10 @@ void io_readKeyboard()
 
 			case ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING:
 // TODO (dberry#1#): call al_acknowledge_drawing_resume immediately.
+				break;
+
+			case ALLEGRO_EVENT_JOYSTICK_CONFIGURATION:
+// TODO - Reset up joystick information
 				break;
 		}
 	//

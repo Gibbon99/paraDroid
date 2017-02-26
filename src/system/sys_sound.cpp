@@ -65,6 +65,7 @@ _multiSounds* multiSounds;
 float alertLevelDistance;
 float as_soundPlayDelay;
 float soundPlayDelay = as_soundPlayDelay;
+bool soundSystemStarted = false;
 
 //-------------------------------------------------------------
 //
@@ -145,7 +146,7 @@ bool sys_startSound()
 void sys_releaseSound()
 //--------------------------------------------------------------------------
 {
-	if ( false == as_useSound )
+	if (( false == as_useSound ) || (false == soundSystemStarted))
 		return;
 
 	sys_stopAllSounds();
@@ -222,10 +223,7 @@ void sys_playMultiSample ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 					return;
 				}
 		}
-	con_print ( true,
-	            false,
-	            "WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ %i ]",
-	            as_numMultiSamples );
+	con_print ( true,false, "WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ %i ]", as_numMultiSamples );
 }
 
 //-------------------------------------------------------------------------
@@ -249,6 +247,12 @@ bool sys_isSoundPlaying ( int whichSound )
 bool sys_playSound ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 //-------------------------------------------------------------------------
 {
+	if ( ( false == playSounds ) || ( true == pauseSound ) )
+		return false;
+
+	//
+	// Don't play so many collision sounds at the same time
+	//
 	if ( whichSound == SND_COLLIDE_1 )
 		{
 			soundPlayDelay -= 1.0f * thinkInterval;
@@ -265,12 +269,6 @@ bool sys_playSound ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 				}
 			return true;
 		}
-
-	if ( ( false == playSounds ) || ( true == pauseSound ) )
-		return false;
-
-	if ( true == sys_isSoundPlaying ( SND_COLLIDE_1 ) )
-		return true;
 
 	if ( true == sys_isSoundPlaying ( whichSound ) )
 		{

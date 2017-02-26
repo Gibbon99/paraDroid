@@ -279,6 +279,11 @@ void as_guiHandleButtonPress ( string &in objectID )
 		{
 			if ( objectID == "buttonControlApply" )
 				{
+					if (numJoysticks > 0)
+						inputMethod = gui_StringToInt (as_guiGetSliderValue ("controlType"));
+					else
+						inputMethod = INPUT_KEYBOARD;
+
 					as_guiCopyGUIIntoKeys ( "keyCodeControl" );
 					as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrOptions" ) );
 					as_guiSetObjectFocus ( "buttonOptionVideo" );
@@ -725,6 +730,17 @@ void as_guiGUISetupControls()
 	as_guiSetObjectPosition ( GUI_OBJECT_KEYCODE, "keyCodeControl", GUI_COORD_TYPE_PERCENT, 2, 25, 40, 10 );
 	as_guiSetObjectFunctions ( GUI_OBJECT_KEYCODE, "keyCodeControl", "scr_guiHandleButtonPress", "scr_guiHandleMouseOver" );
 	as_guiAddObjectToScreen ( GUI_OBJECT_KEYCODE, "keyCodeControl", "scrGameControls" );
+
+	if (numJoysticks > 0)
+	{
+		as_guiCreateObject ( GUI_OBJECT_SLIDER, "controlType" );
+		as_guiSetObjectPosition ( GUI_OBJECT_SLIDER, "controlType", GUI_COORD_TYPE_PERCENT, 30, 70, 40, 2 );
+		as_guiSetObjectLabel ( GUI_OBJECT_SLIDER, "controlType", GUI_LABEL_CENTER, gui_getString ( "controlType" ) );
+		as_guiAddSliderElement ( "controlType", GUI_SLIDER_STRING, gui_getString ( "inputKeyboardValue" ), gui_getString ( "inputKeyboardLabel" ) );
+		as_guiAddSliderElement ( "controlType", GUI_SLIDER_STRING, gui_getString ( "inputJoystickValue" ), gui_getString ( "inputJoystickLabel" ) );
+		as_guiSetSliderValue ( "controlType", gui_IntToString ( inputMethod ) );
+		as_guiAddObjectToScreen ( GUI_OBJECT_SLIDER, "controlType", "scrGameControls" );
+	}
 
 	as_guiCreateObject ( GUI_OBJECT_BUTTON, "buttonControlApply" );
 	as_guiSetObjectPosition ( GUI_OBJECT_BUTTON, "buttonControlApply", GUI_COORD_TYPE_PERCENT, 10, 80, 30, 7 );

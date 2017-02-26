@@ -5,7 +5,8 @@
 void as_setLanguageStrings()
 //------------------------------------------------------------
 {
-	switch (currentLanguage) {
+	switch (currentLanguage)
+	{
 	case LANG_ENGLISH:
 		as_setEnglishText();
 		break;
@@ -140,6 +141,12 @@ void as_setEnglishText()
 	gui_addKeyAndText("scrollText3",		"! ! ! The 001 Influence device consists of a helmet, which, when placed over a robot's control unit can halt the normal activities of that robot for a short time. The helmet has its own power supply and powers the robot itself, at an upgraded capability. The helmet also uses an energy cloak for protection of the host. ! ! The helmet is fitted with twin lasers mounted in a turrent. These are low powered and have a slow recycle rate. ! ! Most of the device's resources are channeled towards holding control of the host robot, as it attempts to resume 'normal' operation. It is therefore necessary to change the host robot often to prevent the device from burning out. Transfer to a new robot requires the device to drain its host of energy in order to take it over. Failure to achieve transfer results in the device being a free agent once more. ! ! Further information incoming... ! ^ # ");
 	gui_addKeyAndText("scrollText4",		"! ! ! An Influence device can transmit only certain data, namely its own location and the location of other robots in visual range. This data is merged with known ship layouts on your C64 remote terminal. ! ! Additional information about the ship and robots may be obtained by accessing the ship's computer at a console. A small-scale plan of the whole deck is available, as well as a side elevation of the ship. ! ! Robots are represented on-screen as a symbol showing a three-digit number. The first digit shown is the important one, the class of the robot. It denotes strength also. ! ! To find out more about any given robot, use the robot enquiry system at a console. Only data about units of a lower class than your current host is available, since it is the host's security clearance which is used to access the console. ! ! ! ! ! Further information incoming... ! ^ # ");
 	gui_addKeyAndText("scrollText5", 		"! ! ! ! ! Paradroid programmed by Andrew Braybrook. ! ! ! Sound advice by Steve Turner. ! ! ! Allegro port by David Berry. ! 2016. ! ! ! ! ! Powered by the Allegro library. ! Scripting engine by AngelScript. ! Physics by Chipmunk Physics. ! ! ! ! ! Press fire to play. ! ! ! ! ! ! ^ # ");
+
+	gui_addKeyAndText("controlType", "Input type");
+	gui_addKeyAndText("inputKeyboardValue", "0");
+	gui_addKeyAndText("inputKeyboardLabel", "Keyboard");
+	gui_addKeyAndText("inputJoystickValue", "1");
+	gui_addKeyAndText("inputJoystickLabel", "Joystick");
 
 	gui_addKeyAndText("db_001description", "001 - Influence Device");
 	gui_addKeyAndText("db_001className", "Influence");
