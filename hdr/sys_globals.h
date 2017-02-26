@@ -153,6 +153,7 @@ extern bool					stopLoadingThread;
 extern ALLEGRO_THREAD		*loadingThread;
 extern bool					loadedAllBitmaps;
 extern bool					loadingThreadHasFinished;
+extern bool					confirmExit;	// Used as flag in scrExitQuestion GUI
 
 //-----------------------------------------------------------------
 //

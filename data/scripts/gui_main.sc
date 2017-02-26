@@ -31,6 +31,7 @@ void as_guiHandleButtonPress ( string &in objectID )
 //------------------------------------------------------------
 {
 	int randomStartLevel;
+	
 	//
 	// Main option screen
 	//
@@ -317,8 +318,15 @@ void as_guiHandleButtonPress ( string &in objectID )
 
 			if ( objectID == "buttonExitCancel" )
 				{
-					as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrMainMenu" ) );
-					as_guiSetObjectFocus ( "buttonStartGame" );
+					if (false == confirmExit)	// Called from menu
+					{
+						as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrMainMenu" ) );
+						as_guiSetObjectFocus ( "buttonStartGame" );
+					}
+					else	// Called while playing
+					{
+						currentMode = MODE_SHOWLEVEL;
+					}
 					return;
 				}
 		}

@@ -37,6 +37,7 @@ void io_readKeyCodeInput ( ALLEGRO_EVENT event )
 					currentMode = MODE_GUI;
 					return;
 				}
+
 			guiKeyCodes[gui_findIndex ( GUI_OBJECT_KEYCODE, "keyCodeControl" )].element[guiKeyCodes[gui_findIndex ( GUI_OBJECT_KEYCODE, "keyCodeControl" )].elementFocus].keyCode = event.keyboard.keycode;
 
 			printf ( "[ %s ]\n", al_keycode_to_name ( event.keyboard.keycode ) );
@@ -66,6 +67,7 @@ void io_processActionKey()
 					gam_setHUDState ( HUD_STATE_LIFT );
 					return;
 				}
+
 			//
 			// Use a terminal
 			if ( ( playerOverTile == TERMINAL_TOP ) || ( playerOverTile == TERMINAL_BOTTOM ) || ( playerOverTile == TERMINAL_LEFT ) || ( playerOverTile == TERMINAL_RIGHT ) )
@@ -77,6 +79,7 @@ void io_processActionKey()
 						sys_pauseSoundSystem ( true );
 						return;
 					}
+
 			//
 			// Go into transfer mode
 			if ( ( playerVelocity.x == 0.0 ) && ( playerVelocity.y == 0.0 ) && ( inputAction[gameLeft].currentlyDown == false ) &&
@@ -86,6 +89,7 @@ void io_processActionKey()
 					inTransferMode = true;
 					return;
 				}
+
 			//
 			// Shoot a bullet - no shooting in transfer mode
 			if ( false == inTransferMode )
@@ -121,6 +125,7 @@ void io_readIntroInput ( )
 	if ( true == io_getKeyStateDown ( gameFire ) )
 		{
 			sys_changeMode ( MODE_GUI, true );
+
 			if ( sys_isSoundPlaying ( SND_SCROLLBEEPS ) )
 				sys_stopSound ( SND_SCROLLBEEPS );
 
@@ -136,88 +141,93 @@ void io_readTransferKeyboard ( )
 {
 	switch ( currentMode )
 		{
-			case MODE_TRANSFER_INTRO:
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						sys_changeMode ( MODE_TRANSFER_INTRO_1, true );
-						inputAction[gameFire].currentlyDown = false;
-						al_flush_event_queue ( eventQueue );
-						return;
-					}
-				break;
-
-			case MODE_TRANSFER_INTRO_1:
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						sys_changeMode ( MODE_TRANSFER_INTRO_2, true );
-						inputAction[gameFire].currentlyDown = false;
-						al_flush_event_queue ( eventQueue );
-						return;
-					}
-				break;
-
-			case MODE_TRANSFER_INTRO_2:
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						sys_changeMode ( MODE_TRANSFER_SELECT_SIDE, true );
-						inputAction[gameFire].currentlyDown = false;
-						al_flush_event_queue ( eventQueue );
-						return;
-					}
-				break;
-
-
-			case MODE_TRANSFER_SELECT_SIDE:
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						sys_changeMode ( MODE_TRANSFER_SELECT, false );
-						inputAction[gameFire].currentlyDown = false;
-						al_flush_event_queue ( eventQueue );
-						selectSideCounter = TRANSFER_COUNTER;
-						delayTransferIntro = TRANSFER_DELAY;
-						trn_nextPlayerToken();
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
-
-				if ( true == io_getKeyStateDown ( gameRight ) )
-					{
-						playerOnSide = RIGHT_SIDE;
-						droidOnSide = LEFT_SIDE;
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
-
-				if ( true == io_getKeyStateDown ( gameLeft ) )
-					{
-						playerOnSide = LEFT_SIDE;
-						droidOnSide = RIGHT_SIDE;
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
-				break;
-
-			case MODE_TRANSFER_SELECT:
-
-				if ( numPlayerTokens < 0 )
+		case MODE_TRANSFER_INTRO:
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					sys_changeMode ( MODE_TRANSFER_INTRO_1, true );
+					inputAction[gameFire].currentlyDown = false;
+					al_flush_event_queue ( eventQueue );
 					return;
+				}
 
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						trn_placeToken ( playerBlockPos, playerOnSide, PLAYER_TRANSFER );
-					}
+			break;
 
-				if ( true == io_getKeyStateDown ( gameDown ) )
-					{
-						inputAction[gameDown].currentlyDown = true;
-						trn_moveToken ( MOVE_DOWN );
-						return;
-					}
+		case MODE_TRANSFER_INTRO_1:
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					sys_changeMode ( MODE_TRANSFER_INTRO_2, true );
+					inputAction[gameFire].currentlyDown = false;
+					al_flush_event_queue ( eventQueue );
+					return;
+				}
 
-				if ( true == io_getKeyStateDown ( gameUp ) )
-					{
-						inputAction[gameUp].currentlyDown = true;
-						trn_moveToken ( MOVE_UP );
-						return;
-					}
-				break;
+			break;
+
+		case MODE_TRANSFER_INTRO_2:
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					sys_changeMode ( MODE_TRANSFER_SELECT_SIDE, true );
+					inputAction[gameFire].currentlyDown = false;
+					al_flush_event_queue ( eventQueue );
+					return;
+				}
+
+			break;
+
+
+		case MODE_TRANSFER_SELECT_SIDE:
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					sys_changeMode ( MODE_TRANSFER_SELECT, false );
+					inputAction[gameFire].currentlyDown = false;
+					al_flush_event_queue ( eventQueue );
+					selectSideCounter = TRANSFER_COUNTER;
+					delayTransferIntro = TRANSFER_DELAY;
+					trn_nextPlayerToken();
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+
+			if ( true == io_getKeyStateDown ( gameRight ) )
+				{
+					playerOnSide = RIGHT_SIDE;
+					droidOnSide = LEFT_SIDE;
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+
+			if ( true == io_getKeyStateDown ( gameLeft ) )
+				{
+					playerOnSide = LEFT_SIDE;
+					droidOnSide = RIGHT_SIDE;
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+
+			break;
+
+		case MODE_TRANSFER_SELECT:
+
+			if ( numPlayerTokens < 0 )
+				return;
+
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					trn_placeToken ( playerBlockPos, playerOnSide, PLAYER_TRANSFER );
+				}
+
+			if ( true == io_getKeyStateDown ( gameDown ) )
+				{
+					inputAction[gameDown].currentlyDown = true;
+					trn_moveToken ( MOVE_DOWN );
+					return;
+				}
+
+			if ( true == io_getKeyStateDown ( gameUp ) )
+				{
+					inputAction[gameUp].currentlyDown = true;
+					trn_moveToken ( MOVE_UP );
+					return;
+				}
+
+			break;
 		}
 }
 
@@ -266,47 +276,49 @@ void io_readTerminalKeyboard ( )
 {
 	switch ( currentMode )
 		{
-			case MODE_TERMINAL_DB:
+		case MODE_TERMINAL_DB:
+		{
+			if ( true == io_getKeyStateDown ( gameFire ) )
 				{
-					if ( true == io_getKeyStateDown ( gameFire ) )
-						{
-							sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-							currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
-							sys_changeMode ( MODE_GUI, true );
-							sys_pauseSoundSystem ( false );
-						}
-
-					if ( true == io_getKeyStateDown ( gameRight ) )
-						{
-							gam_getNextDroid();
-						}
-
-					if ( true == io_getKeyStateDown ( gameLeft ) )
-						{
-							gam_getPreviousDroid();
-						}
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+					currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
+					sys_changeMode ( MODE_GUI, true );
+					sys_pauseSoundSystem ( false );
 				}
-				break;
+
+			if ( true == io_getKeyStateDown ( gameRight ) )
+				{
+					gam_getNextDroid();
+				}
+
+			if ( true == io_getKeyStateDown ( gameLeft ) )
+				{
+					gam_getPreviousDroid();
+				}
+		}
+		break;
 
 
-			case MODE_TERMINAL_LEVEL:
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-						currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
-						sys_changeMode ( MODE_GUI, true );
+		case MODE_TERMINAL_LEVEL:
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+					currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
+					sys_changeMode ( MODE_GUI, true );
 
-					}
-				break;
+				}
 
-			case MODE_TERMINAL_SIDEVIEW:
-				if ( true == io_getKeyStateDown ( gameFire ) )
-					{
-						currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
-						sys_changeMode ( MODE_GUI, true );
-						sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
-				break;
+			break;
+
+		case MODE_TERMINAL_SIDEVIEW:
+			if ( true == io_getKeyStateDown ( gameFire ) )
+				{
+					currentGUIScreen = gui_findIndex ( GUI_OBJECT_SCREEN, "scrTerminal" );
+					sys_changeMode ( MODE_GUI, true );
+					sys_playSound ( SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+
+			break;
 		}
 }
 
@@ -430,71 +442,71 @@ void io_getKeyboardState ( ALLEGRO_EVENT event )
 {
 	switch ( event.type )
 		{
-			case ALLEGRO_EVENT_KEY_DOWN:
-				if ( inputMethod == INPUT_KEYBOARD )
-					{
-						if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-							inputAction[gameLeft].currentlyDown = true;
+		case ALLEGRO_EVENT_KEY_DOWN:
+			if ( inputMethod == INPUT_KEYBOARD )
+				{
+					if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
+						inputAction[gameLeft].currentlyDown = true;
 
-						if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-							inputAction[gameRight].currentlyDown = true;
+					if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
+						inputAction[gameRight].currentlyDown = true;
 
-						if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
-							inputAction[gameUp].currentlyDown = true;
+					if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
+						inputAction[gameUp].currentlyDown = true;
 
-						if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
-							inputAction[gameDown].currentlyDown = true;
+					if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
+						inputAction[gameDown].currentlyDown = true;
 
-						if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-							inputAction[gameFire].currentlyDown = true;
+					if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
+						inputAction[gameFire].currentlyDown = true;
 
-						if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
-							inputAction[consoleAction].currentlyDown = true;
-					}
+					if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
+						inputAction[consoleAction].currentlyDown = true;
+				}
 
-				if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
-					inputAction[actionScreenShot].currentlyDown = true;
+			if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
+				inputAction[actionScreenShot].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[gameEscape].keyValue )
-					inputAction[gameEscape].currentlyDown = true;
+			if ( event.keyboard.keycode == inputAction[gameEscape].keyValue )
+				inputAction[gameEscape].currentlyDown = true;
 
-				if ( event.keyboard.keycode == inputAction[gamePause].keyValue )
-					inputAction[gamePause].currentlyDown = true;
+			if ( event.keyboard.keycode == inputAction[gamePause].keyValue )
+				inputAction[gamePause].currentlyDown = true;
 
-				break;
+			break;
 
-			case ALLEGRO_EVENT_KEY_UP:
-				if ( inputMethod == INPUT_KEYBOARD )
-					{
-						if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
-							inputAction[gameLeft].currentlyDown = io_getKeyStateUp ( gameLeft );
+		case ALLEGRO_EVENT_KEY_UP:
+			if ( inputMethod == INPUT_KEYBOARD )
+				{
+					if ( event.keyboard.keycode == inputAction[gameLeft].keyValue )
+						inputAction[gameLeft].currentlyDown = io_getKeyStateUp ( gameLeft );
 
-						if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
-							inputAction[gameRight].currentlyDown = io_getKeyStateUp ( gameRight );
+					if ( event.keyboard.keycode == inputAction[gameRight].keyValue )
+						inputAction[gameRight].currentlyDown = io_getKeyStateUp ( gameRight );
 
-						if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
-							inputAction[gameUp].currentlyDown = io_getKeyStateUp ( gameUp );
+					if ( event.keyboard.keycode == inputAction[gameUp].keyValue )
+						inputAction[gameUp].currentlyDown = io_getKeyStateUp ( gameUp );
 
-						if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
-							inputAction[gameDown].currentlyDown = io_getKeyStateUp ( gameDown );
+					if ( event.keyboard.keycode == inputAction[gameDown].keyValue )
+						inputAction[gameDown].currentlyDown = io_getKeyStateUp ( gameDown );
 
-						if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
-							inputAction[gameFire].currentlyDown = io_getKeyStateUp ( gameFire );
+					if ( event.keyboard.keycode == inputAction[gameFire].keyValue )
+						inputAction[gameFire].currentlyDown = io_getKeyStateUp ( gameFire );
 
-						if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
-							inputAction[consoleAction].currentlyDown = io_getKeyStateUp ( consoleAction );
-					}
+					if ( event.keyboard.keycode == inputAction[consoleAction].keyValue )
+						inputAction[consoleAction].currentlyDown = io_getKeyStateUp ( consoleAction );
+				}
 
-				if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
-					inputAction[actionScreenShot].currentlyDown = io_getKeyStateUp ( actionScreenShot );
+			if ( event.keyboard.keycode == inputAction[actionScreenShot].keyValue )
+				inputAction[actionScreenShot].currentlyDown = io_getKeyStateUp ( actionScreenShot );
 
-				if ( event.keyboard.keycode == inputAction[gameEscape].keyValue )
-					inputAction[gameEscape].currentlyDown = io_getKeyStateUp ( gameEscape );
+			if ( event.keyboard.keycode == inputAction[gameEscape].keyValue )
+				inputAction[gameEscape].currentlyDown = io_getKeyStateUp ( gameEscape );
 
-				if ( event.keyboard.keycode == inputAction[gamePause].keyValue )
-					inputAction[gamePause].currentlyDown = io_getKeyStateUp ( gamePause );
+			if ( event.keyboard.keycode == inputAction[gamePause].keyValue )
+				inputAction[gamePause].currentlyDown = io_getKeyStateUp ( gamePause );
 
-				break;
+			break;
 		}
 }
 
@@ -518,19 +530,19 @@ void io_addCharToLine ( char keyCode )
 {
 	switch ( keyCode )
 		{
-			case ALLEGRO_KEY_SPACE:
-				if ( conCurrentCharCount < MAX_STRING_SIZE - 1 )
-					conCurrentLine.conLine += " ";
+		case ALLEGRO_KEY_SPACE:
+			if ( conCurrentCharCount < MAX_STRING_SIZE - 1 )
+				conCurrentLine.conLine += " ";
 
-				conCurrentCharCount++;
-				break;
+			conCurrentCharCount++;
+			break;
 
-			default:
-				if ( conCurrentCharCount < MAX_STRING_SIZE - 1 )
-					conCurrentLine.conLine += keyCode;
+		default:
+			if ( conCurrentCharCount < MAX_STRING_SIZE - 1 )
+				conCurrentLine.conLine += keyCode;
 
-				conCurrentCharCount++;
-				break;
+			conCurrentCharCount++;
+			break;
 		}
 }
 
@@ -550,43 +562,49 @@ void io_readConsoleKeyboard ( ALLEGRO_EVENT event )
 
 			switch ( unichar )
 				{
-					case ALLEGRO_KEY_BACKSPACE:
-						conBackSpaceDown = 1;
-						break;
+				case ALLEGRO_KEY_BACKSPACE:
+					conBackSpaceDown = 1;
+					break;
 
-					case ALLEGRO_KEY_TAB:
-						con_completeCommand ( conCurrentLine.conLine );
-						break;
+				case ALLEGRO_KEY_TAB:
+					con_completeCommand ( conCurrentLine.conLine );
+					break;
 
-					case ALLEGRO_KEY_ENTER:
-						con_processCommand ( conCurrentLine.conLine );
-						break;
+				case ALLEGRO_KEY_ENTER:
+					con_processCommand ( conCurrentLine.conLine );
+					break;
 
-					case ALLEGRO_KEY_TILDE:
-						inputAction[consoleAction].currentlyDown = false;
-						sys_changeMode ( -1, true );
-						break;
+				case ALLEGRO_KEY_TILDE:
+					inputAction[consoleAction].currentlyDown = false;
+					sys_changeMode ( -1, true );
+					break;
 
-					case ALLEGRO_KEY_DOWN:
-						conHistoryPtr++;
-						if ( conHistoryPtr > conNumInHistory )
-							conHistoryPtr = conNumInHistory;
-						con_popHistoryCommand();
-						break;
+				case ALLEGRO_KEY_DOWN:
+					conHistoryPtr++;
 
-					case ALLEGRO_KEY_UP:
-						conHistoryPtr--;
-						if ( conHistoryPtr < 0 )
-							conHistoryPtr = 0;
-						con_popHistoryCommand();
-						break;
+					if ( conHistoryPtr > conNumInHistory )
+						conHistoryPtr = conNumInHistory;
 
-					default:
-						unichar = event.keyboard.unichar;
-						if ( ( unichar >= 32 ) && ( unichar < ALLEGRO_KEY_MAX ) )
-							io_addCharToLine ( unichar );
-						conBackSpaceDelay = 0.0f;
-						break;
+					con_popHistoryCommand();
+					break;
+
+				case ALLEGRO_KEY_UP:
+					conHistoryPtr--;
+
+					if ( conHistoryPtr < 0 )
+						conHistoryPtr = 0;
+
+					con_popHistoryCommand();
+					break;
+
+				default:
+					unichar = event.keyboard.unichar;
+
+					if ( ( unichar >= 32 ) && ( unichar < ALLEGRO_KEY_MAX ) )
+						io_addCharToLine ( unichar );
+
+					conBackSpaceDelay = 0.0f;
+					break;
 				}
 		}
 }
@@ -609,44 +627,46 @@ void io_processKeyboard ( double frameTime )
 
 	switch ( currentMode )
 		{
-			case MODE_INTRO:
-				io_readIntroInput ( );
-				break;
+		case MODE_INTRO:
+			io_readIntroInput ( );
+			break;
 
-			case MODE_GUI:
-				io_readGUIInput ( );
-				break;
+		case MODE_GUI:
+			io_readGUIInput ( );
+			break;
 
-			case MODE_TERMINAL_MENU:
-			case MODE_TERMINAL_SIDEVIEW:
-			case MODE_TERMINAL_DB:
-			case MODE_TERMINAL_LEVEL:
-				io_readTerminalKeyboard ( );
-				break;
+		case MODE_TERMINAL_MENU:
+		case MODE_TERMINAL_SIDEVIEW:
+		case MODE_TERMINAL_DB:
+		case MODE_TERMINAL_LEVEL:
+			io_readTerminalKeyboard ( );
+			break;
 
-			case MODE_LIFT_VIEW:
-				io_readLiftKeyboard ( );
-				break;
+		case MODE_LIFT_VIEW:
+			io_readLiftKeyboard ( );
+			break;
 
-			case MODE_TRANSFER_INTRO:
-			case MODE_TRANSFER_INTRO_1:
-			case MODE_TRANSFER_INTRO_2:
-			case MODE_TRANSFER_FINISH:
-			case MODE_TRANSFER_START:
-			case MODE_TRANSFER_COPY:
+		case MODE_TRANSFER_INTRO:
+		case MODE_TRANSFER_INTRO_1:
+		case MODE_TRANSFER_INTRO_2:
+		case MODE_TRANSFER_FINISH:
+		case MODE_TRANSFER_START:
+		case MODE_TRANSFER_COPY:
+
 //			case MODE_TRANSFER_DRAW:
-			case MODE_TRANSFER_SELECT:
-			case MODE_TRANSFER_SELECT_SIDE:
-				io_readTransferKeyboard ( );
-				break;
+		case MODE_TRANSFER_SELECT:
+		case MODE_TRANSFER_SELECT_SIDE:
+			io_readTransferKeyboard ( );
+			break;
 
-			case MODE_PAUSED:
-				if ( true == io_getKeyStateDown ( gamePause ) )
-					{
-						sys_changeMode ( MODE_SHOWLEVEL, false );
-						gamePaused = false;
-					}
-				break;
+		case MODE_PAUSED:
+			if ( true == io_getKeyStateDown ( gamePause ) )
+				{
+					sys_changeMode ( MODE_SHOWLEVEL, false );
+					gamePaused = false;
+				}
+
+			break;
 
 		}
 }
@@ -664,31 +684,33 @@ void io_readKeyboard()
 
 	if ( false == al_get_next_event ( eventQueue, &event ) )
 		return; // No events in the queue
+		
 	//
 	// Windows was switched away
 	switch ( event.type )
 		{
-			case ALLEGRO_EVENT_DISPLAY_SWITCH_OUT:
-				gamePaused = true;
-				break;
+		case ALLEGRO_EVENT_DISPLAY_SWITCH_OUT:
+			gamePaused = true;
+			break;
 
-			case ALLEGRO_EVENT_DISPLAY_CLOSE:
-// TODO (dberry#1#): Change to use MODE_FINISH
-				sys_shutDown();
-				break;
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+			gameIsRunning = false;
+			return;
+			break;
 
-			case ALLEGRO_EVENT_DISPLAY_HALT_DRAWING:
+		case ALLEGRO_EVENT_DISPLAY_HALT_DRAWING:
 // TODO (dberry#1#): call al_acknowledge_drawing_halt immediately.
-				break;
+			break;
 
-			case ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING:
+		case ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING:
 // TODO (dberry#1#): call al_acknowledge_drawing_resume immediately.
-				break;
+			break;
 
-			case ALLEGRO_EVENT_JOYSTICK_CONFIGURATION:
+		case ALLEGRO_EVENT_JOYSTICK_CONFIGURATION:
 // TODO - Reset up joystick information
-				break;
+			break;
 		}
+
 	//
 	//  Assign true/false to currentlyDown for our keys
 	io_getKeyboardState ( event );
@@ -696,50 +718,65 @@ void io_readKeyboard()
 	switch ( currentMode )
 		{
 
-			case MODE_CONSOLE:
-				io_readConsoleKeyboard ( event );
-				break;
+		case MODE_CONSOLE:
+			io_readConsoleKeyboard ( event );
+			break;
 
-			case MODE_SHOWLEVEL:
-				//
-				// Handle action key
-				io_processActionKey();
-				//
-				// Activate the console from any mode
-				if ( true == inputAction[consoleAction].currentlyDown )
-					{
-						inputAction[consoleAction].currentlyDown = false;
-						al_flush_event_queue ( eventQueue );
-						sys_changeMode ( MODE_CONSOLE, true );
-						sys_stopAllSounds();
-					}
+		case MODE_SHOWLEVEL:
+			//
+			// Handle action key
+			io_processActionKey();
 
-				if ( true == inputAction[gamePause].currentlyDown )
-					{
-						sys_changeMode ( MODE_PAUSED, false );
-						inputAction[gamePause].currentlyDown = false;
-						gamePaused = true;
-						sys_stopAllSounds();
-						gam_setHUDState ( HUD_STATE_PAUSED );
-					}
-				break;
+			//
+			// Activate the console from any mode
+			if ( true == inputAction[consoleAction].currentlyDown )
+				{
+					inputAction[consoleAction].currentlyDown = false;
+					al_flush_event_queue ( eventQueue );
+					sys_changeMode ( MODE_CONSOLE, true );
+					sys_stopAllSounds();
+				}
 
-			case MODE_KEYCODE:
-				io_readKeyCodeInput ( event );
-				break;
+			if ( true == inputAction[gamePause].currentlyDown )
+				{
+					sys_changeMode ( MODE_PAUSED, false );
+					inputAction[gamePause].currentlyDown = false;
+					gamePaused = true;
+					sys_stopAllSounds();
+					gam_setHUDState ( HUD_STATE_PAUSED );
+				}
+
+			if ( true == inputAction[gameEscape].currentlyDown )
+				{
+					if (currentMode == MODE_SHOWLEVEL)
+						confirmExit = true;
+						
+					inputAction[gameEscape].currentlyDown = false;
+					sys_changeMode ( MODE_GUI, false );
+					gui_changeToGUIScreen ( gui_findIndex ( GUI_OBJECT_SCREEN, "scrExitQuestion" ) );
+				}
+
+			break;
+
+		case MODE_KEYCODE:
+			io_readKeyCodeInput ( event );
+			break;
 		}
+
 	//
 	// Exit from game - move to menus when ready
 	if ( true == inputAction[gameEscape].currentlyDown )
 		{
-			gameIsRunning = false;
+//			gameIsRunning = false;
 			return;
 		}
+
 	//
 	// Take a screenshot
 	if ( true == inputAction[actionScreenShot].currentlyDown )
 		{
 			inputAction[actionScreenShot].currentlyDown = false;
+
 			if ( io_screenShot ( "", "paradroid" ) == false )
 				{
 					con_print ( true, true, "Error: Could not save screenshot. PHYSFS_close is failing, although the file is written." );

@@ -49,6 +49,7 @@ int					fullScreenValue;
 int 				tileCollision = false;
 
 int					inputMethod;	// Set from GUI value
+bool				confirmExit;	// Used as flag in scrExitQuestion GUI
 
 //-----------------------------------------------------------------------------
 //

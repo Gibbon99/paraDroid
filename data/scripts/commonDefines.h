@@ -87,6 +87,7 @@ const int MODE_END_STATIC = 26;
 const int MODE_END_TEXT = 27;
 const int MODE_END_TEXT_FINISH = 28;
 const int MODE_PLAYER_EXPLODE = 29;
+const int MODE_CONFIRM_QUIT = 30;
 
 const int NUM_OF_LEVELS = 21;
 

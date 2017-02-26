@@ -221,6 +221,7 @@ _hostScriptFunctions hostVariables[] =
 	{"int fullScreenValue", &fullScreenValue},
 	{"int inputMethod", &inputMethod},
 	{"int numJoysticks", &numJoysticks},
+	{"bool confirmExit", &confirmExit},
 	{"float fadeSpeed", &fadeSpeed},
 	{"float gravity", &gravity},
 	{"float doorFrameDelay", &doorFrameDelay},
