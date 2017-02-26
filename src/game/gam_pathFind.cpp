@@ -17,7 +17,7 @@ This file is part of paraDroid.
 Copyright 2017 David Berry
 */
 
-#include "sys_globals.h"
+#include "../../hdr/sys_globals.h"
 
 //#define DEBUG_ASTAR 1
 
@@ -70,7 +70,7 @@ int gam_AStarAddTileToOpenNode ( int whichPath, cpVect whichTile, int moveCost, 
 	con_print ( true, false, "Adding new tile to openNode list" );
 #endif
 
-	USE_VALID_TEST
+//	USE_VALID_TEST
 
 	_pathNode tempNode;
 
@@ -90,6 +90,8 @@ int gam_AStarAddTileToOpenNode ( int whichPath, cpVect whichTile, int moveCost, 
 #ifdef DEBUG_ASTAR
 	con_print ( true, false, "Path [ %i ] Size [ %i ] parent [ %i ] moveCost [ %i ] distanceCost [ %i ]", whichPath, path[whichPath].openNodes.size(), parent, tempNode.g_movementCost, tempNode.h_estMoveCost );
 #endif
+
+	return 0;		// TODO: Remove int return
 }
 
 //-----------------------------------------------------------------------------
@@ -216,7 +218,7 @@ bool gam_AStarIsNodeInOpenList ( int whichPath, cpVect whichNode )
 bool gam_AStarGenerateNewNode ( int whichPath, int whichDirection )
 //-----------------------------------------------------------------------------
 {
-	USE_VALID_TEST
+//	USE_VALID_TEST
 
 	char 		directionStr[12];
 	_pathNode 	tempNode;
@@ -446,7 +448,7 @@ int gam_AStarGetNumWaypoints ( int whichPath )
 {
 	//
 	// Make sure the path passed is ok to use
-	if ( ( whichPath > path.size() ) || ( whichPath < 0 ) )
+	if ( ( whichPath > (int)path.size() ) || ( whichPath < 0 ) )
 		return -1;
 
 	if ( ( false == path[whichPath].wayPointsReady ) || ( false == path[whichPath].inUse ) )
@@ -463,7 +465,7 @@ bool gam_AStarIsPathReady ( int whichPath )
 {
 	//
 	// Make sure the path passed is ok to use
-	if ( ( whichPath > path.size() ) || ( whichPath < 0 ) )
+	if ( ( whichPath > (int)path.size() ) || ( whichPath < 0 ) )
 		return -1;
 
 	if ( false == path[whichPath].inUse )
@@ -586,7 +588,7 @@ int gam_AStarFindLowestCostNode ( int whichPath )
 	lowestCost = 50000;
 	lowestNodeIndexArray = 0;
 
-	USE_VALID_TEST
+//	USE_VALID_TEST
 
 	if ( true == path[whichPath].openNodes.empty() )
 		{

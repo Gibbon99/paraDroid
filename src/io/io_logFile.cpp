@@ -113,7 +113,7 @@ void io_closeLogFile()
 			io_logTimeToFile();
 			io_logToFile ( "-----------------------------------------------------------------------------\n\n" );
 #if defined (WIN32)
-			_close ( logFile );
+			al_fclose ( logFile );
 #else
 			al_fclose ( logFile );
 #endif

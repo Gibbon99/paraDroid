@@ -116,7 +116,7 @@ int ai_reachedHealingTile ( int whichDroid )
 					{
 						// had a problem finding a healing tile
 						printf("Error: Couldn't find healing tile to use.\n");
-						return;
+						return AI_RESULT_FAILED;
 					}
 
 					healingTileLocation.x = ( int ) healingTileLocation.x / TILE_SIZE;
@@ -132,7 +132,7 @@ int ai_reachedHealingTile ( int whichDroid )
 					if (shipLevel[currentLevel].droid[whichDroid].aStarPathIndex < 0)
 					{
 						con_print(true, false, "Error: Couldn't get a valid path index,");
-						return;
+						return AI_RESULT_FAILED;
 					}
 				}
 

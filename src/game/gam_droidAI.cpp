@@ -45,41 +45,41 @@ void ai_setupAITree ()
 // Se if the droid is ready to shoot at player
 //
 	ai_addNode ( AI_NODE_SELECTOR,	"ROOT_NODE",	"AI_SHOOT",		NULL );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"NOT_SHOOT",	&ai_notShoot );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"BULLET_DEST",	&ai_findBulletDest );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"FIRE_BULLET",	&ai_shootBullet );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"NOT_SHOOT",	(ExternFunc)&ai_notShoot );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"BULLET_DEST", (ExternFunc)&ai_findBulletDest );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"FIRE_BULLET", (ExternFunc)&ai_shootBullet );
 //
 // If health is low, find a way to the nearest healing tile and repair
 //
 	ai_addNode ( AI_NODE_SELECTOR, 	"ROOT_NODE", 	"AI_HEALTHY", 		NULL );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_HEALTHY", 	"CHECK_HEALTH", 	&ai_isDroidHealthy );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_HEALTHY", 	"ON_HEALING", 		&ai_onHealingTile );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_HEALTHY", 	"REACHED_HEALTH", 	&ai_reachedHealingTile );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_HEALTHY", 	"CHECK_HEALTH",		(ExternFunc)&ai_isDroidHealthy );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_HEALTHY", 	"ON_HEALING",		(ExternFunc)&ai_onHealingTile );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_HEALTHY", 	"REACHED_HEALTH",	(ExternFunc)&ai_reachedHealingTile );
 //
 // If health is low, and there are no healing tile, flee from the player
 //
 	ai_addNode ( AI_NODE_SELECTOR,	"ROOT_NODE",	"AI_FLEE",			NULL );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_FLEE",		"CHECK_FLEE",		&ai_isDroidHealthyFlee );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_FLEE",		"ON_FLEE",			&ai_onFleeTile );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_FLEE",		"REACHED_FLEE",		&ai_reachedFleeTile );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_FLEE",		"CHECK_FLEE",		(ExternFunc)&ai_isDroidHealthyFlee );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_FLEE",		"ON_FLEE",			(ExternFunc)&ai_onFleeTile );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_FLEE",		"REACHED_FLEE",		(ExternFunc)&ai_reachedFleeTile );
 
 //
 // Find a way back to the nearest waypoint to continue patrol
 //
 	ai_addNode ( AI_NODE_SELECTOR,	"ROOT_NODE",		"AI_RESUME",		NULL );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_RESUME",		"IS_NOT_PATROLLING",&ai_isNotPatrolling );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_RESUME",		"SET_DEST",			&ai_onResumeDest );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_RESUME",		"FIND_DEST_PATH",	&ai_reachedResumeDest );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_RESUME",		"IS_NOT_PATROLLING", (ExternFunc)&ai_isNotPatrolling );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_RESUME",		"SET_DEST",			(ExternFunc)&ai_onResumeDest );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_RESUME",		"FIND_DEST_PATH",	(ExternFunc)&ai_reachedResumeDest );
 
 //
 // Standard patrol waypoints behaviour
 //
 	ai_addNode ( AI_NODE_SEQUENCE, 	"ROOT_NODE", 	"AI_PATROL", 	NULL );
 	ai_addNode ( AI_NODE_SELECTOR, 	"AI_PATROL", 	"AI_MOVE", 		NULL );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_MOVE", 		"CAN_MOVE", 	&ai_canMove );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_MOVE", 		"AI_REVERSE", 	&ai_canReverseDirection );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_PATROL", 	"MOVE_TO", 		&ai_moveDroidToWaypoint );
-	ai_addNode ( AI_NODE_EXECUTE, 	"AI_PATROL", 	"FIND_WP", 		&ai_getNextWaypoint );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_MOVE", 		"CAN_MOVE",		(ExternFunc)&ai_canMove );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_MOVE", 		"AI_REVERSE",	(ExternFunc)&ai_canReverseDirection );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_PATROL", 	"MOVE_TO",		(ExternFunc)&ai_moveDroidToWaypoint );
+	ai_addNode ( AI_NODE_EXECUTE, 	"AI_PATROL", 	"FIND_WP", 		(ExternFunc)&ai_getNextWaypoint );
 }
 
 //-----------------------------------------------------------------------------

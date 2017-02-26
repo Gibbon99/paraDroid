@@ -36,7 +36,7 @@ _guiKeyCode			tmp_keyCode;
 void gui_setObjectFocus(string objectID)
 //-----------------------------------------------------------------------------
 {
-	uint indexCount = 0;
+	int indexCount = 0;
 
 	for (indexCount = 0; indexCount != guiScreens[currentGUIScreen].objectIDIndex.size(); indexCount++)
 		{
@@ -66,7 +66,7 @@ void gui_setObjectFocus(string objectID)
 						return;
 						break;
 				}
-			indexCount++;
+			indexCount++;	//TODO: Check this is needed
 		}
 	con_print(true, false, "GUI Error: ObjectID [ %s ] not found", objectID.c_str());
 }

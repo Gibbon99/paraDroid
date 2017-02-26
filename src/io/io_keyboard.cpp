@@ -519,7 +519,7 @@ char *io_getAsciiFromKeycode ( int keyCode )
 	char tempChar[1];
 
 	sprintf ( tempChar, "%s", al_keycode_to_name ( keyCode ) );
-	return tempChar[0];
+	return (char *)tempChar[0];
 }
 
 //-----------------------------------------------------------------------------

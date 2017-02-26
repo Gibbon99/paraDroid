@@ -91,7 +91,7 @@ int ai_reachedResumeDest ( int whichDroid )
 					if ( true == gam_AStarIsTileSolid ( ( nearestWP.y * shipLevel[currentLevel].levelDimensions.x ) + nearestWP.x ) )
 					{
 						printf("ERROR: Found a solid tile for nearest waypoint.\n");
-						return;
+						return AI_RESULT_FAILED;
 					}
 
 					droidWorldPosTiles.x = ( int ) shipLevel[currentLevel].droid[whichDroid].worldPos.x / TILE_SIZE;
@@ -101,7 +101,7 @@ int ai_reachedResumeDest ( int whichDroid )
 					if (shipLevel[currentLevel].droid[whichDroid].aStarPathIndex < 0)
 					{
 						con_print(true, false, "Error: Couldn't get a valid path index,");
-						return;
+						return AI_RESULT_FAILED;
 					}
 
 					shipLevel[currentLevel].droid[whichDroid].aStarInitDone = true;

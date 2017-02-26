@@ -127,7 +127,7 @@ bool sys_startSound()
 			return false;
 		}
 
-	multiSounds = al_malloc ( sizeof ( _multiSounds ) * as_numMultiSamples );
+	multiSounds = (_multiSounds *) al_malloc ( sizeof ( _multiSounds ) * as_numMultiSamples );
 	if ( NULL == multiSounds )
 		{
 			con_print ( true, false, "ERROR: Failed to get memory to hold multiSamples" );

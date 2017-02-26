@@ -109,7 +109,7 @@ void io_mapActionKeys()
 bool io_readKeyBindings (string fileName)
 //-----------------------------------------------------------------------------
 {
-	uint		numRead = 0;
+	unsigned int		numRead = 0;
 	size_t		stringSize;
 
 	filePtr = al_fopen(fileName.c_str(), "rb");
@@ -120,7 +120,7 @@ bool io_readKeyBindings (string fileName)
 		{
 			al_fread(filePtr, &inputAction[i].keyValue, sizeof(inputAction[i].keyValue));
 			al_fread(filePtr, &stringSize, sizeof(stringSize));
-			numRead = al_fread(filePtr, inputAction[i].stringValue.c_str(), stringSize);
+			numRead = al_fread(filePtr, (void *)inputAction[i].stringValue.c_str(), stringSize);
 
 			if (numRead != stringSize)
 				{
@@ -144,7 +144,7 @@ bool io_readKeyBindings (string fileName)
 bool io_saveKeyBindings (string fileName)
 //-----------------------------------------------------------------------------
 {
-	uint		numWrite = 0;
+	unsigned int		numWrite = 0;
 	size_t		stringSize;
 	char		tempString[32];
 

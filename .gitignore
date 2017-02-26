@@ -3,3 +3,13 @@
 ################################################################################
 
 /Debug/paraDroid.tlog
+/Debug
+/packages
+/packages.config
+/paraDroid.vcxproj.user
+/paraDroid.vcxproj.filters
+/paraDroid.vcxproj
+/paraDroid.VC.VC.opendb
+/paraDroid.VC.db
+/paraDroid.sln
+/.vs/paraDroid/v14

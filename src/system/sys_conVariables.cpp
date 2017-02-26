@@ -100,19 +100,19 @@ bool sys_conListVariables()
 		switch (varTypeNum)
 		{
 			case VAR_TYPE_INT:
-				testVarInt = hostVariables[count].hostFunctionPtr;
+				testVarInt = (int *)hostVariables[count].hostFunctionPtr;
 				tempValueInt = *testVarInt;
 				con_print(true, true, "Variable - INT -  [ %s ] - [ %i ]", varName.c_str(), tempValueInt);
 				break;
 
 			case VAR_TYPE_FLOAT:
-				testVarFloat = hostVariables[count].hostFunctionPtr;
+				testVarFloat = (float *)hostVariables[count].hostFunctionPtr;
 				tempValueFloat = *testVarFloat;
 				con_print(true, true, "Variable - FLOAT - [ %s ] - [ %2.2f ]", varName.c_str(), tempValueFloat);
 				break;
 
 			case VAR_TYPE_BOOL:
-				testVarInt = hostVariables[count].hostFunctionPtr;
+				testVarInt = (int *)hostVariables[count].hostFunctionPtr;
 				tempValueInt =  *testVarInt;
 				if (0 == tempValueInt)
 				{
@@ -190,19 +190,19 @@ bool sys_conGetVariable(string param1)
 			switch (varTypeNum)
 			{
 				case VAR_TYPE_INT:
-					testVarInt = hostVariables[count].hostFunctionPtr;
+					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
 					tempValueInt = *testVarInt;
 					con_print(true, true, "Variable [ %s ] - [ %i ]", varName.c_str(), tempValueInt);
 					break;
 
 				case VAR_TYPE_FLOAT:
-					testVarFloat = hostVariables[count].hostFunctionPtr;
+					testVarFloat = (float *)hostVariables[count].hostFunctionPtr;
 					tempValueFloat = *testVarFloat;
 					con_print(true, true, "Variable [ %s ] - [ %2.2f ]", varName.c_str(), tempValueFloat);
 					break;
 
 				case VAR_TYPE_BOOL:
-					testVarInt = hostVariables[count].hostFunctionPtr;
+					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
 					tempValueInt = *testVarFloat;
 					if (0 == tempValue)
 					{
@@ -285,19 +285,19 @@ bool sys_conSetVariable(string param1, string param2)
 			switch (varTypeNum)
 			{
 				case VAR_TYPE_INT:
-					testVarInt = hostVariables[count].hostFunctionPtr;
+					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
 					*testVarInt = atoi(param2.c_str());
 					con_print (true, true,  "Variable [ %s ] set to [ %i ]", varName.c_str(), *testVarInt);
 					break;
 
 				case VAR_TYPE_FLOAT:
-					testVarFloat = hostVariables[count].hostFunctionPtr;
+					testVarFloat = (float *)hostVariables[count].hostFunctionPtr;
 					*testVarFloat = atof(param2.c_str());
 					con_print (true, true, "Variable [ %s ] set to [ %2.2f ]", varName.c_str(), *testVarFloat);
 					break;
 
 				case VAR_TYPE_BOOL:
-					testVarInt = hostVariables[count].hostFunctionPtr;
+					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
 					tempValue = atoi(param2.c_str());
 					if (0 == tempValue)
 					{

@@ -63,6 +63,8 @@ bool io_loadttfFont(int fontIndex, int fontSize, string fontName)
 	}
 	font[fontIndex].valid = true;
 	font[fontIndex].fontSize = fontSize;
+
+	return true;
 }
 
 //-----------------------------------------------------------------------------

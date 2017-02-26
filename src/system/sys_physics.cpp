@@ -63,14 +63,14 @@ void sys_destroyPlayerPhysics()
 	con_print ( true, false, "Removing player physics shape and body." );
 #endif
 
-	if ( true == cpSpaceContainsShape ( space, playerPhysicsObject.shape ) )
+	if (cpTrue == cpSpaceContainsShape ( space, playerPhysicsObject.shape ) )
 		{
 			cpSpaceRemoveShape ( space, playerPhysicsObject.shape );
 			cpShapeFree ( playerPhysicsObject.shape );
 			playerPhysicsObject.shape = NULL;
 		}
 
-	if ( true == cpSpaceContainsBody ( space, playerPhysicsObject.body ) )
+	if (cpTrue == cpSpaceContainsBody ( space, playerPhysicsObject.body ) )
 		{
 			cpSpaceRemoveBody ( space, playerPhysicsObject.body );
 			cpBodyFree ( playerPhysicsObject.body );
@@ -112,7 +112,7 @@ void sys_setupPlayerPhysics()
 	cpShapeSetFriction ( playerPhysicsObject.shape, playerFriction );
 	cpShapeSetElasticity ( playerPhysicsObject.shape, playerElastic );
 	cpShapeSetCollisionType ( playerPhysicsObject.shape, PHYSIC_TYPE_PLAYER );
-	cpShapeSetUserData ( playerPhysicsObject.shape, -1 );	// Passed into collision routine
+	cpShapeSetUserData ( playerPhysicsObject.shape, (cpDataPointer)-1 );	// Passed into collision routine
 }
 
 //-------------------------------------------------------------------
@@ -157,13 +157,13 @@ void sys_removeDroidCPInfo ( int whichDroid )
 	con_print ( true, false, "Remove physics objects for droid [ %i ]", whichDroid );
 #endif
 
-	if ( true == cpSpaceContainsShape ( space, shipLevel[currentLevel].droid[whichDroid].shape ) )
+	if (cpTrue == cpSpaceContainsShape ( space, shipLevel[currentLevel].droid[whichDroid].shape ) )
 		{
 			cpSpaceRemoveShape ( space, shipLevel[currentLevel].droid[whichDroid].shape );
 			cpShapeFree ( shipLevel[currentLevel].droid[whichDroid].shape );
 		}
 
-	if ( true == cpSpaceContainsBody ( space, shipLevel[currentLevel].droid[whichDroid].body ) )
+	if (cpTrue == cpSpaceContainsBody ( space, shipLevel[currentLevel].droid[whichDroid].body ) )
 		{
 			cpSpaceRemoveBody ( space, shipLevel[currentLevel].droid[whichDroid].body );
 			cpBodyFree ( shipLevel[currentLevel].droid[whichDroid].body );
@@ -178,13 +178,13 @@ void sys_destroyPhysicObjects ( int whichLevel )
 {
 	for ( int i = 0; i != shipLevel[whichLevel].numLineSegments; i++ )
 		{
-			if ( true == cpSpaceContainsShape ( space, solidWalls[i].shape ) )
+			if (cpTrue == cpSpaceContainsShape ( space, solidWalls[i].shape ) )
 				{
 					cpSpaceRemoveShape ( space, solidWalls[i].shape );
 					cpShapeFree ( solidWalls[i].shape );
 				}
 
-			if ( true == cpSpaceContainsBody ( space, solidWalls[i].body ) )
+			if (cpTrue == cpSpaceContainsBody ( space, solidWalls[i].body ) )
 				{
 					cpSpaceRemoveBody ( space, solidWalls[i].body );
 					cpBodyFree ( solidWalls[i].body );
@@ -202,13 +202,13 @@ void sys_destroyPhysicObjects ( int whichLevel )
 
 	for ( int i = 0; i != numDoorsOnLevel; i++ )
 		{
-			if ( true == cpSpaceContainsShape ( space, doorTrigger[i].physics.shape ) )
+			if (cpTrue == cpSpaceContainsShape ( space, doorTrigger[i].physics.shape ) )
 				{
 					cpSpaceRemoveShape ( space, doorTrigger[i].physics.shape );
 					cpShapeFree ( doorTrigger[i].physics.shape );
 				}
 
-			if ( true == cpSpaceContainsBody ( space, doorTrigger[i].physics.body ) )
+			if ( cpTrue == cpSpaceContainsBody ( space, doorTrigger[i].physics.body ) )
 				{
 					cpSpaceRemoveBody ( space, doorTrigger[i].physics.body );
 					cpBodyFree ( doorTrigger[i].physics.body );
@@ -261,7 +261,7 @@ void sys_createEnemyPhysics()
 
 					cpBodySetPosition ( shipLevel[currentLevel].droid[i].body, shipLevel[currentLevel].droid[i].worldPos );
 
-					cpShapeSetUserData ( shipLevel[currentLevel].droid[i].shape, i );	// Passed into collision routine
+					cpShapeSetUserData ( shipLevel[currentLevel].droid[i].shape, (cpDataPointer)i );	// Passed into collision routine
 				}
 		}
 }
@@ -316,7 +316,7 @@ void sys_createSolidWalls()
 
 			cpShapeSetCollisionType ( solidWalls[i].shape, PHYSIC_TYPE_WALL );
 
-			cpShapeSetUserData ( solidWalls[i].shape, i );
+			cpShapeSetUserData ( solidWalls[i].shape, (cpDataPointer)i );
 		}
 
 	sys_createEnemyPhysics();
@@ -393,7 +393,7 @@ void sys_createDoorSensor ( int whichDoor, cpFloat width, cpFloat height, cpVect
 	cpSpaceAddShape ( space, doorTrigger[whichDoor].physics.shape );
 	cpShapeSetCollisionType ( doorTrigger[whichDoor].physics.shape, PHYSIC_TYPE_DOOR );
 
-	cpShapeSetUserData ( doorTrigger[whichDoor].physics.shape, whichDoor );
+	cpShapeSetUserData ( doorTrigger[whichDoor].physics.shape, (cpDataPointer)whichDoor );
 
 	cpShapeSetSensor ( doorTrigger[whichDoor].physics.shape, true );
 }

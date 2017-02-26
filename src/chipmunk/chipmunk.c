@@ -26,18 +26,18 @@
 #	include <android/log.h>
 #endif
 
-#include "chipmunk/chipmunk_private.h"
+#include "../chipmunk/chipmunk_private.h"
 
 void
 cpMessage(const char *condition, const char *file, int line, int isError, int isHardError, const char *message, ...)
 {
-	fprintf(stderr, (isError ? "Aborting due to Chipmunk error: " : "Chipmunk warning: "));
+	fprintf(stderr, (isError ? "Aborting due to Chipmunk error: " : "../chipmunk warning: "));
 	
 	va_list vargs;
 	va_start(vargs, message); {
 #if defined(ANDROID)
-		__android_log_print( ANDROID_LOG_INFO, "Chipmunk", "%s(%d)", file, line );
-		__android_log_print( ANDROID_LOG_INFO, "Chipmunk", message, vargs );
+		__android_log_print( ANDROID_LOG_INFO, "../chipmunk", "%s(%d)", file, line );
+		__android_log_print( ANDROID_LOG_INFO, "../chipmunk", message, vargs );
 #else
 		vfprintf(stderr, message, vargs);
 		fprintf(stderr, "\n");
@@ -45,8 +45,8 @@ cpMessage(const char *condition, const char *file, int line, int isError, int is
 	} va_end(vargs);
 	
 #if defined(ANDROID)
-	__android_log_print(ANDROID_LOG_INFO, "Chipmunk", "\tFailed condition: %s\n", condition);
-	__android_log_print(ANDROID_LOG_INFO, "Chipmunk", "\tSource:%s:%d\n", file, line);
+	__android_log_print(ANDROID_LOG_INFO, "../chipmunk", "\tFailed condition: %s\n", condition);
+	__android_log_print(ANDROID_LOG_INFO, "../chipmunk", "\tSource:%s:%d\n", file, line);
 #else
 	fprintf(stderr, "\tFailed condition: %s\n", condition);
 	fprintf(stderr, "\tSource:%s:%d\n", file, line);
@@ -328,4 +328,4 @@ cpBool cpSpaceShapeQuery_b(cpSpace *space, cpShape *shape, cpSpaceShapeQueryBloc
 #endif
 #endif
 
-#include "chipmunk/chipmunk_ffi.h"
+#include "../chipmunk/chipmunk_ffi.h"

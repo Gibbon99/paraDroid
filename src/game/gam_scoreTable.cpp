@@ -165,6 +165,7 @@ string gam_getScoreElement ( int whichElement, int tableIndex )
 				return gui_IntToString ( scoreTable[tableIndex].score );
 				break;
 		}
+	return "Error";
 }
 
 

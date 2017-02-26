@@ -137,7 +137,7 @@ int ai_reachedFleeTile ( int whichDroid )
 					if (shipLevel[currentLevel].droid[whichDroid].aStarPathIndex < 0)
 					{
 						con_print(true, false, "Error: Couldn't get a valid path index,");
-						return;
+						return AI_RESULT_FAILED;	//TODO: Check this is the right code to return
 					}
 				}
 

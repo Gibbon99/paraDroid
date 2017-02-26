@@ -18,7 +18,7 @@ Copyright 2017 David Berry
 */
 
 
-#include "sys_globals.h"
+#include "../../hdr/sys_globals.h"
 
 list<_emitter> emitter;
 std::list<_particle>::iterator itr;
@@ -287,8 +287,8 @@ void par_resetAllEmitters()
 					for ( auto thisIter = emitterItr->particle.begin(); thisIter != emitterItr->particle.end(); )
 //			for ( itr = emitterItr->particle.begin(); itr != emitterItr->particle.end(); itr++ )
 						{
-							if ( ( true == cpSpaceContainsShape ( space, thisIter->shape ) ) &&
-							        ( true == cpSpaceContainsBody ( space, thisIter->body ) ) )
+							if ( ( cpTrue == cpSpaceContainsShape ( space, thisIter->shape ) ) &&
+							        (cpTrue == cpSpaceContainsBody ( space, thisIter->body ) ) )
 								{
 									cpSpaceRemoveShape ( space, thisIter->shape );
 									cpShapeFree ( thisIter->shape );
@@ -326,13 +326,13 @@ void par_removeEmitter ( int whichBullet )
 							{
 								if ( true == emitterItr->usePhysics )
 									{
-										if ( true == cpSpaceContainsShape ( space, itr->shape ) )
+										if (cpTrue == cpSpaceContainsShape ( space, itr->shape ) )
 											{
 												cpSpaceRemoveShape ( space, itr->shape );
 												cpShapeFree ( itr->shape );
 											}
 
-										if ( true == cpSpaceContainsBody ( space, itr->body ) )
+										if (cpTrue == cpSpaceContainsBody ( space, itr->body ) )
 											{
 												cpSpaceRemoveBody ( space, itr->body );
 												cpBodyFree ( itr->body );
@@ -391,13 +391,13 @@ void par_animateParticles()
 									{
 										case PARTICLE_TYPE_EXPLOSION:
 										case PARTICLE_TYPE_SPARK:
-											if ( true == cpSpaceContainsShape ( space, itr->shape ) )
+											if (cpTrue == cpSpaceContainsShape ( space, itr->shape ) )
 												{
 													cpSpaceRemoveShape ( space, itr->shape );
 													cpShapeFree ( itr->shape );
 												}
 
-											if ( true == cpSpaceContainsBody ( space, itr->body ) )
+											if (cpTrue == cpSpaceContainsBody ( space, itr->body ) )
 												{
 													cpSpaceRemoveBody ( space, itr->body );
 													cpBodyFree ( itr->body );
@@ -431,7 +431,7 @@ void par_animateParticles()
 									{
 										case PARTICLE_TYPE_EXPLOSION:
 										case PARTICLE_TYPE_SPARK:
-										if (true == cpSpaceContainsBody(space, itr->body))
+										if (cpTrue == cpSpaceContainsBody(space, itr->body))
 												cpBodySetForce ( itr->body, itr->direction );
 											break;
 									}

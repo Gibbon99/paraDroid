@@ -31,7 +31,7 @@ bool io_loadSideViewData(const char *sideviewFileName)
     unsigned char levelCount[1];
 
     ALLEGRO_FILE		*fpSideView;
-    uint				returnCode;
+    unsigned int				returnCode;
 
     fpSideView = al_fopen(sideviewFileName, "rb");
     if (fpSideView == NULL)

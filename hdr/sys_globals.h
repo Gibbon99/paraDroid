@@ -26,7 +26,7 @@ using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "pthread.h"
+//#include "pthread.h"
 
 //#include "system/mmgr.h"
 
@@ -57,11 +57,11 @@ typedef int	(*ExternFunc)(...);
 //
 // Shared with script files
 //
-#include "data/scripts/commonDefines.h"
+#include "../data/scripts/commonDefines.h"
 
 #include "system/sys_defines.h"
 
-#include "chipmunk/chipmunk.h"
+#include "../chipmunk/chipmunk.h"
 
 #include "gui/gui_main.h"
 #include "gui/gui_render.h"

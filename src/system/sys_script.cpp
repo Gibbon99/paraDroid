@@ -454,7 +454,6 @@ int numConsoleCommands;
 //-----------------------------------------------------------------------------
 //
 // Error codes for AngelScript
-
 const char *sys_getScriptError(int errNo)
 //-----------------------------------------------------------------------------
 {
@@ -778,7 +777,7 @@ bool sys_loadAndCompileScripts()
 			//
 			// Load the script file
 			//
-			if (sys_fileIntoMemory(scriptInfo[fileCounter].scriptFileName.c_str()) == false)
+			if (sys_fileIntoMemory((char*)scriptInfo[fileCounter].scriptFileName.c_str()) == false)
 				{
 					con_print(true, true, "Error: Failed to load scriptFile [ %s ]", scriptInfo[fileCounter].scriptFileName.c_str());
 					return false;
@@ -920,7 +919,7 @@ bool sys_initScriptEngine()
 
 			if (tempFunctionName.funcID <= 0)
 				{
-					con_print(true, true, "Failed to get function ID for [ %s ] Error [ %s ]", scriptFunctionName[i].functionName.c_str(), sys_getScriptError(tempFunctionName.funcID));
+					con_print(true, true, "Failed to get function ID for [ %s ] Error [ %s ]", scriptFunctionName[i].functionName.c_str(), sys_getScriptError((int)tempFunctionName.funcID));
 					return false;
 				}
 			else
@@ -988,7 +987,7 @@ bool sys_executeScriptFunction(string functionName, string funcParam)
 			// Do a case insensitive compare - FIXME
 			//
 #if defined(WIN32)
-			if (_stricmp(scriptFunctions[i].scriptName, functionName) == 0)
+			if (_stricmp(scriptFunctions[i].scriptName.c_str(), functionName.c_str()) == 0)
 #else
 			if (scriptFunctions[i].scriptName == functionName)
 #endif
@@ -1100,7 +1099,7 @@ bool sys_addScriptConsoleFunction(string funcName, string funcPtr, bool setParam
 
 	if (tempScriptFunction.funcID <= 0)
 		{
-			con_print(true, true, "Err: Failed to get function ID for [ %s ]. Error [ %s ]", tempScriptFunction.functionName.c_str(), sys_getScriptError(tempScriptFunction.funcID));
+			con_print(true, true, "Err: Failed to get function ID for [ %s ]. Error [ %s ]", tempScriptFunction.functionName.c_str(), sys_getScriptError((int)tempScriptFunction.funcID));
 			return false;
 		}
 

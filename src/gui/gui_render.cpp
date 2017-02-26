@@ -100,7 +100,7 @@ void gui_printTextBox (int whichObject)
 	//
 	// strtok modifies the string - make a copy
 	textCopy = guiTextBoxes[whichObject].label;
-	p = strtok (textCopy.c_str (), " ");
+	p = strtok ((char *)textCopy.c_str (), " ");
 
 	while (p != 0)
 		{

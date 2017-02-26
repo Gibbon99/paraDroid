@@ -3,13 +3,14 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
-#include <pthread.h>
+#ifndef (WIN32)
+	#include <pthread.h>
+#endif
 //#include <sys/param.h >
 #include <sys/sysctl.h>
 
-#include "chipmunk/chipmunk_private.h"
-#include "chipmunk/cpHastySpace.h"
+#include "../chipmunk/chipmunk_private.h"
+#include "../chipmunk/cpHastySpace.h"
 
 
 //MARK: ARM NEON Solver

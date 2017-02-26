@@ -97,7 +97,7 @@ int ai_shootBullet ( int whichDroid )
 	if (shipLevel[currentLevel].droid[whichDroid].targetIndex == -1)	// Player is the target
 	{
 		if (false == gam_calculateInterceptShotPosition(shipLevel[currentLevel].droid[whichDroid].worldPos,
-											playerWorldPos, playerVelocity, 10.0f + baseGameSpeed, bulletStartPos));
+											playerWorldPos, playerVelocity, 10.0f + baseGameSpeed, bulletStartPos))
 											{
 												// Default to player position
 											bulletDestPos = playerWorldPos;
