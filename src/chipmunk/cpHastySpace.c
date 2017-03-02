@@ -11,7 +11,7 @@
 #endif
 
 #include "../chipmunk/chipmunk_private.h"
-#include "chipmunk/cpHastySpace.h"
+#include "../chipmunk/cpHastySpace.h"
 
 
 //MARK: ARM NEON Solver
@@ -334,8 +334,8 @@ cpHastySpaceSetThreads(cpSpace *space, unsigned long threads)
 		for(unsigned long i=0; i<(hasty->num_threads-1); i++){
 			hasty->workers[i].space = hasty;
 			hasty->workers[i].thread_num = i + 1;
-			
-			pthread_create(&hasty->workers[i].thread, NULL, (void *)WorkerThreadLoop, &hasty->workers[i]);
+// XXX			
+//			pthread_create(&hasty->workers[i].thread, NULL, WorkerThreadLoop, &hasty->workers[i]);
 		}
 		
 		pthread_cond_wait(&hasty->cond_resume, &hasty->mutex);

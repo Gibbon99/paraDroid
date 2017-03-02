@@ -224,13 +224,13 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 	while( pos < modifiedScript.size() )
 	{
 		asUINT len = 0;
-		asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+		asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 		if( t == asTC_UNKNOWN && modifiedScript[pos] == '#' && (pos + 1 < modifiedScript.size()) )
 		{
 			int start = pos++;
 
 			// Is this an #if directive?
-			asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+			asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 
 			string token;
 			token.assign(&modifiedScript[pos], len);
@@ -239,11 +239,11 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 
 			if( token == "if" )
 			{
-				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 				if( t == asTC_WHITESPACE )
 				{
 					pos += len;
-					t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+					t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 				}
 
 				if( t == asTC_IDENTIFIER )
@@ -293,7 +293,7 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 	while( pos < modifiedScript.size() )
 	{
 		asUINT len = 0;
-		asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+		asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 		if( t == asTC_COMMENT || t == asTC_WHITESPACE )
 		{
 			pos += len;
@@ -313,7 +313,7 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 					t = asTC_UNKNOWN;
 					break;
 				}
-				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 			} while(t == asTC_COMMENT || t == asTC_WHITESPACE);
 
 			if( t == asTC_IDENTIFIER )
@@ -323,7 +323,7 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 				// Search until first { is encountered
 				while( pos < modifiedScript.length() )
 				{
-					engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+					engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 
 					// If start of class section encountered stop
 					if( modifiedScript[pos] == '{' )
@@ -355,7 +355,7 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 			do
 			{
 				pos += len;
-				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 			} while(t == asTC_COMMENT || t == asTC_WHITESPACE);
 
 			if( currentNamespace != "" )
@@ -365,7 +365,7 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 			// Search until first { is encountered
 			while( pos < modifiedScript.length() )
 			{
-				engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+				engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 
 				// If start of namespace section encountered stop
 				if( modifiedScript[pos] == '{' )
@@ -421,7 +421,7 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 		{
 			int start = pos++;
 
-			asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+			asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 			if( t == asTC_IDENTIFIER )
 			{
 				string token;
@@ -429,11 +429,11 @@ int CScriptBuilder::ProcessScriptSection(const char *script, unsigned int length
 				if( token == "include" )
 				{
 					pos += len;
-					t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+					t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 					if( t == asTC_WHITESPACE )
 					{
 						pos += len;
-						t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+						t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 					}
 
 					if( t == asTC_VALUE && len > 2 && (modifiedScript[pos] == '"' || modifiedScript[pos] == '\'') )
@@ -650,7 +650,7 @@ int CScriptBuilder::SkipStatement(int pos)
 	// Skip until ; or { whichever comes first
 	while( pos < (int)modifiedScript.length() && modifiedScript[pos] != ';' && modifiedScript[pos] != '{' )
 	{
-		engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+		engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 		pos += len;
 	}
 
@@ -663,7 +663,7 @@ int CScriptBuilder::SkipStatement(int pos)
 		int level = 1;
 		while( level > 0 && pos < (int)modifiedScript.size() )
 		{
-			asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+			asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 			if( t == asTC_KEYWORD )
 			{
 				if( modifiedScript[pos] == '{' )
@@ -688,14 +688,14 @@ int CScriptBuilder::ExcludeCode(int pos)
 	int nested = 0;
 	while( pos < (int)modifiedScript.size() )
 	{
-		engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+		engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 		if( modifiedScript[pos] == '#' )
 		{
 			modifiedScript[pos] = ' ';
 			pos++;
 
 			// Is it an #if or #endif directive?
-			engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+			engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 			string token;
 			token.assign(&modifiedScript[pos], len);
 			OverwriteCode(pos, len);
@@ -750,7 +750,7 @@ int CScriptBuilder::ExtractMetadataString(int pos, string &metadata)
 	asUINT len = 0;
 	while( level > 0 && pos < (int)modifiedScript.size() )
 	{
-		asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+		asETokenClass t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 		if( t == asTC_KEYWORD )
 		{
 			if( modifiedScript[pos] == '[' )
@@ -788,7 +788,7 @@ int CScriptBuilder::ExtractDeclaration(int pos, string &declaration, int &type)
 	do
 	{
 		pos += len;
-		t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+		t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 	} while ( t == asTC_WHITESPACE || t == asTC_COMMENT );
 
 	// We're expecting, either a class, interface, function, or variable declaration
@@ -801,7 +801,7 @@ int CScriptBuilder::ExtractDeclaration(int pos, string &declaration, int &type)
 			do
 			{
 				pos += len;
-				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 			} while ( t == asTC_WHITESPACE || t == asTC_COMMENT );
 
 			if( t == asTC_IDENTIFIER )
@@ -825,7 +825,7 @@ int CScriptBuilder::ExtractDeclaration(int pos, string &declaration, int &type)
 			string name;
 			for(; pos < (int)modifiedScript.size();)
 			{
-				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, &len);
+				t = engine->ParseToken(&modifiedScript[pos], modifiedScript.size() - pos, (int *)&len);
 				if( t == asTC_KEYWORD )
 				{
 					token.assign(&modifiedScript[pos], len);

@@ -31,9 +31,9 @@ using namespace std;
 //#include "system/mmgr.h"
 
 
-#include "angelscript.h"
-#include "scriptstdstring.h"
-#include "scriptarray.h"
+#include "../hdr/script/angelscript.h"
+#include "../hdr/script/scriptstdstring.h"
+#include "../hdr/script/scriptarray.h"
 
 //
 //-----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ typedef int	(*ExternFunc)(...);
 
 #include "system/sys_defines.h"
 
-#include "../chipmunk/chipmunk.h"
+#include "../hdr/chipmunk/chipmunk.h"
 
 #include "gui/gui_main.h"
 #include "gui/gui_render.h"

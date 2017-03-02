@@ -36,7 +36,7 @@
 //
 
 
-#include "as_config.h"
+#include "../script/as_config.h"
 
 #ifndef AS_NO_COMPILER
 
