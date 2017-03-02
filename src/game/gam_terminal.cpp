@@ -128,20 +128,18 @@ void gam_drawDB_Droid(float posX, float posY)
 void gam_getNextDroid()
 //------------------------------------------------------------
 {
-	// TODO (dberry#1#): Remove when transfer is done
-
-	//		if (playerDroid.droidType < currentDroidType)
-	//			currentDroidType++;
-
-	if (droidTypeDBIndex < 23)
-	  {
-		sys_playSound(SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE);
-		droidTypeDBIndex++;
-		gam_loadDroidModel(droidTypeDBIndex);
-		gam_setupDBText();
-	  }
-	else
-	  sys_playSound(SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE);
+	if (droidTypeDBIndex < playerDroidTypeImage - 2)
+	{
+		if (droidTypeDBIndex < 23)
+		  {
+			sys_playSound(SND_KEYPRESS_GOOD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE);
+			droidTypeDBIndex++;
+			gam_loadDroidModel(droidTypeDBIndex);
+			gam_setupDBText();
+		  }
+		else
+			sys_playSound(SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE);
+	}
 }
 
 //------------------------------------------------------------
