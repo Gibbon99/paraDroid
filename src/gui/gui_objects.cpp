@@ -38,7 +38,7 @@ void gui_setObjectFocus(string objectID)
 {
 	int indexCount = 0;
 
-	for (indexCount = 0; indexCount != guiScreens[currentGUIScreen].objectIDIndex.size(); indexCount++)
+	for (indexCount = 0; indexCount != (int)guiScreens[currentGUIScreen].objectIDIndex.size(); indexCount++)
 		{
 			switch (guiScreens[currentGUIScreen].objectType[indexCount])
 				{

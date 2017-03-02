@@ -169,7 +169,7 @@ void gui_handleFocusMove(int moveDirection, bool takeAction)
 							}
 						guiScreens[currentGUIScreen].selectedObject += indexCount;
 
-						if (indexCount > guiScreens[currentGUIScreen].objectIDIndex.size())
+						if (indexCount > (int)guiScreens[currentGUIScreen].objectIDIndex.size())
 							{
 								indexCount = guiScreens[currentGUIScreen].objectIDIndex.size();
 							}
@@ -219,13 +219,13 @@ void gui_handleFocusMove(int moveDirection, bool takeAction)
 					{
 						case GUI_OBJECT_KEYCODE:
 							guiKeyCodes[selectedKeyCode].elementFocus += 1;
-							if (guiKeyCodes[selectedKeyCode].elementFocus > guiKeyCodes[selectedKeyCode].element.size() - 1)
+							if (guiKeyCodes[selectedKeyCode].elementFocus > (int)guiKeyCodes[selectedKeyCode].element.size() - 1)
 								guiKeyCodes[selectedKeyCode].elementFocus = 0;
 							break;
 
 						case GUI_OBJECT_SLIDER:
 							guiSliders[selectedSlider].currentStep += 1;
-							if (guiSliders[selectedSlider].currentStep > guiSliders[selectedSlider].element.size() - 1)
+							if (guiSliders[selectedSlider].currentStep > (int)guiSliders[selectedSlider].element.size() - 1)
 								guiSliders[selectedSlider].currentStep = guiSliders[selectedSlider].element.size() - 1;
 							break;
 					}

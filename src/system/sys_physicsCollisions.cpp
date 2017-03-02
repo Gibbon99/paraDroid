@@ -43,15 +43,20 @@ cpCollisionHandler		*handlerBulletBullet;
 //
 // Pass in -1 to add a spark at the removed location
 // Otherwise pass in index of second bullet to remove from bullet to bullet
-static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, void *unused )
+static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
-	int 		bulletIndex;
-	int			controlParam;
+	int					bulletIndex;
+	int					controlParam;
 
-	controlParam = (int)unused;
+	//
+	// deference pointer to data
+	controlParam = *(static_cast<int*>(unused));
+	//
+	// Remove the variable assigned in the function setting this callback
+	delete[] unused;
 
-	bulletIndex = ( int ) cpShapeGetUserData ( shape );
+	bulletIndex = (int)cpShapeGetUserData ( shape );
 
 //	con_print ( true, false, "Remove bullet index [ %i ]", bulletIndex );
 
@@ -105,7 +110,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, void *unused 
 //-------------------------------------------------------------------
 //
 // Handle collision between PHYSIC_TYPE_WALL and PHYSIC_TYPE_PLAYER_BULLET
-bool handleCollisionWallPlayerBullet ( cpArbiter *arb, cpSpace *space, void *unused )
+cpBool handleCollisionWallPlayerBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -129,7 +134,11 @@ bool handleCollisionWallPlayerBullet ( cpArbiter *arb, cpSpace *space, void *unu
 
 	// Add a post step callback to safely remove the body and shape from the space.
 	// Calling cpSpaceRemove*() directly from a collision handler callback can cause crashes.
-	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, (int)-1 );
+
+	int *passValue = new int();
+	*passValue= -1;
+
+	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, passValue );
 
 	// The object is dead, don’t process the collision further
 	return cpFalse;
@@ -139,21 +148,24 @@ bool handleCollisionWallPlayerBullet ( cpArbiter *arb, cpSpace *space, void *unu
 //
 // Post-Step callback for hitting droid - needed in post-step so when its
 // destroyed the shape and body are removed from the world
-static void handleDamageDroidBullet ( cpSpace *space, cpShape *shape, void *unused )
+static void handleDamageDroidBullet ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
 	int bulletIndex;
-
-	bulletIndex = (int)unused;
+	//
+	// deference pointer to data
+	bulletIndex = *(static_cast<int*>(unused));
 
 	if ( false == shipLevel[currentLevel].droid[(int)cpShapeGetUserData ( shape )].isExploding )
 		drd_damageToDroid ( currentLevel, (int)cpShapeGetUserData ( shape ), DAMAGE_BULLET, bullet[bulletIndex].sourceDroid );
+
+	delete[] unused;
 }
 
 //-------------------------------------------------------------------
 //
 // Handle bullet hitting enemy droid - could be another enemy or player bullet
-bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -177,10 +189,16 @@ bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, void *unused )
 			return cpFalse;
 		}
 
-	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) handleDamageDroidBullet, a, bulletIndex );
+	int *passValue = new int();
+	*passValue= bulletIndex;
+
+	int *removeBullet = new int();
+	*removeBullet = -2;
+
+	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) handleDamageDroidBullet, a, passValue );
 	//
 	// Remove the bullet after the collision
-	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, -2 );
+	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, removeBullet );
 	return 0;	// should this be true or false
 }
 
@@ -188,17 +206,25 @@ bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, void *unused )
 //
 // Post-Step callback for hitting droid - needed in post-step so when its
 // destroyed the shape and body are removed from the world
-static void handleDamageDroidCollision ( cpSpace *space, cpShape *shape, void *unused )
+static void handleDamageDroidCollision ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
-	drd_damageToDroid ( currentLevel, cpShapeGetUserData ( shape ), unused, -1 );
+	int		damageSource;
+
+	//
+	// deference pointer to data
+	damageSource = *(static_cast<int*>(unused));
+
+	drd_damageToDroid ( currentLevel, (int)cpShapeGetUserData ( shape ), damageSource, -1 );
+
+	delete[] unused;
 }
 
 //-------------------------------------------------------------------
 //
 // Collision between PLAYER and DROID - check transfer status
 // Continue to post solve if TRANSFER == FALSE
-bool handleCollisionTransferCheck ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handleCollisionTransferCheck ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -238,7 +264,7 @@ bool handleCollisionTransferCheck ( cpArbiter *arb, cpSpace *space, void *unused
 // Collision between player and wall
 // Used to ignore collisions for debugging
 //
-bool handleCollisionPlayerWall ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handleCollisionPlayerWall ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	if ( false == useCollisionDetection )
@@ -250,7 +276,7 @@ bool handleCollisionPlayerWall ( cpArbiter *arb, cpSpace *space, void *unused )
 //-------------------------------------------------------------------
 //
 // Handle PLAYER hitting ENEMY droid - could be another enemy or player bullet
-void handleCollisionDroidToDroid ( cpArbiter *arb, cpSpace *space, void *unused )
+void handleCollisionDroidToDroid ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -266,14 +292,16 @@ void handleCollisionDroidToDroid ( cpArbiter *arb, cpSpace *space, void *unused 
 	whichDroid_A = ( int ) cpShapeGetUserData ( a );
 	whichDroid_B = ( int ) cpShapeGetUserData ( b );
 
+	int *passValue = new int();
+
 	if ( -1 == whichDroid_B )	// Is B the player
 		{
 			//
 			// Process player vs enemy collision
 			if ( false == shipLevel[currentLevel].droid[whichDroid_A].isExploding )
 				{
-					printf ( "whichDroid_A [ %i ] whichDroid_B [ %i ]\n", whichDroid_A, whichDroid_B );
-					cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) handleDamageDroidCollision, a, DAMAGE_COLLISION );
+					*passValue= DAMAGE_COLLISION;
+					cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) handleDamageDroidCollision, a, passValue );
 					sys_playSound ( SND_COLLIDE_1, 0.0f, ALLEGRO_PLAYMODE_ONCE );
 				}
 			else	// Player collided with exploding sprite - take damage
@@ -281,8 +309,8 @@ void handleCollisionDroidToDroid ( cpArbiter *arb, cpSpace *space, void *unused 
 					if ( whichDroid_A != droidTransferedIntoIndex )
 						// Ignore explosion if colliding with recently transferred droid
 						{
-							printf ( "Collision with explosion\n" );
-							cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) handleDamageDroidCollision, a, DAMAGE_EXPLOSION );
+							*passValue= DAMAGE_EXPLOSION;
+							cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) handleDamageDroidCollision, a, passValue );
 							sys_playSound ( SND_DAMAGE, 0.0f, ALLEGRO_PLAYMODE_ONCE );
 						}
 				}
@@ -330,7 +358,7 @@ void handleCollisionDroidToDroid ( cpArbiter *arb, cpSpace *space, void *unused 
 //
 // Check before collision needs to be handled if it should continue
 //
-bool handleCollisionDroidCheck ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handleCollisionDroidCheck ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -356,7 +384,7 @@ bool handleCollisionDroidCheck ( cpArbiter *arb, cpSpace *space, void *unused )
 //-------------------------------------------------------------------
 //
 // Collision when a bullet hits a bullet - remove both
-bool handleBulletBullet ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handleBulletBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the shapes involved in the collision
@@ -367,15 +395,20 @@ bool handleBulletBullet ( cpArbiter *arb, cpSpace *space, void *unused )
 	cpArbiterGetShapes ( arb, &a, &b );
 	bulletIndex2 = (int)cpShapeGetUserData ( b );
 
+	int *passValue = new int();
+	*passValue = bulletIndex2;
+
 	// Add a post step callback to safely remove the body and shape from the space.
 	// Calling cpSpaceRemove*() directly from a collision handler callback can cause crashes.
-	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, a, bulletIndex2 );
+	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, a, passValue );
+
+	return cpTrue;
 }
 
 //-------------------------------------------------------------------
 //
 // Collision handler to ignore player hitting own bullets
-bool handlePlayerBullet ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handlePlayerBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -383,12 +416,10 @@ bool handlePlayerBullet ( cpArbiter *arb, cpSpace *space, void *unused )
 	// The order is A = ENEMY and B = BULLET
 	//
 	cpShape *a, *b;
-//	int whichDroid;
 	int bulletIndex;
 
 	cpArbiterGetShapes ( arb, &a, &b );
 
-//	whichDroid = cpShapeGetUserData(a);
 	bulletIndex = (int)cpShapeGetUserData ( b );
 
 	//
@@ -404,7 +435,10 @@ bool handlePlayerBullet ( cpArbiter *arb, cpSpace *space, void *unused )
 
 	// Add a post step callback to safely remove the body and shape from the space.
 	// Calling cpSpaceRemove*() directly from a collision handler callback can cause crashes.
-	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, -2 );
+	int *passValue = new int();
+	*passValue= -2;
+
+	cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, passValue );
 	//
 	// Damage to player
 	//
@@ -416,7 +450,7 @@ bool handlePlayerBullet ( cpArbiter *arb, cpSpace *space, void *unused )
 //-------------------------------------------------------------------
 //
 // Collision handler to ignore particles hitting player and enemies
-bool handleIgnoreParticles ( cpArbiter *arb, cpSpace *space, void *unused )
+bool handleIgnoreParticles ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	return cpFalse;
@@ -425,7 +459,7 @@ bool handleIgnoreParticles ( cpArbiter *arb, cpSpace *space, void *unused )
 //-------------------------------------------------------------------
 //
 // Handle bullet hitting door sensor
-bool handleDoorBullet ( cpArbiter	*arb, cpSpace *space, void *unused )
+bool handleDoorBullet ( cpArbiter	*arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the cpShapes involved in the collision
@@ -434,12 +468,11 @@ bool handleDoorBullet ( cpArbiter	*arb, cpSpace *space, void *unused )
 	//
 	cpShape *a, *b;
 	int whichDoor;
-//	int whichBullet;
 
 	cpArbiterGetShapes ( arb, &a, &b );
 	whichDoor = (int)cpShapeGetUserData ( a );
-//	whichBullet = cpShapeGetUserData(b);
 
+	int *passValue = new int();
 	switch ( doorTrigger[whichDoor].currentFrame )
 		{
 			case DOOR_ACROSS_OPENED:
@@ -448,7 +481,8 @@ bool handleDoorBullet ( cpArbiter	*arb, cpSpace *space, void *unused )
 				break;
 
 			default:
-				cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, -1 );
+				*passValue = -1;
+				cpSpaceAddPostStepCallback ( space, ( cpPostStepFunc ) postStepRemoveBullet, b, passValue );
 				return cpFalse;
 				break;
 		}
@@ -482,14 +516,14 @@ void sys_setupCollisionHandlers()
 	//
 	handlerEnemyPlayer = cpSpaceAddCollisionHandler ( space, PHYSIC_TYPE_ENEMY, PHYSIC_TYPE_PLAYER );
 	handlerEnemyPlayer->beginFunc = (cpCollisionBeginFunc)handleCollisionTransferCheck;
-	handlerEnemyPlayer->postSolveFunc = handleCollisionDroidToDroid;
+	handlerEnemyPlayer->postSolveFunc = (cpCollisionPostSolveFunc)handleCollisionDroidToDroid;
 
 	//
 	// Handle collision between ENEMY and ENEMY
 	//
 	handlerEnemyEnemy = cpSpaceAddCollisionHandler ( space, PHYSIC_TYPE_ENEMY, PHYSIC_TYPE_ENEMY );
 	handlerEnemyEnemy->beginFunc = (cpCollisionBeginFunc)handleCollisionDroidCheck;
-	handlerEnemyEnemy->postSolveFunc = handleCollisionDroidToDroid;
+	handlerEnemyEnemy->postSolveFunc = (cpCollisionPostSolveFunc)handleCollisionDroidToDroid;
 
 	//
 	// Stop player physics being impacted by bullet shape

@@ -7,7 +7,7 @@
 #include <math.h>
 
 #include "../chipmunk/chipmunk_private.h"
-#include "../chipmunk/cpPolyline.h"
+#include "chipmunk/cpPolyline.h"
 
 
 static inline int Next(int i, int count){return (i+1)%count;}
