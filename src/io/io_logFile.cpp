@@ -165,6 +165,10 @@ void io_logToFile ( const char *format, ... )
 {
 	va_list		args;
 	char		logText[MAX_STRING_SIZE];
+//	string		logText;
+//	string		staticLogText;
+
+	char		*buffer;
 
 	static		char	staticLogText[MAX_STRING_SIZE];
 	static 		int    	staticCount = 0;
@@ -178,12 +182,14 @@ void io_logToFile ( const char *format, ... )
 	//
 	// check and make sure we don't overflow our string buffer
 	//
-	if ( strlen ( format ) >= MAX_STRING_SIZE )
+	if ( strlen ( format ) >= MAX_STRING_SIZE - 100 )
 		{
 //		ErrorNormal ((char *)__FILE__, __LINE__, (char *)"String passed to logfile too long", (MAX_STRING_SIZE - 10), strlen(format) - (MAX_STRING_SIZE - 10));
 			printf ( "Format greater than string size.\n" );
 			return;
-		}
+	}
+
+
 	//
 	// get out the passed in parameters
 	//
@@ -200,7 +206,7 @@ void io_logToFile ( const char *format, ... )
 		}
 	else
 		{
-			if ( EOF == al_fputs ( logFile, logText ) )
+			if ( EOF == al_fputs ( logFile, logText) )
 				printf ( "Unable to write to logfile.\n" );
 			if (staticCount > 0)
 			{
@@ -209,7 +215,7 @@ void io_logToFile ( const char *format, ... )
 			}
 		}
 
-	strcpy ( staticLogText, logText );
+	strcpy ( staticLogText, logText);
 
 	al_fflush ( logFile );
 }
