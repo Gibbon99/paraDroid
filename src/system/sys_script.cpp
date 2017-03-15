@@ -690,7 +690,6 @@ bool sys_registerFunctions()
 		{
 			r = scriptEngine->RegisterGlobalFunction ( hostScriptFunctions[count].scriptFunctionName.c_str(), asFUNCTION ( hostScriptFunctions[count].hostFunctionPtr ), callType );
 
-
 			if ( r < 0 )
 				{
 					con_print ( true, true, "Failed to registerGlobalFunction [ %s ]", hostScriptFunctions[count].scriptFunctionName.c_str() );
