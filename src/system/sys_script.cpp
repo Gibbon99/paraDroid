@@ -22,7 +22,7 @@ Copyright 2017 David Berry
 #include "../../hdr/script/scriptbuilder.h"
 
 // Print messages from script compiler to console
-void scr_Output(const asSMessageInfo *msg, void *param);
+void scr_Output ( const asSMessageInfo *msg, void *param );
 
 ALLEGRO_CONFIG *config;
 cpVect position;
@@ -33,7 +33,7 @@ cpVect position;
 void as_testObject()
 //--------------------------------------------------------
 {
-	con_print(true, true, "INFO: Object [ %3.2f %3.2f ]", position.x, position.y);
+	con_print ( true, true, "INFO: Object [ %3.2f %3.2f ]", position.x, position.y );
 }
 
 //--------------------------------------------------------
@@ -90,105 +90,105 @@ _scriptInfo scriptInfo[] =
 
 _hostScriptFunctions hostScriptFunctions[] =
 {
-	{"void sys_printConInt(string &in, uint param)", (void *) &sys_scriptPrintInt},
-	{"void sys_printConStr(string &in, string &in)", (void *) &sys_scriptPrintStr},
-	{"void sys_printString(float posX, float posY, string &in)", (void *) &sys_printString},
+	{"void sys_printConInt(string &in, uint param)", ( void * ) 				&sys_scriptPrintInt},
+	{"void sys_printConStr(string &in, string &in)", ( void * ) 				&sys_scriptPrintStr},
+	{"void sys_printString(float posX, float posY, string &in)", ( void * ) 	&sys_printString},
 
-	{"void sys_addScriptCommand(string &in, string &in, string &in, bool setParam)", (void *) &con_addScriptCommand},
+	{"void sys_addScriptCommand(string &in, string &in, string &in, bool setParam)", ( void * ) &con_addScriptCommand},
 	//
 	// ---------------- Use Allegro functions from within script
 	//
-	{"void al_set_new_display_option(int option, int value, int importance)", (void *) &al_set_new_display_option},
-	{"void al_set_new_display_flags(int option)", (void *) &al_set_new_display_flags},
-	{"void al_set_new_display_refresh_rate(int refresh_rate)", (void *) &al_set_new_display_refresh_rate},
+	{"void al_set_new_display_option(int option, int value, int importance)", ( void * ) &al_set_new_display_option},
+	{"void al_set_new_display_flags(int option)", ( void * ) 							&al_set_new_display_flags},
+	{"void al_set_new_display_refresh_rate(int refresh_rate)", ( void * ) 				&al_set_new_display_refresh_rate},
 	//
 	// ---------------- Config file routines
 	//
-	{"void io_loadConfigFile(string &in)", (void *) &io_loadConfigFile},
-	{"void io_closeConfigFile()", (void *) &io_closeConfigFile},
-	{"void io_saveConfigFile(string &in)", (void *) &io_saveConfigFile},
-	{"int io_readConfigValuesInt (string &in)", (void *) &io_readConfigValuesInt},
-	{"string io_readConfigValuesString(string &in)", (void *)&io_readConfigValuesString},
-	{"float io_readConfigValuesFloat (string &in)", (void *) &io_readConfigValuesFloat},
-	{"void io_saveConfigValueString(string &in, string &in)", (void *) &io_saveConfigValueString},
-	{"void io_saveConfigValueFloat(string &in, float keyValue)", (void *) &io_saveConfigValueFloat},
-	{"void io_saveConfigValueInt(string &in, int keyValue)", (void *) &io_saveConfigValueInt},
+	{"void io_loadConfigFile			(string &in)", ( void * ) 					&io_loadConfigFile},
+	{"void io_closeConfigFile			()", ( void * ) 							&io_closeConfigFile},
+	{"void io_saveConfigFile			(string &in)", ( void * ) 					&io_saveConfigFile},
+	{"int io_readConfigValuesInt		(string &in)", ( void * ) 					&io_readConfigValuesInt},
+	{"string io_readConfigValuesString	(string &in)", ( void * )					&io_readConfigValuesString},
+	{"float io_readConfigValuesFloat 	(string &in)", ( void * )					&io_readConfigValuesFloat},
+	{"void io_saveConfigValueString		(string &in, string &in)", ( void * )		&io_saveConfigValueString},
+	{"void io_saveConfigValueFloat		(string &in, float keyValue)", ( void * ) 	&io_saveConfigValueFloat},
+	{"void io_saveConfigValueInt		(string &in, int keyValue)", ( void * )		&io_saveConfigValueInt},
 	//
 	// --------------- Load keybindings ----------------
 	//
-	{"bool io_doKeyBindings(string &in)", (void *)io_doKeyBindings},
+	{"bool io_doKeyBindings(string &in)", ( void * )						&io_doKeyBindings},
 	//
 	// ------------- Draw from within the script
 	//
-	{"void gam_drawBitmapFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", (void *) &gam_drawBitmapFromScript},
-	{"void gam_drawSpriteFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", (void *) &gam_drawSpriteFromScript},
+	{"void gam_drawBitmapFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", ( void * ) &gam_drawBitmapFromScript},
+	{"void gam_drawSpriteFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", ( void * ) &gam_drawSpriteFromScript},
 	//
 	// ---------------- Font routines
 	//
-	{"void sys_setFont(int newFont)", (void *) &sys_setFont},
-	{"bool io_loadttfFont(int fontIndex, int fontSize, string &in)", (void *) &io_loadttfFont},
-	{"void sys_setFontColor(float r, float g, float b, float a)", (void *) &sys_setFontColor},
+	{"void sys_setFont			(int newFont)", ( void * )								&sys_setFont},
+	{"bool io_loadttfFont		(int fontIndex, int fontSize, string &in)", ( void * )	&io_loadttfFont},
+	{"void sys_setFontColor		(float r, float g, float b, float a)", ( void * ) 		&sys_setFontColor},
 
 	//
 	// ---------------- Play sound from script
 	//
-	{"void sys_playSoundFromScript(int whichSound, float pan, bool loopIt)", (void *) sys_playSoundFromScript},
+	{"void sys_playSoundFromScript(int whichSound, float pan, bool loopIt)", ( void * ) &sys_playSoundFromScript},
 	//
 	// -------------- Set tile options
 	//
-	{"void io_setTileSetColor(string &in)", (void *) &io_setTileSetColor},
-	{"void io_setTileSetType(string &in)", (void *) &io_setTileSetType},
+	{"void io_setTileSetColor(string &in)", ( void * )					&io_setTileSetColor},
+	{"void io_setTileSetType(string &in)", ( void * )						&io_setTileSetType},
 	//
 	// ------------- GUI Functions called from script
 	//
-	{"void as_guiCreateNewScreen		(string &in)", (void *) &gui_hostCreateNewScreen},
-	{"void as_guiCreateObject			(int guiObjectType, string &in)", (void *) &gui_hostCreateObject},
-	{"int as_guiFindIndex				(int guiObjectType, string &in)", (void *) &gui_findIndex},
-	{"void as_gui_changeToGUIScreen		(int newScreen)", (void *)&gui_changeToGUIScreen},
+	{"void as_guiCreateNewScreen		(string &in)", ( void * ) &gui_hostCreateNewScreen},
+	{"void as_guiCreateObject			(int guiObjectType, string &in)", ( void * ) &gui_hostCreateObject},
+	{"int as_guiFindIndex				(int guiObjectType, string &in)", ( void * ) &gui_findIndex},
+	{"void as_gui_changeToGUIScreen		(int newScreen)", ( void * )&gui_changeToGUIScreen},
 
-	{"void as_guiSetObjectPosition (int guiObjectType, string &in, int coordType, float startX, float startY, float width, float height)", (void *) &gui_hostSetObjectPosition},
-	{"void as_guiSetObjectLabel    (int guiObjectType, string &in, int labelPos, string &in)", (void *) &gui_hostSetObjectLabel},
-	{"void as_guiSetObjectFunctions(int guiObjectType, string &in, string &in, string &in)", (void *) &gui_hostSetObjectFunctions},
-	{"void as_guiAddObjectToScreen (int guiObjectType, string &in, string &in)", (void *) &gui_hostAddObjectToScreen},
-	{"void as_guiSetObjectColor    (int guiObjectType, string &in, int whichColor, float red, float green, float blue, float alpha)", (void *) &gui_hostSetObjectColor},
-	{"void as_guiSetCheckboxGroup  (string &in, int whichGroup)", (void *) &gui_hostSetCheckboxGroup},
-	{"void as_guiSetCheckboxTick   (string &in, int whichGroup, bool ticked)", (void *) &gui_hostSetCheckboxTick},
-	{"void as_guiSetupDBText()						   ", (void *) &gam_setupDBText},
-	{"void as_guiSetImageFilename(string &in, string &in)", (void *)&gui_hostSetImageFilename},
-	{"string gui_getString(string &in)", (void *)&gui_getString},
-	{"void gui_addKeyAndText(string &in, string &in)", (void *)&gui_addKeyAndText},
-	{"void as_guiSetObjectFocus(string &in)", (void *)&gui_setObjectFocus},
+	{"void as_guiSetObjectPosition (int guiObjectType, string &in, int coordType, float startX, float startY, float width, float height)", ( void * ) &gui_hostSetObjectPosition},
+	{"void as_guiSetObjectLabel    (int guiObjectType, string &in, int labelPos, string &in)", ( void * ) &gui_hostSetObjectLabel},
+	{"void as_guiSetObjectFunctions(int guiObjectType, string &in, string &in, string &in)", ( void * ) &gui_hostSetObjectFunctions},
+	{"void as_guiAddObjectToScreen (int guiObjectType, string &in, string &in)", ( void * ) &gui_hostAddObjectToScreen},
+	{"void as_guiSetObjectColor    (int guiObjectType, string &in, int whichColor, float red, float green, float blue, float alpha)", ( void * ) &gui_hostSetObjectColor},
+	{"void as_guiSetCheckboxGroup  (string &in, int whichGroup)", ( void * ) &gui_hostSetCheckboxGroup},
+	{"void as_guiSetCheckboxTick   (string &in, int whichGroup, bool ticked)", ( void * ) &gui_hostSetCheckboxTick},
+	{"void as_guiSetupDBText()						   ", ( void * ) &gam_setupDBText},
+	{"void as_guiSetImageFilename(string &in, string &in)", ( void * )&gui_hostSetImageFilename},
+	{"string gui_getString(string &in)", ( void * )&gui_getString},
+	{"void gui_addKeyAndText(string &in, string &in)", ( void * )&gui_addKeyAndText},
+	{"void as_guiSetObjectFocus(string &in)", ( void * )&gui_setObjectFocus},
 	{"void as_guiAddSliderElement(string &in, int elementType, string &in, string &in)", &as_hostAddSliderElement},
-	{"string gui_IntToString(int intValue)", (void *)&gui_IntToString},
-	{"int gui_StringToInt(string &in)", (void *)&gui_StringToInt},
-	{"string gui_IntToChar(int intValue)", (void *)&gui_IntToChar},
-	{"string as_guiGetSliderValue(string &in)", (void *)&as_hostGetSliderValue},
-	{"void as_guiSetSliderValue(string &in, string &in)", (void *)&as_hostSetSliderValue},
-	{"void io_loadNewTileSet()", (void *)&io_loadNewTileSet},
-	{"void as_guiAddKeyCodeElement(string &in, string &in, int elementKeyCode)", (void *)&as_hostAddKeyCodeElement},
-	{"void as_guiCopyKeysInto(string &in)", (void *)&gui_copyKeysInto},
-	{"void as_guiCopyGUIIntoKeys(string &in)", (void *)&gui_copyGUIIntoKeys},
-	{"bool io_saveKeyBindings (string &in)", (void *)&io_saveKeyBindings},
-	{"bool gam_loadDroidModel (int whichDroid)", (void *)&gam_loadDroidModel},
+	{"string gui_IntToString(int intValue)", ( void * )&gui_IntToString},
+	{"int gui_StringToInt(string &in)", ( void * )&gui_StringToInt},
+	{"string gui_IntToChar(int intValue)", ( void * )&gui_IntToChar},
+	{"string as_guiGetSliderValue(string &in)", ( void * )&as_hostGetSliderValue},
+	{"void as_guiSetSliderValue(string &in, string &in)", ( void * )&as_hostSetSliderValue},
+	{"void io_loadNewTileSet()", ( void * )&io_loadNewTileSet},
+	{"void as_guiAddKeyCodeElement(string &in, string &in, int elementKeyCode)", ( void * )&as_hostAddKeyCodeElement},
+	{"void as_guiCopyKeysInto(string &in)", ( void * )&gui_copyKeysInto},
+	{"void as_guiCopyGUIIntoKeys(string &in)", ( void * )&gui_copyGUIIntoKeys},
+	{"bool io_saveKeyBindings (string &in)", ( void * )&io_saveKeyBindings},
+	{"bool gam_loadDroidModel (int whichDroid)", ( void * )&gam_loadDroidModel},
 	//
 	// ------Transfer routines for scripts
 	//
-	{"void as_transSetDefaultValues(int cellIndex)", (void *) &host_transSetDefaultValues},
-	{"void as_transSetCellPos(int cellIndex, int posX, int posY)", (void *) &host_transSetCellPos},
-	{"void as_transSetCellColor(int whichCell, int colType, float red, float green, float blue, float alpha)", (void *) &host_transSetCellColor},
-	{"void as_tranSetCircuitType(int whichCell, int whichSide, int typeSet)", (void *) &host_tranSetCircuitType},
-	{"void as_tranSetEffectType(int whichCell, int whichSide, int effect)", (void *) &host_transSetEffectType},
-	{"int as_getCappedRandomNum(int cap)", (void *) &host_getCappedRandomNum},
-	{"bool as_circuitNotPowered(int whichCell, int whichSide)", (void *) &host_circuitPowered},
-	{"int as_getCellColor(int whichCell, int whichSide)", (void *) &host_getCellColor},
-	{"void trn_activateCircuit(int whichCell, int whichSide)", (void *) &trn_activateCircuit},
-	{"void trn_placeToken(int whichCell, int whichSide, int playerOrDroid)", (void *) &trn_placeToken},
+	{"void as_transSetDefaultValues(int cellIndex)", ( void * ) &host_transSetDefaultValues},
+	{"void as_transSetCellPos(int cellIndex, int posX, int posY)", ( void * ) &host_transSetCellPos},
+	{"void as_transSetCellColor(int whichCell, int colType, float red, float green, float blue, float alpha)", ( void * ) &host_transSetCellColor},
+	{"void as_tranSetCircuitType(int whichCell, int whichSide, int typeSet)", ( void * ) &host_tranSetCircuitType},
+	{"void as_tranSetEffectType(int whichCell, int whichSide, int effect)", ( void * ) &host_transSetEffectType},
+	{"int as_getCappedRandomNum(int cap)", ( void * ) &host_getCappedRandomNum},
+	{"bool as_circuitNotPowered(int whichCell, int whichSide)", ( void * ) &host_circuitPowered},
+	{"int as_getCellColor(int whichCell, int whichSide)", ( void * ) &host_getCellColor},
+	{"void trn_activateCircuit(int whichCell, int whichSide)", ( void * ) &trn_activateCircuit},
+	{"void trn_placeToken(int whichCell, int whichSide, int playerOrDroid)", ( void * ) &trn_placeToken},
 	//
 	// ------------ Misc routines called from script
 	//
-	{"void as_printVariables()", (void *) &sys_printVariables},
-	{"void as_changeGameMode(int newMode, bool useFade)", (void *) &sys_changeMode},
-	{"void gam_changeToLevel(int newLevel)", (void *) &gam_changeToLevelFromScript},
+	{"void as_printVariables()", ( void * ) &sys_printVariables},
+	{"void as_changeGameMode(int newMode, bool useFade)", ( void * ) &sys_changeMode},
+	{"void gam_changeToLevel(int newLevel)", ( void * ) &gam_changeToLevelFromScript},
 	//
 	// ------------- Set particle colors from script
 	//
@@ -202,7 +202,7 @@ _hostScriptFunctions hostScriptFunctions[] =
 	//
 	// ---------------------- End of the list - nothing past this
 	//
-	{"", (void *) NULL},
+	{"", ( void * ) NULL},
 };
 
 _hostScriptFunctions hostVariables[] =
@@ -454,101 +454,101 @@ int numConsoleCommands;
 //-----------------------------------------------------------------------------
 //
 // Error codes for AngelScript
-const char *sys_getScriptError(int errNo)
+const char *sys_getScriptError ( int errNo )
 //-----------------------------------------------------------------------------
 {
-	switch (errNo)
+	switch ( errNo )
 		{
 			case 0:
-				return ("asSUCCESS");
+				return ( "asSUCCESS" );
 				break;
 
 			case -1:
-				return ("asERROR");
+				return ( "asERROR" );
 				break;
 
 			case -2:
-				return ("asCONTEXT_ACTIVE");
+				return ( "asCONTEXT_ACTIVE" );
 				break;
 
 			case -3:
-				return ("asCONTEXT_NOT_FINISHED");
+				return ( "asCONTEXT_NOT_FINISHED" );
 				break;
 
 			case -4:
-				return ("asCONTEXT_NOT_PREPARED");
+				return ( "asCONTEXT_NOT_PREPARED" );
 				break;
 
 			case -5:
-				return ("asINVALID_ARG");
+				return ( "asINVALID_ARG" );
 				break;
 
 			case -6:
-				return ("asNO_FUNCTION");
+				return ( "asNO_FUNCTION" );
 				break;
 
 			case -7:
-				return ("asNOT_SUPPORTED");
+				return ( "asNOT_SUPPORTED" );
 				break;
 
 			case -8:
-				return ("asINVALID_NAME");
+				return ( "asINVALID_NAME" );
 				break;
 
 			case -9:
-				return ("asNAME_TAKEN");
+				return ( "asNAME_TAKEN" );
 				break;
 
 			case -10:
-				return ("asINVALID_DECLARATION");
+				return ( "asINVALID_DECLARATION" );
 				break;
 
 			case -11:
-				return ("asINVALID_OBJECT");
+				return ( "asINVALID_OBJECT" );
 				break;
 
 			case -12:
-				return ("asINVALID_TYPE");
+				return ( "asINVALID_TYPE" );
 				break;
 
 			case -13:
-				return ("asALREADY_REGISTERED");
+				return ( "asALREADY_REGISTERED" );
 				break;
 
 			case -14:
-				return ("asMULTIPLE_FUNCTIONS");
+				return ( "asMULTIPLE_FUNCTIONS" );
 				break;
 
 			case -15:
-				return ("asNO_MODULE");
+				return ( "asNO_MODULE" );
 				break;
 
 			case -16:
-				return ("asNO_GLOBAL_VAR");
+				return ( "asNO_GLOBAL_VAR" );
 				break;
 
 			case -17:
-				return ("asINVALID_CONFIGURATION");
+				return ( "asINVALID_CONFIGURATION" );
 				break;
 
 			case -18:
-				return ("asINVALID_INTERFACE");
+				return ( "asINVALID_INTERFACE" );
 				break;
 
 			case -19:
-				return ("asCANT_BIND_ALL_FUNCTIONS");
+				return ( "asCANT_BIND_ALL_FUNCTIONS" );
 				break;
 
 			case -20:
-				return ("asLOWER_ARRAY_DIMENSION_NOT_REGISTERED");
+				return ( "asLOWER_ARRAY_DIMENSION_NOT_REGISTERED" );
 				break;
 
 			case -21:
-				return ("asAPP_CANT_INTERFACE_DEFAULT_ARRAY");
+				return ( "asAPP_CANT_INTERFACE_DEFAULT_ARRAY" );
 				break;
 
 			default:
-				return ("Unknown error type.");
+				return ( "Unknown error type." );
 		}
 }
 
@@ -556,19 +556,19 @@ const char *sys_getScriptError(int errNo)
 //
 // Clean up memory for script engine
 
-void sys_cleanupScriptEngine(bool restart)
+void sys_cleanupScriptEngine ( bool restart )
 //--------------------------------------------------------
 {
-	if (true == scriptEngineStarted)
+	if ( true == scriptEngineStarted )
 		{
 			// Clean up
 			//        context->Release();
 			//        scriptEngine->Release();
 		}
 
-	if (false == restart)
+	if ( false == restart )
 		{
-			if (scriptFunctionName)
+			if ( scriptFunctionName )
 				{
 					//			al_free(scriptFunctions);
 					//			scriptFunctions = NULL;
@@ -586,24 +586,24 @@ bool sys_registerVariables()
 	int result = 0;
 	int count = 0;
 
-	if (NULL == scriptEngine)
+	if ( NULL == scriptEngine )
 		{
-			con_print(true, true, "Script: Failed to register variables. ScriptEngine is not ready.");
+			con_print ( true, true, "Script: Failed to register variables. ScriptEngine is not ready." );
 			return false;
 		}
 
-	while (hostVariables[count].scriptFunctionName.size() > 1)
+	while ( hostVariables[count].scriptFunctionName.size() > 1 )
 		{
-			result = scriptEngine->RegisterGlobalProperty(hostVariables[count].scriptFunctionName.c_str(), hostVariables[count].hostFunctionPtr);
+			result = scriptEngine->RegisterGlobalProperty ( hostVariables[count].scriptFunctionName.c_str(), hostVariables[count].hostFunctionPtr );
 
-			if (result < 0)
+			if ( result < 0 )
 				{
-					con_print(true, true, "Script: Error: Couldn't register variable - [ %s ]", hostVariables[count].scriptFunctionName.c_str());
+					con_print ( true, true, "Script: Error: Couldn't register variable - [ %s ]", hostVariables[count].scriptFunctionName.c_str() );
 					return false;
 				}
 
-			sys_setFontColor(0.0f, 1.0f, 0.0f, 1.0f);
-			con_print(true, true, "Script: Registered variable - [ %s ]", hostVariables[count].scriptFunctionName.c_str());
+			sys_setFontColor ( 0.0f, 1.0f, 0.0f, 1.0f );
+			con_print ( true, true, "Script: Registered variable - [ %s ]", hostVariables[count].scriptFunctionName.c_str() );
 			count++;
 		}
 
@@ -622,36 +622,36 @@ bool sys_registerObject()
 	position.x = 50.0f;
 	position.y = 60.0f;
 
-	returnCode = scriptEngine->RegisterObjectType("cpVect", sizeof (cpVect), asOBJ_VALUE | asOBJ_POD); //asOBJ_REF | asOBJ_NOCOUNT );
+	returnCode = scriptEngine->RegisterObjectType ( "cpVect", sizeof ( cpVect ), asOBJ_VALUE | asOBJ_POD ); //asOBJ_REF | asOBJ_NOCOUNT );
 //	returnCode = scriptEngine->RegisterObjectType("cpVect", sizeof (cpVect), asOBJ_REF | asOBJ_NOCOUNT );
 
-	if (returnCode < 0)
+	if ( returnCode < 0 )
 		{
-			con_print(true, true, "Error RegisterObjectType [ %s ]", sys_getScriptError(returnCode));
+			con_print ( true, true, "Error RegisterObjectType [ %s ]", sys_getScriptError ( returnCode ) );
 			return false;
 		}
 
-	returnCode = scriptEngine->RegisterObjectProperty("cpVect", "float x", asOFFSET(cpVect, x));
+	returnCode = scriptEngine->RegisterObjectProperty ( "cpVect", "float x", asOFFSET ( cpVect, x ) );
 
-	if (returnCode < 0)
+	if ( returnCode < 0 )
 		{
-			con_print(true, true, "Error RegisterObjectProperty [ %s ]", sys_getScriptError(returnCode));
+			con_print ( true, true, "Error RegisterObjectProperty [ %s ]", sys_getScriptError ( returnCode ) );
 			return false;
 		}
 
-	returnCode = scriptEngine->RegisterObjectProperty("cpVect", "float y", asOFFSET(cpVect, y));
+	returnCode = scriptEngine->RegisterObjectProperty ( "cpVect", "float y", asOFFSET ( cpVect, y ) );
 
-	if (returnCode < 0)
+	if ( returnCode < 0 )
 		{
-			con_print(true, true, "Error RegisterObjectProperty 1 [ %s ]", sys_getScriptError(returnCode));
+			con_print ( true, true, "Error RegisterObjectProperty 1 [ %s ]", sys_getScriptError ( returnCode ) );
 			return false;
 		}
 
-	returnCode = scriptEngine->RegisterGlobalProperty("cpVect position", (void *) &position);
+	returnCode = scriptEngine->RegisterGlobalProperty ( "cpVect position", ( void * ) &position );
 
-	if (returnCode < 0)
+	if ( returnCode < 0 )
 		{
-			con_print(true, true, "Error RegisterGlobalProperty [ %s ]", sys_getScriptError(returnCode));
+			con_print ( true, true, "Error RegisterGlobalProperty [ %s ]", sys_getScriptError ( returnCode ) );
 			return false;
 		}
 
@@ -665,38 +665,41 @@ bool sys_registerObject()
 bool sys_registerFunctions()
 //-----------------------------------------------------------------------------
 {
-	int r = 0;
-	int count = 0;
+	int 		r = 0;
+	int 		count = 0;
+	asDWORD		callType;
 
-	if (NULL == scriptEngine)
+	if ( NULL == scriptEngine )
 		{
-			con_print(true, true, "Failed to register functions. ScriptEngine is not ready.");
+			con_print ( true, true, "Failed to register functions. ScriptEngine is not ready." );
 			return false;
 		}
 
-	while (hostScriptFunctions[count].scriptFunctionName.size() > 1)
+	if ( !strstr ( asGetLibraryOptions(), "AS_MAX_PORTABILTY" ) )
 		{
-			if (!strstr(asGetLibraryOptions(), "AS_MAX_PORTABILITY"))
-				{
-					//
-					// Register the functions that the scripts will be allowed to use.
-					//
-					r = scriptEngine->RegisterGlobalFunction(hostScriptFunctions[count].scriptFunctionName.c_str(), asFUNCTION(hostScriptFunctions[count].hostFunctionPtr), asCALL_CDECL);
-				}
-			else
-				{
-					r = scriptEngine->RegisterGlobalFunction(hostScriptFunctions[count].scriptFunctionName.c_str(), asFUNCTION(hostScriptFunctions[count].hostFunctionPtr), asCALL_STDCALL);
-				}
+			callType = asCALL_CDECL;
+			con_print(true, true, "Script: Call type [ %s ]", "asCALL_CDECL");
+		}
+	else
+		{
+			callType = asCALL_STDCALL;
+			con_print(true, true, "Script: Call type [ %s ]", "asCALL_STDCALL");
+		}
 
-			if (r < 0)
+	while ( hostScriptFunctions[count].scriptFunctionName.size() > 1 )
+		{
+			r = scriptEngine->RegisterGlobalFunction ( hostScriptFunctions[count].scriptFunctionName.c_str(), asFUNCTION ( hostScriptFunctions[count].hostFunctionPtr ), callType );
+
+
+			if ( r < 0 )
 				{
-					con_print(true, true, "Failed to registerGlobalFunction [ %s ]", hostScriptFunctions[count].scriptFunctionName.c_str());
-					con_print(true, true, "Error [ %s ]", sys_getScriptError(r));
+					con_print ( true, true, "Failed to registerGlobalFunction [ %s ]", hostScriptFunctions[count].scriptFunctionName.c_str() );
+					con_print ( true, true, "Error [ %s ]", sys_getScriptError ( r ) );
 					return false;
 				}
 
-			sys_setFontColor(0.0f, 0.0f, 1.0f, 1.0f);
-			con_print(true, true, "Script: Registered function - [ %s ]", hostScriptFunctions[count].scriptFunctionName.c_str());
+			sys_setFontColor ( 0.0f, 0.0f, 1.0f, 1.0f );
+			con_print ( true, true, "Script: Registered function - [ %s ]", hostScriptFunctions[count].scriptFunctionName.c_str() );
 			count++;
 		}
 
@@ -708,47 +711,47 @@ bool sys_registerFunctions()
 // Load into memory the file to be read
 //
 
-bool sys_fileIntoMemory(char *whichFile)
+bool sys_fileIntoMemory ( char *whichFile )
 //-------------------------------------------------------------------------------
 {
 	ALLEGRO_FILE *fileHandle = NULL;
 	int64_t fileSize;
 	char fileName[MAX_PATH];
 
-	strcpy(fileName, whichFile);
+	strcpy ( fileName, whichFile );
 
-	fileHandle = al_fopen(fileName, "r");
+	fileHandle = al_fopen ( fileName, "r" );
 
-	if (NULL == fileHandle)
+	if ( NULL == fileHandle )
 		{
-			con_printUpdate(true, "Open error [ %s ]", fileName);
+			con_printUpdate ( true, "Open error [ %s ]", fileName );
 			return false;
 		}
 
-	fileSize = al_fsize(fileHandle);
-	con_print(true, true, "Size of script [ %i ] - [ %s ]", fileSize, fileName);
+	fileSize = al_fsize ( fileHandle );
+	con_print ( true, true, "Size of script [ %i ] - [ %s ]", fileSize, fileName );
 
 	//
 	// if memory already allocated - free and remalloc it
-	if (fileLocation)
+	if ( fileLocation )
 		{
-			free(fileLocation);
+			free ( fileLocation );
 			fileLocation = NULL;
 		}
 
 
-	fileLocation = (char *) malloc(sizeof (char) * (int) fileSize);
+	fileLocation = ( char * ) malloc ( sizeof ( char ) * ( int ) fileSize );
 
-	if (NULL == fileLocation)
+	if ( NULL == fileLocation )
 		{
-			sys_errorFatal((char *) __FILE__, __LINE__, (char *) "Memory allocation failed for [ %s ]", fileName);
+			sys_errorFatal ( ( char * ) __FILE__, __LINE__, ( char * ) "Memory allocation failed for [ %s ]", fileName );
 			return false;
 		}
 
-	if (al_fread(fileHandle, (void *) fileLocation, (size_t) fileSize) <= 0)
-		sys_errorFatal("sys_fileIntoMemory", __LINE__, (char *) "Read error [ %s ]", fileName);
+	if ( al_fread ( fileHandle, ( void * ) fileLocation, ( size_t ) fileSize ) <= 0 )
+		sys_errorFatal ( "sys_fileIntoMemory", __LINE__, ( char * ) "Read error [ %s ]", fileName );
 
-	al_fclose(fileHandle);
+	al_fclose ( fileHandle );
 
 	fileLocation[fileSize - 1] = '\0';
 	return true;
@@ -764,30 +767,30 @@ bool sys_loadAndCompileScripts()
 	int fileCounter = 0;
 	int retCode = 0;
 
-	retCode = builder.StartNewModule(scriptEngine, 0);
+	retCode = builder.StartNewModule ( scriptEngine, 0 );
 
-	if (retCode < 0)
+	if ( retCode < 0 )
 		{
-			con_print(true, true, "Error: Failed to start new module");
+			con_print ( true, true, "Error: Failed to start new module" );
 			return false;
 		}
 
-	while (scriptInfo[fileCounter].scriptFileName.size() > 1)
+	while ( scriptInfo[fileCounter].scriptFileName.size() > 1 )
 		{
 			//
 			// Load the script file
 			//
-			if (sys_fileIntoMemory((char*)scriptInfo[fileCounter].scriptFileName.c_str()) == false)
+			if ( sys_fileIntoMemory ( ( char* ) scriptInfo[fileCounter].scriptFileName.c_str() ) == false )
 				{
-					con_print(true, true, "Error: Failed to load scriptFile [ %s ]", scriptInfo[fileCounter].scriptFileName.c_str());
+					con_print ( true, true, "Error: Failed to load scriptFile [ %s ]", scriptInfo[fileCounter].scriptFileName.c_str() );
 					return false;
 				}
 
-			retCode = builder.AddSectionFromMemory(scriptInfo[fileCounter].scriptName.c_str(), fileLocation, (int) strlen(fileLocation), 0);
+			retCode = builder.AddSectionFromMemory ( scriptInfo[fileCounter].scriptName.c_str(), fileLocation, ( int ) strlen ( fileLocation ), 0 );
 
-			if (retCode < 0)
+			if ( retCode < 0 )
 				{
-					con_print(true, true, "Error: Failed to add script file [ %s ]", scriptInfo[fileCounter].scriptFileName.c_str());
+					con_print ( true, true, "Error: Failed to add script file [ %s ]", scriptInfo[fileCounter].scriptFileName.c_str() );
 					return false;
 				}
 
@@ -797,9 +800,9 @@ bool sys_loadAndCompileScripts()
 	//
 	// Build the script from the loaded setions using ScriptBuilder
 	//
-	if (builder.BuildModule() < 0)
+	if ( builder.BuildModule() < 0 )
 		{
-			con_print(true, true, "Error: Failed to build the module.");
+			con_print ( true, true, "Error: Failed to build the module." );
 			return false;
 		}
 
@@ -807,9 +810,9 @@ bool sys_loadAndCompileScripts()
 	// Free memory used to hold scripts while they are loaded into engine
 	// if memory already allocated - free and remalloc it
 	//
-	if (fileLocation)
+	if ( fileLocation )
 		{
-			free(fileLocation);
+			free ( fileLocation );
 			fileLocation = NULL;
 		}
 
@@ -820,21 +823,21 @@ bool sys_loadAndCompileScripts()
 //
 // Print messages from script compiler to console
 
-void scr_Output(const asSMessageInfo *msg, void *param)
+void scr_Output ( const asSMessageInfo *msg, void *param )
 //-----------------------------------------------------------------------------
 {
 	const char *type = "ERR ";
 
-	if (msg->type == asMSGTYPE_WARNING)
+	if ( msg->type == asMSGTYPE_WARNING )
 		type = "WARN";
 
-	else if (msg->type == asMSGTYPE_INFORMATION)
+	else if ( msg->type == asMSGTYPE_INFORMATION )
 		type = "INFO";
 
-	con_print(true, true, "%s (%d, %d) : %s : %s", msg->section, msg->row, msg->col, type, msg->message);
+	con_print ( true, true, "%s (%d, %d) : %s : %s", msg->section, msg->row, msg->col, type, msg->message );
 
-	if (false == scriptEngineStarted)
-		printf("%s (%d, %d) : %s : %s\n", msg->section, msg->row, msg->col, type, msg->message);
+	if ( false == scriptEngineStarted )
+		printf ( "%s (%d, %d) : %s : %s\n", msg->section, msg->row, msg->col, type, msg->message );
 }
 
 //--------------------------------------------------------
@@ -846,51 +849,51 @@ bool sys_initScriptEngine()
 {
 	_scriptFunctionName tempFunctionName;
 
-	scriptEngine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+	scriptEngine = asCreateScriptEngine ( ANGELSCRIPT_VERSION );
 
-	if (0 == scriptEngine)
+	if ( 0 == scriptEngine )
 		{
 			scriptEngineStarted = false;
-			sys_errorFatal(__FILE__, __LINE__, "Script: Error: Failed to create script engine- [ %s ]", sys_getScriptError(0));
+			sys_errorFatal ( __FILE__, __LINE__, "Script: Error: Failed to create script engine- [ %s ]", sys_getScriptError ( 0 ) );
 		}
 
-	io_logToFile("Script: Scriptengine started.");
+	io_logToFile ( "Script: Scriptengine started." );
 
-	RegisterStdString(scriptEngine);
+	RegisterStdString ( scriptEngine );
 
-	RegisterScriptArray(scriptEngine, true);
+	RegisterScriptArray ( scriptEngine, true );
 
 	// The script compiler will write any compiler messages to the callback.
-	scriptEngine->SetMessageCallback(asFUNCTION(scr_Output), 0, asCALL_CDECL);
+	scriptEngine->SetMessageCallback ( asFUNCTION ( scr_Output ), 0, asCALL_CDECL );
 
 	// What version are we running
-	io_logToFile("Script: ScriptEngine version - [ %s ]", asGetLibraryVersion());
+	io_logToFile ( "Script: ScriptEngine version - [ %s ]", asGetLibraryVersion() );
 
 	// What options are compiled
-	io_logToFile("Script: Options - [ %s ]", asGetLibraryOptions());
+	io_logToFile ( "Script: Options - [ %s ]", asGetLibraryOptions() );
 
-	if (false == sys_registerObject())
+	if ( false == sys_registerObject() )
 		{
-			RET_FALSE("Script: Error: Couldn't register objects.", "");
+			RET_FALSE ( "Script: Error: Couldn't register objects.", "" );
 		}
 
 	// Add variables available to the script
-	if (false == sys_registerVariables())
+	if ( false == sys_registerVariables() )
 		{
-			RET_FALSE("Script: Error: Couldn't register variables.", "");
+			RET_FALSE ( "Script: Error: Couldn't register variables.", "" );
 		}
 
 	// Add all the functions that the scripts can access
-	if (false == sys_registerFunctions())
+	if ( false == sys_registerFunctions() )
 		{
-			RET_FALSE("Script: Error: Couldn't register functions.", "");
+			RET_FALSE ( "Script: Error: Couldn't register functions.", "" );
 		}
 
 
 	sys_registerObject();
 
-	if (false == sys_loadAndCompileScripts())
-		RET_FALSE("Script: Error: Couldn't load or compile scripts.", "");
+	if ( false == sys_loadAndCompileScripts() )
+		RET_FALSE ( "Script: Error: Couldn't load or compile scripts.", "" );
 
 	int count = 0;
 	numScriptFunctions = 0;
@@ -898,7 +901,7 @@ bool sys_initScriptEngine()
 	//
 	// Get the number of functions we are using
 	//
-	while (scriptFunctionName[count].functionName.size() > 1)
+	while ( scriptFunctionName[count].functionName.size() > 1 )
 		{
 			numScriptFunctions++;
 			count++;
@@ -907,25 +910,25 @@ bool sys_initScriptEngine()
 	//
 	// Get memory to hold script details
 	//
-	scriptFunctions.reserve(numScriptFunctions);
-	con_print(true, true, "Number of functions in script [ %i ]", numScriptFunctions);
+	scriptFunctions.reserve ( numScriptFunctions );
+	con_print ( true, true, "Number of functions in script [ %i ]", numScriptFunctions );
 
 	//
 	// Get function ID's for each function we will call in the script
 	//
-	for (int i = 0; i != numScriptFunctions; i++)
+	for ( int i = 0; i != numScriptFunctions; i++ )
 		{
-			tempFunctionName.funcID = scriptEngine->GetModule(0)->GetFunctionByDecl(scriptFunctionName[i].functionName.c_str());
+			tempFunctionName.funcID = scriptEngine->GetModule ( 0 )->GetFunctionByDecl ( scriptFunctionName[i].functionName.c_str() );
 
-			if (tempFunctionName.funcID <= 0)
+			if ( tempFunctionName.funcID <= 0 )
 				{
-					con_print(true, true, "Failed to get function ID for [ %s ] Error [ %s ]", scriptFunctionName[i].functionName.c_str(), sys_getScriptError((int)tempFunctionName.funcID));
+					con_print ( true, true, "Failed to get function ID for [ %s ] Error [ %s ]", scriptFunctionName[i].functionName.c_str(), sys_getScriptError ( ( int ) tempFunctionName.funcID ) );
 					return false;
 				}
 			else
-			{
-				con_print(true, false, "Func ID for [ %s ] - [ %i ]", scriptFunctionName[i].functionName.c_str(), tempFunctionName.funcID);
-			}
+				{
+					con_print ( true, false, "Func ID for [ %s ] - [ %i ]", scriptFunctionName[i].functionName.c_str(), tempFunctionName.funcID );
+				}
 
 			//
 			// Setup malloc'd memory with the funcID and name to execute
@@ -935,7 +938,7 @@ bool sys_initScriptEngine()
 			tempFunctionName.scriptName = scriptFunctionName[i].scriptName;
 			tempFunctionName.fromScript = scriptFunctionName[i].fromScript;
 
-			scriptFunctions.push_back(tempFunctionName);
+			scriptFunctions.push_back ( tempFunctionName );
 
 			//		con_print (true, true, "scriptFunctions [ %s ] has ID [ %i ]", scriptFunctions[i].functionName.c_str(), scriptFunctions[i].funcID);
 		}
@@ -952,51 +955,51 @@ bool sys_initScriptEngine()
 //
 // Execute a function from the script
 
-bool sys_executeScriptFunction(string functionName, string funcParam)
+bool sys_executeScriptFunction ( string functionName, string funcParam )
 //-----------------------------------------------------------------------------
 {
 	int i = 0;
 
 	//
 	// Check for function name passed in
-	if (functionName.size() < 1)
+	if ( functionName.size() < 1 )
 		{
-			con_printUpdate(true, "Error: Failed to provide function name.");
+			con_printUpdate ( true, "Error: Failed to provide function name." );
 			return false;
 		}
 
 	//
 	// Safety check first
-	if (NULL == scriptEngine)
+	if ( NULL == scriptEngine )
 		{
-			con_printUpdate(true, "Couldn't execute [ %s ]. Engine not ready.", functionName.c_str());
+			con_printUpdate ( true, "Couldn't execute [ %s ]. Engine not ready.", functionName.c_str() );
 			return false;
 		}
 
-	if (NULL == context)
+	if ( NULL == context )
 		{
-			con_printUpdate(true, "Couldn't execute [ %s ]. Script context not ready", functionName.c_str());
+			con_printUpdate ( true, "Couldn't execute [ %s ]. Script context not ready", functionName.c_str() );
 			return false;
 		}
 
 	//
 	// Find the functionID we need for the functionName
-	for (i = 0; i != numScriptFunctions; i++)
+	for ( i = 0; i != numScriptFunctions; i++ )
 		{
 			//
 			// Do a case insensitive compare - FIXME
 			//
 #if defined(WIN32)
-			if (_stricmp(scriptFunctions[i].scriptName.c_str(), functionName.c_str()) == 0)
+			if ( _stricmp ( scriptFunctions[i].scriptName.c_str(), functionName.c_str() ) == 0 )
 #else
-			if (scriptFunctions[i].scriptName == functionName)
+			if ( scriptFunctions[i].scriptName == functionName )
 #endif
 				break;
 		}
 
-	if (i == numScriptFunctions)
+	if ( i == numScriptFunctions )
 		{
-			con_print(true, false, "Couldn't find function name [ %s ]", functionName.c_str());
+			con_print ( true, false, "Couldn't find function name [ %s ]", functionName.c_str() );
 			return false;
 		}
 
@@ -1005,11 +1008,11 @@ bool sys_executeScriptFunction(string functionName, string funcParam)
 	//
 	// Prepare the engine context to execute the function
 	//
-	int j = context->Prepare(scriptFunctions[i].funcID);
+	int j = context->Prepare ( scriptFunctions[i].funcID );
 
-	if (j < 0)
+	if ( j < 0 )
 		{
-			con_print(true, true, "Failed to prepare the context for [ %s ].", scriptFunctions[i].functionName.c_str());
+			con_print ( true, true, "Failed to prepare the context for [ %s ].", scriptFunctions[i].functionName.c_str() );
 			return false;
 		}
 
@@ -1019,25 +1022,25 @@ bool sys_executeScriptFunction(string functionName, string funcParam)
 	//
 	int testInt;
 
-	if (true == scriptFunctions[i].param1)
+	if ( true == scriptFunctions[i].param1 )
 		{
 //		io_logToFile("Parameter to pass to script [ %s ]", funcParam.c_str());
 			//
 			// See if it's a number or a string - check first character of the string only
-			if (isdigit(funcParam.c_str()[0]))
+			if ( isdigit ( funcParam.c_str() [0] ) )
 				{
 					//
 					// Paramater is a number - convert before passing in
 					//
-					testInt = atoi(funcParam.c_str());
-					context->SetArgAddress(0, &testInt);
+					testInt = atoi ( funcParam.c_str() );
+					context->SetArgAddress ( 0, &testInt );
 				}
 			else
 				{
 					//
 					// Send in string value
 					//
-					context->SetArgAddress(0, &funcParam);
+					context->SetArgAddress ( 0, &funcParam );
 				}
 		}
 
@@ -1046,29 +1049,29 @@ bool sys_executeScriptFunction(string functionName, string funcParam)
 	//
 	int ret = context->Execute();
 
-	if (ret != asEXECUTION_FINISHED)
+	if ( ret != asEXECUTION_FINISHED )
 		{
 			//
 			// The execution didn't finish as we had planned. Determine why.
 			//
-			if (ret == asEXECUTION_ABORTED)
-				con_print(true, true, "Script: Error: The script was aborted before it could finish. Probably it timed out.");
+			if ( ret == asEXECUTION_ABORTED )
+				con_print ( true, true, "Script: Error: The script was aborted before it could finish. Probably it timed out." );
 
-			else if (ret == asEXECUTION_EXCEPTION)
+			else if ( ret == asEXECUTION_EXCEPTION )
 				{
-					con_print(true, true, "Script: Error: The script ended with an exception.");
+					con_print ( true, true, "Script: Error: The script ended with an exception." );
 					//
 					// Write some information about the script exception
 					//
 					asIScriptFunction *func = context->GetExceptionFunction();
-					con_print(true, true, "Func: [ %s ]", func->GetDeclaration());
-					con_print(true, true, "Module: [ %s ]", func->GetModuleName());
-					con_print(true, true, "Section: [ %s ]", func->GetScriptSectionName());
-					con_print(true, true, "Line: [ %s ]", context->GetExceptionLineNumber());
-					con_print(true, true, "Desc: [ %s ]", context->GetExceptionString());
+					con_print ( true, true, "Func: [ %s ]", func->GetDeclaration() );
+					con_print ( true, true, "Module: [ %s ]", func->GetModuleName() );
+					con_print ( true, true, "Section: [ %s ]", func->GetScriptSectionName() );
+					con_print ( true, true, "Line: [ %s ]", context->GetExceptionLineNumber() );
+					con_print ( true, true, "Desc: [ %s ]", context->GetExceptionString() );
 				}
 			else
-				con_print(true, true, "The script ended for some unforeseen reason [ %i ]", ret);
+				con_print ( true, true, "The script ended for some unforeseen reason [ %i ]", ret );
 
 			return false;
 		}
@@ -1084,8 +1087,7 @@ bool sys_executeScriptFunction(string functionName, string funcParam)
 // funcName - what the console command is
 // funcPtr - which function gets called from the console command
 //
-
-bool sys_addScriptConsoleFunction(string funcName, string funcPtr, bool setParam)
+bool sys_addScriptConsoleFunction ( string funcName, string funcPtr, bool setParam )
 //-----------------------------------------------------------------------------
 {
 	_scriptFunctionName tempScriptFunction;
@@ -1095,19 +1097,19 @@ bool sys_addScriptConsoleFunction(string funcName, string funcPtr, bool setParam
 	tempScriptFunction.fromScript = true;
 	tempScriptFunction.param1 = setParam;
 
-	tempScriptFunction.funcID = scriptEngine->GetModule(0)->GetFunctionByDecl(tempScriptFunction.functionName.c_str());
+	tempScriptFunction.funcID = scriptEngine->GetModule ( 0 )->GetFunctionByDecl ( tempScriptFunction.functionName.c_str() );
 
-	if (tempScriptFunction.funcID <= 0)
+	if ( tempScriptFunction.funcID <= 0 )
 		{
-			con_print(true, true, "Err: Failed to get function ID for [ %s ]. Error [ %s ]", tempScriptFunction.functionName.c_str(), sys_getScriptError((int)tempScriptFunction.funcID));
+			con_print ( true, true, "Err: Failed to get function ID for [ %s ]. Error [ %s ]", tempScriptFunction.functionName.c_str(), sys_getScriptError ( ( int ) tempScriptFunction.funcID ) );
 			return false;
 		}
 
-	con_print(true, true, "FuncID for script function [ %s ] is [ %i ]", tempScriptFunction.functionName.c_str(), tempScriptFunction.funcID);
+	con_print ( true, true, "FuncID for script function [ %s ] is [ %i ]", tempScriptFunction.functionName.c_str(), tempScriptFunction.funcID );
 
 	// TODO: Handle adding parameter value
 
-	scriptFunctions.push_back(tempScriptFunction);
+	scriptFunctions.push_back ( tempScriptFunction );
 	numScriptFunctions++;
 	return true;
 }
@@ -1117,12 +1119,13 @@ bool sys_addScriptConsoleFunction(string funcName, string funcPtr, bool setParam
 // TODO - Get this working properly
 //
 // Restart the script engine
-
+//
+// TODO: Finish this
 bool sys_restartScriptEngine()
 //--------------------------------------------------------
 {
-	con_print(true, true, "Restarting Scripting engine");
-	sys_cleanupScriptEngine(true);
+	con_print ( true, true, "Restarting Scripting engine" );
+	sys_cleanupScriptEngine ( true );
 
 	numScriptFunctions = 0;
 	conCurrentNumCommands = 0;
@@ -1130,7 +1133,7 @@ bool sys_restartScriptEngine()
 	con_addConsoleCommands();
 
 	sys_initScriptEngine();
-	sys_executeScriptFunction("as_initGameVars", "");
+	sys_executeScriptFunction ( "as_initGameVars", "" );
 
 	return true;
 	//    al_free(scriptFunctions);
@@ -1153,34 +1156,34 @@ void sys_printVariables()
 	int typeId = ctx->GetThisTypeId();
 	void *varPointer = ctx->GetThisPointer();
 
-	if (typeId)
+	if ( typeId )
 		{
-			io_logToFile(" this = 0x%x\n", varPointer);
+			io_logToFile ( " this = 0x%x\n", varPointer );
 		}
 
 	int numVars = ctx->GetVarCount();
 
-	for (int n = 0; n < numVars; n++)
+	for ( int n = 0; n < numVars; n++ )
 		{
-			int typeId = ctx->GetVarTypeId(n);
-			void *varPointer = ctx->GetAddressOfVar(n);
+			int typeId = ctx->GetVarTypeId ( n );
+			void *varPointer = ctx->GetAddressOfVar ( n );
 
-			if (typeId == engine->GetTypeIdByDecl("int"))
+			if ( typeId == engine->GetTypeIdByDecl ( "int" ) )
 				{
-					io_logToFile(" %s = %d\n", ctx->GetVarDeclaration(n, stackLevel), *(int*) varPointer);
+					io_logToFile ( " %s = %d\n", ctx->GetVarDeclaration ( n, stackLevel ), * ( int* ) varPointer );
 				}
-			else if (typeId == engine->GetTypeIdByDecl("string"))
+			else if ( typeId == engine->GetTypeIdByDecl ( "string" ) )
 				{
-					std::string *str = (std::string*)varPointer;
+					std::string *str = ( std::string* ) varPointer;
 
-					if (str)
-						io_logToFile(" %s = '%s'\n", ctx->GetVarDeclaration(n, stackLevel), str->c_str());
+					if ( str )
+						io_logToFile ( " %s = '%s'\n", ctx->GetVarDeclaration ( n, stackLevel ), str->c_str() );
 					else
-						io_logToFile(" %s = <null>\n", ctx->GetVarDeclaration(n, stackLevel));
+						io_logToFile ( " %s = <null>\n", ctx->GetVarDeclaration ( n, stackLevel ) );
 				}
 			else
 				{
-					io_logToFile(" %s = {...}\n", ctx->GetVarDeclaration(n, stackLevel));
+					io_logToFile ( " %s = {...}\n", ctx->GetVarDeclaration ( n, stackLevel ) );
 				}
 		}
 }
