@@ -713,9 +713,9 @@ bool sys_registerFunctions()
 bool sys_fileIntoMemory ( char *whichFile )
 //-------------------------------------------------------------------------------
 {
-	ALLEGRO_FILE *fileHandle = NULL;
-	int64_t fileSize;
-	char fileName[MAX_PATH];
+	ALLEGRO_FILE 	*fileHandle = NULL;
+	int64_t 		fileSize;
+	char 			fileName[MAX_PATH];
 
 	strcpy ( fileName, whichFile );
 
@@ -867,6 +867,8 @@ bool sys_initScriptEngine()
 
 	// What version are we running
 	io_logToFile ( "Script: ScriptEngine version - [ %s ]", asGetLibraryVersion() );
+
+printf ("[ %s ] \n", asGetLibraryOptions());
 
 	// What options are compiled
 	io_logToFile ( "Script: Options - [ %s ]", asGetLibraryOptions() );
