@@ -149,6 +149,8 @@ void io_logToFile ( const char* format, ... )
 
 	vfprintf ( logFile, format, args );
 
+	fputc ('\r\n', logFile);
+
 	va_end ( args );
 
 	fflush ( logFile );
