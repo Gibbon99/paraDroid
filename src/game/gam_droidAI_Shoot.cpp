@@ -32,7 +32,6 @@ float		ai_greenFactor;
 float		ai_yellowFactor;
 float		ai_redFactor;
 
-
 //-----------------------------------------------------------------------------
 //
 // Should the Droid shoot or not
@@ -57,8 +56,8 @@ int ai_notShoot ( int whichDroid )
 #endif
 
 	return AI_RESULT_FAILED;
-
 }
+
 //-----------------------------------------------------------------------------
 //
 // Locate the player position - see if the droid can take the shot or not
@@ -94,20 +93,20 @@ int ai_shootBullet ( int whichDroid )
 	bulletStartPos = shipLevel[currentLevel].droid[whichDroid].worldPos;
 	bulletStartPos.y += TILE_SIZE / 2;
 
-	if (shipLevel[currentLevel].droid[whichDroid].targetIndex == -1)	// Player is the target
-	{
-		if (false == gam_calculateInterceptShotPosition(shipLevel[currentLevel].droid[whichDroid].worldPos,
-											playerWorldPos, playerVelocity, 10.0f + baseGameSpeed, bulletStartPos))
-											{
-												// Default to player position
-											bulletDestPos = playerWorldPos;
-											printf ("DID NOT find solution to lead shot\n");
-											}
-	}
+	if ( shipLevel[currentLevel].droid[whichDroid].targetIndex == -1 )	// Player is the target
+		{
+			if ( false == gam_calculateInterceptShotPosition ( shipLevel[currentLevel].droid[whichDroid].worldPos,
+			        playerWorldPos, playerVelocity, 10.0f + baseGameSpeed, bulletStartPos ) )
+				{
+					// Default to player position
+					bulletDestPos = playerWorldPos;
+					printf ( "DID NOT find solution to lead shot\n" );
+				}
+		}
 	else
-	{
-		bulletDestPos = shipLevel[currentLevel].droid[shipLevel[currentLevel].droid[whichDroid].targetIndex].worldPos;
-	}
+		{
+			bulletDestPos = shipLevel[currentLevel].droid[shipLevel[currentLevel].droid[whichDroid].targetIndex].worldPos;
+		}
 
 	bulletDestPos.y += TILE_SIZE / 2;
 
@@ -162,15 +161,15 @@ void gam_findChanceToShoot ( int whichDroid )
 		}
 
 	if ( true == shipLevel[currentLevel].droid[whichDroid].witnessShooting )
-	{
-		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_witnessShoot;
-		shipLevel[currentLevel].droid[whichDroid].targetIndex = -1;
-	}
+		{
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_witnessShoot;
+			shipLevel[currentLevel].droid[whichDroid].targetIndex = -1;
+		}
 	else
 		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_witnessShoot;
 
 	//
-	// Is Droid healthy enought to engage in combat
+	// Is Droid healthy enough to engage in combat
 	//
 	if ( shipLevel[currentLevel].droid[whichDroid].currentHealth > dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth / 2 )
 		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_healthAmount;
@@ -182,17 +181,17 @@ void gam_findChanceToShoot ( int whichDroid )
 	//
 	switch ( currentAlertLevel )
 		{
-			case ALERT_GREEN_TILE:
-				shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_greenFactor;
-				break;
+		case ALERT_GREEN_TILE:
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_greenFactor;
+			break;
 
-			case ALERT_YELLOW_TILE:
-				shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_yellowFactor;
-				break;
+		case ALERT_YELLOW_TILE:
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_yellowFactor;
+			break;
 
-			case ALERT_RED_TILE:
-				shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_redFactor;
-				break;
+		case ALERT_RED_TILE:
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_redFactor;
+			break;
 		}
 
 	//

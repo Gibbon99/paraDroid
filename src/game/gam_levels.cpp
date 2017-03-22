@@ -41,15 +41,42 @@ _basicHealing *healing; // hold information for animating healing tiles
 // Score
 //
 //-----------------------------------------------------------------------------
-char displayScoreString[NUM_SCORE_CHARS];
-int currentScore = 0;
-int displayScore = 0;
-float scoreDelay;
-float scoreDelayValue;
-int yellowAlertLevel = 0; // From script
-int redAlertLevel = 0; // From script
-int levelBonus; // From script
+char	displayScoreString[NUM_SCORE_CHARS];
+int		currentScore = 0;
+int		displayScore = 0;
+float	scoreDelay;
+float	scoreDelayValue;
+int		yellowAlertLevel = 0; // From script
+int		redAlertLevel = 0; // From script
+int		levelBonus; // From script
+bool	gameWon = false;
 
+//---------------------------------------------------------
+//
+// Check to see if the ship is empty of all droids
+void gam_isShipEmpty()
+//---------------------------------------------------------
+{
+	if ( true == gameWon )
+		return;
+
+	for ( int i = 0; i != NUM_OF_LEVELS; i++ )
+		{
+			if ( i != 7 )
+				{
+					if ( shipLevel[i].numDroids > 0 )
+						return;
+				}
+		}
+	//
+	// All levels are empty
+
+	// Update score
+//	currentScore = currentScore + displayScore;
+	gameWon = true;
+	playerCurrentHealth  = -100; // trigger end game sequence
+	gam_doDamageToPlayer ( DAMAGE_EXPLOSION, -1 );
+}
 //---------------------------------------------------------
 //
 // Restart the game
@@ -58,7 +85,7 @@ void gam_restart()
 {
 	sys_clearAllPhysics();
 	sys_setupPlayerPhysics();	// Before gam_setupPlayerValues so body is ready for mass setting
-	gam_setupPlayerValues(0);	// 0 == 001 in database
+	gam_setupPlayerValues ( 0 );	// 0 == 001 in database
 	gam_resetAllPaths();
 	par_resetAllEmitters();
 	bul_initBullets();
@@ -66,19 +93,20 @@ void gam_restart()
 	//
 	// Set droids to default values again
 	//
-	for (int i = 0; i != NUM_OF_LEVELS; i++)
-	{
-		if (i != 7)
+	for ( int i = 0; i != NUM_OF_LEVELS; i++ )
 		{
-			shipLevel[i].droid.clear();
-			gam_initDroidValues(i);
+			if ( i != 7 )
+				{
+					shipLevel[i].droid.clear();
+					gam_initDroidValues ( i );
+				}
 		}
-	}
 	//
 	// Reset Alert level
 	//
 	currentAlertLevel = ALERT_GREEN_TILE;
 	processedPhysics = false;
+	gameWon = false;
 }
 
 //---------------------------------------------------------
@@ -100,6 +128,8 @@ void gam_powerDownLevel ( int whichLevel, bool playSound )
 		}
 	else
 		io_setTileSetColor ( "restore" );
+
+	gam_isShipEmpty();
 }
 
 //---------------------------------------------------------
@@ -109,61 +139,61 @@ void gam_powerDownLevel ( int whichLevel, bool playSound )
 void gam_checkAlertLevel()
 //---------------------------------------------------------
 {
-	if (alertLevelDistance > volumeLevel)
+	if ( alertLevelDistance > volumeLevel )
 		alertLevelDistance = volumeLevel; 	// Cap to user set level
 
 	switch ( currentAlertLevel )
 		{
-			case ALERT_GREEN_TILE:
-				if ( false == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
+		case ALERT_GREEN_TILE:
+			if ( false == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
 				{
 					sys_setVolume ( SND_GREEN_ALERT, alertLevelDistance );
 					sys_playSound ( SND_GREEN_ALERT, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
 				}
-				else
-					sys_setVolume ( SND_GREEN_ALERT, alertLevelDistance );
+			else
+				sys_setVolume ( SND_GREEN_ALERT, alertLevelDistance );
 
-				if ( true == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
-					sys_stopSound ( SND_YELLOW_ALERT );
+			if ( true == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
+				sys_stopSound ( SND_YELLOW_ALERT );
 
-				if ( true == sys_isSoundPlaying ( SND_RED_ALERT ) )
-					sys_stopSound ( SND_RED_ALERT );
+			if ( true == sys_isSoundPlaying ( SND_RED_ALERT ) )
+				sys_stopSound ( SND_RED_ALERT );
 
-				break;
+			break;
 
-			case ALERT_YELLOW_TILE:
-				if ( true == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
-					sys_stopSound ( SND_GREEN_ALERT );
+		case ALERT_YELLOW_TILE:
+			if ( true == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
+				sys_stopSound ( SND_GREEN_ALERT );
 
-				if ( false == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
+			if ( false == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
 				{
 					sys_playSound ( SND_YELLOW_ALERT, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
-					sys_setVolume(SND_YELLOW_ALERT, alertLevelDistance);
+					sys_setVolume ( SND_YELLOW_ALERT, alertLevelDistance );
 				}
-				else
-					sys_setVolume(SND_YELLOW_ALERT, alertLevelDistance);
+			else
+				sys_setVolume ( SND_YELLOW_ALERT, alertLevelDistance );
 
-				if ( true == sys_isSoundPlaying ( SND_RED_ALERT ) )
-					sys_stopSound ( SND_RED_ALERT );
+			if ( true == sys_isSoundPlaying ( SND_RED_ALERT ) )
+				sys_stopSound ( SND_RED_ALERT );
 
-				break;
+			break;
 
-			case ALERT_RED_TILE:
-				if ( true == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
-					sys_stopSound ( SND_GREEN_ALERT );
+		case ALERT_RED_TILE:
+			if ( true == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
+				sys_stopSound ( SND_GREEN_ALERT );
 
-				if ( true == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
-					sys_stopSound ( SND_YELLOW_ALERT );
+			if ( true == sys_isSoundPlaying ( SND_YELLOW_ALERT ) )
+				sys_stopSound ( SND_YELLOW_ALERT );
 
-				if ( false == sys_isSoundPlaying ( SND_RED_ALERT ) )
+			if ( false == sys_isSoundPlaying ( SND_RED_ALERT ) )
 				{
 					sys_playSound ( SND_RED_ALERT, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
-					sys_setVolume(SND_RED_ALERT, alertLevelDistance);
+					sys_setVolume ( SND_RED_ALERT, alertLevelDistance );
 				}
-				else
-					sys_setVolume(SND_RED_ALERT, alertLevelDistance);
+			else
+				sys_setVolume ( SND_RED_ALERT, alertLevelDistance );
 
-				break;
+			break;
 		}
 }
 
@@ -198,9 +228,9 @@ void gam_changeToLevel ( int newLevel, int whichLift )
 									if ( shipLevel[currentLevel].droid[i].aStarPathIndex > -1 )
 										{
 //											gam_AStarRemovePath ( shipLevel[currentLevel].droid[i].aStarPathIndex );
-											ai_resetFleeFlags(i);
-											ai_resetHealthFlags(i);
-											ai_resetResumeFlags(i);
+											ai_resetFleeFlags ( i );
+											ai_resetHealthFlags ( i );
+											ai_resetResumeFlags ( i );
 										}
 								}
 						}
@@ -610,12 +640,12 @@ void gam_findHealingTiles ( int whichLevel )
 
 			switch ( currentTile )
 				{
-					case HEALING_TILE:
-					case HEALING_TILE + 1:
-					case HEALING_TILE + 2:
-					case HEALING_TILE + 3:
-						healCounter++;
-						break;
+				case HEALING_TILE:
+				case HEALING_TILE + 1:
+				case HEALING_TILE + 2:
+				case HEALING_TILE + 3:
+					healCounter++;
+					break;
 				}
 		}
 
@@ -655,19 +685,19 @@ void gam_findHealingTiles ( int whichLevel )
 
 			switch ( currentTile )
 				{
-					case HEALING_TILE:
-					case HEALING_TILE + 1:
-					case HEALING_TILE + 2:
-					case HEALING_TILE + 3:
-						healing[healCounter].pos = i;
-						healing[healCounter].numFrames = 4;
-						healing[healCounter].currentFrame = HEALING_TILE;
-						healing[healCounter].frameDelay = 0.3f;
-						healing[healCounter].nextFrame = 0.0f;
-						healing[healCounter].worldPosition.x = ( countX * TILE_SIZE ) + ( TILE_SIZE / 2 );
-						healing[healCounter].worldPosition.y = ( countY * TILE_SIZE ) + ( TILE_SIZE / 2 );
-						healCounter++;
-						break;
+				case HEALING_TILE:
+				case HEALING_TILE + 1:
+				case HEALING_TILE + 2:
+				case HEALING_TILE + 3:
+					healing[healCounter].pos = i;
+					healing[healCounter].numFrames = 4;
+					healing[healCounter].currentFrame = HEALING_TILE;
+					healing[healCounter].frameDelay = 0.3f;
+					healing[healCounter].nextFrame = 0.0f;
+					healing[healCounter].worldPosition.x = ( countX * TILE_SIZE ) + ( TILE_SIZE / 2 );
+					healing[healCounter].worldPosition.y = ( countY * TILE_SIZE ) + ( TILE_SIZE / 2 );
+					healCounter++;
+					break;
 				}
 
 			countX++;
@@ -756,77 +786,77 @@ void gam_getTunnelToUse()
 {
 	switch ( shipLevel[currentLevel].numLifts )
 		{
-			case 1: // only one lift on these levels
-				currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
-				break;
+		case 1: // only one lift on these levels
+			currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
+			break;
 
-			case 2: // two lifts on these levels
-				if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[0].posX - TILE_SIZE ) &&
-				        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[0].posX + TILE_SIZE ) )
-					{
-						currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
-					}
-				else
-					{
-						currentTunnel = shipLevel[currentLevel].lifts[1].tunnel;
-					}
+		case 2: // two lifts on these levels
+			if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[0].posX - TILE_SIZE ) &&
+			        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[0].posX + TILE_SIZE ) )
+				{
+					currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
+				}
+			else
+				{
+					currentTunnel = shipLevel[currentLevel].lifts[1].tunnel;
+				}
 
-				break;
+			break;
 
-			case 3: // only two levels with three lifts on them
-				if ( currentLevel == 12 )
-					{
-						if ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[0].posX - TILE_SIZE )
-							{
-								currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
-								gam_getCurrentDeck();
-								return;
-							}
+		case 3: // only two levels with three lifts on them
+			if ( currentLevel == 12 )
+				{
+					if ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[0].posX - TILE_SIZE )
+						{
+							currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
+							gam_getCurrentDeck();
+							return;
+						}
 
-						if ( ( ( playerWorldMiddlePos.y ) > shipLevel[currentLevel].lifts[1].posY - TILE_SIZE ) &&
-						        ( ( playerWorldMiddlePos.y ) < shipLevel[currentLevel].lifts[1].posY + TILE_SIZE ) )
-							{
-								currentTunnel = shipLevel[currentLevel].lifts[1].tunnel;
-								gam_getCurrentDeck();
-								return;
-							}
+					if ( ( ( playerWorldMiddlePos.y ) > shipLevel[currentLevel].lifts[1].posY - TILE_SIZE ) &&
+					        ( ( playerWorldMiddlePos.y ) < shipLevel[currentLevel].lifts[1].posY + TILE_SIZE ) )
+						{
+							currentTunnel = shipLevel[currentLevel].lifts[1].tunnel;
+							gam_getCurrentDeck();
+							return;
+						}
 
-						if ( ( playerWorldMiddlePos.y ) > shipLevel[currentLevel].lifts[2].posY - TILE_SIZE )
-							{
-								currentTunnel = shipLevel[currentLevel].lifts[2].tunnel;
-								gam_getCurrentDeck();
-								return;
-							}
-					} // end of if level is 12 test
-				else
-					{
-						if ( currentLevel == 14 )
-							{
-								if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[2].posX - TILE_SIZE ) &&
-								        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[2].posX + TILE_SIZE ) )
-									{
-										currentTunnel = shipLevel[currentLevel].lifts[2].tunnel;
-										gam_getCurrentDeck();
-										return;
-									}
+					if ( ( playerWorldMiddlePos.y ) > shipLevel[currentLevel].lifts[2].posY - TILE_SIZE )
+						{
+							currentTunnel = shipLevel[currentLevel].lifts[2].tunnel;
+							gam_getCurrentDeck();
+							return;
+						}
+				} // end of if level is 12 test
+			else
+				{
+					if ( currentLevel == 14 )
+						{
+							if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[2].posX - TILE_SIZE ) &&
+							        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[2].posX + TILE_SIZE ) )
+								{
+									currentTunnel = shipLevel[currentLevel].lifts[2].tunnel;
+									gam_getCurrentDeck();
+									return;
+								}
 
-								if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[1].posX - TILE_SIZE ) &&
-								        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[1].posX + TILE_SIZE ) )
-									{
-										currentTunnel = shipLevel[currentLevel].lifts[1].tunnel;
-										gam_getCurrentDeck();
-										return;
-									}
+							if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[1].posX - TILE_SIZE ) &&
+							        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[1].posX + TILE_SIZE ) )
+								{
+									currentTunnel = shipLevel[currentLevel].lifts[1].tunnel;
+									gam_getCurrentDeck();
+									return;
+								}
 
-								if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[0].posX - TILE_SIZE ) &&
-								        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[0].posX + TILE_SIZE ) )
-									{
-										currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
-										gam_getCurrentDeck();
-										return;
-									}
-							} // end of is level 14 test
-					} // end of else statement
+							if ( ( ( playerWorldMiddlePos.x ) > shipLevel[currentLevel].lifts[0].posX - TILE_SIZE ) &&
+							        ( ( playerWorldMiddlePos.x ) < shipLevel[currentLevel].lifts[0].posX + TILE_SIZE ) )
+								{
+									currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
+									gam_getCurrentDeck();
+									return;
+								}
+						} // end of is level 14 test
+				} // end of else statement
 		} // end of switch statement
 
 	con_print ( true, false, "Tunnel in use [ %i ]", currentTunnel );
@@ -847,75 +877,75 @@ void gam_putPlayerOnLiftFromTunnel()
 
 	switch ( shipLevel[currentLevel].numLifts )
 		{
-			case 1:
-				currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
-				gam_putPlayerOnLift ( 0 );
-				break;
+		case 1:
+			currentTunnel = shipLevel[currentLevel].lifts[0].tunnel;
+			gam_putPlayerOnLift ( 0 );
+			break;
 
-			case 2:
-				while ( currentTunnel != shipLevel[currentLevel].lifts[temp_lift].tunnel )
-					{
-						temp_lift++;
-					}
+		case 2:
+			while ( currentTunnel != shipLevel[currentLevel].lifts[temp_lift].tunnel )
+				{
+					temp_lift++;
+				}
 
-				if ( currentLevel == 13 )
-					{
-						if ( currentTunnel == 3 )
-							temp_lift = 1;
-						else
-							temp_lift = 0;
-					}
-				else
-					currentTunnel = shipLevel[currentLevel].lifts[temp_lift].tunnel;
+			if ( currentLevel == 13 )
+				{
+					if ( currentTunnel == 3 )
+						temp_lift = 1;
+					else
+						temp_lift = 0;
+				}
+			else
+				currentTunnel = shipLevel[currentLevel].lifts[temp_lift].tunnel;
 
-				gam_putPlayerOnLift ( temp_lift );
-				break;
+			gam_putPlayerOnLift ( temp_lift );
+			break;
 
-			case 3:
-				if ( currentLevel == 14 )
-					{
-						switch ( currentTunnel )
-							{
-								case 7:
-									gam_putPlayerOnLift ( 2 );
-									break;
+		case 3:
+			if ( currentLevel == 14 )
+				{
+					switch ( currentTunnel )
+						{
+						case 7:
+							gam_putPlayerOnLift ( 2 );
+							break;
 
-								case 6:
-									gam_putPlayerOnLift ( 0 );
-									break;
+						case 6:
+							gam_putPlayerOnLift ( 0 );
+							break;
 
-								case 3:
-									gam_putPlayerOnLift ( 1 );
-									break;
+						case 3:
+							gam_putPlayerOnLift ( 1 );
+							break;
 
-								default:
-									gam_putPlayerOnLift ( 0 );
-									break;
-							}
+						default:
+							gam_putPlayerOnLift ( 0 );
+							break;
+						}
 
-						return;
-					}
-				else if ( currentLevel == 12 )
-					{
-						switch ( currentTunnel )
-							{
-								case 3:
-									gam_putPlayerOnLift ( 1 );
-									break;
+					return;
+				}
+			else if ( currentLevel == 12 )
+				{
+					switch ( currentTunnel )
+						{
+						case 3:
+							gam_putPlayerOnLift ( 1 );
+							break;
 
-								case 4:
-									gam_putPlayerOnLift ( 2 );
-									break;
+						case 4:
+							gam_putPlayerOnLift ( 2 );
+							break;
 
-								case 6:
-									gam_putPlayerOnLift ( 0 );
-									break;
+						case 6:
+							gam_putPlayerOnLift ( 0 );
+							break;
 
-								default:
-									gam_putPlayerOnLift ( 0 );
-									break;
-							}
-					}
+						default:
+							gam_putPlayerOnLift ( 0 );
+							break;
+						}
+				}
 		}
 } // end of function
 

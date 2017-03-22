@@ -301,6 +301,8 @@ void sys_scriptPrintStr ( string *msgText, string *msgParam )
 //-----------------------------------------------------------------------------
 {
 	con_print ( true, true, "[ %s ] [ %s ]", msgText->c_str(), msgParam->c_str() );
+	
+	printf ("[ %s ] [ %s ]\n", msgText->c_str(), msgParam->c_str());
 }
 
 

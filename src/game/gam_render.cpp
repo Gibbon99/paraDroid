@@ -193,6 +193,10 @@ void gam_drawHud()
 			case HUD_STATE_TIME_LEFT:
 				sprintf((char *)statusText.c_str(), "Time left - %i", transferPlayCountLeft);
 				break;
+				
+			case HUD_STATE_LOST:
+				statusText = gui_getString("transferLostHUD");
+				break;
 		}
 
 	sys_printStringExt(startStatusX, statusTextY, "%s", statusText.c_str());

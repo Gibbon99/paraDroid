@@ -46,7 +46,11 @@ void gam_drawEndScreen()
 	imagePosX = ( winWidth  / 2 ) - ( dbTexWidth / 2 ) ;
 	imagePosY = ( winHeight - dbTexHeight ) / 2 ;
 
-	messageText = gui_getString ( "TransTerm" );
+	if (true == gameWon)
+		messageText = gui_getString( "endGameTextBox" );
+	else
+		messageText = gui_getString ( "TransTerm" );
+		
 	textPosX = ( winWidth - al_get_text_width ( font[currentFont].ttfFont, messageText.c_str() ) ) / 2;
 	textPosY = imagePosY + ( dbTexHeight / 2 ) + ( al_get_font_line_height ( font[currentFont].ttfFont ) * 3 );
 

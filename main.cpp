@@ -37,7 +37,7 @@ bool				useBackingBitmap = true;
 
 bool				useCollisionDetection = false;
 
-double				next_game_tick;
+double				nextGameTick;
 int					loops;
 float				interpolation;
 long				frameCount;
@@ -70,17 +70,17 @@ int main ( int argc, char **argv )
 	thinkTick1 = 0.0f;
 	frameCount = 0;
 
-	next_game_tick = al_get_time();
+	nextGameTick = al_get_time();
 
 	while ( true == gameIsRunning )
 		{
 			loops = 0;
 			singleTimeValue = al_get_time();
 
-			while ( singleTimeValue > next_game_tick && loops < MAX_FRAMESKIP )
+			while ( singleTimeValue > nextGameTick && loops < MAX_FRAMESKIP )
 				{
 					sys_updateFrame();
-					next_game_tick += SKIP_TICKS;
+					nextGameTick += SKIP_TICKS;
 					loops++;
 					sys_CalculateThinkFrameRate ( singleTimeValue );
 				}
@@ -95,7 +95,7 @@ int main ( int argc, char **argv )
 						io_readJoystick();
 				}
 
-			interpolation = float ( singleTimeValue + SKIP_TICKS - next_game_tick ) / float ( SKIP_TICKS );
+			interpolation = float ( singleTimeValue + SKIP_TICKS - nextGameTick ) / float ( SKIP_TICKS );
 
 			sys_displayFrame ( interpolation );
 

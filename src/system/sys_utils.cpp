@@ -34,27 +34,27 @@ typedef struct
 //-----------------------------------------------------------------------------
 //
 // Calculate the display position of the text within the HUD graphic
-void sys_calcHudTextPosition(int hudWidth, int hudHeight)
+void sys_calcHudTextPosition ( int hudWidth, int hudHeight )
 //-----------------------------------------------------------------------------
 {
-	statusTextY = ((hudHeight - font[FONT_LARGE].fontSize) / 2) - 4;
+	statusTextY = ( ( hudHeight - font[FONT_LARGE].fontSize ) / 2 ) - 4;
 	//
 	// Get locations to print text
-	startStatusX = hudWidth * (statusTextX / 100);
-	startScoreX = hudWidth * (scoreTextX / 100);
+	startStatusX = hudWidth * ( statusTextX / 100 );
+	startScoreX = hudWidth * ( scoreTextX / 100 );
 }
 
 //-----------------------------------------------------------------------------
 //
 // Change to new currentMode
-void sys_changeMode(int newMode, bool useFade)
+void sys_changeMode ( int newMode, bool useFade )
 //-----------------------------------------------------------------------------
 {
 	static int previousMode;
 
-	con_print(true, false, "Change to mode [ %i ]", newMode);
+//	con_print ( true, false, "Change to mode [ %i ]", newMode );
 
-	if(true == useFade)
+	if ( true == useFade )
 		{
 			processFadeValue = true;
 			currentFadeAction = FADE_OFF;
@@ -62,7 +62,7 @@ void sys_changeMode(int newMode, bool useFade)
 			modeAfterFadeOff = newMode;
 		}
 
-	if((-1 == newMode) && (true == useFade))
+	if ( ( -1 == newMode ) && ( true == useFade ) )
 		{
 			modeAfterFadeOff = previousMode;
 			return;
@@ -72,7 +72,7 @@ void sys_changeMode(int newMode, bool useFade)
 
 	//
 	// this is changed by the processFade function
-	if(false == useFade)
+	if ( false == useFade )
 		currentMode = newMode;
 
 	io_resetKeyboardStates();
@@ -83,29 +83,29 @@ void sys_changeMode(int newMode, bool useFade)
 //----------------------------------------------------------------------
 //
 // Is an object visible on the screen
-bool sys_visibleOnScreen(cpVect worldCoord, int shapeSize)
+bool sys_visibleOnScreen ( cpVect worldCoord, int shapeSize )
 //----------------------------------------------------------------------
 {
 	_myBoundingBox	screenArea;
 
-	if ((worldCoord.x < 0) || (worldCoord.y < 0))
+	if ( ( worldCoord.x < 0 ) || ( worldCoord.y < 0 ) )
 		return false;
-		
-	screenArea.x = viewableScreenCoord.x - (shapeSize * 2);
-	screenArea.y = viewableScreenCoord.y - (shapeSize * 2);
+
+	screenArea.x = viewableScreenCoord.x - ( shapeSize * 2 );
+	screenArea.y = viewableScreenCoord.y - ( shapeSize * 2 );
 	screenArea.width = winWidth;
 	screenArea.height = winHeight;
 
-	if(worldCoord.x < screenArea.x)
+	if ( worldCoord.x < screenArea.x )
 		return false;
 
-	if(worldCoord.y < screenArea.y)
+	if ( worldCoord.y < screenArea.y )
 		return false;
 
-	if(worldCoord.x > screenArea.x + (screenArea.width + (shapeSize * 2)))
+	if ( worldCoord.x > screenArea.x + ( screenArea.width + ( shapeSize * 2 ) ) )
 		return false;
 
-	if(worldCoord.y > screenArea.y + (screenArea.height + (shapeSize * 2)))
+	if ( worldCoord.y > screenArea.y + ( screenArea.height + ( shapeSize * 2 ) ) )
 		return false;
 
 	return true;
@@ -114,12 +114,12 @@ bool sys_visibleOnScreen(cpVect worldCoord, int shapeSize)
 //-----------------------------------------------------------------------------
 //
 // Convert worldPosition coords to screen coords
-cpVect sys_worldToScreen(cpVect worldPos, int shapeSize)
+cpVect sys_worldToScreen ( cpVect worldPos, int shapeSize )
 //-----------------------------------------------------------------------------
 {
 	cpVect  screenCoords;
 
-	if(true == sys_visibleOnScreen(worldPos, shapeSize))
+	if ( true == sys_visibleOnScreen ( worldPos, shapeSize ) )
 		{
 			screenCoords.x = worldPos.x - viewableScreenCoord.x;
 			screenCoords.y = worldPos.y - viewableScreenCoord.y;
@@ -138,9 +138,9 @@ cpVect sys_worldToScreen(cpVect worldPos, int shapeSize)
 //-----------------------------------------------------------------------------
 // Safely concatenate two strings.
 size_t                  /* O - Length of string */
-strlcat(char       *dst,        /* O - Destination string */
-        const char *src,      /* I - Source string */
-        size_t     size)      /* I - Size of destination string buffer */
+strlcat ( char       *dst,      /* O - Destination string */
+          const char *src,      /* I - Source string */
+          size_t     size )     /* I - Size of destination string buffer */
 //-----------------------------------------------------------------------------
 {
 	size_t    srclen;         /* Length of source string */
@@ -148,26 +148,26 @@ strlcat(char       *dst,        /* O - Destination string */
 //
 // Figure out how much room is left...
 //
-	dstlen = strlen(dst);
+	dstlen = strlen ( dst );
 	size   -= dstlen + 1;
 
-	if (!size)
-		return (dstlen);        // No room, return immediately
+	if ( !size )
+		return ( dstlen );      // No room, return immediately
 //
 // Figure out how much room is needed...
 //
-	srclen = strlen(src);
+	srclen = strlen ( src );
 
 //
 // Copy the appropriate amount...
 //
-	if (srclen > size)
+	if ( srclen > size )
 		srclen = size;
 
-	memcpy(dst + dstlen, src, srclen);
+	memcpy ( dst + dstlen, src, srclen );
 	dst[dstlen + srclen] = '\0';
 
-	return (dstlen + srclen);
+	return ( dstlen + srclen );
 }
 
 //-----------------------------------------------------------------------------
@@ -176,9 +176,9 @@ strlcat(char       *dst,        /* O - Destination string */
 // From http://stackoverflow.com/questions/18547251/when-i-use-strlcpy-function-in-c-the-compilor-give-me-an-error
 //
 size_t                  /* O - Length of string */
-strlcpy(char       *dst,        /* O - Destination string */
-        const char *src,      /* I - Source string */
-        size_t      size)     /* I - Size of destination string buffer */
+strlcpy ( char       *dst,      /* O - Destination string */
+          const char *src,      /* I - Source string */
+          size_t      size )    /* I - Size of destination string buffer */
 //-----------------------------------------------------------------------------
 {
 	size_t    srclen;         /* Length of source string */
@@ -186,16 +186,16 @@ strlcpy(char       *dst,        /* O - Destination string */
 // Figure out how much room is needed...
 //
 	size --;
-	srclen = strlen(src);
+	srclen = strlen ( src );
 //
 // Copy the appropriate amount...
 //
 
-	if (srclen > size)
+	if ( srclen > size )
 		srclen = size;
 
-	memcpy(dst, src, srclen);
+	memcpy ( dst, src, srclen );
 	dst[srclen] = '\0';
 
-	return (srclen);
+	return ( srclen );
 }

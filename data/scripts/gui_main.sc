@@ -15,23 +15,20 @@ void as_guiHandleMouseOver ( string &in )
 //------------------------------------------------------------
 //
 // Change to a new GUI screen
-
 void as_changeGUIScreen ( int newScreen )
 //------------------------------------------------------------
 {
 	currentGUIScreen = newScreen;
-	//as_gui_changeToGUIScreen - this is the host side call
 }
 
 //------------------------------------------------------------
 //
 // This function is called when a object is clicked
-
 void as_guiHandleButtonPress ( string &in objectID )
 //------------------------------------------------------------
 {
 	int randomStartLevel;
-	
+
 	//
 	// Main option screen
 	//
@@ -110,7 +107,6 @@ void as_guiHandleButtonPress ( string &in objectID )
 					currentObjectSelected = 0;
 					return;
 				}
-
 
 			if ( objectID == "buttonOptionGame" )
 				{
@@ -280,8 +276,8 @@ void as_guiHandleButtonPress ( string &in objectID )
 		{
 			if ( objectID == "buttonControlApply" )
 				{
-					if (numJoysticks > 0)
-						inputMethod = gui_StringToInt (as_guiGetSliderValue ("controlType"));
+					if ( numJoysticks > 0 )
+						inputMethod = gui_StringToInt ( as_guiGetSliderValue ( "controlType" ) );
 					else
 						inputMethod = INPUT_KEYBOARD;
 
@@ -318,19 +314,30 @@ void as_guiHandleButtonPress ( string &in objectID )
 
 			if ( objectID == "buttonExitCancel" )
 				{
-					if (false == confirmExit)	// Called from menu
-					{
-						as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrMainMenu" ) );
-						as_guiSetObjectFocus ( "buttonStartGame" );
-					}
+					if ( false == confirmExit )	// Called from menu
+						{
+							as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrMainMenu" ) );
+							as_guiSetObjectFocus ( "buttonStartGame" );
+						}
 					else	// Called while playing
-					{
-						currentMode = MODE_SHOWLEVEL;
-					}
+						{
+							currentMode = MODE_SHOWLEVEL;
+						}
 					return;
 				}
 		}
-
+	//
+	// Game is over - player won
+	//
+	else if ( currentGUIScreen == as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrEndGame" ) )
+		{
+			if ( objectID == "buttonEndGameYes" )
+				{
+					as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrMainMenu" ) );
+					as_guiSetObjectFocus ( "buttonStartGame" );
+					return;
+				}
+		}
 	//
 	// Inform user a restart is required
 	//
@@ -739,16 +746,16 @@ void as_guiGUISetupControls()
 	as_guiSetObjectFunctions ( GUI_OBJECT_KEYCODE, "keyCodeControl", "scr_guiHandleButtonPress", "scr_guiHandleMouseOver" );
 	as_guiAddObjectToScreen ( GUI_OBJECT_KEYCODE, "keyCodeControl", "scrGameControls" );
 
-	if (numJoysticks > 0)
-	{
-		as_guiCreateObject ( GUI_OBJECT_SLIDER, "controlType" );
-		as_guiSetObjectPosition ( GUI_OBJECT_SLIDER, "controlType", GUI_COORD_TYPE_PERCENT, 30, 70, 40, 2 );
-		as_guiSetObjectLabel ( GUI_OBJECT_SLIDER, "controlType", GUI_LABEL_CENTER, gui_getString ( "controlType" ) );
-		as_guiAddSliderElement ( "controlType", GUI_SLIDER_STRING, gui_getString ( "inputKeyboardValue" ), gui_getString ( "inputKeyboardLabel" ) );
-		as_guiAddSliderElement ( "controlType", GUI_SLIDER_STRING, gui_getString ( "inputJoystickValue" ), gui_getString ( "inputJoystickLabel" ) );
-		as_guiSetSliderValue ( "controlType", gui_IntToString ( inputMethod ) );
-		as_guiAddObjectToScreen ( GUI_OBJECT_SLIDER, "controlType", "scrGameControls" );
-	}
+	if ( numJoysticks > 0 )
+		{
+			as_guiCreateObject ( GUI_OBJECT_SLIDER, "controlType" );
+			as_guiSetObjectPosition ( GUI_OBJECT_SLIDER, "controlType", GUI_COORD_TYPE_PERCENT, 30, 70, 40, 2 );
+			as_guiSetObjectLabel ( GUI_OBJECT_SLIDER, "controlType", GUI_LABEL_CENTER, gui_getString ( "controlType" ) );
+			as_guiAddSliderElement ( "controlType", GUI_SLIDER_STRING, gui_getString ( "inputKeyboardValue" ), gui_getString ( "inputKeyboardLabel" ) );
+			as_guiAddSliderElement ( "controlType", GUI_SLIDER_STRING, gui_getString ( "inputJoystickValue" ), gui_getString ( "inputJoystickLabel" ) );
+			as_guiSetSliderValue ( "controlType", gui_IntToString ( inputMethod ) );
+			as_guiAddObjectToScreen ( GUI_OBJECT_SLIDER, "controlType", "scrGameControls" );
+		}
 
 	as_guiCreateObject ( GUI_OBJECT_BUTTON, "buttonControlApply" );
 	as_guiSetObjectPosition ( GUI_OBJECT_BUTTON, "buttonControlApply", GUI_COORD_TYPE_PERCENT, 10, 80, 30, 7 );
@@ -835,9 +842,7 @@ void as_guiGUISetupVideo ()
 //------------------------------------------------------------
 //
 // Setup Audio screen
-
-void
-as_guiGUISetupAudio ()
+void as_guiGUISetupAudio ()
 //------------------------------------------------------------
 {
 	as_guiCreateNewScreen ( "scrAudioOptions" );
@@ -898,7 +903,6 @@ as_guiGUISetupAudio ()
 //------------------------------------------------------------
 //
 // Setup Graphics options screen
-
 void as_guiGUISetupGraphics ()
 //------------------------------------------------------------
 {
@@ -955,7 +959,6 @@ void as_guiGUISetupGraphics ()
 //------------------------------------------------------------
 //
 // Setup tutorial screen
-
 void as_guiSetupTutorial ()
 //------------------------------------------------------------
 {
@@ -1167,8 +1170,27 @@ void as_guiSetupTutorial ()
 
 //------------------------------------------------------------
 //
-// Setup Are you sure you want to exit screen
+// Show the endGame screen
+void as_guiSetupEndGameScreen()
+//------------------------------------------------------------
+{
+	as_guiCreateNewScreen ( "scrEndGame" );
 
+	as_guiCreateObject ( GUI_OBJECT_TEXT_BOX, "endGameTextBox" );
+	as_guiSetObjectPosition ( GUI_OBJECT_TEXT_BOX, "endGameTextBox", GUI_COORD_TYPE_PERCENT, 5, 25, 90, 90 );
+	as_guiSetObjectColor ( GUI_OBJECT_TEXT_BOX, "endGameTextBox", GUI_OBJECT_TEXT_LABEL_COLOR, 1.0f, 1.0f, 1.0f, 0.5f );
+	as_guiSetObjectLabel ( GUI_OBJECT_TEXT_BOX, "endGameTextBox", GUI_LABEL_LEFT, gui_getString ( "endGameTextBox" ) );
+	as_guiAddObjectToScreen ( GUI_OBJECT_TEXT_BOX, "endGameTextBox", "scrEndGame" );
+
+	as_guiCreateObject ( GUI_OBJECT_BUTTON, "buttonEndGameYes" );
+	as_guiSetObjectPosition ( GUI_OBJECT_BUTTON, "buttonEndGameYes", GUI_COORD_TYPE_PERCENT, 15, 70, 70, 7 );
+	as_guiSetObjectLabel ( GUI_OBJECT_BUTTON, "buttonEndGameYes", GUI_LABEL_CENTER, gui_getString ( "buttonEndGameYes" ) );
+	as_guiSetObjectFunctions ( GUI_OBJECT_BUTTON, "buttonEndGameYes", "scr_guiHandleButtonPress", "scr_guiHandleMouseOver" );
+	as_guiAddObjectToScreen ( GUI_OBJECT_BUTTON, "buttonEndGameYes", "scrEndGame" );
+}
+//------------------------------------------------------------
+//
+// Setup Are you sure you want to exit screen
 void as_guiSetupExitQuestion ()
 //------------------------------------------------------------
 {
@@ -1365,7 +1387,7 @@ void as_guiSetupEditScoreScreen()
 
 	for ( int i = 0; i != 26; i++ )
 		{
-			as_guiAddSliderElement ( "scoreSliderOne", GUI_SLIDER_STRING, gui_IntToChar(i), gui_IntToChar(i) );
+			as_guiAddSliderElement ( "scoreSliderOne", GUI_SLIDER_STRING, gui_IntToChar ( i ), gui_IntToChar ( i ) );
 		}
 	as_guiSetSliderValue ( "scoreSliderOne", "A" );
 	as_guiAddObjectToScreen ( GUI_OBJECT_SLIDER, "scoreSliderOne", "scrEditScoreTable" );
@@ -1378,7 +1400,7 @@ void as_guiSetupEditScoreScreen()
 
 	for ( int i = 0; i != 26; i++ )
 		{
-			as_guiAddSliderElement ( "scoreSliderTwo", GUI_SLIDER_STRING, gui_IntToChar(i), gui_IntToChar(i) );
+			as_guiAddSliderElement ( "scoreSliderTwo", GUI_SLIDER_STRING, gui_IntToChar ( i ), gui_IntToChar ( i ) );
 		}
 	as_guiSetSliderValue ( "scoreSliderTwo", "B" );
 	as_guiAddObjectToScreen ( GUI_OBJECT_SLIDER, "scoreSliderTwo", "scrEditScoreTable" );
@@ -1391,7 +1413,7 @@ void as_guiSetupEditScoreScreen()
 
 	for ( int i = 0; i != 26; i++ )
 		{
-			as_guiAddSliderElement ( "scoreSliderThree", GUI_SLIDER_STRING, gui_IntToChar(i), gui_IntToChar(i) );
+			as_guiAddSliderElement ( "scoreSliderThree", GUI_SLIDER_STRING, gui_IntToChar ( i ), gui_IntToChar ( i ) );
 		}
 	as_guiSetSliderValue ( "scoreSliderThree", "C" );
 	as_guiAddObjectToScreen ( GUI_OBJECT_SLIDER, "scoreSliderThree", "scrEditScoreTable" );
@@ -1471,6 +1493,7 @@ void as_guiSetupGUI ()
 	as_guiSetupRestartQuestion ();
 	as_guiSetupDisplayScoreTable ();
 	as_guiSetupEditScoreScreen ();
+	as_guiSetupEndGameScreen();
 
 	//
 	// --------------- SET COLORS FOR CHECKBOXES -------------------------

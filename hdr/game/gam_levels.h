@@ -98,6 +98,7 @@ struct _levelStruct {
 extern _levelStruct shipLevel[];
 
 extern int currentLevel;
+extern bool	gameWon;
 
 //-----------------------------------------------------------------------------
 //
@@ -162,3 +163,6 @@ void gam_powerDownLevel(int whichLevel, bool playSound);
 
 // Restart the game
 void gam_restart();
+
+// Check to see if the ship is empty of all droids
+void gam_isShipEmpty();

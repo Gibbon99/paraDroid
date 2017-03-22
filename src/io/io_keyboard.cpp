@@ -411,7 +411,6 @@ inline bool io_getKeyStateDown ( int keyName )
 				{
 					if ( inputAction[keyName].repeatDelayCount < 0.0f )
 						{
-							printf ( "Key [ %s ] is currently down - Repeat is on\n", inputAction[keyName].stringValue.c_str() );
 							inputAction[keyName].repeatDelayCount = repeatKeysDelay;
 							return true;
 						}
@@ -750,7 +749,7 @@ void io_readKeyboard()
 				{
 					if (currentMode == MODE_SHOWLEVEL)
 						confirmExit = true;
-						
+
 					inputAction[gameEscape].currentlyDown = false;
 					sys_changeMode ( MODE_GUI, false );
 					gui_changeToGUIScreen ( gui_findIndex ( GUI_OBJECT_SCREEN, "scrExitQuestion" ) );

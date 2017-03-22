@@ -137,6 +137,9 @@ void io_closeLogFile()
 void io_logToFile ( const char* format, ... )
 //--------------------------------------------------------
 {
+	int logTimeStamp = 0;
+	string logTimeText;
+
 	//
 	// check if filelogging is actually enabled
 	//
@@ -147,9 +150,19 @@ void io_logToFile ( const char* format, ... )
 
 	va_start ( args, format );
 
+	if ( true == al_is_system_installed ( ) )
+		{
+			logTimeStamp = al_get_time();
+		}
+	else
+		logTimeStamp = 0;
+		
+	sprintf ( logTimeText.c_str(), "[ %5d ] : ", logTimeStamp );
+	fprintf ( logFile, "%s", logTimeText.c_str() );
+
 	vfprintf ( logFile, format, args );
 
-	fputc ('\r\n', logFile);
+	fputc ( '\r\n', logFile );
 
 	va_end ( args );
 

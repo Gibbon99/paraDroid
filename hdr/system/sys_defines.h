@@ -107,6 +107,7 @@ Copyright 2017 David Berry
 #define HUD_STATE_CHARGING		13
 #define HUD_STATE_HEALED		14
 #define HUD_STATE_DEADLOCK		15
+#define HUD_STATE_LOST			16
 
 #define BULLET_TYPE_NORMAL		0
 #define BULLET_TYPE_SINGLE		1

@@ -69,7 +69,7 @@ int ai_getNextWaypoint ( int whichDroid )
 		case AI_MODE_ASTAR:
 			shipLevel[currentLevel].droid[whichDroid].currentAStarIndex--; // Move index to next waypoint
 
-			if ( shipLevel[currentLevel].droid[whichDroid].currentAStarIndex < 0)
+			if ( shipLevel[currentLevel].droid[whichDroid].currentAStarIndex < 0 )
 				{
 					con_print ( true, true, "Droid has reached destination" );
 					shipLevel[currentLevel].droid[whichDroid].ai_moveMode = AI_PATHFIND_END;
@@ -106,14 +106,10 @@ int ai_canMove ( int whichDroid )
 	//
 	// Droid can always move as it's ignoring any collisions with other droids
 	//
-
 	if ( true == shipLevel[currentLevel].droid[whichDroid].ignoreCollisions )
 		{
 			return AI_RESULT_SUCCESS;
 		}
-
-	//	if(shipLevel[currentLevel].droid[whichDroid].ai_currentState != AI_STATE_PATROL)
-	//		return AI_RESULT_FAILED;
 
 	if ( true == shipLevel[currentLevel].droid[whichDroid].hasCollided )
 		{
@@ -150,15 +146,28 @@ int ai_moveDroidToWaypoint ( int whichDroid )
 	// Droids sitting on healing tile don't move as their velocity is too low
 	//
 
-	if ( wayPointDistance < wayPointDestinationSize + 20)
+	if ( wayPointDistance < wayPointDestinationSize + 20 )
 		{
 			shipLevel[currentLevel].droid[whichDroid].currentSpeed = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxSpeed * 0.5f;
 		}
 	else
-
 		{
-			shipLevel[currentLevel].droid[whichDroid].currentSpeed += dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].accelerate * thinkInterval;
-
+			// Acclerate faster on higher alert levels
+			switch (currentAlertLevel)
+			{
+				case ALERT_GREEN_TILE:
+					shipLevel[currentLevel].droid[whichDroid].currentSpeed += dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].accelerate * thinkInterval;
+					break;
+					
+				case ALERT_YELLOW_TILE:
+					shipLevel[currentLevel].droid[whichDroid].currentSpeed += (dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].accelerate * 1.2f)  * thinkInterval;
+					break;
+					
+				case ALERT_RED_TILE:
+					shipLevel[currentLevel].droid[whichDroid].currentSpeed += (dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].accelerate * 1.5f)  * thinkInterval;
+					break;
+			}
+			
 			if ( shipLevel[currentLevel].droid[whichDroid].currentSpeed > dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxSpeed )
 				shipLevel[currentLevel].droid[whichDroid].currentSpeed = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxSpeed;
 		}
@@ -168,25 +177,21 @@ int ai_moveDroidToWaypoint ( int whichDroid )
 
 	shipLevel[currentLevel].droid[whichDroid].velocity = cpvnormalize ( shipLevel[currentLevel].droid[whichDroid].destDirection );
 	shipLevel[currentLevel].droid[whichDroid].velocity = cpvmult ( shipLevel[currentLevel].droid[whichDroid].velocity, shipLevel[currentLevel].droid[whichDroid].currentSpeed );
-	//	shipLevel[currentLevel].droid[whichDroid].velocity =
-	// cpvclamp(shipLevel[currentLevel].droid[whichDroid].velocity,
-	// dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxSpeed);
 	//
 	// Move the droid
 	//
-	if (cpFalse == cpBodyIsSleeping(shipLevel[currentLevel].droid[whichDroid].body))
-	{
-		if (cpTrue == cpSpaceContainsBody(space, shipLevel[currentLevel].droid[whichDroid].body))
+	if ( cpFalse == cpBodyIsSleeping ( shipLevel[currentLevel].droid[whichDroid].body ) )
 		{
-			cpBodySetForce ( shipLevel[currentLevel].droid[whichDroid].body, shipLevel[currentLevel].droid[whichDroid].velocity );
+			if ( cpTrue == cpSpaceContainsBody ( space, shipLevel[currentLevel].droid[whichDroid].body ) )
+				{
+					cpBodySetForce ( shipLevel[currentLevel].droid[whichDroid].body, shipLevel[currentLevel].droid[whichDroid].velocity );
+				}
 		}
-	}
 	//
 	// See if the droid has reached it's destination
 	//
 	//
 	// How far between current and destination position
-	//
 	//
 	// If it's less then we have reached the waypoint destination
 	if ( wayPointDistance < wayPointDestinationSize )

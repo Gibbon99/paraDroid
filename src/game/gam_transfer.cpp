@@ -72,7 +72,6 @@ int 			numActiveDispute = 0;
 //------------------------------------------------------------
 //
 // Return a random float value - used for color
-
 float trn_getRandColor()
 //------------------------------------------------------------
 {
@@ -82,7 +81,6 @@ float trn_getRandColor()
 //------------------------------------------------------------
 //
 // Process active circuits
-
 void trn_processCircuits ( float interpolate )
 //------------------------------------------------------------
 {
@@ -113,55 +111,55 @@ void trn_processCircuits ( float interpolate )
 
 					switch ( transferCells[i].circuitTypeLeft )
 						{
-							case CIRCUIT_NORMAL:
-							case CIRCUIT_NORMAL_1:
-							case CIRCUIT_NORMAL_2:
-								host_transSetCellColor ( i, POWER_YELLOW, COL_YELLOW );
-								if ( transferCells[i].isReversedLeft )
-									{
-										host_transSetCellColor ( i, POWER_PURPLE, COL_PURPLE );
-									}
+						case CIRCUIT_NORMAL:
+						case CIRCUIT_NORMAL_1:
+						case CIRCUIT_NORMAL_2:
+							host_transSetCellColor ( i, POWER_YELLOW, COL_YELLOW );
+							if ( transferCells[i].isReversedLeft )
+								{
+									host_transSetCellColor ( i, POWER_PURPLE, COL_PURPLE );
+								}
 
-								break;
+							break;
 
-							case CIRCUIT_THREEQUARTERS:
-							case CIRCUIT_HALF:
-							case CIRCUIT_QUARTER:
-								break;
+						case CIRCUIT_THREEQUARTERS:
+						case CIRCUIT_HALF:
+						case CIRCUIT_QUARTER:
+							break;
 
-							case CIRCUIT_SPLIT_HALF:
+						case CIRCUIT_SPLIT_HALF:
 
-								//printf("CIRCUIT_SPLIT_HALF [ %i ]\n", transferCells[i].circuitTypeLeft);
-								break;
+							//printf("CIRCUIT_SPLIT_HALF [ %i ]\n", transferCells[i].circuitTypeLeft);
+							break;
 
-							case CIRCUIT_SPLIT_TWO_INTO_ONE:
+						case CIRCUIT_SPLIT_TWO_INTO_ONE:
 
-								if ( transferCells[i + 1].circuitTypeLeft == CIRCUIT_TWO_INTO_ONE ) // One below is the short circuit
-									{
-										if ( ( transferCells[i].powerOnLeft == true ) && ( transferCells[i + 2].powerOnLeft == true ) ) // Both legs active
-											{
-												host_transSetCellColor ( i + 1, POWER_YELLOW, COL_YELLOW );
-											}
-									}
-								/*
-															else if (transferCells[i - 1].circuitTypeLeft == CIRCUIT_TWO_INTO_ONE)   // One above is the short circuit
-																{
-																	if ((transferCells[i].powerOnLeft == true) && (transferCells[i - 2].powerOnLeft == true)) // Both legs active
-																		{
-																			host_transSetCellColor(i + 1, POWER_YELLOW, COL_YELLOW);
-																			numActiveLeft++;
-																		}
-																}
-								 */
-								break;
+							if ( transferCells[i + 1].circuitTypeLeft == CIRCUIT_TWO_INTO_ONE ) // One below is the short circuit
+								{
+									if ( ( transferCells[i].powerOnLeft == true ) && ( transferCells[i + 2].powerOnLeft == true ) ) // Both legs active
+										{
+											host_transSetCellColor ( i + 1, POWER_YELLOW, COL_YELLOW );
+										}
+								}
+							/*
+														else if (transferCells[i - 1].circuitTypeLeft == CIRCUIT_TWO_INTO_ONE)   // One above is the short circuit
+															{
+																if ((transferCells[i].powerOnLeft == true) && (transferCells[i - 2].powerOnLeft == true)) // Both legs active
+																	{
+																		host_transSetCellColor(i + 1, POWER_YELLOW, COL_YELLOW);
+																		numActiveLeft++;
+																	}
+															}
+							 */
+							break;
 
-							case CIRCUIT_TWO_INTO_ONE:
-								break;
+						case CIRCUIT_TWO_INTO_ONE:
+							break;
 
-							case CIRCUIT_ONE_INTO_TWO:
-								host_transSetCellColor ( i - 1, POWER_YELLOW, COL_YELLOW );
-								host_transSetCellColor ( i + 1, POWER_YELLOW, COL_YELLOW );
-								break;
+						case CIRCUIT_ONE_INTO_TWO:
+							host_transSetCellColor ( i - 1, POWER_YELLOW, COL_YELLOW );
+							host_transSetCellColor ( i + 1, POWER_YELLOW, COL_YELLOW );
+							break;
 						}
 
 				}
@@ -177,56 +175,56 @@ void trn_processCircuits ( float interpolate )
 
 					switch ( transferCells[i].circuitTypeRight )
 						{
-							case CIRCUIT_NORMAL:
-							case CIRCUIT_NORMAL_1:
-							case CIRCUIT_NORMAL_2:
-								host_transSetCellColor ( i, POWER_PURPLE, COL_PURPLE );
-								if ( transferCells[i].isReversedRight )
-									{
-										host_transSetCellColor ( i, POWER_YELLOW, COL_YELLOW );
-									}
+						case CIRCUIT_NORMAL:
+						case CIRCUIT_NORMAL_1:
+						case CIRCUIT_NORMAL_2:
+							host_transSetCellColor ( i, POWER_PURPLE, COL_PURPLE );
+							if ( transferCells[i].isReversedRight )
+								{
+									host_transSetCellColor ( i, POWER_YELLOW, COL_YELLOW );
+								}
 
 
-								break;
+							break;
 
-							case CIRCUIT_THREEQUARTERS:
-							case CIRCUIT_HALF:
-							case CIRCUIT_QUARTER:
-								break;
+						case CIRCUIT_THREEQUARTERS:
+						case CIRCUIT_HALF:
+						case CIRCUIT_QUARTER:
+							break;
 
-							case CIRCUIT_SPLIT_HALF:
+						case CIRCUIT_SPLIT_HALF:
 
-								//                            printf("CIRCUIT_SPLIT_HALF [ %i ]\n", transferCells[i].circuitTypeLeft);
-								break;
+							//                            printf("CIRCUIT_SPLIT_HALF [ %i ]\n", transferCells[i].circuitTypeLeft);
+							break;
 
-							case CIRCUIT_SPLIT_TWO_INTO_ONE:
+						case CIRCUIT_SPLIT_TWO_INTO_ONE:
 
-								if ( transferCells[i + 1].circuitTypeRight == CIRCUIT_TWO_INTO_ONE ) // One below is the short circuit
-									{
-										if ( ( transferCells[i].powerOnRight == true ) && ( transferCells[i + 2].powerOnRight == true ) ) // Both legs active
-											{
-												host_transSetCellColor ( i + 1, POWER_PURPLE, COL_PURPLE );
-											}
-									}
-								/*
-															if (transferCells[i - 1].circuitTypeRight == CIRCUIT_TWO_INTO_ONE)   // One above is the short circuit
-																{
-																	if ((transferCells[i].powerOnRight == true) && (transferCells[i - 2].powerOnRight == true)) // Both legs active
-																		{
-																			host_transSetCellColor(i + 1, POWER_PURPLE, COL_PURPLE);
-																			numActiveRight++;
-																		}
-																}
-								 */
-								break;
+							if ( transferCells[i + 1].circuitTypeRight == CIRCUIT_TWO_INTO_ONE ) // One below is the short circuit
+								{
+									if ( ( transferCells[i].powerOnRight == true ) && ( transferCells[i + 2].powerOnRight == true ) ) // Both legs active
+										{
+											host_transSetCellColor ( i + 1, POWER_PURPLE, COL_PURPLE );
+										}
+								}
+							/*
+														if (transferCells[i - 1].circuitTypeRight == CIRCUIT_TWO_INTO_ONE)   // One above is the short circuit
+															{
+																if ((transferCells[i].powerOnRight == true) && (transferCells[i - 2].powerOnRight == true)) // Both legs active
+																	{
+																		host_transSetCellColor(i + 1, POWER_PURPLE, COL_PURPLE);
+																		numActiveRight++;
+																	}
+															}
+							 */
+							break;
 
-							case CIRCUIT_TWO_INTO_ONE:
-								break;
+						case CIRCUIT_TWO_INTO_ONE:
+							break;
 
-							case CIRCUIT_ONE_INTO_TWO:
-								host_transSetCellColor ( i - 1, POWER_PURPLE, COL_PURPLE );
-								host_transSetCellColor ( i + 1, POWER_PURPLE, COL_PURPLE );
-								break;
+						case CIRCUIT_ONE_INTO_TWO:
+							host_transSetCellColor ( i - 1, POWER_PURPLE, COL_PURPLE );
+							host_transSetCellColor ( i + 1, POWER_PURPLE, COL_PURPLE );
+							break;
 						}
 
 				}
@@ -240,41 +238,41 @@ void trn_processCircuits ( float interpolate )
 
 					switch ( transferCells[i].circuitTypeLeft )
 						{
-							case CIRCUIT_THREEQUARTERS:
-							case CIRCUIT_HALF:
-							case CIRCUIT_QUARTER:
-								break;
+						case CIRCUIT_THREEQUARTERS:
+						case CIRCUIT_HALF:
+						case CIRCUIT_QUARTER:
+							break;
 						}
 
 					switch ( transferCells[i].circuitTypeRight )
 						{
-							case CIRCUIT_THREEQUARTERS:
-							case CIRCUIT_HALF:
-							case CIRCUIT_QUARTER:
-								break;
+						case CIRCUIT_THREEQUARTERS:
+						case CIRCUIT_HALF:
+						case CIRCUIT_QUARTER:
+							break;
 						}
 
 					switch ( transferCells[i].circuitTypeRight )
 						{
-							case CIRCUIT_NORMAL:
-							case CIRCUIT_NORMAL_1:
-							case CIRCUIT_NORMAL_2:
-								switch ( transferCells[i].circuitTypeLeft )
-									{
-										case CIRCUIT_NORMAL:
-										case CIRCUIT_NORMAL_1:
-										case CIRCUIT_NORMAL_2:
+						case CIRCUIT_NORMAL:
+						case CIRCUIT_NORMAL_1:
+						case CIRCUIT_NORMAL_2:
+							switch ( transferCells[i].circuitTypeLeft )
+								{
+								case CIRCUIT_NORMAL:
+								case CIRCUIT_NORMAL_1:
+								case CIRCUIT_NORMAL_2:
+									host_transSetCellColor ( i, POWER_DISPUTE, trn_getRandColor(), trn_getRandColor(), trn_getRandColor(), trn_getRandColor() );
+									break;
+
+								case CIRCUIT_SPLIT_TWO_INTO_ONE:
+									if ( transferCells[i + 1].circuitTypeLeft == CIRCUIT_TWO_INTO_ONE ) // One below is the short circuit
+										if ( ( transferCells[i].powerOnLeft == true ) && ( transferCells[i + 2].powerOnLeft == true ) ) // Both legs active
 											host_transSetCellColor ( i, POWER_DISPUTE, trn_getRandColor(), trn_getRandColor(), trn_getRandColor(), trn_getRandColor() );
-											break;
+									break;
 
-										case CIRCUIT_SPLIT_TWO_INTO_ONE:
-											if ( transferCells[i + 1].circuitTypeLeft == CIRCUIT_TWO_INTO_ONE ) // One below is the short circuit
-												if ( ( transferCells[i].powerOnLeft == true ) && ( transferCells[i + 2].powerOnLeft == true ) ) // Both legs active
-													host_transSetCellColor ( i, POWER_DISPUTE, trn_getRandColor(), trn_getRandColor(), trn_getRandColor(), trn_getRandColor() );
-											break;
-
-									}
-								break;
+								}
+							break;
 						}
 				}
 
@@ -303,8 +301,6 @@ void trn_copyDroidAttributes()
 {
 	gam_destroyDroid ( currentLevel, droidTransferedIntoIndex );
 	gam_setupPlayerValues ( droidTypeToTransferInto );
-	//
-	// TODO : Need to copy physics properties across as well or recreate with new values
 }
 
 //------------------------------------------------------------
@@ -323,7 +319,6 @@ void trn_setupSquares()
 //------------------------------------------------------------
 //
 // Setup number of tokens
-
 void trn_setupTokens()
 //------------------------------------------------------------
 {
@@ -340,7 +335,6 @@ void trn_setupTokens()
 // Run script
 // Stop any sound effects
 // start transfer sound
-
 void trn_startTransferMode ( int transferToDroid )
 // ----------------------------------------------------------------------------
 {
@@ -352,7 +346,6 @@ void trn_startTransferMode ( int transferToDroid )
 	//
 	// No longer in transfer mode when finished
 	inTransferMode = false;
-	//    playerDroid.inCollisionWithDroid = false;
 
 	droidTypeToTransferInto = shipLevel[currentLevel].droid[transferToDroid].droidType;
 	droidTransferedIntoIndex = transferToDroid;
@@ -363,208 +356,202 @@ void trn_startTransferMode ( int transferToDroid )
 
 // ----------------------------------------------------------------------------
 //
-//Process timings for transfer screen
+// Process timings for transfer screen
 void trn_processTransferScreen ( float interpolate )
 // ----------------------------------------------------------------------------
 {
 	switch ( currentMode )
 		{
-			case MODE_TRANSFER_INTRO:
-				gam_setHUDState ( HUD_STATE_CAPTURED );
-				delayTransferIntro -= TRANSFER_SPEED * interpolate;
-				if ( delayTransferIntro < 0.0 )
-					{
-						delayTransferIntro = TRANSFER_DELAY;
-						sys_changeMode ( MODE_TRANSFER_INTRO_1, true );
-						sys_playSound ( SND_TRANSFER_STAGE_1, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-						gam_loadDroidModel ( playerDroidTypeImage - 2 );
-					}
-				break;
+		case MODE_TRANSFER_INTRO:
+			gam_setHUDState ( HUD_STATE_CAPTURED );
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			if ( delayTransferIntro < 0.0 )
+				{
+					delayTransferIntro = TRANSFER_DELAY;
+					sys_changeMode ( MODE_TRANSFER_INTRO_1, true );
+					sys_playSound ( SND_TRANSFER_STAGE_1, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+					gam_loadDroidModel ( playerDroidTypeImage - 2 );
+				}
+			break;
 
-			case MODE_TRANSFER_INTRO_1:
-				gam_setHUDState ( HUD_STATE_CAPTURED );
-				delayTransferIntro -= TRANSFER_SPEED * interpolate;
-				//
-				// Play sound, move to next stage when finished
-				if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_STAGE_1 ) ) && ( true == playSounds ) )
-					delayTransferIntro = -1;
+		case MODE_TRANSFER_INTRO_1:
+			gam_setHUDState ( HUD_STATE_CAPTURED );
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			//
+			// Play sound, move to next stage when finished
+			if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_STAGE_1 ) ) && ( true == playSounds ) )
+				delayTransferIntro = -1;
 
-				if ( delayTransferIntro < 0.0 )
-					{
-						gam_loadDroidModel ( droidTypeToTransferInto );
-						delayTransferIntro = TRANSFER_DELAY;
-						sys_changeMode ( MODE_TRANSFER_INTRO_2, false );
-						sys_stopSound ( SND_TRANSFER_STAGE_1 );
-						sys_playSound ( SND_TRANSFER_STAGE_2, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-					}
-				break;
+			if ( delayTransferIntro < 0.0 )
+				{
+					gam_loadDroidModel ( droidTypeToTransferInto );
+					delayTransferIntro = TRANSFER_DELAY;
+					sys_changeMode ( MODE_TRANSFER_INTRO_2, false );
+					sys_stopSound ( SND_TRANSFER_STAGE_1 );
+					sys_playSound ( SND_TRANSFER_STAGE_2, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+				}
+			break;
 
-			case MODE_TRANSFER_INTRO_2:
-				gam_setHUDState ( HUD_STATE_CAPTURED );
-				delayTransferIntro -= TRANSFER_SPEED * interpolate;
-				//
-				// Play sound, move to next stage when finished
-				if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_STAGE_2 ) ) && ( true == playSounds ) )
-					delayTransferIntro = -1;
+		case MODE_TRANSFER_INTRO_2:
+			gam_setHUDState ( HUD_STATE_CAPTURED );
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			//
+			// Play sound, move to next stage when finished
+			if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_STAGE_2 ) ) && ( true == playSounds ) )
+				delayTransferIntro = -1;
 
-				if ( delayTransferIntro < 0.0 )
-					{
-						sys_stopSound ( SND_TRANSFER_STAGE_2 );
-						delayTransferIntro = TRANSFER_DELAY;
-						sys_changeMode ( MODE_TRANSFER_START, false );
-					}
-				break;
+			if ( delayTransferIntro < 0.0 )
+				{
+					sys_stopSound ( SND_TRANSFER_STAGE_2 );
+					delayTransferIntro = TRANSFER_DELAY;
+					sys_changeMode ( MODE_TRANSFER_START, false );
+				}
+			break;
 
-			case MODE_TRANSFER_START:
-				gam_setHUDState ( HUD_STATE_CAPTURED );
-				sys_changeMode ( MODE_TRANSFER_SELECT_SIDE, false );
+		case MODE_TRANSFER_START:
+			gam_setHUDState ( HUD_STATE_CAPTURED );
+			sys_changeMode ( MODE_TRANSFER_SELECT_SIDE, false );
 
-				playerOnSide = LEFT_SIDE;
-				enemyTransferThinkCount = 0.0f;
-				enemyTransferThinkDelay = 0.0f;
-				foundACircuit = false;
-				delayTransferIntro = TRANSFER_DELAY;
-				selectSideCounter = TRANSFER_COUNTER;
-				sys_playSound ( SND_TRANSFER_START, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-				break;
+			playerOnSide = LEFT_SIDE;
+			enemyTransferThinkCount = 0.0f;
+			enemyTransferThinkDelay = 0.0f;
+			foundACircuit = false;
+			delayTransferIntro = TRANSFER_DELAY;
+			selectSideCounter = TRANSFER_COUNTER;
+			sys_playSound ( SND_TRANSFER_START, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+			break;
 
-			case MODE_TRANSFER_SELECT_SIDE: // Countdown to choose side
+		case MODE_TRANSFER_SELECT_SIDE: // Countdown to choose side
+			gam_setHUDState ( HUD_STATE_SELECT_TIME );
+			transferPlayCount = transferPlayCountDown;
+			transferPlayCountLeft = transferPlayCountLeftDefault;
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			if ( delayTransferIntro < 0.0 )
+				{
+					selectSideCounter--;
+					delayTransferIntro = TRANSFER_DELAY;
+					if ( selectSideCounter < 0.0 )
+						{
+							sys_changeMode ( MODE_TRANSFER_SELECT, false );
+							selectSideCounter = TRANSFER_COUNTER;
+							delayTransferIntro = TRANSFER_DELAY;
+							transferPlayCount = transferPlayCountDown;
+							transferPlayCountLeft = transferPlayCountLeftDefault;
+							trn_nextPlayerToken();
+							trn_nextDroidToken();
+						}
+				}
+			break;
 
-				gam_setHUDState ( HUD_STATE_SELECT_TIME );
-				transferPlayCount = transferPlayCountDown;
-				transferPlayCountLeft = transferPlayCountLeftDefault;
-				delayTransferIntro -= TRANSFER_SPEED * interpolate;
-				if ( delayTransferIntro < 0.0 )
-					{
-						selectSideCounter--;
-						delayTransferIntro = TRANSFER_DELAY;
-						if ( selectSideCounter < 0.0 )
-							{
-								sys_changeMode ( MODE_TRANSFER_SELECT, false );
-								selectSideCounter = TRANSFER_COUNTER;
-								delayTransferIntro = TRANSFER_DELAY;
-								transferPlayCount = transferPlayCountDown;
-								transferPlayCountLeft = transferPlayCountLeftDefault;
-								trn_nextPlayerToken();
-								trn_nextDroidToken();
-							}
-					}
-				break;
+		case MODE_TRANSFER_SELECT: // Play the transfer game
+			gam_doTransferThink ( interpolate );
+			trn_processCircuits ( interpolate );
+			gam_setHUDState ( HUD_STATE_TIME_LEFT );
+			transferPlayCount -= transferPlayCountDown * interpolate;
+			if ( transferPlayCount < 0.0 )
+				{
+					transferPlayCountLeft--;
+					transferPlayCount = transferPlayCountDown;
+					if ( transferPlayCountLeft < 0 )
+						{
+							//
+							// Got a deadlock - start again
+							//
+							if ( numActiveLeft == numActiveRight )
+								{
+									currentMode = MODE_TRANSFER_DEADLOCK;
+									sys_playSound ( SND_TRANSFER_DEADLOCK, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
+									delayTransferIntro = TRANSFER_DELAY * 3;
+									return;
+								}
 
-			case MODE_TRANSFER_SELECT: // Play the transfer game
+							if ( playerOnSide == LEFT_SIDE )
+								{
+									if ( numActiveLeft > numActiveRight )
+										{
+											// Player has more active lines
+											currentMode = MODE_TRANSFER_COPY;
+											return;
+										}
+									else
+										{
+											// enemy droid has won
+											currentMode = MODE_TRANSFER_LOST;
+										}
+								}
+							else	// Player is on right hand side
+								{
+									if ( numActiveRight > numActiveLeft )
+										{
+											currentMode = MODE_TRANSFER_COPY;
+											return;
+										}
+									else
+										{
+											// enemy droid has won
+											currentMode = MODE_TRANSFER_LOST;
+										}
+								}
+						}
+				}
+			break;
 
-				gam_doTransferThink ( interpolate );
-				trn_processCircuits ( interpolate );
-				gam_setHUDState ( HUD_STATE_TIME_LEFT );
-				transferPlayCount -= transferPlayCountDown * interpolate;
-				if ( transferPlayCount < 0.0 )
-					{
-						transferPlayCountLeft--;
-						transferPlayCount = transferPlayCountDown;
-						if ( transferPlayCountLeft < 0 )
-							{
-								//
-								// Got a deadlock - start again
-								//
-								if ( numActiveLeft == numActiveRight )
-									{
-										currentMode = MODE_TRANSFER_DEADLOCK;
-										sys_playSound ( SND_TRANSFER_DEADLOCK, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE );
-										delayTransferIntro = TRANSFER_DELAY * 3;
-										return;
-									}
+		case MODE_TRANSFER_LOST:
+			gam_setHUDState ( HUD_STATE_LOST );
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			if ( delayTransferIntro < 0.0 )
+				{
+					if ( playerDroidTypeDBIndex == 0 )	// Currently a 001
+						{
+							playerCurrentHealth = -1;	// Kill player
+							gam_doDamageToPlayer ( DAMAGE_EXPLOSION, -1 );
+							sys_changeMode ( MODE_SHOWLEVEL, false );
+							return;
+						}
+					else
+						{
+							// Lost - drop to 001
+							gam_dropPlayerTo001();
+							sys_changeMode ( MODE_SHOWLEVEL, false );
+							return;
+						}
+				}
+			break;
 
-								if ( playerOnSide == LEFT_SIDE )
-									{
-										if ( numActiveLeft > numActiveRight )
-											{
-												// Player has more active lines
-												currentMode = MODE_TRANSFER_COPY;
-												return;
-											}
-										else
-											{
-												// enemy droid has won
-												if ( playerDroidTypeDBIndex == 0 )	// Currently a 001
-													{
-														playerCurrentHealth = -1;	// Kill player
-														gam_doDamageToPlayer ( DAMAGE_EXPLOSION, -1 );
-														currentMode = MODE_SHOWLEVEL;
-														return;
-													}
-												else
-													{
-														// Lost - drop to 001
-														gam_dropPlayerTo001();
-														currentMode = MODE_SHOWLEVEL;
-														return;
-													}
-											}
-									}
-								else	// Player is on right hand side
-									{
-										if ( numActiveRight > numActiveLeft )
-											{
-												currentMode = MODE_TRANSFER_COPY;
-												return;
-											}
-										else
-											{
-												// enemy droid has won
-												if ( playerDroidTypeDBIndex == 0 )	// Currently a 001
-													{
-														playerCurrentHealth = -1;	// Kill player
-														gam_doDamageToPlayer ( DAMAGE_EXPLOSION, -1 );
-														currentMode = MODE_SHOWLEVEL;
-														return;
-													}
-												else
-													{
-														// Lost - drop to 001
-														gam_dropPlayerTo001();
-														currentMode = MODE_SHOWLEVEL;
-														return;
-													}
-											}
-									}
-							}
-					}
-				break;
+		case MODE_TRANSFER_COPY:
+			gam_setHUDState ( HUD_STATE_CAPTURED );
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			if ( delayTransferIntro < 0.0 )
+				{
+					delayTransferIntro = TRANSFER_DELAY;
+					trn_copyDroidAttributes();
+					currentMode = MODE_TRANSFER_FINISH;
+				}
+			break;
 
-			case MODE_TRANSFER_COPY:
-				gam_setHUDState ( HUD_STATE_CAPTURED );
-				delayTransferIntro -= TRANSFER_SPEED * interpolate;
-				if ( delayTransferIntro < 0.0 )
-					{
-						delayTransferIntro = TRANSFER_DELAY;
-						trn_copyDroidAttributes();
-						currentMode = MODE_TRANSFER_FINISH;
-					}
-				break;
+		case MODE_TRANSFER_DEADLOCK:
+			gam_setHUDState ( HUD_STATE_DEADLOCK );
 
-			case MODE_TRANSFER_DEADLOCK:
-				gam_setHUDState(HUD_STATE_DEADLOCK);
+			delayTransferIntro -= TRANSFER_SPEED * interpolate;
+			//
+			// Play sound, move to next stage when finished
+			if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_DEADLOCK ) ) && ( true == playSounds ) )
+				delayTransferIntro = -1;
 
-				delayTransferIntro -= TRANSFER_SPEED * interpolate;
-				//
-				// Play sound, move to next stage when finished
-				if ( ( false == sys_isSoundPlaying ( SND_TRANSFER_DEADLOCK ) ) && ( true == playSounds ) )
-					delayTransferIntro = -1;
+			if ( delayTransferIntro < 0.0 )
+				{
+					delayTransferIntro = TRANSFER_DELAY;
+					sys_changeMode ( MODE_TRANSFER_START, false );
+					trn_setupSquares();
+					trn_setupTokens();
+				}
+			break;
 
-				if ( delayTransferIntro < 0.0 )
-					{
-						delayTransferIntro = TRANSFER_DELAY;
-						sys_changeMode ( MODE_TRANSFER_START, false );
-						trn_setupSquares();
-						trn_setupTokens();
-					}
-				break;
-
-			case MODE_TRANSFER_FINISH:
-				currentMode = MODE_SHOWLEVEL;
-				//			sys_changeMode(MODE_SHOWLEVEL, true);
-				//            trn_exitTransfermode();
-				break;
+		case MODE_TRANSFER_FINISH:
+			currentMode = MODE_SHOWLEVEL;
+			//			sys_changeMode(MODE_SHOWLEVEL, true);
+			//            trn_exitTransfermode();
+			break;
 		}
 
 	if ( true == sys_isSoundPlaying ( SND_GREEN_ALERT ) )
@@ -594,7 +581,6 @@ void trn_showTransferInfo ( int whichDroid )
 // ----------------------------------------------------------------------------
 //
 // Draw the transfer screen
-
 void trn_drawTransferScreen()
 // ----------------------------------------------------------------------------
 {
@@ -605,50 +591,54 @@ void trn_drawTransferScreen()
 
 	switch ( currentMode )
 		{
-			case MODE_TRANSFER_INTRO:
-				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferOne" ) );
-				break;
+		case MODE_TRANSFER_INTRO:
+			sys_printString ( 70.0f, 110.0f, gui_getString ( "transferOne" ) );
+			break;
 
-			case MODE_TRANSFER_INTRO_1:
-				tran_drawTransferCells ( true );
-				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferTwo" ) );
+		case MODE_TRANSFER_INTRO_1:
+			tran_drawTransferCells ( true );
+			sys_printString ( 70.0f, 110.0f, gui_getString ( "transferTwo" ) );
 
-				gam_drawSprite ( 0, dbImage, screenPos, -1.0f, al_map_rgba_f ( 1.0f, 1.0f, 1.0f, 1.0f ) );
+			gam_drawSprite ( 0, dbImage, screenPos, -1.0f, al_map_rgba_f ( 1.0f, 1.0f, 1.0f, 1.0f ) );
 
-				trn_showTransferInfo ( playerDroidTypeImage - 2 );
-				break;
+			trn_showTransferInfo ( playerDroidTypeImage - 2 );
+			break;
 
-			case MODE_TRANSFER_INTRO_2:
-				tran_drawTransferCells ( true );
-				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferThree" ) );
+		case MODE_TRANSFER_INTRO_2:
+			tran_drawTransferCells ( true );
+			sys_printString ( 70.0f, 110.0f, gui_getString ( "transferThree" ) );
 
-				gam_drawSprite ( 0, dbImage, screenPos, -1.0f, al_map_rgba_f ( 1.0f, 1.0f, 1.0f, 1.0f ) );
+			gam_drawSprite ( 0, dbImage, screenPos, -1.0f, al_map_rgba_f ( 1.0f, 1.0f, 1.0f, 1.0f ) );
 
-				trn_showTransferInfo ( droidTypeToTransferInto );
-				break;
+			trn_showTransferInfo ( droidTypeToTransferInto );
+			break;
 
-			case MODE_TRANSFER_START:
-				currentWinner = al_map_rgba_f ( COL_BLACK );
-				break;
+		case MODE_TRANSFER_START:
+			currentWinner = al_map_rgba_f ( COL_BLACK );
+			break;
 
-			case MODE_TRANSFER_SELECT_SIDE: // Countdown to choose side
-				tran_drawTransferCells ( false );
-				break;
+		case MODE_TRANSFER_SELECT_SIDE: // Countdown to choose side
+			tran_drawTransferCells ( false );
+			break;
 
-			case MODE_TRANSFER_SELECT:
-				tran_drawTransferCells ( false );
-				break;
+		case MODE_TRANSFER_SELECT:
+			tran_drawTransferCells ( false );
+			break;
 
-			case MODE_TRANSFER_COPY:
-				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferFour" ) );
-				break;
+		case MODE_TRANSFER_COPY:
+			sys_printString ( 70.0f, 110.0f, gui_getString ( "transferFour" ) );
+			break;
 
-			case MODE_TRANSFER_DEADLOCK:
-				sys_printString ( 70.0f, 110.0f, gui_getString ( "transferFive" ) );
-				break;
+		case MODE_TRANSFER_DEADLOCK:
+			sys_printString ( 70.0f, 110.0f, gui_getString ( "transferFive" ) );
+			break;
 
-			case MODE_TRANSFER_FINISH:
-				break;
+		case MODE_TRANSFER_LOST:
+			sys_printString ( 70.0f, 110.0f, gui_getString ( "transferLost" ) );
+			break;
+
+		case MODE_TRANSFER_FINISH:
+			break;
 		}
 }
 

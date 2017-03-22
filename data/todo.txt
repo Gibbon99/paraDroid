@@ -105,14 +105,13 @@ DONE - Transfer - handle tie case
 DONE - Transfer - handle win and lost case
 DONE - Batch convert sounds to all the same level
 DONE - Add in "Do you want to quit" popup - GUI setup already in script - Confirm back to menu
+DONE - End Game screen when all droids destroyed
+DONE - Add in Transfer lost screen
+DONE - Speed affected by alert level ? - Green, all move slowly
 
-Particles - do Smoke for damaged droids
-Speed affected by alert level ? - Green, all move slowly
 Use sound to skip through start beam onto ship
 Transfer AI - Needs reworking - not choosing two into one because single legs are wrong color
 Higher level droids will anticipate shot ( leading shot )
-End Game screen when all droids destroyed
-
 
 BUGS
 ------
@@ -242,7 +241,7 @@ FIXED - Two droids exploding at the same time - level goes dead ( keeps counting
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
 Check tiles being transparent in level view
-
+Fix check object on screen size and test
 
 FEEDBACK
 ---------

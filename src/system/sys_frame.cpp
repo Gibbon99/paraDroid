@@ -252,6 +252,7 @@ void sys_displayFrame ( float interpolation )
 			case MODE_TRANSFER_DEADLOCK:
 			case MODE_TRANSFER_SELECT:
 			case MODE_TRANSFER_SELECT_SIDE:
+			case MODE_TRANSFER_LOST:
 				gam_drawHud();
 				trn_drawTransferScreen();
 
@@ -400,6 +401,7 @@ void sys_updateFrame()
 			case MODE_TRANSFER_DEADLOCK:
 			case MODE_TRANSFER_SELECT:
 			case MODE_TRANSFER_SELECT_SIDE:
+			case MODE_TRANSFER_LOST:
 				trn_processTransferScreen ( thinkInterval );
 				break;
 
