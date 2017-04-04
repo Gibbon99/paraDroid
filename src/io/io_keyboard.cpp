@@ -683,7 +683,7 @@ void io_readKeyboard()
 
 	if ( false == al_get_next_event ( eventQueue, &event ) )
 		return; // No events in the queue
-		
+
 	//
 	// Windows was switched away
 	switch ( event.type )
@@ -753,6 +753,7 @@ void io_readKeyboard()
 					inputAction[gameEscape].currentlyDown = false;
 					sys_changeMode ( MODE_GUI, false );
 					gui_changeToGUIScreen ( gui_findIndex ( GUI_OBJECT_SCREEN, "scrExitQuestion" ) );
+					gui_setObjectFocus("buttonExitCancel");
 				}
 
 			break;
@@ -760,14 +761,6 @@ void io_readKeyboard()
 		case MODE_KEYCODE:
 			io_readKeyCodeInput ( event );
 			break;
-		}
-
-	//
-	// Exit from game - move to menus when ready
-	if ( true == inputAction[gameEscape].currentlyDown )
-		{
-//			gameIsRunning = false;
-			return;
 		}
 
 	//

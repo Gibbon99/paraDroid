@@ -152,7 +152,6 @@ void drd_damageToDroid ( int whichLevel, int whichDroid, int damageSource, int s
 void gam_initDroidValues ( int whichLevel )
 //-----------------------------------------------------------------------------
 {
-	//	int 			waypointCount = 1;
 	_droid tempDroid;
 
 	shipLevel[whichLevel].droid.reserve ( shipLevel[whichLevel].numDroids );

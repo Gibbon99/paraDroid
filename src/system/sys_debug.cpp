@@ -125,7 +125,7 @@ void sys_displayDebug()
 	sys_printStringExt(winWidth - 180, 75, "FPS : %i", fpsPrint);
 
 	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 50, ALLEGRO_ALIGN_LEFT, "AlertDistance [ %3.2f ] collideSound [ %3.3f ] Transfer  [ %3.3f ]", alertLevelDistance, soundPlayDelay, playerTransferTimeRemaining);
-	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 40, ALLEGRO_ALIGN_LEFT, "tilePosX [ %i ] tilePosY [ %i ] Pixel [ %3.3f %3.3f ]", tilePosX, tilePosY, pixelX, pixelY);
+	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 40, ALLEGRO_ALIGN_LEFT, "maxSpeed [ %3.2f ] acceleration [ %3.2f ] maxVelocity [ %3.3f %3.3f ]", playerMaxSpeed, playerAcceleration, playerMaxVelocity, pixelY);
 	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 30, ALLEGRO_ALIGN_LEFT, "Particle timing Think [ %3.5f ] Render [ %3.5f ]", profileParticleThinkEnd - profileParticleThinkStart, profileParticleRenderStart - profileParticleRenderEnd);
 	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 20, ALLEGRO_ALIGN_LEFT, "Frame [ %3.5f ] FPS [ %i ] Think [ %i ]", profileRenderFrameEnd - profileRenderFrameStart, fpsPrint, thinkFpsPrint);
 	al_draw_textf(builtInFont, al_map_rgb_f(1.0f, 1.0f, 1.0f), 1.0f, winHeight - 10, ALLEGRO_ALIGN_LEFT, "Tile [ %i ] FPS [ %i ] Calcs Skipped [ %i ] Drawn [ %i ] Time [ %2.6f ]", tileCollision, fpsPrint, profileTileCalcSkipped, profileTotalTileDrawn, profileTimeEnd - profileTimeStart);

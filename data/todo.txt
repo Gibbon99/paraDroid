@@ -108,11 +108,12 @@ DONE - Add in "Do you want to quit" popup - GUI setup already in script - Confir
 DONE - End Game screen when all droids destroyed
 DONE - Add in Transfer lost screen
 DONE - Speed affected by alert level ? - Green, all move slowly
+DONE - Fix speed settings for all droids - based on 001 relative - speed also affected by mass (weight)
 
 Use sound to skip through start beam onto ship
 Transfer AI - Needs reworking - not choosing two into one because single legs are wrong color
 Higher level droids will anticipate shot ( leading shot )
-Fix speed settings for all droids - based on 001 relative
+
 
 BUGS
 ------
@@ -239,6 +240,8 @@ FIXED - Droids disappeared when using lift straight away
 FIXED - Droid information terminal - stop looking at higher droids
 FIXED - Two droids exploding at the same time - level goes dead ( keeps counting deaths ?)
 FIXED - Tutorial - see if image is taking focus - or set focus to next
+FIXED - Tweak firing rate of higher level droids
+FIXED - On confirm exit screen - set focus to cancel button
 
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
@@ -252,4 +255,3 @@ FEEDBACK
 
 GAMEPLAY
 ------------
-Tweak firing rate of higher level droids

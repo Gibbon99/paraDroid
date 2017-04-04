@@ -198,7 +198,7 @@ void sys_displayFrame ( float interpolation )
 				*/
 				// Draw Paused window
 
-				//sys_displayDebug();
+				sys_displayDebug();
 				//sys_displayScreenMiddle();
 
 				//gam_debugShowDestination();
