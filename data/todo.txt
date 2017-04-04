@@ -112,6 +112,7 @@ DONE - Speed affected by alert level ? - Green, all move slowly
 Use sound to skip through start beam onto ship
 Transfer AI - Needs reworking - not choosing two into one because single legs are wrong color
 Higher level droids will anticipate shot ( leading shot )
+Fix speed settings for all droids - based on 001 relative
 
 BUGS
 ------
@@ -237,11 +238,13 @@ FIXED - Make sure droid has clear path to target before shooting
 FIXED - Droids disappeared when using lift straight away
 FIXED - Droid information terminal - stop looking at higher droids
 FIXED - Two droids exploding at the same time - level goes dead ( keeps counting deaths ?)
+FIXED - Tutorial - see if image is taking focus - or set focus to next
 
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
 Check tiles being transparent in level view
 Fix check object on screen size and test
+
 
 FEEDBACK
 ---------

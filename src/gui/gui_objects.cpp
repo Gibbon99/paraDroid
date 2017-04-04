@@ -44,31 +44,39 @@ void gui_setObjectFocus(string objectID)
 				{
 					case GUI_OBJECT_BUTTON:
 						if (guiButtons[guiScreens[currentGUIScreen].objectIDIndex[indexCount]].objectID == objectID)
+						{
 							guiScreens[currentGUIScreen].selectedObject = indexCount;
-						return;
+							return;
+						}
 						break;
 
 					case GUI_OBJECT_CHECKBOX:
 						if (guiCheckBoxes[guiScreens[currentGUIScreen].objectIDIndex[indexCount]].attributes.objectID == objectID)
+						{
 							guiScreens[currentGUIScreen].selectedObject = indexCount;
-						return;
+							return;
+						}
 						break;
 
 					case GUI_OBJECT_SLIDER:
 						if (guiSliders[guiScreens[currentGUIScreen].objectIDIndex[indexCount]].attributes.objectID == objectID)
+						{
 							guiScreens[currentGUIScreen].selectedObject = indexCount;
-						return;
+							return;
+						}
 						break;
 
 					case GUI_OBJECT_KEYCODE:
 						if(guiKeyCodes[guiScreens[currentGUIScreen].objectIDIndex[indexCount]].attributes.objectID == objectID)
+						{
 							guiScreens[currentGUIScreen].selectedObject = indexCount;
-						return;
+							return;
+						}
+
 						break;
 				}
-			indexCount++;	//TODO: Check this is needed
 		}
-	con_print(true, false, "GUI Error: ObjectID [ %s ] not found", objectID.c_str());
+	io_logToFile("GUI Error: ObjectID [ %s ] not found", objectID.c_str());
 }
 
 //-----------------------------------------------------------------------------

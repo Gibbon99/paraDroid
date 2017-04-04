@@ -485,7 +485,7 @@ void as_guiHandleButtonPress ( string &in objectID )
 			if ( objectID == "buttonTutTerminalNext" )
 				{
 					as_changeGUIScreen ( as_guiFindIndex ( GUI_OBJECT_SCREEN, "scrTutHealing" ) );
-					as_guiSetObjectFocus ( "buttonTutTipsCancel" );
+					as_guiSetObjectFocus ( "buttonTutHealinglNext" );
 					return;
 				}
 		}
