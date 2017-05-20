@@ -21,8 +21,7 @@ Copyright 2017 David Berry
 #include "../../hdr/sys_globals.h"
 
 list<_emitter> emitter;
-std::list<_particle>::iterator itr;
-std::list<_emitter>::iterator emitterItr;
+
 
 int particleRenderType; // Set from start script
 
@@ -131,6 +130,9 @@ void par_hostSetParticleColor ( int whichParticle, int red, int green, int blue,
 void par_debugParticles()
 //------------------------------------------------------------------
 {
+	std::list<_particle>::iterator itr;
+	std::list<_emitter>::iterator emitterItr;
+
 	con_print ( true, false, "Emitter size [ %i ]", emitter.size() );
 	if ( emitter.size() > 0 )
 		{
@@ -315,6 +317,9 @@ void par_resetAllEmitters()
 void par_removeEmitter ( int whichBullet )
 //-----------------------------------------------------
 	{
+	std::list<_particle>::iterator itr;
+	std::list<_emitter>::iterator emitterItr;
+
 		if ( PARTICLE_RENDER_OFF == particleRenderType )
 			return;
 
@@ -355,6 +360,9 @@ void par_animateParticles()
 	{
 		float particleReduce = 0.0f;
 		int particleTrailCount = 0;
+		std::list<_particle>::iterator itr;
+		std::list<_emitter>::iterator emitterItr;
+
 
 		if ( PARTICLE_RENDER_OFF == particleRenderType )
 			return;
@@ -402,7 +410,14 @@ void par_animateParticles()
 													cpSpaceRemoveBody ( space, itr->body );
 													cpBodyFree ( itr->body );
 												}
+
+											io_logToFile ("About to free spark particle [ %i ]", emitterItr->particle.size());
+
 											itr = emitterItr->particle.erase ( itr );
+
+											if (itr == emitterItr->particle.end ())
+												return;
+
 											break;
 
 										case PARTICLE_TYPE_TRAIL:
@@ -417,9 +432,10 @@ void par_animateParticles()
 											itr->worldPos.x += randomX;
 											itr->worldPos.y += randomY;
 											particleTrailCount++;
+//											if ( particleTrailCount > particleTrailLimit )
 											if ( particleTrailCount > particleTrailLimit )
 												{
-													itr = emitterItr->particle.end();
+//													itr = emitterItr->particle.end();
 												}
 											//	cpBodySetPosition (itr->body, itr->worldPos);
 											break;
@@ -437,8 +453,10 @@ void par_animateParticles()
 									}
 							}
 
-						if ( emitterItr->particle.size() == 0 )
+						if ( emitterItr->particle.size() == 1 )
 							{
+								io_logToFile ("Freeing particle emitterItr.");
+
 								emitterItr = emitter.erase ( emitterItr ); // emitterItr now points to the one after the deleted one
 								return;
 							}
@@ -455,6 +473,8 @@ void par_drawParticles()
 //-----------------------------------------------------
 	{
 		cpVect vecPos1;
+		std::list<_particle>::iterator itr;
+		std::list<_emitter>::iterator emitterItr;
 
 		int op, src, dst;
 

@@ -210,7 +210,6 @@ void gam_changeToLevelFromScript ( int newLevel )
 //---------------------------------------------------------
 //
 // Change to a new level
-
 void gam_changeToLevel ( int newLevel, int whichLift )
 //---------------------------------------------------------
 {
@@ -383,7 +382,7 @@ bool gam_loadLevel ( char *fileName )
 void lvl_addPaddingToLevel()
 //---------------------------------------------------------
 {
-	vector<int> tempLevel;
+	std::vector<int> tempLevel;
 	_my2DInt tempDimensions;
 	int countY, countX, whichTile;
 	int destX, destY;
@@ -399,8 +398,10 @@ void lvl_addPaddingToLevel()
 
 	tempLevel.reserve ( ( shipLevel[currentLevel].levelDimensions.x + drawOffset.x ) * ( shipLevel[currentLevel].levelDimensions.y + drawOffset.y ) );
 
-	for ( int i = 0; i != ( shipLevel[currentLevel].levelDimensions.x + drawOffset.x ) * ( shipLevel[currentLevel].levelDimensions.y + drawOffset.y ); i++ )
-		tempLevel[i] = 0; // Blank tile
+//	for (int i = 0; i < (shipLevel[currentLevel].levelDimensions.x + drawOffset.x) * (shipLevel[currentLevel].levelDimensions.y + drawOffset.y); i++)
+		tempLevel.assign ((shipLevel[currentLevel].levelDimensions.x + drawOffset.x) * (shipLevel[currentLevel].levelDimensions.y + drawOffset.y), 0);
+//		tempLevel.push_back (0);	// Blank tile
+//		tempLevel[i] = 0; // Blank tile
 
 
 	for ( countY = 0; countY != shipLevel[currentLevel].levelDimensions.y; countY++ )
@@ -424,6 +425,8 @@ void lvl_addPaddingToLevel()
 	shipLevel[currentLevel].tiles.clear();
 
 	shipLevel[currentLevel].tiles.reserve ( tempDimensions.x * tempDimensions.y );
+
+	shipLevel[currentLevel].tiles.assign (tempDimensions.x * tempDimensions.y, 0);
 
 	for ( int i = 0; i != tempDimensions.x * tempDimensions.y; i++ )
 		{
@@ -572,7 +575,6 @@ void gam_getPixelOffsets()
 // ----------------------------------------------------------------------------
 //
 // Position the player on the requested lift on the new level
-
 void gam_putPlayerOnLift ( int whichLift )
 // ----------------------------------------------------------------------------
 {
@@ -592,9 +594,6 @@ void gam_putPlayerOnLift ( int whichLift )
 								{
 									tilePosX = countX;
 									tilePosY = countY;
-
-									//					tilePosX += 1;
-									//					tilePosY += 1;
 
 									gam_getPixelOffsets();
 
@@ -747,7 +746,6 @@ void gam_animateHealTiles ( int whichLevel )
 // ----------------------------------------------------------------------------
 //
 // Get the current deck we are on and are moving around on
-
 void gam_getCurrentDeck()
 // ----------------------------------------------------------------------------
 {
@@ -780,7 +778,6 @@ void gam_getCurrentDeck()
 // ----------------------------------------------------------------------------
 //
 // Get the tunnel being used by the lift the player sprite is over
-
 void gam_getTunnelToUse()
 // ----------------------------------------------------------------------------
 {
@@ -869,11 +866,19 @@ void gam_getTunnelToUse()
 // ----------------------------------------------------------------------------
 //
 // Put the player onto lift on new deck
-
 void gam_putPlayerOnLiftFromTunnel()
 // ----------------------------------------------------------------------------
 {
 	int temp_lift = 0;
+
+	//
+	// CurrentTunnel is set to 0 when called from startup script
+	//
+	if (currentTunnel == 0)
+	{
+		gam_putPlayerOnLift (0);
+		return;
+	}
 
 	switch ( shipLevel[currentLevel].numLifts )
 		{
@@ -883,9 +888,15 @@ void gam_putPlayerOnLiftFromTunnel()
 			break;
 
 		case 2:
-			while ( currentTunnel != shipLevel[currentLevel].lifts[temp_lift].tunnel )
+//			while ( currentTunnel != shipLevel[currentLevel].lifts[temp_lift].tunnel )
+			while (currentTunnel < shipLevel[currentLevel].lifts[temp_lift].tunnel)
 				{
 					temp_lift++;
+					if (temp_lift == 2)
+					{
+						printf ("Error: temp_lift greater than tunnel count.\n");
+						exit (0);
+					}
 				}
 
 			if ( currentLevel == 13 )
@@ -953,7 +964,6 @@ void gam_putPlayerOnLiftFromTunnel()
 //---------------------------------------------------------
 //
 // Get the positions of lifts
-
 void lvl_getLiftPositions ( int whichLevel )
 //---------------------------------------------------------
 {

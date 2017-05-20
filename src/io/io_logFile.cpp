@@ -157,7 +157,7 @@ void io_logToFile ( const char* format, ... )
 	else
 		logTimeStamp = 0;
 		
-	sprintf ( logTimeText.c_str(), "[ %5d ] : ", logTimeStamp );
+	sprintf ((char *)logTimeText.c_str(), "[ %5d ] : ", logTimeStamp );
 	fprintf ( logFile, "%s", logTimeText.c_str() );
 
 	vfprintf ( logFile, format, args );

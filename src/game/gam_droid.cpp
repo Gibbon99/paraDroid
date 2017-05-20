@@ -36,12 +36,20 @@ float 		healingTimer; // Used to time healing for droids
 void drd_updateDroidPosition ( int whichDroid )
 //---------------------------------------------------------------
 {
-	shipLevel[currentLevel].droid[whichDroid].worldPos = cpBodyGetPosition ( shipLevel[currentLevel].droid[whichDroid].body );
+	if (false == processedPhysics)
+		return;
 
-	if ( (shipLevel[currentLevel].droid[whichDroid].worldPos.x < 0) || (shipLevel[currentLevel].droid[whichDroid].worldPos.y < 0))
+	cpVect		tempPosition;
+
+	tempPosition = cpBodyGetPosition ( shipLevel[currentLevel].droid[whichDroid].body );
+
+	if ( (tempPosition.x < 0) || (tempPosition.y < 0))
 	{
-		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %l ]\n", whichDroid, currentLevel, frameCount);
+		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %5.2f ]\n", whichDroid, currentLevel, frameCount);
+		return;
 	}
+
+	shipLevel[currentLevel].droid[whichDroid].worldPos = tempPosition;
 }
 
 //---------------------------------------------------------------
@@ -231,11 +239,15 @@ void gam_initDroidValues ( int whichLevel )
 //-----------------------------------------------------------------------------
 //
 // Which tile is the droid over
-
 void drd_getOverWhichTile ( int whichDroid )
 //-----------------------------------------------------------------------------
 {
 	int tempPosX, tempPosY;
+	int	tileIndex = 0;
+
+	if (false == processedPhysics)
+		return;
+
 	//
 	// Now get which tile we are over
 	tempPosX = ( int ) shipLevel[currentLevel].droid[whichDroid].worldPos.x / TILE_SIZE;
@@ -249,7 +261,11 @@ void drd_getOverWhichTile ( int whichDroid )
 		}
 	else
 		{
-			shipLevel[currentLevel].droid[whichDroid].overTileMiddle = shipLevel[currentLevel].tiles[ ( tempPosY * ( shipLevel[currentLevel].levelDimensions.x ) + tempPosX )];
+		tileIndex = (tempPosY * (shipLevel[currentLevel].levelDimensions.x) + tempPosX);
+		if (tileIndex < shipLevel[currentLevel].tiles.size ())
+			shipLevel[currentLevel].droid[whichDroid].overTileMiddle = shipLevel[currentLevel].tiles[tileIndex];
+		else
+			printf ("Error: drd_getOverWhichTile index larger than vector size.\n");
 		}
 }
 

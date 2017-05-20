@@ -709,13 +709,13 @@ bool sys_registerFunctions()
 //
 // Load into memory the file to be read
 //
-
 bool sys_fileIntoMemory ( char *whichFile )
 //-------------------------------------------------------------------------------
 {
-	ALLEGRO_FILE 	*fileHandle = NULL;
+//	ALLEGRO_FILE 	*fileHandle;
 	int64_t 		fileSize;
 	char 			fileName[MAX_PATH];
+	ALLEGRO_FILE*	fileHandle;
 
 	strcpy ( fileName, whichFile );
 

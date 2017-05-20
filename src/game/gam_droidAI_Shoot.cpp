@@ -83,8 +83,8 @@ int ai_findBulletDest ( int whichDroid )
 int ai_shootBullet ( int whichDroid )
 //-----------------------------------------------------------------------------
 {
-	cpVect		bulletStartPos;
-	cpVect		bulletDestPos;
+	cpVect		bulletStartPos = { 0,0 };
+	cpVect		bulletDestPos = { 0,0 };
 
 #ifdef DEBUG_SHOOT
 	printf ( "Fire bullet [ %i ]\n", whichDroid );

@@ -97,16 +97,36 @@ bool io_startFileSystem(bool showArchivers)
     }
     //
     // Add directory for loading scripts - move to archive file
-    if (0 == PHYSFS_addToSearchPath ("data//scripts",1))
+#ifdef _WIN32
+    if (0 == PHYSFS_addToSearchPath ("data\\scripts",1))
+#else
+	if (0 == PHYSFS_addToSearchPath ("data//scripts", 1))
+#endif
     {
         io_logToFile("ERROR: Failed to set search path - scripts [ %s ]", PHYSFS_getLastError());
         fileSystemReady = false;
         return false;
     }
 
+
+	//
+	// Add directory for files - Bug in windows doesn't allow use of zip data file
+#ifdef _WIN32
+	if (0 == PHYSFS_addToSearchPath ("data\\winData", 1))
+	{
+		io_logToFile ("ERROR: Failed to set search path - scripts [ %s ]", PHYSFS_getLastError ());
+		fileSystemReady = false;
+		return false;
+	}
+#endif
+
     //
     // Add archive file
-    if (0 == PHYSFS_addToSearchPath ("data//data.zip",1))
+#ifdef _WIN32
+    if (0 == PHYSFS_addToSearchPath ("data\\data.zip",1))
+#else
+	if (0 == PHYSFS_addToSearchPath ("data//data.zip", 1))
+#endif
     {
         io_logToFile("ERROR: Failed to set search path - data.zip - [ %s ]", PHYSFS_getLastError());
         fileSystemReady = false;

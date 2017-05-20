@@ -310,7 +310,7 @@ void gam_drawAllTiles()
 					//
 					// TODO: Going past the edge of the tile array - adding tilePosX and tilePosY is making whichTilePtr too large
 					//
-					if (whichTilePtr > shipLevel[currentLevel].levelDimensions.x * shipLevel[currentLevel].levelDimensions.y)
+					if (whichTilePtr >= shipLevel[currentLevel].levelDimensions.x * shipLevel[currentLevel].levelDimensions.y)
 						whichTilePtr = 0;
 
 					whichTile = shipLevel[currentLevel].tiles[whichTilePtr];

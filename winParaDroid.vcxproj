@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{71D8EEBF-EBD6-4F61-AACF-AD737974FB8A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\chipmunk\chipmunk.c" />
+    <ClCompile Include="src\chipmunk\cpArbiter.c" />
+    <ClCompile Include="src\chipmunk\cpArray.c" />
+    <ClCompile Include="src\chipmunk\cpBBTree.c" />
+    <ClCompile Include="src\chipmunk\cpBody.c" />
+    <ClCompile Include="src\chipmunk\cpCollision.c" />
+    <ClCompile Include="src\chipmunk\cpConstraint.c" />
+    <ClCompile Include="src\chipmunk\cpDampedRotarySpring.c" />
+    <ClCompile Include="src\chipmunk\cpDampedSpring.c" />
+    <ClCompile Include="src\chipmunk\cpGearJoint.c" />
+    <ClCompile Include="src\chipmunk\cpGrooveJoint.c" />
+    <ClCompile Include="src\chipmunk\cpHashSet.c" />
+    <ClCompile Include="src\chipmunk\cpHastySpace.c" />
+    <ClCompile Include="src\chipmunk\cpMarch.c" />
+    <ClCompile Include="src\chipmunk\cpPinJoint.c" />
+    <ClCompile Include="src\chipmunk\cpPivotJoint.c" />
+    <ClCompile Include="src\chipmunk\cpPolyline.c" />
+    <ClCompile Include="src\chipmunk\cpPolyShape.c" />
+    <ClCompile Include="src\chipmunk\cpRatchetJoint.c" />
+    <ClCompile Include="src\chipmunk\cpRobust.c" />
+    <ClCompile Include="src\chipmunk\cpRotaryLimitJoint.c" />
+    <ClCompile Include="src\chipmunk\cpShape.c" />
+    <ClCompile Include="src\chipmunk\cpSimpleMotor.c" />
+    <ClCompile Include="src\chipmunk\cpSlideJoint.c" />
+    <ClCompile Include="src\chipmunk\cpSpace.c" />
+    <ClCompile Include="src\chipmunk\cpSpaceComponent.c" />
+    <ClCompile Include="src\chipmunk\cpSpaceDebug.c" />
+    <ClCompile Include="src\chipmunk\cpSpaceHash.c" />
+    <ClCompile Include="src\chipmunk\cpSpaceQuery.c" />
+    <ClCompile Include="src\chipmunk\cpSpaceStep.c" />
+    <ClCompile Include="src\chipmunk\cpSpatialIndex.c" />
+    <ClCompile Include="src\chipmunk\cpSweep1D.c" />
+    <ClCompile Include="src\game\gam_bullet.cpp" />
+    <ClCompile Include="src\game\gam_database.cpp" />
+    <ClCompile Include="src\game\gam_doors.cpp" />
+    <ClCompile Include="src\game\gam_droid.cpp" />
+    <ClCompile Include="src\game\gam_droidAI.cpp" />
+    <ClCompile Include="src\game\gam_droidAI_Flee.cpp" />
+    <ClCompile Include="src\game\gam_droidAI_Health.cpp" />
+    <ClCompile Include="src\game\gam_droidAI_Patrol.cpp" />
+    <ClCompile Include="src\game\gam_droidAI_Resume.cpp" />
+    <ClCompile Include="src\game\gam_droidAI_Shoot.cpp" />
+    <ClCompile Include="src\game\gam_endScreen.cpp" />
+    <ClCompile Include="src\game\gam_intro.cpp" />
+    <ClCompile Include="src\game\gam_levels.cpp" />
+    <ClCompile Include="src\game\gam_LOS.cpp" />
+    <ClCompile Include="src\game\gam_particles.cpp" />
+    <ClCompile Include="src\game\gam_pathFind.cpp" />
+    <ClCompile Include="src\game\gam_player.cpp" />
+    <ClCompile Include="src\game\gam_render.cpp" />
+    <ClCompile Include="src\game\gam_scoreTable.cpp" />
+    <ClCompile Include="src\game\gam_sideView.cpp" />
+    <ClCompile Include="src\game\gam_spotLight.cpp" />
+    <ClCompile Include="src\game\gam_terminal.cpp" />
+    <ClCompile Include="src\game\gam_transfer.cpp" />
+    <ClCompile Include="src\game\gam_transferDroidAI.cpp" />
+    <ClCompile Include="src\game\gam_transferPlayerAI.cpp" />
+    <ClCompile Include="src\game\gam_transferRender.cpp" />
+    <ClCompile Include="src\game\sys_starfield.cpp" />
+    <ClCompile Include="src\gui\gui_keyCode.cpp" />
+    <ClCompile Include="src\gui\gui_main.cpp" />
+    <ClCompile Include="src\gui\gui_objects.cpp" />
+    <ClCompile Include="src\gui\gui_render.cpp" />
+    <ClCompile Include="src\gui\gui_scrollBox.cpp" />
+    <ClCompile Include="src\gui\gui_slider.cpp" />
+    <ClCompile Include="src\gui\gui_text.cpp" />
+    <ClCompile Include="src\io\io_configFile.cpp" />
+    <ClCompile Include="src\io\io_images.cpp" />
+    <ClCompile Include="src\io\io_joystick.cpp" />
+    <ClCompile Include="src\io\io_keyBind.cpp" />
+    <ClCompile Include="src\io\io_keyboard.cpp" />
+    <ClCompile Include="src\io\io_logFile.cpp" />
+    <ClCompile Include="src\io\io_packFile.cpp" />
+    <ClCompile Include="src\io\io_sideView.cpp" />
+    <ClCompile Include="src\script\as_arrayobject.cpp" />
+    <ClCompile Include="src\script\as_atomic.cpp" />
+    <ClCompile Include="src\script\as_builder.cpp" />
+    <ClCompile Include="src\script\as_bytecode.cpp" />
+    <ClCompile Include="src\script\as_callfunc.cpp" />
+    <ClCompile Include="src\script\as_callfunc_arm.cpp" />
+    <ClCompile Include="src\script\as_callfunc_mips.cpp" />
+    <ClCompile Include="src\script\as_callfunc_ppc.cpp" />
+    <ClCompile Include="src\script\as_callfunc_ppc_64.cpp" />
+    <ClCompile Include="src\script\as_callfunc_sh4.cpp" />
+    <ClCompile Include="src\script\as_callfunc_x64_gcc.cpp" />
+    <ClCompile Include="src\script\as_callfunc_x64_mingw.cpp" />
+    <ClCompile Include="src\script\as_callfunc_x64_msvc.cpp" />
+    <ClCompile Include="src\script\as_callfunc_x86.cpp" />
+    <ClCompile Include="src\script\as_callfunc_xenon.cpp" />
+    <ClCompile Include="src\script\as_compiler.cpp" />
+    <ClCompile Include="src\script\as_configgroup.cpp" />
+    <ClCompile Include="src\script\as_context.cpp" />
+    <ClCompile Include="src\script\as_datatype.cpp" />
+    <ClCompile Include="src\script\as_gc.cpp" />
+    <ClCompile Include="src\script\as_generic.cpp" />
+    <ClCompile Include="src\script\as_globalproperty.cpp" />
+    <ClCompile Include="src\script\as_memory.cpp" />
+    <ClCompile Include="src\script\as_module.cpp" />
+    <ClCompile Include="src\script\as_objecttype.cpp" />
+    <ClCompile Include="src\script\as_outputbuffer.cpp" />
+    <ClCompile Include="src\script\as_parser.cpp" />
+    <ClCompile Include="src\script\as_restore.cpp" />
+    <ClCompile Include="src\script\as_scriptcode.cpp" />
+    <ClCompile Include="src\script\as_scriptengine.cpp" />
+    <ClCompile Include="src\script\as_scriptfunction.cpp" />
+    <ClCompile Include="src\script\as_scriptnode.cpp" />
+    <ClCompile Include="src\script\as_scriptobject.cpp" />
+    <ClCompile Include="src\script\as_string.cpp" />
+    <ClCompile Include="src\script\as_string_util.cpp" />
+    <ClCompile Include="src\script\as_thread.cpp" />
+    <ClCompile Include="src\script\as_tokenizer.cpp" />
+    <ClCompile Include="src\script\as_typeinfo.cpp" />
+    <ClCompile Include="src\script\as_variablescope.cpp" />
+    <ClCompile Include="src\script\scriptbuilder.cpp" />
+    <ClCompile Include="src\script\scriptstdstring.cpp" />
+    <ClCompile Include="src\script\scriptstdstring_utils.cpp" />
+    <ClCompile Include="src\system\sys_conCommands.cpp" />
+    <ClCompile Include="src\system\sys_console.cpp" />
+    <ClCompile Include="src\system\sys_conVariables.cpp" />
+    <ClCompile Include="src\system\sys_debug.cpp" />
+    <ClCompile Include="src\system\sys_font.cpp" />
+    <ClCompile Include="src\system\sys_frame.cpp" />
+    <ClCompile Include="src\system\sys_joystick.cpp" />
+    <ClCompile Include="src\system\sys_maths.cpp" />
+    <ClCompile Include="src\system\sys_physics.cpp" />
+    <ClCompile Include="src\system\sys_physicsCollisions.cpp" />
+    <ClCompile Include="src\system\sys_random.cpp" />
+    <ClCompile Include="src\system\sys_script.cpp" />
+    <ClCompile Include="src\system\sys_shutdown.cpp" />
+    <ClCompile Include="src\system\sys_sound.cpp" />
+    <ClCompile Include="src\system\sys_startup.cpp" />
+    <ClCompile Include="src\system\sys_timing.cpp" />
+    <ClCompile Include="src\system\sys_utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages\allegro.5.2.2.1\build\native\include\allegro5\inline\fmaths.inl" />
+    <None Include="src\script\as_callfunc_x64_msvc_asm.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="data\scripts\commonDefines.h" />
+    <ClInclude Include="hdr\chipmunk\chipmunk.h" />
+    <ClInclude Include="hdr\chipmunk\chipmunk_ffi.h" />
+    <ClInclude Include="hdr\chipmunk\chipmunk_private.h" />
+    <ClInclude Include="hdr\chipmunk\chipmunk_structs.h" />
+    <ClInclude Include="hdr\chipmunk\chipmunk_types.h" />
+    <ClInclude Include="hdr\chipmunk\chipmunk_unsafe.h" />
+    <ClInclude Include="hdr\chipmunk\cpArbiter.h" />
+    <ClInclude Include="hdr\chipmunk\cpBB.h" />
+    <ClInclude Include="hdr\chipmunk\cpBody.h" />
+    <ClInclude Include="hdr\chipmunk\cpConstraint.h" />
+    <ClInclude Include="hdr\chipmunk\cpDampedRotarySpring.h" />
+    <ClInclude Include="hdr\chipmunk\cpDampedSpring.h" />
+    <ClInclude Include="hdr\chipmunk\cpGearJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpGrooveJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpHastySpace.h" />
+    <ClInclude Include="hdr\chipmunk\cpMarch.h" />
+    <ClInclude Include="hdr\chipmunk\cpPinJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpPivotJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpPolyline.h" />
+    <ClInclude Include="hdr\chipmunk\cpPolyShape.h" />
+    <ClInclude Include="hdr\chipmunk\cpRatchetJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpRobust.h" />
+    <ClInclude Include="hdr\chipmunk\cpRotaryLimitJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpShape.h" />
+    <ClInclude Include="hdr\chipmunk\cpSimpleMotor.h" />
+    <ClInclude Include="hdr\chipmunk\cpSlideJoint.h" />
+    <ClInclude Include="hdr\chipmunk\cpSpace.h" />
+    <ClInclude Include="hdr\chipmunk\cpSpatialIndex.h" />
+    <ClInclude Include="hdr\chipmunk\cpTransform.h" />
+    <ClInclude Include="hdr\chipmunk\cpVect.h" />
+    <ClInclude Include="hdr\game\gam_bullet.h" />
+    <ClInclude Include="hdr\game\gam_database.h" />
+    <ClInclude Include="hdr\game\gam_doors.h" />
+    <ClInclude Include="hdr\game\gam_droid.h" />
+    <ClInclude Include="hdr\game\gam_droidAI.h" />
+    <ClInclude Include="hdr\game\gam_droidAI_Resume.h" />
+    <ClInclude Include="hdr\game\gam_endScreen.h" />
+    <ClInclude Include="hdr\game\gam_intro.h" />
+    <ClInclude Include="hdr\game\gam_levels.h" />
+    <ClInclude Include="hdr\game\gam_LOS.h" />
+    <ClInclude Include="hdr\game\gam_particles.h" />
+    <ClInclude Include="hdr\game\gam_pathFind.h" />
+    <ClInclude Include="hdr\game\gam_player.h" />
+    <ClInclude Include="hdr\game\gam_render.h" />
+    <ClInclude Include="hdr\game\gam_scoreTable.h" />
+    <ClInclude Include="hdr\game\gam_sideView.h" />
+    <ClInclude Include="hdr\game\gam_spotLight.h" />
+    <ClInclude Include="hdr\game\gam_starfield.h" />
+    <ClInclude Include="hdr\game\gam_terminal.h" />
+    <ClInclude Include="hdr\game\gam_transfer.h" />
+    <ClInclude Include="hdr\game\gam_transferRender.h" />
+    <ClInclude Include="hdr\gui\gui_main.h" />
+    <ClInclude Include="hdr\gui\gui_render.h" />
+    <ClInclude Include="hdr\gui\gui_scrollBox.h" />
+    <ClInclude Include="hdr\gui\gui_text.h" />
+    <ClInclude Include="hdr\io\io_configFile.h" />
+    <ClInclude Include="hdr\io\io_images.h" />
+    <ClInclude Include="hdr\io\io_joystick.h" />
+    <ClInclude Include="hdr\io\io_keyBind.h" />
+    <ClInclude Include="hdr\io\io_keyboard.h" />
+    <ClInclude Include="hdr\io\io_logFile.h" />
+    <ClInclude Include="hdr\io\io_packFile.h" />
+    <ClInclude Include="hdr\script\angelscript.h" />
+    <ClInclude Include="hdr\script\as_array.h" />
+    <ClInclude Include="hdr\script\as_arrayobject.h" />
+    <ClInclude Include="hdr\script\as_atomic.h" />
+    <ClInclude Include="hdr\script\as_builder.h" />
+    <ClInclude Include="hdr\script\as_bytecode.h" />
+    <ClInclude Include="hdr\script\as_callfunc.h" />
+    <ClInclude Include="hdr\script\as_compiler.h" />
+    <ClInclude Include="hdr\script\as_config.h" />
+    <ClInclude Include="hdr\script\as_configgroup.h" />
+    <ClInclude Include="hdr\script\as_context.h" />
+    <ClInclude Include="hdr\script\as_criticalsection.h" />
+    <ClInclude Include="hdr\script\as_datatype.h" />
+    <ClInclude Include="hdr\script\as_debug.h" />
+    <ClInclude Include="hdr\script\as_gc.h" />
+    <ClInclude Include="hdr\script\as_generic.h" />
+    <ClInclude Include="hdr\script\as_map.h" />
+    <ClInclude Include="hdr\script\as_memory.h" />
+    <ClInclude Include="hdr\script\as_module.h" />
+    <ClInclude Include="hdr\script\as_objecttype.h" />
+    <ClInclude Include="hdr\script\as_outputbuffer.h" />
+    <ClInclude Include="hdr\script\as_parser.h" />
+    <ClInclude Include="hdr\script\as_property.h" />
+    <ClInclude Include="hdr\script\as_restore.h" />
+    <ClInclude Include="hdr\script\as_scriptcode.h" />
+    <ClInclude Include="hdr\script\as_scriptengine.h" />
+    <ClInclude Include="hdr\script\as_scriptfunction.h" />
+    <ClInclude Include="hdr\script\as_scriptnode.h" />
+    <ClInclude Include="hdr\script\as_scriptobject.h" />
+    <ClInclude Include="hdr\script\as_string.h" />
+    <ClInclude Include="hdr\script\as_string_util.h" />
+    <ClInclude Include="hdr\script\as_texts.h" />
+    <ClInclude Include="hdr\script\as_thread.h" />
+    <ClInclude Include="hdr\script\as_tokendef.h" />
+    <ClInclude Include="hdr\script\as_tokenizer.h" />
+    <ClInclude Include="hdr\script\as_typeinfo.h" />
+    <ClInclude Include="hdr\script\as_variablescope.h" />
+    <ClInclude Include="hdr\script\scriptarray.h" />
+    <ClInclude Include="hdr\script\scriptbuilder.h" />
+    <ClInclude Include="hdr\script\scriptstdstring.h" />
+    <ClInclude Include="hdr\system\sys_conCommands.h" />
+    <ClInclude Include="hdr\system\sys_console.h" />
+    <ClInclude Include="hdr\system\sys_debug.h" />
+    <ClInclude Include="hdr\system\sys_defines.h" />
+    <ClInclude Include="hdr\system\sys_font.h" />
+    <ClInclude Include="hdr\system\sys_frame.h" />
+    <ClInclude Include="hdr\system\sys_joystick.h" />
+    <ClInclude Include="hdr\system\sys_maths.h" />
+    <ClInclude Include="hdr\system\sys_physics.h" />
+    <ClInclude Include="hdr\system\sys_physicsCollisions.h" />
+    <ClInclude Include="hdr\system\sys_random.h" />
+    <ClInclude Include="hdr\system\sys_script.h" />
+    <ClInclude Include="hdr\system\sys_shutdown.h" />
+    <ClInclude Include="hdr\system\sys_sound.h" />
+    <ClInclude Include="hdr\system\sys_startup.h" />
+    <ClInclude Include="hdr\system\sys_timing.h" />
+    <ClInclude Include="hdr\system\sys_utils.h" />
+    <ClInclude Include="hdr\sys_globals.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\alcompat.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro5.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_acodec.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_audio.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_color.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_direct3d.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_font.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_image.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_memfile.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_native_dialog.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_opengl.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_physfs.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_primitives.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_ttf.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_video.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\allegro_windows.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\altime.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\base.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\bitmap.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\bitmap_draw.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\bitmap_io.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\bitmap_lock.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\blender.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\clipboard.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\color.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\config.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\cpu.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\debug.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\display.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\drawing.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\error.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\events.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\file.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\fixed.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\fmaths.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\fshook.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\fullscreen_mode.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\haptic.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\internal\alconfig.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\joystick.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\keyboard.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\keycodes.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\memory.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\monitor.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\mouse.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\mouse_cursor.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\glx_ext_alias.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\glx_ext_api.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\glx_ext_defs.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\glx_ext_list.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\gl_ext_alias.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\gl_ext_api.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\gl_ext_defs.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\gl_ext_list.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\wgl_ext_alias.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\wgl_ext_api.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\wgl_ext_defs.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\glext\wgl_ext_list.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\opengl\gl_ext.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\path.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alandroid.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alandroidcfg.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\albcc32.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\aliphone.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\aliphonecfg.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\allegro_sdl_config.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\almngw32.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\almsvc.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alosx.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alosxcfg.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alplatf.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alraspberrypi.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alraspberrypicfg.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alucfg.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alunix.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alwatcom.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\alwin.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\astdbool.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\platform\astdint.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\render_state.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\shader.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\system.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\threads.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\timer.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\tls.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\touch_input.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\transformations.h" />
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\utf8.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\dumb.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\all.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\assert.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\callback.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\export.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\format.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\metadata.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\ordinals.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\stream_decoder.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\flac\stream_encoder.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\config\ftconfig.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\config\ftheader.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\config\ftmodule.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\config\ftoption.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\config\ftstdlib.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\freetype.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ft2build.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftadvanc.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftautoh.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftbbox.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftbdf.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftbitmap.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftbzip2.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftcache.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftcffdrv.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftchapters.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftcid.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\fterrdef.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\fterrors.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftgasp.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftglyph.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftgxval.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftgzip.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftimage.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftincrem.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftlcdfil.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftlist.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftlzw.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftmac.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftmm.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftmodapi.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftmoderr.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftotval.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftoutln.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftpfr.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftrender.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftsizes.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftsnames.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftstroke.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftsynth.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftsystem.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\fttrigon.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftttdrv.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\fttypes.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftwinfnt.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ftxf86.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\t1tables.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ttnameid.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\tttables.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\tttags.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\freetype2\ttunpat.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\jconfig.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\jerror.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\jmorecfg.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\jpeglib.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\libpng16\png.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\libpng16\pngconf.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\libpng16\pnglibconf.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\ogg\ogg.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\ogg\os_types.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\opus\opus.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\opus\opusfile.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\opus\opus_defines.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\opus\opus_multistream.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\opus\opus_types.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\physfs.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\png.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\pngconf.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\pnglibconf.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\theora\codec.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\theora\theora.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\theora\theoradec.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\turbojpeg.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\vorbis\codec.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\vorbis\vorbisenc.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\vorbis\vorbisfile.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\zconf.h" />
+    <ClInclude Include="packages\allegrodeps.1.5.0.1\build\native\include\zlib.h" />
+    <ClInclude Include="packages\physfs.v140.2.0.3.1\build\native\include\physfs.h" />
+    <ClInclude Include="packages\physfs.v140.2.0.3.1\build\native\include\physfs_casefolding.h" />
+    <ClInclude Include="packages\physfs.v140.2.0.3.1\build\native\include\physfs_internal.h" />
+    <ClInclude Include="packages\physfs.v140.2.0.3.1\build\native\include\physfs_platforms.h" />
+    <ClInclude Include="packages\pthreads.2.9.1.4\build\native\include\need_errno.h" />
+    <ClInclude Include="packages\pthreads.2.9.1.4\build\native\include\pthread.h" />
+    <ClInclude Include="packages\pthreads.2.9.1.4\build\native\include\sched.h" />
+    <ClInclude Include="packages\pthreads.2.9.1.4\build\native\include\semaphore.h" />
+    <ClInclude Include="src\chipmunk\prime.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
