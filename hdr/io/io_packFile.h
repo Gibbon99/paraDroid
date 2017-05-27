@@ -21,6 +21,8 @@ Copyright 2017 David Berry
 
 #include <physfs.h>
 
+extern bool useZlibWorkaround;
+
 // Start the packfile system
 bool io_startFileSystem(bool showArchivers);
 

@@ -71,7 +71,7 @@ int ai_getNextWaypoint ( int whichDroid )
 
 			if ( shipLevel[currentLevel].droid[whichDroid].currentAStarIndex < 0 )
 				{
-					con_print ( true, true, "Droid has reached destination" );
+//					con_print ( true, true, "Droid has reached destination" );
 					shipLevel[currentLevel].droid[whichDroid].ai_moveMode = AI_PATHFIND_END;
 					return AI_RESULT_FAILED; // No more waypoints
 				}

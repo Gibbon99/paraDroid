@@ -107,10 +107,7 @@ bool sys_startSound()
 	int revision = ( version >> 8 ) & 255;
 	int release = version & 255;
 
-	io_logToFile ( "Sound started" );
-	io_logToFile ( "%i.%i.%i Release: %i", major, minor, revision, release );
-	io_logToFile ( "--------------" );
-
+	io_logToFile ( "Sound started: %i.%i.%i Release: %i", major, minor, revision, release );
 	//
 	// Check as_numSamples is ok to use
 	if ( ( as_numSamples <= 0 ) || ( as_numMultiSamples <= 0 ) )

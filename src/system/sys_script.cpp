@@ -218,6 +218,7 @@ _hostScriptFunctions hostVariables[] =
 	{"bool useHoldBitmap", &useHoldBitmap},
 	{"bool useBackingBitmap", &useBackingBitmap},
 	{"bool useCollisionDetection", &useCollisionDetection},
+	{"bool debugShowStats", &debugShowStats},
 	{"int fullScreenValue", &fullScreenValue},
 	{"int inputMethod", &inputMethod},
 	{"int numJoysticks", &numJoysticks},
@@ -401,6 +402,7 @@ _hostScriptFunctions hostVariables[] =
 	{"float as_soundPlayDelay", &as_soundPlayDelay},
 
 	{"float repeatKeysDelay", &repeatKeysDelay},
+	
 	{"", NULL},
 };
 

@@ -28,7 +28,8 @@ bool				loadingThreadHasFinished;
 //-----------------------------------------------------------------------------
 //
 // Run all the loading etc in this function as a thread
-void *sys_runLoadThread ( ALLEGRO_THREAD *thread, void *arg )
+//void *sys_runLoadThread ( ALLEGRO_THREAD *thread, void *arg )
+void sys_runLoadThread ()
 //-----------------------------------------------------------------------------
 {
 	al_set_physfs_file_interface();
@@ -63,7 +64,7 @@ void *sys_runLoadThread ( ALLEGRO_THREAD *thread, void *arg )
 
 	stopLoadingThread = true;
 
-	while ( !al_get_thread_should_stop ( thread ) )
+//	while ( !al_get_thread_should_stop ( thread ) )
 		{
 //		printf("Still in thread.\n");
 //		printf("THREAD - Waiting for loading thread to finish - [ %i ]\n", loadingThreadHasFinished);
@@ -88,19 +89,19 @@ bool sys_startOnce()
 
 	sys_initRandomNum();
 
-	if ( false == io_startFileSystem ( true ) )
-		sys_errorFatal ( __FILE__, __LINE__, "Could not start packfile" );
-
-	al_set_physfs_file_interface();
-
-	if ( false == sys_initScriptEngine() )
-		sys_errorFatal ( "sys_initScrptEngine", __LINE__, "Could not start script engine" );
-
 	if ( !al_init() )
 		{
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize allegro!", NULL, ALLEGRO_MESSAGEBOX_ERROR );
 			return false;
 		}
+		
+	if ( false == io_startFileSystem ( false ) )
+		sys_errorFatal ( __FILE__, __LINE__, "Could not start packfile" );
+		
+	al_set_physfs_file_interface();
+
+	if ( false == sys_initScriptEngine() )
+		sys_errorFatal ( "sys_initScrptEngine", __LINE__, "Could not start script engine" );
 
 //
 // Run scripts to start things up
@@ -133,9 +134,7 @@ bool sys_startOnce()
 
 	uint32_t version = al_get_allegro_version();
 	con_setColor ( 1.0f, 1.0f, 0.0f, 1.0f );
-	con_print ( true, false, "Allegro Version" );
-	con_print ( true, false, "---------------" );
-	con_print ( true, false, "%i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
+	con_print ( true, false, "Allegro Version: %i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
 
 	if ( !al_install_keyboard() )
 		{
@@ -157,21 +156,22 @@ bool sys_startOnce()
 
 	al_init_font_addon();
 	builtInFont = al_create_builtin_font();
-
 	if ( NULL == builtInFont )
 		{
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize built in font", NULL, ALLEGRO_MESSAGEBOX_ERROR );
 			return false;
 		}
-
-	io_logToFile ( "INFO: Font addon installed" );
-
+	version = al_get_allegro_font_version();
+	con_setColor ( 1.0f, 1.0f, 0.0f, 1.0f );
+	con_print ( true, false, "INFO: Allegro Font Version: %i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
+	
+	
+	
 	if ( !al_init_image_addon() )
 		{
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize al_init_image_addon!", NULL, ALLEGRO_MESSAGEBOX_ERROR );
 			return false;
 		}
-
 	io_logToFile ( "INFO: Image addon installed." );
 
 	if ( !al_init_primitives_addon() )
@@ -179,7 +179,6 @@ bool sys_startOnce()
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize al_init_primitives_addon", NULL, ALLEGRO_MESSAGEBOX_ERROR );
 			return false;
 		}
-
 	io_logToFile ( "INFO: Primitives addon installed." );
 
 	if ( !al_install_joystick() )
@@ -187,7 +186,6 @@ bool sys_startOnce()
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize al_install_joystick", NULL, ALLEGRO_MESSAGEBOX_ERROR );
 			return false;
 		}
-
 	io_logToFile ( "INFO: Joysticks installed." );
 	io_setupJoystickValues ();
 
@@ -204,8 +202,6 @@ bool sys_startOnce()
 	al_register_event_source ( eventQueue, al_get_display_event_source ( display ) );
 	//
 	// Needed for TTF fonts
-	al_init_font_addon();
-
 	if ( !al_init_ttf_addon() )
 		{
 			al_show_native_message_box ( display, "Error", "Error", "Failed to start TTF Addon", NULL, ALLEGRO_MESSAGEBOX_ERROR );
@@ -214,9 +210,7 @@ bool sys_startOnce()
 
 	version = al_get_allegro_ttf_version();
 	con_setColor ( 1.0f, 1.0f, 0.0f, 1.0f );
-	con_print ( true, false, "Allegro TTF Version" );
-	con_print ( true, false, "---------------" );
-	con_print ( true, false, "%i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
+	con_print ( true, false, "INFO: Allegro TTF Version: %i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
 	sys_setFontColor ( 1.0f, 1.0f, 1.0f, 1.0f );
 
 	soundSystemStarted = sys_startSound();
@@ -270,6 +264,8 @@ bool sys_startOnce()
 	stopLoadingThread = false;
 	loadedAllBitmaps = false;
 	loadingBarPercent = 0;	// Loading bar starts at 0 percent
+
+//sys_runLoadThread();
 
 	loadingThread = al_create_thread ( sys_runLoadThread, NULL );
 	al_start_thread ( loadingThread );

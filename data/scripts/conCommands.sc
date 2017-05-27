@@ -8,6 +8,28 @@ const int	CON_PARAM   = 4;
 
 //-----------------------------------------------------------------------------
 //
+// Toggle display of performance stats on screen
+void as_debugShowStats(int &in param1)
+//-----------------------------------------------------------------------------
+{
+	string testParam;
+	
+	testParam = param1;
+	
+	if (0 == param1)
+	{
+		debugShowStats = false;
+		sys_printConStr("Debug stats: ", "off");
+	}
+	else
+	{
+		debugShowStats = true;
+		sys_printConStr("Debug stats: ", "on");
+	}
+}
+
+//-----------------------------------------------------------------------------
+//
 // Toggle if LOS is always true or not
 void as_setDroidVisibility(int &in param1)
 //-----------------------------------------------------------------------------
@@ -127,7 +149,7 @@ void as_addAllScriptCommands()
 	sys_addScriptCommand("changetolevel", 	"Change to new deck", 		"void as_changeToLevel(int &in)", 			true);
 	sys_addScriptCommand("lineofsightsteps","Steps for LOS", 			"void as_setStepsLOS(int &in)", 			true);
 	sys_addScriptCommand("droidsvisible", 	"Toggle droid visibility", 	"void as_setDroidVisibility(int &in)",	 	true);
-
-    numConsoleCommands = 6;
+	sys_addScriptCommand("debugShowStats",	"Show frame stats",			"void as_debugShowStats(int &in)",			true);
+    numConsoleCommands = 7;
 }
 

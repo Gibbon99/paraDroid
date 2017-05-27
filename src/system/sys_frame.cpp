@@ -35,7 +35,6 @@ static float splashCounter = 5.0f;
 //-----------------------------------------------------------------------------
 //
 // Display loading screen
-
 void sys_displayLoadingScreen()
 //-----------------------------------------------------------------------------
 {
@@ -101,170 +100,170 @@ void sys_displayFrame ( float interpolation )
 
 	switch ( currentMode )
 		{
-			case MODE_LOADING:
-				con_drawScreen ( false, interpolation );
-				sys_displayLoadingScreen();
+		case MODE_LOADING:
+			con_drawScreen ( false, interpolation );
+			sys_displayLoadingScreen();
 
-				if ( true == stopLoadingThread )
-					{
-						al_set_thread_should_stop ( loadingThread );
-					}
+			if ( true == stopLoadingThread )
+				{
+					al_set_thread_should_stop ( loadingThread );
+				}
 
-				//
-				// Convert bitmaps loaded in another thread to hardware ones in display thread
-				if ( true == loadedAllBitmaps )
-					{
-						io_convertImages();
-						loadedAllBitmaps = false;
-						io_loadNewTileSet();
-					}
+			//
+			// Convert bitmaps loaded in another thread to hardware ones in display thread
+			if ( true == loadedAllBitmaps )
+				{
+					io_convertImages();
+					loadedAllBitmaps = false;
+					io_loadNewTileSet();
+				}
 
-				if ( ( true == loadingThreadHasFinished ) && ( false == processFadeValue ) )
-					{
-						printf ( "Waiting for loading thread to finish - [ %i ]\n", loadingThreadHasFinished );
-						sys_changeMode ( MODE_SHOW_SPLASH, true );
-						io_loadNewTileSet();
-					}
+			if ( ( true == loadingThreadHasFinished ) && ( false == processFadeValue ) )
+				{
+//						printf ( "Waiting for loading thread to finish - [ %i ]\n", loadingThreadHasFinished );
+					sys_changeMode ( MODE_SHOW_SPLASH, true );
+					io_loadNewTileSet();
+				}
 
-				break;
+			break;
 
-			case MODE_INTRO:
-				gam_displayIntroText();
-				//				al_draw_filled_rectangle(0.0f, 0.0f, winWidth, al_get_bitmap_height(image[hud].image), al_map_rgba_f(0.0f, 0.0f, 0.0f, 1.0f));
-				gam_drawHud();
-				gui_drawRasterLines();
-				al_draw_filled_rectangle ( 0.0f, winHeight - introBlockOut, winWidth, winHeight, al_map_rgba_f ( 0.0f, 0.0f, 0.0f, 1.0f ) );
-				break;
+		case MODE_INTRO:
+			gam_displayIntroText();
+			gam_drawHud();
+			gui_drawRasterLines();
+			al_draw_filled_rectangle ( 0.0f, winHeight - introBlockOut, winWidth, winHeight, al_map_rgba_f ( 0.0f, 0.0f, 0.0f, 1.0f ) );
+			break;
 
-			case MODE_GUI:
-				gam_drawHud();
-				gui_drawGUI();
-				break;
+		case MODE_GUI:
+			gam_drawHud();
+			gui_drawGUI();
+			break;
 
-			case MODE_CONSOLE:
-				con_drawScreen ( false, interpolation );
-				break;
+		case MODE_CONSOLE:
+			con_drawScreen ( false, interpolation );
+			break;
 
-			case MODE_KEYCODE:
-				gam_drawHud();
-				gui_drawGUI();
-				break;
+		case MODE_KEYCODE:
+			gam_drawHud();
+			gui_drawGUI();
+			break;
 
-			case MODE_SHOW_SPLASH:
-				gam_drawImage ( splashImg, 0.0f, 0.0f, flagFullScreen );
-				break;
+		case MODE_SHOW_SPLASH:
+			gam_drawImage ( splashImg, 0.0f, 0.0f, flagFullScreen );
+			break;
 
-			case MODE_PAUSED:
-				gam_drawAllTiles();
-				par_drawParticles();
-				bul_drawBullets();
-				gam_drawAllDroids ( currentLevel );
-				gam_drawSpotLights();
-				gam_drawHud();
+		case MODE_PAUSED:
+			gam_drawAllTiles();
+			par_drawParticles();
+			bul_drawBullets();
+			gam_drawAllDroids ( currentLevel );
+			gam_drawSpotLights();
+			gam_drawHud();
 
-				/*
-								// Return how many waypoints there are
-								if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
-									{
-										if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
-											{
-												gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
-											}
-									}
-				*/
+			/*
+							// Return how many waypoints there are
+							if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
+								{
+									if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
+										{
+											gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
+										}
+								}
+			*/
 //				gam_debugShowWaypoints();
-				break;
+			break;
 
-			case MODE_SHOWLEVEL:
-			case MODE_PLAYER_EXPLODE:
-				gam_drawAllTiles();
-				par_drawParticles();
-				bul_drawBullets();
-				gam_drawAllDroids ( currentLevel );
-				gam_drawSpotLights();
-				gam_drawHud();
+		case MODE_SHOWLEVEL:
+		case MODE_PLAYER_EXPLODE:
+			gam_drawAllTiles();
+			par_drawParticles();
+			bul_drawBullets();
+			gam_drawAllDroids ( currentLevel );
+			gam_drawSpotLights();
+			gam_drawHud();
 
 //				sys_debugShowTileGrid();
 
-				/*
-								// Return how many waypoints there are
-								if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
-									{
-										if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
-											{
-												gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
-											}
-									}
-				*/
-				// Draw Paused window
+			/*
+							// Return how many waypoints there are
+							if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
+								{
+									if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
+										{
+											gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
+										}
+								}
+			*/
+			// Draw Paused window
 
+			if ( true == debugShowStats )
 				sys_displayDebug();
-				//sys_displayScreenMiddle();
+			//sys_displayScreenMiddle();
 
-				//gam_debugShowDestination();
-				//gam_debugShowWaypoints();
+			//gam_debugShowDestination();
+			//gam_debugShowWaypoints();
 
-				//sys_debugLineSegments();
-				//sysDoorDebugTrigger();
-				//lvl_debugLOS();
+			//sys_debugLineSegments();
+			//sysDoorDebugTrigger();
+			//lvl_debugLOS();
 
-				//gam_drawDB_Droid();
-				break;
+			//gam_drawDB_Droid();
+			break;
 
-			case MODE_LIFT_VIEW:
-				statusText = gui_getString ( "lift" );
-				gam_drawStarfield();
-				gam_drawHud();
-				gam_drawSideView();
-				break;
+		case MODE_LIFT_VIEW:
+			statusText = gui_getString ( "lift" );
+			gam_drawStarfield();
+			gam_drawHud();
+			gam_drawSideView();
+			break;
 
-			case MODE_TERMINAL_SIDEVIEW:
-				gam_setHUDState ( HUD_STATE_SHIP_VIEW );
-				gam_drawStarfield();
-				gam_drawHud();
-				gam_drawSideView();
-				gui_drawRasterLines();
-				break;
+		case MODE_TERMINAL_SIDEVIEW:
+			gam_setHUDState ( HUD_STATE_SHIP_VIEW );
+			gam_drawStarfield();
+			gam_drawHud();
+			gam_drawSideView();
+			gui_drawRasterLines();
+			break;
 
-			case MODE_TERMINAL_DB:
-				gam_setHUDState ( HUD_STATE_DATABASE );
-				gam_drawDB_Droid ( -1, -1 );
-				gui_drawScrollBox ( &databaseScrollBox );
-				gui_drawRasterLines();
-				gam_drawHud();
-				al_draw_filled_rectangle ( 0, winHeight - 48.0f, winWidth, winHeight, al_map_rgba_f ( 0.0, 0.0, 0.0, 1 ) );
-				break;
+		case MODE_TERMINAL_DB:
+			gam_setHUDState ( HUD_STATE_DATABASE );
+			gam_drawDB_Droid ( -1, -1 );
+			gui_drawScrollBox ( &databaseScrollBox );
+			gui_drawRasterLines();
+			gam_drawHud();
+			al_draw_filled_rectangle ( 0, winHeight - 48.0f, winWidth, winHeight, al_map_rgba_f ( 0.0, 0.0, 0.0, 1 ) );
+			break;
 
-			case MODE_TERMINAL_LEVEL:
-				gam_setHUDState ( HUD_STATE_DECK_VIEW );
-				gam_drawStarfield();
-				gam_drawHud();
-				term_showCurrentLevel();
-				gui_drawRasterLines();
-				break;
+		case MODE_TERMINAL_LEVEL:
+			gam_setHUDState ( HUD_STATE_DECK_VIEW );
+			gam_drawStarfield();
+			gam_drawHud();
+			term_showCurrentLevel();
+			gui_drawRasterLines();
+			break;
 
-			case MODE_TRANSFER_INTRO:
-			case MODE_TRANSFER_INTRO_1:
-			case MODE_TRANSFER_INTRO_2:
-			case MODE_TRANSFER_FINISH:
-			case MODE_TRANSFER_START:
-			case MODE_TRANSFER_COPY:
-			case MODE_TRANSFER_DEADLOCK:
-			case MODE_TRANSFER_SELECT:
-			case MODE_TRANSFER_SELECT_SIDE:
-			case MODE_TRANSFER_LOST:
-				gam_drawHud();
-				trn_drawTransferScreen();
+		case MODE_TRANSFER_INTRO:
+		case MODE_TRANSFER_INTRO_1:
+		case MODE_TRANSFER_INTRO_2:
+		case MODE_TRANSFER_FINISH:
+		case MODE_TRANSFER_START:
+		case MODE_TRANSFER_COPY:
+		case MODE_TRANSFER_DEADLOCK:
+		case MODE_TRANSFER_SELECT:
+		case MODE_TRANSFER_SELECT_SIDE:
+		case MODE_TRANSFER_LOST:
+			gam_drawHud();
+			trn_drawTransferScreen();
 
-				sys_displayDebug();
-				break;
+			sys_displayDebug();
+			break;
 
-			case MODE_END_STATIC_PRE:
-			case MODE_END_STATIC:
-			case MODE_END_TEXT:
-			case MODE_END_TEXT_FINISH:
-				gam_drawEndScreen();
-				break;
+		case MODE_END_STATIC_PRE:
+		case MODE_END_STATIC:
+		case MODE_END_TEXT:
+		case MODE_END_TEXT_FINISH:
+			gam_drawEndScreen();
+			break;
 		}
 
 	//
@@ -289,128 +288,127 @@ void sys_displayFrame ( float interpolation )
 //-----------------------------------------------------------------------------
 //
 // Routine to handle all non graphics routines
-
 void sys_updateFrame()
 //-----------------------------------------------------------------------------
 {
 	if ( false == processFadeValue )	// No keyboard while fade is happening
-	{
-		io_processKeyboard(thinkInterval);
-		io_processJoystick();
-	}
+		{
+			io_processKeyboard ( thinkInterval );
+			io_processJoystick();
+		}
 
 	switch ( currentMode )
 		{
-			case MODE_LOADING:
-				break;
+		case MODE_LOADING:
+			break;
 
-			case MODE_CONSOLE:
-				// Process the cursor
-				con_processCursor ( thinkInterval );
-				con_processBackspaceKey ( thinkInterval );
-				break;
+		case MODE_CONSOLE:
+			// Process the cursor
+			con_processCursor ( thinkInterval );
+			con_processBackspaceKey ( thinkInterval );
+			break;
 
-			case MODE_SHOW_SPLASH:
-				splashCounter -= 1.0f * thinkInterval;
+		case MODE_SHOW_SPLASH:
+			splashCounter -= 1.0f * thinkInterval;
 
-				if ( splashCounter < 0.0f )
-					{
-						splashCounter = 1.0f;
-						sys_changeMode ( MODE_INTRO, true );
-						sys_playSound ( SND_SCROLLBEEPS, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
-					}
+			if ( splashCounter < 0.0f )
+				{
+					splashCounter = 1.0f;
+					sys_changeMode ( MODE_INTRO, true );
+					sys_playSound ( SND_SCROLLBEEPS, SND_PAN_CENTER, ALLEGRO_PLAYMODE_LOOP );
+				}
 
-				break;
+			break;
 
-			case MODE_INTRO:
-				gui_animateRasterLine();
-				gui_scrollScrollBox ( &introScrollBox );
-				break;
+		case MODE_INTRO:
+			gui_animateRasterLine();
+			gui_scrollScrollBox ( &introScrollBox );
+			break;
 
-			case MODE_PLAYER_EXPLODE:
-				gam_animatePlayerSprite ( thinkInterval );
-				break;
+		case MODE_PLAYER_EXPLODE:
+			gam_animatePlayerSprite ( thinkInterval );
+			break;
 
-			case MODE_SHOWLEVEL:
-				if ( false == gamePaused )
-					{
-						gam_processPlayerMovement ( thinkInterval );
-						//
-						// Work around phyics and worldPos timings
-						// Results in droid with invalid worldPos values
-						//
-						if (true == processedPhysics)
+		case MODE_SHOWLEVEL:
+			if ( false == gamePaused )
+				{
+					gam_processPlayerMovement ( thinkInterval );
+					//
+					// Work around phyics and worldPos timings
+					// Results in droid with invalid worldPos values
+					//
+					if ( true == processedPhysics )
 						{
-							if (false == processFadeValue)
+							if ( false == processFadeValue )
 								drd_processDroidAI ( currentLevel, thinkInterval );
 						}
 
-						gam_updateScrollingVars ( false );
-						gam_doorCheckTriggerAreas();
-						gam_doorProcessActions();
-						bul_processBullets();
-						gam_weaponRechargePlayer();
-						gam_checkTransferSound();
-						gam_checkAlertLevel();
-						gam_checkPlayerHealingTile ( thinkInterval );
-						par_processEmitterQueue();
-						par_animateParticles();
-						gam_playerTransferTime();
-					}
+					gam_updateScrollingVars ( false );
+					gam_doorCheckTriggerAreas();
+					gam_doorProcessActions();
+					bul_processBullets();
+					gam_weaponRechargePlayer();
+					gam_checkTransferSound();
+					gam_checkAlertLevel();
+					gam_checkPlayerHealingTile ( thinkInterval );
+					par_processEmitterQueue();
+					par_animateParticles();
+					gam_playerTransferTime();
+				}
 
-				gam_animateSpotLights();
-				gam_animateHealTiles ( currentLevel );
-				lvl_LOS();
-				gam_animatePlayerSprite ( thinkInterval );
-				gam_processScore ( thinkInterval );
-				drd_clearHadCollidedFlag();
-				gam_AStarProcessPaths();
-				cpSpaceStep ( space, SKIP_TICKS );
-				processedPhysics = true;
-				break;
+			gam_animateSpotLights();
+			gam_animateHealTiles ( currentLevel );
+			lvl_LOS();
+			gam_animatePlayerSprite ( thinkInterval );
+			gam_processScore ( thinkInterval );
+			drd_clearHadCollidedFlag();
+			gam_AStarProcessPaths();
+			cpSpaceStep ( space, SKIP_TICKS );
+			processedPhysics = true;
+			break;
 
-			case MODE_LIFT_VIEW:
-				gam_animateStarField ( thinkInterval );
-				sys_pauseSoundSystem ( false );
-				break;
+		case MODE_LIFT_VIEW:
+			gam_animateStarField ( thinkInterval );
+			sys_pauseSoundSystem ( false );
+			break;
 
-			case MODE_TERMINAL_SIDEVIEW:
-			case MODE_TERMINAL_LEVEL:
-				gam_animateStarField ( thinkInterval );
-				gui_animateRasterLine();
-				gamAnimateIndicator ( thinkInterval );
-				break;
+		case MODE_TERMINAL_SIDEVIEW:
+		case MODE_TERMINAL_LEVEL:
+			gam_animateStarField ( thinkInterval );
+			gui_animateRasterLine();
+			gamAnimateIndicator ( thinkInterval );
+			break;
 
-			case MODE_TERMINAL_DB:
-				gam_animateDB_Droid();
-				gui_scrollScrollBox ( &databaseScrollBox );
-				gui_animateRasterLine();
-				break;
+		case MODE_TERMINAL_DB:
+			gam_animateDB_Droid();
+			gui_scrollScrollBox ( &databaseScrollBox );
+			gui_animateRasterLine();
+			break;
 
-			case MODE_GUI:
-				gui_animateRasterLine();
-				sys_pauseSoundSystem ( false );
-				break;
+		case MODE_GUI:
+			gui_animateRasterLine();
+			sys_pauseSoundSystem ( false );
+			break;
 
-			case MODE_TRANSFER_INTRO:
-			case MODE_TRANSFER_INTRO_1:
-			case MODE_TRANSFER_INTRO_2:
-			case MODE_TRANSFER_FINISH:
-			case MODE_TRANSFER_START:
-			case MODE_TRANSFER_COPY:
-			case MODE_TRANSFER_DEADLOCK:
-			case MODE_TRANSFER_SELECT:
-			case MODE_TRANSFER_SELECT_SIDE:
-			case MODE_TRANSFER_LOST:
-				trn_processTransferScreen ( thinkInterval );
-				break;
+		case MODE_TRANSFER_INTRO:
+		case MODE_TRANSFER_INTRO_1:
+		case MODE_TRANSFER_INTRO_2:
+		case MODE_TRANSFER_FINISH:
+		case MODE_TRANSFER_START:
+		case MODE_TRANSFER_COPY:
+		case MODE_TRANSFER_DEADLOCK:
+		case MODE_TRANSFER_SELECT:
+		case MODE_TRANSFER_SELECT_SIDE:
+		case MODE_TRANSFER_LOST:
+			trn_processTransferScreen ( thinkInterval );
+			break;
 
-			case MODE_END_STATIC_PRE:
-			case MODE_END_STATIC:
-			case MODE_END_TEXT:
-			case MODE_END_TEXT_FINISH:
-				gam_processEndScreen();
-				break;
+		case MODE_END_STATIC_PRE:
+		case MODE_END_STATIC:
+		case MODE_END_TEXT:
+		case MODE_END_TEXT_FINISH:
+			gam_processEndScreen();
+			break;
 		}
 
 	//

@@ -55,11 +55,17 @@ bool io_loadttfFont(int fontIndex, int fontSize, string fontName)
 {
 	strcpy(font[fontIndex].fileName, fontName.c_str());
 
+	if (true == PHYSFS_exists (font[fontIndex].fileName))
+		io_logToFile("File [ %s ] exists.", font[fontIndex].fileName);
+	else
+		io_logToFile("File [ %s ] NOT found.", font[fontIndex].fileName);
+
 	font[fontIndex].ttfFont = al_load_ttf_font(font[fontIndex].fileName, fontSize, 0);
 	if (NULL == font[fontIndex].ttfFont)
 	{
 		io_logToFile("Error: Font [ %s ] not found", font[fontIndex].fileName);
 		font[fontIndex].valid = false;
+		sys_errorFatal("sys_font.cpp", 63, "Font file not found [ %s ]", font[fontIndex].fileName);
 	}
 	font[fontIndex].valid = true;
 	font[fontIndex].fontSize = fontSize;

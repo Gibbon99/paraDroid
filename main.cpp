@@ -37,6 +37,8 @@ bool				useBackingBitmap = true;
 
 bool				useCollisionDetection = false;
 
+bool				debugShowStats = false;
+
 double				nextGameTick;
 int					loops;
 float				interpolation;

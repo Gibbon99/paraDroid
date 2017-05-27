@@ -146,6 +146,7 @@ extern int                 	currentMode;
 extern int					inputMethod;
 
 extern bool					useCollisionDetection;
+extern bool					debugShowStats;
 
 extern int					maxNumSpritesForPhysics;
 

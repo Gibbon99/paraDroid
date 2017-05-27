@@ -219,7 +219,7 @@ void gui_drawGUI ()
 {
 	sys_setFont ( FONT_GUI );
 
-	sys_printStringExt ( 10.0f, 30.0f, "currentGUIScreen [ %s ] Selected [ %i ] Size [ %i ]", guiScreens[currentGUIScreen].screenID.c_str(), guiScreens[currentGUIScreen].selectedObject, guiScreens[currentGUIScreen].objectIDIndex.size() );
+//	sys_printStringExt ( 10.0f, 30.0f, "currentGUIScreen [ %s ] Selected [ %i ] Size [ %i ]", guiScreens[currentGUIScreen].screenID.c_str(), guiScreens[currentGUIScreen].selectedObject, guiScreens[currentGUIScreen].objectIDIndex.size() );
 	//
 	// Draw GUI object elements
 	int indexCount = 0;
