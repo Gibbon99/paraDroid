@@ -2,7 +2,7 @@
 
 
 [     0 ] : Logfile: Log file opened:
-[     0 ] : 28-05-2017	16:15:17
+[     0 ] : 28-05-2017	17:51:08
 [     0 ] : Logfile: Logfile started...
 [     0 ] : Node [ AI_SHOOT ] added. Num Children for [ ROOT_NODE ] now [ 1 ]
 [     0 ] : Child index set to [ 1 ]
@@ -48,12 +48,12 @@
 [     0 ] : Child index set to [ 21 ]
 [     0 ] : Node [ FIND_WP ] added. Num Children for [ AI_PATROL ] now [ 3 ]
 [     0 ] : Child index set to [ 22 ]
-[     0 ] : INFO: Compiled against PhysFS version 2.0.3.
-[     0 ] : INFO: Linked against PhysFS version 2.0.3.
-[     0 ] : INFO: Using file structure for data files.
-[     0 ] : INFO: Data file path [ data/winData ]
+[     0 ] : INFO: Compiled against PhysFS version 2.1.0.
+[     0 ] : INFO: Linked against PhysFS version 2.1.0.
+[     0 ] : INFO: Using packfile for data files
 [     0 ] : INFO: Data file path [ data ]
 [     0 ] : INFO: Data file path [ data/scripts ]
+[     0 ] : INFO: Data file path [ data/data.zip ]
 [     0 ] : Script: Scriptengine started.
 [     0 ] : Script: ScriptEngine version - [ 2.24.1 ]
 [     0 ] : Script: Options - [  AS_64BIT_PTR AS_LINUX AS_X64_GCC  ]
@@ -312,27 +312,27 @@
 [     0 ] : Size of script [ 24778 ] - [ textEnglish.sc ]
 [     0 ] : Size of script [ 492 ] - [ textItalian.sc ]
 [     0 ] : Number of functions in script [ 13 ]
-[     0 ] : Func ID for [ void as_initGameVars() ] - [ 10107168 ]
-[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 10068016 ]
-[     0 ] : Func ID for [ void as_shutdown() ] - [ 9986352 ]
-[     0 ] : Func ID for [ void as_loadFonts() ] - [ 10105696 ]
-[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 10085088 ]
-[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 10106432 ]
-[     0 ] : Func ID for [ void as_setdbValues() ] - [ 10084352 ]
-[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 10087840 ]
-[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 10104448 ]
-[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 10017920 ]
-[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 10107904 ]
-[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 10071328 ]
-[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 10069840 ]
+[     0 ] : Func ID for [ void as_initGameVars() ] - [ 10254896 ]
+[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 10215728 ]
+[     0 ] : Func ID for [ void as_shutdown() ] - [ 10134144 ]
+[     0 ] : Func ID for [ void as_loadFonts() ] - [ 10253424 ]
+[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 10232800 ]
+[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 10254160 ]
+[     0 ] : Func ID for [ void as_setdbValues() ] - [ 10232064 ]
+[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 10235552 ]
+[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 10252176 ]
+[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 10165664 ]
+[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 10255632 ]
+[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 10219040 ]
+[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 10217552 ]
 [     0 ] : [ No joysticks found. ] [ Use Keyboard. ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10066048 ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10066048 ]
-[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 10065344 ]
-[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 10064640 ]
-[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 10063600 ]
-[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 10062800 ]
-[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 10061952 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10213760 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10213760 ]
+[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 10213056 ]
+[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 10212352 ]
+[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 10211312 ]
+[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 10210512 ]
+[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 10209664 ]
 [     0 ] : INFO: Object [ 50.00 60.00 ]
 [     0 ] : Allegro Version: 5.2.2 Release 0
 [     0 ] : INFO: Keyboard installed.
@@ -783,324 +783,324 @@
 [     0 ] : -------------
 [     0 ] : Added new object - [ tutImageTerminal ]
 [     0 ] : Setting position for - [ tutImageTerminal ]
-[     1 ] : Setting colors for - [ tutImageTerminal ]
-[     1 ] : Adding [ tutImageTerminal ] to screen [ scrTutTerminals ]
-[     1 ] : Screen [ scrTutTerminals ] objectID [ 1 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTerminalNext ]
-[     1 ] : Setting position for - [ buttonTutTerminalNext ]
-[     1 ] : Setting label for - [ buttonTutTerminalNext ]
-[     1 ] : Setting the function call for [ buttonTutTerminalNext ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTerminalNext ] to screen [ scrTutTerminals ]
-[     1 ] : Screen [ scrTutTerminals ] objectID [ 33 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTerminalCancel ]
-[     1 ] : Setting position for - [ buttonTutTerminalCancel ]
-[     1 ] : Setting label for - [ buttonTutTerminalCancel ]
-[     1 ] : Setting the function call for [ buttonTutTerminalCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTerminalCancel ] to screen [ scrTutTerminals ]
-[     1 ] : Screen [ scrTutTerminals ] objectID [ 34 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutHealing ] created.
-[     1 ] : Added new object - [ textLabelTutHealing ]
-[     1 ] : Setting position for - [ textLabelTutHealing ]
-[     1 ] : Setting label for - [ textLabelTutHealing ]
-[     1 ] : Adding [ textLabelTutHealing ] to screen [ scrTutHealing ]
-[     1 ] : Screen [ scrTutHealing ] objectID [ 8 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutHealingTextBox ]
-[     1 ] : Setting position for - [ tutHealingTextBox ]
-[     1 ] : Setting colors for - [ tutHealingTextBox ]
-[     1 ] : Setting label for - [ tutHealingTextBox ]
-[     1 ] : Adding [ tutHealingTextBox ] to screen [ scrTutHealing ]
-[     1 ] : Screen [ scrTutHealing ] objectID [ 6 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutImageHealing ]
-[     1 ] : Setting position for - [ tutImageHealing ]
-[     1 ] : Setting colors for - [ tutImageHealing ]
-[     1 ] : Adding [ tutImageHealing ] to screen [ scrTutHealing ]
-[     1 ] : Screen [ scrTutHealing ] objectID [ 2 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutHealinglNext ]
-[     1 ] : Setting position for - [ buttonTutHealinglNext ]
-[     1 ] : Setting label for - [ buttonTutHealinglNext ]
-[     1 ] : Setting the function call for [ buttonTutHealinglNext ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutHealinglNext ] to screen [ scrTutHealing ]
-[     1 ] : Screen [ scrTutHealing ] objectID [ 35 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutHealingCancel ]
-[     1 ] : Setting position for - [ buttonTutHealingCancel ]
-[     1 ] : Setting label for - [ buttonTutHealingCancel ]
-[     1 ] : Setting the function call for [ buttonTutHealingCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutHealingCancel ] to screen [ scrTutHealing ]
-[     1 ] : Screen [ scrTutHealing ] objectID [ 36 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutTips ] created.
-[     1 ] : Added new object - [ textLabelTutTips ]
-[     1 ] : Setting position for - [ textLabelTutTips ]
-[     1 ] : Setting label for - [ textLabelTutTips ]
-[     1 ] : Adding [ textLabelTutTips ] to screen [ scrTutTips ]
-[     1 ] : Screen [ scrTutTips ] objectID [ 9 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutTipsTextBox ]
-[     1 ] : Setting position for - [ tutTipsTextBox ]
-[     1 ] : Setting colors for - [ tutTipsTextBox ]
-[     1 ] : Setting label for - [ tutTipsTextBox ]
-[     1 ] : Adding [ tutTipsTextBox ] to screen [ scrTutTips ]
-[     1 ] : Screen [ scrTutTips ] objectID [ 7 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTipsCancel ]
-[     1 ] : Setting position for - [ buttonTutTipsCancel ]
-[     1 ] : Setting label for - [ buttonTutTipsCancel ]
-[     1 ] : Setting the function call for [ buttonTutTipsCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTipsCancel ] to screen [ scrTutTips ]
-[     1 ] : Screen [ scrTutTips ] objectID [ 37 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrGameControls ] created.
-[     1 ] : Added new object - [ controlsHelp ]
-[     1 ] : Setting position for - [ controlsHelp ]
-[     1 ] : Setting label for - [ controlsHelp ]
-[     1 ] : Adding [ controlsHelp ] to screen [ scrGameControls ]
-[     1 ] : Screen [ scrGameControls ] objectID [ 10 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ keyCodeControl ]
-[     1 ] : Setting position for - [ keyCodeControl ]
-[     1 ] : Setting the function call for [ keyCodeControl ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ keyCodeControl ] to screen [ scrGameControls ]
-[     1 ] : Screen [ scrGameControls ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonControlApply ]
-[     1 ] : Setting position for - [ buttonControlApply ]
-[     1 ] : Setting label for - [ buttonControlApply ]
-[     1 ] : Setting the function call for [ buttonControlApply ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonControlApply ] to screen [ scrGameControls ]
-[     1 ] : Screen [ scrGameControls ] objectID [ 38 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonControlCancel ]
-[     1 ] : Setting position for - [ buttonControlCancel ]
-[     1 ] : Setting label for - [ buttonControlCancel ]
-[     1 ] : Setting the function call for [ buttonControlCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonControlCancel ] to screen [ scrGameControls ]
-[     1 ] : Screen [ scrGameControls ] objectID [ 39 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrKeyCodeCapture ] created.
-[     1 ] : Added new object - [ captureHelp ]
-[     1 ] : Setting position for - [ captureHelp ]
-[     1 ] : Setting label for - [ captureHelp ]
-[     1 ] : Adding [ captureHelp ] to screen [ scrKeyCodeCapture ]
-[     1 ] : Screen [ scrKeyCodeCapture ] objectID [ 11 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ captureHelpCancel ]
-[     1 ] : Setting position for - [ captureHelpCancel ]
-[     1 ] : Setting label for - [ captureHelpCancel ]
-[     1 ] : Adding [ captureHelpCancel ] to screen [ scrKeyCodeCapture ]
-[     1 ] : Screen [ scrKeyCodeCapture ] objectID [ 12 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrRestartQuestion ] created.
-[     1 ] : Added new object - [ restartTextBox ]
-[     1 ] : Setting position for - [ restartTextBox ]
-[     1 ] : Setting colors for - [ restartTextBox ]
-[     1 ] : Setting label for - [ restartTextBox ]
-[     1 ] : Adding [ restartTextBox ] to screen [ scrRestartQuestion ]
-[     1 ] : Screen [ scrRestartQuestion ] objectID [ 8 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonRestartYes ]
-[     1 ] : Setting position for - [ buttonRestartYes ]
-[     1 ] : Setting label for - [ buttonRestartYes ]
-[     1 ] : Setting the function call for [ buttonRestartYes ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonRestartYes ] to screen [ scrRestartQuestion ]
-[     1 ] : Screen [ scrRestartQuestion ] objectID [ 40 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonRestartCancel ]
-[     1 ] : Setting position for - [ buttonRestartCancel ]
-[     1 ] : Setting label for - [ buttonRestartCancel ]
-[     1 ] : Setting the function call for [ buttonRestartCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonRestartCancel ] to screen [ scrRestartQuestion ]
-[     1 ] : Screen [ scrRestartQuestion ] objectID [ 41 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrDisplayScoreTable ] created.
-[     1 ] : Added new object - [ displayScoreTextBox ]
-[     1 ] : Setting position for - [ displayScoreTextBox ]
-[     1 ] : Setting colors for - [ displayScoreTextBox ]
-[     1 ] : Setting label for - [ displayScoreTextBox ]
-[     1 ] : Adding [ displayScoreTextBox ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 9 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ displayScoreOne ]
-[     1 ] : Setting position for - [ displayScoreOne ]
-[     1 ] : Setting colors for - [ displayScoreOne ]
-[     1 ] : Setting label for - [ displayScoreOne ]
-[     1 ] : Adding [ displayScoreOne ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 10 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ displayScoreTwo ]
-[     1 ] : Setting position for - [ displayScoreTwo ]
-[     1 ] : Setting colors for - [ displayScoreTwo ]
-[     1 ] : Setting label for - [ displayScoreTwo ]
-[     1 ] : Adding [ displayScoreTwo ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 11 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ displayScoreThree ]
-[     1 ] : Setting position for - [ displayScoreThree ]
-[     1 ] : Setting colors for - [ displayScoreThree ]
-[     1 ] : Setting label for - [ displayScoreThree ]
-[     1 ] : Adding [ displayScoreThree ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 12 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ displayScoreFour ]
-[     1 ] : Setting position for - [ displayScoreFour ]
-[     1 ] : Setting colors for - [ displayScoreFour ]
-[     1 ] : Setting label for - [ displayScoreFour ]
-[     1 ] : Adding [ displayScoreFour ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 13 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ displayScoreFive ]
-[     1 ] : Setting position for - [ displayScoreFive ]
-[     1 ] : Setting colors for - [ displayScoreFive ]
-[     1 ] : Setting label for - [ displayScoreFive ]
-[     1 ] : Adding [ displayScoreFive ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 14 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreInitialsOne ]
-[     1 ] : Setting position for - [ scoreInitialsOne ]
-[     1 ] : Setting colors for - [ scoreInitialsOne ]
-[     1 ] : Setting label for - [ scoreInitialsOne ]
-[     1 ] : Adding [ scoreInitialsOne ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 15 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreInitialsTwo ]
-[     1 ] : Setting position for - [ scoreInitialsTwo ]
-[     1 ] : Setting colors for - [ scoreInitialsTwo ]
-[     1 ] : Setting label for - [ scoreInitialsTwo ]
-[     1 ] : Adding [ scoreInitialsTwo ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 16 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreInitialsThree ]
-[     1 ] : Setting position for - [ scoreInitialsThree ]
-[     1 ] : Setting colors for - [ scoreInitialsThree ]
-[     1 ] : Setting label for - [ scoreInitialsThree ]
-[     1 ] : Adding [ scoreInitialsThree ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 17 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreInitialsFour ]
-[     1 ] : Setting position for - [ scoreInitialsFour ]
-[     1 ] : Setting colors for - [ scoreInitialsFour ]
-[     1 ] : Setting label for - [ scoreInitialsFour ]
-[     1 ] : Adding [ scoreInitialsFour ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 18 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreInitialsFive ]
-[     1 ] : Setting position for - [ scoreInitialsFive ]
-[     1 ] : Setting colors for - [ scoreInitialsFive ]
-[     1 ] : Setting label for - [ scoreInitialsFive ]
-[     1 ] : Adding [ scoreInitialsFive ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 19 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreScoreOne ]
-[     1 ] : Setting position for - [ scoreScoreOne ]
-[     1 ] : Setting colors for - [ scoreScoreOne ]
-[     1 ] : Setting label for - [ scoreScoreOne ]
-[     1 ] : Adding [ scoreScoreOne ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 20 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreScoreTwo ]
-[     1 ] : Setting position for - [ scoreScoreTwo ]
-[     1 ] : Setting colors for - [ scoreScoreTwo ]
-[     1 ] : Setting label for - [ scoreScoreTwo ]
-[     1 ] : Adding [ scoreScoreTwo ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 21 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreScoreThree ]
-[     1 ] : Setting position for - [ scoreScoreThree ]
-[     1 ] : Setting colors for - [ scoreScoreThree ]
-[     1 ] : Setting label for - [ scoreScoreThree ]
-[     1 ] : Adding [ scoreScoreThree ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 22 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreScoreFour ]
-[     1 ] : Setting position for - [ scoreScoreFour ]
-[     1 ] : Setting colors for - [ scoreScoreFour ]
-[     1 ] : Setting label for - [ scoreScoreFour ]
-[     1 ] : Adding [ scoreScoreFour ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 23 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreScoreFive ]
-[     1 ] : Setting position for - [ scoreScoreFive ]
-[     1 ] : Setting colors for - [ scoreScoreFive ]
-[     1 ] : Setting label for - [ scoreScoreFive ]
-[     1 ] : Adding [ scoreScoreFive ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 24 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonDisplayYes ]
-[     1 ] : Setting position for - [ buttonDisplayYes ]
-[     1 ] : Setting label for - [ buttonDisplayYes ]
-[     1 ] : Setting the function call for [ buttonDisplayYes ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonDisplayYes ] to screen [ scrDisplayScoreTable ]
-[     1 ] : Screen [ scrDisplayScoreTable ] objectID [ 42 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrEditScoreTable ] created.
-[     1 ] : Added new object - [ editTextBox ]
-[     1 ] : Setting position for - [ editTextBox ]
-[     1 ] : Setting colors for - [ editTextBox ]
-[     1 ] : Setting label for - [ editTextBox ]
-[     1 ] : Adding [ editTextBox ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 25 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreSliderOne ]
-[     1 ] : Setting position for - [ scoreSliderOne ]
-[     1 ] : Setting label for - [ scoreSliderOne ]
-[     1 ] : Adding [ scoreSliderOne ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 7 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreSliderTwo ]
-[     1 ] : Setting position for - [ scoreSliderTwo ]
-[     1 ] : Setting label for - [ scoreSliderTwo ]
-[     1 ] : Adding [ scoreSliderTwo ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 8 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ scoreSliderThree ]
-[     1 ] : Setting position for - [ scoreSliderThree ]
-[     1 ] : Setting label for - [ scoreSliderThree ]
-[     1 ] : Adding [ scoreSliderThree ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 9 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonEditYes ]
-[     1 ] : Setting position for - [ buttonEditYes ]
-[     1 ] : Setting label for - [ buttonEditYes ]
-[     1 ] : Setting the function call for [ buttonEditYes ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonEditYes ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 43 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrEndGame ] created.
-[     1 ] : Added new object - [ endGameTextBox ]
-[     1 ] : Setting position for - [ endGameTextBox ]
-[     1 ] : Setting colors for - [ endGameTextBox ]
-[     1 ] : Setting label for - [ endGameTextBox ]
-[     1 ] : Adding [ endGameTextBox ] to screen [ scrEndGame ]
-[     1 ] : Screen [ scrEndGame ] objectID [ 26 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonEndGameYes ]
-[     1 ] : Setting position for - [ buttonEndGameYes ]
-[     1 ] : Setting label for - [ buttonEndGameYes ]
-[     1 ] : Setting the function call for [ buttonEndGameYes ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonEndGameYes ] to screen [ scrEndGame ]
-[     1 ] : Screen [ scrEndGame ] objectID [ 44 ] - Added
-[     1 ] : -------------
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
-[     1 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ tutImageTerminal ]
+[     0 ] : Adding [ tutImageTerminal ] to screen [ scrTutTerminals ]
+[     0 ] : Screen [ scrTutTerminals ] objectID [ 1 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTerminalNext ]
+[     0 ] : Setting position for - [ buttonTutTerminalNext ]
+[     0 ] : Setting label for - [ buttonTutTerminalNext ]
+[     0 ] : Setting the function call for [ buttonTutTerminalNext ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTerminalNext ] to screen [ scrTutTerminals ]
+[     0 ] : Screen [ scrTutTerminals ] objectID [ 33 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTerminalCancel ]
+[     0 ] : Setting position for - [ buttonTutTerminalCancel ]
+[     0 ] : Setting label for - [ buttonTutTerminalCancel ]
+[     0 ] : Setting the function call for [ buttonTutTerminalCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTerminalCancel ] to screen [ scrTutTerminals ]
+[     0 ] : Screen [ scrTutTerminals ] objectID [ 34 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutHealing ] created.
+[     0 ] : Added new object - [ textLabelTutHealing ]
+[     0 ] : Setting position for - [ textLabelTutHealing ]
+[     0 ] : Setting label for - [ textLabelTutHealing ]
+[     0 ] : Adding [ textLabelTutHealing ] to screen [ scrTutHealing ]
+[     0 ] : Screen [ scrTutHealing ] objectID [ 8 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutHealingTextBox ]
+[     0 ] : Setting position for - [ tutHealingTextBox ]
+[     0 ] : Setting colors for - [ tutHealingTextBox ]
+[     0 ] : Setting label for - [ tutHealingTextBox ]
+[     0 ] : Adding [ tutHealingTextBox ] to screen [ scrTutHealing ]
+[     0 ] : Screen [ scrTutHealing ] objectID [ 6 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutImageHealing ]
+[     0 ] : Setting position for - [ tutImageHealing ]
+[     0 ] : Setting colors for - [ tutImageHealing ]
+[     0 ] : Adding [ tutImageHealing ] to screen [ scrTutHealing ]
+[     0 ] : Screen [ scrTutHealing ] objectID [ 2 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutHealinglNext ]
+[     0 ] : Setting position for - [ buttonTutHealinglNext ]
+[     0 ] : Setting label for - [ buttonTutHealinglNext ]
+[     0 ] : Setting the function call for [ buttonTutHealinglNext ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutHealinglNext ] to screen [ scrTutHealing ]
+[     0 ] : Screen [ scrTutHealing ] objectID [ 35 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutHealingCancel ]
+[     0 ] : Setting position for - [ buttonTutHealingCancel ]
+[     0 ] : Setting label for - [ buttonTutHealingCancel ]
+[     0 ] : Setting the function call for [ buttonTutHealingCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutHealingCancel ] to screen [ scrTutHealing ]
+[     0 ] : Screen [ scrTutHealing ] objectID [ 36 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutTips ] created.
+[     0 ] : Added new object - [ textLabelTutTips ]
+[     0 ] : Setting position for - [ textLabelTutTips ]
+[     0 ] : Setting label for - [ textLabelTutTips ]
+[     0 ] : Adding [ textLabelTutTips ] to screen [ scrTutTips ]
+[     0 ] : Screen [ scrTutTips ] objectID [ 9 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutTipsTextBox ]
+[     0 ] : Setting position for - [ tutTipsTextBox ]
+[     0 ] : Setting colors for - [ tutTipsTextBox ]
+[     0 ] : Setting label for - [ tutTipsTextBox ]
+[     0 ] : Adding [ tutTipsTextBox ] to screen [ scrTutTips ]
+[     0 ] : Screen [ scrTutTips ] objectID [ 7 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTipsCancel ]
+[     0 ] : Setting position for - [ buttonTutTipsCancel ]
+[     0 ] : Setting label for - [ buttonTutTipsCancel ]
+[     0 ] : Setting the function call for [ buttonTutTipsCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTipsCancel ] to screen [ scrTutTips ]
+[     0 ] : Screen [ scrTutTips ] objectID [ 37 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrGameControls ] created.
+[     0 ] : Added new object - [ controlsHelp ]
+[     0 ] : Setting position for - [ controlsHelp ]
+[     0 ] : Setting label for - [ controlsHelp ]
+[     0 ] : Adding [ controlsHelp ] to screen [ scrGameControls ]
+[     0 ] : Screen [ scrGameControls ] objectID [ 10 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ keyCodeControl ]
+[     0 ] : Setting position for - [ keyCodeControl ]
+[     0 ] : Setting the function call for [ keyCodeControl ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ keyCodeControl ] to screen [ scrGameControls ]
+[     0 ] : Screen [ scrGameControls ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonControlApply ]
+[     0 ] : Setting position for - [ buttonControlApply ]
+[     0 ] : Setting label for - [ buttonControlApply ]
+[     0 ] : Setting the function call for [ buttonControlApply ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonControlApply ] to screen [ scrGameControls ]
+[     0 ] : Screen [ scrGameControls ] objectID [ 38 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonControlCancel ]
+[     0 ] : Setting position for - [ buttonControlCancel ]
+[     0 ] : Setting label for - [ buttonControlCancel ]
+[     0 ] : Setting the function call for [ buttonControlCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonControlCancel ] to screen [ scrGameControls ]
+[     0 ] : Screen [ scrGameControls ] objectID [ 39 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrKeyCodeCapture ] created.
+[     0 ] : Added new object - [ captureHelp ]
+[     0 ] : Setting position for - [ captureHelp ]
+[     0 ] : Setting label for - [ captureHelp ]
+[     0 ] : Adding [ captureHelp ] to screen [ scrKeyCodeCapture ]
+[     0 ] : Screen [ scrKeyCodeCapture ] objectID [ 11 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ captureHelpCancel ]
+[     0 ] : Setting position for - [ captureHelpCancel ]
+[     0 ] : Setting label for - [ captureHelpCancel ]
+[     0 ] : Adding [ captureHelpCancel ] to screen [ scrKeyCodeCapture ]
+[     0 ] : Screen [ scrKeyCodeCapture ] objectID [ 12 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrRestartQuestion ] created.
+[     0 ] : Added new object - [ restartTextBox ]
+[     0 ] : Setting position for - [ restartTextBox ]
+[     0 ] : Setting colors for - [ restartTextBox ]
+[     0 ] : Setting label for - [ restartTextBox ]
+[     0 ] : Adding [ restartTextBox ] to screen [ scrRestartQuestion ]
+[     0 ] : Screen [ scrRestartQuestion ] objectID [ 8 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonRestartYes ]
+[     0 ] : Setting position for - [ buttonRestartYes ]
+[     0 ] : Setting label for - [ buttonRestartYes ]
+[     0 ] : Setting the function call for [ buttonRestartYes ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonRestartYes ] to screen [ scrRestartQuestion ]
+[     0 ] : Screen [ scrRestartQuestion ] objectID [ 40 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonRestartCancel ]
+[     0 ] : Setting position for - [ buttonRestartCancel ]
+[     0 ] : Setting label for - [ buttonRestartCancel ]
+[     0 ] : Setting the function call for [ buttonRestartCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonRestartCancel ] to screen [ scrRestartQuestion ]
+[     0 ] : Screen [ scrRestartQuestion ] objectID [ 41 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrDisplayScoreTable ] created.
+[     0 ] : Added new object - [ displayScoreTextBox ]
+[     0 ] : Setting position for - [ displayScoreTextBox ]
+[     0 ] : Setting colors for - [ displayScoreTextBox ]
+[     0 ] : Setting label for - [ displayScoreTextBox ]
+[     0 ] : Adding [ displayScoreTextBox ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 9 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ displayScoreOne ]
+[     0 ] : Setting position for - [ displayScoreOne ]
+[     0 ] : Setting colors for - [ displayScoreOne ]
+[     0 ] : Setting label for - [ displayScoreOne ]
+[     0 ] : Adding [ displayScoreOne ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 10 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ displayScoreTwo ]
+[     0 ] : Setting position for - [ displayScoreTwo ]
+[     0 ] : Setting colors for - [ displayScoreTwo ]
+[     0 ] : Setting label for - [ displayScoreTwo ]
+[     0 ] : Adding [ displayScoreTwo ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 11 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ displayScoreThree ]
+[     0 ] : Setting position for - [ displayScoreThree ]
+[     0 ] : Setting colors for - [ displayScoreThree ]
+[     0 ] : Setting label for - [ displayScoreThree ]
+[     0 ] : Adding [ displayScoreThree ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 12 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ displayScoreFour ]
+[     0 ] : Setting position for - [ displayScoreFour ]
+[     0 ] : Setting colors for - [ displayScoreFour ]
+[     0 ] : Setting label for - [ displayScoreFour ]
+[     0 ] : Adding [ displayScoreFour ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 13 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ displayScoreFive ]
+[     0 ] : Setting position for - [ displayScoreFive ]
+[     0 ] : Setting colors for - [ displayScoreFive ]
+[     0 ] : Setting label for - [ displayScoreFive ]
+[     0 ] : Adding [ displayScoreFive ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 14 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreInitialsOne ]
+[     0 ] : Setting position for - [ scoreInitialsOne ]
+[     0 ] : Setting colors for - [ scoreInitialsOne ]
+[     0 ] : Setting label for - [ scoreInitialsOne ]
+[     0 ] : Adding [ scoreInitialsOne ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 15 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreInitialsTwo ]
+[     0 ] : Setting position for - [ scoreInitialsTwo ]
+[     0 ] : Setting colors for - [ scoreInitialsTwo ]
+[     0 ] : Setting label for - [ scoreInitialsTwo ]
+[     0 ] : Adding [ scoreInitialsTwo ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 16 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreInitialsThree ]
+[     0 ] : Setting position for - [ scoreInitialsThree ]
+[     0 ] : Setting colors for - [ scoreInitialsThree ]
+[     0 ] : Setting label for - [ scoreInitialsThree ]
+[     0 ] : Adding [ scoreInitialsThree ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 17 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreInitialsFour ]
+[     0 ] : Setting position for - [ scoreInitialsFour ]
+[     0 ] : Setting colors for - [ scoreInitialsFour ]
+[     0 ] : Setting label for - [ scoreInitialsFour ]
+[     0 ] : Adding [ scoreInitialsFour ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 18 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreInitialsFive ]
+[     0 ] : Setting position for - [ scoreInitialsFive ]
+[     0 ] : Setting colors for - [ scoreInitialsFive ]
+[     0 ] : Setting label for - [ scoreInitialsFive ]
+[     0 ] : Adding [ scoreInitialsFive ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 19 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreScoreOne ]
+[     0 ] : Setting position for - [ scoreScoreOne ]
+[     0 ] : Setting colors for - [ scoreScoreOne ]
+[     0 ] : Setting label for - [ scoreScoreOne ]
+[     0 ] : Adding [ scoreScoreOne ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 20 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreScoreTwo ]
+[     0 ] : Setting position for - [ scoreScoreTwo ]
+[     0 ] : Setting colors for - [ scoreScoreTwo ]
+[     0 ] : Setting label for - [ scoreScoreTwo ]
+[     0 ] : Adding [ scoreScoreTwo ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 21 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreScoreThree ]
+[     0 ] : Setting position for - [ scoreScoreThree ]
+[     0 ] : Setting colors for - [ scoreScoreThree ]
+[     0 ] : Setting label for - [ scoreScoreThree ]
+[     0 ] : Adding [ scoreScoreThree ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 22 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreScoreFour ]
+[     0 ] : Setting position for - [ scoreScoreFour ]
+[     0 ] : Setting colors for - [ scoreScoreFour ]
+[     0 ] : Setting label for - [ scoreScoreFour ]
+[     0 ] : Adding [ scoreScoreFour ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 23 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreScoreFive ]
+[     0 ] : Setting position for - [ scoreScoreFive ]
+[     0 ] : Setting colors for - [ scoreScoreFive ]
+[     0 ] : Setting label for - [ scoreScoreFive ]
+[     0 ] : Adding [ scoreScoreFive ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 24 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonDisplayYes ]
+[     0 ] : Setting position for - [ buttonDisplayYes ]
+[     0 ] : Setting label for - [ buttonDisplayYes ]
+[     0 ] : Setting the function call for [ buttonDisplayYes ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonDisplayYes ] to screen [ scrDisplayScoreTable ]
+[     0 ] : Screen [ scrDisplayScoreTable ] objectID [ 42 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrEditScoreTable ] created.
+[     0 ] : Added new object - [ editTextBox ]
+[     0 ] : Setting position for - [ editTextBox ]
+[     0 ] : Setting colors for - [ editTextBox ]
+[     0 ] : Setting label for - [ editTextBox ]
+[     0 ] : Adding [ editTextBox ] to screen [ scrEditScoreTable ]
+[     0 ] : Screen [ scrEditScoreTable ] objectID [ 25 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreSliderOne ]
+[     0 ] : Setting position for - [ scoreSliderOne ]
+[     0 ] : Setting label for - [ scoreSliderOne ]
+[     0 ] : Adding [ scoreSliderOne ] to screen [ scrEditScoreTable ]
+[     0 ] : Screen [ scrEditScoreTable ] objectID [ 7 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreSliderTwo ]
+[     0 ] : Setting position for - [ scoreSliderTwo ]
+[     0 ] : Setting label for - [ scoreSliderTwo ]
+[     0 ] : Adding [ scoreSliderTwo ] to screen [ scrEditScoreTable ]
+[     0 ] : Screen [ scrEditScoreTable ] objectID [ 8 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ scoreSliderThree ]
+[     0 ] : Setting position for - [ scoreSliderThree ]
+[     0 ] : Setting label for - [ scoreSliderThree ]
+[     0 ] : Adding [ scoreSliderThree ] to screen [ scrEditScoreTable ]
+[     0 ] : Screen [ scrEditScoreTable ] objectID [ 9 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonEditYes ]
+[     0 ] : Setting position for - [ buttonEditYes ]
+[     0 ] : Setting label for - [ buttonEditYes ]
+[     0 ] : Setting the function call for [ buttonEditYes ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonEditYes ] to screen [ scrEditScoreTable ]
+[     0 ] : Screen [ scrEditScoreTable ] objectID [ 43 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrEndGame ] created.
+[     0 ] : Added new object - [ endGameTextBox ]
+[     0 ] : Setting position for - [ endGameTextBox ]
+[     0 ] : Setting colors for - [ endGameTextBox ]
+[     0 ] : Setting label for - [ endGameTextBox ]
+[     0 ] : Adding [ endGameTextBox ] to screen [ scrEndGame ]
+[     0 ] : Screen [ scrEndGame ] objectID [ 26 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonEndGameYes ]
+[     0 ] : Setting position for - [ buttonEndGameYes ]
+[     0 ] : Setting label for - [ buttonEndGameYes ]
+[     0 ] : Setting the function call for [ buttonEndGameYes ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonEndGameYes ] to screen [ scrEndGame ]
+[     0 ] : Screen [ scrEndGame ] objectID [ 44 ] - Added
+[     0 ] : -------------
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
+[     0 ] : Setting colors for - [ ALL ]
 [     1 ] : Loaded image [ alltiles.bmp ]
 [     1 ] : Loaded image [ hud.tga ]
 [     1 ] : Loaded image [ 001.bmp ]
@@ -1144,9 +1144,9 @@
 [     1 ] : Loaded image [ static_5.png ]
 [     1 ] : Loaded image [ static_6.png ]
 [     1 ] : Loaded image [ static_7.png ]
-[     2 ] : Loaded image [ static_8.png ]
-[     2 ] : Loaded image [ static_9.png ]
-[     2 ] : Get droid database information.
+[     1 ] : Loaded image [ static_8.png ]
+[     1 ] : Loaded image [ static_9.png ]
+[     1 ] : Get droid database information.
 [     2 ] : Loaded image [ retro_blue.bmp ]
 [     2 ] : Loaded image [ retro_blue_128.bmp ]
 [     2 ] : Loaded tile set [ retro_blue.bmp ]
@@ -1172,8 +1172,8 @@
 [     2 ] : Loaded ship level [ Turrent 2 ]
 [     2 ] : Loaded ship level [ Observation ]
 [     2 ] : Loaded sample [ collosion1.wav ]
-[     3 ] : Loaded sample [ endTransmission1.wav ]
-[     3 ] : Loaded sample [ greenAlert.wav ]
+[     2 ] : Loaded sample [ endTransmission1.wav ]
+[     2 ] : Loaded sample [ greenAlert.wav ]
 [     3 ] : Loaded sample [ lift1.wav ]
 [     3 ] : Loaded sample [ scrollBeeps.wav ]
 [     3 ] : Loaded sample [ transferdeadlock.wav ]
@@ -1207,26 +1207,11 @@
 [     4 ] : Loaded image [ retro_blue_128.bmp ]
 [     4 ] : Loaded tile set [ retro_blue.bmp ]
 [     4 ] : Loaded tile set [ retro_blue_128.bmp ]
-[    13 ] : Loaded image [ retro_gray.bmp ]
-[    13 ] : Loaded image [ retro_gray_128.bmp ]
-[    13 ] : Loaded tile set [ retro_gray.bmp ]
-[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    13 ] : Loaded image [ retro_gray.bmp ]
-[    13 ] : Loaded image [ retro_gray_128.bmp ]
-[    13 ] : Loaded tile set [ retro_gray.bmp ]
-[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    13 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 352 ]
-[    13 ] : Lift [ 1 ] PosX [ 1344 ] PosY [ 672 ]
-[    13 ] : Loaded image [ retro_gray.bmp ]
-[    13 ] : Loaded image [ retro_gray_128.bmp ]
-[    13 ] : Loaded tile set [ retro_gray.bmp ]
-[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    23 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[    70 ] : Profile - Average time for tiles [ 0.000062 ]
-[    70 ] : Error: Could not save config values to file [ config.ini ]
-[    70 ] : Keybind: Info: Key states saved to file.
-[    71 ] : Logfile: Log file closed:
-[    71 ] : 28-05-2017	16:16:28
-[    71 ] : -----------------------------------------------------------------------------
+[    15 ] : Profile - Average time for tiles [ -nan ]
+[    15 ] : Error: Could not save config values to file [ config.ini ]
+[    15 ] : Keybind: Info: Key states saved to file.
+[    15 ] : Logfile: Log file closed:
+[    15 ] : 28-05-2017	17:51:24
+[    15 ] : -----------------------------------------------------------------------------
 
 

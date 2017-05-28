@@ -63,6 +63,8 @@ typedef int	(*ExternFunc)(...);
 
 #include "../hdr/chipmunk/chipmunk.h"
 
+#include "../hdr/physfs/physfs.h"
+
 #include "gui/gui_main.h"
 #include "gui/gui_render.h"
 #include "gui/gui_scrollBox.h"

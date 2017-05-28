@@ -174,6 +174,13 @@
       <File Name="hdr/chipmunk/cpTransform.h"/>
       <File Name="hdr/chipmunk/cpVect.h"/>
     </VirtualDirectory>
+    <VirtualDirectory Name="physfs">
+      <File Name="hdr/physfs/physfs_platforms.h"/>
+      <File Name="hdr/physfs/physfs_miniz.h"/>
+      <File Name="hdr/physfs/physfs_internal.h"/>
+      <File Name="hdr/physfs/physfs_casefolding.h"/>
+      <File Name="hdr/physfs/physfs.h"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="source">
     <File Name="main.cpp"/>
@@ -322,6 +329,28 @@
       <File Name="src/chipmunk/cpSweep1D.c"/>
       <File Name="src/chipmunk/prime.h"/>
     </VirtualDirectory>
+    <VirtualDirectory Name="physfs">
+      <File Name="src/physfs/platform_winrt.cpp"/>
+      <File Name="src/physfs/platform_windows.c"/>
+      <File Name="src/physfs/platform_unix.c"/>
+      <File Name="src/physfs/platform_posix.c"/>
+      <File Name="src/physfs/platform_macosx.c"/>
+      <File Name="src/physfs/platform_beos.cpp"/>
+      <File Name="src/physfs/physfs_unicode.c"/>
+      <File Name="src/physfs/physfs_byteorder.c"/>
+      <File Name="src/physfs/physfs.c"/>
+      <File Name="src/physfs/archiver_zip.c"/>
+      <File Name="src/physfs/archiver_wad.c"/>
+      <File Name="src/physfs/archiver_unpacked.c"/>
+      <File Name="src/physfs/archiver_slb.c"/>
+      <File Name="src/physfs/archiver_qpak.c"/>
+      <File Name="src/physfs/archiver_mvl.c"/>
+      <File Name="src/physfs/archiver_lzma.c"/>
+      <File Name="src/physfs/archiver_iso9660.c"/>
+      <File Name="src/physfs/archiver_hog.c"/>
+      <File Name="src/physfs/archiver_grp.c"/>
+      <File Name="src/physfs/archiver_dir.c"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -338,6 +367,7 @@
         <IncludePath Value="hdr/"/>
         <IncludePath Value="hdr/script"/>
         <IncludePath Value="/usr/local/include"/>
+        <IncludePath Value="hdr/physfs"/>
       </Compiler>
       <Linker Options="-pg " Required="yes">
         <LibraryPath Value="/usr/lib"/>
@@ -349,11 +379,10 @@
         <Library Value="allegro_image"/>
         <Library Value="allegro_primitives"/>
         <Library Value="allegro_dialog"/>
-        <Library Value="allegro_physfs"/>
         <Library Value="allegro_ttf"/>
         <Library Value="allegro_audio"/>
         <Library Value="allegro_acodec"/>
-        <Library Value="physfs"/>
+        <Library Value="allegro_physfs"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="bin/Debug/paraDroid" IntermediateDirectory="./Debug" Command="bin/Debug/paraDroid" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>

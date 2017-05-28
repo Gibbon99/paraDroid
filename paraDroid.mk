@@ -36,11 +36,11 @@ ObjectsFileList        :="paraDroid.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  -pg 
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)hdr/ $(IncludeSwitch)hdr/script $(IncludeSwitch)/usr/local/include 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)hdr/ $(IncludeSwitch)hdr/script $(IncludeSwitch)/usr/local/include $(IncludeSwitch)hdr/physfs 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := $(LibrarySwitch)pthread $(LibrarySwitch)allegro $(LibrarySwitch)allegro_main $(LibrarySwitch)allegro_font $(LibrarySwitch)allegro_image $(LibrarySwitch)allegro_primitives $(LibrarySwitch)allegro_dialog $(LibrarySwitch)allegro_physfs $(LibrarySwitch)allegro_ttf $(LibrarySwitch)allegro_audio $(LibrarySwitch)allegro_acodec $(LibrarySwitch)physfs 
-ArLibs                 :=  "pthread" "allegro" "allegro_main" "allegro_font" "allegro_image" "allegro_primitives" "allegro_dialog" "allegro_physfs" "allegro_ttf" "allegro_audio" "allegro_acodec" "physfs" 
+Libs                   := $(LibrarySwitch)pthread $(LibrarySwitch)allegro $(LibrarySwitch)allegro_main $(LibrarySwitch)allegro_font $(LibrarySwitch)allegro_image $(LibrarySwitch)allegro_primitives $(LibrarySwitch)allegro_dialog $(LibrarySwitch)allegro_ttf $(LibrarySwitch)allegro_audio $(LibrarySwitch)allegro_acodec $(LibrarySwitch)allegro_physfs 
+ArLibs                 :=  "pthread" "allegro" "allegro_main" "allegro_font" "allegro_image" "allegro_primitives" "allegro_dialog" "allegro_ttf" "allegro_audio" "allegro_acodec" "allegro_physfs" 
 LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/lib $(LibraryPathSwitch)/usr/local/lib 
 
 ##
@@ -68,16 +68,18 @@ Objects1=$(IntermediateDirectory)/src_script_as_arrayobject.cpp$(ObjectSuffix) $
 	$(IntermediateDirectory)/src_script_as_scriptengine.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_scriptfunction.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_scriptnode.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_scriptobject.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_string.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_string_util.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_thread.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_tokenizer.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_typeinfo.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_as_variablescope.cpp$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_script_scriptstdstring.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_scriptstdstring_utils.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_script_scriptbuilder.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_bullet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_database.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_doors.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droid.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_intro.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_levels.cpp$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_game_gam_LOS.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_player.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_render.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_sideView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_terminal.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_transfer.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_transferDroidAI.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_transferPlayerAI.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_transferRender.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI_Patrol.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_game_gam_droidAI_Health.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_spotLight.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_particles.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI_Resume.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_pathFind.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI_Flee.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI_Shoot.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_endScreen.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_scoreTable.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_configFile.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_io_io_images.cpp$(ObjectSuffix) 
+	$(IntermediateDirectory)/src_game_gam_droidAI_Health.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_spotLight.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_particles.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI_Resume.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_pathFind.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_droidAI_Flee.cpp$(ObjectSuffix) 
 
-Objects2=$(IntermediateDirectory)/src_io_io_keyBind.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_keyboard.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_logFile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_packFile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_sideView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_joystick.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_conCommands.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_console.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_debug.cpp$(ObjectSuffix) \
+Objects2=$(IntermediateDirectory)/src_game_gam_droidAI_Shoot.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_endScreen.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_gam_scoreTable.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_configFile.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_io_io_images.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_keyBind.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_keyboard.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_logFile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_packFile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_sideView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_io_io_joystick.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_conCommands.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_console.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_debug.cpp$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_system_sys_font.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_frame.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_maths.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_physics.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_script.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_shutdown.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_sound.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_game_sys_starfield.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_startup.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_timing.cpp$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_system_sys_utils.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_conVariables.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_physicsCollisions.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_system_sys_random.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_gui_gui_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_gui_gui_objects.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_gui_gui_render.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_gui_gui_scrollBox.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_gui_gui_text.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_gui_gui_slider.cpp$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_gui_gui_keyCode.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_chipmunk.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpArbiter.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpArray.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpBBTree.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpBody.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpCollision.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpConstraint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpDampedRotarySpring.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpDampedSpring.c$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_chipmunk_cpGearJoint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpGrooveJoint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpHashSet.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpHastySpace.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpMarch.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpPinJoint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpPivotJoint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpPolyline.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpPolyShape.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpRatchetJoint.c$(ObjectSuffix) \
 	$(IntermediateDirectory)/src_chipmunk_cpRobust.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpRotaryLimitJoint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpShape.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSimpleMotor.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSlideJoint.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpace.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpaceComponent.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpaceDebug.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpaceHash.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpaceQuery.c$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_chipmunk_cpSpaceStep.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpatialIndex.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSweep1D.c$(ObjectSuffix) 
+	$(IntermediateDirectory)/src_chipmunk_cpSpaceStep.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSpatialIndex.c$(ObjectSuffix) $(IntermediateDirectory)/src_chipmunk_cpSweep1D.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_platform_windows.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_platform_unix.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_platform_posix.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_platform_macosx.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_platform_beos.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_physfs_unicode.c$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_physfs.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_zip.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_wad.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_slb.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_qpak.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_mvl.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_lzma.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_physfs_archiver_hog.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_grp.c$(ObjectSuffix) $(IntermediateDirectory)/src_physfs_archiver_dir.c$(ObjectSuffix) 
 
 
 
@@ -1173,6 +1175,166 @@ $(IntermediateDirectory)/src_chipmunk_cpSweep1D.c$(DependSuffix): src/chipmunk/c
 
 $(IntermediateDirectory)/src_chipmunk_cpSweep1D.c$(PreprocessSuffix): src/chipmunk/cpSweep1D.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_chipmunk_cpSweep1D.c$(PreprocessSuffix) src/chipmunk/cpSweep1D.c
+
+$(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(ObjectSuffix): src/physfs/platform_winrt.cpp $(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/platform_winrt.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(DependSuffix): src/physfs/platform_winrt.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(DependSuffix) -MM src/physfs/platform_winrt.cpp
+
+$(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(PreprocessSuffix): src/physfs/platform_winrt.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_platform_winrt.cpp$(PreprocessSuffix) src/physfs/platform_winrt.cpp
+
+$(IntermediateDirectory)/src_physfs_platform_windows.c$(ObjectSuffix): src/physfs/platform_windows.c $(IntermediateDirectory)/src_physfs_platform_windows.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/platform_windows.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_platform_windows.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_platform_windows.c$(DependSuffix): src/physfs/platform_windows.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_platform_windows.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_platform_windows.c$(DependSuffix) -MM src/physfs/platform_windows.c
+
+$(IntermediateDirectory)/src_physfs_platform_windows.c$(PreprocessSuffix): src/physfs/platform_windows.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_platform_windows.c$(PreprocessSuffix) src/physfs/platform_windows.c
+
+$(IntermediateDirectory)/src_physfs_platform_unix.c$(ObjectSuffix): src/physfs/platform_unix.c $(IntermediateDirectory)/src_physfs_platform_unix.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/platform_unix.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_platform_unix.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_platform_unix.c$(DependSuffix): src/physfs/platform_unix.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_platform_unix.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_platform_unix.c$(DependSuffix) -MM src/physfs/platform_unix.c
+
+$(IntermediateDirectory)/src_physfs_platform_unix.c$(PreprocessSuffix): src/physfs/platform_unix.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_platform_unix.c$(PreprocessSuffix) src/physfs/platform_unix.c
+
+$(IntermediateDirectory)/src_physfs_platform_posix.c$(ObjectSuffix): src/physfs/platform_posix.c $(IntermediateDirectory)/src_physfs_platform_posix.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/platform_posix.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_platform_posix.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_platform_posix.c$(DependSuffix): src/physfs/platform_posix.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_platform_posix.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_platform_posix.c$(DependSuffix) -MM src/physfs/platform_posix.c
+
+$(IntermediateDirectory)/src_physfs_platform_posix.c$(PreprocessSuffix): src/physfs/platform_posix.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_platform_posix.c$(PreprocessSuffix) src/physfs/platform_posix.c
+
+$(IntermediateDirectory)/src_physfs_platform_macosx.c$(ObjectSuffix): src/physfs/platform_macosx.c $(IntermediateDirectory)/src_physfs_platform_macosx.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/platform_macosx.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_platform_macosx.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_platform_macosx.c$(DependSuffix): src/physfs/platform_macosx.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_platform_macosx.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_platform_macosx.c$(DependSuffix) -MM src/physfs/platform_macosx.c
+
+$(IntermediateDirectory)/src_physfs_platform_macosx.c$(PreprocessSuffix): src/physfs/platform_macosx.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_platform_macosx.c$(PreprocessSuffix) src/physfs/platform_macosx.c
+
+$(IntermediateDirectory)/src_physfs_platform_beos.cpp$(ObjectSuffix): src/physfs/platform_beos.cpp $(IntermediateDirectory)/src_physfs_platform_beos.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/platform_beos.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_platform_beos.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_platform_beos.cpp$(DependSuffix): src/physfs/platform_beos.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_platform_beos.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_platform_beos.cpp$(DependSuffix) -MM src/physfs/platform_beos.cpp
+
+$(IntermediateDirectory)/src_physfs_platform_beos.cpp$(PreprocessSuffix): src/physfs/platform_beos.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_platform_beos.cpp$(PreprocessSuffix) src/physfs/platform_beos.cpp
+
+$(IntermediateDirectory)/src_physfs_physfs_unicode.c$(ObjectSuffix): src/physfs/physfs_unicode.c $(IntermediateDirectory)/src_physfs_physfs_unicode.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/physfs_unicode.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_physfs_unicode.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_physfs_unicode.c$(DependSuffix): src/physfs/physfs_unicode.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_physfs_unicode.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_physfs_unicode.c$(DependSuffix) -MM src/physfs/physfs_unicode.c
+
+$(IntermediateDirectory)/src_physfs_physfs_unicode.c$(PreprocessSuffix): src/physfs/physfs_unicode.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_physfs_unicode.c$(PreprocessSuffix) src/physfs/physfs_unicode.c
+
+$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(ObjectSuffix): src/physfs/physfs_byteorder.c $(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/physfs_byteorder.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(DependSuffix): src/physfs/physfs_byteorder.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(DependSuffix) -MM src/physfs/physfs_byteorder.c
+
+$(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(PreprocessSuffix): src/physfs/physfs_byteorder.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_physfs_byteorder.c$(PreprocessSuffix) src/physfs/physfs_byteorder.c
+
+$(IntermediateDirectory)/src_physfs_physfs.c$(ObjectSuffix): src/physfs/physfs.c $(IntermediateDirectory)/src_physfs_physfs.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/physfs.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_physfs.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_physfs.c$(DependSuffix): src/physfs/physfs.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_physfs.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_physfs.c$(DependSuffix) -MM src/physfs/physfs.c
+
+$(IntermediateDirectory)/src_physfs_physfs.c$(PreprocessSuffix): src/physfs/physfs.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_physfs.c$(PreprocessSuffix) src/physfs/physfs.c
+
+$(IntermediateDirectory)/src_physfs_archiver_zip.c$(ObjectSuffix): src/physfs/archiver_zip.c $(IntermediateDirectory)/src_physfs_archiver_zip.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_zip.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_zip.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_zip.c$(DependSuffix): src/physfs/archiver_zip.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_zip.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_zip.c$(DependSuffix) -MM src/physfs/archiver_zip.c
+
+$(IntermediateDirectory)/src_physfs_archiver_zip.c$(PreprocessSuffix): src/physfs/archiver_zip.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_zip.c$(PreprocessSuffix) src/physfs/archiver_zip.c
+
+$(IntermediateDirectory)/src_physfs_archiver_wad.c$(ObjectSuffix): src/physfs/archiver_wad.c $(IntermediateDirectory)/src_physfs_archiver_wad.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_wad.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_wad.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_wad.c$(DependSuffix): src/physfs/archiver_wad.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_wad.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_wad.c$(DependSuffix) -MM src/physfs/archiver_wad.c
+
+$(IntermediateDirectory)/src_physfs_archiver_wad.c$(PreprocessSuffix): src/physfs/archiver_wad.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_wad.c$(PreprocessSuffix) src/physfs/archiver_wad.c
+
+$(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(ObjectSuffix): src/physfs/archiver_unpacked.c $(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_unpacked.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(DependSuffix): src/physfs/archiver_unpacked.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(DependSuffix) -MM src/physfs/archiver_unpacked.c
+
+$(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(PreprocessSuffix): src/physfs/archiver_unpacked.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_unpacked.c$(PreprocessSuffix) src/physfs/archiver_unpacked.c
+
+$(IntermediateDirectory)/src_physfs_archiver_slb.c$(ObjectSuffix): src/physfs/archiver_slb.c $(IntermediateDirectory)/src_physfs_archiver_slb.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_slb.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_slb.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_slb.c$(DependSuffix): src/physfs/archiver_slb.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_slb.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_slb.c$(DependSuffix) -MM src/physfs/archiver_slb.c
+
+$(IntermediateDirectory)/src_physfs_archiver_slb.c$(PreprocessSuffix): src/physfs/archiver_slb.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_slb.c$(PreprocessSuffix) src/physfs/archiver_slb.c
+
+$(IntermediateDirectory)/src_physfs_archiver_qpak.c$(ObjectSuffix): src/physfs/archiver_qpak.c $(IntermediateDirectory)/src_physfs_archiver_qpak.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_qpak.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_qpak.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_qpak.c$(DependSuffix): src/physfs/archiver_qpak.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_qpak.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_qpak.c$(DependSuffix) -MM src/physfs/archiver_qpak.c
+
+$(IntermediateDirectory)/src_physfs_archiver_qpak.c$(PreprocessSuffix): src/physfs/archiver_qpak.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_qpak.c$(PreprocessSuffix) src/physfs/archiver_qpak.c
+
+$(IntermediateDirectory)/src_physfs_archiver_mvl.c$(ObjectSuffix): src/physfs/archiver_mvl.c $(IntermediateDirectory)/src_physfs_archiver_mvl.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_mvl.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_mvl.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_mvl.c$(DependSuffix): src/physfs/archiver_mvl.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_mvl.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_mvl.c$(DependSuffix) -MM src/physfs/archiver_mvl.c
+
+$(IntermediateDirectory)/src_physfs_archiver_mvl.c$(PreprocessSuffix): src/physfs/archiver_mvl.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_mvl.c$(PreprocessSuffix) src/physfs/archiver_mvl.c
+
+$(IntermediateDirectory)/src_physfs_archiver_lzma.c$(ObjectSuffix): src/physfs/archiver_lzma.c $(IntermediateDirectory)/src_physfs_archiver_lzma.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_lzma.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_lzma.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_lzma.c$(DependSuffix): src/physfs/archiver_lzma.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_lzma.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_lzma.c$(DependSuffix) -MM src/physfs/archiver_lzma.c
+
+$(IntermediateDirectory)/src_physfs_archiver_lzma.c$(PreprocessSuffix): src/physfs/archiver_lzma.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_lzma.c$(PreprocessSuffix) src/physfs/archiver_lzma.c
+
+$(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(ObjectSuffix): src/physfs/archiver_iso9660.c $(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_iso9660.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(DependSuffix): src/physfs/archiver_iso9660.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(DependSuffix) -MM src/physfs/archiver_iso9660.c
+
+$(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(PreprocessSuffix): src/physfs/archiver_iso9660.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_iso9660.c$(PreprocessSuffix) src/physfs/archiver_iso9660.c
+
+$(IntermediateDirectory)/src_physfs_archiver_hog.c$(ObjectSuffix): src/physfs/archiver_hog.c $(IntermediateDirectory)/src_physfs_archiver_hog.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_hog.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_hog.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_hog.c$(DependSuffix): src/physfs/archiver_hog.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_hog.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_hog.c$(DependSuffix) -MM src/physfs/archiver_hog.c
+
+$(IntermediateDirectory)/src_physfs_archiver_hog.c$(PreprocessSuffix): src/physfs/archiver_hog.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_hog.c$(PreprocessSuffix) src/physfs/archiver_hog.c
+
+$(IntermediateDirectory)/src_physfs_archiver_grp.c$(ObjectSuffix): src/physfs/archiver_grp.c $(IntermediateDirectory)/src_physfs_archiver_grp.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_grp.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_grp.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_grp.c$(DependSuffix): src/physfs/archiver_grp.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_grp.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_grp.c$(DependSuffix) -MM src/physfs/archiver_grp.c
+
+$(IntermediateDirectory)/src_physfs_archiver_grp.c$(PreprocessSuffix): src/physfs/archiver_grp.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_grp.c$(PreprocessSuffix) src/physfs/archiver_grp.c
+
+$(IntermediateDirectory)/src_physfs_archiver_dir.c$(ObjectSuffix): src/physfs/archiver_dir.c $(IntermediateDirectory)/src_physfs_archiver_dir.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/dberry/storage/home/david/Devel/1_Current/paraDroid/Current/src/physfs/archiver_dir.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_physfs_archiver_dir.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_physfs_archiver_dir.c$(DependSuffix): src/physfs/archiver_dir.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_physfs_archiver_dir.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_physfs_archiver_dir.c$(DependSuffix) -MM src/physfs/archiver_dir.c
+
+$(IntermediateDirectory)/src_physfs_archiver_dir.c$(PreprocessSuffix): src/physfs/archiver_dir.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_physfs_archiver_dir.c$(PreprocessSuffix) src/physfs/archiver_dir.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
