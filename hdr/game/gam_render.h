@@ -82,4 +82,4 @@ void gam_drawHud();
 void gam_setHUDState(int newState);
 
 // Animate the level indicator shown on deck map
-void gamAnimateIndicator(float thinkInterval);
+void gam_animateIndicator(float thinkInterval);

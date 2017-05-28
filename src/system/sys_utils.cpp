@@ -93,8 +93,8 @@ bool sys_visibleOnScreen ( cpVect worldCoord, int shapeSize )
 
 	screenArea.x = viewableScreenCoord.x - ( shapeSize * 2 );
 	screenArea.y = viewableScreenCoord.y - ( shapeSize * 2 );
-	screenArea.width = winWidth;
-	screenArea.height = winHeight;
+	screenArea.width = winWidth + shapeSize;
+	screenArea.height = winHeight + shapeSize;
 
 	if ( worldCoord.x < screenArea.x )
 		return false;

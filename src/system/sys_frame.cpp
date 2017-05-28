@@ -376,7 +376,7 @@ void sys_updateFrame()
 		case MODE_TERMINAL_LEVEL:
 			gam_animateStarField ( thinkInterval );
 			gui_animateRasterLine();
-			gamAnimateIndicator ( thinkInterval );
+			gam_animateIndicator ( thinkInterval );
 			break;
 
 		case MODE_TERMINAL_DB:

@@ -2,7 +2,7 @@
 
 
 [     0 ] : Logfile: Log file opened:
-[     0 ] : 27-05-2017	18:20:41
+[     0 ] : 28-05-2017	16:15:17
 [     0 ] : Logfile: Logfile started...
 [     0 ] : Node [ AI_SHOOT ] added. Num Children for [ ROOT_NODE ] now [ 1 ]
 [     0 ] : Child index set to [ 1 ]
@@ -312,477 +312,477 @@
 [     0 ] : Size of script [ 24778 ] - [ textEnglish.sc ]
 [     0 ] : Size of script [ 492 ] - [ textItalian.sc ]
 [     0 ] : Number of functions in script [ 13 ]
-[     0 ] : Func ID for [ void as_initGameVars() ] - [ 10086528 ]
-[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 10047376 ]
-[     0 ] : Func ID for [ void as_shutdown() ] - [ 9965840 ]
-[     0 ] : Func ID for [ void as_loadFonts() ] - [ 10085056 ]
-[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 10064448 ]
-[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 10085792 ]
-[     0 ] : Func ID for [ void as_setdbValues() ] - [ 10063712 ]
-[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 10067200 ]
-[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 10083808 ]
-[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 9997280 ]
-[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 10087264 ]
-[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 10050688 ]
-[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 10049200 ]
+[     0 ] : Func ID for [ void as_initGameVars() ] - [ 10107168 ]
+[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 10068016 ]
+[     0 ] : Func ID for [ void as_shutdown() ] - [ 9986352 ]
+[     0 ] : Func ID for [ void as_loadFonts() ] - [ 10105696 ]
+[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 10085088 ]
+[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 10106432 ]
+[     0 ] : Func ID for [ void as_setdbValues() ] - [ 10084352 ]
+[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 10087840 ]
+[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 10104448 ]
+[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 10017920 ]
+[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 10107904 ]
+[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 10071328 ]
+[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 10069840 ]
 [     0 ] : [ No joysticks found. ] [ Use Keyboard. ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10045408 ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10045408 ]
-[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 10044704 ]
-[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 10044000 ]
-[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 10042960 ]
-[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 10042160 ]
-[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 10041312 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10066048 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10066048 ]
+[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 10065344 ]
+[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 10064640 ]
+[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 10063600 ]
+[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 10062800 ]
+[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 10061952 ]
 [     0 ] : INFO: Object [ 50.00 60.00 ]
-[     0 ] : Allegro Version: 5.2.2 Release 1
+[     0 ] : Allegro Version: 5.2.2 Release 0
 [     0 ] : INFO: Keyboard installed.
-[     1 ] : INFO: Allegro Font Version: 5.2.2 Release 1
-[     1 ] : INFO: Image addon installed.
-[     1 ] : INFO: Primitives addon installed.
-[     1 ] : INFO: Joysticks installed.
-[     1 ] : INFO: Allegro TTF Version: 5.2.2 Release 1
-[     1 ] : Sound started: 5.2.2 Release: 1
-[     1 ] : INFO: Got hardware accelerated backing bitmap
-[     1 ] : File [ Digital.ttf ] exists.
-[     1 ] : File [ Digital.ttf ] exists.
-[     1 ] : File [ Digital.ttf ] exists.
-[     1 ] : Keybind: Info: Key states read from file.
-[     1 ] : Called from io_printKeyBind - [ 0 ]
-[     1 ] : ------------------------------------
-[     1 ] : [ Game Left : [ Left] ]
-[     1 ] : [ Game Right : [ Right] ]
-[     1 ] : [ Game Up : [ Up] ]
-[     1 ] : [ Game Down : [ Down] ]
-[     1 ] : [ Show console : [ grave] ]
-[     1 ] : [ Game action : [ Control_L] ]
-[     1 ] : [ Exit the game : [ Escape] ]
-[     1 ] : [ Save Screenshot : [ F12] ]
-[     1 ] : [ Pause Game : [ p] ]
-[     1 ] : Screen [ scrMainMenu ] created.
-[     1 ] : Added new object - [ buttonStartGame ]
-[     1 ] : Setting position for - [ buttonStartGame ]
-[     1 ] : Setting label for - [ buttonStartGame ]
-[     1 ] : Setting the function call for [ buttonStartGame ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonStartGame ] to screen [ scrMainMenu ]
-[     1 ] : Screen [ scrMainMenu ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonStartTutorial ]
-[     1 ] : Setting position for - [ buttonStartTutorial ]
-[     1 ] : Setting label for - [ buttonStartTutorial ]
-[     1 ] : Setting the function call for [ buttonStartTutorial ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonStartTutorial ] to screen [ scrMainMenu ]
-[     1 ] : Screen [ scrMainMenu ] objectID [ 1 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonOptions ]
-[     1 ] : Setting position for - [ buttonOptions ]
-[     1 ] : Setting label for - [ buttonOptions ]
-[     1 ] : Setting the function call for [ buttonOptions ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptions ] to screen [ scrMainMenu ]
-[     1 ] : Screen [ scrMainMenu ] objectID [ 2 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonHelp ]
-[     1 ] : Setting position for - [ buttonHelp ]
-[     1 ] : Setting label for - [ buttonHelp ]
-[     1 ] : Setting the function call for [ buttonHelp ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonHelp ] to screen [ scrMainMenu ]
-[     1 ] : Screen [ scrMainMenu ] objectID [ 3 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonQuit ]
-[     1 ] : Setting position for - [ buttonQuit ]
-[     1 ] : Setting label for - [ buttonQuit ]
-[     1 ] : Setting the function call for [ buttonQuit ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonQuit ] to screen [ scrMainMenu ]
-[     1 ] : Screen [ scrMainMenu ] objectID [ 4 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrOptions ] created.
-[     1 ] : Added new object - [ buttonOptionVideo ]
-[     1 ] : Setting position for - [ buttonOptionVideo ]
-[     1 ] : Setting label for - [ buttonOptionVideo ]
-[     1 ] : Setting the function call for [ buttonOptionVideo ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptionVideo ] to screen [ scrOptions ]
-[     1 ] : Screen [ scrOptions ] objectID [ 5 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonOptionAudio ]
-[     1 ] : Setting position for - [ buttonOptionAudio ]
-[     1 ] : Setting label for - [ buttonOptionAudio ]
-[     1 ] : Setting the function call for [ buttonOptionAudio ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptionAudio ] to screen [ scrOptions ]
-[     1 ] : Screen [ scrOptions ] objectID [ 6 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonOptionGraphics ]
-[     1 ] : Setting position for - [ buttonOptionGraphics ]
-[     1 ] : Setting label for - [ buttonOptionGraphics ]
-[     1 ] : Setting the function call for [ buttonOptionGraphics ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptionGraphics ] to screen [ scrOptions ]
-[     1 ] : Screen [ scrOptions ] objectID [ 7 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonOptionGame ]
-[     1 ] : Setting position for - [ buttonOptionGame ]
-[     1 ] : Setting label for - [ buttonOptionGame ]
-[     1 ] : Setting the function call for [ buttonOptionGame ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptionGame ] to screen [ scrOptions ]
-[     1 ] : Screen [ scrOptions ] objectID [ 8 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonOptionControls ]
-[     1 ] : Setting position for - [ buttonOptionControls ]
-[     1 ] : Setting label for - [ buttonOptionControls ]
-[     1 ] : Setting the function call for [ buttonOptionControls ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptionControls ] to screen [ scrOptions ]
-[     1 ] : Screen [ scrOptions ] objectID [ 9 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonOptionReturn ]
-[     1 ] : Setting position for - [ buttonOptionReturn ]
-[     1 ] : Setting label for - [ buttonOptionReturn ]
-[     1 ] : Setting the function call for [ buttonOptionReturn ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonOptionReturn ] to screen [ scrOptions ]
-[     1 ] : Screen [ scrOptions ] objectID [ 10 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrVideoOptions ] created.
-[     1 ] : Added new object - [ textLabelResolution ]
-[     1 ] : Setting position for - [ textLabelResolution ]
-[     1 ] : Setting label for - [ textLabelResolution ]
-[     1 ] : Adding [ textLabelResolution ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ videoUseBackingBMP ]
-[     1 ] : GUI_OBJECT_CHECKBOX size is now - [ 1 ]
-[     1 ] : Setting the function call for [ videoUseBackingBMP ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Setting position for - [ videoUseBackingBMP ]
-[     1 ] : Setting label for - [ videoUseBackingBMP ]
-[     1 ] : Setting checkBox group for - [ videoUseBackingBMP ]
-[     1 ] : Setting checkBox tick for - [ videoUseBackingBMP ]
-[     1 ] : Adding [ videoUseBackingBMP ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ videoUseHoldingBMP ]
-[     1 ] : GUI_OBJECT_CHECKBOX size is now - [ 2 ]
-[     1 ] : Setting the function call for [ videoUseHoldingBMP ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Setting position for - [ videoUseHoldingBMP ]
-[     1 ] : Setting label for - [ videoUseHoldingBMP ]
-[     1 ] : Setting checkBox group for - [ videoUseHoldingBMP ]
-[     1 ] : Setting checkBox tick for - [ videoUseHoldingBMP ]
-[     1 ] : Adding [ videoUseHoldingBMP ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 1 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ checkBoxFullScreen ]
-[     1 ] : GUI_OBJECT_CHECKBOX size is now - [ 3 ]
-[     1 ] : Setting the function call for [ checkBoxFullScreen ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Setting position for - [ checkBoxFullScreen ]
-[     1 ] : Setting label for - [ checkBoxFullScreen ]
-[     1 ] : Setting checkBox group for - [ checkBoxFullScreen ]
-[     1 ] : Setting checkBox tick for - [ checkBoxFullScreen ]
-[     1 ] : Adding [ checkBoxFullScreen ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 2 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ sliderSwapType ]
-[     1 ] : Setting position for - [ sliderSwapType ]
-[     1 ] : Setting label for - [ sliderSwapType ]
-[     1 ] : Adding [ sliderSwapType ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ sliderVSyncType ]
-[     1 ] : Setting position for - [ sliderVSyncType ]
-[     1 ] : Setting label for - [ sliderVSyncType ]
-[     1 ] : Adding [ sliderVSyncType ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 1 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonVideoOptionsApply ]
-[     1 ] : Setting position for - [ buttonVideoOptionsApply ]
-[     1 ] : Setting label for - [ buttonVideoOptionsApply ]
-[     1 ] : Started setLabel [ buttonVideoOptionsApply ]
-[     1 ] : Setting the function call for [ buttonVideoOptionsApply ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonVideoOptionsApply ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 11 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonVideoOptionsCancel ]
-[     1 ] : Setting position for - [ buttonVideoOptionsCancel ]
-[     1 ] : Setting label for - [ buttonVideoOptionsCancel ]
-[     1 ] : Setting the function call for [ buttonVideoOptionsCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonVideoOptionsCancel ] to screen [ scrVideoOptions ]
-[     1 ] : Screen [ scrVideoOptions ] objectID [ 12 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrAudioOptions ] created.
-[     1 ] : Added new object - [ textLabelSoundOptions ]
-[     1 ] : Setting position for - [ textLabelSoundOptions ]
-[     1 ] : Setting label for - [ textLabelSoundOptions ]
-[     1 ] : Adding [ textLabelSoundOptions ] to screen [ scrAudioOptions ]
-[     1 ] : Screen [ scrAudioOptions ] objectID [ 1 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ audioCheckBox ]
-[     1 ] : GUI_OBJECT_CHECKBOX size is now - [ 4 ]
-[     1 ] : Setting the function call for [ audioCheckBox ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Setting position for - [ audioCheckBox ]
-[     1 ] : Setting label for - [ audioCheckBox ]
-[     1 ] : Setting checkBox group for - [ audioCheckBox ]
-[     1 ] : Setting checkBox tick for - [ audioCheckBox ]
-[     1 ] : Adding [ audioCheckBox ] to screen [ scrAudioOptions ]
-[     1 ] : Screen [ scrAudioOptions ] objectID [ 3 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ sliderAudioVol ]
-[     1 ] : Setting position for - [ sliderAudioVol ]
-[     1 ] : Setting label for - [ sliderAudioVol ]
-[     1 ] : Adding [ sliderAudioVol ] to screen [ scrAudioOptions ]
-[     1 ] : Screen [ scrAudioOptions ] objectID [ 2 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonAudioOptionsApply ]
-[     1 ] : Setting position for - [ buttonAudioOptionsApply ]
-[     1 ] : Setting label for - [ buttonAudioOptionsApply ]
-[     1 ] : Setting the function call for [ buttonAudioOptionsApply ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonAudioOptionsApply ] to screen [ scrAudioOptions ]
-[     1 ] : Screen [ scrAudioOptions ] objectID [ 13 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonAudioOptionsCancel ]
-[     1 ] : Setting position for - [ buttonAudioOptionsCancel ]
-[     1 ] : Setting label for - [ buttonAudioOptionsCancel ]
-[     1 ] : Setting the function call for [ buttonAudioOptionsCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonAudioOptionsCancel ] to screen [ scrAudioOptions ]
-[     1 ] : Screen [ scrAudioOptions ] objectID [ 14 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrGraphics ] created.
-[     1 ] : Added new object - [ textLabelGraphics ]
-[     1 ] : Setting position for - [ textLabelGraphics ]
-[     1 ] : Setting label for - [ textLabelGraphics ]
-[     1 ] : Adding [ textLabelGraphics ] to screen [ scrGraphics ]
-[     1 ] : Screen [ scrGraphics ] objectID [ 2 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ sliderTileColor ]
-[     1 ] : Setting position for - [ sliderTileColor ]
-[     1 ] : Setting label for - [ sliderTileColor ]
-[     1 ] : Adding [ sliderTileColor ] to screen [ scrGraphics ]
-[     1 ] : Screen [ scrGraphics ] objectID [ 3 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ sliderTileType ]
-[     1 ] : Setting position for - [ sliderTileType ]
-[     1 ] : Setting label for - [ sliderTileType ]
-[     1 ] : Adding [ sliderTileType ] to screen [ scrGraphics ]
-[     1 ] : Screen [ scrGraphics ] objectID [ 4 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ sliderParticleType ]
-[     1 ] : Setting position for - [ sliderParticleType ]
-[     1 ] : Setting label for - [ sliderParticleType ]
-[     1 ] : Adding [ sliderParticleType ] to screen [ scrGraphics ]
-[     1 ] : Screen [ scrGraphics ] objectID [ 5 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonGraphicsApply ]
-[     1 ] : Setting position for - [ buttonGraphicsApply ]
-[     1 ] : Setting label for - [ buttonGraphicsApply ]
-[     1 ] : Setting the function call for [ buttonGraphicsApply ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonGraphicsApply ] to screen [ scrGraphics ]
-[     1 ] : Screen [ scrGraphics ] objectID [ 15 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonGraphicsCancel ]
-[     1 ] : Setting position for - [ buttonGraphicsCancel ]
-[     1 ] : Setting label for - [ buttonGraphicsCancel ]
-[     1 ] : Setting the function call for [ buttonGraphicsCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonGraphicsCancel ] to screen [ scrGraphics ]
-[     1 ] : Screen [ scrGraphics ] objectID [ 16 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrGameOptions ] created.
-[     1 ] : Added new object - [ sliderLanguage ]
-[     1 ] : Setting position for - [ sliderLanguage ]
-[     1 ] : Setting label for - [ sliderLanguage ]
-[     1 ] : Adding [ sliderLanguage ] to screen [ scrGameOptions ]
-[     1 ] : Screen [ scrGameOptions ] objectID [ 6 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonGameOptionsApply ]
-[     1 ] : Setting position for - [ buttonGameOptionsApply ]
-[     1 ] : Setting label for - [ buttonGameOptionsApply ]
-[     1 ] : Setting the function call for [ buttonGameOptionsApply ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonGameOptionsApply ] to screen [ scrGameOptions ]
-[     1 ] : Screen [ scrGameOptions ] objectID [ 17 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonGameOptionsCancel ]
-[     1 ] : Setting position for - [ buttonGameOptionsCancel ]
-[     1 ] : Setting label for - [ buttonGameOptionsCancel ]
-[     1 ] : Setting the function call for [ buttonGameOptionsCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonGameOptionsCancel ] to screen [ scrGameOptions ]
-[     1 ] : Screen [ scrGameOptions ] objectID [ 18 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrExitQuestion ] created.
-[     1 ] : Added new object - [ exitTextBox ]
-[     1 ] : Setting position for - [ exitTextBox ]
-[     1 ] : Setting colors for - [ exitTextBox ]
-[     1 ] : Setting label for - [ exitTextBox ]
-[     1 ] : Adding [ exitTextBox ] to screen [ scrExitQuestion ]
-[     1 ] : Screen [ scrExitQuestion ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonExitYes ]
-[     1 ] : Setting position for - [ buttonExitYes ]
-[     1 ] : Setting label for - [ buttonExitYes ]
-[     1 ] : Setting the function call for [ buttonExitYes ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonExitYes ] to screen [ scrExitQuestion ]
-[     1 ] : Screen [ scrExitQuestion ] objectID [ 19 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonExitCancel ]
-[     1 ] : Setting position for - [ buttonExitCancel ]
-[     1 ] : Setting label for - [ buttonExitCancel ]
-[     1 ] : Setting the function call for [ buttonExitCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonExitCancel ] to screen [ scrExitQuestion ]
-[     1 ] : Screen [ scrExitQuestion ] objectID [ 20 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTerminal ] created.
-[     1 ] : Added new object - [ buttonTermLogOff ]
-[     1 ] : Setting position for - [ buttonTermLogOff ]
-[     1 ] : Setting label for - [ buttonTermLogOff ]
-[     1 ] : Setting the function call for [ buttonTermLogOff ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTermLogOff ] to screen [ scrTerminal ]
-[     1 ] : Screen [ scrTerminal ] objectID [ 21 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTermInfo ]
-[     1 ] : Setting position for - [ buttonTermInfo ]
-[     1 ] : Setting label for - [ buttonTermInfo ]
-[     1 ] : Setting the function call for [ buttonTermInfo ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTermInfo ] to screen [ scrTerminal ]
-[     1 ] : Screen [ scrTerminal ] objectID [ 22 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTermDeck ]
-[     1 ] : Setting position for - [ buttonTermDeck ]
-[     1 ] : Setting label for - [ buttonTermDeck ]
-[     1 ] : Setting the function call for [ buttonTermDeck ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTermDeck ] to screen [ scrTerminal ]
-[     1 ] : Screen [ scrTerminal ] objectID [ 23 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTermShip ]
-[     1 ] : Setting position for - [ buttonTermShip ]
-[     1 ] : Setting label for - [ buttonTermShip ]
-[     1 ] : Setting the function call for [ buttonTermShip ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTermShip ] to screen [ scrTerminal ]
-[     1 ] : Screen [ scrTerminal ] objectID [ 24 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutorial ] created.
-[     1 ] : Added new object - [ textLabelTutMove ]
-[     1 ] : Setting position for - [ textLabelTutMove ]
-[     1 ] : Setting label for - [ textLabelTutMove ]
-[     1 ] : Adding [ textLabelTutMove ] to screen [ scrTutorial ]
-[     1 ] : Screen [ scrTutorial ] objectID [ 3 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutTextBox ]
-[     1 ] : Setting position for - [ tutTextBox ]
-[     1 ] : Setting colors for - [ tutTextBox ]
-[     1 ] : Setting label for - [ tutTextBox ]
-[     1 ] : Adding [ tutTextBox ] to screen [ scrTutorial ]
-[     1 ] : Screen [ scrTutorial ] objectID [ 1 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutMoveNext ]
-[     1 ] : Setting position for - [ buttonTutMoveNext ]
-[     1 ] : Setting label for - [ buttonTutMoveNext ]
-[     1 ] : Setting the function call for [ buttonTutMoveNext ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutMoveNext ] to screen [ scrTutorial ]
-[     1 ] : Screen [ scrTutorial ] objectID [ 25 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutorialCancel ]
-[     1 ] : Setting position for - [ buttonTutorialCancel ]
-[     1 ] : Setting label for - [ buttonTutorialCancel ]
-[     1 ] : Setting the function call for [ buttonTutorialCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutorialCancel ] to screen [ scrTutorial ]
-[     1 ] : Screen [ scrTutorial ] objectID [ 26 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutTransfer ] created.
-[     1 ] : Added new object - [ textLabelTutTransMove ]
-[     1 ] : Setting position for - [ textLabelTutTransMove ]
-[     1 ] : Setting label for - [ textLabelTutTransMove ]
-[     1 ] : Adding [ textLabelTutTransMove ] to screen [ scrTutTransfer ]
-[     1 ] : Screen [ scrTutTransfer ] objectID [ 4 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutTransTextBox ]
-[     1 ] : Setting position for - [ tutTransTextBox ]
-[     1 ] : Setting colors for - [ tutTransTextBox ]
-[     1 ] : Setting label for - [ tutTransTextBox ]
-[     1 ] : Adding [ tutTransTextBox ] to screen [ scrTutTransfer ]
-[     1 ] : Screen [ scrTutTransfer ] objectID [ 2 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTransNext ]
-[     1 ] : Setting position for - [ buttonTutTransNext ]
-[     1 ] : Setting label for - [ buttonTutTransNext ]
-[     1 ] : Setting the function call for [ buttonTutTransNext ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTransNext ] to screen [ scrTutTransfer ]
-[     1 ] : Screen [ scrTutTransfer ] objectID [ 27 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTransCancel ]
-[     1 ] : Setting position for - [ buttonTutTransCancel ]
-[     1 ] : Setting label for - [ buttonTutTransCancel ]
-[     1 ] : Setting the function call for [ buttonTutTransCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTransCancel ] to screen [ scrTutTransfer ]
-[     1 ] : Screen [ scrTutTransfer ] objectID [ 28 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutTransGame ] created.
-[     1 ] : Added new object - [ textLabelTutTransGame ]
-[     1 ] : Setting position for - [ textLabelTutTransGame ]
-[     1 ] : Setting label for - [ textLabelTutTransGame ]
-[     1 ] : Adding [ textLabelTutTransGame ] to screen [ scrTutTransGame ]
-[     1 ] : Screen [ scrTutTransGame ] objectID [ 5 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutTransGameTextBox ]
-[     1 ] : Setting position for - [ tutTransGameTextBox ]
-[     1 ] : Setting colors for - [ tutTransGameTextBox ]
-[     1 ] : Setting label for - [ tutTransGameTextBox ]
-[     1 ] : Adding [ tutTransGameTextBox ] to screen [ scrTutTransGame ]
-[     1 ] : Screen [ scrTutTransGame ] objectID [ 3 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTransGameNext ]
-[     1 ] : Setting position for - [ buttonTutTransGameNext ]
-[     1 ] : Setting label for - [ buttonTutTransGameNext ]
-[     1 ] : Setting the function call for [ buttonTutTransGameNext ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTransGameNext ] to screen [ scrTutTransGame ]
-[     1 ] : Screen [ scrTutTransGame ] objectID [ 29 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutTransGameCancel ]
-[     1 ] : Setting position for - [ buttonTutTransGameCancel ]
-[     1 ] : Setting label for - [ buttonTutTransGameCancel ]
-[     1 ] : Setting the function call for [ buttonTutTransGameCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutTransGameCancel ] to screen [ scrTutTransGame ]
-[     1 ] : Screen [ scrTutTransGame ] objectID [ 30 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutLifts ] created.
-[     1 ] : Added new object - [ textLabelTutLifts ]
-[     1 ] : Setting position for - [ textLabelTutLifts ]
-[     1 ] : Setting label for - [ textLabelTutLifts ]
-[     1 ] : Adding [ textLabelTutLifts ] to screen [ scrTutLifts ]
-[     1 ] : Screen [ scrTutLifts ] objectID [ 6 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutLiftTextBox ]
-[     1 ] : Setting position for - [ tutLiftTextBox ]
-[     1 ] : Setting colors for - [ tutLiftTextBox ]
-[     1 ] : Setting label for - [ tutLiftTextBox ]
-[     1 ] : Adding [ tutLiftTextBox ] to screen [ scrTutLifts ]
-[     1 ] : Screen [ scrTutLifts ] objectID [ 4 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutImageLift ]
-[     1 ] : Setting position for - [ tutImageLift ]
-[     1 ] : Setting colors for - [ tutImageLift ]
-[     1 ] : Adding [ tutImageLift ] to screen [ scrTutLifts ]
-[     1 ] : Screen [ scrTutLifts ] objectID [ 0 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutLiftNext ]
-[     1 ] : Setting position for - [ buttonTutLiftNext ]
-[     1 ] : Setting label for - [ buttonTutLiftNext ]
-[     1 ] : Setting the function call for [ buttonTutLiftNext ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutLiftNext ] to screen [ scrTutLifts ]
-[     1 ] : Screen [ scrTutLifts ] objectID [ 31 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ buttonTutLiftCancel ]
-[     1 ] : Setting position for - [ buttonTutLiftCancel ]
-[     1 ] : Setting label for - [ buttonTutLiftCancel ]
-[     1 ] : Setting the function call for [ buttonTutLiftCancel ] - [ scr_guiHandleButtonPress ]
-[     1 ] : Adding [ buttonTutLiftCancel ] to screen [ scrTutLifts ]
-[     1 ] : Screen [ scrTutLifts ] objectID [ 32 ] - Added
-[     1 ] : -------------
-[     1 ] : Screen [ scrTutTerminals ] created.
-[     1 ] : Added new object - [ textLabelTutTerminals ]
-[     1 ] : Setting position for - [ textLabelTutTerminals ]
-[     1 ] : Setting label for - [ textLabelTutTerminals ]
-[     1 ] : Adding [ textLabelTutTerminals ] to screen [ scrTutTerminals ]
-[     1 ] : Screen [ scrTutTerminals ] objectID [ 7 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutTerminalTextBox ]
-[     1 ] : Setting position for - [ tutTerminalTextBox ]
-[     1 ] : Setting colors for - [ tutTerminalTextBox ]
-[     1 ] : Setting label for - [ tutTerminalTextBox ]
-[     1 ] : Adding [ tutTerminalTextBox ] to screen [ scrTutTerminals ]
-[     1 ] : Screen [ scrTutTerminals ] objectID [ 5 ] - Added
-[     1 ] : -------------
-[     1 ] : Added new object - [ tutImageTerminal ]
-[     1 ] : Setting position for - [ tutImageTerminal ]
+[     0 ] : INFO: Allegro Font Version: 5.2.2 Release 0
+[     0 ] : INFO: Image addon installed.
+[     0 ] : INFO: Primitives addon installed.
+[     0 ] : INFO: Joysticks installed.
+[     0 ] : INFO: Allegro TTF Version: 5.2.2 Release 0
+[     0 ] : Sound started: 5.2.2 Release: 0
+[     0 ] : INFO: Got hardware accelerated backing bitmap
+[     0 ] : File [ Digital.ttf ] exists.
+[     0 ] : File [ Digital.ttf ] exists.
+[     0 ] : File [ Digital.ttf ] exists.
+[     0 ] : Keybind: Info: Key states read from file.
+[     0 ] : Called from io_printKeyBind - [ 0 ]
+[     0 ] : ------------------------------------
+[     0 ] : [ Game Left : [ Left] ]
+[     0 ] : [ Game Right : [ Right] ]
+[     0 ] : [ Game Up : [ Up] ]
+[     0 ] : [ Game Down : [ Down] ]
+[     0 ] : [ Show console : [ grave] ]
+[     0 ] : [ Game action : [ Control_L] ]
+[     0 ] : [ Exit the game : [ Escape] ]
+[     0 ] : [ Save Screenshot : [ F12] ]
+[     0 ] : [ Pause Game : [ p] ]
+[     0 ] : Screen [ scrMainMenu ] created.
+[     0 ] : Added new object - [ buttonStartGame ]
+[     0 ] : Setting position for - [ buttonStartGame ]
+[     0 ] : Setting label for - [ buttonStartGame ]
+[     0 ] : Setting the function call for [ buttonStartGame ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonStartGame ] to screen [ scrMainMenu ]
+[     0 ] : Screen [ scrMainMenu ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonStartTutorial ]
+[     0 ] : Setting position for - [ buttonStartTutorial ]
+[     0 ] : Setting label for - [ buttonStartTutorial ]
+[     0 ] : Setting the function call for [ buttonStartTutorial ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonStartTutorial ] to screen [ scrMainMenu ]
+[     0 ] : Screen [ scrMainMenu ] objectID [ 1 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonOptions ]
+[     0 ] : Setting position for - [ buttonOptions ]
+[     0 ] : Setting label for - [ buttonOptions ]
+[     0 ] : Setting the function call for [ buttonOptions ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptions ] to screen [ scrMainMenu ]
+[     0 ] : Screen [ scrMainMenu ] objectID [ 2 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonHelp ]
+[     0 ] : Setting position for - [ buttonHelp ]
+[     0 ] : Setting label for - [ buttonHelp ]
+[     0 ] : Setting the function call for [ buttonHelp ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonHelp ] to screen [ scrMainMenu ]
+[     0 ] : Screen [ scrMainMenu ] objectID [ 3 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonQuit ]
+[     0 ] : Setting position for - [ buttonQuit ]
+[     0 ] : Setting label for - [ buttonQuit ]
+[     0 ] : Setting the function call for [ buttonQuit ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonQuit ] to screen [ scrMainMenu ]
+[     0 ] : Screen [ scrMainMenu ] objectID [ 4 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrOptions ] created.
+[     0 ] : Added new object - [ buttonOptionVideo ]
+[     0 ] : Setting position for - [ buttonOptionVideo ]
+[     0 ] : Setting label for - [ buttonOptionVideo ]
+[     0 ] : Setting the function call for [ buttonOptionVideo ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptionVideo ] to screen [ scrOptions ]
+[     0 ] : Screen [ scrOptions ] objectID [ 5 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonOptionAudio ]
+[     0 ] : Setting position for - [ buttonOptionAudio ]
+[     0 ] : Setting label for - [ buttonOptionAudio ]
+[     0 ] : Setting the function call for [ buttonOptionAudio ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptionAudio ] to screen [ scrOptions ]
+[     0 ] : Screen [ scrOptions ] objectID [ 6 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonOptionGraphics ]
+[     0 ] : Setting position for - [ buttonOptionGraphics ]
+[     0 ] : Setting label for - [ buttonOptionGraphics ]
+[     0 ] : Setting the function call for [ buttonOptionGraphics ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptionGraphics ] to screen [ scrOptions ]
+[     0 ] : Screen [ scrOptions ] objectID [ 7 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonOptionGame ]
+[     0 ] : Setting position for - [ buttonOptionGame ]
+[     0 ] : Setting label for - [ buttonOptionGame ]
+[     0 ] : Setting the function call for [ buttonOptionGame ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptionGame ] to screen [ scrOptions ]
+[     0 ] : Screen [ scrOptions ] objectID [ 8 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonOptionControls ]
+[     0 ] : Setting position for - [ buttonOptionControls ]
+[     0 ] : Setting label for - [ buttonOptionControls ]
+[     0 ] : Setting the function call for [ buttonOptionControls ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptionControls ] to screen [ scrOptions ]
+[     0 ] : Screen [ scrOptions ] objectID [ 9 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonOptionReturn ]
+[     0 ] : Setting position for - [ buttonOptionReturn ]
+[     0 ] : Setting label for - [ buttonOptionReturn ]
+[     0 ] : Setting the function call for [ buttonOptionReturn ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonOptionReturn ] to screen [ scrOptions ]
+[     0 ] : Screen [ scrOptions ] objectID [ 10 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrVideoOptions ] created.
+[     0 ] : Added new object - [ textLabelResolution ]
+[     0 ] : Setting position for - [ textLabelResolution ]
+[     0 ] : Setting label for - [ textLabelResolution ]
+[     0 ] : Adding [ textLabelResolution ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ videoUseBackingBMP ]
+[     0 ] : GUI_OBJECT_CHECKBOX size is now - [ 1 ]
+[     0 ] : Setting the function call for [ videoUseBackingBMP ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Setting position for - [ videoUseBackingBMP ]
+[     0 ] : Setting label for - [ videoUseBackingBMP ]
+[     0 ] : Setting checkBox group for - [ videoUseBackingBMP ]
+[     0 ] : Setting checkBox tick for - [ videoUseBackingBMP ]
+[     0 ] : Adding [ videoUseBackingBMP ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ videoUseHoldingBMP ]
+[     0 ] : GUI_OBJECT_CHECKBOX size is now - [ 2 ]
+[     0 ] : Setting the function call for [ videoUseHoldingBMP ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Setting position for - [ videoUseHoldingBMP ]
+[     0 ] : Setting label for - [ videoUseHoldingBMP ]
+[     0 ] : Setting checkBox group for - [ videoUseHoldingBMP ]
+[     0 ] : Setting checkBox tick for - [ videoUseHoldingBMP ]
+[     0 ] : Adding [ videoUseHoldingBMP ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 1 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ checkBoxFullScreen ]
+[     0 ] : GUI_OBJECT_CHECKBOX size is now - [ 3 ]
+[     0 ] : Setting the function call for [ checkBoxFullScreen ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Setting position for - [ checkBoxFullScreen ]
+[     0 ] : Setting label for - [ checkBoxFullScreen ]
+[     0 ] : Setting checkBox group for - [ checkBoxFullScreen ]
+[     0 ] : Setting checkBox tick for - [ checkBoxFullScreen ]
+[     0 ] : Adding [ checkBoxFullScreen ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 2 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ sliderSwapType ]
+[     0 ] : Setting position for - [ sliderSwapType ]
+[     0 ] : Setting label for - [ sliderSwapType ]
+[     0 ] : Adding [ sliderSwapType ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ sliderVSyncType ]
+[     0 ] : Setting position for - [ sliderVSyncType ]
+[     0 ] : Setting label for - [ sliderVSyncType ]
+[     0 ] : Adding [ sliderVSyncType ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 1 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonVideoOptionsApply ]
+[     0 ] : Setting position for - [ buttonVideoOptionsApply ]
+[     0 ] : Setting label for - [ buttonVideoOptionsApply ]
+[     0 ] : Started setLabel [ buttonVideoOptionsApply ]
+[     0 ] : Setting the function call for [ buttonVideoOptionsApply ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonVideoOptionsApply ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 11 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonVideoOptionsCancel ]
+[     0 ] : Setting position for - [ buttonVideoOptionsCancel ]
+[     0 ] : Setting label for - [ buttonVideoOptionsCancel ]
+[     0 ] : Setting the function call for [ buttonVideoOptionsCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonVideoOptionsCancel ] to screen [ scrVideoOptions ]
+[     0 ] : Screen [ scrVideoOptions ] objectID [ 12 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrAudioOptions ] created.
+[     0 ] : Added new object - [ textLabelSoundOptions ]
+[     0 ] : Setting position for - [ textLabelSoundOptions ]
+[     0 ] : Setting label for - [ textLabelSoundOptions ]
+[     0 ] : Adding [ textLabelSoundOptions ] to screen [ scrAudioOptions ]
+[     0 ] : Screen [ scrAudioOptions ] objectID [ 1 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ audioCheckBox ]
+[     0 ] : GUI_OBJECT_CHECKBOX size is now - [ 4 ]
+[     0 ] : Setting the function call for [ audioCheckBox ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Setting position for - [ audioCheckBox ]
+[     0 ] : Setting label for - [ audioCheckBox ]
+[     0 ] : Setting checkBox group for - [ audioCheckBox ]
+[     0 ] : Setting checkBox tick for - [ audioCheckBox ]
+[     0 ] : Adding [ audioCheckBox ] to screen [ scrAudioOptions ]
+[     0 ] : Screen [ scrAudioOptions ] objectID [ 3 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ sliderAudioVol ]
+[     0 ] : Setting position for - [ sliderAudioVol ]
+[     0 ] : Setting label for - [ sliderAudioVol ]
+[     0 ] : Adding [ sliderAudioVol ] to screen [ scrAudioOptions ]
+[     0 ] : Screen [ scrAudioOptions ] objectID [ 2 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonAudioOptionsApply ]
+[     0 ] : Setting position for - [ buttonAudioOptionsApply ]
+[     0 ] : Setting label for - [ buttonAudioOptionsApply ]
+[     0 ] : Setting the function call for [ buttonAudioOptionsApply ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonAudioOptionsApply ] to screen [ scrAudioOptions ]
+[     0 ] : Screen [ scrAudioOptions ] objectID [ 13 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonAudioOptionsCancel ]
+[     0 ] : Setting position for - [ buttonAudioOptionsCancel ]
+[     0 ] : Setting label for - [ buttonAudioOptionsCancel ]
+[     0 ] : Setting the function call for [ buttonAudioOptionsCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonAudioOptionsCancel ] to screen [ scrAudioOptions ]
+[     0 ] : Screen [ scrAudioOptions ] objectID [ 14 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrGraphics ] created.
+[     0 ] : Added new object - [ textLabelGraphics ]
+[     0 ] : Setting position for - [ textLabelGraphics ]
+[     0 ] : Setting label for - [ textLabelGraphics ]
+[     0 ] : Adding [ textLabelGraphics ] to screen [ scrGraphics ]
+[     0 ] : Screen [ scrGraphics ] objectID [ 2 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ sliderTileColor ]
+[     0 ] : Setting position for - [ sliderTileColor ]
+[     0 ] : Setting label for - [ sliderTileColor ]
+[     0 ] : Adding [ sliderTileColor ] to screen [ scrGraphics ]
+[     0 ] : Screen [ scrGraphics ] objectID [ 3 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ sliderTileType ]
+[     0 ] : Setting position for - [ sliderTileType ]
+[     0 ] : Setting label for - [ sliderTileType ]
+[     0 ] : Adding [ sliderTileType ] to screen [ scrGraphics ]
+[     0 ] : Screen [ scrGraphics ] objectID [ 4 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ sliderParticleType ]
+[     0 ] : Setting position for - [ sliderParticleType ]
+[     0 ] : Setting label for - [ sliderParticleType ]
+[     0 ] : Adding [ sliderParticleType ] to screen [ scrGraphics ]
+[     0 ] : Screen [ scrGraphics ] objectID [ 5 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonGraphicsApply ]
+[     0 ] : Setting position for - [ buttonGraphicsApply ]
+[     0 ] : Setting label for - [ buttonGraphicsApply ]
+[     0 ] : Setting the function call for [ buttonGraphicsApply ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonGraphicsApply ] to screen [ scrGraphics ]
+[     0 ] : Screen [ scrGraphics ] objectID [ 15 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonGraphicsCancel ]
+[     0 ] : Setting position for - [ buttonGraphicsCancel ]
+[     0 ] : Setting label for - [ buttonGraphicsCancel ]
+[     0 ] : Setting the function call for [ buttonGraphicsCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonGraphicsCancel ] to screen [ scrGraphics ]
+[     0 ] : Screen [ scrGraphics ] objectID [ 16 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrGameOptions ] created.
+[     0 ] : Added new object - [ sliderLanguage ]
+[     0 ] : Setting position for - [ sliderLanguage ]
+[     0 ] : Setting label for - [ sliderLanguage ]
+[     0 ] : Adding [ sliderLanguage ] to screen [ scrGameOptions ]
+[     0 ] : Screen [ scrGameOptions ] objectID [ 6 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonGameOptionsApply ]
+[     0 ] : Setting position for - [ buttonGameOptionsApply ]
+[     0 ] : Setting label for - [ buttonGameOptionsApply ]
+[     0 ] : Setting the function call for [ buttonGameOptionsApply ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonGameOptionsApply ] to screen [ scrGameOptions ]
+[     0 ] : Screen [ scrGameOptions ] objectID [ 17 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonGameOptionsCancel ]
+[     0 ] : Setting position for - [ buttonGameOptionsCancel ]
+[     0 ] : Setting label for - [ buttonGameOptionsCancel ]
+[     0 ] : Setting the function call for [ buttonGameOptionsCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonGameOptionsCancel ] to screen [ scrGameOptions ]
+[     0 ] : Screen [ scrGameOptions ] objectID [ 18 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrExitQuestion ] created.
+[     0 ] : Added new object - [ exitTextBox ]
+[     0 ] : Setting position for - [ exitTextBox ]
+[     0 ] : Setting colors for - [ exitTextBox ]
+[     0 ] : Setting label for - [ exitTextBox ]
+[     0 ] : Adding [ exitTextBox ] to screen [ scrExitQuestion ]
+[     0 ] : Screen [ scrExitQuestion ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonExitYes ]
+[     0 ] : Setting position for - [ buttonExitYes ]
+[     0 ] : Setting label for - [ buttonExitYes ]
+[     0 ] : Setting the function call for [ buttonExitYes ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonExitYes ] to screen [ scrExitQuestion ]
+[     0 ] : Screen [ scrExitQuestion ] objectID [ 19 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonExitCancel ]
+[     0 ] : Setting position for - [ buttonExitCancel ]
+[     0 ] : Setting label for - [ buttonExitCancel ]
+[     0 ] : Setting the function call for [ buttonExitCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonExitCancel ] to screen [ scrExitQuestion ]
+[     0 ] : Screen [ scrExitQuestion ] objectID [ 20 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTerminal ] created.
+[     0 ] : Added new object - [ buttonTermLogOff ]
+[     0 ] : Setting position for - [ buttonTermLogOff ]
+[     0 ] : Setting label for - [ buttonTermLogOff ]
+[     0 ] : Setting the function call for [ buttonTermLogOff ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTermLogOff ] to screen [ scrTerminal ]
+[     0 ] : Screen [ scrTerminal ] objectID [ 21 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTermInfo ]
+[     0 ] : Setting position for - [ buttonTermInfo ]
+[     0 ] : Setting label for - [ buttonTermInfo ]
+[     0 ] : Setting the function call for [ buttonTermInfo ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTermInfo ] to screen [ scrTerminal ]
+[     0 ] : Screen [ scrTerminal ] objectID [ 22 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTermDeck ]
+[     0 ] : Setting position for - [ buttonTermDeck ]
+[     0 ] : Setting label for - [ buttonTermDeck ]
+[     0 ] : Setting the function call for [ buttonTermDeck ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTermDeck ] to screen [ scrTerminal ]
+[     0 ] : Screen [ scrTerminal ] objectID [ 23 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTermShip ]
+[     0 ] : Setting position for - [ buttonTermShip ]
+[     0 ] : Setting label for - [ buttonTermShip ]
+[     0 ] : Setting the function call for [ buttonTermShip ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTermShip ] to screen [ scrTerminal ]
+[     0 ] : Screen [ scrTerminal ] objectID [ 24 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutorial ] created.
+[     0 ] : Added new object - [ textLabelTutMove ]
+[     0 ] : Setting position for - [ textLabelTutMove ]
+[     0 ] : Setting label for - [ textLabelTutMove ]
+[     0 ] : Adding [ textLabelTutMove ] to screen [ scrTutorial ]
+[     0 ] : Screen [ scrTutorial ] objectID [ 3 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutTextBox ]
+[     0 ] : Setting position for - [ tutTextBox ]
+[     0 ] : Setting colors for - [ tutTextBox ]
+[     0 ] : Setting label for - [ tutTextBox ]
+[     0 ] : Adding [ tutTextBox ] to screen [ scrTutorial ]
+[     0 ] : Screen [ scrTutorial ] objectID [ 1 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutMoveNext ]
+[     0 ] : Setting position for - [ buttonTutMoveNext ]
+[     0 ] : Setting label for - [ buttonTutMoveNext ]
+[     0 ] : Setting the function call for [ buttonTutMoveNext ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutMoveNext ] to screen [ scrTutorial ]
+[     0 ] : Screen [ scrTutorial ] objectID [ 25 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutorialCancel ]
+[     0 ] : Setting position for - [ buttonTutorialCancel ]
+[     0 ] : Setting label for - [ buttonTutorialCancel ]
+[     0 ] : Setting the function call for [ buttonTutorialCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutorialCancel ] to screen [ scrTutorial ]
+[     0 ] : Screen [ scrTutorial ] objectID [ 26 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutTransfer ] created.
+[     0 ] : Added new object - [ textLabelTutTransMove ]
+[     0 ] : Setting position for - [ textLabelTutTransMove ]
+[     0 ] : Setting label for - [ textLabelTutTransMove ]
+[     0 ] : Adding [ textLabelTutTransMove ] to screen [ scrTutTransfer ]
+[     0 ] : Screen [ scrTutTransfer ] objectID [ 4 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutTransTextBox ]
+[     0 ] : Setting position for - [ tutTransTextBox ]
+[     0 ] : Setting colors for - [ tutTransTextBox ]
+[     0 ] : Setting label for - [ tutTransTextBox ]
+[     0 ] : Adding [ tutTransTextBox ] to screen [ scrTutTransfer ]
+[     0 ] : Screen [ scrTutTransfer ] objectID [ 2 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTransNext ]
+[     0 ] : Setting position for - [ buttonTutTransNext ]
+[     0 ] : Setting label for - [ buttonTutTransNext ]
+[     0 ] : Setting the function call for [ buttonTutTransNext ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTransNext ] to screen [ scrTutTransfer ]
+[     0 ] : Screen [ scrTutTransfer ] objectID [ 27 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTransCancel ]
+[     0 ] : Setting position for - [ buttonTutTransCancel ]
+[     0 ] : Setting label for - [ buttonTutTransCancel ]
+[     0 ] : Setting the function call for [ buttonTutTransCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTransCancel ] to screen [ scrTutTransfer ]
+[     0 ] : Screen [ scrTutTransfer ] objectID [ 28 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutTransGame ] created.
+[     0 ] : Added new object - [ textLabelTutTransGame ]
+[     0 ] : Setting position for - [ textLabelTutTransGame ]
+[     0 ] : Setting label for - [ textLabelTutTransGame ]
+[     0 ] : Adding [ textLabelTutTransGame ] to screen [ scrTutTransGame ]
+[     0 ] : Screen [ scrTutTransGame ] objectID [ 5 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutTransGameTextBox ]
+[     0 ] : Setting position for - [ tutTransGameTextBox ]
+[     0 ] : Setting colors for - [ tutTransGameTextBox ]
+[     0 ] : Setting label for - [ tutTransGameTextBox ]
+[     0 ] : Adding [ tutTransGameTextBox ] to screen [ scrTutTransGame ]
+[     0 ] : Screen [ scrTutTransGame ] objectID [ 3 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTransGameNext ]
+[     0 ] : Setting position for - [ buttonTutTransGameNext ]
+[     0 ] : Setting label for - [ buttonTutTransGameNext ]
+[     0 ] : Setting the function call for [ buttonTutTransGameNext ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTransGameNext ] to screen [ scrTutTransGame ]
+[     0 ] : Screen [ scrTutTransGame ] objectID [ 29 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutTransGameCancel ]
+[     0 ] : Setting position for - [ buttonTutTransGameCancel ]
+[     0 ] : Setting label for - [ buttonTutTransGameCancel ]
+[     0 ] : Setting the function call for [ buttonTutTransGameCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutTransGameCancel ] to screen [ scrTutTransGame ]
+[     0 ] : Screen [ scrTutTransGame ] objectID [ 30 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutLifts ] created.
+[     0 ] : Added new object - [ textLabelTutLifts ]
+[     0 ] : Setting position for - [ textLabelTutLifts ]
+[     0 ] : Setting label for - [ textLabelTutLifts ]
+[     0 ] : Adding [ textLabelTutLifts ] to screen [ scrTutLifts ]
+[     0 ] : Screen [ scrTutLifts ] objectID [ 6 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutLiftTextBox ]
+[     0 ] : Setting position for - [ tutLiftTextBox ]
+[     0 ] : Setting colors for - [ tutLiftTextBox ]
+[     0 ] : Setting label for - [ tutLiftTextBox ]
+[     0 ] : Adding [ tutLiftTextBox ] to screen [ scrTutLifts ]
+[     0 ] : Screen [ scrTutLifts ] objectID [ 4 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutImageLift ]
+[     0 ] : Setting position for - [ tutImageLift ]
+[     0 ] : Setting colors for - [ tutImageLift ]
+[     0 ] : Adding [ tutImageLift ] to screen [ scrTutLifts ]
+[     0 ] : Screen [ scrTutLifts ] objectID [ 0 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutLiftNext ]
+[     0 ] : Setting position for - [ buttonTutLiftNext ]
+[     0 ] : Setting label for - [ buttonTutLiftNext ]
+[     0 ] : Setting the function call for [ buttonTutLiftNext ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutLiftNext ] to screen [ scrTutLifts ]
+[     0 ] : Screen [ scrTutLifts ] objectID [ 31 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ buttonTutLiftCancel ]
+[     0 ] : Setting position for - [ buttonTutLiftCancel ]
+[     0 ] : Setting label for - [ buttonTutLiftCancel ]
+[     0 ] : Setting the function call for [ buttonTutLiftCancel ] - [ scr_guiHandleButtonPress ]
+[     0 ] : Adding [ buttonTutLiftCancel ] to screen [ scrTutLifts ]
+[     0 ] : Screen [ scrTutLifts ] objectID [ 32 ] - Added
+[     0 ] : -------------
+[     0 ] : Screen [ scrTutTerminals ] created.
+[     0 ] : Added new object - [ textLabelTutTerminals ]
+[     0 ] : Setting position for - [ textLabelTutTerminals ]
+[     0 ] : Setting label for - [ textLabelTutTerminals ]
+[     0 ] : Adding [ textLabelTutTerminals ] to screen [ scrTutTerminals ]
+[     0 ] : Screen [ scrTutTerminals ] objectID [ 7 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutTerminalTextBox ]
+[     0 ] : Setting position for - [ tutTerminalTextBox ]
+[     0 ] : Setting colors for - [ tutTerminalTextBox ]
+[     0 ] : Setting label for - [ tutTerminalTextBox ]
+[     0 ] : Adding [ tutTerminalTextBox ] to screen [ scrTutTerminals ]
+[     0 ] : Screen [ scrTutTerminals ] objectID [ 5 ] - Added
+[     0 ] : -------------
+[     0 ] : Added new object - [ tutImageTerminal ]
+[     0 ] : Setting position for - [ tutImageTerminal ]
 [     1 ] : Setting colors for - [ tutImageTerminal ]
 [     1 ] : Adding [ tutImageTerminal ] to screen [ scrTutTerminals ]
 [     1 ] : Screen [ scrTutTerminals ] objectID [ 1 ] - Added
@@ -1138,12 +1138,12 @@
 [     1 ] : Loaded image [ particleSmoke.png ]
 [     1 ] : Loaded image [ particleSpark.png ]
 [     1 ] : Loaded image [ static_1.png ]
-[     2 ] : Loaded image [ static_2.png ]
-[     2 ] : Loaded image [ static_3.png ]
-[     2 ] : Loaded image [ static_4.png ]
-[     2 ] : Loaded image [ static_5.png ]
-[     2 ] : Loaded image [ static_6.png ]
-[     2 ] : Loaded image [ static_7.png ]
+[     1 ] : Loaded image [ static_2.png ]
+[     1 ] : Loaded image [ static_3.png ]
+[     1 ] : Loaded image [ static_4.png ]
+[     1 ] : Loaded image [ static_5.png ]
+[     1 ] : Loaded image [ static_6.png ]
+[     1 ] : Loaded image [ static_7.png ]
 [     2 ] : Loaded image [ static_8.png ]
 [     2 ] : Loaded image [ static_9.png ]
 [     2 ] : Get droid database information.
@@ -1166,12 +1166,12 @@
 [     2 ] : Loaded ship level [ Stores ]
 [     2 ] : Loaded ship level [ Research ]
 [     2 ] : Loaded ship level [ Reactor ]
-[     3 ] : Loaded ship level [ Airlock ]
-[     3 ] : Loaded ship level [ Bridge ]
-[     3 ] : Loaded ship level [ Turrent 1 ]
-[     3 ] : Loaded ship level [ Turrent 2 ]
-[     3 ] : Loaded ship level [ Observation ]
-[     3 ] : Loaded sample [ collosion1.wav ]
+[     2 ] : Loaded ship level [ Airlock ]
+[     2 ] : Loaded ship level [ Bridge ]
+[     2 ] : Loaded ship level [ Turrent 1 ]
+[     2 ] : Loaded ship level [ Turrent 2 ]
+[     2 ] : Loaded ship level [ Observation ]
+[     2 ] : Loaded sample [ collosion1.wav ]
 [     3 ] : Loaded sample [ endTransmission1.wav ]
 [     3 ] : Loaded sample [ greenAlert.wav ]
 [     3 ] : Loaded sample [ lift1.wav ]
@@ -1203,631 +1203,30 @@
 [     3 ] : Loaded sample [ transfer1.wav ]
 [     3 ] : Loaded sample [ transferStart.wav ]
 [     3 ] : Loaded sample [ door.wav ]
-[     5 ] : Loaded image [ retro_blue.bmp ]
-[     5 ] : Loaded image [ retro_blue_128.bmp ]
-[     5 ] : Loaded tile set [ retro_blue.bmp ]
-[     5 ] : Loaded tile set [ retro_blue_128.bmp ]
-[    14 ] : Loaded image [ retro_gray.bmp ]
-[    14 ] : Loaded image [ retro_gray_128.bmp ]
-[    14 ] : Loaded tile set [ retro_gray.bmp ]
-[    14 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    14 ] : Loaded image [ retro_gray.bmp ]
-[    14 ] : Loaded image [ retro_gray_128.bmp ]
-[    14 ] : Loaded tile set [ retro_gray.bmp ]
-[    14 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    14 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 288 ]
-[    14 ] : Loaded image [ retro_gray.bmp ]
-[    14 ] : Loaded image [ retro_gray_128.bmp ]
-[    14 ] : Loaded tile set [ retro_gray.bmp ]
-[    14 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    24 ] : Load droid model - image name : db_001.jpg
-[    24 ] : Loaded image [ db_001.jpg ]
-[    61 ] : Remove physics objects for droid [ 0 ]
-[    61 ] : Remove physics objects for droid [ 1 ]
-[    61 ] : Remove physics objects for droid [ 2 ]
-[    61 ] : Remove physics objects for droid [ 3 ]
-[    61 ] : Tunnel in use [ 0 ]
-[    63 ] : Lift [ 0 ] PosX [ 576 ] PosY [ 448 ]
-[    63 ] : Lift [ 1 ] PosX [ 1248 ] PosY [ 448 ]
-[    63 ] : Loaded image [ retro_gray.bmp ]
-[    63 ] : Loaded image [ retro_gray_128.bmp ]
-[    63 ] : Loaded tile set [ retro_gray.bmp ]
-[    63 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    66 ] : Remove physics objects for droid [ 0 ]
-[    66 ] : Remove physics objects for droid [ 1 ]
-[    66 ] : Remove physics objects for droid [ 2 ]
-[    66 ] : Remove physics objects for droid [ 3 ]
-[    66 ] : Remove physics objects for droid [ 4 ]
-[    66 ] : Remove physics objects for droid [ 5 ]
-[    66 ] : Remove physics objects for droid [ 6 ]
-[    66 ] : Remove physics objects for droid [ 7 ]
-[    66 ] : Tunnel in use [ 0 ]
-[    68 ] : Lift [ 0 ] PosX [ 864 ] PosY [ 448 ]
-[    68 ] : Loaded image [ retro_gray.bmp ]
-[    68 ] : Loaded image [ retro_gray_128.bmp ]
-[    68 ] : Loaded tile set [ retro_gray.bmp ]
-[    68 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    81 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[    81 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[    81 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[    81 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[    81 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[    82 ] : About to free spark particle [ 32 ]
-[    82 ] : About to free spark particle [ 31 ]
-[    82 ] : About to free spark particle [ 30 ]
-[    82 ] : About to free spark particle [ 29 ]
-[    82 ] : About to free spark particle [ 28 ]
-[    82 ] : About to free spark particle [ 27 ]
-[    82 ] : About to free spark particle [ 26 ]
-[    82 ] : About to free spark particle [ 25 ]
-[    82 ] : About to free spark particle [ 24 ]
-[    82 ] : About to free spark particle [ 23 ]
-[    82 ] : About to free spark particle [ 22 ]
-[    82 ] : About to free spark particle [ 21 ]
-[    82 ] : About to free spark particle [ 20 ]
-[    82 ] : About to free spark particle [ 19 ]
-[    82 ] : About to free spark particle [ 18 ]
-[    82 ] : About to free spark particle [ 17 ]
-[    82 ] : About to free spark particle [ 16 ]
-[    82 ] : About to free spark particle [ 15 ]
-[    82 ] : About to free spark particle [ 14 ]
-[    82 ] : About to free spark particle [ 13 ]
-[    82 ] : About to free spark particle [ 12 ]
-[    82 ] : About to free spark particle [ 11 ]
-[    82 ] : About to free spark particle [ 10 ]
-[    82 ] : About to free spark particle [ 9 ]
-[    82 ] : About to free spark particle [ 8 ]
-[    82 ] : About to free spark particle [ 7 ]
-[    82 ] : About to free spark particle [ 6 ]
-[    82 ] : About to free spark particle [ 5 ]
-[    82 ] : About to free spark particle [ 4 ]
-[    82 ] : About to free spark particle [ 3 ]
-[    82 ] : About to free spark particle [ 2 ]
-[    82 ] : Freeing particle emitterItr.
-[    82 ] : Remove physics objects for droid [ 2 ]
-[    83 ] : About to free spark particle [ 5 ]
-[    83 ] : About to free spark particle [ 4 ]
-[    83 ] : About to free spark particle [ 3 ]
-[    83 ] : About to free spark particle [ 2 ]
-[    83 ] : Freeing particle emitterItr.
-[    89 ] : About to free spark particle [ 7 ]
-[    89 ] : About to free spark particle [ 6 ]
-[    89 ] : About to free spark particle [ 5 ]
-[    89 ] : About to free spark particle [ 4 ]
-[    89 ] : About to free spark particle [ 3 ]
-[    89 ] : About to free spark particle [ 2 ]
-[    89 ] : About to free spark particle [ 1 ]
-[    90 ] : About to free spark particle [ 6 ]
-[    90 ] : About to free spark particle [ 5 ]
-[    90 ] : About to free spark particle [ 4 ]
-[    90 ] : About to free spark particle [ 3 ]
-[    90 ] : About to free spark particle [ 2 ]
-[    90 ] : About to free spark particle [ 1 ]
-[    96 ] : Load droid model - image name : db_001.jpg
-[    96 ] : Loaded image [ db_001.jpg ]
-[    98 ] : Load droid model - image name : db_420.jpg
-[    98 ] : Loaded image [ db_420.jpg ]
-[   120 ] : About to free spark particle [ 51 ]
-[   120 ] : About to free spark particle [ 50 ]
-[   120 ] : About to free spark particle [ 49 ]
-[   120 ] : About to free spark particle [ 48 ]
-[   120 ] : About to free spark particle [ 47 ]
-[   120 ] : About to free spark particle [ 46 ]
-[   120 ] : About to free spark particle [ 45 ]
-[   120 ] : About to free spark particle [ 44 ]
-[   120 ] : About to free spark particle [ 43 ]
-[   120 ] : About to free spark particle [ 42 ]
-[   120 ] : About to free spark particle [ 41 ]
-[   120 ] : About to free spark particle [ 40 ]
-[   120 ] : About to free spark particle [ 39 ]
-[   120 ] : About to free spark particle [ 38 ]
-[   120 ] : About to free spark particle [ 37 ]
-[   120 ] : About to free spark particle [ 36 ]
-[   120 ] : About to free spark particle [ 35 ]
-[   120 ] : About to free spark particle [ 34 ]
-[   120 ] : About to free spark particle [ 33 ]
-[   120 ] : About to free spark particle [ 32 ]
-[   120 ] : About to free spark particle [ 31 ]
-[   120 ] : About to free spark particle [ 30 ]
-[   120 ] : About to free spark particle [ 29 ]
-[   120 ] : About to free spark particle [ 28 ]
-[   120 ] : About to free spark particle [ 27 ]
-[   120 ] : About to free spark particle [ 26 ]
-[   120 ] : About to free spark particle [ 25 ]
-[   120 ] : About to free spark particle [ 24 ]
-[   120 ] : About to free spark particle [ 23 ]
-[   120 ] : About to free spark particle [ 22 ]
-[   120 ] : About to free spark particle [ 21 ]
-[   120 ] : About to free spark particle [ 20 ]
-[   120 ] : About to free spark particle [ 19 ]
-[   120 ] : About to free spark particle [ 18 ]
-[   120 ] : About to free spark particle [ 17 ]
-[   120 ] : About to free spark particle [ 16 ]
-[   120 ] : About to free spark particle [ 15 ]
-[   120 ] : About to free spark particle [ 14 ]
-[   120 ] : About to free spark particle [ 13 ]
-[   120 ] : About to free spark particle [ 12 ]
-[   120 ] : About to free spark particle [ 11 ]
-[   120 ] : About to free spark particle [ 10 ]
-[   120 ] : About to free spark particle [ 9 ]
-[   120 ] : About to free spark particle [ 8 ]
-[   120 ] : About to free spark particle [ 7 ]
-[   120 ] : About to free spark particle [ 6 ]
-[   120 ] : About to free spark particle [ 5 ]
-[   120 ] : About to free spark particle [ 4 ]
-[   120 ] : About to free spark particle [ 3 ]
-[   120 ] : About to free spark particle [ 2 ]
-[   120 ] : About to free spark particle [ 1 ]
-[   121 ] : Remove physics objects for droid [ 7 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   124 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   125 ] : About to free spark particle [ 35 ]
-[   125 ] : About to free spark particle [ 34 ]
-[   125 ] : About to free spark particle [ 33 ]
-[   125 ] : About to free spark particle [ 32 ]
-[   125 ] : About to free spark particle [ 31 ]
-[   125 ] : About to free spark particle [ 30 ]
-[   125 ] : About to free spark particle [ 29 ]
-[   125 ] : About to free spark particle [ 28 ]
-[   125 ] : About to free spark particle [ 27 ]
-[   125 ] : About to free spark particle [ 26 ]
-[   125 ] : About to free spark particle [ 25 ]
-[   125 ] : About to free spark particle [ 24 ]
-[   125 ] : About to free spark particle [ 23 ]
-[   125 ] : About to free spark particle [ 22 ]
-[   125 ] : About to free spark particle [ 21 ]
-[   125 ] : About to free spark particle [ 20 ]
-[   125 ] : About to free spark particle [ 19 ]
-[   125 ] : About to free spark particle [ 18 ]
-[   126 ] : About to free spark particle [ 17 ]
-[   126 ] : About to free spark particle [ 16 ]
-[   126 ] : About to free spark particle [ 15 ]
-[   126 ] : About to free spark particle [ 14 ]
-[   126 ] : About to free spark particle [ 13 ]
-[   126 ] : About to free spark particle [ 12 ]
-[   126 ] : About to free spark particle [ 11 ]
-[   126 ] : About to free spark particle [ 10 ]
-[   126 ] : About to free spark particle [ 9 ]
-[   126 ] : About to free spark particle [ 8 ]
-[   126 ] : About to free spark particle [ 7 ]
-[   126 ] : About to free spark particle [ 6 ]
-[   126 ] : About to free spark particle [ 5 ]
-[   126 ] : About to free spark particle [ 4 ]
-[   126 ] : About to free spark particle [ 3 ]
-[   126 ] : About to free spark particle [ 2 ]
-[   126 ] : Freeing particle emitterItr.
-[   126 ] : Remove physics objects for droid [ 5 ]
-[   129 ] : Load droid model - image name : db_329.jpg
-[   129 ] : Loaded image [ db_329.jpg ]
-[   147 ] : About to free spark particle [ 27 ]
-[   147 ] : About to free spark particle [ 26 ]
-[   147 ] : About to free spark particle [ 25 ]
-[   147 ] : About to free spark particle [ 24 ]
-[   147 ] : About to free spark particle [ 23 ]
-[   147 ] : About to free spark particle [ 22 ]
-[   147 ] : About to free spark particle [ 21 ]
-[   147 ] : About to free spark particle [ 20 ]
-[   147 ] : About to free spark particle [ 19 ]
-[   147 ] : About to free spark particle [ 18 ]
-[   147 ] : About to free spark particle [ 17 ]
-[   147 ] : About to free spark particle [ 16 ]
-[   147 ] : About to free spark particle [ 15 ]
-[   147 ] : About to free spark particle [ 14 ]
-[   147 ] : About to free spark particle [ 13 ]
-[   147 ] : About to free spark particle [ 12 ]
-[   147 ] : About to free spark particle [ 11 ]
-[   147 ] : About to free spark particle [ 10 ]
-[   147 ] : About to free spark particle [ 9 ]
-[   147 ] : About to free spark particle [ 8 ]
-[   147 ] : About to free spark particle [ 7 ]
-[   147 ] : About to free spark particle [ 6 ]
-[   147 ] : About to free spark particle [ 5 ]
-[   147 ] : About to free spark particle [ 4 ]
-[   147 ] : About to free spark particle [ 3 ]
-[   147 ] : About to free spark particle [ 2 ]
-[   147 ] : About to free spark particle [ 1 ]
-[   148 ] : Remove physics objects for droid [ 6 ]
-[   158 ] : Found flee tile World [ 480.00 256.00 ]
-[   158 ] : Found flee tile Tile [ 15.00 8.00 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   158 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   159 ] : About to free spark particle [ 45 ]
-[   159 ] : About to free spark particle [ 44 ]
-[   159 ] : About to free spark particle [ 43 ]
-[   159 ] : About to free spark particle [ 42 ]
-[   159 ] : About to free spark particle [ 41 ]
-[   159 ] : About to free spark particle [ 40 ]
-[   159 ] : About to free spark particle [ 39 ]
-[   159 ] : About to free spark particle [ 38 ]
-[   159 ] : About to free spark particle [ 37 ]
-[   159 ] : About to free spark particle [ 36 ]
-[   159 ] : About to free spark particle [ 35 ]
-[   159 ] : About to free spark particle [ 34 ]
-[   159 ] : About to free spark particle [ 33 ]
-[   159 ] : About to free spark particle [ 32 ]
-[   159 ] : About to free spark particle [ 31 ]
-[   159 ] : About to free spark particle [ 30 ]
-[   159 ] : About to free spark particle [ 29 ]
-[   159 ] : About to free spark particle [ 28 ]
-[   159 ] : About to free spark particle [ 27 ]
-[   159 ] : About to free spark particle [ 26 ]
-[   159 ] : About to free spark particle [ 25 ]
-[   159 ] : About to free spark particle [ 24 ]
-[   159 ] : About to free spark particle [ 23 ]
-[   159 ] : About to free spark particle [ 22 ]
-[   159 ] : About to free spark particle [ 21 ]
-[   159 ] : About to free spark particle [ 20 ]
-[   159 ] : About to free spark particle [ 19 ]
-[   159 ] : About to free spark particle [ 18 ]
-[   159 ] : About to free spark particle [ 17 ]
-[   159 ] : About to free spark particle [ 16 ]
-[   159 ] : About to free spark particle [ 15 ]
-[   159 ] : About to free spark particle [ 14 ]
-[   159 ] : About to free spark particle [ 13 ]
-[   159 ] : About to free spark particle [ 12 ]
-[   159 ] : About to free spark particle [ 11 ]
-[   159 ] : About to free spark particle [ 10 ]
-[   159 ] : About to free spark particle [ 9 ]
-[   159 ] : About to free spark particle [ 8 ]
-[   159 ] : About to free spark particle [ 7 ]
-[   159 ] : About to free spark particle [ 6 ]
-[   159 ] : About to free spark particle [ 5 ]
-[   159 ] : About to free spark particle [ 4 ]
-[   159 ] : About to free spark particle [ 3 ]
-[   159 ] : About to free spark particle [ 2 ]
-[   159 ] : Freeing particle emitterItr.
-[   160 ] : Remove physics objects for droid [ 3 ]
-[   163 ] : About to free spark particle [ 6 ]
-[   163 ] : About to free spark particle [ 5 ]
-[   163 ] : About to free spark particle [ 4 ]
-[   163 ] : About to free spark particle [ 3 ]
-[   163 ] : About to free spark particle [ 2 ]
-[   163 ] : About to free spark particle [ 1 ]
-[   166 ] : Load droid model - image name : db_476.jpg
-[   166 ] : Loaded image [ db_476.jpg ]
-[   183 ] : Found flee tile World [ 480.00 256.00 ]
-[   183 ] : Found flee tile Tile [ 15.00 8.00 ]
-[   183 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   183 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
-[   184 ] : About to free spark particle [ 27 ]
-[   184 ] : About to free spark particle [ 26 ]
-[   184 ] : About to free spark particle [ 25 ]
-[   184 ] : About to free spark particle [ 24 ]
-[   184 ] : About to free spark particle [ 23 ]
-[   184 ] : About to free spark particle [ 22 ]
-[   184 ] : About to free spark particle [ 21 ]
-[   184 ] : About to free spark particle [ 20 ]
-[   184 ] : About to free spark particle [ 19 ]
-[   184 ] : About to free spark particle [ 18 ]
-[   184 ] : About to free spark particle [ 17 ]
-[   184 ] : About to free spark particle [ 16 ]
-[   184 ] : About to free spark particle [ 15 ]
-[   184 ] : About to free spark particle [ 14 ]
-[   184 ] : About to free spark particle [ 13 ]
-[   184 ] : About to free spark particle [ 12 ]
-[   184 ] : About to free spark particle [ 11 ]
-[   184 ] : About to free spark particle [ 10 ]
-[   184 ] : About to free spark particle [ 9 ]
-[   184 ] : About to free spark particle [ 8 ]
-[   184 ] : About to free spark particle [ 7 ]
-[   184 ] : About to free spark particle [ 6 ]
-[   184 ] : About to free spark particle [ 5 ]
-[   184 ] : About to free spark particle [ 4 ]
-[   184 ] : About to free spark particle [ 3 ]
-[   184 ] : About to free spark particle [ 2 ]
-[   184 ] : About to free spark particle [ 1 ]
-[   185 ] : Remove physics objects for droid [ 9 ]
-[   186 ] : About to free spark particle [ 6 ]
-[   186 ] : About to free spark particle [ 5 ]
-[   186 ] : About to free spark particle [ 4 ]
-[   186 ] : About to free spark particle [ 3 ]
-[   186 ] : About to free spark particle [ 2 ]
-[   186 ] : About to free spark particle [ 1 ]
-[   193 ] : About to free spark particle [ 21 ]
-[   193 ] : About to free spark particle [ 20 ]
-[   193 ] : About to free spark particle [ 19 ]
-[   193 ] : About to free spark particle [ 18 ]
-[   193 ] : About to free spark particle [ 17 ]
-[   193 ] : About to free spark particle [ 16 ]
-[   193 ] : About to free spark particle [ 15 ]
-[   193 ] : About to free spark particle [ 14 ]
-[   193 ] : About to free spark particle [ 13 ]
-[   193 ] : About to free spark particle [ 12 ]
-[   193 ] : About to free spark particle [ 11 ]
-[   193 ] : About to free spark particle [ 10 ]
-[   193 ] : About to free spark particle [ 9 ]
-[   193 ] : About to free spark particle [ 8 ]
-[   193 ] : About to free spark particle [ 7 ]
-[   193 ] : About to free spark particle [ 6 ]
-[   193 ] : About to free spark particle [ 5 ]
-[   193 ] : About to free spark particle [ 4 ]
-[   193 ] : About to free spark particle [ 3 ]
-[   193 ] : About to free spark particle [ 2 ]
-[   193 ] : Freeing particle emitterItr.
-[   194 ] : Remove physics objects for droid [ 4 ]
-[   196 ] : About to free spark particle [ 7 ]
-[   196 ] : About to free spark particle [ 6 ]
-[   196 ] : About to free spark particle [ 5 ]
-[   196 ] : About to free spark particle [ 4 ]
-[   196 ] : About to free spark particle [ 3 ]
-[   196 ] : About to free spark particle [ 2 ]
-[   196 ] : About to free spark particle [ 1 ]
-[   197 ] : About to free spark particle [ 6 ]
-[   197 ] : About to free spark particle [ 5 ]
-[   197 ] : About to free spark particle [ 4 ]
-[   197 ] : About to free spark particle [ 3 ]
-[   197 ] : About to free spark particle [ 2 ]
-[   197 ] : About to free spark particle [ 1 ]
-[   199 ] : About to free spark particle [ 23 ]
-[   199 ] : About to free spark particle [ 22 ]
-[   199 ] : About to free spark particle [ 21 ]
-[   199 ] : About to free spark particle [ 20 ]
-[   199 ] : About to free spark particle [ 19 ]
-[   199 ] : About to free spark particle [ 18 ]
-[   199 ] : About to free spark particle [ 17 ]
-[   199 ] : About to free spark particle [ 16 ]
-[   199 ] : About to free spark particle [ 15 ]
-[   199 ] : About to free spark particle [ 14 ]
-[   199 ] : About to free spark particle [ 13 ]
-[   199 ] : About to free spark particle [ 12 ]
-[   199 ] : About to free spark particle [ 11 ]
-[   199 ] : About to free spark particle [ 10 ]
-[   199 ] : About to free spark particle [ 9 ]
-[   199 ] : About to free spark particle [ 8 ]
-[   199 ] : About to free spark particle [ 7 ]
-[   199 ] : About to free spark particle [ 6 ]
-[   199 ] : About to free spark particle [ 5 ]
-[   199 ] : About to free spark particle [ 4 ]
-[   199 ] : About to free spark particle [ 3 ]
-[   199 ] : About to free spark particle [ 2 ]
-[   199 ] : Freeing particle emitterItr.
-[   200 ] : Remove physics objects for droid [ 1 ]
-[   203 ] : About to free spark particle [ 6 ]
-[   203 ] : About to free spark particle [ 5 ]
-[   203 ] : About to free spark particle [ 4 ]
-[   203 ] : About to free spark particle [ 3 ]
-[   203 ] : About to free spark particle [ 2 ]
-[   203 ] : About to free spark particle [ 1 ]
-[   209 ] : Remove physics objects for droid [ 0 ]
-[   209 ] : Remove physics objects for droid [ 8 ]
-[   209 ] : Tunnel in use [ 0 ]
-[   211 ] : Lift [ 0 ] PosX [ 864 ] PosY [ 448 ]
-[   211 ] : Loaded image [ retro_gray.bmp ]
-[   211 ] : Loaded image [ retro_gray_128.bmp ]
-[   211 ] : Loaded tile set [ retro_gray.bmp ]
-[   211 ] : Loaded tile set [ retro_gray_128.bmp ]
-[   217 ] : About to free spark particle [ 58 ]
-[   217 ] : About to free spark particle [ 57 ]
-[   217 ] : About to free spark particle [ 56 ]
-[   217 ] : About to free spark particle [ 55 ]
-[   217 ] : About to free spark particle [ 54 ]
-[   217 ] : About to free spark particle [ 53 ]
-[   217 ] : About to free spark particle [ 52 ]
-[   217 ] : About to free spark particle [ 51 ]
-[   217 ] : About to free spark particle [ 50 ]
-[   217 ] : About to free spark particle [ 49 ]
-[   217 ] : About to free spark particle [ 48 ]
-[   217 ] : About to free spark particle [ 47 ]
-[   217 ] : About to free spark particle [ 46 ]
-[   217 ] : About to free spark particle [ 45 ]
-[   217 ] : About to free spark particle [ 44 ]
-[   217 ] : About to free spark particle [ 43 ]
-[   217 ] : About to free spark particle [ 42 ]
-[   217 ] : About to free spark particle [ 41 ]
-[   217 ] : About to free spark particle [ 40 ]
-[   217 ] : About to free spark particle [ 39 ]
-[   217 ] : About to free spark particle [ 38 ]
-[   217 ] : About to free spark particle [ 37 ]
-[   217 ] : About to free spark particle [ 36 ]
-[   217 ] : About to free spark particle [ 35 ]
-[   217 ] : About to free spark particle [ 34 ]
-[   217 ] : About to free spark particle [ 33 ]
-[   217 ] : About to free spark particle [ 32 ]
-[   217 ] : About to free spark particle [ 31 ]
-[   217 ] : About to free spark particle [ 30 ]
-[   217 ] : About to free spark particle [ 29 ]
-[   217 ] : About to free spark particle [ 28 ]
-[   217 ] : About to free spark particle [ 27 ]
-[   217 ] : About to free spark particle [ 26 ]
-[   217 ] : About to free spark particle [ 25 ]
-[   217 ] : About to free spark particle [ 24 ]
-[   217 ] : About to free spark particle [ 23 ]
-[   217 ] : About to free spark particle [ 22 ]
-[   217 ] : About to free spark particle [ 21 ]
-[   217 ] : About to free spark particle [ 20 ]
-[   217 ] : About to free spark particle [ 19 ]
-[   217 ] : About to free spark particle [ 18 ]
-[   217 ] : About to free spark particle [ 17 ]
-[   217 ] : About to free spark particle [ 16 ]
-[   217 ] : About to free spark particle [ 15 ]
-[   217 ] : About to free spark particle [ 14 ]
-[   217 ] : About to free spark particle [ 13 ]
-[   217 ] : About to free spark particle [ 12 ]
-[   217 ] : About to free spark particle [ 11 ]
-[   217 ] : About to free spark particle [ 10 ]
-[   217 ] : About to free spark particle [ 9 ]
-[   217 ] : About to free spark particle [ 8 ]
-[   217 ] : About to free spark particle [ 7 ]
-[   217 ] : About to free spark particle [ 6 ]
-[   217 ] : About to free spark particle [ 5 ]
-[   217 ] : About to free spark particle [ 4 ]
-[   217 ] : About to free spark particle [ 3 ]
-[   217 ] : About to free spark particle [ 2 ]
-[   217 ] : About to free spark particle [ 1 ]
-[   218 ] : Remove physics objects for droid [ 5 ]
-[   229 ] : About to free spark particle [ 42 ]
-[   229 ] : About to free spark particle [ 41 ]
-[   229 ] : About to free spark particle [ 40 ]
-[   229 ] : About to free spark particle [ 39 ]
-[   229 ] : About to free spark particle [ 38 ]
-[   229 ] : About to free spark particle [ 37 ]
-[   229 ] : About to free spark particle [ 36 ]
-[   229 ] : About to free spark particle [ 35 ]
-[   229 ] : About to free spark particle [ 34 ]
-[   229 ] : About to free spark particle [ 33 ]
-[   229 ] : About to free spark particle [ 32 ]
-[   229 ] : About to free spark particle [ 31 ]
-[   229 ] : About to free spark particle [ 30 ]
-[   229 ] : About to free spark particle [ 29 ]
-[   229 ] : About to free spark particle [ 28 ]
-[   229 ] : About to free spark particle [ 27 ]
-[   229 ] : About to free spark particle [ 26 ]
-[   229 ] : About to free spark particle [ 25 ]
-[   229 ] : About to free spark particle [ 24 ]
-[   229 ] : About to free spark particle [ 23 ]
-[   229 ] : About to free spark particle [ 22 ]
-[   229 ] : About to free spark particle [ 21 ]
-[   229 ] : About to free spark particle [ 20 ]
-[   229 ] : About to free spark particle [ 19 ]
-[   229 ] : About to free spark particle [ 18 ]
-[   229 ] : About to free spark particle [ 17 ]
-[   229 ] : About to free spark particle [ 16 ]
-[   229 ] : About to free spark particle [ 15 ]
-[   229 ] : About to free spark particle [ 14 ]
-[   229 ] : About to free spark particle [ 13 ]
-[   229 ] : About to free spark particle [ 12 ]
-[   229 ] : About to free spark particle [ 11 ]
-[   229 ] : About to free spark particle [ 10 ]
-[   229 ] : About to free spark particle [ 9 ]
-[   229 ] : About to free spark particle [ 8 ]
-[   229 ] : About to free spark particle [ 7 ]
-[   229 ] : About to free spark particle [ 6 ]
-[   229 ] : About to free spark particle [ 5 ]
-[   229 ] : About to free spark particle [ 4 ]
-[   229 ] : About to free spark particle [ 3 ]
-[   230 ] : About to free spark particle [ 2 ]
-[   230 ] : Freeing particle emitterItr.
-[   230 ] : Remove physics objects for droid [ 1 ]
-[   235 ] : About to free spark particle [ 6 ]
-[   235 ] : About to free spark particle [ 5 ]
-[   235 ] : About to free spark particle [ 4 ]
-[   235 ] : About to free spark particle [ 3 ]
-[   235 ] : About to free spark particle [ 2 ]
-[   235 ] : About to free spark particle [ 1 ]
-[   241 ] : About to free spark particle [ 5 ]
-[   241 ] : About to free spark particle [ 4 ]
-[   241 ] : About to free spark particle [ 3 ]
-[   241 ] : About to free spark particle [ 2 ]
-[   241 ] : Freeing particle emitterItr.
-[   243 ] : About to free spark particle [ 7 ]
-[   243 ] : About to free spark particle [ 6 ]
-[   243 ] : About to free spark particle [ 5 ]
-[   243 ] : About to free spark particle [ 4 ]
-[   243 ] : About to free spark particle [ 3 ]
-[   243 ] : About to free spark particle [ 2 ]
-[   243 ] : About to free spark particle [ 1 ]
-[   246 ] : About to free spark particle [ 32 ]
-[   246 ] : About to free spark particle [ 31 ]
-[   246 ] : About to free spark particle [ 30 ]
-[   246 ] : About to free spark particle [ 29 ]
-[   246 ] : About to free spark particle [ 28 ]
-[   246 ] : About to free spark particle [ 27 ]
-[   246 ] : About to free spark particle [ 26 ]
-[   246 ] : About to free spark particle [ 25 ]
-[   246 ] : About to free spark particle [ 24 ]
-[   246 ] : About to free spark particle [ 23 ]
-[   246 ] : About to free spark particle [ 22 ]
-[   246 ] : About to free spark particle [ 21 ]
-[   246 ] : About to free spark particle [ 20 ]
-[   246 ] : About to free spark particle [ 19 ]
-[   246 ] : About to free spark particle [ 18 ]
-[   246 ] : About to free spark particle [ 17 ]
-[   246 ] : About to free spark particle [ 16 ]
-[   246 ] : About to free spark particle [ 15 ]
-[   246 ] : About to free spark particle [ 14 ]
-[   246 ] : About to free spark particle [ 13 ]
-[   246 ] : About to free spark particle [ 12 ]
-[   246 ] : About to free spark particle [ 11 ]
-[   246 ] : About to free spark particle [ 10 ]
-[   246 ] : About to free spark particle [ 9 ]
-[   247 ] : About to free spark particle [ 8 ]
-[   247 ] : About to free spark particle [ 7 ]
-[   247 ] : About to free spark particle [ 6 ]
-[   247 ] : About to free spark particle [ 5 ]
-[   247 ] : About to free spark particle [ 4 ]
-[   247 ] : About to free spark particle [ 3 ]
-[   247 ] : About to free spark particle [ 2 ]
-[   247 ] : Freeing particle emitterItr.
-[   247 ] : About to free spark particle [ 6 ]
-[   247 ] : About to free spark particle [ 5 ]
-[   247 ] : About to free spark particle [ 4 ]
-[   247 ] : About to free spark particle [ 3 ]
-[   247 ] : About to free spark particle [ 2 ]
-[   247 ] : About to free spark particle [ 1 ]
-[   249 ] : About to free spark particle [ 6 ]
-[   249 ] : About to free spark particle [ 5 ]
-[   249 ] : About to free spark particle [ 4 ]
-[   249 ] : About to free spark particle [ 3 ]
-[   249 ] : About to free spark particle [ 2 ]
-[   249 ] : About to free spark particle [ 1 ]
-[   250 ] : About to free spark particle [ 5 ]
-[   250 ] : About to free spark particle [ 4 ]
-[   250 ] : About to free spark particle [ 3 ]
-[   250 ] : About to free spark particle [ 2 ]
-[   250 ] : Freeing particle emitterItr.
-[   251 ] : About to free spark particle [ 5 ]
-[   251 ] : About to free spark particle [ 4 ]
-[   251 ] : About to free spark particle [ 3 ]
-[   251 ] : About to free spark particle [ 2 ]
-[   251 ] : Freeing particle emitterItr.
-[   254 ] : About to free spark particle [ 7 ]
-[   254 ] : About to free spark particle [ 6 ]
-[   254 ] : About to free spark particle [ 5 ]
-[   254 ] : About to free spark particle [ 4 ]
-[   254 ] : About to free spark particle [ 3 ]
-[   254 ] : About to free spark particle [ 2 ]
-[   254 ] : About to free spark particle [ 1 ]
-[   256 ] : About to free spark particle [ 6 ]
-[   256 ] : About to free spark particle [ 5 ]
-[   256 ] : About to free spark particle [ 4 ]
-[   256 ] : About to free spark particle [ 3 ]
-[   256 ] : About to free spark particle [ 2 ]
-[   256 ] : About to free spark particle [ 1 ]
-[   257 ] : About to free spark particle [ 5 ]
-[   257 ] : About to free spark particle [ 4 ]
-[   257 ] : About to free spark particle [ 3 ]
-[   257 ] : About to free spark particle [ 2 ]
-[   257 ] : Freeing particle emitterItr.
-[   265 ] : Load droid model - image name : db_999.jpg
-[   265 ] : Loaded image [ db_999.jpg ]
-[   270 ] : Checking score [ 725 ]
-[   270 ] : [ 0 ] is [ 725 ] higher than [ 1400 ]
-[   270 ] : [ 1 ] is [ 725 ] higher than [ 175 ]
-[   270 ] : Remove physics objects for droid [ 0 ]
-[   270 ] : Remove physics objects for droid [ 2 ]
-[   270 ] : Remove physics objects for droid [ 3 ]
-[   270 ] : Remove physics objects for droid [ 4 ]
-[   270 ] : Remove physics objects for droid [ 6 ]
-[   270 ] : Remove physics objects for droid [ 7 ]
-[   270 ] : Removing player physics shape and body.
-[   274 ] : Checking score [ 725 ]
-[   274 ] : [ 0 ] is [ 725 ] higher than [ 1400 ]
-[   274 ] : [ 1 ] is [ 725 ] higher than [ 175 ]
-[   274 ] : Setting label for - [ scoreInitialsOne ]
-[   274 ] : Setting label for - [ scoreInitialsTwo ]
-[   274 ] : Setting label for - [ scoreInitialsThree ]
-[   274 ] : Setting label for - [ scoreInitialsFour ]
-[   274 ] : Setting label for - [ scoreInitialsFive ]
-[   274 ] : Setting label for - [ scoreScoreOne ]
-[   274 ] : Setting label for - [ scoreScoreTwo ]
-[   274 ] : Setting label for - [ scoreScoreThree ]
-[   274 ] : Setting label for - [ scoreScoreFour ]
-[   274 ] : Setting label for - [ scoreScoreFive ]
-[   278 ] : Profile - Average time for tiles [ 0.000234 ]
-[   278 ] : Error: Could not save config values to file [ config.ini ]
-[   278 ] : Keybind: Info: Key states saved to file.
-[   278 ] : Logfile: Log file closed:
-[   278 ] : 27-05-2017	18:25:19
-[   278 ] : -----------------------------------------------------------------------------
+[     4 ] : Loaded image [ retro_blue.bmp ]
+[     4 ] : Loaded image [ retro_blue_128.bmp ]
+[     4 ] : Loaded tile set [ retro_blue.bmp ]
+[     4 ] : Loaded tile set [ retro_blue_128.bmp ]
+[    13 ] : Loaded image [ retro_gray.bmp ]
+[    13 ] : Loaded image [ retro_gray_128.bmp ]
+[    13 ] : Loaded tile set [ retro_gray.bmp ]
+[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
+[    13 ] : Loaded image [ retro_gray.bmp ]
+[    13 ] : Loaded image [ retro_gray_128.bmp ]
+[    13 ] : Loaded tile set [ retro_gray.bmp ]
+[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
+[    13 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 352 ]
+[    13 ] : Lift [ 1 ] PosX [ 1344 ] PosY [ 672 ]
+[    13 ] : Loaded image [ retro_gray.bmp ]
+[    13 ] : Loaded image [ retro_gray_128.bmp ]
+[    13 ] : Loaded tile set [ retro_gray.bmp ]
+[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
+[    23 ] : WARN: Need to increase as_numMultiSamples. Script setting is to low. Currently [ 8 ]
+[    70 ] : Profile - Average time for tiles [ 0.000062 ]
+[    70 ] : Error: Could not save config values to file [ config.ini ]
+[    70 ] : Keybind: Info: Key states saved to file.
+[    71 ] : Logfile: Log file closed:
+[    71 ] : 28-05-2017	16:16:28
+[    71 ] : -----------------------------------------------------------------------------
 
 

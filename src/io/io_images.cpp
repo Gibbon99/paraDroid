@@ -54,7 +54,7 @@ _images		image[] =
 	{NULL, "explosion.bmp",		false, flagKeyColor},
 	{NULL, "db_001.jpg",		false, flagKeyColor},
 	{NULL, "spotlight.png",		false, flagKeyColor},
-	{NULL, "alltiles_128.bmp",	false, flagKeyColor},
+	{NULL, "alltiles_128.bmp",	false, 0},
 	{NULL, "particleSmoke.png",	false, flagKeyColor},
 	{NULL, "particleSpark.png",	false, flagKeyColor},
 	{NULL, "static_1.png", 		false, flagFullScreen},

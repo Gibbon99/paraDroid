@@ -193,7 +193,7 @@ void gam_drawHud()
 			case HUD_STATE_TIME_LEFT:
 				sprintf((char *)statusText.c_str(), "Time left - %i", transferPlayCountLeft);
 				break;
-				
+
 			case HUD_STATE_LOST:
 				statusText = gui_getString("transferLostHUD");
 				break;
@@ -355,7 +355,7 @@ void gam_drawAllTiles()
 //-----------------------------------------------------------------------------
 //
 // Animate the level indicator shown on deck map
-void gamAnimateIndicator(float thinkInterval)
+void gam_animateIndicator(float thinkInterval)
 //-----------------------------------------------------------------------------
 {
 	static float	currentCount;
@@ -394,7 +394,6 @@ void term_drawIndicator(float screenTileSize)
 //-----------------------------------------------------------------------------
 //
 // Draw the current level onto the entire screen
-
 void term_showCurrentLevel()
 //-----------------------------------------------------------------------------
 {

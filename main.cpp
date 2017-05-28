@@ -61,7 +61,7 @@ int main ( int argc, char **argv )
 {
 	double singleTimeValue;
 
-	gameVersion = "v0.8";
+	gameVersion = "v0.9";
 
 	if ( false == sys_startOnce() )
 		{
