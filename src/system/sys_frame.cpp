@@ -254,8 +254,6 @@ void sys_displayFrame ( float interpolation )
 		case MODE_TRANSFER_LOST:
 			gam_drawHud();
 			trn_drawTransferScreen();
-
-			sys_displayDebug();
 			break;
 
 		case MODE_END_STATIC_PRE:

@@ -106,7 +106,7 @@ void tran_drawCircuitEffect ( int startX, int startY, int length, int height, in
 					transferParticles[i].x = rand() % ( ( startX + length ) - startX ) + startX;
 					transferParticles[i].y = rand() % ( ( startY + height ) - startY ) + startY;
 					transferParticles[i].z = 0;
-					transferParticles[i].color.r = 1.0f;
+					transferParticles[i].color.r = 0.0f;
 					transferParticles[i].color.g = 0.0f;
 					transferParticles[i].color.b = 0.0f;
 				}
