@@ -57,7 +57,7 @@ void gam_drawSpotLights()
 	al_get_blender(&op, &src, &dst);
 	al_set_blender(ALLEGRO_ADD, ALLEGRO_ALPHA, ALLEGRO_INVERSE_ALPHA);
 
-	for (int i = 0; i != spotLight.size(); i++)
+	for (int i = 0; i != (int)spotLight.size(); i++)
 	{
 		if (true == sys_visibleOnScreen(spotLight[i].worldPosition, spotLight[i].bitmapWidth))
 		{
@@ -76,7 +76,7 @@ void gam_drawSpotLights()
 	if (distanceToPlayer < DISTANCE_DEFAULT)
 	{
 		alertLevelDistance = distanceToPlayer - 35.0f;
-		alertLevelDistance * 0.5f;
+		alertLevelDistance = alertLevelDistance * 0.5f;
 		alertLevelDistance = alertLevelDistance / 100.0f;
 		alertLevelDistance = 1.0f - alertLevelDistance;
 
@@ -113,7 +113,7 @@ void gam_animateSpotLights()
 			break;
 	}
 
-	for (int i = 0; i != spotLight.size(); i++)
+	for (int i = 0; i != (int)spotLight.size(); i++)
 	{
 		spotLight[i].rotateSpeedCount += spotLightSpeed * thinkInterval;
 		if (spotLight[i].rotateSpeedCount > 1.0f)

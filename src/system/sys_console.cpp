@@ -59,22 +59,22 @@ ALLEGRO_COLOR	currentConLineColor;		// Print line in this color
 void con_addConsoleCommands()
 //-----------------------------------------------------------------------------
 {
-	con_addCommand ( "help",		        "List out available commands",		( ExternFunc ) sys_conCommandHelp );
+	con_addCommand ( "help",			"List out available commands",		( ExternFunc ) sys_conCommandHelp );
 	con_addCommand ( "tileset",			"Set new tile set",					( ExternFunc ) io_setTileSetType );
-	con_addCommand ( "tilecolor",			"Set new tile color",				( ExternFunc ) io_setTileSetColor );
-	con_addCommand ( "imageInfo",         "List info about images",           ( ExternFunc ) sys_conImageInfo );
-	con_addCommand ( "soundInfo",			"List info about sounds",			( ExternFunc ) sys_conSoundInfo );
-	con_addCommand ( "scriptRestart",     "Restart the script engine",        ( ExternFunc ) con_scriptEngineRestart );
-	con_addCommand ( "showNumHealing",    "Display number healing tiles",     ( ExternFunc ) sys_conShowNumHealingTiles );
-	con_addCommand ( "listVars",			"List editable variables",			( ExternFunc ) sys_conListVariables );
+	con_addCommand ( "tilecolor",		"Set new tile color",				( ExternFunc ) io_setTileSetColor );
+	con_addCommand ( "imageInfo",		"List info about images",           ( ExternFunc ) sys_conImageInfo );
+	con_addCommand ( "soundInfo",		"List info about sounds",			( ExternFunc ) sys_conSoundInfo );
+	con_addCommand ( "scriptRestart",	"Restart the script engine",        ( ExternFunc ) con_scriptEngineRestart );
+	con_addCommand ( "showNumHealing",	"Display number healing tiles",     ( ExternFunc ) sys_conShowNumHealingTiles );
+	con_addCommand ( "listVars",		"List editable variables",			( ExternFunc ) sys_conListVariables );
 	con_addCommand ( "setVar",			"Set a variable",					( ExternFunc ) sys_conSetVariable );
 	con_addCommand ( "getVar",			"Get a variable",					( ExternFunc ) sys_conGetVariable );
 	con_addCommand ( "debugDroids",		"Show droid stats",					( ExternFunc ) sys_debugDroidStats );
 	con_addCommand ( "debugAStar",		"Which droid to debug",				( ExternFunc ) sys_setAStarDebugIndex );
 	con_addCommand ( "debugParticles",	"Show particles info",				( ExternFunc ) sys_debugParticles );
-	con_addCommand ( "debugPath",			"Show pathfinding info",			( ExternFunc ) sys_debugPathFinding );
+	con_addCommand ( "debugPath",		"Show pathfinding info",			( ExternFunc ) sys_debugPathFinding );
 	con_addCommand ( "gameVersion",		"Show game version",				( ExternFunc ) sys_printGameVersion );
-	con_addCommand ( "debugDrawPhysics",	"Show physics bodies",				( ExternFunc ) sys_debugPhysicsShapes );
+	con_addCommand ( "debugDrawPhysics","Show physics bodies",				( ExternFunc ) sys_debugPhysicsShapes );
 }
 
 //-----------------------------------------------------------------------------
@@ -93,11 +93,8 @@ void con_completeCommand ( string lookFor )
 			if ( conCommands[i].command.find ( lookFor, 0 ) != string::npos )
 				{
 					con_print ( false, true, "[ %s ]", conCommands[i].command.c_str() );
-					//strcpy (conCurrentLine.conLine, "");
 					conCurrentLine.conLine = "";
-					//strcpy (conCurrentLine.conLine, conCommands[i].command);
 					conCurrentLine.conLine = conCommands[i].command;
-					//conCurrentCharCount = (int)strlen(conCommands[i].command);
 					conCurrentCharCount = conCommands[i].command.length();
 				}
 		}
@@ -235,7 +232,6 @@ void con_initConsole()
 	conHistoryPtr = 0;
 	conNumInHistory = 0;
 
-
 	conCurrentPrompt.conLine = "]_";
 	conCurrentLine.conLine = "";
 
@@ -284,7 +280,6 @@ void con_print ( bool logToFile, bool updateNow, const char *format, ... )
 
 	if ( true == updateNow )
 		con_drawScreen ( true, thinkInterval );
-
 }
 
 //-----------------------------------------------------------------------------
@@ -303,10 +298,7 @@ void sys_scriptPrintStr ( string *msgText, string *msgParam )
 //-----------------------------------------------------------------------------
 {
 	con_print ( true, true, "[ %s ] [ %s ]", msgText->c_str(), msgParam->c_str() );
-
-	printf ("[ %s ] [ %s ]\n", msgText->c_str(), msgParam->c_str());
 }
-
 
 //-----------------------------------------------------------------------------
 //
@@ -361,13 +353,10 @@ void con_processCommand ( string comLine )
 						conCommands[i].conFunc ( param, param2 );
 					else
 						{
-							con_print ( true, true, "Matching [ %s ] to run [ %s %s]", conCommands[i].command.c_str(), conCommands[i].scriptFunc.c_str(), param.c_str() );
 							sys_executeScriptFunction ( conCommands[i].command, param );
-
 						}
 					conMatchFound = true;
 					break;
-					// TODO: Break out early when found ?
 				}
 		}
 	if ( false == conMatchFound )
@@ -421,7 +410,6 @@ void con_drawScreen ( bool updateNow, float frameInterval )
 {
 	_conLine			conTempLine;
 	ALLEGRO_BITMAP		*stopCrashBitmap;
-
 
 	if ( NULL == builtInFont )      // Can't draw using this font until it's loaded
 		return;

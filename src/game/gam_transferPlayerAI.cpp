@@ -31,12 +31,53 @@ void trn_nextPlayerToken()
 		numPlayerTokens--;
 		return;
 	}
+	
+	playerBlockPos = TOKEN_POS_LAUNCH;
+	numPlayerTokens--;
+}
 
-
-    playerBlockPos = TOKEN_POS_LAUNCH;
-    numPlayerTokens--;
-//    if (numPlayerTokens == 0)
-//        playerBlockPos = TOKEN_POS_HIDE;
+//----------------------------------------------------------------
+//
+// Animate the moving blobs on transfer screen
+void tran_animateBlobs()
+//----------------------------------------------------------------
+{
+	int	blobMoveSpeed = 2.0f;
+	
+	for (int i = 0; i != NUM_CIRCUITS; i++)
+	{
+		if (true == transferCells[i].powerOnLeft)
+		{
+			for (int j = 0; j != MAX_NUM_BLOBS; j++)
+			{
+				if (true == transferCells[i].blobLeft[j].active)
+				{
+					if (transferCells[i].blobLeft[j].position < 
+						transferCells[i].lengthLeft)
+					{
+						transferCells[i].blobLeft[j].position += blobMoveSpeed * thinkInterval;
+					}
+					else
+					{
+						transferCells[i].blobLeft[j].position = 0;
+						transferCells[i].blobLeft[j].active = false;
+					}
+					//
+					// See if it's time for another blob
+					//
+					if ((j + 1) < MAX_NUM_BLOBS)
+					{
+						if ((transferCells[i].blobLeft[j].position > BLOB_DISTANCE) &&
+							(transferCells[i].blobLeft[ j +1].active = false))
+						{
+							transferCells[i].blobLeft[j + 1].active = true;
+							transferCells[i].blobLeft[j + 1].position = 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 //----------------------------------------------------------------
@@ -60,7 +101,17 @@ void trn_activateCircuit(int whichCell, int whichSide)
 
 			if (true == transferCells[whichCell].isReversedLeft)
 				transferCells[whichCell].reversedLeftActivated = true;
-            break;
+				
+			transferCells[whichCell].numberBlobsLeft = tran_getCircuitLength(whichSide, whichCell, transferCells[whichCell].circuitTypeLeft) / BLOB_DISTANCE;
+			if (transferCells[whichCell].numberBlobsLeft >= MAX_NUM_BLOBS)
+				transferCells[whichCell].numberBlobsLeft = MAX_NUM_BLOBS;
+				
+			for (int i = 0; i != MAX_NUM_BLOBS; i++)
+			{
+				transferCells[whichCell].blobLeft[i].active = false;
+				transferCells[whichCell].blobLeft[i].position = 0;
+			}
+		break;
 
         case RIGHT_SIDE:
             transferCells[whichCell].powerOnRight = true;
@@ -72,7 +123,17 @@ void trn_activateCircuit(int whichCell, int whichSide)
 
 			if (true == transferCells[whichCell].isReversedRight)
 				transferCells[whichCell].reversedRightActivated = true;
-            break;
+				
+			transferCells[whichCell].numberBlobsRight = tran_getCircuitLength(whichSide, whichCell,transferCells[whichCell].circuitTypeRight) / BLOB_DISTANCE;
+			if (transferCells[whichCell].numberBlobsRight >= MAX_NUM_BLOBS);
+				transferCells[whichCell].numberBlobsRight = MAX_NUM_BLOBS;
+				
+			for (int i = 0; i != MAX_NUM_BLOBS; i++)
+			{
+				transferCells[whichCell].blobRight[i].active = false;
+				transferCells[whichCell].blobRight[i].position = 0;
+			}
+		break;
         }
 }
 
@@ -132,8 +193,6 @@ void trn_placeToken(int whichCell, int whichSide, int playerOrDroid)
             break;
         }
 }
-
-// Only check for blank circuit type????
 
 //----------------------------------------------------------------
 //

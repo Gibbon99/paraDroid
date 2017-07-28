@@ -110,6 +110,8 @@ int findSuitableCircuitToUse ( int whichSide )
 								break;
 
 							case CIRCUIT_TWO_INTO_ONE:
+								circuitFound = true;
+								return i - 1;	// Try to chhose the leg above this circuit??
 								break;
 
 							case CIRCUIT_SPLIT_HALF:
@@ -156,8 +158,6 @@ void moveEnemyToken ( int direction )
 void moveToCircuit()
 // ----------------------------------------------------------------------------
 {
-// TODO (roam#1#): Check this is working - check return value from findcircuit
-
 	//
 	// Didn't find one to use - so just wander
 	if ( -1 == nextCircuitToUse )

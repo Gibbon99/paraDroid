@@ -25,6 +25,7 @@ double				LOSTimeStart;
 double				LOSTimeStop;
 int					debugAStarIndex = 0;
 
+/*
 //-----------------------------------------------------------------------------
 //
 // Return a string based on current AI CurrentState
@@ -42,6 +43,7 @@ char *sys_getAIString(int ai_currentState)
 			break;
 	}
 }
+*/
 
 //-----------------------------------------------------------------------------
 //

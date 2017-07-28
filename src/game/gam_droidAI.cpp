@@ -626,6 +626,9 @@ cpVect ai_findNearestTile ( int whichDroid, int tileType )
 					}
 				break;
 		}
+	io_logToFile("Error: Reached invalid end of function (ai_findNearestTile).");
+	tempLocation.x = -1;
+	tempLocation.y = -1;
 }
 
 //-----------------------------------------------------------------------------

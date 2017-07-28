@@ -25,6 +25,8 @@ Copyright 2017 David Berry
 #include <cstdarg>
 #include <memory>
 
+//#define APPEND_LOGFILE	1
+
 bool    fileLoggingOn;
 
 //--------------------------------------------------------
@@ -35,9 +37,7 @@ bool    fileLoggingOn;
 //
 //--------------------------------------------------------
 
-//static ALLEGRO_FILE		*logFile;			// file handle to the logfile
 static FILE *logFile;
-
 
 //--------------------------------------------------------
 // open the log file for writing
@@ -46,12 +46,9 @@ bool io_openLogFile ( const char *logFileName )
 //--------------------------------------------------------
 {
 #ifdef APPEND_LOGFILE
-//	logFile = al_fopen ( logFileName, "at" );
 	logFile = fopen ( logFileName, "at" );
 #else
-//	logFile = al_fopen ( logFileName, "wt" );
 	logFile = fopen ( logFileName, "wt" );
-
 #endif
 
 	if ( NULL == logFile )
@@ -70,7 +67,7 @@ void io_startLogFile ( const char *logFileName )
 
 	if ( !io_openLogFile ( logFileName ) )
 		{
-//		ErrorNormal ((char *)__FILE__, __LINE__, (char *)"Logfile: Couldn't create the logfile - check file permissions or disk space.");
+			printf ("Unable to create logfie. Check file permissions or disk space.\n");
 			fileLoggingOn = false;
 		}
 	else
@@ -122,10 +119,8 @@ void io_closeLogFile()
 			io_logTimeToFile();
 			io_logToFile ( "-----------------------------------------------------------------------------\n\n" );
 #if defined (WIN32)
-//			al_fclose ( logFile );
 			fclose ( logFile );
 #else
-//			al_fclose ( logFile );
 			fclose ( logFile );
 #endif
 			fileLoggingOn = false;
@@ -156,8 +151,8 @@ void io_logToFile ( const char* format, ... )
 		}
 	else
 		logTimeStamp = 0;
-		
-	sprintf ((char *)logTimeText.c_str(), "[ %5d ] : ", logTimeStamp );
+
+	sprintf ( ( char * ) logTimeText.c_str(), "[ %5d ] : ", logTimeStamp );
 	fprintf ( logFile, "%s", logTimeText.c_str() );
 
 	vfprintf ( logFile, format, args );

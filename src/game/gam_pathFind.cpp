@@ -185,7 +185,7 @@ bool gam_AStarIsTileSolid ( int tileIndex )
 bool gam_AStarIsNodeInClosedList ( int whichPath, cpVect whichNode )
 //-----------------------------------------------------------------------------
 {
-	for ( int i = 0; i != path[whichPath].closedNodes.size(); i++ )
+	for ( int i = 0; i != (int)path[whichPath].closedNodes.size(); i++ )
 		{
 			if ( ( whichNode.x == path[whichPath].closedNodes[i].tileLocation.x ) &&
 			        ( whichNode.y == path[whichPath].closedNodes[i].tileLocation.y ) )
@@ -200,7 +200,7 @@ bool gam_AStarIsNodeInClosedList ( int whichPath, cpVect whichNode )
 bool gam_AStarIsNodeInOpenList ( int whichPath, cpVect whichNode )
 //-----------------------------------------------------------------------------
 {
-	for ( int i = 0; i != path[whichPath].openNodes.size(); i++ )
+	for ( int i = 0; i != (int)path[whichPath].openNodes.size(); i++ )
 		{
 			if ( ( whichNode.x == path[whichPath].openNodes[i].tileLocation.x ) &&
 			        ( whichNode.y == path[whichPath].openNodes[i].tileLocation.y ) )
@@ -357,7 +357,7 @@ void gam_AStarDebugWayPoints ( int whichPath )
 	int		i;
 
 //	for ( int i = 0; i != path[whichPath].wayPoints.size(); i++ )
-	for ( i = 0; i != path[whichPath].wayPoints.size() - 1; i++ )
+	for ( i = 0; i != (int)path[whichPath].wayPoints.size() - 1; i++ )
 		{
 			lineStart = path[whichPath].wayPoints[i];
 			lineFinish = path[whichPath].wayPoints[i + 1];
@@ -397,7 +397,7 @@ void gam_AStarDebugPaths()
 {
 	con_print ( true, false, "Number of paths [ %i ]", path.size() );
 
-	for ( int i = 0; i != path.size(); i++ )
+	for ( int i = 0; i != (int)path.size(); i++ )
 		{
 			con_print ( true, false, "inUse [ %s ] Droid [ %i ] Path [ %i ] - Waypoints Ready [ %s ] - Size foundNodes [ %i ] ",
 			            path[i].inUse ? "true" : "false", path[i].whichDroid, i,
@@ -522,7 +522,7 @@ void gam_AStarCompressWaypoints ( int whichPath )
 
 	newPoints.push_back ( path[whichPath].wayPoints[0] );
 
-	for ( int i = 0; i != path[whichPath].wayPoints.size() - 1; i++ )
+	for ( int i = 0; i != (int)path[whichPath].wayPoints.size() - 1; i++ )
 		{
 			if ( ( path[whichPath].wayPoints[current - 1].x != path[whichPath].wayPoints[current + 1].x ) &&
 			        ( path[whichPath].wayPoints[current - 1].y != path[whichPath].wayPoints[current + 1].y ) )
@@ -541,7 +541,7 @@ void gam_AStarCompressWaypoints ( int whichPath )
 	//
 	// Copy back into structure
 	path[whichPath].wayPoints.clear();
-	for ( int i = 0; i != newPoints.size() - 1; i++ )
+	for ( int i = 0; i != (int)newPoints.size() - 1; i++ )
 		{
 			path[whichPath].wayPoints.push_back ( newPoints[i] );
 
@@ -559,7 +559,7 @@ void gam_AStarConvertToCoords ( int whichPath )
 {
 	cpVect tempWaypoint;
 
-	for ( int i = 0; i != path[whichPath].foundPath.size(); i++ )
+	for ( int i = 0; i != (int)path[whichPath].foundPath.size(); i++ )
 		{
 			tempWaypoint.x = path[whichPath].foundPath[i].tileLocation.x * TILE_SIZE;
 			tempWaypoint.y = path[whichPath].foundPath[i].tileLocation.y * TILE_SIZE;
@@ -600,7 +600,7 @@ int gam_AStarFindLowestCostNode ( int whichPath )
 	con_print ( true, false, "Search the open nodes and find the one with the lowest total cost" );
 #endif
 
-	for ( int i = 0; i != path[whichPath].openNodes.size(); i++ )
+	for ( int i = 0; i != (int)path[whichPath].openNodes.size(); i++ )
 		{
 			if ( path[whichPath].openNodes[i].f_score < lowestCost )
 				{
@@ -656,7 +656,7 @@ void gam_AStarSearchThread ( int whichPathArg )
 void gam_AStarProcessPaths()
 //-------------------------------------------------------------------
 {
-	for ( int i = 0; i != path.size(); i++ )
+	for ( int i = 0; i != (int)path.size(); i++ )
 		{
 			if ( ( true == path[i].inUse ) && ( currentLevel == path[i].whichLevel ) )
 				{
@@ -718,7 +718,7 @@ int gam_AStarRequestNewPath ( cpVect start, cpVect destination, int whichDroid )
 		}
 	//
 	// Find an un-used path and start it
-	for ( int i = 0; i != path.size(); i++ )
+	for ( int i = 0; i != (int)path.size(); i++ )
 		{
 			if ( false == path[i].inUse )
 				{
@@ -772,6 +772,6 @@ int gam_AStarRequestNewPath ( cpVect start, cpVect destination, int whichDroid )
 void gam_resetAllPaths()
 //------------------------------------------------------------
 {
-	for ( int i = 0; i != path.size(); i++ )
+	for ( int i = 0; i != (int)path.size(); i++ )
 		gam_AStarRemovePath ( i, true );
 }

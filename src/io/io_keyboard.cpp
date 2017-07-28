@@ -689,7 +689,12 @@ void io_readKeyboard()
 	switch ( event.type )
 		{
 		case ALLEGRO_EVENT_DISPLAY_SWITCH_OUT:
-			gamePaused = true;
+					sys_changeMode ( MODE_PAUSED, false );
+					inputAction[gamePause].currentlyDown = false;
+					gamePaused = true;
+					sys_stopAllSounds();
+					gam_setHUDState ( HUD_STATE_PAUSED );
+
 			break;
 
 		case ALLEGRO_EVENT_DISPLAY_CLOSE:

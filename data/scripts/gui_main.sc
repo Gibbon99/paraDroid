@@ -50,7 +50,7 @@ void as_guiHandleButtonPress ( string &in objectID )
 					randomStartLevel = as_getCappedRandomNum ( 21 );
 					if ( 7 == randomStartLevel )
 						randomStartLevel = 6;
-					gam_changeToLevel ( randomStartLevel ); // Get random start level
+					gam_changeToLevelFromScript ( randomStartLevel, true ); // Get random start level
 					gam_resetScore();
 					return;
 				}

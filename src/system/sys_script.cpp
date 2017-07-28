@@ -188,7 +188,7 @@ _hostScriptFunctions hostScriptFunctions[] =
 	//
 	{"void as_printVariables()", ( void * ) &sys_printVariables},
 	{"void as_changeGameMode(int newMode, bool useFade)", ( void * ) &sys_changeMode},
-	{"void gam_changeToLevel(int newLevel)", ( void * ) &gam_changeToLevelFromScript},
+	{"void gam_changeToLevelFromScript(int newLevel, bool firstTime)", ( void * ) &gam_changeToLevelFromScript},
 	//
 	// ------------- Set particle colors from script
 	//
@@ -761,7 +761,6 @@ bool sys_fileIntoMemory ( char *whichFile )
 //-----------------------------------------------------------------------------
 //
 // Load the scripts into memory
-
 bool sys_loadAndCompileScripts()
 //-----------------------------------------------------------------------------
 {

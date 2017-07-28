@@ -73,15 +73,22 @@ void tran_drawLongBlock ( int whichSide, int whichCell, int posX )
 }
 //------------------------------------------------------------
 //
-// Draw  random pixels contained within boundaries
+// Draw random pixels contained within boundaries
 void tran_drawCircuitEffect ( int startX, int startY, int length, int height, int whichSide )
 //------------------------------------------------------------
 {
 #define NUM_PARTICLES_BASE	50
 
-	ALLEGRO_VERTEX		*transferParticles = NULL;
+	ALLEGRO_VERTEX			*transferParticles = NULL;
 
-// TODO (dberry#1#): Runs very slowly on nvidia machine - add sprite based effect
+	static vector<cpVect>	leftEffectPoints;
+	vector<cpVect>			rightEffectPoints;
+	cpVect					tempEffectPoint;
+	static int				randNumberJoints;
+	int						randomStartX;
+	static int				randomStartY;
+	int						currentStartX;
+	static float			effectSpeedCount = 10.0;
 
 	int numParticles;
 
@@ -90,28 +97,43 @@ void tran_drawCircuitEffect ( int startX, int startY, int length, int height, in
 			free ( transferParticles );
 			transferParticles = NULL;
 		}
-
-
+	//
+	// See if it's time to get new coordinates for the lines
+	//
 	if ( LEFT_SIDE == whichSide )
 		{
-			startX += BLOCK_WIDTH * 2;
-			length -= BLOCK_WIDTH * 2;
+			leftEffectPoints.clear();
 
-			numParticles = NUM_PARTICLES_BASE + ( length / 10 );
+			tempEffectPoint.x = startX + BLOCK_WIDTH * 2;
+			tempEffectPoint.y = startY + ( height / 2 );
+			leftEffectPoints.push_back ( tempEffectPoint );	// First point
 
-			transferParticles = ( ALLEGRO_VERTEX * ) malloc ( numParticles * sizeof ( ALLEGRO_VERTEX ) );
+			randNumberJoints = ( rand() % 3 ) + 3;	// Change according to circuit length
 
-			for ( int i = 0; i != numParticles; i++ )
+			currentStartX = startX;
+
+			for ( int i = 0; i != randNumberJoints; i++ )
 				{
-					transferParticles[i].x = rand() % ( ( startX + length ) - startX ) + startX;
-					transferParticles[i].y = rand() % ( ( startY + height ) - startY ) + startY;
-					transferParticles[i].z = 0;
-					transferParticles[i].color.r = 0.0f;
-					transferParticles[i].color.g = 0.0f;
-					transferParticles[i].color.b = 0.0f;
+					randomStartY = ( startY - 8 ) + ( rand() % ( height + 12 ) );
+
+					randomStartX = rand() % ( ( length - currentStartX ) );
+					currentStartX += randomStartX;
+
+					tempEffectPoint.x = currentStartX;
+					tempEffectPoint.y = randomStartY;
+
+					leftEffectPoints.push_back ( tempEffectPoint );
 				}
-			al_draw_prim ( transferParticles, NULL, NULL, 0, numParticles, ALLEGRO_PRIM_POINT_LIST );
+
+			for ( int i = 0; i != randNumberJoints; i++ )
+				{
+					al_draw_line ( leftEffectPoints[i].x, leftEffectPoints[i].y, leftEffectPoints[i + 1].x, leftEffectPoints[i + 1].y, al_map_rgb ( 0.0f, 1.0f, 0.0f ), 3 );
+				}
+			al_draw_line ( leftEffectPoints[randNumberJoints - 1].x, leftEffectPoints[randNumberJoints - 1].y, startX + length, randomStartY, al_map_rgb ( 0.0f, 1.0f, 0.0f ), 3 );
+
 		}
+
+	rightEffectPoints.clear();
 
 	if ( NULL != transferParticles )
 		{
@@ -148,19 +170,21 @@ void tran_drawCircuitEffect ( int startX, int startY, int length, int height, in
 
 //------------------------------------------------------------
 //
-// Draw a normal circuit type - length based on type
-void tran_drawCircuitNormal ( int whichSide, int whichCell, int type, bool drawBlock )
+// Get the length of the circuit
+int tran_getCircuitLength ( int whichSide, int whichCell, int type )
 //------------------------------------------------------------
 {
 	int startX, startY, length;
 
-	if ( LEFT_SIDE == whichSide )
+	switch ( whichSide )
 		{
-			startX = BACKGROUND_BORDER + ( BACKGROUND_BORDER * 2 ) + SIDEBAR_WIDTH;
-			startY = transferCells[whichCell].startY + ( ( squareHeight - CIRCUIT_HEIGHT ) / 2 );
-			length = ( transferCells[whichCell].startX - startX ) - ( BLOCK_WIDTH * 2 );
-			switch ( type )
-				{
+		case LEFT_SIDE:
+			{
+				startX = BACKGROUND_BORDER + ( BACKGROUND_BORDER * 2 ) + SIDEBAR_WIDTH;
+				startY = transferCells[whichCell].startY + ( ( squareHeight - CIRCUIT_HEIGHT ) / 2 );
+				length = ( transferCells[whichCell].startX - startX ) - ( BLOCK_WIDTH * 2 );
+				switch ( type )
+					{
 					case CIRCUIT_ONE_INTO_TWO:
 						startX = ( BACKGROUND_BORDER + ( BACKGROUND_BORDER * 2 ) + SIDEBAR_WIDTH ) + length * 0.25;
 						length = length * 0.75;
@@ -188,57 +212,17 @@ void tran_drawCircuitNormal ( int whichSide, int whichCell, int type, bool drawB
 						length -= 10;
 						tran_drawLongBlock ( LEFT_SIDE, whichCell, startX + length );
 						break;
-				}
-//
-// Draw the circuit
-
-			if ( type == CIRCUIT_ONE_INTO_TWO )
-				{
-					if ( ( ( transferCells[whichCell].circuitTypeLeft == CIRCUIT_SPLIT_HALF ) && ( true == transferCells[whichCell - 1].powerOnLeft ) && ( CIRCUIT_ONE_INTO_TWO == transferCells[whichCell - 1].circuitTypeLeft ) )
-					        || ( ( transferCells[whichCell].circuitTypeLeft == CIRCUIT_SPLIT_HALF ) && ( true == transferCells[whichCell + 1].powerOnLeft ) && ( CIRCUIT_ONE_INTO_TWO == transferCells[whichCell + 1].circuitTypeLeft ) ) )
-						{
-							al_draw_filled_rectangle ( startX, startY, startX + BLOCK_WIDTH * 2, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
-							startX += BLOCK_WIDTH * 2;
-							length -= BLOCK_WIDTH * 2;
-							al_draw_filled_rectangle ( startX - ( BLOCK_WIDTH * 2 ), startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_YELLOW ) );
-
-							tran_drawCircuitEffect ( startX - ( BLOCK_WIDTH ) * 2, startY, length, CIRCUIT_HEIGHT, LEFT_SIDE );
-						}
-					else
-						{
-							al_draw_filled_rectangle ( startX, startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
-						}
-				}
-
-			else if ( false == transferCells[whichCell].powerOnLeft )
-				al_draw_filled_rectangle ( startX, startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
-			else
-				{
-					al_draw_filled_rectangle ( startX, startY, startX + BLOCK_WIDTH * 2, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
-					startX += BLOCK_WIDTH * 2;
-					length -= BLOCK_WIDTH * 2;
-					al_draw_filled_rectangle ( startX, startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_YELLOW ) );
-					tran_drawCircuitBlock ( BLOCK_RIGHT, whichCell, startX, COL_YELLOW );
-
-					tran_drawCircuitEffect ( startX, startY, length, CIRCUIT_HEIGHT, LEFT_SIDE );
-				}
-
-
-			if ( true == drawBlock )
-				{
-					if ( type != CIRCUIT_NORMAL )
-						tran_drawCircuitBlock ( BLOCK_LEFT, whichCell, startX + length, COL_YELLOW );
-				}
-		}
-
-	if ( RIGHT_SIDE == whichSide )
-		{
-			startX = ( backGroundWidth - ( BACKGROUND_BORDER * 2 ) ) - SIDEBAR_WIDTH;
-			startY =  transferCells[whichCell].startY + ( ( squareHeight - CIRCUIT_HEIGHT ) / 2 );
-			length = ( startX - ( transferCells[whichCell].startX + squareWidth ) ) - SIDEBAR_WIDTH;
-			switch ( type )
-				{
-
+					}
+				return length;
+				break;
+			}
+		case RIGHT_SIDE:
+			{
+				startX = ( backGroundWidth - ( BACKGROUND_BORDER * 2 ) ) - SIDEBAR_WIDTH;
+				startY =  transferCells[whichCell].startY + ( ( squareHeight - CIRCUIT_HEIGHT ) / 2 );
+				length = ( startX - ( transferCells[whichCell].startX + squareWidth ) ) - SIDEBAR_WIDTH;
+				switch ( type )
+					{
 					case CIRCUIT_ONE_INTO_TWO:
 						startX = startX - ( length * 0.25 );
 						length = length * 0.75;
@@ -266,10 +250,77 @@ void tran_drawCircuitNormal ( int whichSide, int whichCell, int type, bool drawB
 						length -= 10;
 						tran_drawLongBlock ( RIGHT_SIDE, whichCell, startX - length );
 						break;
-				}
+					}
+				return length;
+				break;
+			}
+		}
+}
+
+//------------------------------------------------------------
+//
+// Draw a normal circuit type - length based on type
+void tran_drawCircuitNormal ( int whichSide, int whichCell, int type, bool drawBlock )
+//------------------------------------------------------------
+{
+	int startX, startY, length;
+
+	if ( LEFT_SIDE == whichSide )
+		{
+			startX = BACKGROUND_BORDER + ( BACKGROUND_BORDER * 2 ) + SIDEBAR_WIDTH;
+			startY = transferCells[whichCell].startY + ( ( squareHeight - CIRCUIT_HEIGHT ) / 2 );
+			length = tran_getCircuitLength ( whichSide, whichCell, type );
+
 //
 // Draw the circuit
+//
+			if ( type == CIRCUIT_ONE_INTO_TWO )
+				{
+					if ( ( ( transferCells[whichCell].circuitTypeLeft == CIRCUIT_SPLIT_HALF ) && ( true == transferCells[whichCell - 1].powerOnLeft ) && ( CIRCUIT_ONE_INTO_TWO == transferCells[whichCell - 1].circuitTypeLeft ) )
+					        || ( ( transferCells[whichCell].circuitTypeLeft == CIRCUIT_SPLIT_HALF ) && ( true == transferCells[whichCell + 1].powerOnLeft ) && ( CIRCUIT_ONE_INTO_TWO == transferCells[whichCell + 1].circuitTypeLeft ) ) )
+						{
+							al_draw_filled_rectangle ( startX, startY, startX + BLOCK_WIDTH * 2, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
+							startX += BLOCK_WIDTH * 2;
+							length -= BLOCK_WIDTH * 2;
+							al_draw_filled_rectangle ( startX - ( BLOCK_WIDTH * 2 ), startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_YELLOW ) );
 
+							tran_drawCircuitEffect ( startX - ( BLOCK_WIDTH ) * 2, startY, length, CIRCUIT_HEIGHT, LEFT_SIDE );
+						}
+					else
+						{
+							al_draw_filled_rectangle ( startX, startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
+						}
+				}
+			else if ( false == transferCells[whichCell].powerOnLeft )
+				al_draw_filled_rectangle ( startX, startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
+			else
+				{
+					al_draw_filled_rectangle ( startX, startY, startX + BLOCK_WIDTH * 2, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_BLACK ) );
+					startX += BLOCK_WIDTH * 2;
+					length -= BLOCK_WIDTH * 2;
+					al_draw_filled_rectangle ( startX, startY, startX + length, startY + CIRCUIT_HEIGHT, al_map_rgba_f ( COL_YELLOW ) );
+					tran_drawCircuitBlock ( BLOCK_RIGHT, whichCell, startX, COL_YELLOW );
+
+					tran_drawCircuitEffect ( startX, startY, length, CIRCUIT_HEIGHT, LEFT_SIDE );
+				}
+
+			if ( true == drawBlock )
+				{
+					if ( type != CIRCUIT_NORMAL )
+						tran_drawCircuitBlock ( BLOCK_LEFT, whichCell, startX + length, COL_YELLOW );
+				}
+			return;
+		}
+
+	if ( RIGHT_SIDE == whichSide )
+		{
+			startX = ( backGroundWidth - ( BACKGROUND_BORDER * 2 ) ) - SIDEBAR_WIDTH;
+			startY =  transferCells[whichCell].startY + ( ( squareHeight - CIRCUIT_HEIGHT ) / 2 );
+			length = tran_getCircuitLength ( whichSide, whichCell, type );
+
+//
+// Draw the circuit
+//
 			if ( type == CIRCUIT_ONE_INTO_TWO )
 				{
 					if ( ( ( transferCells[whichCell].circuitTypeRight == CIRCUIT_SPLIT_HALF ) && ( true == transferCells[whichCell - 1].powerOnRight ) && ( CIRCUIT_ONE_INTO_TWO == transferCells[whichCell - 1].circuitTypeRight ) )
@@ -298,7 +349,6 @@ void tran_drawCircuitNormal ( int whichSide, int whichCell, int type, bool drawB
 					tran_drawCircuitEffect ( startX - length, startY, length, CIRCUIT_HEIGHT, RIGHT_SIDE );
 				}
 
-
 			if ( true == drawBlock )
 				{
 					if ( type != CIRCUIT_NORMAL )
@@ -306,7 +356,6 @@ void tran_drawCircuitNormal ( int whichSide, int whichCell, int type, bool drawB
 				}
 		}
 }
-
 
 //------------------------------------------------------------
 //
@@ -317,7 +366,7 @@ void tran_drawCircuitBlock ( int blockDirection, int whichCell, int posX, float 
 {
 	int startX, startY;
 
-	if (whichCell == TOKEN_POS_HIDE)
+	if ( whichCell == TOKEN_POS_HIDE )
 		return;
 
 	if ( BLOCK_RIGHT == blockDirection )
@@ -635,19 +684,19 @@ void tran_drawTransferCells ( bool justBackground )
 // Draw the colored background
 	switch ( currentMode )
 		{
-			case MODE_TRANSFER_INTRO:
-			case MODE_TRANSFER_INTRO_1:
-			case MODE_TRANSFER_INTRO_2:
-				backGroundColor = al_map_rgba_f ( COL_BLACK );
-				break;
+		case MODE_TRANSFER_INTRO:
+		case MODE_TRANSFER_INTRO_1:
+		case MODE_TRANSFER_INTRO_2:
+			backGroundColor = al_map_rgba_f ( COL_BLACK );
+			break;
 
-			case MODE_TRANSFER_START:
-			case MODE_TRANSFER_SELECT_SIDE:  // Countdown to choose side
-			case MODE_TRANSFER_SELECT:
-			case MODE_TRANSFER_COPY:
-			case MODE_TRANSFER_FINISH:
-				backGroundColor = al_map_rgba_f ( 0.53f, 0.25f, 0.211f, 0.0f );
-				break;
+		case MODE_TRANSFER_START:
+		case MODE_TRANSFER_SELECT_SIDE:  // Countdown to choose side
+		case MODE_TRANSFER_SELECT:
+		case MODE_TRANSFER_COPY:
+		case MODE_TRANSFER_FINISH:
+			backGroundColor = al_map_rgba_f ( 0.53f, 0.25f, 0.211f, 0.0f );
+			break;
 		}
 
 	al_draw_filled_rectangle ( backGroundStartX, backGroundStartY, backGroundWidth, backGroundHeight, backGroundColor );
@@ -722,32 +771,32 @@ void tran_drawTransferCells ( bool justBackground )
 		{
 			switch ( transferCells[i].circuitTypeLeft )
 				{
-					case CIRCUIT_NORMAL:
-					case CIRCUIT_NORMAL_1:
-					case CIRCUIT_NORMAL_2:
-						tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_NORMAL, true );
-						break;
-					case CIRCUIT_THREEQUARTERS:
-						tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_THREEQUARTERS, true );
-						break;
-					case CIRCUIT_HALF:
-						tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_HALF, true );
-						break;
-					case CIRCUIT_QUARTER:
-						tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_QUARTER, true );
-						break;
-					case CIRCUIT_SPLIT_HALF:
-						tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_ONE_INTO_TWO, false );
-						break;
-					case CIRCUIT_SPLIT_TWO_INTO_ONE:
-						tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_THREEQUARTERS, false );
-						break;
-					case CIRCUIT_TWO_INTO_ONE:
-						tran_drawCircuitTwoIntoOne ( LEFT_SIDE, i );
-						break;
-					case CIRCUIT_ONE_INTO_TWO:
-						tran_drawCircuitOneIntoTwo ( LEFT_SIDE, i );
-						break;
+				case CIRCUIT_NORMAL:
+				case CIRCUIT_NORMAL_1:
+				case CIRCUIT_NORMAL_2:
+					tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_NORMAL, true );
+					break;
+				case CIRCUIT_THREEQUARTERS:
+					tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_THREEQUARTERS, true );
+					break;
+				case CIRCUIT_HALF:
+					tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_HALF, true );
+					break;
+				case CIRCUIT_QUARTER:
+					tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_QUARTER, true );
+					break;
+				case CIRCUIT_SPLIT_HALF:
+					tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_ONE_INTO_TWO, false );
+					break;
+				case CIRCUIT_SPLIT_TWO_INTO_ONE:
+					tran_drawCircuitNormal ( LEFT_SIDE, i, CIRCUIT_THREEQUARTERS, false );
+					break;
+				case CIRCUIT_TWO_INTO_ONE:
+					tran_drawCircuitTwoIntoOne ( LEFT_SIDE, i );
+					break;
+				case CIRCUIT_ONE_INTO_TWO:
+					tran_drawCircuitOneIntoTwo ( LEFT_SIDE, i );
+					break;
 				}
 
 			if ( true == transferCells[i].isRepeaterLeft )
@@ -758,32 +807,32 @@ void tran_drawTransferCells ( bool justBackground )
 
 			switch ( transferCells[i].circuitTypeRight )
 				{
-					case CIRCUIT_NORMAL:
-					case CIRCUIT_NORMAL_1:
-					case CIRCUIT_NORMAL_2:
-						tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_NORMAL, true );
-						break;
-					case CIRCUIT_THREEQUARTERS:
-						tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_THREEQUARTERS, true );
-						break;
-					case CIRCUIT_HALF:
-						tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_HALF, true );
-						break;
-					case CIRCUIT_QUARTER:
-						tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_QUARTER, true );
-						break;
-					case CIRCUIT_SPLIT_HALF:
-						tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_ONE_INTO_TWO, false );
-						break;
-					case CIRCUIT_SPLIT_TWO_INTO_ONE:
-						tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_THREEQUARTERS, false );
-						break;
-					case CIRCUIT_TWO_INTO_ONE:
-						tran_drawCircuitTwoIntoOne ( RIGHT_SIDE, i );
-						break;
-					case CIRCUIT_ONE_INTO_TWO:
-						tran_drawCircuitOneIntoTwo ( RIGHT_SIDE, i );
-						break;
+				case CIRCUIT_NORMAL:
+				case CIRCUIT_NORMAL_1:
+				case CIRCUIT_NORMAL_2:
+					tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_NORMAL, true );
+					break;
+				case CIRCUIT_THREEQUARTERS:
+					tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_THREEQUARTERS, true );
+					break;
+				case CIRCUIT_HALF:
+					tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_HALF, true );
+					break;
+				case CIRCUIT_QUARTER:
+					tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_QUARTER, true );
+					break;
+				case CIRCUIT_SPLIT_HALF:
+					tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_ONE_INTO_TWO, false );
+					break;
+				case CIRCUIT_SPLIT_TWO_INTO_ONE:
+					tran_drawCircuitNormal ( RIGHT_SIDE, i, CIRCUIT_THREEQUARTERS, false );
+					break;
+				case CIRCUIT_TWO_INTO_ONE:
+					tran_drawCircuitTwoIntoOne ( RIGHT_SIDE, i );
+					break;
+				case CIRCUIT_ONE_INTO_TWO:
+					tran_drawCircuitOneIntoTwo ( RIGHT_SIDE, i );
+					break;
 				}
 
 			if ( true == transferCells[i].isRepeaterRight )

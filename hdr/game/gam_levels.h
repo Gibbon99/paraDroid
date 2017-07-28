@@ -143,7 +143,7 @@ void gam_putPlayerOnLift(int whichLift);
 void gam_changeToLevel(int newlevel, int whichLift);
 
 // Change to a new level from script - default to lift 0
-void gam_changeToLevelFromScript(int newLevel);
+void gam_changeToLevelFromScript(int newLevel, bool firstTime);
 
 // Find out where on the level the healing tiles are
 // Remember for this level for animation

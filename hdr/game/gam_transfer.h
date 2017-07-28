@@ -50,6 +50,9 @@ Copyright 2017 David Berry
 #define TOKEN_POS_LAUNCH	-1
 #define TOKEN_POS_HIDE		-2
 
+#define	MAX_NUM_BLOBS		12
+#define BLOB_DISTANCE		20
+
 extern int      	playerOnSide;
 extern int			droidOnSide;
 extern int      	squareWidth;
@@ -87,6 +90,11 @@ extern float	transferPlayCountDown;
 extern int		transferPlayCountLeft;
 extern int		transferPlayCountLeftDefault;
 
+struct _blob
+{
+	int position;
+	bool active;
+};
 
 struct _transferCells
 	{
@@ -114,6 +122,15 @@ struct _transferCells
 
 	bool    isReversedLeft;
 	bool    isReversedRight;
+	
+	int		numberBlobsLeft;
+	int		numberBlobsRight;
+	
+	int		lengthLeft;
+	int		lengthRight;
+	
+	_blob		blobLeft[MAX_NUM_BLOBS];
+	_blob		blobRight[MAX_NUM_BLOBS];
 	};
 
 extern _transferCells	transferCells[];
@@ -169,6 +186,9 @@ void trn_processEnemyMove();
 
 //Next player token - move ready to use and decrement count
 void trn_nextPlayerToken();
+
+// Get the length of the circuit
+int tran_getCircuitLength (int whichSide, int whichCell, int type );
 
 //-------------------------------------------------------------
 //

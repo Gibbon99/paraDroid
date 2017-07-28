@@ -123,7 +123,6 @@ set(SOURCE_FILES
     hdr/system/sys_maths.h
     hdr/system/sys_physics.h
     hdr/system/sys_physicsCollisions.h
-    hdr/system/sys_pixelCollide.h
     hdr/system/sys_random.h
     hdr/system/sys_script.h
     hdr/system/sys_shutdown.h
@@ -260,8 +259,7 @@ set(SOURCE_FILES
     src/system/sys_startup.cpp
     src/system/sys_timing.cpp
     src/system/sys_utils.cpp
-    main.cpp
-    scriptTransfer.h)
+    main.cpp)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Debug/bin")
 

@@ -103,7 +103,6 @@ void par_processEmitterQueue()
 //------------------------------------------------------------------
 //
 // Set the particle colors from the script
-
 void par_hostSetParticleColor ( int whichParticle, int red, int green, int blue, int alpha )
 //------------------------------------------------------------------
 {
@@ -126,7 +125,6 @@ void par_hostSetParticleColor ( int whichParticle, int red, int green, int blue,
 //------------------------------------------------------------------
 //
 // Debug the particle emitters
-
 void par_debugParticles()
 //------------------------------------------------------------------
 {
@@ -180,7 +178,6 @@ cpVect par_getCircleAngle ( int particleType )
 int par_initEmitter ( cpVect worldPos, int type, int whichBullet )
 //------------------------------------------------------------------
 {
-
 	_emitter tempEmitter;
 	_particle tempParticle;
 	int particleNumber;
@@ -203,7 +200,7 @@ int par_initEmitter ( cpVect worldPos, int type, int whichBullet )
 				particleNumberAdd = particleNumberExplosionAdd;
 				particlePosition = worldPos;
 				tempParticle.color = particleExplosionColor;
-				//al_map_rgba(particleExplosionColor.r, particleExplosionColor.g, particleExplosionColor.b, particleExplosionColor.a);
+				tempEmitter.numParticlesAlive = sys_genRand_int32() % particleNumber + particleNumberAdd;
 				break;
 
 			case PARTICLE_TYPE_TRAIL:
@@ -213,8 +210,9 @@ int par_initEmitter ( cpVect worldPos, int type, int whichBullet )
 				particleNumber = particleNumberTrail;
 				particleNumberAdd = particleNumberTrailAdd;
 				particlePosition = bullet[whichBullet].worldPos;
-				tempParticle.color = particleTrailColor; //al_map_rgba(particleTrailColor.r, particleTrailColor.g, particleTrailColor.b, sys_genRand_int32() % 150);
-				tempParticle.color.a = -1;
+				tempParticle.color = particleTrailColor;
+				tempParticle.color.a = (sys_genRand_int32() % 10) / 100;
+				tempEmitter.numParticlesAlive = sys_genRand_int32() % particleNumber + particleNumberAdd;
 				break;
 
 			case PARTICLE_TYPE_SPARK:
@@ -224,11 +222,11 @@ int par_initEmitter ( cpVect worldPos, int type, int whichBullet )
 				particleNumber = particleNumberSpark;
 				particleNumberAdd = particleNumberSparkAdd;
 				particlePosition = worldPos;
-				tempParticle.color = particleSparkColor; //al_map_rgba(particleSparkColor.r, particleSparkColor.g, particleSparkColor.b, particleSparkColor.a);
+				tempParticle.color = particleSparkColor;
+				tempEmitter.numParticlesAlive = sys_genRand_int32() % particleNumber + particleNumberAdd;
 				break;
 		}
 
-	tempEmitter.numParticlesAlive = sys_genRand_int32() % particleNumber + particleNumberAdd;
 	for ( unsigned int i = 0; i != tempEmitter.numParticlesAlive; ++i )
 		{
 			tempParticle.worldPos = particlePosition;
@@ -431,13 +429,7 @@ void par_animateParticles()
 											randomY -= 5;
 											itr->worldPos.x += randomX;
 											itr->worldPos.y += randomY;
-											particleTrailCount++;
-//											if ( particleTrailCount > particleTrailLimit )
-											if ( particleTrailCount > particleTrailLimit )
-												{
-//													itr = emitterItr->particle.end();
-												}
-											//	cpBodySetPosition (itr->body, itr->worldPos);
+											particleTrailCount--;
 											break;
 									}
 							}

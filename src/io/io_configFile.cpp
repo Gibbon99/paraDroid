@@ -116,7 +116,6 @@ string io_readConfigValuesString ( string varName )
 //--------------------------------------------------------
 //
 // Read config values
-
 float io_readConfigValuesFloat ( string varName )
 //--------------------------------------------------------
 {

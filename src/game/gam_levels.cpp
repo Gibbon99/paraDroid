@@ -200,10 +200,12 @@ void gam_checkAlertLevel()
 //---------------------------------------------------------
 //
 // Change to a new level from script - default to lift 0
-
-void gam_changeToLevelFromScript ( int newLevel )
+void gam_changeToLevelFromScript ( int newLevel, bool firstTime )
 //---------------------------------------------------------
 {
+	if (firstTime == false)
+		sys_destroyPhysicObjects ( currentLevel );
+		
 	gam_changeToLevel ( newLevel, 0 );
 }
 
@@ -276,7 +278,6 @@ void gam_changeToLevel ( int newLevel, int whichLift )
 //---------------------------------------------------------
 //
 // Load the level into structure
-
 bool gam_loadLevel ( char *fileName )
 //---------------------------------------------------------
 {
@@ -440,7 +441,6 @@ void lvl_addPaddingToLevel()
 // Store the lift linking information into vector array
 //
 // Call a second time to add to vector on same level
-
 void lvl_setupLiftsStore ( int whichLevel, int whichTunnel )
 //---------------------------------------------------------
 {
@@ -448,14 +448,11 @@ void lvl_setupLiftsStore ( int whichLevel, int whichTunnel )
 
 	tempLift.tunnel = whichTunnel;
 	shipLevel[whichLevel].lifts.push_back ( tempLift );
-
-//	con_print ( true, false, "[ %i ] - Lift size [ %i ]", whichLevel, shipLevel[whichLevel].lifts.size() );
 }
 
 //---------------------------------------------------------
 //
 // Setup lifts
-
 void lvl_setupLifts()
 //---------------------------------------------------------
 {
@@ -494,7 +491,6 @@ void lvl_setupLifts()
 //---------------------------------------------------------
 //
 // Load all the levels into memory
-
 bool gam_loadAllLevels()
 //---------------------------------------------------------
 {
@@ -549,7 +545,6 @@ bool gam_loadAllLevels()
 // Set pixel offsets based on screen resolution
 //
 // Sets global variables pixelX and pixelY
-
 void gam_getPixelOffsets()
 // ----------------------------------------------------------------------------
 {

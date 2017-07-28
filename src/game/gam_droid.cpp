@@ -45,7 +45,7 @@ void drd_updateDroidPosition ( int whichDroid )
 
 	if ( (tempPosition.x < 0) || (tempPosition.y < 0))
 	{
-		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %5.2f ]\n", whichDroid, currentLevel, frameCount);
+		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", whichDroid, currentLevel, frameCount);
 		return;
 	}
 
@@ -262,7 +262,7 @@ void drd_getOverWhichTile ( int whichDroid )
 	else
 		{
 		tileIndex = (tempPosY * (shipLevel[currentLevel].levelDimensions.x) + tempPosX);
-		if (tileIndex < shipLevel[currentLevel].tiles.size ())
+		if (tileIndex < (int)shipLevel[currentLevel].tiles.size ())
 			shipLevel[currentLevel].droid[whichDroid].overTileMiddle = shipLevel[currentLevel].tiles[tileIndex];
 		else
 			printf ("Error: drd_getOverWhichTile index larger than vector size.\n");
@@ -421,9 +421,6 @@ void gam_stopDroidMovement ( int whichLevel, int whichDroid )
 {
 	shipLevel[whichLevel].droid[whichDroid].velocity.x = 0.0f;
 	shipLevel[whichLevel].droid[whichDroid].velocity.y = 0.0f;
-
-	//    shipLevel[whichLevel].droid[whichDroid].acceleration.x = 0.0f;
-	//    shipLevel[whichLevel].droid[whichDroid].acceleration.y = 0.0f;
 
 	shipLevel[whichLevel].droid[whichDroid].currentSpeed = 0.0f;
 }

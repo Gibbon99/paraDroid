@@ -119,7 +119,8 @@ bool io_startFileSystem ( bool showArchivers )
 	*/
 	//
 	// Set base directory
-	if ( 0 == PHYSFS_addToSearchPath ( "data",0 ) )
+	if ( 0 == PHYSFS_mount ("data", "/", 1))
+//	if ( 0 == PHYSFS_addToSearchPath ( "data",0 ) )
 		{
 			io_logToFile ( "ERROR: Failed to set search path - data [ %s ]", PHYSFS_getLastError() );
 			fileSystemReady = false;
@@ -128,9 +129,11 @@ bool io_startFileSystem ( bool showArchivers )
 	//
 	// Add directory for loading scripts - move to archive file
 #ifdef _WIN32
-	if ( 0 == PHYSFS_addToSearchPath ( "data\\scripts",1 ) )
+//	if ( 0 == PHYSFS_addToSearchPath ( "data\\scripts",1 ) )
+	if ( 0 == PHYSFS_mount ( "data\\scripts", "/", 1 ) )
 #else
-	if ( 0 == PHYSFS_addToSearchPath ( "data/scripts", 1 ) )
+//	if ( 0 == PHYSFS_addToSearchPath ( "data/scripts", 1 ) )
+	if ( 0 == PHYSFS_mount ( "data/scripts", "/", 1 ) )		
 #endif
 		{
 			io_logToFile ( "ERROR: Failed to set search path - scripts [ %s ]", PHYSFS_getLastError() );

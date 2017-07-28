@@ -85,7 +85,7 @@ void as_changeToLevel(int &in param1)
 		sys_printConStr("Error: ", "Parameter is invalid");
 		return;
 	}
-	gam_changeToLevel(param1);
+	gam_changeToLevelFromScript(param1, false);
 }
 
 //-----------------------------------------------------------------------------

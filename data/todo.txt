@@ -246,11 +246,12 @@ FIXED - Fix backspace repeating in console
 FIXED - Bug in zlib and physfs stopping reading from zip datafile - read from unzipped directory until libraries are fixed
 FIXED - Check tiles being transparent in level view - set image loading flag
 FIXED - Fix check object on screen size and test
+FIXED - changeToLevel from console works without physics crash
+FIXED - Pause mode is handled correctly when window loses focus
 
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
-
-
+Enemy bullet appearing in wrong spot
 
 FEEDBACK
 ---------

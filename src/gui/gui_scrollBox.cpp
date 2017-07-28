@@ -213,7 +213,7 @@ char *gui_getNextTextLine(_scrollBox *scrollBox)
 
 			i++;
 			scrollBox->charPtr++;
-			if (scrollBox->charPtr > scrollBox->sourceText.size())
+			if (scrollBox->charPtr > (int)scrollBox->sourceText.size())
 				{
 					strcat(nextLine, nextWord);
 					foundLine = true;

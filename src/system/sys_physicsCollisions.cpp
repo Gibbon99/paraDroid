@@ -470,7 +470,7 @@ bool handleDoorBullet ( cpArbiter	*arb, cpSpace *space, int *unused )
 	int whichDoor;
 
 	cpArbiterGetShapes ( arb, &a, &b );
-	whichDoor = (int)cpShapeGetUserData ( a );
+	whichDoor = (int)cpShapeGetUserData ( (cpDataPointer) a );
 
 	int *passValue = new int();
 	switch ( doorTrigger[whichDoor].currentFrame )
