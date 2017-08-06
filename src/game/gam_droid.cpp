@@ -30,6 +30,8 @@ int			collisionExplosionDamage;
 float 		wayPointDestinationSize;
 float 		healingTimer; // Used to time healing for droids
 
+float		droidBeenShotValue;
+
 //---------------------------------------------------------------
 //
 // Update the droids information from physics properties
@@ -45,7 +47,7 @@ void drd_updateDroidPosition ( int whichDroid )
 
 	if ( (tempPosition.x < 0) || (tempPosition.y < 0))
 	{
-		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", whichDroid, currentLevel, frameCount);
+		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", whichDroid, currentLevel, static_cast<int>(frameCount));
 		return;
 	}
 

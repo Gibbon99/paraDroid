@@ -22,7 +22,6 @@ Copyright 2017 David Berry
 //#define DEBUG_SHOOT 1
 
 // ----------- Values set from script ------------
-float		droidBeenShotValue;
 float		witnessShootValue;
 float		ai_beenShot;
 float		ai_healthAmount;

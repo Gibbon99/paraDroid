@@ -22,10 +22,13 @@ Copyright 2017 David Berry
 #include "../../hdr/game/gam_transferRender.h"
 
 int 			droidTypeToTransferInto;
+//int             droidTransfer;
 
 int 			squareWidth;
 int 			squareHeight;
 _transferCells 	transferCells[NUMBER_CELLS];
+
+//int      transferWithSprite;	// which sprite are we transferring to
 
 int 			playerOnSide = LEFT_SIDE; // Setup default side
 int 			droidOnSide = RIGHT_SIDE;
@@ -649,6 +652,7 @@ void trn_drawTransferScreen()
 //----------------------------------------------------------
 //
 // Helper function to check index passed in is ok
+
 bool trans_checkCellIndex ( int value )
 //----------------------------------------------------------
 {
@@ -661,6 +665,7 @@ bool trans_checkCellIndex ( int value )
 //----------------------------------------------------------
 //
 // Set the type of effect on this cell
+
 void host_transSetEffectType ( int whichCell, int whichSide, int whichEffect )
 //----------------------------------------------------------
 {
@@ -688,6 +693,7 @@ void host_transSetEffectType ( int whichCell, int whichSide, int whichEffect )
 //----------------------------------------------------------
 //
 // Set the type of circuit in this cell
+
 void host_tranSetCircuitType ( int whichCell, int whichSide, int typeSet )
 //----------------------------------------------------------
 {
@@ -695,21 +701,16 @@ void host_tranSetCircuitType ( int whichCell, int whichSide, int typeSet )
 		return;
 
 	if ( LEFT_SIDE == whichSide )
-	{
 		transferCells[whichCell].circuitTypeLeft = typeSet;
-		transferCells[whichCell].lengthLeft = tran_getCircuitLength(whichSide, whichCell, typeSet);
-	}
 
 	if ( RIGHT_SIDE == whichSide )
-	{
 		transferCells[whichCell].circuitTypeRight = typeSet;
-		transferCells[whichCell].lengthRight = tran_getCircuitLength(whichSide, whichCell, typeSet);
-	}
 }
 
 //----------------------------------------------------------
 //
 // Setup default states for the cells
+
 void host_transSetDefaultValues ( int whichCell )
 //----------------------------------------------------------
 {
@@ -723,12 +724,6 @@ void host_transSetDefaultValues ( int whichCell )
 	transferCells[whichCell].isReversedLeft = false;
 	transferCells[whichCell].reversedLeftActivated = false;
 	transferCells[whichCell].repeaterLeftActivated = false;
-	transferCells[whichCell].numberBlobsLeft = 0;
-	for (int i = 0; i != MAX_NUM_BLOBS; i++)
-	{
-		transferCells[whichCell].blobLeft[i].active = false;
-		transferCells[whichCell].blobLeft[i].position = 0;
-	}
 
 	transferCells[whichCell].powerOnRight = false;
 	transferCells[whichCell].powerOnStartRight = 0.0f;
@@ -737,12 +732,6 @@ void host_transSetDefaultValues ( int whichCell )
 	transferCells[whichCell].isReversedRight = false;
 	transferCells[whichCell].reversedRightActivated = false;
 	transferCells[whichCell].repeaterRightActivated = false;
-	transferCells[whichCell].numberBlobsRight = 0;
-	for (int i = 0; i != MAX_NUM_BLOBS; i++)
-	{
-		transferCells[whichCell].blobRight[i].active = false;
-		transferCells[whichCell].blobRight[i].position = 0;
-	}
 }
 
 //----------------------------------------------------------
@@ -779,6 +768,7 @@ bool host_circuitPowered ( int whichCell, int whichSide )
 //----------------------------------------------------------
 //
 // Get a random number capped at parameter
+
 int host_getCappedRandomNum ( int cap )
 //----------------------------------------------------------
 {
@@ -788,12 +778,14 @@ int host_getCappedRandomNum ( int cap )
 	if ( returnValue == 19 )
 		returnValue = sys_genRand_int32() % cap;
 
+//	printf("Random value [ %i ] Cap [ %i ]\n", returnValue, cap);
 	return returnValue;
 }
 
 //----------------------------------------------------------
 //
 // Set current color
+
 void host_transSetCellColor ( int whichCell, int colType, float red, float green, float blue, float alpha )
 //----------------------------------------------------------
 {
@@ -810,6 +802,7 @@ void host_transSetCellColor ( int whichCell, int colType, float red, float green
 //----------------------------------------------------------
 //
 // Set the start position of a cell
+
 void host_transSetCellPos ( int whichCell, int posX, int posY )
 //----------------------------------------------------------
 {
@@ -821,11 +814,14 @@ void host_transSetCellPos ( int whichCell, int posX, int posY )
 
 	transferCells[whichCell].startX = posX;
 	transferCells[whichCell].startY = posY;
+
+	//    con_print(true, "Cell [ %i ] PosY [ %i ] Height [ %i ]", whichCell, posY, squareHeight);
 }
 
 //----------------------------------------------------------
 //
 // Setup the transfer screen - GUI bits
+
 bool trans_setupTransferGUI()
 //----------------------------------------------------------
 {
@@ -833,3 +829,17 @@ bool trans_setupTransferGUI()
 
 	return true;
 }
+
+/*
+// ----------------------------------------------------------------------------
+// Time the enemy movement so it's not too fast
+void trn_processEnemyMove()
+// ----------------------------------------------------------------------------
+{
+	if (numDroidTokens < 0)
+		return;
+
+	sys_executeScriptFunction("as_processTransferAI", "");
+}
+
+ */

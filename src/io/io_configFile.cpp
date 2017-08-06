@@ -122,7 +122,7 @@ float io_readConfigValuesFloat ( string varName )
 	float returnValue;
 
 	returnValue = atof ( al_get_config_value ( configFile, "Options", varName.c_str() ) );
-	if ( NULL == returnValue )
+	if (returnValue == NULL)
 		{
 			printf ( "Error: Could not get value from config file. Exiting\n" );
 			sys_errorFatal ( __FILE__, __LINE__, "Error: Could not get value from config file. Exiting\n" );

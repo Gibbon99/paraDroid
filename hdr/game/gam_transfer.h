@@ -123,14 +123,6 @@ struct _transferCells
 	bool    isReversedLeft;
 	bool    isReversedRight;
 	
-	int		numberBlobsLeft;
-	int		numberBlobsRight;
-	
-	int		lengthLeft;
-	int		lengthRight;
-	
-	_blob		blobLeft[MAX_NUM_BLOBS];
-	_blob		blobRight[MAX_NUM_BLOBS];
 	};
 
 extern _transferCells	transferCells[];

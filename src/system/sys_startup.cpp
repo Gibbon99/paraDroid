@@ -32,7 +32,7 @@ bool				loadingThreadHasFinished;
 void sys_runLoadThread ()
 //-----------------------------------------------------------------------------
 {
-	al_set_physfs_file_interface();
+	al_set_physfs_file_interface();	// Allow reading files from this thread
 
 	loadingThreadHasFinished = false;
 
@@ -94,10 +94,10 @@ bool sys_startOnce()
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize allegro!", NULL, ALLEGRO_MESSAGEBOX_ERROR );
 			return false;
 		}
-		
+
 	if ( false == io_startFileSystem ( false ) )
 		sys_errorFatal ( __FILE__, __LINE__, "Could not start packfile" );
-		
+
 	al_set_physfs_file_interface();
 
 	if ( false == sys_initScriptEngine() )
@@ -164,9 +164,9 @@ bool sys_startOnce()
 	version = al_get_allegro_font_version();
 	con_setColor ( 1.0f, 1.0f, 0.0f, 1.0f );
 	con_print ( true, false, "INFO: Allegro Font Version: %i.%i.%i Release %i", version >> 24, ( version >> 16 ) & 255, ( version >> 8 ) & 255, version & 255 );
-	
-	
-	
+
+
+
 	if ( !al_init_image_addon() )
 		{
 			al_show_native_message_box ( display, "Error", "Error", "Failed to initialize al_init_image_addon!", NULL, ALLEGRO_MESSAGEBOX_ERROR );

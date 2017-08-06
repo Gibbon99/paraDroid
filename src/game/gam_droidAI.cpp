@@ -46,8 +46,8 @@ void ai_setupAITree ()
 //
 	ai_addNode ( AI_NODE_SELECTOR,	"ROOT_NODE",	"AI_SHOOT",		NULL );
 	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"NOT_SHOOT",	(ExternFunc)&ai_notShoot );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"BULLET_DEST", (ExternFunc)&ai_findBulletDest );
-	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"FIRE_BULLET", (ExternFunc)&ai_shootBullet );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"BULLET_DEST",  (ExternFunc)&ai_findBulletDest );
+	ai_addNode ( AI_NODE_EXECUTE,	"AI_SHOOT",		"FIRE_BULLET",  (ExternFunc)&ai_shootBullet );
 //
 // If health is low, find a way to the nearest healing tile and repair
 //

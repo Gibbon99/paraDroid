@@ -95,6 +95,7 @@ typedef int	(*ExternFunc)(...);
 #include "system/sys_maths.h"
 #include "system/sys_debug.h"
 
+#include "game/gam_scoreTable.h"
 #include "game/gam_transfer.h"
 #include "game/gam_droid.h"
 #include "game/gam_levels.h"
@@ -113,7 +114,6 @@ typedef int	(*ExternFunc)(...);
 #include "game/gam_particles.h"
 #include "game/gam_pathFind.h"
 #include "game/gam_endScreen.h"
-#include "game/gam_scoreTable.h"
 
 #define RET_FALSE(n, v) {io_logToFile(n, v); return false;}
 
