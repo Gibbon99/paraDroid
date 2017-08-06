@@ -34,9 +34,9 @@ void bul_processDisrupter ( int whichLevel, int whichBullet )
 	//
 	for ( int j = 0; j != shipLevel[whichLevel].numDroids; j++ )
 		{
-			if ( true == shipLevel[whichLevel].droid[j].visibleToPlayer )
+			if ( true == shipLevel[whichLevel].droid[j].isAlive )
 				{
-					if ( true == shipLevel[whichLevel].droid[j].isAlive )
+					if ( true == shipLevel[whichLevel].droid[j].visibleToPlayer )
 						{
 							if ( false == shipLevel[whichLevel].droid[j].isExploding )
 								{

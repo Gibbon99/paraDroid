@@ -439,12 +439,6 @@ void gam_destroyDroid ( int whichLevel, int whichDroid )
 	if ( false == shipLevel[whichLevel].droid[whichDroid].isAlive )
 		return;
 
-	if ( 0 == shipLevel[whichLevel].numEnemiesAlive )
-		{
-			con_print ( true, false, "No enemies left on level. [ %i ]", whichLevel );
-			return;
-		}
-
 	if ( shipLevel[whichLevel].droid[whichDroid].droidType < 6 )
 		sys_playSound ( SND_EXPLODE_1, 0.0f, ALLEGRO_PLAYMODE_ONCE );
 	else
@@ -464,11 +458,21 @@ void gam_destroyDroid ( int whichLevel, int whichDroid )
 //
 // TODO: Need extra checks here
 //
-	shipLevel[whichLevel].numEnemiesAlive--;
+	shipLevel[whichLevel].numEnemiesAlive = shipLevel[whichLevel].numDroids;
+	
+	for (int i = 0; i != shipLevel[whichLevel].numDroids; i++)
+	{
+		if ((shipLevel[whichLevel].droid[i].isAlive == false) || 
+			(shipLevel[whichLevel].droid[i].isExploding == true))
+			{
+				shipLevel[whichLevel].numEnemiesAlive--;
+			}
+	}
 
 	if ( 0 == shipLevel[whichLevel].numEnemiesAlive )
 		{
 			gam_powerDownLevel ( whichLevel, true );
+			con_print ( true, false, "No enemies left on level. [ %i ]", whichLevel );			
 		}
 }
 
@@ -476,7 +480,6 @@ void gam_destroyDroid ( int whichLevel, int whichDroid )
 //
 // Increment the collision count - DELETE THIS
 // this is used to see if the droid should start ignoring collisions after having too many
-
 void gam_incrementCollisionCount ( int whichLevel, int droid1, int droid2 )
 //-----------------------------------------------------------------------------
 {

@@ -250,9 +250,11 @@ FIXED - Fix check object on screen size and test
 FIXED - changeToLevel from console works without physics crash
 FIXED - Pause mode is handled correctly when window loses focus
 FIXED - Enemy bullet appearing in wrong spot - caused by leading shot??
+FIXED - Droids being destroyed with Disrupter when not visible
+FIXED - Level went dead with one 420 left after using Disrupter
 
-Level went dead with one 420 left after using Disrupter
-Droids being destroyed with Disrupter when not visible
+Transfer - enemy getting stuck on two into one when first leg is active
+Enemy droid witness shot while not visible
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
 
