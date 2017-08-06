@@ -402,4 +402,6 @@ void as_setEnglishText()
 	
 	gui_addKeyAndText("endGameTextBox", "Well done. You have finished the game.");
 	gui_addKeyAndText("buttonEndGameYes", "Return to menu");
+	
+	gui_addKeyAndText("beamOn", "Beam On");
 }

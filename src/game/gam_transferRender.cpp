@@ -374,7 +374,6 @@ void tran_drawCircuitOneIntoTwo ( int whichSide, int whichCell )
 		}
 }
 
-
 //------------------------------------------------------------
 //
 // Draw the repeat or reverse block

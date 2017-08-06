@@ -110,6 +110,7 @@ DONE - Add in Transfer lost screen
 DONE - Speed affected by alert level ? - Green, all move slowly
 DONE - Fix speed settings for all droids - based on 001 relative - speed also affected by mass (weight)
 
+Move bullets using physics
 Use sound to skip through start beam onto ship
 Transfer AI - Needs reworking - not choosing two into one because single legs are wrong color
 Higher level droids will anticipate shot ( leading shot )
@@ -248,10 +249,12 @@ FIXED - Check tiles being transparent in level view - set image loading flag
 FIXED - Fix check object on screen size and test
 FIXED - changeToLevel from console works without physics crash
 FIXED - Pause mode is handled correctly when window loses focus
+FIXED - Enemy bullet appearing in wrong spot - caused by leading shot??
 
+Level went dead with one 420 left after using Disrupter
+Droids being destroyed with Disrupter when not visible
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
-Enemy bullet appearing in wrong spot
 
 FEEDBACK
 ---------

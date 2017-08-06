@@ -46,7 +46,9 @@ void as_guiHandleButtonPress ( string &in objectID )
 
 					volumeLevelStr = as_guiGetSliderValue ( "sliderAudioVol" );
 
-					currentMode = MODE_SHOWLEVEL;
+					currentMode = MODE_BEAM_ON;
+					sys_playSoundFromScript ( SND_START_ALL, SND_PAN_CENTER, false );
+
 					randomStartLevel = as_getCappedRandomNum ( 21 );
 					if ( 7 == randomStartLevel )
 						randomStartLevel = 6;

@@ -159,20 +159,15 @@ void sys_displayFrame ( float interpolation )
 			gam_drawAllDroids ( currentLevel );
 			gam_drawSpotLights();
 			gam_drawHud();
-
-			/*
-							// Return how many waypoints there are
-							if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
-								{
-									if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
-										{
-											gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
-										}
-								}
-			*/
-//				gam_debugShowWaypoints();
 			break;
 
+		case MODE_BEAM_ON:
+			gam_drawAllTiles();
+			gam_drawSpotLights();
+			gam_drawHud();
+			gam_drawBeamOn();
+			break;
+			
 		case MODE_SHOWLEVEL:
 		case MODE_PLAYER_EXPLODE:
 			gam_drawAllTiles();
@@ -181,23 +176,11 @@ void sys_displayFrame ( float interpolation )
 			gam_drawAllDroids ( currentLevel );
 			gam_drawSpotLights();
 			gam_drawHud();
-
-//				sys_debugShowTileGrid();
-
-			/*
-							// Return how many waypoints there are
-							if ( -1 != shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex )
-								{
-									if ( gam_AStarGetNumWaypoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex ) > 0 )
-										{
-											gam_AStarDebugWayPoints ( shipLevel[currentLevel].droid[debugAStarIndex].aStarPathIndex );
-										}
-								}
-			*/
+			
 			// Draw Paused window
-
 			if ( true == debugShowStats )
 				sys_displayDebug();
+				
 			//sys_displayScreenMiddle();
 
 			//gam_debugShowDestination();
@@ -206,8 +189,7 @@ void sys_displayFrame ( float interpolation )
 			//sys_debugLineSegments();
 			//sysDoorDebugTrigger();
 			//lvl_debugLOS();
-
-			//gam_drawDB_Droid();
+			//
 			break;
 
 		case MODE_LIFT_VIEW:
@@ -329,6 +311,26 @@ void sys_updateFrame()
 			gam_animatePlayerSprite ( thinkInterval );
 			break;
 
+		case MODE_BEAM_ON:
+			if (false == playSounds)
+			{
+				sys_changeMode ( MODE_SHOWLEVEL, false );
+				gam_resetBeamOn();
+				return;
+			}
+			
+			if (false == sys_isSoundPlaying ( SND_START_ALL ))
+			{
+				sys_changeMode ( MODE_SHOWLEVEL, false );
+				gam_resetBeamOn();
+				return;
+			}
+			
+			gam_setHUDState (HUD_STATE_BEAM_ON);
+			gam_processBeamOn (thinkInterval);
+			gam_animateSpotLights();
+			break;
+			
 		case MODE_SHOWLEVEL:
 			if ( false == gamePaused )
 				{

@@ -59,10 +59,81 @@ struct _tileTexCoords
 
 _tileTexCoords *tileTexCoords = NULL;
 
+cpVect			beamOnPosition;
+ALLEGRO_COLOR	beamOnColor;
+float			beamOnRadius;
+float			beamOnCurrentRadius;
+float			beamOnDelay;
+float			beamOnTimer;
+float			beamOnAlphaStep;
+float			beamOnAlpha;
+static	bool	beamOnSetup = false;
+
+//-----------------------------------------------------------------------------
+//
+// Reset beam on variables
+void gam_resetBeamOn()
+//-----------------------------------------------------------------------------
+{
+	beamOnSetup = false;
+}
+
+//-----------------------------------------------------------------------------
+//
+// Process beam on effect
+void gam_processBeamOn (float thinkInterval)
+//-----------------------------------------------------------------------------
+{
+	if (false == beamOnSetup)
+	{
+		beamOnSetup = true;
+		beamOnPosition.x = winWidth / 2;
+		beamOnPosition.y = winHeight / 2;
+		beamOnRadius = 200.0f;
+		beamOnCurrentRadius = beamOnRadius;
+		beamOnDelay = 60.0f;
+		beamOnTimer = 1.0f;
+		beamOnAlphaStep = 1.0f / (beamOnRadius / 6.0f);
+		beamOnAlpha = 0.0f;
+	}
+	
+	beamOnTimer -= beamOnDelay * thinkInterval;
+	if (beamOnTimer < 0.0f)
+	{
+		beamOnTimer = 1.0f;
+		beamOnCurrentRadius -= 6.0f;
+		beamOnAlpha += beamOnAlphaStep;
+		if (beamOnAlpha > 0.9f)
+			beamOnAlpha = 0.0f;
+			
+		beamOnColor = al_map_rgba_f(1.0f, 1.0f, 1.0f, beamOnAlpha);
+		if (beamOnCurrentRadius < 0.0f)
+		{
+			beamOnCurrentRadius = beamOnRadius;
+			beamOnAlpha = 0.0f;
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+//
+// Draw the beam on effect - enable alpha blending
+void gam_drawBeamOn()
+//-----------------------------------------------------------------------------
+{
+	int op, src, dst;
+			
+	al_get_blender ( &op, &src, &dst );
+	al_set_blender(ALLEGRO_ADD, ALLEGRO_ALPHA, ALLEGRO_INVERSE_ALPHA);
+		
+	al_draw_circle(beamOnPosition.x, beamOnPosition.y, beamOnCurrentRadius, beamOnColor, 5.0f);
+	
+	al_set_blender ( op, src, dst );
+}
+
 //-----------------------------------------------------------------------------
 //
 // Draw the starfield
-
 void gam_drawStarfield()
 //-----------------------------------------------------------------------------
 {
@@ -72,7 +143,6 @@ void gam_drawStarfield()
 //-----------------------------------------------------------------------------
 //
 // Setup a bitmap to hold graphics before blitting to screen
-
 bool gam_setupFBO(int flags)
 //-----------------------------------------------------------------------------
 {
@@ -89,7 +159,6 @@ bool gam_setupFBO(int flags)
 //-----------------------------------------------------------------------------
 //
 // Free memory for tileTexCoords
-
 void gam_freeTileTexMemory()
 //-----------------------------------------------------------------------------
 {
@@ -100,7 +169,6 @@ void gam_freeTileTexMemory()
 //-----------------------------------------------------------------------------
 //
 // Change state to display status text in HUD
-
 void gam_setHUDState(int newState)
 //-----------------------------------------------------------------------------
 {
@@ -110,7 +178,6 @@ void gam_setHUDState(int newState)
 //-----------------------------------------------------------------------------
 //
 // Draw the HUD and status text and current score
-
 void gam_drawHud()
 //-----------------------------------------------------------------------------
 {
@@ -197,6 +264,10 @@ void gam_drawHud()
 			case HUD_STATE_LOST:
 				statusText = gui_getString("transferLostHUD");
 				break;
+				
+			case HUD_STATE_BEAM_ON:
+				statusText = gui_getString("beamOn");
+				break;
 		}
 
 	sys_printStringExt(startStatusX, statusTextY, "%s", statusText.c_str());
@@ -207,7 +278,6 @@ void gam_drawHud()
 //-----------------------------------------------------------------------------
 //
 // Return texture coords for passed in tile
-
 cpVect gam_getTileTexCoords(int whichTile)
 //-----------------------------------------------------------------------------
 {
@@ -217,7 +287,6 @@ cpVect gam_getTileTexCoords(int whichTile)
 //-----------------------------------------------------------------------------
 //
 // Setup up precalculated coords for the tiles
-
 void gam_calcTileTexCoords()
 //-----------------------------------------------------------------------------
 {
@@ -248,7 +317,6 @@ void gam_calcTileTexCoords()
 //-----------------------------------------------------------------------------
 //
 // Draw a single tile from the tile sheet
-
 void inline gam_drawSingleTile(float destX, float destY, int whichTile)
 //-----------------------------------------------------------------------------
 {
@@ -281,7 +349,6 @@ void inline gam_drawSingleTile(float destX, float destY, int whichTile)
 //-----------------------------------------------------------------------------
 //
 // Copy all the tiles that are visible this screen to the array
-
 void gam_drawAllTiles()
 //-----------------------------------------------------------------------------
 {
@@ -371,7 +438,6 @@ void gam_animateIndicator(float thinkInterval)
 //-----------------------------------------------------------------------------
 //
 // Draw the player location indicator
-
 void term_drawIndicator(float screenTileSize)
 //-----------------------------------------------------------------------------
 {
@@ -435,7 +501,6 @@ void term_showCurrentLevel()
 //-----------------------------------------------------------------------------
 //
 // Draw an image - pass in index and location
-
 void gam_drawImage(int imageIndex, float posX, float posY, int flags)
 //-----------------------------------------------------------------------------
 {
@@ -480,7 +545,6 @@ void gam_drawImage(int imageIndex, float posX, float posY, int flags)
 // Modify the global fadeValue - set to run on mode change
 //
 // Runs in think time - not drawing time
-
 void gam_processFadeValue()
 //-----------------------------------------------------------------------------
 {
@@ -527,7 +591,6 @@ void gam_processFadeValue()
 // Draw a sprite from a script
 //
 // Pass in image index, position, tint color
-
 void gam_drawBitmapFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)
 //-----------------------------------------------------------------------------
 {
@@ -589,7 +652,6 @@ void gam_drawSprite(int currentFrame, int imageIndex, cpVect position, float ang
 //-----------------------------------------------------------------------------
 //
 // Draw a sprite from a script
-
 void gam_drawSpriteFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)
 //-----------------------------------------------------------------------------
 {
@@ -611,8 +673,6 @@ void gam_drawSpriteFromScript(int index, float posX, float posY, float red, floa
 // ----------------------------------------------------------------------------
 //
 // draw a 3d looking rectangle to show off the levels
-//
-
 void draw3dRectangle(float x1, float y1, float x2, float y2, ALLEGRO_COLOR color)
 // ----------------------------------------------------------------------------
 {
@@ -631,7 +691,6 @@ void draw3dRectangle(float x1, float y1, float x2, float y2, ALLEGRO_COLOR color
 // ----------------------------------------------------------------------------
 //
 // Show the ship in it's sideview on the screen
-
 void gam_drawSideView()
 // ----------------------------------------------------------------------------
 {

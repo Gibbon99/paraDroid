@@ -83,3 +83,12 @@ void gam_setHUDState(int newState);
 
 // Animate the level indicator shown on deck map
 void gam_animateIndicator(float thinkInterval);
+
+// Process beam on effect
+void gam_processBeamOn (float thinkInterval);
+
+// Draw the beam on effect
+void gam_drawBeamOn();
+
+// Reset beam on variables
+void gam_resetBeamOn();
