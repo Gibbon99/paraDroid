@@ -45,6 +45,9 @@ int findSuitableCircuitToUse ( int whichSide )
 
 	for ( i = 0; i != NUM_CELLS; i++ )
 		{
+			//
+			// Get the type of circuit we are looking at for this line
+			// 
 			if ( LEFT_SIDE == whichSide )	// YELLOW
 				{
 					if ( false == as_circuitNotPowered ( i, whichSide ) )
@@ -77,6 +80,9 @@ int findSuitableCircuitToUse ( int whichSide )
 						}
 				}
 
+	//
+	// Now decide how to handle it
+	// 
 			if ( circuitType != -1 )
 				{
 					switch ( circuitType )
@@ -94,8 +100,41 @@ int findSuitableCircuitToUse ( int whichSide )
 							case CIRCUIT_NORMAL:
 							case CIRCUIT_NORMAL_1:
 							case CIRCUIT_NORMAL_2:
-								circuitFound = true;
-								return i;
+								if ( LEFT_SIDE == whichSide)
+								{
+									if (POWER_YELLOW == as_getCellColor (i, whichSide))
+									{
+										mistakeChance = as_getCappedRandomNum ( 100 );
+										if (mistakeChance < chanceOfMistake (droidToTransferInto))
+										{
+											circuitFound = true;
+											return i;
+										}
+									}
+									if (POWER_PURPLE == as_getCellColor (i, whichSide))
+									{
+										circuitFound = true;
+										return i;
+									}
+								}
+								
+								if ( RIGHT_SIDE == whichSide)
+								{
+									if (POWER_PURPLE == as_getCellColor (i, whichSide))
+									{
+										mistakeChance = as_getCappedRandomNum ( 100 );
+										if (mistakeChance < chanceOfMistake (droidToTransferInto))
+										{
+											circuitFound = true;
+											return i;
+										}
+									}
+									if (POWER_YELLOW == as_getCellColor (i, whichSide))
+									{
+										circuitFound = true;
+										return i;
+									}
+								}
 //                            break;
 
 							case CIRCUIT_THREEQUARTERS:
@@ -110,8 +149,45 @@ int findSuitableCircuitToUse ( int whichSide )
 								break;
 
 							case CIRCUIT_TWO_INTO_ONE:
-								circuitFound = true;
-								return i - 1;	// Try to chhose the leg above this circuit??
+								if ( LEFT_SIDE == whichSide )	// YELLOW
+									{
+										if ( POWER_PURPLE == as_getCellColor ( i, whichSide ) )
+										{
+											// If the middle leg is not powered then chose the one above it
+											if ( true == as_circuitNotPowered ( i - 1, whichSide ) )
+											{
+												circuitFound = true;
+												return i - 1;	// Choose the leg above the middle one
+											}
+											// if the top leg is powered, then chose the bottom one
+											if ( false == as_circuitNotPowered (i + 1, whichSide))
+											{
+												circuitFound = true;
+												return i + 1;	// Choose the leg below the middle one
+											}
+											
+										}
+									}
+									
+								if ( RIGHT_SIDE == whichSide )	// PURPLE
+									{
+										if ( POWER_YELLOW == as_getCellColor ( i, whichSide ) )
+										{
+											// If the middle leg is not powered then chose the one above it
+											if ( true == as_circuitNotPowered ( i - 1, whichSide ) )
+											{
+												circuitFound = true;
+												return i - 1;	// Choose the leg above the middle one
+											}
+											// if the top leg is powered, then chose the bottom one
+											if ( false == as_circuitNotPowered (i + 1, whichSide))
+											{
+												circuitFound = true;
+												return i + 1;	// Choose the leg below the middle one
+											}
+											
+										}
+									}
 								break;
 
 							case CIRCUIT_SPLIT_HALF:

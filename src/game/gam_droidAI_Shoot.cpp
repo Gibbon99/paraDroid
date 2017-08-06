@@ -140,10 +140,10 @@ void gam_findChanceToShoot (int whichDroid)
     //
 
     if (false == shipLevel[currentLevel].droid[whichDroid].isAlive)
-	return;
+		return;
 
     if (false == dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].canShoot)
-	return;
+		return;
 
     //
     // Process how long droid remembers being shot for
@@ -152,13 +152,13 @@ void gam_findChanceToShoot (int whichDroid)
 	{
 	    shipLevel[currentLevel].droid[whichDroid].beenShotCountdown -= 1.0f * thinkInterval;
 	    if (shipLevel[currentLevel].droid[whichDroid].beenShotCountdown < 0.0f)
-		shipLevel[currentLevel].droid[whichDroid].beenShotByPlayer = false;
+			shipLevel[currentLevel].droid[whichDroid].beenShotByPlayer = false;
 	}
 
     if (true == shipLevel[currentLevel].droid[whichDroid].beenShotByPlayer)
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_beenShot;
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_beenShot;
     else
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_beenShot;
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_beenShot;
 
     //
     // Process how long droid remembers witnessing a shooting by the player
@@ -167,7 +167,7 @@ void gam_findChanceToShoot (int whichDroid)
 	{
 	    shipLevel[currentLevel].droid[whichDroid].witnessShootingCountDown -= 1.0f * thinkInterval;
 	    if (shipLevel[currentLevel].droid[whichDroid].witnessShootingCountDown < 0.0f)
-		shipLevel[currentLevel].droid[whichDroid].witnessShooting = false;
+			shipLevel[currentLevel].droid[whichDroid].witnessShooting = false;
 	}
 
     if (true == shipLevel[currentLevel].droid[whichDroid].witnessShooting)
@@ -176,16 +176,15 @@ void gam_findChanceToShoot (int whichDroid)
 	    shipLevel[currentLevel].droid[whichDroid].targetIndex = -1;
 	}
     else
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_witnessShoot;
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_witnessShoot;
 
     //
     // Is Droid healthy enough to engage in combat
     //
-    if (shipLevel[currentLevel].droid[whichDroid].currentHealth >
-        dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth / 2)
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_healthAmount;
+    if (shipLevel[currentLevel].droid[whichDroid].currentHealth > dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth / 2)
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_healthAmount;
     else
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_healthAmount;
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_healthAmount;
 
     //
     // Add the effect of the current alert level
@@ -193,31 +192,28 @@ void gam_findChanceToShoot (int whichDroid)
     switch (currentAlertLevel)
 	{
 	    case ALERT_GREEN_TILE:
-		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_greenFactor;
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_greenFactor;
 		break;
 
 	    case ALERT_YELLOW_TILE:
-		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_yellowFactor;
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_yellowFactor;
 		break;
 
 	    case ALERT_RED_TILE:
-		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_redFactor;
+			shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_redFactor;
 		break;
 	}
 
     //
-    // See if the player is visible or not
+    // See if the player is visible or not - enemy will not shoot unless can see player
     //
-    if (true == shipLevel[currentLevel].droid[whichDroid].visibleToPlayer)
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_playerVisible;
-    else
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_playerVisible;
-
+    if (false == shipLevel[currentLevel].droid[whichDroid].visibleToPlayer)
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot = 0.0f;
     //
     // Cap the chance to always above zero
     //
     if (shipLevel[currentLevel].droid[whichDroid].chanceToShoot < 0.0f)
-	shipLevel[currentLevel].droid[whichDroid].chanceToShoot = 0.0f;
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot = 0.0f;
 }
 
 //------------------------------------------------------------

@@ -250,7 +250,7 @@ int gam_addNewScore()
 
 	for ( int i = 0; i != SCORE_NUM_ENTRIES; i++ )
 		{
-			con_print ( true, false, "[ %i ] is [ %i ] higher than [ %i ]", i, newScore, scoreTable[i].score );
+			con_print ( true, false, "[ %i ] : [ %i ] is higher than [ %i ]", i, newScore, scoreTable[i].score );
 			if ( newScore >= scoreTable[i].score )
 				return i;
 		}
