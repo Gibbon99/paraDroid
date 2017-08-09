@@ -387,10 +387,12 @@ _hostScriptFunctions hostVariables[] =
 
 	{"float droidBeenShotValue", &droidBeenShotValue},
 	{"float witnessShootValue", &witnessShootValue},
+	{"float witnessTransferValue", &witnessTransferValue},
 	{"float ai_beenShot", &ai_beenShot},
 	{"float ai_healthAmount", &ai_healthAmount},
 	{"float ai_playerVisible", &ai_playerVisible},
 	{"float ai_witnessShoot", &ai_witnessShoot},
+	{"float ai_witnessTransfer", &ai_witnessTransfer},
 	{"float ai_greenFactor", &ai_greenFactor},
 	{"float ai_yellowFactor", &ai_yellowFactor},
 	{"float ai_redFactor", &ai_redFactor},

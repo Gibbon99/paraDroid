@@ -24,10 +24,12 @@ Copyright 2017 David Berry
 
 // ----------- Values set from script ------------
 float witnessShootValue;
+float witnessTransferValue;
 float ai_beenShot;
 float ai_healthAmount;
 float ai_playerVisible;
 float ai_witnessShoot;
+float ai_witnessTransfer;
 float ai_greenFactor;
 float ai_yellowFactor;
 float ai_redFactor;
@@ -168,16 +170,27 @@ void gam_findChanceToShoot (int whichDroid)
 	    shipLevel[currentLevel].droid[whichDroid].witnessShootingCountDown -= 1.0f * thinkInterval;
 	    if (shipLevel[currentLevel].droid[whichDroid].witnessShootingCountDown < 0.0f)
 			shipLevel[currentLevel].droid[whichDroid].witnessShooting = false;
-	}
 
-    if (true == shipLevel[currentLevel].droid[whichDroid].witnessShooting)
-	{
 	    shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_witnessShoot;
 	    shipLevel[currentLevel].droid[whichDroid].targetIndex = -1;
 	}
     else
 		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_witnessShoot;
 
+	//
+	// Process how long droid remembers witnessing a transfer by the player
+	//
+	if (true == shipLevel[currentLevel].droid[whichDroid].witnessTransfer)
+	{
+		shipLevel[currentLevel].droid[whichDroid].witnessTransferCountDown -= 1.0f * thinkInterval;
+		if (shipLevel[currentLevel].droid[whichDroid].witnessTransferCountDown < 0.0f)
+			shipLevel[currentLevel].droid[whichDroid].witnessTransfer = false;
+
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot += ai_witnessTransfer;
+	}
+	else
+		shipLevel[currentLevel].droid[whichDroid].chanceToShoot -= ai_witnessTransfer;
+		
     //
     // Is Droid healthy enough to engage in combat
     //
@@ -216,6 +229,26 @@ void gam_findChanceToShoot (int whichDroid)
 		shipLevel[currentLevel].droid[whichDroid].chanceToShoot = 0.0f;
 }
 
+//------------------------------------------------------------
+//
+// Flag if a droid witnesses the player transferring into another droid
+//
+// Called when a transfer succeeds
+void gam_processWitnessTransfer()
+//------------------------------------------------------------
+{
+	for (int i = 0; i != shipLevel[currentLevel].numDroids; i++)
+	{
+		if (true == shipLevel[currentLevel].droid[i].isAlive)
+		{
+			if (true == shipLevel[currentLevel].droid[i].visibleToPlayer)
+			{
+				shipLevel[currentLevel].droid[i].witnessTransfer = true;
+				shipLevel[currentLevel].droid[i].witnessTransferCountDown = witnessTransferValue;
+			}
+		}
+	}
+}
 //------------------------------------------------------------
 //
 // Flag if a droid witnesses the player shooting another droid

@@ -82,7 +82,7 @@ int ai_onFleeTile ( int whichDroid )
 	//
 	if ( true == shipLevel[currentLevel].droid[whichDroid].onFleeTile )
 		{
-#ifdef AI_HEALTH_DEBUG
+#ifdef AI_FLEE_DEBUG
 			con_print ( true, false, "Droid [ %i ] found Flee tile destination", whichDroid );
 #endif
 //			shipLevel[currentLevel].droid[whichDroid].currentHealth = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth;
@@ -120,14 +120,15 @@ int ai_reachedFleeTile ( int whichDroid )
 					shipLevel[currentLevel].droid[whichDroid].aStarInitDone = true;	// Reset as well
 					fleeTileLocation = ai_findNearestTile ( whichDroid, TILE_TYPE_FLEE );
 
+#ifdef AI_FLEE_DEBUG
 					con_print ( true, true, "Found flee tile World [ %3.2f %3.2f ]", fleeTileLocation.x, fleeTileLocation.y );
+#endif
 
 					fleeTileLocation.x = ( int ) fleeTileLocation.x / TILE_SIZE;
 					fleeTileLocation.y = ( int ) fleeTileLocation.y / TILE_SIZE;
 
+#ifdef AI_FLEE_DEBUG
 					con_print ( true, true, "Found flee tile Tile [ %3.2f %3.2f ]", fleeTileLocation.x, fleeTileLocation.y );
-
-#ifdef AI_HEALTH_DEBUG
 					con_print ( true, false, "[ %i ] - Starting AStar to find nearest flee tile", whichDroid );
 #endif
 					droidWorldPosTiles.x = ( int ) shipLevel[currentLevel].droid[whichDroid].worldPos.x / TILE_SIZE;
@@ -147,7 +148,7 @@ int ai_reachedFleeTile ( int whichDroid )
 			// Ask if the thread has finished creating the path and waypoints
 			if ( true == gam_AStarIsPathReady ( shipLevel[currentLevel].droid[whichDroid].aStarPathIndex ) )
 				{
-#ifdef AI_HEALTH_DEBUG
+#ifdef AI_FLEE_DEBUG
 					con_print ( true, false, "[ %i ] - Have not found the AStar destination", whichDroid );
 #endif
 					shipLevel[currentLevel].droid[whichDroid].foundFleeTile = true;
@@ -170,10 +171,9 @@ int ai_reachedFleeTile ( int whichDroid )
 //
 	if ( shipLevel[currentLevel].droid[whichDroid].ai_moveMode == AI_PATHFIND_END )
 		{
-#ifdef AI_HEALTH_DEBUG
+#ifdef AI_FLEE_DEBUG
 			con_print ( true, true, "[ %i ] - Droid has reached flee tile.", whichDroid );
 #endif
-
 			return AI_RESULT_SUCCESS;
 		}
 	else
@@ -188,12 +188,10 @@ int ai_reachedFleeTile ( int whichDroid )
 							shipLevel[currentLevel].droid[whichDroid].onFleeTile = true;
 							shipLevel[currentLevel].droid[whichDroid].foundFleeTile = false;
 							shipLevel[currentLevel].droid[whichDroid].aStarInitDone = false;
-							//if (shipLevel[currentLevel].droid[whichDroid].aStarPathIndex > -1)
-								gam_AStarRemovePath ( shipLevel[currentLevel].droid[whichDroid].aStarPathIndex, false );
+							gam_AStarRemovePath ( shipLevel[currentLevel].droid[whichDroid].aStarPathIndex, false );
 						}
 				}
 			return AI_RESULT_RUNNING;
 		}
-
 	return AI_RESULT_RUNNING;
 }

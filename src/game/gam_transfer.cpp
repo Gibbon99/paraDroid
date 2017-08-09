@@ -526,6 +526,7 @@ void trn_processTransferScreen ( float interpolate )
 					delayTransferIntro = TRANSFER_DELAY;
 					trn_copyDroidAttributes();
 					currentMode = MODE_TRANSFER_FINISH;
+					gam_processWitnessTransfer();
 				}
 			break;
 

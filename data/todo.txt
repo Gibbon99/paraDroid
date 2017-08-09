@@ -111,11 +111,9 @@ DONE - Speed affected by alert level ? - Green, all move slowly
 DONE - Fix speed settings for all droids - based on 001 relative - speed also affected by mass (weight)
 DONE - Use sound to skip through start beam onto ship
 DONE - Transfer AI - Needs reworking - not choosing two into one because single legs are wrong color
-
 REMOVED - Higher level droids will anticipate shot ( leading shot )
 
-Add in metric for witnessing a transfer by player to increase shoot chance
-Move bullets using physics
+DONE - Add in metric for witnessing a transfer by player to increase shoot chance
 
 BUGS
 ------
@@ -253,9 +251,11 @@ FIXED - Pause mode is handled correctly when window loses focus
 FIXED - Enemy bullet appearing in wrong spot - caused by leading shot??
 FIXED - Droids being destroyed with Disrupter when not visible
 FIXED - Level went dead with one 420 left after using Disrupter
-
 FIXED - Enemy droid witness shot while not visible
 FIXED - Transfer - enemy getting stuck on two into one when first leg is active
+
+FIXED - Bad keypress sound not working in terminal database view
+FIXED - Removed debugging console statements from ai_flee
 
 High score - text blank when just hitting confirm first time
 Find better way to handle action key when using a joystick

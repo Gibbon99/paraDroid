@@ -322,6 +322,7 @@ void as_initGameVars()
 	// Counter for how long droid remembers being shot
 	droidBeenShotValue = 3.0f;
 	witnessShootValue = 1.5f;
+	witnessTransferValue = 1.5f;
 
 	//
 	// Amounts to influence chance to shoot
@@ -329,6 +330,7 @@ void as_initGameVars()
 	ai_healthAmount = 0.3f;
 	ai_playerVisible = 0.2f;
 	ai_witnessShoot = 0.4f;
+	ai_witnessTransfer = 0.6f;
 	ai_greenFactor = 0.1f;
 	ai_yellowFactor = 0.2f;
 	ai_redFactor = 0.4f;

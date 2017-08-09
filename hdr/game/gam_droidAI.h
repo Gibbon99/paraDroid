@@ -98,11 +98,13 @@ void drd_clearHadCollidedFlag();
 
 extern float		droidBeenShotValue;
 extern float		witnessShootValue;
+extern float		witnessTransferValue;
 
 extern float		ai_beenShot;
 extern float		ai_healthAmount;
 extern float		ai_playerVisible;
 extern float		ai_witnessShoot;
+extern float		ai_witnessTransfer;
 extern float		ai_greenFactor;
 extern float		ai_yellowFactor;
 extern float		ai_redFactor;
@@ -210,6 +212,9 @@ int ai_findBulletDest ( int whichDroid );
 
 // Take the shot
 int ai_shootBullet ( int whichDroid );
+
+// Flag if a droid witnesses the player transferring into another droid
+void gam_processWitnessTransfer();
 
 //-------------------------------------------------------------
 

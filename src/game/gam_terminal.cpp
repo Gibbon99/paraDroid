@@ -69,7 +69,6 @@ static int 	textCounter = 0;
 //------------------------------------------------------------
 //
 // Get the next droid model
-
 bool gam_loadDroidModel(int whichDroid)
 //------------------------------------------------------------
 {
@@ -113,8 +112,6 @@ void gam_drawDB_Droid(float posX, float posY)
 		dbImagePosition.x = posX;
 		dbImagePosition.y = posY;
 	}
-//	dbTexWidth = al_get_bitmap_width(image[dbImage].image) / NUM_DB_FRAMES;
-//	dbTexHeight = al_get_bitmap_height(image[dbImage].image);
 	//
 	// show loaded image
 	//
@@ -124,7 +121,6 @@ void gam_drawDB_Droid(float posX, float posY)
 //------------------------------------------------------------
 //
 // Move to the next droid in the database
-
 void gam_getNextDroid()
 //------------------------------------------------------------
 {
@@ -140,12 +136,13 @@ void gam_getNextDroid()
 		else
 			sys_playSound(SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE);
 	}
+		else
+			sys_playSound(SND_KEYPRESS_BAD, SND_PAN_CENTER, ALLEGRO_PLAYMODE_ONCE);
 }
 
 //------------------------------------------------------------
 //
 // Move to the previous droid in the database
-
 void gam_getPreviousDroid()
 //------------------------------------------------------------
 {
@@ -163,7 +160,6 @@ void gam_getPreviousDroid()
 //----------------------------------------------------------
 //
 // Animate the 3d database Image
-
 void gam_animateDB_Droid()
 //----------------------------------------------------------
 {

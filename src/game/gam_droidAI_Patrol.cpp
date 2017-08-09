@@ -137,15 +137,6 @@ int ai_moveDroidToWaypoint ( int whichDroid )
 
 	wayPointDistance = cpvdist ( shipLevel[currentLevel].droid[whichDroid].destinationCoords, shipLevel[currentLevel].droid[whichDroid].worldPos );
 
-	//
-	// TODO: Make this a setting - droids slow down closer to the waypoint
-	//
-	// Slow down in Green - not in yellow or red alert?
-	//
-	//
-	// Droids sitting on healing tile don't move as their velocity is too low
-	//
-
 	if ( wayPointDistance < wayPointDestinationSize + 20 )
 		{
 			shipLevel[currentLevel].droid[whichDroid].currentSpeed = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxSpeed * 0.5f;

@@ -2,7 +2,7 @@
 
 
 [     0 ] : Logfile: Log file opened:
-[     0 ] : 06-08-2017	17:57:57
+[     0 ] : 09-08-2017	20:06:58
 [     0 ] : Logfile: Logfile started...
 [     0 ] : Node [ AI_SHOOT ] added. Num Children for [ ROOT_NODE ] now [ 1 ]
 [     0 ] : Child index set to [ 1 ]
@@ -218,10 +218,12 @@
 [     0 ] : Script: Registered variable - [ int currentLanguage ]
 [     0 ] : Script: Registered variable - [ float droidBeenShotValue ]
 [     0 ] : Script: Registered variable - [ float witnessShootValue ]
+[     0 ] : Script: Registered variable - [ float witnessTransferValue ]
 [     0 ] : Script: Registered variable - [ float ai_beenShot ]
 [     0 ] : Script: Registered variable - [ float ai_healthAmount ]
 [     0 ] : Script: Registered variable - [ float ai_playerVisible ]
 [     0 ] : Script: Registered variable - [ float ai_witnessShoot ]
+[     0 ] : Script: Registered variable - [ float ai_witnessTransfer ]
 [     0 ] : Script: Registered variable - [ float ai_greenFactor ]
 [     0 ] : Script: Registered variable - [ float ai_yellowFactor ]
 [     0 ] : Script: Registered variable - [ float ai_redFactor ]
@@ -308,40 +310,40 @@
 [     0 ] : Size of script [ 78808 ] - [ gui_main.sc ]
 [     0 ] : Size of script [ 6312 ] - [ transferGame.sc ]
 [     0 ] : Size of script [ 7394 ] - [ transferDroidAI.sc ]
-[     0 ] : Size of script [ 9687 ] - [ startup.sc ]
+[     0 ] : Size of script [ 9745 ] - [ startup.sc ]
 [     0 ] : Size of script [ 24825 ] - [ textEnglish.sc ]
 [     0 ] : Size of script [ 492 ] - [ textItalian.sc ]
 [     0 ] : Number of functions in script [ 13 ]
-[     0 ] : Func ID for [ void as_initGameVars() ] - [ 10268608 ]
-[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 10229440 ]
-[     0 ] : Func ID for [ void as_shutdown() ] - [ 10147712 ]
-[     0 ] : Func ID for [ void as_loadFonts() ] - [ 10267136 ]
-[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 10246512 ]
-[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 10267872 ]
-[     0 ] : Func ID for [ void as_setdbValues() ] - [ 10245776 ]
-[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 10249232 ]
-[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 10265888 ]
-[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 10179056 ]
-[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 10269344 ]
-[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 10232752 ]
-[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 10231264 ]
+[     0 ] : Func ID for [ void as_initGameVars() ] - [ 40247472 ]
+[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 40208320 ]
+[     0 ] : Func ID for [ void as_shutdown() ] - [ 40126400 ]
+[     0 ] : Func ID for [ void as_loadFonts() ] - [ 40246000 ]
+[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 40225392 ]
+[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 40246736 ]
+[     0 ] : Func ID for [ void as_setdbValues() ] - [ 40224656 ]
+[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 40228144 ]
+[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 40244752 ]
+[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 40157904 ]
+[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 40248208 ]
+[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 40211632 ]
+[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 40210144 ]
 [     0 ] : [ No joysticks found. ] [ Use Keyboard. ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10227472 ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 10227472 ]
-[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 10226768 ]
-[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 10226064 ]
-[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 10225024 ]
-[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 10224224 ]
-[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 10223376 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 40206352 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 40206352 ]
+[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 40205648 ]
+[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 40204944 ]
+[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 40203904 ]
+[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 40203104 ]
+[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 40202256 ]
 [     0 ] : INFO: Object [ 50.00 60.00 ]
-[     0 ] : Allegro Version: 5.2.2 Release 0
+[     0 ] : Allegro Version: 5.2.2 Release 1
 [     0 ] : INFO: Keyboard installed.
-[     1 ] : INFO: Allegro Font Version: 5.2.2 Release 0
+[     1 ] : INFO: Allegro Font Version: 5.2.2 Release 1
 [     1 ] : INFO: Image addon installed.
 [     1 ] : INFO: Primitives addon installed.
 [     1 ] : INFO: Joysticks installed.
-[     1 ] : INFO: Allegro TTF Version: 5.2.2 Release 0
-[     1 ] : Sound started: 5.2.2 Release: 0
+[     1 ] : INFO: Allegro TTF Version: 5.2.2 Release 1
+[     1 ] : Sound started: 5.2.2 Release: 1
 [     1 ] : INFO: Got hardware accelerated backing bitmap
 [     1 ] : File [ Digital.ttf ] exists.
 [     1 ] : File [ Digital.ttf ] exists.
@@ -1137,11 +1139,11 @@
 [     1 ] : Loaded image [ alltiles_128.bmp ]
 [     1 ] : Loaded image [ particleSmoke.png ]
 [     1 ] : Loaded image [ particleSpark.png ]
-[     1 ] : Loaded image [ static_1.png ]
-[     1 ] : Loaded image [ static_2.png ]
-[     1 ] : Loaded image [ static_3.png ]
-[     1 ] : Loaded image [ static_4.png ]
-[     1 ] : Loaded image [ static_5.png ]
+[     2 ] : Loaded image [ static_1.png ]
+[     2 ] : Loaded image [ static_2.png ]
+[     2 ] : Loaded image [ static_3.png ]
+[     2 ] : Loaded image [ static_4.png ]
+[     2 ] : Loaded image [ static_5.png ]
 [     2 ] : Loaded image [ static_6.png ]
 [     2 ] : Loaded image [ static_7.png ]
 [     2 ] : Loaded image [ static_8.png ]
@@ -1166,11 +1168,11 @@
 [     2 ] : Loaded ship level [ Stores ]
 [     2 ] : Loaded ship level [ Research ]
 [     2 ] : Loaded ship level [ Reactor ]
-[     2 ] : Loaded ship level [ Airlock ]
-[     2 ] : Loaded ship level [ Bridge ]
-[     2 ] : Loaded ship level [ Turrent 1 ]
-[     2 ] : Loaded ship level [ Turrent 2 ]
-[     2 ] : Loaded ship level [ Observation ]
+[     3 ] : Loaded ship level [ Airlock ]
+[     3 ] : Loaded ship level [ Bridge ]
+[     3 ] : Loaded ship level [ Turrent 1 ]
+[     3 ] : Loaded ship level [ Turrent 2 ]
+[     3 ] : Loaded ship level [ Observation ]
 [     3 ] : Loaded sample [ collosion1.wav ]
 [     3 ] : Loaded sample [ endTransmission1.wav ]
 [     3 ] : Loaded sample [ greenAlert.wav ]
@@ -1207,81 +1209,174 @@
 [     5 ] : Loaded image [ retro_blue_128.bmp ]
 [     5 ] : Loaded tile set [ retro_blue.bmp ]
 [     5 ] : Loaded tile set [ retro_blue_128.bmp ]
-[    12 ] : Loaded image [ retro_blue.bmp ]
-[    12 ] : Loaded image [ retro_blue_128.bmp ]
-[    12 ] : Loaded tile set [ retro_blue.bmp ]
-[    12 ] : Loaded tile set [ retro_blue_128.bmp ]
-[    12 ] : Loaded image [ future_blue.bmp ]
-[    12 ] : Loaded image [ future_blue_128.bmp ]
-[    12 ] : Loaded tile set [ future_blue.bmp ]
-[    12 ] : Loaded tile set [ future_blue_128.bmp ]
-[    12 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 256 ]
-[    12 ] : Loaded image [ future_blue.bmp ]
-[    12 ] : Loaded image [ future_blue_128.bmp ]
-[    12 ] : Loaded tile set [ future_blue.bmp ]
-[    12 ] : Loaded tile set [ future_blue_128.bmp ]
-[    23 ] : Load droid model - image name : db_571.jpg
-[    23 ] : Loaded image [ db_571.jpg ]
-[    48 ] : Load droid model - image name : db_999.jpg
-[    48 ] : Loaded image [ db_999.jpg ]
-[    53 ] : Checking score [ 0 ]
-[    53 ] : [ 0 ] is [ 0 ] higher than [ 0 ]
-[    53 ] : Remove physics objects for droid [ 0 ]
-[    53 ] : Remove physics objects for droid [ 1 ]
-[    53 ] : Removing player physics shape and body.
-[    57 ] : Checking score [ 0 ]
-[    57 ] : [ 0 ] is [ 0 ] higher than [ 0 ]
-[    57 ] : Setting label for - [ scoreInitialsOne ]
-[    57 ] : Setting label for - [ scoreInitialsTwo ]
-[    57 ] : Setting label for - [ scoreInitialsThree ]
-[    57 ] : Setting label for - [ scoreInitialsFour ]
-[    57 ] : Setting label for - [ scoreInitialsFive ]
-[    57 ] : Setting label for - [ scoreScoreOne ]
-[    57 ] : Setting label for - [ scoreScoreTwo ]
-[    57 ] : Setting label for - [ scoreScoreThree ]
-[    57 ] : Setting label for - [ scoreScoreFour ]
-[    57 ] : Setting label for - [ scoreScoreFive ]
-[    61 ] : Loaded image [ future_blue.bmp ]
-[    61 ] : Loaded image [ future_blue_128.bmp ]
-[    61 ] : Loaded tile set [ future_blue.bmp ]
-[    61 ] : Loaded tile set [ future_blue_128.bmp ]
-[    61 ] : Loaded image [ future_blue.bmp ]
-[    61 ] : Loaded image [ future_blue_128.bmp ]
-[    61 ] : Loaded tile set [ future_blue.bmp ]
-[    61 ] : Loaded tile set [ future_blue_128.bmp ]
-[    61 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 288 ]
-[    61 ] : Loaded image [ future_blue.bmp ]
-[    61 ] : Loaded image [ future_blue_128.bmp ]
-[    61 ] : Loaded tile set [ future_blue.bmp ]
-[    61 ] : Loaded tile set [ future_blue_128.bmp ]
-[    73 ] : Load droid model - image name : db_821.jpg
-[    73 ] : Loaded image [ db_821.jpg ]
-[   114 ] : Load droid model - image name : db_999.jpg
-[   114 ] : Loaded image [ db_999.jpg ]
-[   119 ] : Checking score [ 0 ]
-[   119 ] : [ 0 ] is [ 0 ] higher than [ 0 ]
-[   119 ] : Remove physics objects for droid [ 0 ]
-[   119 ] : Remove physics objects for droid [ 1 ]
-[   119 ] : Remove physics objects for droid [ 2 ]
-[   119 ] : Remove physics objects for droid [ 3 ]
-[   119 ] : Removing player physics shape and body.
-[   122 ] : Checking score [ 0 ]
-[   122 ] : [ 0 ] is [ 0 ] higher than [ 0 ]
-[   122 ] : Setting label for - [ scoreInitialsOne ]
-[   122 ] : Setting label for - [ scoreInitialsTwo ]
-[   122 ] : Setting label for - [ scoreInitialsThree ]
-[   122 ] : Setting label for - [ scoreInitialsFour ]
-[   122 ] : Setting label for - [ scoreInitialsFive ]
-[   122 ] : Setting label for - [ scoreScoreOne ]
-[   122 ] : Setting label for - [ scoreScoreTwo ]
-[   122 ] : Setting label for - [ scoreScoreThree ]
-[   122 ] : Setting label for - [ scoreScoreFour ]
-[   122 ] : Setting label for - [ scoreScoreFive ]
-[   125 ] : Profile - Average time for tiles [ 0.000024 ]
-[   125 ] : Error: Could not save config values to file [ config.ini ]
-[   125 ] : Keybind: Info: Key states saved to file.
-[   125 ] : Logfile: Log file closed:
-[   125 ] : 06-08-2017	18:00:03
-[   125 ] : -----------------------------------------------------------------------------
+[    16 ] : Loaded image [ retro_blue.bmp ]
+[    16 ] : Loaded image [ retro_blue_128.bmp ]
+[    16 ] : Loaded tile set [ retro_blue.bmp ]
+[    16 ] : Loaded tile set [ retro_blue_128.bmp ]
+[    16 ] : Loaded image [ future_blue.bmp ]
+[    16 ] : Loaded image [ future_blue_128.bmp ]
+[    16 ] : Loaded tile set [ future_blue.bmp ]
+[    16 ] : Loaded tile set [ future_blue_128.bmp ]
+[    16 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 352 ]
+[    16 ] : Lift [ 1 ] PosX [ 1344 ] PosY [ 672 ]
+[    16 ] : Loaded image [ future_blue.bmp ]
+[    16 ] : Loaded image [ future_blue_128.bmp ]
+[    16 ] : Loaded tile set [ future_blue.bmp ]
+[    16 ] : Loaded tile set [ future_blue_128.bmp ]
+[    27 ] : Remove physics objects for droid [ 0 ]
+[    27 ] : Remove physics objects for droid [ 1 ]
+[    27 ] : Remove physics objects for droid [ 2 ]
+[    27 ] : Remove physics objects for droid [ 3 ]
+[    27 ] : Remove physics objects for droid [ 4 ]
+[    27 ] : Remove physics objects for droid [ 5 ]
+[    27 ] : Remove physics objects for droid [ 6 ]
+[    27 ] : Remove physics objects for droid [ 7 ]
+[    27 ] : Remove physics objects for droid [ 8 ]
+[    27 ] : Remove physics objects for droid [ 9 ]
+[    27 ] : Tunnel in use [ 1 ]
+[    31 ] : Lift [ 0 ] PosX [ 352 ] PosY [ 352 ]
+[    31 ] : Loaded image [ future_blue.bmp ]
+[    31 ] : Loaded image [ future_blue_128.bmp ]
+[    31 ] : Loaded tile set [ future_blue.bmp ]
+[    31 ] : Loaded tile set [ future_blue_128.bmp ]
+[    37 ] : Load droid model - image name : db_001.jpg
+[    37 ] : Loaded image [ db_001.jpg ]
+[    39 ] : Load droid model - image name : db_420.jpg
+[    39 ] : Loaded image [ db_420.jpg ]
+[    58 ] : About to free spark particle [ 54 ]
+[    58 ] : About to free spark particle [ 53 ]
+[    58 ] : About to free spark particle [ 52 ]
+[    58 ] : About to free spark particle [ 51 ]
+[    58 ] : About to free spark particle [ 50 ]
+[    58 ] : About to free spark particle [ 49 ]
+[    58 ] : About to free spark particle [ 48 ]
+[    58 ] : About to free spark particle [ 47 ]
+[    58 ] : About to free spark particle [ 46 ]
+[    58 ] : About to free spark particle [ 45 ]
+[    58 ] : About to free spark particle [ 44 ]
+[    58 ] : About to free spark particle [ 43 ]
+[    58 ] : About to free spark particle [ 42 ]
+[    58 ] : About to free spark particle [ 41 ]
+[    58 ] : About to free spark particle [ 40 ]
+[    58 ] : About to free spark particle [ 39 ]
+[    58 ] : About to free spark particle [ 38 ]
+[    58 ] : About to free spark particle [ 37 ]
+[    58 ] : About to free spark particle [ 36 ]
+[    58 ] : About to free spark particle [ 35 ]
+[    58 ] : About to free spark particle [ 34 ]
+[    58 ] : About to free spark particle [ 33 ]
+[    58 ] : About to free spark particle [ 32 ]
+[    58 ] : About to free spark particle [ 31 ]
+[    58 ] : About to free spark particle [ 30 ]
+[    58 ] : About to free spark particle [ 29 ]
+[    58 ] : About to free spark particle [ 28 ]
+[    58 ] : About to free spark particle [ 27 ]
+[    58 ] : About to free spark particle [ 26 ]
+[    58 ] : About to free spark particle [ 25 ]
+[    58 ] : About to free spark particle [ 24 ]
+[    58 ] : About to free spark particle [ 23 ]
+[    58 ] : About to free spark particle [ 22 ]
+[    58 ] : About to free spark particle [ 21 ]
+[    58 ] : About to free spark particle [ 20 ]
+[    58 ] : About to free spark particle [ 19 ]
+[    58 ] : About to free spark particle [ 18 ]
+[    58 ] : About to free spark particle [ 17 ]
+[    58 ] : About to free spark particle [ 16 ]
+[    58 ] : About to free spark particle [ 15 ]
+[    58 ] : About to free spark particle [ 14 ]
+[    58 ] : About to free spark particle [ 13 ]
+[    58 ] : About to free spark particle [ 12 ]
+[    58 ] : About to free spark particle [ 11 ]
+[    58 ] : About to free spark particle [ 10 ]
+[    58 ] : About to free spark particle [ 9 ]
+[    58 ] : About to free spark particle [ 8 ]
+[    58 ] : About to free spark particle [ 7 ]
+[    58 ] : About to free spark particle [ 6 ]
+[    58 ] : About to free spark particle [ 5 ]
+[    58 ] : About to free spark particle [ 4 ]
+[    58 ] : About to free spark particle [ 3 ]
+[    58 ] : About to free spark particle [ 2 ]
+[    58 ] : About to free spark particle [ 1 ]
+[    59 ] : Remove physics objects for droid [ 7 ]
+[    71 ] : Load droid model - image name : db_420.jpg
+[    71 ] : Loaded image [ db_420.jpg ]
+[    74 ] : Load droid model - image name : db_329.jpg
+[    74 ] : Loaded image [ db_329.jpg ]
+[    74 ] : Load droid model - image name : db_302.jpg
+[    74 ] : Loaded image [ db_302.jpg ]
+[    74 ] : Load droid model - image name : db_296.jpg
+[    74 ] : Loaded image [ db_296.jpg ]
+[    74 ] : Load droid model - image name : db_249.jpg
+[    74 ] : Loaded image [ db_249.jpg ]
+[    74 ] : Load droid model - image name : db_247.jpg
+[    74 ] : Loaded image [ db_247.jpg ]
+[    75 ] : Load droid model - image name : db_139.jpg
+[    75 ] : Loaded image [ db_139.jpg ]
+[    75 ] : Load droid model - image name : db_123.jpg
+[    75 ] : Loaded image [ db_123.jpg ]
+[    75 ] : Load droid model - image name : db_001.jpg
+[    75 ] : Loaded image [ db_001.jpg ]
+[    76 ] : Load droid model - image name : db_123.jpg
+[    76 ] : Loaded image [ db_123.jpg ]
+[    76 ] : Load droid model - image name : db_139.jpg
+[    76 ] : Loaded image [ db_139.jpg ]
+[    76 ] : Load droid model - image name : db_247.jpg
+[    76 ] : Loaded image [ db_247.jpg ]
+[    76 ] : Load droid model - image name : db_249.jpg
+[    76 ] : Loaded image [ db_249.jpg ]
+[    77 ] : Load droid model - image name : db_296.jpg
+[    77 ] : Loaded image [ db_296.jpg ]
+[    77 ] : Load droid model - image name : db_302.jpg
+[    77 ] : Loaded image [ db_302.jpg ]
+[    77 ] : Load droid model - image name : db_329.jpg
+[    77 ] : Loaded image [ db_329.jpg ]
+[    77 ] : Load droid model - image name : db_420.jpg
+[    77 ] : Loaded image [ db_420.jpg ]
+[    79 ] : Load droid model - image name : db_329.jpg
+[    79 ] : Loaded image [ db_329.jpg ]
+[    79 ] : Load droid model - image name : db_302.jpg
+[    79 ] : Loaded image [ db_302.jpg ]
+[    80 ] : Load droid model - image name : db_329.jpg
+[    80 ] : Loaded image [ db_329.jpg ]
+[    80 ] : Load droid model - image name : db_420.jpg
+[    80 ] : Loaded image [ db_420.jpg ]
+[    81 ] : Load droid model - image name : db_329.jpg
+[    81 ] : Loaded image [ db_329.jpg ]
+[    81 ] : Load droid model - image name : db_302.jpg
+[    81 ] : Loaded image [ db_302.jpg ]
+[    81 ] : Load droid model - image name : db_296.jpg
+[    81 ] : Loaded image [ db_296.jpg ]
+[    81 ] : Load droid model - image name : db_249.jpg
+[    81 ] : Loaded image [ db_249.jpg ]
+[    81 ] : Load droid model - image name : db_247.jpg
+[    81 ] : Loaded image [ db_247.jpg ]
+[    82 ] : Load droid model - image name : db_139.jpg
+[    82 ] : Loaded image [ db_139.jpg ]
+[    82 ] : Load droid model - image name : db_123.jpg
+[    82 ] : Loaded image [ db_123.jpg ]
+[    82 ] : Load droid model - image name : db_001.jpg
+[    82 ] : Loaded image [ db_001.jpg ]
+[    83 ] : Load droid model - image name : db_123.jpg
+[    83 ] : Loaded image [ db_123.jpg ]
+[    83 ] : Load droid model - image name : db_139.jpg
+[    83 ] : Loaded image [ db_139.jpg ]
+[    83 ] : Load droid model - image name : db_247.jpg
+[    83 ] : Loaded image [ db_247.jpg ]
+[    83 ] : Load droid model - image name : db_249.jpg
+[    83 ] : Loaded image [ db_249.jpg ]
+[    83 ] : Load droid model - image name : db_296.jpg
+[    83 ] : Loaded image [ db_296.jpg ]
+[    84 ] : Load droid model - image name : db_302.jpg
+[    84 ] : Loaded image [ db_302.jpg ]
+[    84 ] : Load droid model - image name : db_329.jpg
+[    84 ] : Loaded image [ db_329.jpg ]
+[    84 ] : Load droid model - image name : db_420.jpg
+[    84 ] : Loaded image [ db_420.jpg ]
+[   105 ] : Profile - Average time for tiles [ 0.000206 ]
+[   105 ] : Error: Could not save config values to file [ config.ini ]
+[   105 ] : Keybind: Info: Key states saved to file.
+[   105 ] : Logfile: Log file closed:
+[   105 ] : 09-08-2017	20:08:44
+[   105 ] : -----------------------------------------------------------------------------
 
 

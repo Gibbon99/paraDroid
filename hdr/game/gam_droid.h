@@ -69,10 +69,12 @@ struct _droid
 	float       ignoreCollisionsCounter;
 	int			collisionCount;		// how many collision have occured to ignore them
 	bool		witnessShooting;
+	bool		witnessTransfer;
 	float		chanceToShoot;
 	bool		beenShotByPlayer;
 	float		beenShotCountdown;
 	float		witnessShootingCountDown;
+	float		witnessTransferCountDown;
 	int			targetIndex;		// Which droid shot this droid
 
 	cpVect      originPosition;     // Remember this to return to
