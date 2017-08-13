@@ -38,17 +38,22 @@ float		droidBeenShotValue;
 void drd_updateDroidPosition ( int whichDroid )
 //---------------------------------------------------------------
 {
-	if (false == processedPhysics)
-		return;
-
 	cpVect		tempPosition;
 
-	tempPosition = cpBodyGetPosition ( shipLevel[currentLevel].droid[whichDroid].body );
+	if (false == processedPhysics)
+		return;
+	//
+	// Check body is valid
+	//
+	if ( cpTrue == cpSpaceContainsBody (space, shipLevel[currentLevel].droid[whichDroid].body) )
+		tempPosition = cpBodyGetPosition (shipLevel[currentLevel].droid[whichDroid].body);
+	else
+		printf ("ERROR: Attempting to get position from invalid body - droid [ %i ]\n", whichDroid);
 
 	if ( (tempPosition.x < 0) || (tempPosition.y < 0))
 	{
 		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", whichDroid, currentLevel, static_cast<int>(frameCount));
-		return;
+//		return;
 	}
 
 	shipLevel[currentLevel].droid[whichDroid].worldPos = tempPosition;

@@ -695,11 +695,11 @@ void drd_processDroidAI ( int whichLevel, float delayInterval )
 
 					gam_droidWeaponCharge ( currentLevel, i );
 
-					drd_getOverWhichTile ( i );
+// Not used anymore - remove
+//					drd_getOverWhichTile ( i );
 
 					drd_updateDroidPosition ( i );
 				}
-
 			gam_animateDroid ( whichLevel, i, delayInterval );
 		}
 }
