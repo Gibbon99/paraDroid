@@ -25,7 +25,6 @@ struct _droid
 	int			currentHealth;
 	int			wayPointIndex;
 	int			wayPointDirection;
-	int			overTileMiddle;
 
 	float		currentSpeed;
 	cpVect		worldPos;
@@ -125,7 +124,7 @@ int gam_isColliding(int whichDroid);
 void gam_initDroidPhysics(int whichlevel, int previousLevel);
 
 // Which tile is the droid over
-void drd_getOverWhichTile(int whichDroid);
+//void drd_getOverWhichTile(int whichDroid);
 
 // See if this droid collides with another droids
 bool gam_checkDroidToDroidCollision(int whichLevel, int whichDroid);
@@ -149,7 +148,7 @@ void gam_droidWeaponCharge(int whichLevel, int whichDroid);
 void gam_processIgnoreCollisions(int whichLevel, int whichDroid);
 
 // Stop droid moving and movement
-void gam_stopDroidMovement(int whichLevel, int whichDroid);
+// TODO: Remove void gam_stopDroidMovement(int whichLevel, int whichDroid);
 
 // Increment the collision count
 // this is used to see if the droid should start ignoring collisions after having too many

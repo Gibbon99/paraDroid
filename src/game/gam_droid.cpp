@@ -39,6 +39,10 @@ void drd_updateDroidPosition ( int whichDroid )
 //---------------------------------------------------------------
 {
 	cpVect		tempPosition;
+	cpVect		maxWorldSize;
+
+	maxWorldSize.x = shipLevel[currentLevel].levelDimensions.x * TILE_SIZE;
+	maxWorldSize.y = shipLevel[currentLevel].levelDimensions.y * TILE_SIZE;
 
 	if (false == processedPhysics)
 		return;
@@ -48,12 +52,15 @@ void drd_updateDroidPosition ( int whichDroid )
 	if ( cpTrue == cpSpaceContainsBody (space, shipLevel[currentLevel].droid[whichDroid].body) )
 		tempPosition = cpBodyGetPosition (shipLevel[currentLevel].droid[whichDroid].body);
 	else
+	{
 		printf ("ERROR: Attempting to get position from invalid body - droid [ %i ]\n", whichDroid);
+		return;
+	}
 
-	if ( (tempPosition.x < 0) || (tempPosition.y < 0))
+	if ( (tempPosition.x < 0) || (tempPosition.y < 0) || (tempPosition.x > maxWorldSize.x) || (tempPosition.y > maxWorldSize.y) )
 	{
 		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", whichDroid, currentLevel, static_cast<int>(frameCount));
-//		return;
+		return;
 	}
 
 	shipLevel[currentLevel].droid[whichDroid].worldPos = tempPosition;
@@ -245,41 +252,6 @@ void gam_initDroidValues ( int whichLevel )
 
 //-----------------------------------------------------------------------------
 //
-// Which tile is the droid over
-void drd_getOverWhichTile ( int whichDroid )
-//-----------------------------------------------------------------------------
-{
-	int tempPosX, tempPosY;
-	int	tileIndex = 0;
-
-	return;
-
-	if (false == processedPhysics)
-		return;
-
-	//
-	// Now get which tile we are over
-	tempPosX = ( int ) shipLevel[currentLevel].droid[whichDroid].worldPos.x / TILE_SIZE;
-	tempPosY = ( int ) shipLevel[currentLevel].droid[whichDroid].worldPos.y / TILE_SIZE;
-
-	if ( tempPosX < 0 )
-		{
-			printf ( "Error: X [ %i ] Y [ %i ]\n", tempPosX, tempPosY );
-			printf ( "World [ %3.2f : %3.2f ]\n", shipLevel[currentLevel].droid[whichDroid].worldPos.x, shipLevel[currentLevel].droid[whichDroid].worldPos.y );
-			return;
-		}
-	else
-		{
-		tileIndex = (tempPosY * (shipLevel[currentLevel].levelDimensions.x) + tempPosX);
-		if (tileIndex < (int)shipLevel[currentLevel].tiles.size ())
-			shipLevel[currentLevel].droid[whichDroid].overTileMiddle = shipLevel[currentLevel].tiles[tileIndex];
-		else
-			printf ("Error: drd_getOverWhichTile index larger than vector size.\n");
-		}
-}
-
-//-----------------------------------------------------------------------------
-//
 // Draw all the enemy droids on the level
 void gam_drawAllDroids ( int whichLevel )
 //-----------------------------------------------------------------------------
@@ -424,7 +396,7 @@ void gam_animateDroid ( int whichLevel, int whichDroid, float delayInterval )
 //-----------------------------------------------------------------------------
 //
 // Stop droid moving and movement
-
+// TODO: Remove
 void gam_stopDroidMovement ( int whichLevel, int whichDroid )
 //-----------------------------------------------------------------------------
 {
