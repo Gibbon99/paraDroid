@@ -29,7 +29,7 @@ bool				loadingThreadHasFinished;
 //
 // Run all the loading etc in this function as a thread
 //void *sys_runLoadThread ( ALLEGRO_THREAD *thread, void *arg )
-void sys_runLoadThread ()
+void *sys_runLoadThread ( ALLEGRO_THREAD *thread, void *arg )
 //-----------------------------------------------------------------------------
 {
 	al_set_physfs_file_interface();	// Allow reading files from this thread
@@ -72,7 +72,7 @@ void sys_runLoadThread ()
 
 	loadingThreadHasFinished = true;
 
-	return 0;
+	return NULL;
 }
 
 //-----------------------------------------------------------------------------

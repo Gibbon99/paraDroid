@@ -247,6 +247,8 @@ void drd_getOverWhichTile ( int whichDroid )
 	int tempPosX, tempPosY;
 	int	tileIndex = 0;
 
+	return;
+
 	if (false == processedPhysics)
 		return;
 
