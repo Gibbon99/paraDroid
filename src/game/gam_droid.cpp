@@ -40,30 +40,41 @@ void drd_updateDroidPosition ( int whichDroid )
 {
 	cpVect		tempPosition;
 	cpVect		maxWorldSize;
+	static int frameCount = 0;
+
+	if ( false == processedPhysics )
+		return;
+
+	if ( 0 == whichDroid )
+	{
+		frameCount++;
+		printf ("Frame [ %i ] Pos [ %3.3f %3.3f ]\n", shipLevel[currentLevel].droid[whichDroid].worldPos.x, shipLevel[currentLevel].droid[whichDroid].worldPos.y);
+	}
 
 	maxWorldSize.x = shipLevel[currentLevel].levelDimensions.x * TILE_SIZE;
 	maxWorldSize.y = shipLevel[currentLevel].levelDimensions.y * TILE_SIZE;
 
-	if (false == processedPhysics)
-		return;
 	//
 	// Check body is valid
 	//
 	if ( cpTrue == cpSpaceContainsBody (space, shipLevel[currentLevel].droid[whichDroid].body) )
+	{
 		tempPosition = cpBodyGetPosition (shipLevel[currentLevel].droid[whichDroid].body);
+
+		if ( (tempPosition.x < 0) || (tempPosition.y < 0) || (tempPosition.x > maxWorldSize.x) || (tempPosition.y > maxWorldSize.y) )
+		{
+			printf ("ERROR: Setting invalid [ %i ] worldPos [ %3.3f %3.3f ] from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", 
+				shipLevel[currentLevel].droid[whichDroid].body, tempPosition.x, tempPosition.y, whichDroid, currentLevel, static_cast<int>(frameCount));
+			return;
+		}
+
+		shipLevel[currentLevel].droid[whichDroid].worldPos = tempPosition;
+	}
 	else
 	{
 		printf ("ERROR: Attempting to get position from invalid body - droid [ %i ]\n", whichDroid);
 		return;
 	}
-
-	if ( (tempPosition.x < 0) || (tempPosition.y < 0) || (tempPosition.x > maxWorldSize.x) || (tempPosition.y > maxWorldSize.y) )
-	{
-		printf("ERROR: Setting invalid worldPos from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", whichDroid, currentLevel, static_cast<int>(frameCount));
-		return;
-	}
-
-	shipLevel[currentLevel].droid[whichDroid].worldPos = tempPosition;
 }
 
 //---------------------------------------------------------------
