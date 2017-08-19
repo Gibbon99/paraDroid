@@ -46,6 +46,7 @@ cpCollisionHandler		*handlerBulletBullet;
 static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
+	cpDataPointer		bulletIndexDataPointer;
 	int					bulletIndex;
 	int					controlParam;
 
@@ -56,8 +57,12 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 	// Remove the variable assigned in the function setting this callback
 	delete[] unused;
 
-	bulletIndex = (int)cpShapeGetUserData ( shape );
+	bulletIndexDataPointer = cpShapeGetUserData ( shape );
+	//
+	// Cast cpDataPointer to an INT type
+	bulletIndex = *(static_cast<int*>(bulletIndexDataPointer));
 
+	
 //	con_print ( true, false, "Remove bullet index [ %i ]", bulletIndex );
 
 	if (cpTrue == cpSpaceContainsShape(space, bullet[bulletIndex].bulletPhysicsObject.shape))
@@ -152,12 +157,22 @@ static void handleDamageDroidBullet ( cpSpace *space, cpShape *shape, int *unuse
 //-------------------------------------------------------------------
 {
 	int bulletIndex;
+	cpDataPointer		droidIndexDataPointer;
+	int			droidIndex;
 	//
 	// deference pointer to data
 	bulletIndex = *(static_cast<int*>(unused));
 
-	if ( false == shipLevel[currentLevel].droid[(int)cpShapeGetUserData ( shape )].isExploding )
-		drd_damageToDroid ( currentLevel, (int)cpShapeGetUserData ( shape ), DAMAGE_BULLET, bullet[bulletIndex].sourceDroid );
+// EXAMPLE
+
+	droidIndexDataPointer = cpShapeGetUserData ( shape );
+	//
+	// Cast cpDataPointer to an INT type
+	droidIndex = *(static_cast<int*>(droidIndexDataPointer));
+
+
+	if ( false == shipLevel[currentLevel].droid[droidIndex].isExploding )
+		drd_damageToDroid ( currentLevel, droidIndex, DAMAGE_BULLET, bullet[bulletIndex].sourceDroid );
 
 	delete[] unused;
 }
@@ -173,13 +188,23 @@ bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 	// The order is A = ENEMY and B = BULLET
 	//
 	cpShape *a, *b;
+	cpDataPointer		aDataPointer, bDataPointer;
 	int whichDroid;
 	int bulletIndex;
 
+//
+// TODO: -fpermissive error here - case to int
 	cpArbiterGetShapes ( arb, &a, &b );
 
-	whichDroid = (int)cpShapeGetUserData ( a );
-	bulletIndex = (int)cpShapeGetUserData ( b );
+	aDataPointer = cpShapeGetUserData ( a );
+	bDataPointer = cpShapeGetUserData ( b );
+	//
+	// Cast cpDataPointer to an INT type
+	whichDroid = *(static_cast<int*>(aDataPointer));
+	bulletIndex = *(static_cast<int*>(bDataPointer));
+
+//	whichDroid = (int)cpShapeGetUserData ( a );
+//	bulletIndex = (int)cpShapeGetUserData ( b );
 
 	//
 	// Is this bullet belongs to this droid stop collision

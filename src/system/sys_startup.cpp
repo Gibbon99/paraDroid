@@ -71,7 +71,6 @@ void *sys_runLoadThread ( ALLEGRO_THREAD *thread, void *arg )
 		}
 
 	loadingThreadHasFinished = true;
-
 	return NULL;
 }
 

@@ -202,7 +202,7 @@ _hostScriptFunctions hostScriptFunctions[] =
 	//
 	// ---------------------- End of the list - nothing past this
 	//
-	{"", ( void * ) NULL},
+	{"", ""},
 };
 
 _hostScriptFunctions hostVariables[] =
