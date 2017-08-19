@@ -6,11 +6,11 @@
   </WorkspaceParserPaths>
   <Project Name="paraDroid" Path="paraDroid.project" Active="Yes"/>
   <BuildMatrix>
-    <WorkspaceConfiguration Name="Debug" Selected="no">
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="paraDroid" ConfigName="Debug"/>
     </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Release" Selected="yes">
+    <WorkspaceConfiguration Name="Release" Selected="no">
       <Environment/>
       <Project Name="paraDroid" ConfigName="Release"/>
     </WorkspaceConfiguration>

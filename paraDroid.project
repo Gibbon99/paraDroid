@@ -363,7 +363,7 @@
       <ResourceCompiler Options=""/>
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-pg -g -fpermissive -Wall -fexceptions" C_Options="-pg -g -fpermissive -Wall -fexceptions " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+      <Compiler Options="-pg -g -Wall -fexceptions" C_Options="-pg -g -Wall -fexceptions" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="hdr/"/>
         <IncludePath Value="hdr/script"/>
         <IncludePath Value="/usr/local/include"/>

@@ -90,119 +90,120 @@ _scriptInfo scriptInfo[] =
 
 _hostScriptFunctions hostScriptFunctions[] =
 {
-	{"void sys_printConInt(string &in, uint param)", ( void * ) 				&sys_scriptPrintInt},
-	{"void sys_printConStr(string &in, string &in)", ( void * ) 				&sys_scriptPrintStr},
-	{"void sys_printString(float posX, float posY, string &in)", ( void * ) 	&sys_printString},
+	{"void sys_printConInt(string &in, uint param)", 				( const void * ) &sys_scriptPrintInt},
+	{"void sys_printConStr(string &in, string &in)", 				( const void * ) &sys_scriptPrintStr},
+	{"void sys_printString(float posX, float posY, string &in)", 	( const void * ) &sys_printString},
 
-	{"void sys_addScriptCommand(string &in, string &in, string &in, bool setParam)", ( void * ) &con_addScriptCommand},
+	{"void sys_addScriptCommand(string &in, string &in, string &in, bool setParam)", ( const void * ) &con_addScriptCommand},
 	//
 	// ---------------- Use Allegro functions from within script
 	//
-	{"void al_set_new_display_option(int option, int value, int importance)", ( void * ) &al_set_new_display_option},
-	{"void al_set_new_display_flags(int option)", ( void * ) 							&al_set_new_display_flags},
-	{"void al_set_new_display_refresh_rate(int refresh_rate)", ( void * ) 				&al_set_new_display_refresh_rate},
+	{"void al_set_new_display_option(int option, int value, int importance)", 	( const void * ) &al_set_new_display_option},
+	{"void al_set_new_display_flags(int option)", 								( const void * ) &al_set_new_display_flags},
+	{"void al_set_new_display_refresh_rate(int refresh_rate)", 					( const void * ) &al_set_new_display_refresh_rate},
 	//
 	// ---------------- Config file routines
 	//
-	{"void io_loadConfigFile			(string &in)", ( void * ) 					&io_loadConfigFile},
-	{"void io_closeConfigFile			()", ( void * ) 							&io_closeConfigFile},
-	{"void io_saveConfigFile			(string &in)", ( void * ) 					&io_saveConfigFile},
-	{"int io_readConfigValuesInt		(string &in)", ( void * ) 					&io_readConfigValuesInt},
-	{"string io_readConfigValuesString	(string &in)", ( void * )					&io_readConfigValuesString},
-	{"float io_readConfigValuesFloat 	(string &in)", ( void * )					&io_readConfigValuesFloat},
-	{"void io_saveConfigValueString		(string &in, string &in)", ( void * )		&io_saveConfigValueString},
-	{"void io_saveConfigValueFloat		(string &in, float keyValue)", ( void * ) 	&io_saveConfigValueFloat},
-	{"void io_saveConfigValueInt		(string &in, int keyValue)", ( void * )		&io_saveConfigValueInt},
+	{"void io_loadConfigFile			(string &in)", 					( const void * ) &io_loadConfigFile},
+	{"void io_closeConfigFile			()", 							( const void * ) &io_closeConfigFile},
+	{"void io_saveConfigFile			(string &in)", 					( const void * ) &io_saveConfigFile},
+	{"int io_readConfigValuesInt		(string &in)", 					( const void * ) &io_readConfigValuesInt},
+	{"string io_readConfigValuesString	(string &in)", 					( const void * ) &io_readConfigValuesString},
+	{"float io_readConfigValuesFloat 	(string &in)", 					( const void * ) &io_readConfigValuesFloat},
+	{"void io_saveConfigValueString		(string &in, string &in)", 		( const void * ) &io_saveConfigValueString},
+	{"void io_saveConfigValueFloat		(string &in, float keyValue)", 	( const void * ) &io_saveConfigValueFloat},
+	{"void io_saveConfigValueInt		(string &in, int keyValue)", 	( const void * ) &io_saveConfigValueInt},
 	//
 	// --------------- Load keybindings ----------------
 	//
-	{"bool io_doKeyBindings(string &in)", ( void * )						&io_doKeyBindings},
+	{"bool io_doKeyBindings(string &in)", 								( const void * ) &io_doKeyBindings},
 	//
 	// ------------- Draw from within the script
 	//
-	{"void gam_drawBitmapFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", ( void * ) &gam_drawBitmapFromScript},
-	{"void gam_drawSpriteFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", ( void * ) &gam_drawSpriteFromScript},
+	{"void gam_drawBitmapFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", ( const void * ) &gam_drawBitmapFromScript},
+	{"void gam_drawSpriteFromScript(int index, float posX, float posY, float red, float green, float blue, float alpha)", ( const void * ) &gam_drawSpriteFromScript},
 	//
 	// ---------------- Font routines
 	//
-	{"void sys_setFont			(int newFont)", ( void * )								&sys_setFont},
-	{"bool io_loadttfFont		(int fontIndex, int fontSize, string &in)", ( void * )	&io_loadttfFont},
-	{"void sys_setFontColor		(float r, float g, float b, float a)", ( void * ) 		&sys_setFontColor},
+	{"void sys_setFont			(int newFont)", 							( const void * ) &sys_setFont},
+	{"bool io_loadttfFont		(int fontIndex, int fontSize, string &in)", ( const void * ) &io_loadttfFont},
+	{"void sys_setFontColor		(float r, float g, float b, float a)", 		( const void * ) &sys_setFontColor},
 
 	//
 	// ---------------- Play sound from script
 	//
-	{"void sys_playSoundFromScript(int whichSound, float pan, bool loopIt)", ( void * ) &sys_playSoundFromScript},
+	{"void sys_playSoundFromScript(int whichSound, float pan, bool loopIt)", ( const void * ) &sys_playSoundFromScript},
 	//
 	// -------------- Set tile options
 	//
-	{"void io_setTileSetColor(string &in)", ( void * )					&io_setTileSetColor},
-	{"void io_setTileSetType(string &in)", ( void * )						&io_setTileSetType},
+	{"void io_setTileSetColor(string &in)", 								( const void * ) &io_setTileSetColor},
+	{"void io_setTileSetType(string &in)", 									( const void * ) &io_setTileSetType},
 	//
 	// ------------- GUI Functions called from script
 	//
-	{"void as_guiCreateNewScreen		(string &in)", ( void * ) &gui_hostCreateNewScreen},
-	{"void as_guiCreateObject			(int guiObjectType, string &in)", ( void * ) &gui_hostCreateObject},
-	{"int as_guiFindIndex				(int guiObjectType, string &in)", ( void * ) &gui_findIndex},
-	{"void as_gui_changeToGUIScreen		(int newScreen)", ( void * )&gui_changeToGUIScreen},
+	{"void as_guiCreateNewScreen		(string &in)", 						( const void * ) &gui_hostCreateNewScreen},
+	{"void as_guiCreateObject			(int guiObjectType, string &in)", 	( const void * ) &gui_hostCreateObject},
+	{"int as_guiFindIndex				(int guiObjectType, string &in)", 	( const void * ) &gui_findIndex},
+	{"void as_gui_changeToGUIScreen		(int newScreen)", 					( const void * ) &gui_changeToGUIScreen},
 
-	{"void as_guiSetObjectPosition (int guiObjectType, string &in, int coordType, float startX, float startY, float width, float height)", ( void * ) &gui_hostSetObjectPosition},
-	{"void as_guiSetObjectLabel    (int guiObjectType, string &in, int labelPos, string &in)", ( void * ) &gui_hostSetObjectLabel},
-	{"void as_guiSetObjectFunctions(int guiObjectType, string &in, string &in, string &in)", ( void * ) &gui_hostSetObjectFunctions},
-	{"void as_guiAddObjectToScreen (int guiObjectType, string &in, string &in)", ( void * ) &gui_hostAddObjectToScreen},
-	{"void as_guiSetObjectColor    (int guiObjectType, string &in, int whichColor, float red, float green, float blue, float alpha)", ( void * ) &gui_hostSetObjectColor},
-	{"void as_guiSetCheckboxGroup  (string &in, int whichGroup)", ( void * ) &gui_hostSetCheckboxGroup},
-	{"void as_guiSetCheckboxTick   (string &in, int whichGroup, bool ticked)", ( void * ) &gui_hostSetCheckboxTick},
-	{"void as_guiSetupDBText()						   ", ( void * ) &gam_setupDBText},
-	{"void as_guiSetImageFilename(string &in, string &in)", ( void * )&gui_hostSetImageFilename},
-	{"string gui_getString(string &in)", ( void * )&gui_getString},
-	{"void gui_addKeyAndText(string &in, string &in)", ( void * )&gui_addKeyAndText},
-	{"void as_guiSetObjectFocus(string &in)", ( void * )&gui_setObjectFocus},
-	{"void as_guiAddSliderElement(string &in, int elementType, string &in, string &in)", &as_hostAddSliderElement},
-	{"string gui_IntToString(int intValue)", ( void * )&gui_IntToString},
-	{"int gui_StringToInt(string &in)", ( void * )&gui_StringToInt},
-	{"string gui_IntToChar(int intValue)", ( void * )&gui_IntToChar},
-	{"string as_guiGetSliderValue(string &in)", ( void * )&as_hostGetSliderValue},
-	{"void as_guiSetSliderValue(string &in, string &in)", ( void * )&as_hostSetSliderValue},
-	{"void io_loadNewTileSet()", ( void * )&io_loadNewTileSet},
-	{"void as_guiAddKeyCodeElement(string &in, string &in, int elementKeyCode)", ( void * )&as_hostAddKeyCodeElement},
-	{"void as_guiCopyKeysInto(string &in)", ( void * )&gui_copyKeysInto},
-	{"void as_guiCopyGUIIntoKeys(string &in)", ( void * )&gui_copyGUIIntoKeys},
-	{"bool io_saveKeyBindings (string &in)", ( void * )&io_saveKeyBindings},
-	{"bool gam_loadDroidModel (int whichDroid)", ( void * )&gam_loadDroidModel},
+	{"void as_guiSetObjectColor    (int guiObjectType, string &in, int whichColor, float red, float green, float blue, float alpha)", 		( const void * ) &gui_hostSetObjectColor},
+	{"void as_guiSetObjectPosition (int guiObjectType, string &in, int coordType, float startX, float startY, float width, float height)", 	( const void * ) &gui_hostSetObjectPosition},
+	
+	{"void as_guiSetObjectLabel    (int guiObjectType, string &in, int labelPos, string &in)", 		( const void * ) &gui_hostSetObjectLabel},
+	{"void as_guiSetObjectFunctions(int guiObjectType, string &in, string &in, string &in)", 		( const void * ) &gui_hostSetObjectFunctions},
+	{"void as_guiAddObjectToScreen (int guiObjectType, string &in, string &in)", 					( const void * ) &gui_hostAddObjectToScreen},
+	{"void as_guiSetCheckboxGroup  (string &in, int whichGroup)", 									( const void * ) &gui_hostSetCheckboxGroup},
+	{"void as_guiSetCheckboxTick   (string &in, int whichGroup, bool ticked)", 						( const void * ) &gui_hostSetCheckboxTick},
+	{"void as_guiSetupDBText()", 																	( const void * ) &gam_setupDBText},
+	{"void as_guiSetImageFilename(string &in, string &in)", 										( const void * ) &gui_hostSetImageFilename},
+	{"string gui_getString(string &in)", 															( const void * ) &gui_getString},
+	{"void gui_addKeyAndText(string &in, string &in)", 												( const void * ) &gui_addKeyAndText},
+	{"void as_guiSetObjectFocus(string &in)", 														( const void * ) &gui_setObjectFocus},
+	{"void as_guiAddSliderElement(string &in, int elementType, string &in, string &in)", 			( const void * ) &as_hostAddSliderElement},
+	{"string gui_IntToString(int intValue)", 														( const void * ) &gui_IntToString},
+	{"int gui_StringToInt(string &in)", 															( const void * ) &gui_StringToInt},
+	{"string gui_IntToChar(int intValue)", 															( const void * ) &gui_IntToChar},
+	{"string as_guiGetSliderValue(string &in)", 													( const void * ) &as_hostGetSliderValue},
+	{"void as_guiSetSliderValue(string &in, string &in)", 											( const void * ) &as_hostSetSliderValue},
+	{"void io_loadNewTileSet()", 																	( const void * ) &io_loadNewTileSet},
+	{"void as_guiAddKeyCodeElement(string &in, string &in, int elementKeyCode)", 					( const void * ) &as_hostAddKeyCodeElement},
+	{"void as_guiCopyKeysInto(string &in)", 														( const void * ) &gui_copyKeysInto},
+	{"void as_guiCopyGUIIntoKeys(string &in)", 														( const void * ) &gui_copyGUIIntoKeys},
+	{"bool io_saveKeyBindings (string &in)", 														( const void * ) &io_saveKeyBindings},
+	{"bool gam_loadDroidModel (int whichDroid)", 													( const void * ) &gam_loadDroidModel},
 	//
 	// ------Transfer routines for scripts
 	//
-	{"void as_transSetDefaultValues(int cellIndex)", ( void * ) &host_transSetDefaultValues},
-	{"void as_transSetCellPos(int cellIndex, int posX, int posY)", ( void * ) &host_transSetCellPos},
-	{"void as_transSetCellColor(int whichCell, int colType, float red, float green, float blue, float alpha)", ( void * ) &host_transSetCellColor},
-	{"void as_tranSetCircuitType(int whichCell, int whichSide, int typeSet)", ( void * ) &host_tranSetCircuitType},
-	{"void as_tranSetEffectType(int whichCell, int whichSide, int effect)", ( void * ) &host_transSetEffectType},
-	{"int as_getCappedRandomNum(int cap)", ( void * ) &host_getCappedRandomNum},
-	{"bool as_circuitNotPowered(int whichCell, int whichSide)", ( void * ) &host_circuitPowered},
-	{"int as_getCellColor(int whichCell, int whichSide)", ( void * ) &host_getCellColor},
-	{"void trn_activateCircuit(int whichCell, int whichSide)", ( void * ) &trn_activateCircuit},
-	{"void trn_placeToken(int whichCell, int whichSide, int playerOrDroid)", ( void * ) &trn_placeToken},
+	{"void as_transSetDefaultValues(int cellIndex)", 												( const void * ) &host_transSetDefaultValues},
+	{"void as_transSetCellPos(int cellIndex, int posX, int posY)", 									( const void * ) &host_transSetCellPos},
+	{"void as_transSetCellColor(int whichCell, int colType, float red, float green, float blue, float alpha)", ( const void * ) &host_transSetCellColor},
+	{"void as_tranSetCircuitType(int whichCell, int whichSide, int typeSet)", 						( const void * ) &host_tranSetCircuitType},
+	{"void as_tranSetEffectType(int whichCell, int whichSide, int effect)", 						( const void * ) &host_transSetEffectType},
+	{"int as_getCappedRandomNum(int cap)", 															( const void * ) &host_getCappedRandomNum},
+	{"bool as_circuitNotPowered(int whichCell, int whichSide)", 									( const void * ) &host_circuitPowered},
+	{"int as_getCellColor(int whichCell, int whichSide)", 											( const void * ) &host_getCellColor},
+	{"void trn_activateCircuit(int whichCell, int whichSide)", 										( const void * ) &trn_activateCircuit},
+	{"void trn_placeToken(int whichCell, int whichSide, int playerOrDroid)", 						( const void * ) &trn_placeToken},
 	//
 	// ------------ Misc routines called from script
 	//
-	{"void as_printVariables()", ( void * ) &sys_printVariables},
-	{"void as_changeGameMode(int newMode, bool useFade)", ( void * ) &sys_changeMode},
-	{"void gam_changeToLevelFromScript(int newLevel, bool firstTime)", ( void * ) &gam_changeToLevelFromScript},
+	{"void as_printVariables()", 										( const void * ) &sys_printVariables},
+	{"void as_changeGameMode(int newMode, bool useFade)", 				( const void * ) &sys_changeMode},
+	{"void gam_changeToLevelFromScript(int newLevel, bool firstTime)", 	( const void * ) &gam_changeToLevelFromScript},
 	//
 	// ------------- Set particle colors from script
 	//
-	{"void as_setParticleColor(int whichParticle, int red, int green, int blue, int alpha)", &par_hostSetParticleColor},
+	{"void as_setParticleColor(int whichParticle, int red, int green, int blue, int alpha)",( const void * ) &par_hostSetParticleColor},
 	//
 	// -------------- Set score initials from script
 	//
-	{"void gam_addNewInitials()", &gam_addNewInitials},
-	{"void gam_resetScore()", &gam_resetScore},
-	{"void gui_populateScoreTableGUI()", &gui_populateScoreTableGUI},
+	{"void gam_addNewInitials()",				( const void * ) &gam_addNewInitials},
+	{"void gam_resetScore()",					( const void * ) &gam_resetScore},
+	{"void gui_populateScoreTableGUI()",		( const void * ) &gui_populateScoreTableGUI},
 	//
 	// ---------------------- End of the list - nothing past this
 	//
-	{"", ""},
+	{"", (const void *)""},
 };
 
 _hostScriptFunctions hostVariables[] =
@@ -559,7 +560,6 @@ const char *sys_getScriptError ( int errNo )
 //--------------------------------------------------------
 //
 // Clean up memory for script engine
-
 void sys_cleanupScriptEngine ( bool restart )
 //--------------------------------------------------------
 {
@@ -598,7 +598,7 @@ bool sys_registerVariables()
 
 	while ( hostVariables[count].scriptFunctionName.size() > 1 )
 		{
-			result = scriptEngine->RegisterGlobalProperty ( hostVariables[count].scriptFunctionName.c_str(), hostVariables[count].hostFunctionPtr );
+			result = scriptEngine->RegisterGlobalProperty ( hostVariables[count].scriptFunctionName.c_str(), (void *)hostVariables[count].hostFunctionPtr );
 
 			if ( result < 0 )
 				{
@@ -871,8 +871,6 @@ bool sys_initScriptEngine()
 	// What version are we running
 	io_logToFile ( "Script: ScriptEngine version - [ %s ]", asGetLibraryVersion() );
 
-printf ("[ %s ] \n", asGetLibraryOptions());
-
 	// What options are compiled
 	io_logToFile ( "Script: Options - [ %s ]", asGetLibraryOptions() );
 
@@ -926,7 +924,7 @@ printf ("[ %s ] \n", asGetLibraryOptions());
 
 			if ( tempFunctionName.funcID <= 0 )
 				{
-					con_print ( true, true, "Failed to get function ID for [ %s ] Error [ %s ]", scriptFunctionName[i].functionName.c_str(), sys_getScriptError ( ( int ) tempFunctionName.funcID ) );
+					con_print ( true, true, "Failed to get function ID for [ %s ]", scriptFunctionName[i].functionName.c_str());
 					return false;
 				}
 			else
@@ -1103,9 +1101,9 @@ bool sys_addScriptConsoleFunction ( string funcName, string funcPtr, bool setPar
 
 	tempScriptFunction.funcID = scriptEngine->GetModule ( 0 )->GetFunctionByDecl ( tempScriptFunction.functionName.c_str() );
 
-	if ( tempScriptFunction.funcID <= 0 )
+	if ( tempScriptFunction.funcID == NULL  )
 		{
-			con_print ( true, true, "Err: Failed to get function ID for [ %s ]. Error [ %s ]", tempScriptFunction.functionName.c_str(), sys_getScriptError ( ( int ) tempScriptFunction.funcID ) );
+			con_print ( true, true, "Err: Failed to get function ID for [ %s ].", tempScriptFunction.functionName.c_str());
 			return false;
 		}
 

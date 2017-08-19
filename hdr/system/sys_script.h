@@ -22,7 +22,7 @@ Copyright 2017 David Berry
 typedef struct
 {
 	string			scriptFunctionName;
-	void			*hostFunctionPtr;
+	const void			*hostFunctionPtr;
 } _hostScriptFunctions;
 
 extern _hostScriptFunctions hostVariables[];

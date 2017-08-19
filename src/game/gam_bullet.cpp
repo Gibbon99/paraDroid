@@ -120,7 +120,7 @@ void bul_newBullet ( cpVect sourcePos, cpVect destPos, int type, int sourceDroid
 
 	bulletOffset = {0.0f, 0.0f};
 
-	for ( int i = 0; i != MAX_NUM_BULLETS; i++ )
+	for ( intptr_t i = 0; i != MAX_NUM_BULLETS; i++ )
 		{
 			if ( false == bullet[i].alive )
 				{
@@ -167,6 +167,7 @@ void bul_newBullet ( cpVect sourcePos, cpVect destPos, int type, int sourceDroid
 							                                      cpBoxShapeNew ( bullet[i].bulletPhysicsObject.body, bullet[i].size.x, bullet[i].size.y, 2 ) );
 
 							cpShapeSetCollisionType ( bullet[i].bulletPhysicsObject.shape, PHYSIC_TYPE_BULLET );
+							
 							cpShapeSetUserData ( bullet[i].bulletPhysicsObject.shape, (cpDataPointer)i );	// Passed into collision routine
 
 							sys_playSound ( SND_LASER, 0.0f, ALLEGRO_PLAYMODE_ONCE );

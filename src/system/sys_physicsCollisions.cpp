@@ -47,7 +47,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
 	cpDataPointer		bulletIndexDataPointer;
-	int					bulletIndex;
+	intptr_t			bulletIndex;
 	int					controlParam;
 
 	//
@@ -60,7 +60,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 	bulletIndexDataPointer = cpShapeGetUserData ( shape );
 	//
 	// Cast cpDataPointer to an INT type
-	bulletIndex = *(static_cast<int*>(bulletIndexDataPointer));
+	bulletIndex = (intptr_t)bulletIndexDataPointer;
 
 	
 //	con_print ( true, false, "Remove bullet index [ %i ]", bulletIndex );
@@ -71,7 +71,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 		cpShapeFree ( bullet[bulletIndex].bulletPhysicsObject.shape );
 	}
 	else
-		printf("ERROR: Attempted to remove non existant shape - bullet [ %i ]\n", bulletIndex);
+		printf("ERROR: Attempted to remove non existant shape - bullet [ %li ]\n", bulletIndex);
 
 	if (cpTrue == cpSpaceContainsBody(space, bullet[bulletIndex].bulletPhysicsObject.body))
 	{
@@ -79,7 +79,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 		cpBodyFree ( bullet[bulletIndex].bulletPhysicsObject.body );
 	}
 	else
-		printf("ERROR: Attempted to remove non existant body - bullet [ %i ]\n", bulletIndex);
+		printf("ERROR: Attempted to remove non existant body - bullet [ %li ]\n", bulletIndex);
 
 	bullet[bulletIndex].alive = false;
 
@@ -156,20 +156,17 @@ cpBool handleCollisionWallPlayerBullet ( cpArbiter *arb, cpSpace *space, int *un
 static void handleDamageDroidBullet ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
-	int bulletIndex;
+	int 				bulletIndex;
 	cpDataPointer		droidIndexDataPointer;
-	int			droidIndex;
+	intptr_t			droidIndex;
 	//
 	// deference pointer to data
 	bulletIndex = *(static_cast<int*>(unused));
 
-// EXAMPLE
-
 	droidIndexDataPointer = cpShapeGetUserData ( shape );
 	//
 	// Cast cpDataPointer to an INT type
-	droidIndex = *(static_cast<int*>(droidIndexDataPointer));
-
+	droidIndex = (intptr_t)droidIndexDataPointer;
 
 	if ( false == shipLevel[currentLevel].droid[droidIndex].isExploding )
 		drd_damageToDroid ( currentLevel, droidIndex, DAMAGE_BULLET, bullet[bulletIndex].sourceDroid );
@@ -187,24 +184,20 @@ bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 	//
 	// The order is A = ENEMY and B = BULLET
 	//
-	cpShape *a, *b;
+	cpShape 			*a, *b;
 	cpDataPointer		aDataPointer, bDataPointer;
-	int whichDroid;
-	int bulletIndex;
+	intptr_t			whichDroid;
+	intptr_t 			bulletIndex;
 
-//
-// TODO: -fpermissive error here - case to int
 	cpArbiterGetShapes ( arb, &a, &b );
 
 	aDataPointer = cpShapeGetUserData ( a );
 	bDataPointer = cpShapeGetUserData ( b );
 	//
-	// Cast cpDataPointer to an INT type
-	whichDroid = *(static_cast<int*>(aDataPointer));
-	bulletIndex = *(static_cast<int*>(bDataPointer));
-
-//	whichDroid = (int)cpShapeGetUserData ( a );
-//	bulletIndex = (int)cpShapeGetUserData ( b );
+	// Cast cpDataPointer to an type large enough to hold a 64 bit pointer
+	// 
+	whichDroid = (intptr_t)aDataPointer;
+	bulletIndex = (intptr_t)bDataPointer;
 
 	//
 	// Is this bullet belongs to this droid stop collision
@@ -234,13 +227,18 @@ bool handleCollisionEnemyBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 static void handleDamageDroidCollision ( cpSpace *space, cpShape *shape, int *unused )
 //-------------------------------------------------------------------
 {
-	int		damageSource;
+	intptr_t			damageSource;
+	intptr_t			whichDroid;
+	cpDataPointer		whichDroidDataPointer;
 
 	//
 	// deference pointer to data
-	damageSource = *(static_cast<int*>(unused));
+	damageSource = (intptr_t)unused;
 
-	drd_damageToDroid ( currentLevel, (int)cpShapeGetUserData ( shape ), damageSource, -1 );
+	whichDroidDataPointer = cpShapeGetUserData(shape);
+	whichDroid = (intptr_t)whichDroidDataPointer;
+
+	drd_damageToDroid ( currentLevel, whichDroid, damageSource, -1 );
 
 	delete[] unused;
 }
@@ -257,14 +255,18 @@ bool handleCollisionTransferCheck ( cpArbiter *arb, cpSpace *space, int *unused 
 	// The order is A = ENEMY and B = PLAYER if userData == -1
 	//
 	//  Or A = ENEMY and B = ENEMY
-	cpShape *a, *b;
-	int whichDroid_A;
-	int whichDroid_B;
-	cpVect	stopVelocity;
+	cpShape 			*a, *b;
+	cpDataPointer		aDataPointer, bDataPointer;
+	intptr_t 			whichDroid_A;
+	intptr_t 			whichDroid_B;
+	cpVect				stopVelocity;
 
 	cpArbiterGetShapes ( arb, &a, &b );
-	whichDroid_A = (int)cpShapeGetUserData ( a );
-	whichDroid_B = (int)cpShapeGetUserData ( b );
+	aDataPointer = cpShapeGetUserData ( a );
+	bDataPointer = cpShapeGetUserData ( b );
+	
+	whichDroid_A = (intptr_t)aDataPointer;
+	whichDroid_B = (intptr_t)bDataPointer;
 
 	if ( -1 == whichDroid_B )	// Is B the player
 		{
@@ -309,13 +311,18 @@ void handleCollisionDroidToDroid ( cpArbiter *arb, cpSpace *space, int *unused )
 	// The order is A = ENEMY and B = PLAYER if userData == -1
 	//
 	//  Or A = ENEMY and B = ENEMY
-	cpShape *a, *b;
-	int whichDroid_A;
-	int whichDroid_B;
+	cpShape 			*a, *b;
+	cpDataPointer		aDataPointer, bDataPointer;	
+	intptr_t			whichDroid_A;
+	intptr_t			whichDroid_B;
 
 	cpArbiterGetShapes ( arb, &a, &b );
-	whichDroid_A = ( int ) cpShapeGetUserData ( a );
-	whichDroid_B = ( int ) cpShapeGetUserData ( b );
+	
+	aDataPointer = cpShapeGetUserData ( a );
+	bDataPointer = cpShapeGetUserData ( b );
+	
+	whichDroid_A = (intptr_t)aDataPointer;
+	whichDroid_B = (intptr_t)bDataPointer;
 
 	int *passValue = new int();
 
@@ -391,14 +398,19 @@ bool handleCollisionDroidCheck ( cpArbiter *arb, cpSpace *space, int *unused )
 	// The order is A = ENEMY and B = PLAYER if userData == -1
 	//
 	//  Or A = ENEMY and B = ENEMY
-	cpShape *a, *b;
-	int whichDroid_A;
-	int whichDroid_B;
+	cpShape 			*a, *b;
+	cpDataPointer		aDataPointer, bDataPointer;
+	intptr_t 			whichDroid_A;
+	intptr_t 			whichDroid_B;
 
 	cpArbiterGetShapes ( arb, &a, &b );
-	whichDroid_A = (int)cpShapeGetUserData ( a );
-	whichDroid_B = (int)cpShapeGetUserData ( b );
-
+	
+	aDataPointer = cpShapeGetUserData ( a );
+	bDataPointer = cpShapeGetUserData ( b );
+	
+	whichDroid_A = (intptr_t)aDataPointer;
+	whichDroid_B = (intptr_t)bDataPointer;
+	
 	if ( ( true == shipLevel[currentLevel].droid[whichDroid_A].ignoreCollisions ) ||
 	        ( true == shipLevel[currentLevel].droid[whichDroid_B].ignoreCollisions ) )
 		return cpFalse;
@@ -413,12 +425,14 @@ bool handleBulletBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 //-------------------------------------------------------------------
 {
 	// Get the shapes involved in the collision
-	cpShape *a, *b;
-
-	int bulletIndex2;
+	cpShape 			*a, *b;
+	cpDataPointer		bulletIndexDataPointer;
+	intptr_t 			bulletIndex2;
 
 	cpArbiterGetShapes ( arb, &a, &b );
-	bulletIndex2 = (int)cpShapeGetUserData ( b );
+	bulletIndexDataPointer = cpShapeGetUserData ( b );
+	
+	bulletIndex2 = (intptr_t)bulletIndexDataPointer;
 
 	int *passValue = new int();
 	*passValue = bulletIndex2;
@@ -440,12 +454,14 @@ bool handlePlayerBullet ( cpArbiter *arb, cpSpace *space, int *unused )
 	//
 	// The order is A = ENEMY and B = BULLET
 	//
-	cpShape *a, *b;
-	int bulletIndex;
+	cpShape 			*a, *b;
+	cpDataPointer		bulletIndexDataPointer;
+	intptr_t			bulletIndex;
 
 	cpArbiterGetShapes ( arb, &a, &b );
-
-	bulletIndex = (int)cpShapeGetUserData ( b );
+	bulletIndexDataPointer = cpShapeGetUserData ( b );
+	
+	bulletIndex = (intptr_t)bulletIndexDataPointer;
 
 	//
 	// Does this bullet belong to the player - if so ignore the collision
@@ -491,11 +507,14 @@ bool handleDoorBullet ( cpArbiter	*arb, cpSpace *space, int *unused )
 	//
 	// The order is A = DOOR and B = BULLET
 	//
-	cpShape *a, *b;
-	int whichDoor;
+	cpShape 			*a, *b;
+	cpDataPointer		whichDoorDataPointer;
+	intptr_t			whichDoor;
 
-	cpArbiterGetShapes ( arb, &a, &b );
-	whichDoor = (int)cpShapeGetUserData ( (cpShape *) a );
+	cpArbiterGetShapes ( arb, &a, &b );	
+	
+	whichDoorDataPointer = cpShapeGetUserData ( a );
+	whichDoor = (intptr_t)whichDoorDataPointer;
 
 	int *passValue = new int();
 	switch ( doorTrigger[whichDoor].currentFrame )

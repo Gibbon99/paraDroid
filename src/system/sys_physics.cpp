@@ -241,7 +241,7 @@ void sys_createEnemyPhysics()
 	int weight;
 	float massWeight;
 
-	for ( int i = 0; i != shipLevel[currentLevel].numDroids; i++ )
+	for ( intptr_t i = 0; i != shipLevel[currentLevel].numDroids; i++ )
 		{
 			if ( true == shipLevel[currentLevel].droid[i].isAlive )
 				{
@@ -303,7 +303,7 @@ void sys_createSolidWalls()
 
 	solidWalls.reserve ( shipLevel[currentLevel].numLineSegments );
 
-	for ( int i = 0; i != shipLevel[currentLevel].numLineSegments; i++ )
+	for ( intptr_t i = 0; i != shipLevel[currentLevel].numLineSegments; i++ )
 		{
 			wallStart = shipLevel[currentLevel].lineSegments[i].start;
 			wallFinish = shipLevel[currentLevel].lineSegments[i].finish;
@@ -393,7 +393,7 @@ void sys_createDoorSensor ( int whichDoor, cpFloat width, cpFloat height, cpVect
 	cpSpaceAddShape ( space, doorTrigger[whichDoor].physics.shape );
 	cpShapeSetCollisionType ( doorTrigger[whichDoor].physics.shape, PHYSIC_TYPE_DOOR );
 
-	cpShapeSetUserData ( doorTrigger[whichDoor].physics.shape, (cpDataPointer)whichDoor );
+	cpShapeSetUserData ( doorTrigger[whichDoor].physics.shape, (cpDataPointer)(intptr_t)whichDoor );
 
 	cpShapeSetSensor ( doorTrigger[whichDoor].physics.shape, true );
 }
