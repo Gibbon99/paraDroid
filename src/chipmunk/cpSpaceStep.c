@@ -400,12 +400,7 @@ cpSpaceStep(cpSpace *space, cpFloat dt)
 		cpVect gravity = space->gravity;
 		for(int i=0; i<bodies->num; i++){
 			cpBody *body = (cpBody *)bodies->arr[i];
-
-			printf ("V before [ %f %f ]\n", body->v.x, body->v.y);
-
 			body->velocity_func(body, gravity, damping, dt);
-
-			printf ("V after [ %f %f ]\n", body->v.x, body->v.y);
 		}
 		
 		// Apply cached impulses

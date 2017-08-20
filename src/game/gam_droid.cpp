@@ -45,12 +45,6 @@ void drd_updateDroidPosition ( int whichDroid )
 	if ( false == processedPhysics )
 		return;
 
-	if ( 0 == whichDroid )
-	{
-		frameCount++;
-		printf ("Frame [ %i ] Pos [ %3.3f %3.3f ]\n", frameCount, shipLevel[currentLevel].droid[whichDroid].worldPos.x, shipLevel[currentLevel].droid[whichDroid].worldPos.y);
-	}
-
 	maxWorldSize.x = shipLevel[currentLevel].levelDimensions.x * TILE_SIZE;
 	maxWorldSize.y = shipLevel[currentLevel].levelDimensions.y * TILE_SIZE;
 
@@ -191,6 +185,7 @@ void gam_initDroidValues ( int whichLevel )
 
 	for ( int i = 0; i != shipLevel[whichLevel].numDroids; i++ )
 		{
+		tempDroid.currentSpeed = 0.0f;
 			tempDroid.droidType = shipLevel[whichLevel].droidTypes[i];
 			tempDroid.currentHealth = dataBaseEntry[tempDroid.droidType].maxHealth;
 			tempDroid.isAlive = true;
