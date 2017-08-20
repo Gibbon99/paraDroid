@@ -336,7 +336,7 @@ void sys_updateFrame()
 				{
 					gam_processPlayerMovement ( thinkInterval );
 					//
-					// Work around phyics and worldPos timings
+					// Work around physics and worldPos timings
 					// Results in droid with invalid worldPos values
 					//
 					if ( true == processedPhysics )

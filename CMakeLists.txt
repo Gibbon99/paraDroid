@@ -3,9 +3,9 @@ project(Current)
 
 add_compile_options(-fpermissive)
 
-include_directories(hdr/;hdr/script;data/;/usr/local/include)
+include_directories(hdr/;hdr/game;hdr/gui;hdr/io;hdr/physfs;hdr/script;hdr/system;data/;/usr/local/include)
 
-link_directories(/usr/lib;/usr/lib/x86-64-linux-gnu;/lib64;/lib/x86_64-linux-gnu)
+link_directories(Debug/;/usr/lib;/usr/lib/x86-64-linux-gnu;/lib64;/lib/x86_64-linux-gnu)
 
 link_libraries(physfs;allegro;allegro_acodec;pthread;allegro_audio;allegro_color;allegro_image;allegro_memfile;allegro_physfs;allegro_primitives;allegro_ttf;allegro_main;allegro_dialog;allegro_font)
 
@@ -172,6 +172,9 @@ set(SOURCE_FILES
     src/game/gam_droidAI_Health.cpp
     src/game/gam_droidAI_Patrol.cpp
     src/game/gam_droidAI_Resume.cpp
+        src/game/gam_droidAI_Shoot.cpp
+        src/game/gam_droidAI_Flee.cpp
+        src/game/gam_endScreen.cpp
     src/game/gam_intro.cpp
     src/game/gam_levels.cpp
     src/game/gam_LOS.cpp
@@ -179,6 +182,7 @@ set(SOURCE_FILES
     src/game/gam_pathFind.cpp
     src/game/gam_player.cpp
     src/game/gam_render.cpp
+        src/game/gam_scoreTable.cpp
     src/game/gam_sideView.cpp
     src/game/gam_spotLight.cpp
     src/game/gam_terminal.cpp
@@ -201,6 +205,7 @@ set(SOURCE_FILES
     src/io/io_logFile.cpp
     src/io/io_packFile.cpp
     src/io/io_sideView.cpp
+        src/io/io_joystick.cpp
     src/script/as_arrayobject.cpp
     src/script/as_atomic.cpp
     src/script/as_builder.cpp

@@ -48,7 +48,7 @@ void drd_updateDroidPosition ( int whichDroid )
 	if ( 0 == whichDroid )
 	{
 		frameCount++;
-		printf ("Frame [ %i ] Pos [ %3.3f %3.3f ]\n", shipLevel[currentLevel].droid[whichDroid].worldPos.x, shipLevel[currentLevel].droid[whichDroid].worldPos.y);
+		printf ("Frame [ %i ] Pos [ %3.3f %3.3f ]\n", frameCount, shipLevel[currentLevel].droid[whichDroid].worldPos.x, shipLevel[currentLevel].droid[whichDroid].worldPos.y);
 	}
 
 	maxWorldSize.x = shipLevel[currentLevel].levelDimensions.x * TILE_SIZE;

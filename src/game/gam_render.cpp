@@ -96,7 +96,7 @@ void gam_processBeamOn (float thinkInterval)
 		beamOnAlphaStep = 1.0f / (beamOnRadius / 6.0f);
 		beamOnAlpha = 0.0f;
 	}
-	
+
 	beamOnTimer -= beamOnDelay * thinkInterval;
 	if (beamOnTimer < 0.0f)
 	{
@@ -105,7 +105,7 @@ void gam_processBeamOn (float thinkInterval)
 		beamOnAlpha += beamOnAlphaStep;
 		if (beamOnAlpha > 0.9f)
 			beamOnAlpha = 0.0f;
-			
+
 		beamOnColor = al_map_rgba_f(1.0f, 1.0f, 1.0f, beamOnAlpha);
 		if (beamOnCurrentRadius < 0.0f)
 		{
@@ -137,7 +137,7 @@ void gam_drawBeamOn()
 void gam_drawStarfield()
 //-----------------------------------------------------------------------------
 {
-	al_draw_prim(stars, NULL, NULL, 0, numStars, ALLEGRO_PRIM_POINT_LIST);
+	al_draw_prim(stars, nullptr, nullptr, 0, numStars, ALLEGRO_PRIM_POINT_LIST);
 }
 
 //-----------------------------------------------------------------------------
