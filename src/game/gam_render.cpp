@@ -380,6 +380,12 @@ void gam_drawAllTiles()
 					if (whichTilePtr >= shipLevel[currentLevel].levelDimensions.x * shipLevel[currentLevel].levelDimensions.y)
 						whichTilePtr = 0;
 
+					if ( shipLevel[currentLevel].tiles.size() == 0 )
+					{
+						printf ("ERROR: Tile vector array is currently 0.\n");
+						return;
+					}
+
 					whichTile = shipLevel[currentLevel].tiles[whichTilePtr];
 
 					if ((whichTile < 0) || (whichTile > 64))
