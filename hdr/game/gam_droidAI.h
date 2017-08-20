@@ -69,6 +69,8 @@ typedef struct
 extern	vector<_aiNode>		aiTree;
 extern bool					backToAIRoot;
 
+extern float badHealthFactor; // From script
+
 #include "gam_droidAI_Resume.h"
 
 //--------------------------------------------------------------------

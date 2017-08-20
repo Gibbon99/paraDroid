@@ -57,8 +57,8 @@ void drd_updateDroidPosition ( int whichDroid )
 
 		if ( (tempPosition.x < 0) || (tempPosition.y < 0) || (tempPosition.x > maxWorldSize.x) || (tempPosition.y > maxWorldSize.y) )
 		{
-			printf ("ERROR: Setting invalid [ %i ] worldPos [ %3.3f %3.3f ] from body Droid [ %i ] Level [ %i ] Frame [ %d ]\n", 
-				shipLevel[currentLevel].droid[whichDroid].body, tempPosition.x, tempPosition.y, whichDroid, currentLevel, static_cast<int>(frameCount));
+			printf ("ERROR: Setting invalid worldPos [ %3.3f %3.3f ] from body Droid [ %i ] Level [ %i ] Frame [ %i ]\n", 
+				tempPosition.x, tempPosition.y, whichDroid, currentLevel, static_cast<int>(frameCount));
 			return;
 		}
 

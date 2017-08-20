@@ -85,9 +85,9 @@ int ai_onFleeTile ( int whichDroid )
 #ifdef AI_FLEE_DEBUG
 			con_print ( true, false, "Droid [ %i ] found Flee tile destination", whichDroid );
 #endif
-//			shipLevel[currentLevel].droid[whichDroid].currentHealth = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth;
-
-			shipLevel[currentLevel].droid[whichDroid].currentHealth = 31;
+			shipLevel[currentLevel].droid[whichDroid].currentHealth += 5;
+			if ( shipLevel[currentLevel].droid[whichDroid].currentHealth > dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth )
+				shipLevel[currentLevel].droid[whichDroid].currentHealth = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth;
 
 			//
 			// Find way back to origin

@@ -83,7 +83,7 @@ bool io_loadImage ( int index, const char *fileName )
 	ALLEGRO_COLOR	keyColor;
 
 	image[index].image = al_load_bitmap ( fileName );
-
+	
 	if ( NULL == image[index].image )
 		{
 			io_logToFile ( "Loading image failed [ %s ]", fileName );

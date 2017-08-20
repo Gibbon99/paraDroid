@@ -71,7 +71,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 		cpShapeFree ( bullet[bulletIndex].bulletPhysicsObject.shape );
 	}
 	else
-		printf("ERROR: Attempted to remove non existant shape - bullet [ %li ]\n", bulletIndex);
+		printf("ERROR: Attempted to remove non existant shape - bullet [ %Ii ]\n", bulletIndex);
 
 	if (cpTrue == cpSpaceContainsBody(space, bullet[bulletIndex].bulletPhysicsObject.body))
 	{
@@ -79,7 +79,7 @@ static void postStepRemoveBullet ( cpSpace *space, cpShape *shape, int *unused )
 		cpBodyFree ( bullet[bulletIndex].bulletPhysicsObject.body );
 	}
 	else
-		printf("ERROR: Attempted to remove non existant body - bullet [ %li ]\n", bulletIndex);
+		printf("ERROR: Attempted to remove non existant body - bullet [ %Ii ]\n", bulletIndex);
 
 	bullet[bulletIndex].alive = false;
 

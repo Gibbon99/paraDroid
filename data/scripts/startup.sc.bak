@@ -222,9 +222,6 @@ void as_initGameVars()
 	// Higher is faster base animation -affected by current health
 	baseDroidAnimateValue = 35.0f;
 	//
-	// This percentage of health triggers flee activity
-	badHealthFactor = 0.3f;
-	//
 	// How far off the line segment before moving back towards it
 	maxDistanceFromPath = 1.0f;
 	//

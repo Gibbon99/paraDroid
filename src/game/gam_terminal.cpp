@@ -57,7 +57,6 @@ float dbFontBlue;
 float dbFontAlpha;
 float dbScrollDelay;
 
-
 _scrollBox 	databaseScrollBox;
 string 		databaseScrollText;
 static int 	textCounter = 0;
@@ -73,6 +72,15 @@ bool gam_loadDroidModel(int whichDroid)
 //------------------------------------------------------------
 {
 	char tempFileName[MAX_STRING_SIZE];
+
+	//
+	// Prevent memory leak from loading bitmap over and over
+	//
+	if ( image[dbImage].image != NULL )
+	{
+		al_destroy_bitmap (image[dbImage].image);
+		image[dbImage].image = NULL;
+	}
 
 	strcpy(tempFileName, "");
 	strcpy(tempFileName, dataBaseEntry[whichDroid].dbImageFileName);
@@ -96,7 +104,6 @@ void gam_setFrameStart()
 //
 // Draw the 3d droid model image
 // Pass in -1 to PosX to use settings from script
-//
 void gam_drawDB_Droid(float posX, float posY)
 //----------------------------------------------------------
 {
@@ -184,7 +191,6 @@ void gam_animateDB_Droid()
 //------------------------------------------------------------
 //
 // Callback for more database text
-
 void gam_moreDatabaseText()
 //------------------------------------------------------------
 {
@@ -252,7 +258,6 @@ void gam_moreDatabaseText()
 //------------------------------------------------------------
 //
 // Setup the scrollbox for droid information
-
 void gam_setupDBText()
 //------------------------------------------------------------
 {

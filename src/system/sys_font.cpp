@@ -55,7 +55,7 @@ bool io_loadttfFont(int fontIndex, int fontSize, string fontName)
 {
 	strcpy(font[fontIndex].fileName, fontName.c_str());
 
-	if (true == PHYSFS_exists (font[fontIndex].fileName))
+	if (PHYSFS_exists (font[fontIndex].fileName) > 0)
 		io_logToFile("File [ %s ] exists.", font[fontIndex].fileName);
 	else
 		io_logToFile("File [ %s ] NOT found.", font[fontIndex].fileName);

@@ -261,7 +261,7 @@ void sys_createEnemyPhysics()
 
 					cpBodySetPosition ( shipLevel[currentLevel].droid[i].body, shipLevel[currentLevel].droid[i].worldPos );
 
-					printf ("worldpos [ %i ] [ %3.3f %3.3f ]\n", i, shipLevel[currentLevel].droid[i].worldPos.x, shipLevel[currentLevel].droid[i].worldPos.y);
+					printf ("worldpos [ %Ii ] [ %3.3f %3.3f ]\n", i, shipLevel[currentLevel].droid[i].worldPos.x, shipLevel[currentLevel].droid[i].worldPos.y);
 
 					cpShapeSetUserData ( shipLevel[currentLevel].droid[i].shape, (void *)i );	// Passed into collision routine
 				}

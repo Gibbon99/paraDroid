@@ -203,7 +203,7 @@ bool sys_conGetVariable(string param1)
 
 				case VAR_TYPE_BOOL:
 					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-					tempValueInt = *testVarFloat;
+//					tempValueInt = *testVarFloat;
 					if (0 == tempValue)
 					{
 						con_print(true, true, "Variable [ %s ] - [ %s ]", varName.c_str(), "false");

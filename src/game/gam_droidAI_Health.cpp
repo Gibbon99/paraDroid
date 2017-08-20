@@ -40,7 +40,11 @@ int ai_isDroidHealthy ( int whichDroid )
 	//
 	// Maybe Battle droids fight until lower health level than non combatands
 	//
-	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth < 30 ) && ( 0 != healing[0].numOnLevel ) )
+	int badHealthLevel = 0;
+
+	badHealthLevel = shipLevel[currentLevel].droid[whichDroid].currentHealth * 0.3;
+
+	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth < badHealthLevel ) && ( 0 != healing[0].numOnLevel ) )
 		{
 			return AI_RESULT_FAILED;
 		}

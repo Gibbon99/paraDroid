@@ -24,6 +24,7 @@ Copyright 2017 David Berry
 vector<_aiNode> aiTree;
 int currentAINode = 0;
 bool backToAIRoot = false;
+float badHealthFactor = 0.3f; // From script
 
 //-----------------------------------------------------------------------------
 //
