@@ -176,6 +176,8 @@ int ai_moveDroidToWaypoint ( int whichDroid )
 			if ( cpTrue == cpSpaceContainsBody ( space, shipLevel[currentLevel].droid[whichDroid].body ) )
 				{
 					cpBodySetForce ( shipLevel[currentLevel].droid[whichDroid].body, shipLevel[currentLevel].droid[whichDroid].velocity );
+
+					printf ("[ %i ] Velocity [ %f %f ]\n", whichDroid, shipLevel[currentLevel].droid[whichDroid].velocity.x, shipLevel[currentLevel].droid[whichDroid].velocity.y);
 				}
 		}
 	//

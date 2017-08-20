@@ -498,9 +498,16 @@ cpBodyUpdateVelocity(cpBody *body, cpVect gravity, cpFloat damping, cpFloat dt)
 	
 	cpAssertSoft(body->m > 0.0f && body->i > 0.0f, "Body's mass and moment must be positive to simulate. (Mass: %f Moment: %f)", body->m, body->i);
 	
+	printf ("Before: Body V [ %3.3f %3.3f ] W [ %3.3f ] mass [ %3.3f ] Moment [ %3.3f ]\n", body->v.x, body->v.y, body->w, body->m, body->i);
+
+	printf ("Gravity [ %3.3f %3.3f ] F [ %3.3f %3.3f ] m_inv [ %3.3f ]\n", gravity.x, gravity.y, body->f.x, body->f.y,
+		body->m_inv);
+
 	body->v = cpvadd(cpvmult(body->v, damping), cpvmult(cpvadd(gravity, cpvmult(body->f, body->m_inv)), dt));
 	body->w = body->w*damping + body->t*body->i_inv*dt;
-	
+
+	printf ("After: Body V [ %3.3f %3.3f ] W [ %3.3f ] mass [ %3.3f ] Moment [ %3.3f ]\n", body->v.x, body->v.y, body->w, body->m, body->i);
+
 	// Reset forces.
 	body->f = cpvzero;
 	body->t = 0.0f;

@@ -55,7 +55,7 @@ void as_guiHandleButtonPress ( string &in objectID )
 						
 						
 				// Debug
-				randomStartLevel = 2;
+				randomStartLevel = 1;
 						
 						
 					gam_changeToLevelFromScript ( randomStartLevel, true ); // Get random start level

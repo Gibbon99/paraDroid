@@ -845,7 +845,6 @@ void scr_Output ( const asSMessageInfo *msg, void *param )
 //--------------------------------------------------------
 //
 // Start the script engine
-
 bool sys_initScriptEngine()
 //--------------------------------------------------------
 {
