@@ -42,7 +42,7 @@ int ai_isDroidHealthy ( int whichDroid )
 	//
 	int badHealthLevel = 0;
 
-	badHealthLevel = shipLevel[currentLevel].droid[whichDroid].currentHealth * 0.3;
+	badHealthLevel = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth * badHealthFactor;
 
 	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth < badHealthLevel ) && ( 0 != healing[0].numOnLevel ) )
 		{

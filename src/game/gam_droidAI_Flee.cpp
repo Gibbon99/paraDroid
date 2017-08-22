@@ -45,9 +45,13 @@ int ai_isDroidHealthyFlee ( int whichDroid )
 	//
 	// Maybe Battle droids fight until lower health level than non combatands
 	//
-	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth < 30 ) &&
-	        ( 0 == healing[0].numOnLevel ) &&
-	        ( shipLevel[currentLevel].numWaypoints > 6 ) )
+	int badHealthLevel = 0;
+
+	badHealthLevel = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth * badHealthFactor;
+
+	if ( (shipLevel[currentLevel].droid[whichDroid].currentHealth < badHealthLevel) 
+		&& ( 0 == healing[0].numOnLevel )  
+		&& ( shipLevel[currentLevel].numWaypoints > 6 ) )
 		{
 			return AI_RESULT_FAILED;
 		}

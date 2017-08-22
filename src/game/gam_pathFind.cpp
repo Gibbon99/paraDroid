@@ -305,13 +305,28 @@ bool gam_AStarGenerateNewNode ( int whichPath, int whichDirection )
 		}
 	//
 	// The node is already on the open list - see if the runningCost to this node is better
-	if ( path[whichPath].openNodes[path[whichPath].openNodes.size()].g_movementCost < path[whichPath].closedNodes[path[whichPath].currentNodePtrClosedList].g_movementCost )
+	int nodeIndex = 0;
+	size_t openNodeSize;
+	size_t closedNodeSize;
+	
+	nodeIndex = path[whichPath].currentNodePtrClosedList;
+	openNodeSize = path[whichPath].openNodes.size ();
+	closedNodeSize = path[whichPath].closedNodes.size ();
+
+	openNodeSize--;
+
+	if ( nodeIndex <= closedNodeSize )
+	{
+		if ( path[whichPath].openNodes[openNodeSize].g_movementCost < path[whichPath].closedNodes[nodeIndex].g_movementCost )
 		{
 #ifdef DEBUG_ASTAR
-			con_print ( true, false, "New node is better than the old one" );
+			con_print (true, false, "New node is better than the old one");
 #endif
-			gam_AStarAddTileToOpenNode ( whichPath, path[whichPath].openNodes[path[whichPath].openNodes.size()].tileLocation, moveTileCost, path[whichPath].currentNodePtrClosedList );
+//			gam_AStarAddTileToOpenNode (whichPath, path[whichPath].openNodes[path[whichPath].openNodes.size ()].tileLocation, moveTileCost, path[whichPath].currentNodePtrClosedList);
+			gam_AStarAddTileToOpenNode (whichPath, path[whichPath].openNodes[openNodeSize].tileLocation, moveTileCost, path[whichPath].currentNodePtrClosedList);
 		}
+	}
+
 	return true;
 }
 
