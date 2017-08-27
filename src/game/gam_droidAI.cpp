@@ -688,7 +688,7 @@ void drd_processDroidAI ( int whichLevel, float delayInterval )
 				{
 					gam_findChanceToShoot ( i );
 
-					ai_findBestState ( i );
+//					ai_findBestState ( i );
 
 					backToAIRoot = false;
 					ai_walkTree ( "ROOT_NODE", i );

@@ -365,6 +365,9 @@ void gam_AStarDebugWayPoints ( int whichPath )
 //	if ( false == path[whichPath].wayPointsReady )
 //		return;
 
+	if (-1 == whichPath)
+		return;
+		
 	cpVect lineStart;
 	cpVect lineFinish;
 

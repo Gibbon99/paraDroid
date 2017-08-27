@@ -44,7 +44,7 @@ int ai_isDroidHealthy ( int whichDroid )
 
 	badHealthLevel = dataBaseEntry[shipLevel[currentLevel].droid[whichDroid].droidType].maxHealth * badHealthFactor;
 
-	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth < badHealthLevel ) && ( 0 != healing[0].numOnLevel ) )
+	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth <= badHealthLevel ) && ( 0 != healing[0].numOnLevel ) )
 		{
 			#ifdef AI_HEALTH_DEBUG
 				printf ("Droid [ %i ] has health [ %i ] from level [ %i ]\n", whichDroid, shipLevel[currentLevel].droid[whichDroid].currentHealth, badHealthLevel);
@@ -176,7 +176,9 @@ int ai_reachedHealingTile ( int whichDroid )
 #ifdef AI_HEALTH_DEBUG
 			con_print ( true, true, "[ %i ] - Droid has reached healing tile.", whichDroid );
 #endif
-
+			if (debugAStarIndex == whichDroid)
+				debugAStarIndex = -1;
+				
 			return AI_RESULT_SUCCESS;
 		}
 	else

@@ -177,6 +177,8 @@ int ai_reachedFleeTile ( int whichDroid )
 		{
 #ifdef AI_FLEE_DEBUG
 			con_print ( true, true, "[ %i ] - Droid has reached flee tile.", whichDroid );
+			if (debugAStarIndex == whichDroid)
+				debugAStarIndex = -1;
 #endif
 			return AI_RESULT_SUCCESS;
 		}

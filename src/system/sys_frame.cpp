@@ -179,7 +179,10 @@ void sys_displayFrame ( float interpolation )
 			
 			// Draw Paused window
 			if ( true == debugShowStats )
+			{
 				sys_displayDebug();
+				gam_AStarDebugWayPoints(debugAStarIndex);
+			}
 				
 			//sys_displayScreenMiddle();
 
@@ -329,6 +332,7 @@ void sys_updateFrame()
 			gam_setHUDState (HUD_STATE_BEAM_ON);
 			gam_processBeamOn (thinkInterval);
 			gam_animateSpotLights();
+			gam_animateHealTiles ( currentLevel );
 			break;
 			
 		case MODE_SHOWLEVEL:

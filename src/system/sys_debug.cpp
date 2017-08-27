@@ -59,7 +59,7 @@ void sys_debugDroidStats()
 			con_print(true, false, "Type [ %s ]", dataBaseEntry[shipLevel[currentLevel].droid[i].droidType].description.c_str());
 //			con_print(true, false, "Droid [ %i ] Collision ignore Count [ %3.2f ] Collide Count [ %i ]", i, shipLevel[currentLevel].droid[i].ignoreCollisionsCounter, shipLevel[currentLevel].droid[i].collisionCount);
 			con_print(true, false, "BeenShot [ %s ] Speed [ %3.3f ] Shoot [ %2.3f ] Shoot [ %3.3f ]", shipLevel[currentLevel].droid[i].beenShotByPlayer == true ? "True" : "False", shipLevel[currentLevel].droid[i].currentSpeed, shipLevel[currentLevel].droid[i].chanceToShoot, shipLevel[currentLevel].droid[i].chanceToShoot);
-//			con_print(true, false, "AI_State [ %s ] Collided [ %s ] Ignore Collide [ %s ]", sys_getAIString(shipLevel[currentLevel].droid[i].ai_currentState), shipLevel[currentLevel].droid[i].hasCollided == true ? "True" : "False", shipLevel[currentLevel].droid[i].ignoreCollisions == true ? "True" : "False");
+			con_print(true, false, "Health [ %i ] Collided [ %s ] Ignore Collide [ %s ]", shipLevel[currentLevel].droid[i].currentHealth, shipLevel[currentLevel].droid[i].hasCollided == true ? "True" : "False", shipLevel[currentLevel].droid[i].ignoreCollisions == true ? "True" : "False");
 			con_print(true, false, "------------------------");
 		}
 	}

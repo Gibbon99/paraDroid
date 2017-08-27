@@ -267,22 +267,3 @@ FEEDBACK
 
 GAMEPLAY
 ------------
-
-	int indexCheck;
-
-	indexCheck = path[whichPath].currentNodePtrClosedList;
-
-	if (indexCheck <= path[whichPath].closedNodes.size())
-	{
-		if (path[whichPath].openNodes[path[whichPath].openNodes.size ()].g_movementCost
-			< path[whichPath].closedNodes[indexCheck].g_movementCost)
-		{
-#ifdef DEBUG_ASTAR
-			con_print ( true, false, "New node is better than the old one" );
-#endif
-			gam_AStarAddTileToOpenNode (whichPath,
-										path[whichPath].openNodes[path[whichPath].openNodes.size ()].tileLocation,
-										moveTileCost, path[whichPath].currentNodePtrClosedList);
-		}
-	}
-	return true;
