@@ -20,7 +20,7 @@ Copyright 2017 David Berry
 #include "../../hdr/sys_globals.h"
 #include "../../hdr/game/gam_droidAI.h"
 
-//#define AI_HEALTH_DEBUG 1
+#define AI_HEALTH_DEBUG 1
 
 /*stayHealthy (SELECTOR - stop on success)
 
@@ -46,6 +46,10 @@ int ai_isDroidHealthy ( int whichDroid )
 
 	if ( ( shipLevel[currentLevel].droid[whichDroid].currentHealth < badHealthLevel ) && ( 0 != healing[0].numOnLevel ) )
 		{
+			#ifdef AI_HEALTH_DEBUG
+				printf ("Droid [ %i ] has health [ %i ] from level [ %i ]\n", whichDroid, shipLevel[currentLevel].droid[whichDroid].currentHealth, badHealthLevel);
+			#endif
+			
 			return AI_RESULT_FAILED;
 		}
 	else

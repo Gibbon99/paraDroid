@@ -130,6 +130,7 @@ set(SOURCE_FILES
     hdr/system/sys_startup.h
     hdr/system/sys_timing.h
     hdr/system/sys_utils.h
+        hdr/astar/astar.h
     hdr/sys_globals.h
     src/chipmunk/chipmunk.c
     src/chipmunk/cpArbiter.c
@@ -264,6 +265,8 @@ set(SOURCE_FILES
     src/system/sys_startup.cpp
     src/system/sys_timing.cpp
     src/system/sys_utils.cpp
+        src/astar/astar.c
+        src/astar/astar_heap.c
     main.cpp)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Debug/bin")

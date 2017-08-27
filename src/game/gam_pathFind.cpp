@@ -19,7 +19,7 @@ Copyright 2017 David Berry
 
 #include "../../hdr/sys_globals.h"
 
-//#define DEBUG_ASTAR 1
+#define DEBUG_ASTAR 1
 
 #define USE_VALID_TEST \
 	if (false == path[whichPath].inUse) \
@@ -63,7 +63,7 @@ int gam_AStarFindDistance ( cpVect fromTile, cpVect toTile )
 //-----------------------------------------------------------------------------
 //
 // Add a tile to the openNode list
-int gam_AStarAddTileToOpenNode ( int whichPath, cpVect whichTile, int moveCost, int parent )
+inline void gam_AStarAddTileToOpenNode ( int whichPath, cpVect whichTile, int moveCost, int parent )
 //-----------------------------------------------------------------------------
 {
 #ifdef DEBUG_ASTAR
@@ -91,7 +91,6 @@ int gam_AStarAddTileToOpenNode ( int whichPath, cpVect whichTile, int moveCost, 
 	con_print ( true, false, "Path [ %i ] Size [ %i ] parent [ %i ] moveCost [ %i ] distanceCost [ %i ]", whichPath, path[whichPath].openNodes.size(), parent, tempNode.g_movementCost, tempNode.h_estMoveCost );
 #endif
 
-	return 0;		// TODO: Remove int return
 }
 
 //-----------------------------------------------------------------------------
@@ -123,7 +122,7 @@ void gam_AStarMoveNodeToClosedList ( int whichPath, int whichNodeIndex )
 	path[whichPath].currentNodePtrClosedList = path[whichPath].closedNodes.size() - 1;
 
 #ifdef DEBUG_ASTAR
-	printf ( "currentNodePtrClosedList is now [ %i ] - number closedNodes [ %i ]\n", path[whichPath].currentNodePtrClosedList,path[whichPath].closedNodes.size() - 1 );
+	printf ( "currentNodePtrClosedList is now [ %i ] - number closedNodes [ %i ]\n", path[whichPath].currentNodePtrClosedList, path[whichPath].closedNodes.size() - 1 );
 #endif
 
 	indexCount = 0;
@@ -313,7 +312,7 @@ bool gam_AStarGenerateNewNode ( int whichPath, int whichDirection )
 	openNodeSize = path[whichPath].openNodes.size ();
 	closedNodeSize = path[whichPath].closedNodes.size ();
 
-	openNodeSize--;
+//	openNodeSize--;
 
 	if ( nodeIndex <= closedNodeSize )
 	{

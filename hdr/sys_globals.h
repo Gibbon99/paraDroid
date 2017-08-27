@@ -115,6 +115,8 @@ typedef int	(*ExternFunc)(...);
 #include "game/gam_pathFind.h"
 #include "game/gam_endScreen.h"
 
+//#include "astar/astar.h"
+
 #define RET_FALSE(n, v) {io_logToFile(n, v); return false;}
 
 extern ALLEGRO_DISPLAY     	        *display;
