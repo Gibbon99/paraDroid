@@ -117,6 +117,9 @@ void io_loadNewTileSet()
 		{
 			case TILESET_CLASSIC:
 				tileSetFileName = "alltiles.bmp";
+				if (currentTileColor == TILESET_DARK)
+					tileSetFileName = "alltiles_dark.bmp";
+					
 				tileSetSmallFileName = "alltiles_128.bmp";
 				io_loadImage ( tiles, tileSetFileName.c_str() );
 				io_loadImage ( tilesSmall, tileSetSmallFileName.c_str() );
@@ -156,6 +159,11 @@ void io_loadNewTileSet()
 			case TILESET_DARK:
 				tileSetFileName += "dark.bmp";
 				tileSetSmallFileName += "dark_128.bmp";
+				if (TILESET_CLASSIC == currentTileType)
+				{
+					tileSetFileName = "alltiles_dark.bmp";
+					tileSetSmallFileName = "alltiles_128.bmp";
+				}
 				break;
 			case TILESET_GREY:
 				tileSetFileName += "gray.bmp";
