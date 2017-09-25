@@ -1,7 +1,6 @@
 
 Graphics
 - leave scorch mark after explosion?
-- Transfer - make connection effect more noticiable for yellow
 
 Sound
 - Play bleep sound when droid collide - pass messages?
@@ -114,6 +113,7 @@ DONE - Transfer AI - Needs reworking - not choosing two into one because single 
 REMOVED - Higher level droids will anticipate shot ( leading shot )
 
 DONE - Add in metric for witnessing a transfer by player to increase shoot chance
+DONE - Transfer - make connection effect more noticiable for yellow
 
 BUGS
 ------
@@ -257,9 +257,13 @@ FIXED - Transfer - enemy getting stuck on two into one when first leg is active
 FIXED - Bad keypress sound not working in terminal database view
 FIXED - Removed debugging console statements from ai_flee
 
+FIXED - Need dark tileset for classic tiles to power down level
+
 High score - text blank when just hitting confirm first time
 Find better way to handle action key when using a joystick
 No keyboard arrow keys while joystick plugged in and not used
+
+
 
 FEEDBACK
 ---------
