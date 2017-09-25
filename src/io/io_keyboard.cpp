@@ -688,13 +688,12 @@ void io_readKeyboard()
 	// Windows was switched away
 	switch ( event.type )
 		{
-		case ALLEGRO_EVENT_DISPLAY_SWITCH_OUT:
+		case ALLEGRO_EVENT_DISPLAY_SWITCH_OUT:		
 					sys_changeMode ( MODE_PAUSED, false );
 					inputAction[gamePause].currentlyDown = false;
 					gamePaused = true;
 					sys_stopAllSounds();
 					gam_setHUDState ( HUD_STATE_PAUSED );
-
 			break;
 
 		case ALLEGRO_EVENT_DISPLAY_CLOSE:

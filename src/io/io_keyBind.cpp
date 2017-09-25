@@ -209,6 +209,7 @@ bool io_doKeyBindings(string fileName)
 				{
 					con_print(true, false, "Keybind: Error: Couldn't read keybind file.");
 					io_mapActionKeys();	// Use default ones
+					io_resetKeyboardStates();
 					return false;
 				}
 		}

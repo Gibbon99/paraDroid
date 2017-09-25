@@ -2,7 +2,7 @@
 
 
 [     0 ] : Logfile: Log file opened:
-[     0 ] : 25-09-2017	11:37:51
+[     0 ] : 25-09-2017	13:23:15
 [     0 ] : Logfile: Logfile started...
 [     0 ] : Node [ AI_SHOOT ] added. Num Children for [ ROOT_NODE ] now [ 1 ]
 [     0 ] : Child index set to [ 1 ]
@@ -315,27 +315,27 @@
 [     0 ] : Size of script [ 24825 ] - [ textEnglish.sc ]
 [     0 ] : Size of script [ 492 ] - [ textItalian.sc ]
 [     0 ] : Number of functions in script [ 13 ]
-[     0 ] : Func ID for [ void as_initGameVars() ] - [ 2085673792 ]
-[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 2085634624 ]
-[     0 ] : Func ID for [ void as_shutdown() ] - [ 2085552896 ]
-[     0 ] : Func ID for [ void as_loadFonts() ] - [ 2085672320 ]
-[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 2085651696 ]
-[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 2085673056 ]
-[     0 ] : Func ID for [ void as_setdbValues() ] - [ 2085650960 ]
-[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 2085654448 ]
-[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 2085671072 ]
-[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 2085584240 ]
-[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 2085674528 ]
-[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 2085637936 ]
-[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 2085636448 ]
+[     0 ] : Func ID for [ void as_initGameVars() ] - [ 1438419776 ]
+[     0 ] : Func ID for [ void as_addAllScriptCommands() ] - [ 1438380608 ]
+[     0 ] : Func ID for [ void as_shutdown() ] - [ 1438298880 ]
+[     0 ] : Func ID for [ void as_loadFonts() ] - [ 1438418304 ]
+[     0 ] : Func ID for [ void as_guiSetupGUI() ] - [ 1438397680 ]
+[     0 ] : Func ID for [ void as_setIntroValues() ] - [ 1438419040 ]
+[     0 ] : Func ID for [ void as_setdbValues() ] - [ 1438396944 ]
+[     0 ] : Func ID for [ void setupDefaultCellValues() ] - [ 1438400432 ]
+[     0 ] : Func ID for [ void as_processTransferAI() ] - [ 1438417056 ]
+[     0 ] : Func ID for [ void as_initParticleValues() ] - [ 1438330224 ]
+[     0 ] : Func ID for [ void as_setLanguageStrings() ] - [ 1438420512 ]
+[     0 ] : Func ID for [ void as_guiHandleButtonPress(string &in) ] - [ 1438383920 ]
+[     0 ] : Func ID for [ void as_guiHandleMouseOver(string &in) ] - [ 1438382432 ]
 [     0 ] : [ No joysticks found. ] [ Use Keyboard. ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 2085632656 ]
-[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 2085632656 ]
-[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 2085631952 ]
-[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 2085631248 ]
-[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 2085630208 ]
-[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 2085629408 ]
-[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 2085628560 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 1438378640 ]
+[     0 ] : FuncID for script function [ bool as_conCommandQuit() ] is [ 1438378640 ]
+[     0 ] : FuncID for script function [ bool as_toggleTileCollision(int &in) ] is [ 1438377936 ]
+[     0 ] : FuncID for script function [ void as_changeToLevel(int &in) ] is [ 1438377232 ]
+[     0 ] : FuncID for script function [ void as_setStepsLOS(int &in) ] is [ 1438376192 ]
+[     0 ] : FuncID for script function [ void as_setDroidVisibility(int &in) ] is [ 1438375392 ]
+[     0 ] : FuncID for script function [ void as_debugShowStats(int &in) ] is [ 1438374544 ]
 [     0 ] : INFO: Object [ 50.00 60.00 ]
 [     0 ] : Allegro Version: 5.2.2 Release 1
 [     0 ] : INFO: Keyboard installed.
@@ -872,12 +872,6 @@
 [     1 ] : Adding [ keyCodeControl ] to screen [ scrGameControls ]
 [     1 ] : Screen [ scrGameControls ] objectID [ 0 ] - Added
 [     1 ] : -------------
-[     1 ] : Added new object - [ controlType ]
-[     1 ] : Setting position for - [ controlType ]
-[     1 ] : Setting label for - [ controlType ]
-[     1 ] : Adding [ controlType ] to screen [ scrGameControls ]
-[     1 ] : Screen [ scrGameControls ] objectID [ 7 ] - Added
-[     1 ] : -------------
 [     1 ] : Added new object - [ buttonControlApply ]
 [     1 ] : Setting position for - [ buttonControlApply ]
 [     1 ] : Setting label for - [ buttonControlApply ]
@@ -1059,19 +1053,19 @@
 [     1 ] : Setting position for - [ scoreSliderOne ]
 [     1 ] : Setting label for - [ scoreSliderOne ]
 [     1 ] : Adding [ scoreSliderOne ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 8 ] - Added
+[     1 ] : Screen [ scrEditScoreTable ] objectID [ 7 ] - Added
 [     1 ] : -------------
 [     1 ] : Added new object - [ scoreSliderTwo ]
 [     1 ] : Setting position for - [ scoreSliderTwo ]
 [     1 ] : Setting label for - [ scoreSliderTwo ]
 [     1 ] : Adding [ scoreSliderTwo ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 9 ] - Added
+[     1 ] : Screen [ scrEditScoreTable ] objectID [ 8 ] - Added
 [     1 ] : -------------
 [     1 ] : Added new object - [ scoreSliderThree ]
 [     1 ] : Setting position for - [ scoreSliderThree ]
 [     1 ] : Setting label for - [ scoreSliderThree ]
 [     1 ] : Adding [ scoreSliderThree ] to screen [ scrEditScoreTable ]
-[     1 ] : Screen [ scrEditScoreTable ] objectID [ 10 ] - Added
+[     1 ] : Screen [ scrEditScoreTable ] objectID [ 9 ] - Added
 [     1 ] : -------------
 [     1 ] : Added new object - [ buttonEditYes ]
 [     1 ] : Setting position for - [ buttonEditYes ]
@@ -1140,16 +1134,16 @@
 [     1 ] : Loaded image [ bullet_001.bmp ]
 [     1 ] : Loaded image [ bullet_476.bmp ]
 [     1 ] : Loaded image [ bullet_821.bmp ]
-[     2 ] : Loaded image [ explosion.bmp ]
-[     2 ] : Loaded image [ db_001.jpg ]
-[     2 ] : Loaded image [ spotlight.png ]
-[     2 ] : Loaded image [ alltiles_128.bmp ]
-[     2 ] : Loaded image [ particleSmoke.png ]
-[     2 ] : Loaded image [ particleSpark.png ]
-[     2 ] : Loaded image [ static_1.png ]
-[     2 ] : Loaded image [ static_2.png ]
-[     2 ] : Loaded image [ static_3.png ]
-[     2 ] : Loaded image [ static_4.png ]
+[     1 ] : Loaded image [ explosion.bmp ]
+[     1 ] : Loaded image [ db_001.jpg ]
+[     1 ] : Loaded image [ spotlight.png ]
+[     1 ] : Loaded image [ alltiles_128.bmp ]
+[     1 ] : Loaded image [ particleSmoke.png ]
+[     1 ] : Loaded image [ particleSpark.png ]
+[     1 ] : Loaded image [ static_1.png ]
+[     1 ] : Loaded image [ static_2.png ]
+[     1 ] : Loaded image [ static_3.png ]
+[     1 ] : Loaded image [ static_4.png ]
 [     2 ] : Loaded image [ static_5.png ]
 [     2 ] : Loaded image [ static_6.png ]
 [     2 ] : Loaded image [ static_7.png ]
@@ -1167,18 +1161,18 @@
 [     2 ] : Loaded ship level [ Engineering ]
 [     2 ] : Loaded ship level [ Mid cargo ]
 [     2 ] : Loaded ship level [ Upper cargo ]
-[     3 ] : Loaded ship level [ Kitchen ]
-[     3 ] : Loaded ship level [ Robo stores ]
-[     3 ] : Loaded ship level [ Quarters ]
-[     3 ] : Loaded ship level [ Repairs ]
-[     3 ] : Loaded ship level [ Staterooms ]
-[     3 ] : Loaded ship level [ Stores ]
-[     3 ] : Loaded ship level [ Research ]
-[     3 ] : Loaded ship level [ Reactor ]
-[     3 ] : Loaded ship level [ Airlock ]
-[     3 ] : Loaded ship level [ Bridge ]
-[     3 ] : Loaded ship level [ Turrent 1 ]
-[     3 ] : Loaded ship level [ Turrent 2 ]
+[     2 ] : Loaded ship level [ Kitchen ]
+[     2 ] : Loaded ship level [ Robo stores ]
+[     2 ] : Loaded ship level [ Quarters ]
+[     2 ] : Loaded ship level [ Repairs ]
+[     2 ] : Loaded ship level [ Staterooms ]
+[     2 ] : Loaded ship level [ Stores ]
+[     2 ] : Loaded ship level [ Research ]
+[     2 ] : Loaded ship level [ Reactor ]
+[     2 ] : Loaded ship level [ Airlock ]
+[     2 ] : Loaded ship level [ Bridge ]
+[     2 ] : Loaded ship level [ Turrent 1 ]
+[     2 ] : Loaded ship level [ Turrent 2 ]
 [     3 ] : Loaded ship level [ Observation ]
 [     3 ] : Loaded sample [ collosion1.wav ]
 [     3 ] : Loaded sample [ endTransmission1.wav ]
@@ -1208,268 +1202,3265 @@
 [     3 ] : Loaded sample [ disruptor.wav ]
 [     3 ] : Loaded sample [ explode2.wav ]
 [     3 ] : Loaded sample [ levelShutdown.wav ]
-[     4 ] : Loaded sample [ redAlert.wav ]
-[     4 ] : Loaded sample [ transfer1.wav ]
-[     4 ] : Loaded sample [ transferStart.wav ]
-[     4 ] : Loaded sample [ door.wav ]
+[     3 ] : Loaded sample [ redAlert.wav ]
+[     3 ] : Loaded sample [ transfer1.wav ]
+[     3 ] : Loaded sample [ transferStart.wav ]
+[     3 ] : Loaded sample [ door.wav ]
 [     5 ] : Loaded image [ retro_blue.bmp ]
 [     5 ] : Loaded image [ retro_blue_128.bmp ]
 [     5 ] : Loaded tile set [ retro_blue.bmp ]
 [     5 ] : Loaded tile set [ retro_blue_128.bmp ]
-[    13 ] : Loaded image [ retro_gray.bmp ]
-[    13 ] : Loaded image [ retro_gray_128.bmp ]
-[    13 ] : Loaded tile set [ retro_gray.bmp ]
-[    13 ] : Loaded tile set [ retro_gray_128.bmp ]
-[    13 ] : Loaded image [ alltiles.bmp ]
-[    13 ] : Loaded image [ alltiles_128.bmp ]
-[    13 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    13 ] : Loaded image [ alltiles.bmp ]
-[    13 ] : Loaded image [ alltiles_128.bmp ]
-[    20 ] : Remove physics objects for droid [ 0 ]
-[    20 ] : Remove physics objects for droid [ 1 ]
-[    20 ] : Remove physics objects for droid [ 2 ]
-[    20 ] : Remove physics objects for droid [ 3 ]
-[    20 ] : Remove physics objects for droid [ 4 ]
-[    20 ] : Remove physics objects for droid [ 5 ]
-[    20 ] : Remove physics objects for droid [ 6 ]
-[    20 ] : Remove physics objects for droid [ 7 ]
-[    20 ] : Remove physics objects for droid [ 8 ]
-[    20 ] : Tunnel in use [ 6 ]
-[    22 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    22 ] : Loaded image [ alltiles.bmp ]
-[    22 ] : Loaded image [ alltiles_128.bmp ]
-[    23 ] : Remove physics objects for droid [ 0 ]
-[    23 ] : Remove physics objects for droid [ 1 ]
-[    23 ] : Remove physics objects for droid [ 2 ]
-[    23 ] : Remove physics objects for droid [ 3 ]
-[    23 ] : Remove physics objects for droid [ 4 ]
-[    23 ] : Remove physics objects for droid [ 5 ]
-[    23 ] : Remove physics objects for droid [ 6 ]
-[    23 ] : Remove physics objects for droid [ 7 ]
-[    23 ] : Remove physics objects for droid [ 8 ]
-[    23 ] : Tunnel in use [ 6 ]
-[    24 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    24 ] : Loaded image [ alltiles.bmp ]
-[    24 ] : Loaded image [ alltiles_128.bmp ]
-[    25 ] : Remove physics objects for droid [ 0 ]
-[    25 ] : Remove physics objects for droid [ 1 ]
-[    25 ] : Remove physics objects for droid [ 2 ]
-[    25 ] : Remove physics objects for droid [ 3 ]
-[    25 ] : Remove physics objects for droid [ 4 ]
-[    25 ] : Remove physics objects for droid [ 5 ]
-[    25 ] : Remove physics objects for droid [ 6 ]
-[    25 ] : Remove physics objects for droid [ 7 ]
-[    25 ] : Remove physics objects for droid [ 8 ]
-[    25 ] : Tunnel in use [ 6 ]
-[    26 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    26 ] : Loaded image [ alltiles.bmp ]
-[    26 ] : Loaded image [ alltiles_128.bmp ]
-[    28 ] : Remove physics objects for droid [ 0 ]
-[    28 ] : Remove physics objects for droid [ 1 ]
-[    28 ] : Remove physics objects for droid [ 2 ]
-[    28 ] : Remove physics objects for droid [ 3 ]
-[    28 ] : Remove physics objects for droid [ 4 ]
-[    28 ] : Remove physics objects for droid [ 5 ]
-[    28 ] : Remove physics objects for droid [ 6 ]
-[    28 ] : Remove physics objects for droid [ 7 ]
-[    28 ] : Remove physics objects for droid [ 8 ]
-[    28 ] : Tunnel in use [ 6 ]
-[    29 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    29 ] : Loaded image [ alltiles.bmp ]
-[    30 ] : Loaded image [ alltiles_128.bmp ]
-[    30 ] : Remove physics objects for droid [ 0 ]
-[    30 ] : Remove physics objects for droid [ 1 ]
-[    30 ] : Remove physics objects for droid [ 2 ]
-[    30 ] : Remove physics objects for droid [ 3 ]
-[    30 ] : Remove physics objects for droid [ 4 ]
-[    30 ] : Remove physics objects for droid [ 5 ]
-[    30 ] : Remove physics objects for droid [ 6 ]
-[    30 ] : Tunnel in use [ 6 ]
-[    32 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    32 ] : Loaded image [ alltiles.bmp ]
-[    32 ] : Loaded image [ alltiles_128.bmp ]
-[    33 ] : Remove physics objects for droid [ 0 ]
-[    33 ] : Remove physics objects for droid [ 1 ]
-[    33 ] : Remove physics objects for droid [ 2 ]
-[    33 ] : Remove physics objects for droid [ 3 ]
-[    33 ] : Remove physics objects for droid [ 4 ]
-[    33 ] : Remove physics objects for droid [ 5 ]
-[    33 ] : Remove physics objects for droid [ 6 ]
-[    33 ] : Tunnel in use [ 6 ]
-[    34 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    34 ] : Loaded image [ alltiles.bmp ]
-[    34 ] : Loaded image [ alltiles_128.bmp ]
-[    36 ] : Remove physics objects for droid [ 0 ]
-[    36 ] : Remove physics objects for droid [ 1 ]
-[    36 ] : Remove physics objects for droid [ 2 ]
-[    36 ] : Remove physics objects for droid [ 3 ]
-[    36 ] : Remove physics objects for droid [ 4 ]
-[    36 ] : Remove physics objects for droid [ 5 ]
-[    36 ] : Remove physics objects for droid [ 6 ]
-[    36 ] : Tunnel in use [ 6 ]
-[    38 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    38 ] : Loaded image [ alltiles.bmp ]
-[    38 ] : Loaded image [ alltiles_128.bmp ]
-[    47 ] : Remove physics objects for droid [ 0 ]
-[    47 ] : Remove physics objects for droid [ 1 ]
-[    47 ] : Remove physics objects for droid [ 2 ]
-[    47 ] : Remove physics objects for droid [ 3 ]
-[    47 ] : Remove physics objects for droid [ 4 ]
-[    47 ] : Remove physics objects for droid [ 5 ]
-[    47 ] : Remove physics objects for droid [ 6 ]
-[    47 ] : Tunnel in use [ 6 ]
-[    48 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    48 ] : Loaded image [ alltiles.bmp ]
-[    48 ] : Loaded image [ alltiles_128.bmp ]
-[    49 ] : Remove physics objects for droid [ 0 ]
-[    49 ] : Remove physics objects for droid [ 1 ]
-[    49 ] : Remove physics objects for droid [ 2 ]
-[    49 ] : Remove physics objects for droid [ 3 ]
-[    49 ] : Remove physics objects for droid [ 4 ]
-[    49 ] : Remove physics objects for droid [ 5 ]
-[    49 ] : Remove physics objects for droid [ 6 ]
-[    49 ] : Tunnel in use [ 6 ]
-[    51 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    51 ] : Loaded image [ alltiles.bmp ]
-[    51 ] : Loaded image [ alltiles_128.bmp ]
-[    52 ] : Remove physics objects for droid [ 0 ]
-[    52 ] : Remove physics objects for droid [ 1 ]
-[    52 ] : Remove physics objects for droid [ 2 ]
-[    52 ] : Remove physics objects for droid [ 3 ]
-[    52 ] : Remove physics objects for droid [ 4 ]
-[    52 ] : Remove physics objects for droid [ 5 ]
-[    52 ] : Remove physics objects for droid [ 6 ]
-[    52 ] : Tunnel in use [ 6 ]
-[    54 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    54 ] : Loaded image [ alltiles.bmp ]
-[    54 ] : Loaded image [ alltiles_128.bmp ]
-[    55 ] : Remove physics objects for droid [ 0 ]
-[    55 ] : Remove physics objects for droid [ 1 ]
-[    55 ] : Remove physics objects for droid [ 2 ]
-[    55 ] : Remove physics objects for droid [ 3 ]
-[    55 ] : Remove physics objects for droid [ 4 ]
-[    55 ] : Remove physics objects for droid [ 5 ]
-[    55 ] : Remove physics objects for droid [ 6 ]
-[    55 ] : Tunnel in use [ 6 ]
-[    56 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    56 ] : Loaded image [ alltiles.bmp ]
-[    56 ] : Loaded image [ alltiles_128.bmp ]
-[    57 ] : Remove physics objects for droid [ 0 ]
-[    57 ] : Remove physics objects for droid [ 1 ]
-[    57 ] : Remove physics objects for droid [ 2 ]
-[    57 ] : Remove physics objects for droid [ 3 ]
-[    57 ] : Remove physics objects for droid [ 4 ]
-[    57 ] : Remove physics objects for droid [ 5 ]
-[    57 ] : Remove physics objects for droid [ 6 ]
-[    57 ] : Tunnel in use [ 6 ]
-[    58 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    58 ] : Loaded image [ alltiles.bmp ]
-[    58 ] : Loaded image [ alltiles_128.bmp ]
-[    59 ] : Remove physics objects for droid [ 0 ]
-[    59 ] : Remove physics objects for droid [ 1 ]
-[    59 ] : Remove physics objects for droid [ 2 ]
-[    59 ] : Remove physics objects for droid [ 3 ]
-[    59 ] : Remove physics objects for droid [ 4 ]
-[    59 ] : Remove physics objects for droid [ 5 ]
-[    59 ] : Remove physics objects for droid [ 6 ]
-[    59 ] : Tunnel in use [ 6 ]
-[    60 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    60 ] : Loaded image [ alltiles.bmp ]
-[    60 ] : Loaded image [ alltiles_128.bmp ]
-[    62 ] : Remove physics objects for droid [ 0 ]
-[    62 ] : Remove physics objects for droid [ 1 ]
-[    62 ] : Remove physics objects for droid [ 2 ]
-[    62 ] : Remove physics objects for droid [ 3 ]
-[    62 ] : Remove physics objects for droid [ 4 ]
-[    62 ] : Remove physics objects for droid [ 5 ]
-[    62 ] : Remove physics objects for droid [ 6 ]
-[    62 ] : Tunnel in use [ 6 ]
-[    64 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    64 ] : Loaded image [ alltiles.bmp ]
-[    64 ] : Loaded image [ alltiles_128.bmp ]
-[    64 ] : Remove physics objects for droid [ 0 ]
-[    64 ] : Remove physics objects for droid [ 1 ]
-[    64 ] : Remove physics objects for droid [ 2 ]
-[    64 ] : Remove physics objects for droid [ 3 ]
-[    64 ] : Remove physics objects for droid [ 4 ]
-[    64 ] : Remove physics objects for droid [ 5 ]
-[    64 ] : Remove physics objects for droid [ 6 ]
-[    64 ] : Remove physics objects for droid [ 7 ]
-[    64 ] : Remove physics objects for droid [ 8 ]
-[    64 ] : Tunnel in use [ 6 ]
-[    66 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    66 ] : Loaded image [ alltiles.bmp ]
-[    66 ] : Loaded image [ alltiles_128.bmp ]
-[    66 ] : Remove physics objects for droid [ 0 ]
-[    66 ] : Remove physics objects for droid [ 1 ]
-[    66 ] : Remove physics objects for droid [ 2 ]
-[    66 ] : Remove physics objects for droid [ 3 ]
-[    66 ] : Remove physics objects for droid [ 4 ]
-[    66 ] : Remove physics objects for droid [ 5 ]
-[    66 ] : Remove physics objects for droid [ 6 ]
-[    66 ] : Remove physics objects for droid [ 7 ]
-[    66 ] : Remove physics objects for droid [ 8 ]
-[    66 ] : Tunnel in use [ 6 ]
-[    68 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    68 ] : Loaded image [ alltiles.bmp ]
-[    68 ] : Loaded image [ alltiles_128.bmp ]
-[    74 ] : Remove physics objects for droid [ 0 ]
-[    74 ] : Remove physics objects for droid [ 1 ]
-[    74 ] : Remove physics objects for droid [ 2 ]
-[    74 ] : Remove physics objects for droid [ 3 ]
-[    74 ] : Remove physics objects for droid [ 4 ]
-[    74 ] : Remove physics objects for droid [ 5 ]
-[    74 ] : Remove physics objects for droid [ 6 ]
-[    74 ] : Remove physics objects for droid [ 7 ]
-[    74 ] : Remove physics objects for droid [ 8 ]
-[    74 ] : Tunnel in use [ 6 ]
-[    75 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    75 ] : Loaded image [ alltiles.bmp ]
-[    75 ] : Loaded image [ alltiles_128.bmp ]
-[    76 ] : Remove physics objects for droid [ 0 ]
-[    76 ] : Remove physics objects for droid [ 1 ]
-[    76 ] : Remove physics objects for droid [ 2 ]
+[    50 ] : Loaded image [ retro_gray.bmp ]
+[    50 ] : Loaded image [ retro_gray_128.bmp ]
+[    50 ] : Loaded tile set [ retro_gray.bmp ]
+[    50 ] : Loaded tile set [ retro_gray_128.bmp ]
+[    50 ] : Loaded image [ alltiles.bmp ]
+[    50 ] : Loaded image [ alltiles_128.bmp ]
+[    50 ] : Lift [ 0 ] PosX [ 928 ] PosY [ 384 ]
+[    50 ] : Lift [ 1 ] PosX [ 704 ] PosY [ 448 ]
+[    50 ] : Lift [ 2 ] PosX [ 1184 ] PosY [ 448 ]
+[    50 ] : Loaded image [ alltiles.bmp ]
+[    50 ] : Loaded image [ alltiles_128.bmp ]
+[    60 ] : About to free spark particle [ 6 ]
+[    60 ] : About to free spark particle [ 5 ]
+[    60 ] : About to free spark particle [ 4 ]
+[    60 ] : About to free spark particle [ 3 ]
+[    60 ] : About to free spark particle [ 2 ]
+[    60 ] : About to free spark particle [ 1 ]
+[    65 ] : About to free spark particle [ 6 ]
+[    65 ] : About to free spark particle [ 5 ]
+[    65 ] : About to free spark particle [ 4 ]
+[    65 ] : About to free spark particle [ 3 ]
+[    65 ] : About to free spark particle [ 2 ]
+[    65 ] : About to free spark particle [ 1 ]
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 1 ] parent [ -1 ] moveCost [ 0 ] distanceCost [ 30 ]
+[    72 ] : Requesting new path start [ 27.00 14.00 ] Dest [ 24.00 20.00 ]
+[    72 ] : searchThread - whichPath [ 0 ]
+[    72 ] : Search the open nodes and find the one with the lowest total cost
+[    72 ] : Move open node [ 0 ] to closedNode list
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 0 ] Direction [ RIGHT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 1 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 20 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 0 ] Direction [ LEFT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 2 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 40 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 0 ] Direction [ UP ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 0 ] Direction [ DOWN ]
+[    72 ] : See if the node is solid or not
+[    72 ] : searchThread - whichPath [ 0 ]
+[    72 ] : Search the open nodes and find the one with the lowest total cost
+[    72 ] : Move open node [ 0 ] to closedNode list
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 1 ] Direction [ RIGHT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 2 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 10 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 1 ] Direction [ LEFT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 1 ] Direction [ UP ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 1 ] Direction [ DOWN ]
+[    72 ] : See if the node is solid or not
+[    72 ] : searchThread - whichPath [ 0 ]
+[    72 ] : Search the open nodes and find the one with the lowest total cost
+[    72 ] : Move open node [ 1 ] to closedNode list
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 2 ] Direction [ RIGHT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 2 ] parent [ 2 ] moveCost [ 30 ] distanceCost [ 0 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 2 ] Direction [ LEFT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 2 ] Direction [ UP ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 3 ] parent [ 2 ] moveCost [ 30 ] distanceCost [ 20 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 2 ] Direction [ DOWN ]
+[    72 ] : See if the node is solid or not
+[    72 ] : searchThread - whichPath [ 0 ]
+[    72 ] : Search the open nodes and find the one with the lowest total cost
+[    72 ] : Move open node [ 1 ] to closedNode list
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 3 ] Direction [ RIGHT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 3 ] parent [ 3 ] moveCost [ 40 ] distanceCost [ 10 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 3 ] Direction [ LEFT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 3 ] Direction [ UP ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 3 ] Direction [ DOWN ]
+[    72 ] : See if the node is solid or not
+[    72 ] : searchThread - whichPath [ 0 ]
+[    72 ] : Search the open nodes and find the one with the lowest total cost
+[    72 ] : Move open node [ 0 ] to closedNode list
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 4 ] Direction [ RIGHT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 4 ] Direction [ LEFT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 3 ] parent [ 4 ] moveCost [ 20 ] distanceCost [ 50 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 4 ] Direction [ UP ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 4 ] Direction [ DOWN ]
+[    72 ] : See if the node is solid or not
+[    72 ] : searchThread - whichPath [ 0 ]
+[    72 ] : Search the open nodes and find the one with the lowest total cost
+[    72 ] : Move open node [ 0 ] to closedNode list
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 5 ] Direction [ RIGHT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 5 ] Direction [ LEFT ]
+[    72 ] : See if the node is solid or not
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 5 ] Direction [ UP ]
+[    72 ] : See if the node is solid or not
+[    72 ] : Adding new tile to openNode list
+[    72 ] : Path [ 0 ] Size [ 3 ] parent [ 5 ] moveCost [ 40 ] distanceCost [ 30 ]
+[    72 ] : ---
+[    72 ] : Generate a new node based on the node with the current lowest cost.
+[    72 ] : Parent [ 5 ] Direction [ DOWN ]
+[    72 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 6 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 3 ] parent [ 6 ] moveCost [ 50 ] distanceCost [ 20 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 6 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 6 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 6 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 7 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 7 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 3 ] parent [ 7 ] moveCost [ 30 ] distanceCost [ 60 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 7 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 7 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 8 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 8 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 8 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 8 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 9 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 9 ] moveCost [ 60 ] distanceCost [ 30 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 9 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 9 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 9 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 10 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 10 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 10 ] moveCost [ 40 ] distanceCost [ 70 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 10 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 10 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 11 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 11 ] moveCost [ 70 ] distanceCost [ 40 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 11 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 11 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 11 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 12 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 12 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 12 ] moveCost [ 50 ] distanceCost [ 80 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 12 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 12 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 13 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 13 ] moveCost [ 80 ] distanceCost [ 50 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 13 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 13 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 13 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 14 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 14 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 14 ] moveCost [ 60 ] distanceCost [ 90 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 14 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 14 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 15 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 15 ] moveCost [ 90 ] distanceCost [ 60 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 15 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 15 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 15 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 16 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 16 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 16 ] moveCost [ 70 ] distanceCost [ 100 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 16 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 16 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 17 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 17 ] moveCost [ 100 ] distanceCost [ 70 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 17 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 17 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 17 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 18 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 18 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 2 ] parent [ 18 ] moveCost [ 80 ] distanceCost [ 110 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 18 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 3 ] parent [ 18 ] moveCost [ 80 ] distanceCost [ 110 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 18 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 4 ] parent [ 18 ] moveCost [ 80 ] distanceCost [ 90 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 0 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 19 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 4 ] parent [ 19 ] moveCost [ 110 ] distanceCost [ 80 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 19 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 19 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 19 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 2 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 20 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 20 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 20 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 20 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 4 ] parent [ 20 ] moveCost [ 90 ] distanceCost [ 80 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 21 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 4 ] parent [ 21 ] moveCost [ 100 ] distanceCost [ 70 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 21 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 21 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 21 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 5 ] parent [ 21 ] moveCost [ 100 ] distanceCost [ 70 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 22 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 5 ] parent [ 22 ] moveCost [ 110 ] distanceCost [ 60 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 22 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 22 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 22 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 6 ] parent [ 22 ] moveCost [ 110 ] distanceCost [ 60 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 23 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 23 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 23 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 23 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 6 ] parent [ 23 ] moveCost [ 110 ] distanceCost [ 60 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 24 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 6 ] parent [ 24 ] moveCost [ 120 ] distanceCost [ 50 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 24 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 24 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 24 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 7 ] parent [ 24 ] moveCost [ 120 ] distanceCost [ 50 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 25 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 25 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 25 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 25 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 7 ] parent [ 25 ] moveCost [ 120 ] distanceCost [ 50 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 26 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 26 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 7 ] parent [ 26 ] moveCost [ 120 ] distanceCost [ 70 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 26 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 26 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 8 ] parent [ 26 ] moveCost [ 120 ] distanceCost [ 50 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 27 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 8 ] parent [ 27 ] moveCost [ 130 ] distanceCost [ 40 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 27 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 27 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 27 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 27 ] moveCost [ 130 ] distanceCost [ 40 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 28 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 28 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 28 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 28 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 28 ] moveCost [ 130 ] distanceCost [ 40 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 3 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 29 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 29 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 29 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 29 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 29 ] moveCost [ 130 ] distanceCost [ 40 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 4 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 30 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 30 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 30 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 30 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 30 ] moveCost [ 130 ] distanceCost [ 40 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 4 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 31 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 31 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 31 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 31 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 31 ] moveCost [ 140 ] distanceCost [ 30 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 4 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 32 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 32 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 32 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 32 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 32 ] moveCost [ 140 ] distanceCost [ 30 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 4 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 33 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 33 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 33 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 33 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 33 ] moveCost [ 140 ] distanceCost [ 30 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 4 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 34 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 34 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 34 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 34 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 34 ] moveCost [ 140 ] distanceCost [ 30 ]
+[    73 ] : searchThread - whichPath [ 0 ]
+[    73 ] : Search the open nodes and find the one with the lowest total cost
+[    73 ] : Move open node [ 4 ] to closedNode list
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 35 ] Direction [ RIGHT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 35 ] Direction [ LEFT ]
+[    73 ] : See if the node is solid or not
+[    73 ] : Adding new tile to openNode list
+[    73 ] : Path [ 0 ] Size [ 9 ] parent [ 35 ] moveCost [ 140 ] distanceCost [ 50 ]
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 35 ] Direction [ UP ]
+[    73 ] : See if the node is solid or not
+[    73 ] : ---
+[    73 ] : Generate a new node based on the node with the current lowest cost.
+[    73 ] : Parent [ 35 ] Direction [ DOWN ]
+[    73 ] : See if the node is solid or not
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 4 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 36 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 9 ] parent [ 36 ] moveCost [ 150 ] distanceCost [ 20 ]
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 36 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 36 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 36 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 10 ] parent [ 36 ] moveCost [ 150 ] distanceCost [ 20 ]
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 4 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 37 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 37 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 37 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 37 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 10 ] parent [ 37 ] moveCost [ 150 ] distanceCost [ 20 ]
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 4 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 38 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 38 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 38 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 38 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 10 ] parent [ 38 ] moveCost [ 150 ] distanceCost [ 20 ]
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 4 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 39 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 39 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 39 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 39 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 5 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 40 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 9 ] parent [ 40 ] moveCost [ 160 ] distanceCost [ 10 ]
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 40 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 40 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 40 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 5 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 41 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 41 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 41 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 41 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 9 ] parent [ 41 ] moveCost [ 160 ] distanceCost [ 10 ]
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 5 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 42 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 42 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 42 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 42 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 9 ] parent [ 42 ] moveCost [ 160 ] distanceCost [ 10 ]
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 5 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 43 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 43 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 43 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 43 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 5 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 44 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 8 ] parent [ 44 ] moveCost [ 170 ] distanceCost [ 0 ]
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 44 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 44 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 9 ] parent [ 44 ] moveCost [ 170 ] distanceCost [ 20 ]
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 44 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 10 ] parent [ 44 ] moveCost [ 170 ] distanceCost [ 0 ]
+[    74 ] : searchThread - whichPath [ 0 ]
+[    74 ] : Search the open nodes and find the one with the lowest total cost
+[    74 ] : Move open node [ 5 ] to closedNode list
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 45 ] Direction [ RIGHT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 45 ] Direction [ LEFT ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 45 ] Direction [ UP ]
+[    74 ] : See if the node is solid or not
+[    74 ] : ---
+[    74 ] : Generate a new node based on the node with the current lowest cost.
+[    74 ] : Parent [ 45 ] Direction [ DOWN ]
+[    74 ] : See if the node is solid or not
+[    74 ] : Adding new tile to openNode list
+[    74 ] : Path [ 0 ] Size [ 10 ] parent [ 45 ] moveCost [ 170 ] distanceCost [ 0 ]
+[    74 ] : Move open node [ 10 ] to closedNode list
+[    74 ] : searchThread - whichPath [ 0 ]
+[    76 ] : About to free spark particle [ 33 ]
+[    76 ] : About to free spark particle [ 32 ]
+[    76 ] : About to free spark particle [ 31 ]
+[    76 ] : About to free spark particle [ 30 ]
+[    76 ] : About to free spark particle [ 29 ]
+[    76 ] : About to free spark particle [ 28 ]
+[    76 ] : About to free spark particle [ 27 ]
+[    76 ] : About to free spark particle [ 26 ]
+[    76 ] : About to free spark particle [ 25 ]
+[    76 ] : About to free spark particle [ 24 ]
+[    76 ] : About to free spark particle [ 23 ]
+[    76 ] : About to free spark particle [ 22 ]
+[    76 ] : About to free spark particle [ 21 ]
+[    76 ] : About to free spark particle [ 20 ]
+[    76 ] : About to free spark particle [ 19 ]
+[    76 ] : About to free spark particle [ 18 ]
+[    76 ] : About to free spark particle [ 17 ]
+[    76 ] : About to free spark particle [ 16 ]
+[    76 ] : About to free spark particle [ 15 ]
+[    76 ] : About to free spark particle [ 14 ]
+[    76 ] : About to free spark particle [ 13 ]
+[    76 ] : About to free spark particle [ 12 ]
+[    76 ] : About to free spark particle [ 11 ]
+[    76 ] : About to free spark particle [ 10 ]
+[    76 ] : About to free spark particle [ 9 ]
+[    76 ] : About to free spark particle [ 8 ]
+[    76 ] : About to free spark particle [ 7 ]
+[    76 ] : About to free spark particle [ 6 ]
+[    76 ] : About to free spark particle [ 5 ]
+[    76 ] : About to free spark particle [ 4 ]
+[    76 ] : About to free spark particle [ 3 ]
+[    76 ] : About to free spark particle [ 2 ]
+[    76 ] : Freeing particle emitterItr.
 [    76 ] : Remove physics objects for droid [ 3 ]
-[    76 ] : Remove physics objects for droid [ 4 ]
-[    76 ] : Remove physics objects for droid [ 5 ]
-[    76 ] : Remove physics objects for droid [ 6 ]
-[    76 ] : Remove physics objects for droid [ 7 ]
-[    76 ] : Remove physics objects for droid [ 8 ]
-[    76 ] : Tunnel in use [ 6 ]
-[    78 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    78 ] : Loaded image [ alltiles.bmp ]
-[    78 ] : Loaded image [ alltiles_128.bmp ]
-[    79 ] : Remove physics objects for droid [ 0 ]
-[    79 ] : Remove physics objects for droid [ 1 ]
-[    79 ] : Remove physics objects for droid [ 2 ]
-[    79 ] : Remove physics objects for droid [ 3 ]
-[    79 ] : Remove physics objects for droid [ 4 ]
-[    79 ] : Remove physics objects for droid [ 5 ]
-[    79 ] : Remove physics objects for droid [ 6 ]
-[    79 ] : Remove physics objects for droid [ 7 ]
-[    79 ] : Remove physics objects for droid [ 8 ]
-[    79 ] : Tunnel in use [ 6 ]
-[    80 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    80 ] : Loaded image [ alltiles.bmp ]
-[    80 ] : Loaded image [ alltiles_128.bmp ]
-[    81 ] : Remove physics objects for droid [ 0 ]
-[    81 ] : Remove physics objects for droid [ 1 ]
-[    81 ] : Remove physics objects for droid [ 2 ]
-[    81 ] : Remove physics objects for droid [ 3 ]
-[    81 ] : Remove physics objects for droid [ 4 ]
-[    81 ] : Remove physics objects for droid [ 5 ]
-[    81 ] : Remove physics objects for droid [ 6 ]
-[    81 ] : Remove physics objects for droid [ 7 ]
-[    81 ] : Remove physics objects for droid [ 8 ]
-[    81 ] : Tunnel in use [ 6 ]
-[    82 ] : Lift [ 0 ] PosX [ 544 ] PosY [ 352 ]
-[    82 ] : Loaded image [ alltiles.bmp ]
-[    82 ] : Loaded image [ alltiles_128.bmp ]
-[    84 ] : Profile - Average time for tiles [ 0.000081 ]
-[    84 ] : Error: Could not save config values to file [ config.ini ]
-[    84 ] : Keybind: Info: Key states saved to file.
-[    84 ] : Logfile: Log file closed:
-[    84 ] : 25-09-2017	11:39:15
-[    84 ] : -----------------------------------------------------------------------------
+[    81 ] : About to free spark particle [ 5 ]
+[    81 ] : About to free spark particle [ 4 ]
+[    81 ] : About to free spark particle [ 3 ]
+[    81 ] : About to free spark particle [ 2 ]
+[    81 ] : Freeing particle emitterItr.
+[    83 ] : About to free spark particle [ 5 ]
+[    83 ] : About to free spark particle [ 4 ]
+[    83 ] : About to free spark particle [ 3 ]
+[    83 ] : About to free spark particle [ 2 ]
+[    83 ] : Freeing particle emitterItr.
+[    85 ] : About to free spark particle [ 6 ]
+[    85 ] : About to free spark particle [ 5 ]
+[    85 ] : About to free spark particle [ 4 ]
+[    85 ] : About to free spark particle [ 3 ]
+[    85 ] : About to free spark particle [ 2 ]
+[    85 ] : About to free spark particle [ 1 ]
+[    86 ] : About to free spark particle [ 7 ]
+[    86 ] : About to free spark particle [ 6 ]
+[    86 ] : About to free spark particle [ 5 ]
+[    86 ] : About to free spark particle [ 4 ]
+[    86 ] : About to free spark particle [ 3 ]
+[    86 ] : About to free spark particle [ 2 ]
+[    86 ] : About to free spark particle [ 1 ]
+[    87 ] : About to free spark particle [ 6 ]
+[    87 ] : About to free spark particle [ 5 ]
+[    87 ] : About to free spark particle [ 4 ]
+[    87 ] : About to free spark particle [ 3 ]
+[    87 ] : About to free spark particle [ 2 ]
+[    87 ] : About to free spark particle [ 1 ]
+[   107 ] : About to free spark particle [ 6 ]
+[   107 ] : About to free spark particle [ 5 ]
+[   107 ] : About to free spark particle [ 4 ]
+[   107 ] : About to free spark particle [ 3 ]
+[   107 ] : About to free spark particle [ 2 ]
+[   107 ] : About to free spark particle [ 1 ]
+[   109 ] : About to free spark particle [ 5 ]
+[   109 ] : About to free spark particle [ 4 ]
+[   109 ] : About to free spark particle [ 3 ]
+[   109 ] : About to free spark particle [ 2 ]
+[   109 ] : Freeing particle emitterItr.
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 1 ] parent [ -1 ] moveCost [ 0 ] distanceCost [ 30 ]
+[   109 ] : Requesting new path start [ 12.00 8.00 ] Dest [ 15.00 8.00 ]
+[   109 ] : searchThread - whichPath [ 0 ]
+[   109 ] : Search the open nodes and find the one with the lowest total cost
+[   109 ] : Move open node [ 0 ] to closedNode list
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 0 ] Direction [ RIGHT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 1 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 20 ]
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 0 ] Direction [ LEFT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 2 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 40 ]
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 0 ] Direction [ UP ]
+[   109 ] : See if the node is solid or not
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 0 ] Direction [ DOWN ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 3 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 20 ]
+[   109 ] : searchThread - whichPath [ 0 ]
+[   109 ] : Search the open nodes and find the one with the lowest total cost
+[   109 ] : Move open node [ 0 ] to closedNode list
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 1 ] Direction [ RIGHT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 3 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 1 ] Direction [ LEFT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 1 ] Direction [ UP ]
+[   109 ] : See if the node is solid or not
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 1 ] Direction [ DOWN ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 4 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   109 ] : searchThread - whichPath [ 0 ]
+[   109 ] : Search the open nodes and find the one with the lowest total cost
+[   109 ] : Move open node [ 1 ] to closedNode list
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 2 ] Direction [ RIGHT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 2 ] Direction [ LEFT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 4 ] parent [ 2 ] moveCost [ 20 ] distanceCost [ 30 ]
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 2 ] Direction [ UP ]
+[   109 ] : See if the node is solid or not
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 2 ] Direction [ DOWN ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 5 ] parent [ 2 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   109 ] : searchThread - whichPath [ 0 ]
+[   109 ] : Search the open nodes and find the one with the lowest total cost
+[   109 ] : Move open node [ 1 ] to closedNode list
+[   109 ] : ---
+[   109 ] : Generate a new node based on the node with the current lowest cost.
+[   109 ] : Parent [ 3 ] Direction [ RIGHT ]
+[   109 ] : See if the node is solid or not
+[   109 ] : Adding new tile to openNode list
+[   109 ] : Path [ 0 ] Size [ 5 ] parent [ 3 ] moveCost [ 30 ] distanceCost [ 0 ]
+[   109 ] : Move open node [ 5 ] to closedNode list
+[   109 ] : searchThread - whichPath [ 0 ]
+[   116 ] : About to free spark particle [ 58 ]
+[   116 ] : About to free spark particle [ 57 ]
+[   116 ] : About to free spark particle [ 56 ]
+[   116 ] : About to free spark particle [ 55 ]
+[   116 ] : About to free spark particle [ 54 ]
+[   116 ] : About to free spark particle [ 53 ]
+[   116 ] : About to free spark particle [ 52 ]
+[   116 ] : About to free spark particle [ 51 ]
+[   116 ] : About to free spark particle [ 50 ]
+[   116 ] : About to free spark particle [ 49 ]
+[   116 ] : About to free spark particle [ 48 ]
+[   116 ] : About to free spark particle [ 47 ]
+[   116 ] : About to free spark particle [ 46 ]
+[   116 ] : About to free spark particle [ 45 ]
+[   116 ] : About to free spark particle [ 44 ]
+[   116 ] : About to free spark particle [ 43 ]
+[   116 ] : About to free spark particle [ 42 ]
+[   116 ] : About to free spark particle [ 41 ]
+[   116 ] : About to free spark particle [ 40 ]
+[   116 ] : About to free spark particle [ 39 ]
+[   116 ] : About to free spark particle [ 38 ]
+[   116 ] : About to free spark particle [ 37 ]
+[   116 ] : About to free spark particle [ 36 ]
+[   116 ] : About to free spark particle [ 35 ]
+[   116 ] : About to free spark particle [ 34 ]
+[   116 ] : About to free spark particle [ 33 ]
+[   116 ] : About to free spark particle [ 32 ]
+[   116 ] : About to free spark particle [ 31 ]
+[   116 ] : About to free spark particle [ 30 ]
+[   116 ] : About to free spark particle [ 29 ]
+[   116 ] : About to free spark particle [ 28 ]
+[   116 ] : About to free spark particle [ 27 ]
+[   116 ] : About to free spark particle [ 26 ]
+[   116 ] : About to free spark particle [ 25 ]
+[   116 ] : About to free spark particle [ 24 ]
+[   116 ] : About to free spark particle [ 23 ]
+[   116 ] : About to free spark particle [ 22 ]
+[   116 ] : About to free spark particle [ 21 ]
+[   116 ] : About to free spark particle [ 20 ]
+[   116 ] : About to free spark particle [ 19 ]
+[   116 ] : About to free spark particle [ 18 ]
+[   116 ] : About to free spark particle [ 17 ]
+[   116 ] : About to free spark particle [ 16 ]
+[   116 ] : About to free spark particle [ 15 ]
+[   116 ] : About to free spark particle [ 14 ]
+[   116 ] : About to free spark particle [ 13 ]
+[   116 ] : About to free spark particle [ 12 ]
+[   116 ] : About to free spark particle [ 11 ]
+[   116 ] : About to free spark particle [ 10 ]
+[   116 ] : About to free spark particle [ 9 ]
+[   116 ] : About to free spark particle [ 8 ]
+[   116 ] : About to free spark particle [ 7 ]
+[   116 ] : About to free spark particle [ 6 ]
+[   116 ] : About to free spark particle [ 5 ]
+[   116 ] : About to free spark particle [ 4 ]
+[   116 ] : About to free spark particle [ 3 ]
+[   116 ] : About to free spark particle [ 2 ]
+[   116 ] : About to free spark particle [ 1 ]
+[   116 ] : Remove physics objects for droid [ 2 ]
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 1 ] parent [ -1 ] moveCost [ 0 ] distanceCost [ 30 ]
+[   117 ] : Requesting new path start [ 18.00 9.00 ] Dest [ 20.00 10.00 ]
+[   117 ] : searchThread - whichPath [ 0 ]
+[   117 ] : Search the open nodes and find the one with the lowest total cost
+[   117 ] : Move open node [ 0 ] to closedNode list
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 0 ] Direction [ RIGHT ]
+[   117 ] : See if the node is solid or not
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 0 ] Direction [ LEFT ]
+[   117 ] : See if the node is solid or not
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 1 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 40 ]
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 0 ] Direction [ UP ]
+[   117 ] : See if the node is solid or not
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 2 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 40 ]
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 0 ] Direction [ DOWN ]
+[   117 ] : See if the node is solid or not
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 3 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 20 ]
+[   117 ] : searchThread - whichPath [ 0 ]
+[   117 ] : Search the open nodes and find the one with the lowest total cost
+[   117 ] : Move open node [ 2 ] to closedNode list
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 1 ] Direction [ RIGHT ]
+[   117 ] : See if the node is solid or not
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 3 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 1 ] Direction [ LEFT ]
+[   117 ] : See if the node is solid or not
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 4 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 30 ]
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 1 ] Direction [ UP ]
+[   117 ] : See if the node is solid or not
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 1 ] Direction [ DOWN ]
+[   117 ] : See if the node is solid or not
+[   117 ] : searchThread - whichPath [ 0 ]
+[   117 ] : Search the open nodes and find the one with the lowest total cost
+[   117 ] : Move open node [ 2 ] to closedNode list
+[   117 ] : ---
+[   117 ] : Generate a new node based on the node with the current lowest cost.
+[   117 ] : Parent [ 2 ] Direction [ RIGHT ]
+[   117 ] : See if the node is solid or not
+[   117 ] : Adding new tile to openNode list
+[   117 ] : Path [ 0 ] Size [ 4 ] parent [ 2 ] moveCost [ 30 ] distanceCost [ 0 ]
+[   117 ] : Move open node [ 4 ] to closedNode list
+[   117 ] : searchThread - whichPath [ 0 ]
+[   122 ] : About to free spark particle [ 41 ]
+[   122 ] : About to free spark particle [ 40 ]
+[   122 ] : About to free spark particle [ 39 ]
+[   122 ] : About to free spark particle [ 38 ]
+[   122 ] : About to free spark particle [ 37 ]
+[   122 ] : About to free spark particle [ 36 ]
+[   122 ] : About to free spark particle [ 35 ]
+[   122 ] : About to free spark particle [ 34 ]
+[   122 ] : About to free spark particle [ 33 ]
+[   122 ] : About to free spark particle [ 32 ]
+[   122 ] : About to free spark particle [ 31 ]
+[   122 ] : About to free spark particle [ 30 ]
+[   122 ] : About to free spark particle [ 29 ]
+[   122 ] : About to free spark particle [ 28 ]
+[   122 ] : About to free spark particle [ 27 ]
+[   122 ] : About to free spark particle [ 26 ]
+[   122 ] : About to free spark particle [ 25 ]
+[   122 ] : About to free spark particle [ 24 ]
+[   122 ] : About to free spark particle [ 23 ]
+[   122 ] : About to free spark particle [ 22 ]
+[   122 ] : About to free spark particle [ 21 ]
+[   122 ] : About to free spark particle [ 20 ]
+[   122 ] : About to free spark particle [ 19 ]
+[   122 ] : About to free spark particle [ 18 ]
+[   122 ] : About to free spark particle [ 17 ]
+[   122 ] : About to free spark particle [ 16 ]
+[   122 ] : About to free spark particle [ 15 ]
+[   122 ] : About to free spark particle [ 14 ]
+[   122 ] : About to free spark particle [ 13 ]
+[   122 ] : About to free spark particle [ 12 ]
+[   122 ] : About to free spark particle [ 11 ]
+[   122 ] : About to free spark particle [ 10 ]
+[   122 ] : About to free spark particle [ 9 ]
+[   122 ] : About to free spark particle [ 8 ]
+[   122 ] : About to free spark particle [ 7 ]
+[   122 ] : About to free spark particle [ 6 ]
+[   122 ] : About to free spark particle [ 5 ]
+[   122 ] : About to free spark particle [ 4 ]
+[   122 ] : About to free spark particle [ 3 ]
+[   122 ] : About to free spark particle [ 2 ]
+[   122 ] : Freeing particle emitterItr.
+[   123 ] : Remove physics objects for droid [ 5 ]
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 1 ] parent [ -1 ] moveCost [ 0 ] distanceCost [ 30 ]
+[   132 ] : Requesting new path start [ 31.00 10.00 ] Dest [ 32.00 12.00 ]
+[   132 ] : searchThread - whichPath [ 0 ]
+[   132 ] : Search the open nodes and find the one with the lowest total cost
+[   132 ] : Move open node [ 0 ] to closedNode list
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 0 ] Direction [ RIGHT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 1 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 20 ]
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 0 ] Direction [ LEFT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 2 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 40 ]
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 0 ] Direction [ UP ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 0 ] Direction [ DOWN ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 3 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 20 ]
+[   132 ] : searchThread - whichPath [ 0 ]
+[   132 ] : Search the open nodes and find the one with the lowest total cost
+[   132 ] : Move open node [ 0 ] to closedNode list
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 1 ] Direction [ RIGHT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 3 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 1 ] Direction [ LEFT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 1 ] Direction [ UP ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 1 ] Direction [ DOWN ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 4 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   132 ] : searchThread - whichPath [ 0 ]
+[   132 ] : Search the open nodes and find the one with the lowest total cost
+[   132 ] : Move open node [ 1 ] to closedNode list
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 2 ] Direction [ RIGHT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 2 ] Direction [ LEFT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 2 ] Direction [ UP ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 2 ] Direction [ DOWN ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 4 ] parent [ 2 ] moveCost [ 20 ] distanceCost [ 10 ]
+[   132 ] : searchThread - whichPath [ 0 ]
+[   132 ] : Search the open nodes and find the one with the lowest total cost
+[   132 ] : Move open node [ 1 ] to closedNode list
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 3 ] Direction [ RIGHT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 4 ] parent [ 3 ] moveCost [ 30 ] distanceCost [ 0 ]
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 3 ] Direction [ LEFT ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 3 ] Direction [ UP ]
+[   132 ] : See if the node is solid or not
+[   132 ] : ---
+[   132 ] : Generate a new node based on the node with the current lowest cost.
+[   132 ] : Parent [ 3 ] Direction [ DOWN ]
+[   132 ] : See if the node is solid or not
+[   132 ] : Adding new tile to openNode list
+[   132 ] : Path [ 0 ] Size [ 5 ] parent [ 3 ] moveCost [ 30 ] distanceCost [ 0 ]
+[   133 ] : searchThread - whichPath [ 0 ]
+[   133 ] : Search the open nodes and find the one with the lowest total cost
+[   133 ] : Move open node [ 1 ] to closedNode list
+[   133 ] : ---
+[   133 ] : Generate a new node based on the node with the current lowest cost.
+[   133 ] : Parent [ 4 ] Direction [ RIGHT ]
+[   133 ] : See if the node is solid or not
+[   133 ] : ---
+[   133 ] : Generate a new node based on the node with the current lowest cost.
+[   133 ] : Parent [ 4 ] Direction [ LEFT ]
+[   133 ] : See if the node is solid or not
+[   133 ] : ---
+[   133 ] : Generate a new node based on the node with the current lowest cost.
+[   133 ] : Parent [ 4 ] Direction [ UP ]
+[   133 ] : See if the node is solid or not
+[   133 ] : ---
+[   133 ] : Generate a new node based on the node with the current lowest cost.
+[   133 ] : Parent [ 4 ] Direction [ DOWN ]
+[   133 ] : See if the node is solid or not
+[   133 ] : Adding new tile to openNode list
+[   133 ] : Path [ 0 ] Size [ 5 ] parent [ 4 ] moveCost [ 30 ] distanceCost [ 0 ]
+[   133 ] : Move open node [ 5 ] to closedNode list
+[   133 ] : searchThread - whichPath [ 0 ]
+[   137 ] : About to free spark particle [ 41 ]
+[   137 ] : About to free spark particle [ 40 ]
+[   137 ] : About to free spark particle [ 39 ]
+[   137 ] : About to free spark particle [ 38 ]
+[   137 ] : About to free spark particle [ 37 ]
+[   137 ] : About to free spark particle [ 36 ]
+[   137 ] : About to free spark particle [ 35 ]
+[   137 ] : About to free spark particle [ 34 ]
+[   137 ] : About to free spark particle [ 33 ]
+[   137 ] : About to free spark particle [ 32 ]
+[   137 ] : About to free spark particle [ 31 ]
+[   137 ] : About to free spark particle [ 30 ]
+[   137 ] : About to free spark particle [ 29 ]
+[   137 ] : About to free spark particle [ 28 ]
+[   137 ] : About to free spark particle [ 27 ]
+[   137 ] : About to free spark particle [ 26 ]
+[   137 ] : About to free spark particle [ 25 ]
+[   137 ] : About to free spark particle [ 24 ]
+[   137 ] : About to free spark particle [ 23 ]
+[   137 ] : About to free spark particle [ 22 ]
+[   137 ] : About to free spark particle [ 21 ]
+[   137 ] : About to free spark particle [ 20 ]
+[   137 ] : About to free spark particle [ 19 ]
+[   137 ] : About to free spark particle [ 18 ]
+[   137 ] : About to free spark particle [ 17 ]
+[   137 ] : About to free spark particle [ 16 ]
+[   137 ] : About to free spark particle [ 15 ]
+[   137 ] : About to free spark particle [ 14 ]
+[   137 ] : About to free spark particle [ 13 ]
+[   137 ] : About to free spark particle [ 12 ]
+[   137 ] : About to free spark particle [ 11 ]
+[   137 ] : About to free spark particle [ 10 ]
+[   137 ] : About to free spark particle [ 9 ]
+[   137 ] : About to free spark particle [ 8 ]
+[   137 ] : About to free spark particle [ 7 ]
+[   137 ] : About to free spark particle [ 6 ]
+[   137 ] : About to free spark particle [ 5 ]
+[   137 ] : About to free spark particle [ 4 ]
+[   137 ] : About to free spark particle [ 3 ]
+[   137 ] : About to free spark particle [ 2 ]
+[   137 ] : Freeing particle emitterItr.
+[   138 ] : Remove physics objects for droid [ 6 ]
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 1 ] parent [ -1 ] moveCost [ 0 ] distanceCost [ 20 ]
+[   141 ] : Requesting new path start [ 32.00 10.00 ] Dest [ 24.00 20.00 ]
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 0 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 0 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 1 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 10 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 0 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 2 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 30 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 0 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 0 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 3 ] parent [ 0 ] moveCost [ 10 ] distanceCost [ 10 ]
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 0 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 1 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 3 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 0 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 1 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 1 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 1 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 4 ] parent [ 1 ] moveCost [ 20 ] distanceCost [ 0 ]
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 1 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 2 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 2 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 4 ] parent [ 2 ] moveCost [ 20 ] distanceCost [ 20 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 2 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 2 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 5 ] parent [ 2 ] moveCost [ 20 ] distanceCost [ 0 ]
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 1 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 3 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 5 ] parent [ 3 ] moveCost [ 30 ] distanceCost [ 10 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 3 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 3 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 3 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 6 ] parent [ 3 ] moveCost [ 30 ] distanceCost [ 10 ]
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 1 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 4 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 4 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 4 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 4 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 6 ] parent [ 4 ] moveCost [ 30 ] distanceCost [ 10 ]
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 2 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 5 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 5 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 6 ] parent [ 5 ] moveCost [ 30 ] distanceCost [ 10 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 5 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 5 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 0 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 6 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 6 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 6 ] parent [ 6 ] moveCost [ 20 ] distanceCost [ 40 ]
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 6 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 6 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 0 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 7 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 7 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 7 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 7 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : searchThread - whichPath [ 0 ]
+[   141 ] : Search the open nodes and find the one with the lowest total cost
+[   141 ] : Move open node [ 0 ] to closedNode list
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 8 ] Direction [ RIGHT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 8 ] Direction [ LEFT ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 8 ] Direction [ UP ]
+[   141 ] : See if the node is solid or not
+[   141 ] : ---
+[   141 ] : Generate a new node based on the node with the current lowest cost.
+[   141 ] : Parent [ 8 ] Direction [ DOWN ]
+[   141 ] : See if the node is solid or not
+[   141 ] : Adding new tile to openNode list
+[   141 ] : Path [ 0 ] Size [ 5 ] parent [ 8 ] moveCost [ 40 ] distanceCost [ 20 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 9 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 9 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 9 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 9 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 5 ] parent [ 9 ] moveCost [ 40 ] distanceCost [ 20 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 10 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 10 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 10 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 10 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 11 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 11 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 11 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 11 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 12 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 12 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 12 ] moveCost [ 30 ] distanceCost [ 50 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 12 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 12 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 13 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 13 ] moveCost [ 50 ] distanceCost [ 30 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 13 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 13 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 13 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 4 ] parent [ 13 ] moveCost [ 50 ] distanceCost [ 30 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 14 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 14 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 14 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 14 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 15 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 15 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 15 ] moveCost [ 40 ] distanceCost [ 60 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 15 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 15 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 16 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 16 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 16 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 16 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 16 ] moveCost [ 60 ] distanceCost [ 40 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 17 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 17 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 17 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 17 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 18 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 18 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 2 ] parent [ 18 ] moveCost [ 50 ] distanceCost [ 70 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 18 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 18 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 19 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 19 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 19 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 19 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 20 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 20 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 1 ] parent [ 20 ] moveCost [ 60 ] distanceCost [ 80 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 20 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 20 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 2 ] parent [ 20 ] moveCost [ 60 ] distanceCost [ 60 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 1 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 21 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 21 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 2 ] parent [ 21 ] moveCost [ 70 ] distanceCost [ 70 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 21 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 21 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 21 ] moveCost [ 70 ] distanceCost [ 50 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 2 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 22 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 22 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 22 ] moveCost [ 80 ] distanceCost [ 60 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 22 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 22 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 23 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 23 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 23 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 23 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 24 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 24 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 24 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 24 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 25 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 25 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 1 ] parent [ 25 ] moveCost [ 90 ] distanceCost [ 70 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 25 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 25 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 26 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 26 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 1 ] parent [ 26 ] moveCost [ 100 ] distanceCost [ 80 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 26 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 26 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 27 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 27 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 1 ] parent [ 27 ] moveCost [ 110 ] distanceCost [ 90 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 27 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 2 ] parent [ 27 ] moveCost [ 110 ] distanceCost [ 90 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 27 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 28 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 28 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 2 ] parent [ 28 ] moveCost [ 120 ] distanceCost [ 100 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 28 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 28 ] moveCost [ 120 ] distanceCost [ 100 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 28 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 29 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 29 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 29 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 29 ] moveCost [ 120 ] distanceCost [ 100 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 29 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 30 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 30 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 3 ] parent [ 30 ] moveCost [ 130 ] distanceCost [ 110 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 30 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 4 ] parent [ 30 ] moveCost [ 130 ] distanceCost [ 110 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 30 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 31 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 31 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 31 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 4 ] parent [ 31 ] moveCost [ 130 ] distanceCost [ 110 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 31 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 32 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 32 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 32 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 4 ] parent [ 32 ] moveCost [ 130 ] distanceCost [ 110 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 32 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 33 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 33 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 4 ] parent [ 33 ] moveCost [ 140 ] distanceCost [ 120 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 33 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 5 ] parent [ 33 ] moveCost [ 140 ] distanceCost [ 120 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 33 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 34 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 34 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 34 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 5 ] parent [ 34 ] moveCost [ 140 ] distanceCost [ 120 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 34 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 35 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 35 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 35 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 5 ] parent [ 35 ] moveCost [ 140 ] distanceCost [ 120 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 35 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 36 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 36 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 36 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 5 ] parent [ 36 ] moveCost [ 140 ] distanceCost [ 120 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 36 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 37 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 37 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 37 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 5 ] parent [ 37 ] moveCost [ 150 ] distanceCost [ 130 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 37 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 6 ] parent [ 37 ] moveCost [ 150 ] distanceCost [ 110 ]
+[   142 ] : searchThread - whichPath [ 0 ]
+[   142 ] : Search the open nodes and find the one with the lowest total cost
+[   142 ] : Move open node [ 0 ] to closedNode list
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 38 ] Direction [ RIGHT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 38 ] Direction [ LEFT ]
+[   142 ] : See if the node is solid or not
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 38 ] Direction [ UP ]
+[   142 ] : See if the node is solid or not
+[   142 ] : Adding new tile to openNode list
+[   142 ] : Path [ 0 ] Size [ 6 ] parent [ 38 ] moveCost [ 150 ] distanceCost [ 130 ]
+[   142 ] : ---
+[   142 ] : Generate a new node based on the node with the current lowest cost.
+[   142 ] : Parent [ 38 ] Direction [ DOWN ]
+[   142 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 0 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 39 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 39 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 39 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 6 ] parent [ 39 ] moveCost [ 150 ] distanceCost [ 130 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 39 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 0 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 40 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 40 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 40 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 6 ] parent [ 40 ] moveCost [ 150 ] distanceCost [ 130 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 40 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 0 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 41 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 41 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 41 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 41 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 1 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 42 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 42 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 42 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 42 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 5 ] parent [ 42 ] moveCost [ 160 ] distanceCost [ 100 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 4 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 43 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 5 ] parent [ 43 ] moveCost [ 170 ] distanceCost [ 90 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 43 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 6 ] parent [ 43 ] moveCost [ 170 ] distanceCost [ 110 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 43 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 43 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 7 ] parent [ 43 ] moveCost [ 170 ] distanceCost [ 90 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 4 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 44 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 7 ] parent [ 44 ] moveCost [ 180 ] distanceCost [ 80 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 44 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 44 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 44 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : About to free spark particle [ 6 ]
+[   143 ] : About to free spark particle [ 5 ]
+[   143 ] : About to free spark particle [ 4 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 45 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 45 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 45 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 45 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 7 ] parent [ 45 ] moveCost [ 180 ] distanceCost [ 80 ]
+[   143 ] : About to free spark particle [ 3 ]
+[   143 ] : About to free spark particle [ 2 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 46 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 7 ] parent [ 46 ] moveCost [ 190 ] distanceCost [ 70 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 46 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 46 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 46 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : About to free spark particle [ 1 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 47 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 7 ] parent [ 47 ] moveCost [ 190 ] distanceCost [ 70 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 47 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 47 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 47 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 8 ] parent [ 47 ] moveCost [ 190 ] distanceCost [ 70 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 48 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 8 ] parent [ 48 ] moveCost [ 200 ] distanceCost [ 60 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 48 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 48 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 48 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 49 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 8 ] parent [ 49 ] moveCost [ 200 ] distanceCost [ 60 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 49 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 49 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 49 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 9 ] parent [ 49 ] moveCost [ 200 ] distanceCost [ 60 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 50 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 50 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 50 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 50 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 9 ] parent [ 50 ] moveCost [ 200 ] distanceCost [ 60 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 51 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 9 ] parent [ 51 ] moveCost [ 210 ] distanceCost [ 50 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 51 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 51 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 51 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 52 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 9 ] parent [ 52 ] moveCost [ 210 ] distanceCost [ 50 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 52 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 52 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 52 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 10 ] parent [ 52 ] moveCost [ 210 ] distanceCost [ 50 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 53 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 53 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 53 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 53 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 10 ] parent [ 53 ] moveCost [ 210 ] distanceCost [ 50 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 54 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 54 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 10 ] parent [ 54 ] moveCost [ 210 ] distanceCost [ 70 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 54 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 54 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 11 ] parent [ 54 ] moveCost [ 210 ] distanceCost [ 50 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 55 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 11 ] parent [ 55 ] moveCost [ 220 ] distanceCost [ 40 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 55 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 55 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 55 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 56 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 11 ] parent [ 56 ] moveCost [ 220 ] distanceCost [ 40 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 56 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 56 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 56 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 56 ] moveCost [ 220 ] distanceCost [ 40 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 57 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 57 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 57 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 57 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 57 ] moveCost [ 220 ] distanceCost [ 40 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 5 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 58 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 58 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 58 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 58 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 58 ] moveCost [ 220 ] distanceCost [ 40 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 59 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 59 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 59 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 59 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 59 ] moveCost [ 220 ] distanceCost [ 40 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 60 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 60 ] moveCost [ 230 ] distanceCost [ 30 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 60 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 60 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 60 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 61 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 61 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 61 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 61 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 61 ] moveCost [ 230 ] distanceCost [ 30 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 62 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 62 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 62 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 62 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 62 ] moveCost [ 230 ] distanceCost [ 30 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 63 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 63 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 63 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 63 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 63 ] moveCost [ 230 ] distanceCost [ 30 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 64 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 64 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 64 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 64 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 64 ] moveCost [ 230 ] distanceCost [ 30 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 65 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 65 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 65 ] moveCost [ 230 ] distanceCost [ 50 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 65 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 65 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 66 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 66 ] moveCost [ 240 ] distanceCost [ 20 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 66 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 66 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 66 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 67 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 12 ] parent [ 67 ] moveCost [ 240 ] distanceCost [ 20 ]
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 67 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 67 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 67 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 13 ] parent [ 67 ] moveCost [ 240 ] distanceCost [ 20 ]
+[   143 ] : searchThread - whichPath [ 0 ]
+[   143 ] : Search the open nodes and find the one with the lowest total cost
+[   143 ] : Move open node [ 6 ] to closedNode list
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 68 ] Direction [ RIGHT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 68 ] Direction [ LEFT ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 68 ] Direction [ UP ]
+[   143 ] : See if the node is solid or not
+[   143 ] : ---
+[   143 ] : Generate a new node based on the node with the current lowest cost.
+[   143 ] : Parent [ 68 ] Direction [ DOWN ]
+[   143 ] : See if the node is solid or not
+[   143 ] : Adding new tile to openNode list
+[   143 ] : Path [ 0 ] Size [ 13 ] parent [ 68 ] moveCost [ 240 ] distanceCost [ 20 ]
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 6 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 69 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 69 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 69 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 69 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 13 ] parent [ 69 ] moveCost [ 240 ] distanceCost [ 20 ]
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 6 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 70 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 70 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 70 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 70 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 71 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 12 ] parent [ 71 ] moveCost [ 250 ] distanceCost [ 10 ]
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 71 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 71 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 71 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 72 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 12 ] parent [ 72 ] moveCost [ 250 ] distanceCost [ 10 ]
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 72 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 72 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 72 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 73 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 73 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 73 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 73 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 12 ] parent [ 73 ] moveCost [ 250 ] distanceCost [ 10 ]
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 74 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 74 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 74 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 74 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 12 ] parent [ 74 ] moveCost [ 250 ] distanceCost [ 10 ]
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 75 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 75 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 75 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 75 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 76 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 11 ] parent [ 76 ] moveCost [ 260 ] distanceCost [ 0 ]
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 76 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 76 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 12 ] parent [ 76 ] moveCost [ 260 ] distanceCost [ 20 ]
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 76 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 77 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 12 ] parent [ 77 ] moveCost [ 260 ] distanceCost [ 0 ]
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 77 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 77 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 13 ] parent [ 77 ] moveCost [ 260 ] distanceCost [ 20 ]
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 77 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 14 ] parent [ 77 ] moveCost [ 260 ] distanceCost [ 0 ]
+[   144 ] : searchThread - whichPath [ 0 ]
+[   144 ] : Search the open nodes and find the one with the lowest total cost
+[   144 ] : Move open node [ 7 ] to closedNode list
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 78 ] Direction [ RIGHT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 78 ] Direction [ LEFT ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 78 ] Direction [ UP ]
+[   144 ] : See if the node is solid or not
+[   144 ] : ---
+[   144 ] : Generate a new node based on the node with the current lowest cost.
+[   144 ] : Parent [ 78 ] Direction [ DOWN ]
+[   144 ] : See if the node is solid or not
+[   144 ] : Adding new tile to openNode list
+[   144 ] : Path [ 0 ] Size [ 14 ] parent [ 78 ] moveCost [ 260 ] distanceCost [ 0 ]
+[   144 ] : Move open node [ 14 ] to closedNode list
+[   144 ] : searchThread - whichPath [ 0 ]
+[   147 ] : About to free spark particle [ 28 ]
+[   147 ] : About to free spark particle [ 27 ]
+[   147 ] : About to free spark particle [ 26 ]
+[   147 ] : About to free spark particle [ 25 ]
+[   147 ] : About to free spark particle [ 24 ]
+[   147 ] : About to free spark particle [ 23 ]
+[   147 ] : About to free spark particle [ 22 ]
+[   147 ] : About to free spark particle [ 21 ]
+[   147 ] : About to free spark particle [ 20 ]
+[   147 ] : About to free spark particle [ 19 ]
+[   147 ] : About to free spark particle [ 18 ]
+[   147 ] : About to free spark particle [ 17 ]
+[   147 ] : About to free spark particle [ 16 ]
+[   147 ] : About to free spark particle [ 15 ]
+[   147 ] : About to free spark particle [ 14 ]
+[   147 ] : About to free spark particle [ 13 ]
+[   147 ] : About to free spark particle [ 12 ]
+[   147 ] : About to free spark particle [ 11 ]
+[   147 ] : About to free spark particle [ 10 ]
+[   147 ] : About to free spark particle [ 9 ]
+[   147 ] : About to free spark particle [ 8 ]
+[   147 ] : About to free spark particle [ 7 ]
+[   147 ] : About to free spark particle [ 6 ]
+[   147 ] : About to free spark particle [ 5 ]
+[   147 ] : About to free spark particle [ 4 ]
+[   147 ] : About to free spark particle [ 3 ]
+[   147 ] : About to free spark particle [ 2 ]
+[   147 ] : About to free spark particle [ 1 ]
+[   148 ] : Remove physics objects for droid [ 4 ]
+[   159 ] : Load droid model - image name : db_999.jpg
+[   159 ] : Loaded image [ db_999.jpg ]
+[   164 ] : Checking score [ 650 ]
+[   164 ] : [ 0 ] : [ 650 ] is higher than [ 3250 ]
+[   164 ] : [ 1 ] : [ 650 ] is higher than [ 2075 ]
+[   164 ] : [ 2 ] : [ 650 ] is higher than [ 1200 ]
+[   164 ] : [ 3 ] : [ 650 ] is higher than [ 0 ]
+[   164 ] : Remove physics objects for droid [ 0 ]
+[   164 ] : Remove physics objects for droid [ 1 ]
+[   164 ] : Remove physics objects for droid [ 7 ]
+[   164 ] : Remove physics objects for droid [ 8 ]
+[   164 ] : Removing player physics shape and body.
+[   167 ] : Checking score [ 650 ]
+[   167 ] : [ 0 ] : [ 650 ] is higher than [ 3250 ]
+[   167 ] : [ 1 ] : [ 650 ] is higher than [ 2075 ]
+[   167 ] : [ 2 ] : [ 650 ] is higher than [ 1200 ]
+[   167 ] : [ 3 ] : [ 650 ] is higher than [ 0 ]
+[   167 ] : Setting label for - [ scoreInitialsOne ]
+[   167 ] : Setting label for - [ scoreInitialsTwo ]
+[   167 ] : Setting label for - [ scoreInitialsThree ]
+[   167 ] : Setting label for - [ scoreInitialsFour ]
+[   167 ] : Setting label for - [ scoreInitialsFive ]
+[   167 ] : Setting label for - [ scoreScoreOne ]
+[   167 ] : Setting label for - [ scoreScoreTwo ]
+[   167 ] : Setting label for - [ scoreScoreThree ]
+[   167 ] : Setting label for - [ scoreScoreFour ]
+[   167 ] : Setting label for - [ scoreScoreFive ]
+[   171 ] : Profile - Average time for tiles [ 0.000081 ]
+[   171 ] : Error: Could not save config values to file [ config.ini ]
+[   171 ] : Keybind: Info: Key states saved to file.
+[   172 ] : Logfile: Log file closed:
+[   172 ] : 25-09-2017	13:26:07
+[   172 ] : -----------------------------------------------------------------------------
 
 
