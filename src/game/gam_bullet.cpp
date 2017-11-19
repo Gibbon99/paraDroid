@@ -32,6 +32,14 @@ void bul_processDisrupter ( int whichLevel, int whichBullet )
 	//
 	// Handle disrupter flash bullets
 	//
+	//
+	// Damage to player
+	//
+	if (true == dataBaseEntry[playerDroidTypeDBIndex].disrupterImmune)
+		return;
+	else
+		gam_doDamageToPlayer ( DAMAGE_BULLET, bullet[whichBullet].sourceDroid );
+	
 	for ( int j = 0; j != shipLevel[whichLevel].numDroids; j++ )
 		{
 			if ( true == shipLevel[whichLevel].droid[j].isAlive )

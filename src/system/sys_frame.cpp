@@ -279,7 +279,8 @@ void sys_updateFrame()
 	if ( false == processFadeValue )	// No keyboard while fade is happening
 		{
 			io_processKeyboard ( thinkInterval );
-			io_processJoystick();
+			if (inputMethod != INPUT_KEYBOARD)
+				io_processJoystick();
 		}
 
 	switch ( currentMode )

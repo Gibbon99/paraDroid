@@ -685,7 +685,7 @@ void io_readKeyboard()
 		return; // No events in the queue
 
 	//
-	// Windows was switched away
+	// Window was switched away
 	switch ( event.type )
 		{
 		case ALLEGRO_EVENT_DISPLAY_SWITCH_OUT:		
@@ -710,7 +710,7 @@ void io_readKeyboard()
 			break;
 
 		case ALLEGRO_EVENT_JOYSTICK_CONFIGURATION:
-// TODO - Reset up joystick information
+// TODO - Reset joystick information
 			break;
 		}
 

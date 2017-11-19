@@ -50,7 +50,10 @@ void io_processJoystick()
 //-------------------------------------------------------------
 {
 	if ( 0 == numJoysticks )
+	{
+		inputMethod = INPUT_KEYBOARD;
 		return;
+	}
 
 	//
 	// Move LEFT
@@ -120,6 +123,9 @@ void io_setupJoystickValues ()
 	else
 		{
 			inputMethod = io_readConfigValuesInt ( "inputMethod" );
+			//
+			// Debug
+			io_logToFile("inputMethod [ %i ]", inputMethod);
 		}
 
 	//
@@ -134,6 +140,8 @@ void io_setupJoystickValues ()
 		{
 			tempJoyStick.joystick = al_get_joystick ( i );
 			tempJoyStick.name = al_get_joystick_name ( tempJoyStick.joystick );
+			
+			io_logToFile("Joystick [ %i ] - [ %s ]", i, tempJoyStick.name.c_str());
 			//
 			// Number of sticks on this joystick
 			tempJoyStick.numSticks = al_get_joystick_num_sticks ( tempJoyStick.joystick );

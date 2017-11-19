@@ -253,16 +253,15 @@ FIXED - Droids being destroyed with Disrupter when not visible
 FIXED - Level went dead with one 420 left after using Disrupter
 FIXED - Enemy droid witness shot while not visible
 FIXED - Transfer - enemy getting stuck on two into one when first leg is active
-
 FIXED - Bad keypress sound not working in terminal database view
 FIXED - Removed debugging console statements from ai_flee
-
 FIXED - Need dark tileset for classic tiles to power down level
 
-High score - text blank when just hitting confirm first time
-Find better way to handle action key when using a joystick
-No keyboard arrow keys while joystick plugged in and not used
+FIXED - Find better way to handle action key when using a joystick
+FIXED - No keyboard arrow keys while joystick plugged in and not used
+FIXED - Player not taking disrupter damage
 
+High score - text blank when just hitting confirm first time
 
 
 FEEDBACK
