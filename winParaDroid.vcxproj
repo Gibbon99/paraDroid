@@ -77,10 +77,31 @@
     <Allegro_LibraryType>StaticMonolithRelease</Allegro_LibraryType>
     <IncludePath>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\hdr\script;$(IncludePath)</IncludePath>
     <CodeAnalysisRuleSet>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\Rule Sets\NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Linkage-pthreads>
+    </Linkage-pthreads>
+    <LibraryPath>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Debug\dynamic\cdecl;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\dynamic\cdecl;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\dynamic\cdecl;$(LibraryPath)</LibraryPath>
+    <Allegro_AddonImage>true</Allegro_AddonImage>
+    <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <Allegro_AddonPrimitives>true</Allegro_AddonPrimitives>
+    <Allegro_AddonAudio>true</Allegro_AddonAudio>
+    <Allegro_AddonAcodec>true</Allegro_AddonAcodec>
+    <Allegro_AddonPhysfs>true</Allegro_AddonPhysfs>
+    <Allegro_AddonDialog>true</Allegro_AddonDialog>
+    <Allegro_AddonMemfile>true</Allegro_AddonMemfile>
+    <Allegro_AddonFont>true</Allegro_AddonFont>
+    <Allegro_AddonColor>true</Allegro_AddonColor>
+    <Allegro_AddonVideo>true</Allegro_AddonVideo>
+    <Allegro_LibraryType>DynamicRelease</Allegro_LibraryType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\hdr\script;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Debug\dynamic\cdecl;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -90,12 +111,15 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <BrowseInformation>true</BrowseInformation>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
+      <AdditionalOptions>-DHAVE_STRUCT_TIMESPEC %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\packages\pthreads.2.9.1.4\build\native\lib\v110\x64\Debug\dynamic\cdecl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>libpthread.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -107,13 +131,18 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\hdr\script;C:\Users\dberry\Documents\Visual Studio 2015\Projects\paraDroid\paraDroid\packages\pthreads.2.9.1.4\build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-DHAVE_STRUCT_TIMESPEC %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libpthread.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

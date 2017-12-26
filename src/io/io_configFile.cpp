@@ -25,11 +25,16 @@ ALLEGRO_CONFIG* databaseFile = NULL;
 //--------------------------------------------------------
 //
 // Open a config file from the script
-
 void io_loadConfigFile ( string fileName )
 //--------------------------------------------------------
 {
-	configFile = al_load_config_file ( fileName.c_str() );
+
+//io_logToFile("Config filename [ %s ]", fileName.c_str());
+
+fileName = "config.ini";
+
+	//configFile = al_load_config_file ( fileName.c_str() );
+configFile = al_load_config_file( "config.ini" );
 	if ( NULL == configFile )
 		{
 			printf ( "Error: Could not open config file. Exiting\n" );
@@ -44,7 +49,6 @@ void io_loadConfigFile ( string fileName )
 //--------------------------------------------------------
 //
 // Close config file
-
 void io_closeConfigFile()
 //--------------------------------------------------------
 {
@@ -55,7 +59,6 @@ void io_closeConfigFile()
 //--------------------------------------------------------
 //
 // Save the current configuration to the config file
-
 void io_saveConfigFile ( string fileName )
 //--------------------------------------------------------
 {
@@ -77,7 +80,6 @@ void io_saveConfigFile ( string fileName )
 //--------------------------------------------------------
 //
 // Read config values
-
 int io_readConfigValuesInt ( string varName )
 //--------------------------------------------------------
 {
