@@ -31,6 +31,24 @@
     <Filter Include="Source Files\system">
       <UniqueIdentifier>{ea343f92-a92b-4684-a25d-4c71d22bf5c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\script">
+      <UniqueIdentifier>{b38be751-25d9-4939-886f-bb33f46c40fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\chipmunk">
+      <UniqueIdentifier>{01e3407e-0bce-4def-9130-86267a1bac5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game">
+      <UniqueIdentifier>{fe8ff9d9-70c7-42eb-a75b-5b057243b292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\io">
+      <UniqueIdentifier>{d8ef870d-3a71-4d34-b802-ad6b73e6dde5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\system">
+      <UniqueIdentifier>{6dc96923-c5ad-477c-aac8-f672c3c8389d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>{b098e94a-a829-4356-833b-3243604e3dca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -443,371 +461,9 @@
     <None Include="src\script\as_callfunc_x64_msvc_asm.asm">
       <Filter>Source Files\script</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data\scripts\commonDefines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\sys_globals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\chipmunk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\chipmunk_ffi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\chipmunk_private.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\chipmunk_structs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\chipmunk_types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\chipmunk_unsafe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpArbiter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpBB.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpBody.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpConstraint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpDampedRotarySpring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpDampedSpring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpGearJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpGrooveJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpHastySpace.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpMarch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpPinJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpPivotJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpPolyline.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpPolyShape.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpRatchetJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpRobust.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpRotaryLimitJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpShape.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpSimpleMotor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpSlideJoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpSpace.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpSpatialIndex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpTransform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\chipmunk\cpVect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_bullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_database.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_doors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_droid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_droidAI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_droidAI_Resume.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_endScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_intro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_levels.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_LOS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_particles.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_pathFind.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_render.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_scoreTable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_sideView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_spotLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_starfield.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_terminal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_transfer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\game\gam_transferRender.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\gui\gui_main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\gui\gui_render.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\gui\gui_scrollBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\gui\gui_text.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_configFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_images.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_joystick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_keyBind.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_keyboard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_logFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\io\io_packFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\angelscript.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_array.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_arrayobject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_atomic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_builder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_bytecode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_callfunc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_compiler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_configgroup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_context.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_criticalsection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_datatype.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_gc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_generic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_memory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_module.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_objecttype.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_outputbuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_property.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_restore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_scriptcode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_scriptengine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_scriptfunction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_scriptnode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_scriptobject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_string.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_string_util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_texts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_thread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_tokendef.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_tokenizer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_typeinfo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\as_variablescope.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\scriptarray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\scriptbuilder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\script\scriptstdstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_conCommands.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_console.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_defines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_font.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_frame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_joystick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_maths.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_physics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_physicsCollisions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_random.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_script.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_shutdown.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_sound.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_startup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_timing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hdr\system\sys_utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\alcompat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -887,9 +543,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\cpu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\debug.h">
@@ -1365,6 +1018,372 @@
     </ClInclude>
     <ClInclude Include="src\chipmunk\prime.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\angelscript.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_array.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_arrayobject.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_atomic.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_builder.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_bytecode.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_callfunc.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_compiler.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_config.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_configgroup.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_context.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_criticalsection.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_datatype.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_debug.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_gc.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_generic.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_map.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_memory.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_module.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_objecttype.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_outputbuffer.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_parser.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_property.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_restore.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_scriptcode.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_scriptengine.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_scriptfunction.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_scriptnode.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_scriptobject.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_string.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_string_util.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_texts.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_thread.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_tokendef.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_tokenizer.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_typeinfo.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\as_variablescope.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\chipmunk.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\chipmunk_ffi.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\chipmunk_private.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\chipmunk_structs.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\chipmunk_types.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\chipmunk_unsafe.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpArbiter.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpBB.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpBody.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpConstraint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpDampedSpring.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpDampedRotarySpring.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpGearJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpGrooveJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpHastySpace.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpMarch.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpPinJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpPivotJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpPolyline.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpPolyShape.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpRatchetJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpRobust.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpRotaryLimitJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpShape.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpSimpleMotor.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpSlideJoint.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpSpace.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpSpatialIndex.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpTransform.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\allegro.5.2.2.1\build\native\include\allegro5\cpu.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\chipmunk\cpVect.h">
+      <Filter>Header Files\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_bullet.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_database.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_doors.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_droid.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_droidAI.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_droidAI_Resume.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_endScreen.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_intro.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_levels.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_LOS.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_particles.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_pathFind.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_player.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_render.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_scoreTable.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_sideView.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_spotLight.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_starfield.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_terminal.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_transfer.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\game\gam_transferRender.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_configFile.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_images.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_joystick.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_keyBind.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_keyboard.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_logFile.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\io\io_packFile.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_utils.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_conCommands.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_console.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_debug.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_defines.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_font.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_frame.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\sys_globals.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_joystick.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_maths.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_physics.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_physicsCollisions.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_random.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_script.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_shutdown.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_sound.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_startup.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\system\sys_timing.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\gui\gui_main.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\gui\gui_render.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\gui\gui_scrollBox.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\gui\gui_text.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\scriptarray.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\scriptbuilder.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr\script\scriptstdstring.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="data\scripts\commonDefines.h">
+      <Filter>Header Files\script</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

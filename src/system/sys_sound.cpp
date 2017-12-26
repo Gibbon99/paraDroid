@@ -17,6 +17,8 @@ This file is part of paraDroid.
 Copyright 2017 David Berry
 */
 
+// Test GIT update - again
+
 #include "../../hdr/sys_globals.h"
 
 _sounds sound[] = { { NULL, "collosion1.wav", false },
@@ -127,7 +129,7 @@ bool sys_startSound()
 	multiSounds = (_multiSounds *) al_malloc ( sizeof ( _multiSounds ) * as_numMultiSamples );
 	if ( NULL == multiSounds )
 		{
-			con_print ( true, false, "ERROR: Failed to get memory to hold multiSamples" );
+			con_print ( true, false, "ERROR: Failed to get memory to hold multiSamples." );
 			playSounds = false;
 			return false;
 		}
