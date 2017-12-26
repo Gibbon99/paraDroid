@@ -17,8 +17,6 @@ This file is part of paraDroid.
 Copyright 2017 David Berry
 */
 
-// Test GIT update - again
-
 #include "../../hdr/sys_globals.h"
 
 _sounds sound[] = { { NULL, "collosion1.wav", false },
