@@ -31,6 +31,8 @@ extern int					numScriptFunctions;		// Number of functions declared in script
 extern bool					scriptEngineStarted;
 extern int                  numConsoleCommands;     // Number of script commands added from script - needed for malloc
 
+extern asIScriptEngine *scriptEngine;
+
 // Start the script engine
 bool sys_initScriptEngine();
 
@@ -56,10 +58,10 @@ bool sys_conListVariables();
 
 //! \brief Get the value of a single variable
 //! \param Pass in the name of the variable to query
-bool sys_conGetVariable(string param1);
+bool sys_conGetVariable(string whichVar);
 
 //! \brief Set the value of a single variable
 //! \param Pass in the name and the new value
-bool sys_conSetVariable(string param1, string param2);
+bool sys_conSetVariable ( string whichVar, string newValue );
 
 void as_testObject();

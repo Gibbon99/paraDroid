@@ -244,6 +244,7 @@ bool sys_isSoundPlaying ( int whichSound )
 bool sys_playSound ( int whichSound, float pan, ALLEGRO_PLAYMODE loop )
 //-------------------------------------------------------------------------
 {
+	
 	if ( ( false == playSounds ) || ( true == pauseSound ) )
 		return false;
 

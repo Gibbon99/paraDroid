@@ -30,19 +30,19 @@ Copyright 2017 David Berry
 //-----------------------------------------------------------------------------
 //
 // Helper function to assign a num value to a var type string
-int sys_conGetVarType(string whichType)
+int sys_conGetVarType ( string whichType )
 //-----------------------------------------------------------------------------
 {
-	if (0 == whichType.size())
+	if ( 0 == whichType.size() )
 		return VAR_TYPE_INT;
 
-	if (whichType == "int")
+	if ( whichType == "int" )
 		return VAR_TYPE_INT;
 
-	if (whichType == "float")
+	if ( whichType == "float" )
 		return VAR_TYPE_FLOAT;
 
-	if (whichType == "bool")
+	if ( whichType == "bool" )
 		return VAR_TYPE_BOOL;
 
 	return -1;
@@ -55,171 +55,114 @@ int sys_conGetVarType(string whichType)
 bool sys_conListVariables()
 //-----------------------------------------------------------------------------
 {
-	int 		count = 0;
-	int 		varTypeNum = 0;
+	asUINT n;
 
-	int         *testVarInt;
-	float       *testVarFloat;
-
-	int         tempValueInt = 0;
-	float       tempValueFloat = 0.0f;
-
-	string 		varType;
-	string 		varName;
-	//
-	// Get the command and any parameters
-	//
-	vector<string>     	tokens;   // one command and one param
-	string              buffer;
-
-	while (hostVariables[count].scriptFunctionName.size() > 1)
+	// List the application registered variables
+	con_print ( true, false, "Application variables" );
+	for ( n = 0; n < ( asUINT ) scriptEngine->GetGlobalPropertyCount(); n++ )
 	{
-		//
-		// Start the string with known empty value
-		varType = "";
-		varName = "";
-
-		// Insert the string into a stream
-		istringstream iss(hostVariables[count].scriptFunctionName, istringstream::in);
-		//
-		// Put each word into the vector
-		while(iss >> buffer)
-		{
-			tokens.push_back(buffer);
-		}
-		varType = tokens[0];
-		varName = tokens[1];
-		//
-		// Clear vectors and stringstream
-		//
-		iss.clear();
-		tokens.clear();
-
-		varTypeNum = sys_conGetVarType(varType);
-
-		switch (varTypeNum)
-		{
-			case VAR_TYPE_INT:
-				testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-				tempValueInt = *testVarInt;
-				con_print(true, true, "Variable - INT -  [ %s ] - [ %i ]", varName.c_str(), tempValueInt);
-				break;
-
-			case VAR_TYPE_FLOAT:
-				testVarFloat = (float *)hostVariables[count].hostFunctionPtr;
-				tempValueFloat = *testVarFloat;
-				con_print(true, true, "Variable - FLOAT - [ %s ] - [ %2.2f ]", varName.c_str(), tempValueFloat);
-				break;
-
-			case VAR_TYPE_BOOL:
-				testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-				tempValueInt =  *testVarInt;
-				if (0 == tempValueInt)
-				{
-					con_print(true, true, "Variable - BOOL - [ %s ] - [ %s ]", varName.c_str(), "false");
-				}
-				else
-				{
-					con_print(true, true, "Variable - BOOL - [ %s ] - [ %s ]", varName.c_str(), "true");
-				}
-				break;
-		}
-		count++;
+		const char *name;
+		int typeId;
+		bool isConst;
+		scriptEngine->GetGlobalPropertyByIndex ( n, &name, 0, &typeId, &isConst );
+		string decl = isConst ? " const " : " ";
+		decl += scriptEngine->GetTypeDeclaration ( typeId );
+		decl += " ";
+		decl += name;
+		con_print ( true, false, "[ %s ]", decl.c_str() );
 	}
+
+	// List the user variables in the module
+	asIScriptModule *mod = scriptEngine->GetModule ( "startup" );
+	if ( mod )
+	{
+		cout << endl;
+		con_print ( true, false, "User variables" );
+		for ( n = 0; n < ( asUINT ) mod->GetGlobalVarCount(); n++ )
+		{
+			con_print ( true, false, "[ %s ]", mod->GetGlobalVarDeclaration ( n ) );
+		}
+	}
+
 	return true;
 }
+
+//-----------------------------------------------------------
+//
+// Search for a variable name within all the global names
+// return the index if found
+// otherwise return -1
+int util_getVariableIndex(string whichVar)
+//-----------------------------------------------------------
+{
+	const char 	*name;
+	int 		typeID;
+	string 		variableName;
+	
+	for (unsigned int i = 0; i < (asUINT)scriptEngine->GetGlobalPropertyCount(); i++)
+	{
+		scriptEngine->GetGlobalPropertyByIndex(i, &name, 0, &typeID);
+		variableName = name;
+		if (variableName == whichVar)
+			return i;	// Found a match - return index
+	}
+	return -1;	// Not found
+}
+
 
 //-----------------------------------------------------------------------------
 //
 //! \brief Get the value of a single variable
 //! \param Pass in the name of the variable to query
-bool sys_conGetVariable(string param1)
+bool sys_conGetVariable ( string whichVar )
 //-----------------------------------------------------------------------------
 {
-	int 	count = 0;
-	int 	varTypeNum = 0;
-	int 	tempValue = 0;
-
-	int		tempValueInt = 0;
-	float 	tempValueFloat = 0;
-
-	int		*testVarInt;
-	float	*testVarFloat;
-
-	string 	varType;
-	string 	varName;
-	//
-	// Get the command and any parameters
-	//
-	vector<string>     	tokens;   // one command and one param
-	string              buffer;
-
-	if (param1.size() == 0)
+	int		variableIndex;
+	
+	variableIndex = util_getVariableIndex(whichVar);
+	
+	if (-1 == variableIndex)
 	{
-		con_print (true, true, "Error: No variable specified - listing variables");
-		sys_conListVariables();
+		con_print(true, false, "ERROR: Could not locate variable [ %s ]", whichVar.c_str());
+		return false;
+	}
+	
+	const char 	*name;
+	int 		typeID;
+	bool 		isConst;
+	void 		*varPointer;
+	string 		varType;
+	
+	//
+	// Get the Global properties
+	scriptEngine->GetGlobalPropertyByIndex(variableIndex, &name, 0, &typeID, &isConst, 0, &varPointer);
+
+	varType = scriptEngine->GetTypeDeclaration(typeID);
+	if (varType == "int")
+	{
+		con_print(true, false, "Value of %s %s is %i", varType.c_str(), whichVar.c_str(), *(int *)varPointer);
 		return true;
 	}
-
-	while (hostVariables[count].scriptFunctionName.size() > 1)
+	else if (varType == "float")
 	{
-		//
-		// Start the string with known empty value
-		varType = "";
-		varName = "";
-
-		// Insert the string into a stream
-		istringstream iss(hostVariables[count].scriptFunctionName, istringstream::in);
-		//
-		// Put each word into the vector
-		while(iss >> buffer)
-		{
-			tokens.push_back(buffer);
-		}
-		varType = tokens[0];
-		varName = tokens[1];
-		//
-		// Clear vectors and stringstream
-		//
-		iss.clear();
-		tokens.clear();
-
-		if (param1 == varName)
-		{
-			varTypeNum = sys_conGetVarType(varType);
-			switch (varTypeNum)
-			{
-				case VAR_TYPE_INT:
-					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-					tempValueInt = *testVarInt;
-					con_print(true, true, "Variable [ %s ] - [ %i ]", varName.c_str(), tempValueInt);
-					break;
-
-				case VAR_TYPE_FLOAT:
-					testVarFloat = (float *)hostVariables[count].hostFunctionPtr;
-					tempValueFloat = *testVarFloat;
-					con_print(true, true, "Variable [ %s ] - [ %2.2f ]", varName.c_str(), tempValueFloat);
-					break;
-
-				case VAR_TYPE_BOOL:
-					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-//					tempValueInt = *testVarFloat;
-					if (0 == tempValue)
-					{
-						con_print(true, true, "Variable [ %s ] - [ %s ]", varName.c_str(), "false");
-					}
-					else
-					{
-						con_print(true, true, "Variable [ %s ] - [ %s ]", varName.c_str(), "true");
-					}
-					break;
-			}
-			return true;
-		}
-
-		count++;
+		con_print(true, false, "Value of %s %s is %5.5f", varType.c_str(), whichVar.c_str(), *(float *)varPointer);
+		return true;
 	}
-	con_print (true, true, "Error: No matching value for [ %s ] found", param1);
+	else if (varType == "bool")
+	{
+		con_print(true, false, "Value of %s %s is %s", varType.c_str(), whichVar.c_str(), *(bool *)varPointer ? "true" : "false");
+		return true;
+	}
+	else if (varType == "string")
+	{
+		string printString;
+		
+		printString = *(string *)varPointer;
+		con_print(true, false, "Value of %s %s is %s", varType.c_str(), whichVar.c_str(), printString.c_str());
+	}
+	else
+		con_print(true, false, "Unknown type [ %s ] for [ %s ]", varType.c_str(), whichVar.c_str());
+		
 	return true;
 }
 
@@ -227,93 +170,52 @@ bool sys_conGetVariable(string param1)
 //
 //! \brief Set the value of a single variable
 //! \param Pass in the name and the new value
-bool sys_conSetVariable(string param1, string param2)
+bool sys_conSetVariable ( string whichVar, string newValue )
 //-----------------------------------------------------------------------------
 {
-	int 	count = 0;
-	string 	varType;
-	string 	varName;
-
-	int 	*testVarInt;
-	float	*testVarFloat;
-
-	int varTypeNum;
-	int tempValue;
-
-	vector<string>     	tokens;   // one command and one param
-	string              buffer;
-
-	if (param1.size() == 0)
+	int		variableIndex;
+	
+	variableIndex = util_getVariableIndex(whichVar);
+	if (-1 == variableIndex)
 	{
-		con_print (true, true, "Error: No variable specified - listing variables");
-		sys_conListVariables();
-		return true;
-	}
-
-	if (param2.size() == 0)
-	{
-		con_print(true, true, "Error: Missing parameter to setVar");
+		con_print(true, false, "ERROR: Could not locate variable [ %s ]", whichVar.c_str());
 		return false;
 	}
+	
+	const char 	*name;
+	int 		typeID;
+	bool 		isConst;
+	void 		*varPointer;
+	string 		varType;
+	
+	//
+	// Get the Global properties
+	scriptEngine->GetGlobalPropertyByIndex(variableIndex, &name, 0, &typeID, &isConst, 0, &varPointer);
 
-	while (hostVariables[count].scriptFunctionName.size() > 1)
+	varType = scriptEngine->GetTypeDeclaration(typeID);
+	if (varType == "int")
 	{
-		//
-		// Start the string with known empty value
-		varType = "";
-		varName = "";
-
-		// Insert the string into a stream
-		istringstream iss(hostVariables[count].scriptFunctionName, istringstream::in);
-		//
-		// Put each word into the vector
-		while(iss >> buffer)
-		{
-			tokens.push_back(buffer);
-		}
-		varType = tokens[0];
-		varName = tokens[1];
-		//
-		// Clear vectors and stringstream
-		//
-		iss.clear();
-		tokens.clear();
-
-		if (param1 == varName)
-		{
-			varTypeNum = sys_conGetVarType(varType);
-			switch (varTypeNum)
-			{
-				case VAR_TYPE_INT:
-					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-					*testVarInt = atoi(param2.c_str());
-					con_print (true, true,  "Variable [ %s ] set to [ %i ]", varName.c_str(), *testVarInt);
-					break;
-
-				case VAR_TYPE_FLOAT:
-					testVarFloat = (float *)hostVariables[count].hostFunctionPtr;
-					*testVarFloat = atof(param2.c_str());
-					con_print (true, true, "Variable [ %s ] set to [ %2.2f ]", varName.c_str(), *testVarFloat);
-					break;
-
-				case VAR_TYPE_BOOL:
-					testVarInt = (int *)hostVariables[count].hostFunctionPtr;
-					tempValue = atoi(param2.c_str());
-					if (0 == tempValue)
-					{
-						con_print (true, true, "Variable [ %s ] set to [ %s ]", varName.c_str(), "false");
-					}
-
-					else
-					{
-						con_print (true, true, "Variable [ %s ] set to [ %s ]", varName.c_str(), "true");
-					}
-					break;
-			}
-			return true;
-		}
-		count++;
+		con_print(true, false, "Set varible to value [ %i ]", atoi(newValue.c_str()));
+		*(int *)varPointer = atoi(newValue.c_str());
 	}
-	con_print (true, true,  "Error: No matching value for [ %s ] found", param1.c_str());
+	else if (varType == "float")
+	{
+		con_print(true, false, "Set varible to value [ %f ]", atof(newValue.c_str()));
+		*(float *)varPointer = atof(newValue.c_str());
+	}
+	else if (varType == "bool")
+	{
+		if ((newValue == "true") || (newValue == "1"))
+		{
+			con_print(true, false, "Set variable to value [ %s ]", newValue.c_str());
+			*(bool *)varPointer = true;
+		}
+		else
+		{
+			con_print(true, false, "Set variable to value [ %s ]", "false");
+			*(bool *)varPointer = false;
+		}
+	}
+	
 	return true;
 }

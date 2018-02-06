@@ -994,6 +994,6 @@ void lvl_getLiftPositions ( int whichLevel )
 
 	for ( int i = 0; i != shipLevel[whichLevel].numLifts; i++ )
 		{
-			con_print ( true, true, "Lift [ %i ] PosX [ %i ] PosY [ %i ]", i, shipLevel[whichLevel].lifts[i].posX, shipLevel[whichLevel].lifts[i].posY );
+			con_print ( true, false, "Lift [ %i ] PosX [ %i ] PosY [ %i ]", i, shipLevel[whichLevel].lifts[i].posX, shipLevel[whichLevel].lifts[i].posY );
 		}
 }
