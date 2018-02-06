@@ -132,7 +132,7 @@ void con_processBackspaceKey ( float frameInterval )
 void con_processCursor ( float frameInterval )
 //-----------------------------------------------------------------------------
 {
-	conCursorCount += ( float ) ( 15.0f * frameInterval );
+	conCursorCount += 3.0f / TICKS_PER_SECOND;
 	if ( conCursorCount > 1.0f )
 		{
 			conCursorCount = 0;
